@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{79482fee-3713-48ba-977c-09329b520b10}</ProjectGuid>
+    <MainSource>libNfe.dpr</MainSource>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+    <DCC_DependencyCheckOutputName>..\..\..\..\libNfe.dll</DCC_DependencyCheckOutputName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Version>7.0</Version>
+    <DCC_DebugInformation>False</DCC_DebugInformation>
+    <DCC_LocalDebugSymbols>False</DCC_LocalDebugSymbols>
+    <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+    <DCC_MapFile>3</DCC_MapFile>
+    <DCC_ExeOutput>..\..\</DCC_ExeOutput>
+    <DCC_Define>madExcept;RELEASE</DCC_Define>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <Version>7.0</Version>
+    <DCC_MapFile>3</DCC_MapFile>
+    <DCC_Define>madExcept;DEBUG</DCC_Define>
+    <DCC_DcuOutput>temp\</DCC_DcuOutput>
+    <DCC_ObjOutput>temp\</DCC_ObjOutput>
+    <DCC_HppOutput>temp\</DCC_HppOutput>
+    <DCC_ExeOutput>..\..\..\..\</DCC_ExeOutput>
+  </PropertyGroup>
+  <ProjectExtensions>
+    <Borland.Personality>Delphi.Personality</Borland.Personality>
+    <Borland.ProjectType>VCLApplication</Borland.ProjectType>
+    <BorlandProject>
+<BorlandProject><Delphi.Personality><Parameters><Parameters Name="HostApplication">..\..\..\..\autcomDinpar.exe</Parameters><Parameters Name="UseLauncher">False</Parameters><Parameters Name="LoadAllSymbols">True</Parameters><Parameters Name="LoadUnspecifiedSymbols">False</Parameters></Parameters><VersionInfo><VersionInfo Name="IncludeVerInfo">True</VersionInfo><VersionInfo Name="AutoIncBuild">False</VersionInfo><VersionInfo Name="MajorVer">2</VersionInfo><VersionInfo Name="MinorVer">0</VersionInfo><VersionInfo Name="Release">0</VersionInfo><VersionInfo Name="Build">0</VersionInfo><VersionInfo Name="Debug">False</VersionInfo><VersionInfo Name="PreRelease">False</VersionInfo><VersionInfo Name="Special">False</VersionInfo><VersionInfo Name="Private">False</VersionInfo><VersionInfo Name="DLL">False</VersionInfo><VersionInfo Name="Locale">1033</VersionInfo><VersionInfo Name="CodePage">1252</VersionInfo></VersionInfo><VersionInfoKeys><VersionInfoKeys Name="CompanyName">Citel Software</VersionInfoKeys><VersionInfoKeys Name="FileDescription"></VersionInfoKeys><VersionInfoKeys Name="FileVersion">2.0.0.0</VersionInfoKeys><VersionInfoKeys Name="InternalName"></VersionInfoKeys><VersionInfoKeys Name="LegalCopyright">Citel Software</VersionInfoKeys><VersionInfoKeys Name="LegalTrademarks"></VersionInfoKeys><VersionInfoKeys Name="OriginalFilename"></VersionInfoKeys><VersionInfoKeys Name="ProductName"></VersionInfoKeys><VersionInfoKeys Name="ProductVersion">2.0.0.0</VersionInfoKeys><VersionInfoKeys Name="Comments"></VersionInfoKeys></VersionInfoKeys><Source><Source Name="MainSource">libNfe.dpr</Source></Source></Delphi.Personality></BorlandProject></BorlandProject>
+  </ProjectExtensions>
+  <Import Project="$(MSBuildBinPath)\Borland.Delphi.Targets" />
+  <ItemGroup>
+    <DelphiCompile Include="libNfe.dpr">
+      <MainSource>MainSource</MainSource>
+    </DelphiCompile>
+    <DCCReference Include="..\..\..\Genericos\untConstantes.pas" />
+    <DCCReference Include="..\..\..\genericos\untTipoFreteAtc.pas" />
+    <DCCReference Include="..\..\fit\NfeApiWSBean.pas" />
+    <DCCReference Include="..\..\untConfigNFE.pas" />
+    <DCCReference Include="..\..\untConstantesNFe.pas" />
+    <DCCReference Include="..\..\untDadosIcms.pas" />
+    <DCCReference Include="..\..\untDisparadorEventos.pas" />
+    <DCCReference Include="..\..\untEnviarArquivosServiceFIT.pas" />
+    <DCCReference Include="..\..\untFonteDados.pas" />
+    <DCCReference Include="..\..\untFuncoesDll.pas" />
+    <DCCReference Include="..\..\untFuncoesLibNfe.pas">
+      <Form>  untDisparadorEventos in '..\..\untDisparadorEventos.pas';
+
+{$SetPEFlags IMAGE_FILE_REMOVABLE_RUN_FROM_SWAP</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\untFuncoesLibNfe.pas$  untDisparadorEventos in" />
+    <DCCReference Include="..\..\untIntegradorSAT.pas" />
+    <DCCReference Include="..\..\untIntegradorSATLOG.pas" />
+    <DCCReference Include="..\..\untIntegradorSATXML.pas" />
+    <DCCReference Include="..\..\untInterfaces.pas" />
+    <DCCReference Include="..\..\untInterfacesIntegradorSAT.pas" />
+    <DCCReference Include="..\..\untInterfacesManifestoEletronico.pas" />
+    <DCCReference Include="..\..\untManifestoEletronico.pas" />
+    <DCCReference Include="..\..\untManifestoEletronicoServiceImpl.pas" />
+    <DCCReference Include="..\..\untManifestoFit.pas" />
+    <DCCReference Include="..\..\untNFCEFit200.pas" />
+    <DCCReference Include="..\..\untNFEFit200.pas" />
+    <DCCReference Include="..\..\untNFEFit310.pas" />
+    <DCCReference Include="..\..\untNFEMegalosIdeas.pas" />
+    <DCCReference Include="..\..\untNFEOphos.pas" />
+    <DCCReference Include="..\..\untNFEOphos200.pas" />
+    <DCCReference Include="..\..\untNFEServiceImpl.pas" />
+    <DCCReference Include="..\..\untNFESFit.pas" />
+    <DCCReference Include="..\..\untNFESPainelFiscal.pas" />
+    <DCCReference Include="..\..\untOphos\untInterfacesOphos.pas" />
+    <DCCReference Include="..\..\untOphos\untOphos200.pas" />
+    <DCCReference Include="..\..\untOphos\untOphos201.pas" />
+    <DCCReference Include="..\..\untOphos\untOphos202.pas" />
+    <DCCReference Include="..\..\untOphos\untOphos203.pas" />
+    <DCCReference Include="..\..\untOphos\untOphos205.pas" />
+    <DCCReference Include="..\..\untSATCFE.pas" />
+    <DCCReference Include="..\..\untUtil.pas" />
+    <DCCReference Include="..\..\untUtilBD.pas" />
+    <DCCReference Include="..\..\untUtilFIT.pas" />
+    <DCCReference Include="..\..\untUtilNFSe.pas" />
+    <DCCReference Include="..\..\untValidadorNFE.pas" />
+    <DCCReference Include="..\..\untValorPorExtenso.pas" />
+    <DCCReference Include="..\..\untVerificaIntegradorNFe.pas" />
+  </ItemGroup>
+</Project>

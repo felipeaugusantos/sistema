@@ -1,0 +1,192 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{E94D32CD-33ED-41B9-8CB4-50497AC7CE49}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="..\Shared\Functions\package\Linux\Shared.Functions.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Faturamento\Impostos\interfaces\package\Linux\faturamento.impostos.interfaces.dproj">
+            <Dependencies>..\Shared\Functions\package\Linux\Shared.Functions.dproj</Dependencies>
+        </Projects>
+        <Projects Include="..\Faturamento\Impostos\tipos\package\Linux\faturamento.impostos.tipos.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Faturamento\Model\package\Linux\faturamento.model.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Faturamento\Impostos\calculos\package\Linux\faturamento.impostos.calculos.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Faturamento\Impostos\regras\package\Linux\faturamento.impostos.regras.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Faturamento\Impostos\servicos\package\Linux\faturamento.impostos.servicos.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Faturamento\Precos\interfaces\package\Linux\faturamento.precos.interfaces.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Faturamento\Precos\tipos\package\Linux\faturamento.precos.tipos.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Faturamento\Precos\calculos\package\Linux\faturamento.precos.calculos.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Faturamento\Margem\interfaces\package\Linux\faturamento.margem.interfaces.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Faturamento\Margem\tipos\package\Linux\faturamento.margem.tipos.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Faturamento\Margem\calculos\package\Linux\faturamento.margem.calculos.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Faturamento\Margem\servicos\package\Linux\faturamento.margem.servicos.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="Shared_Functions">
+        <MSBuild Projects="..\Shared\Functions\package\Linux\Shared.Functions.dproj"/>
+    </Target>
+    <Target Name="Shared_Functions:Clean">
+        <MSBuild Projects="..\Shared\Functions\package\Linux\Shared.Functions.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Shared_Functions:Make">
+        <MSBuild Projects="..\Shared\Functions\package\Linux\Shared.Functions.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="faturamento_impostos_interfaces" DependsOnTargets="Shared.Functions">
+        <MSBuild Projects="..\Faturamento\Impostos\interfaces\package\Linux\faturamento.impostos.interfaces.dproj"/>
+    </Target>
+    <Target Name="faturamento_impostos_interfaces:Clean" DependsOnTargets="Shared.Functions:Clean">
+        <MSBuild Projects="..\Faturamento\Impostos\interfaces\package\Linux\faturamento.impostos.interfaces.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="faturamento_impostos_interfaces:Make" DependsOnTargets="Shared.Functions:Make">
+        <MSBuild Projects="..\Faturamento\Impostos\interfaces\package\Linux\faturamento.impostos.interfaces.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="faturamento_impostos_tipos">
+        <MSBuild Projects="..\Faturamento\Impostos\tipos\package\Linux\faturamento.impostos.tipos.dproj"/>
+    </Target>
+    <Target Name="faturamento_impostos_tipos:Clean">
+        <MSBuild Projects="..\Faturamento\Impostos\tipos\package\Linux\faturamento.impostos.tipos.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="faturamento_impostos_tipos:Make">
+        <MSBuild Projects="..\Faturamento\Impostos\tipos\package\Linux\faturamento.impostos.tipos.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="faturamento_model">
+        <MSBuild Projects="..\Faturamento\Model\package\Linux\faturamento.model.dproj"/>
+    </Target>
+    <Target Name="faturamento_model:Clean">
+        <MSBuild Projects="..\Faturamento\Model\package\Linux\faturamento.model.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="faturamento_model:Make">
+        <MSBuild Projects="..\Faturamento\Model\package\Linux\faturamento.model.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="faturamento_impostos_calculos">
+        <MSBuild Projects="..\Faturamento\Impostos\calculos\package\Linux\faturamento.impostos.calculos.dproj"/>
+    </Target>
+    <Target Name="faturamento_impostos_calculos:Clean">
+        <MSBuild Projects="..\Faturamento\Impostos\calculos\package\Linux\faturamento.impostos.calculos.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="faturamento_impostos_calculos:Make">
+        <MSBuild Projects="..\Faturamento\Impostos\calculos\package\Linux\faturamento.impostos.calculos.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="faturamento_impostos_regras">
+        <MSBuild Projects="..\Faturamento\Impostos\regras\package\Linux\faturamento.impostos.regras.dproj"/>
+    </Target>
+    <Target Name="faturamento_impostos_regras:Clean">
+        <MSBuild Projects="..\Faturamento\Impostos\regras\package\Linux\faturamento.impostos.regras.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="faturamento_impostos_regras:Make">
+        <MSBuild Projects="..\Faturamento\Impostos\regras\package\Linux\faturamento.impostos.regras.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="faturamento_impostos_servicos">
+        <MSBuild Projects="..\Faturamento\Impostos\servicos\package\Linux\faturamento.impostos.servicos.dproj"/>
+    </Target>
+    <Target Name="faturamento_impostos_servicos:Clean">
+        <MSBuild Projects="..\Faturamento\Impostos\servicos\package\Linux\faturamento.impostos.servicos.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="faturamento_impostos_servicos:Make">
+        <MSBuild Projects="..\Faturamento\Impostos\servicos\package\Linux\faturamento.impostos.servicos.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="faturamento_precos_interfaces">
+        <MSBuild Projects="..\Faturamento\Precos\interfaces\package\Linux\faturamento.precos.interfaces.dproj"/>
+    </Target>
+    <Target Name="faturamento_precos_interfaces:Clean">
+        <MSBuild Projects="..\Faturamento\Precos\interfaces\package\Linux\faturamento.precos.interfaces.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="faturamento_precos_interfaces:Make">
+        <MSBuild Projects="..\Faturamento\Precos\interfaces\package\Linux\faturamento.precos.interfaces.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="faturamento_precos_tipos">
+        <MSBuild Projects="..\Faturamento\Precos\tipos\package\Linux\faturamento.precos.tipos.dproj"/>
+    </Target>
+    <Target Name="faturamento_precos_tipos:Clean">
+        <MSBuild Projects="..\Faturamento\Precos\tipos\package\Linux\faturamento.precos.tipos.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="faturamento_precos_tipos:Make">
+        <MSBuild Projects="..\Faturamento\Precos\tipos\package\Linux\faturamento.precos.tipos.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="faturamento_precos_calculos">
+        <MSBuild Projects="..\Faturamento\Precos\calculos\package\Linux\faturamento.precos.calculos.dproj"/>
+    </Target>
+    <Target Name="faturamento_precos_calculos:Clean">
+        <MSBuild Projects="..\Faturamento\Precos\calculos\package\Linux\faturamento.precos.calculos.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="faturamento_precos_calculos:Make">
+        <MSBuild Projects="..\Faturamento\Precos\calculos\package\Linux\faturamento.precos.calculos.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="faturamento_margem_interfaces">
+        <MSBuild Projects="..\Faturamento\Margem\interfaces\package\Linux\faturamento.margem.interfaces.dproj"/>
+    </Target>
+    <Target Name="faturamento_margem_interfaces:Clean">
+        <MSBuild Projects="..\Faturamento\Margem\interfaces\package\Linux\faturamento.margem.interfaces.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="faturamento_margem_interfaces:Make">
+        <MSBuild Projects="..\Faturamento\Margem\interfaces\package\Linux\faturamento.margem.interfaces.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="faturamento_margem_tipos">
+        <MSBuild Projects="..\Faturamento\Margem\tipos\package\Linux\faturamento.margem.tipos.dproj"/>
+    </Target>
+    <Target Name="faturamento_margem_tipos:Clean">
+        <MSBuild Projects="..\Faturamento\Margem\tipos\package\Linux\faturamento.margem.tipos.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="faturamento_margem_tipos:Make">
+        <MSBuild Projects="..\Faturamento\Margem\tipos\package\Linux\faturamento.margem.tipos.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="faturamento_margem_calculos">
+        <MSBuild Projects="..\Faturamento\Margem\calculos\package\Linux\faturamento.margem.calculos.dproj"/>
+    </Target>
+    <Target Name="faturamento_margem_calculos:Clean">
+        <MSBuild Projects="..\Faturamento\Margem\calculos\package\Linux\faturamento.margem.calculos.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="faturamento_margem_calculos:Make">
+        <MSBuild Projects="..\Faturamento\Margem\calculos\package\Linux\faturamento.margem.calculos.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="faturamento_margem_servicos">
+        <MSBuild Projects="..\Faturamento\Margem\servicos\package\Linux\faturamento.margem.servicos.dproj"/>
+    </Target>
+    <Target Name="faturamento_margem_servicos:Clean">
+        <MSBuild Projects="..\Faturamento\Margem\servicos\package\Linux\faturamento.margem.servicos.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="faturamento_margem_servicos:Make">
+        <MSBuild Projects="..\Faturamento\Margem\servicos\package\Linux\faturamento.margem.servicos.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="Shared_Functions;faturamento_impostos_interfaces;faturamento_impostos_tipos;faturamento_model;faturamento_impostos_calculos;faturamento_impostos_regras;faturamento_impostos_servicos;faturamento_precos_interfaces;faturamento_precos_tipos;faturamento_precos_calculos;faturamento_margem_interfaces;faturamento_margem_tipos;faturamento_margem_calculos;faturamento_margem_servicos"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="Shared_Functions:Clean;faturamento_impostos_interfaces:Clean;faturamento_impostos_tipos:Clean;faturamento_model:Clean;faturamento_impostos_calculos:Clean;faturamento_impostos_regras:Clean;faturamento_impostos_servicos:Clean;faturamento_precos_interfaces:Clean;faturamento_precos_tipos:Clean;faturamento_precos_calculos:Clean;faturamento_margem_interfaces:Clean;faturamento_margem_tipos:Clean;faturamento_margem_calculos:Clean;faturamento_margem_servicos:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="Shared_Functions:Make;faturamento_impostos_interfaces:Make;faturamento_impostos_tipos:Make;faturamento_model:Make;faturamento_impostos_calculos:Make;faturamento_impostos_regras:Make;faturamento_impostos_servicos:Make;faturamento_precos_interfaces:Make;faturamento_precos_tipos:Make;faturamento_precos_calculos:Make;faturamento_margem_interfaces:Make;faturamento_margem_tipos:Make;faturamento_margem_calculos:Make;faturamento_margem_servicos:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

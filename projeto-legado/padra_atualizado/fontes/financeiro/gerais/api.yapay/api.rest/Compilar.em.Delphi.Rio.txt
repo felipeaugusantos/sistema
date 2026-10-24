@@ -1,0 +1,1 @@
+Foi estrangulado a parte de conexão Rest para compilar no Delphi RIO, pois os componentes RestClient do Seattle não estavam respeitando o TimeOut atribuido nas propriedades e dando erro de consulta de cobranças (com Transactions) com Gets lentos.

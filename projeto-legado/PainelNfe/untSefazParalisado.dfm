@@ -1,0 +1,39 @@
+object frmSefazParalisado: TfrmSefazParalisado
+  Left = 0
+  Top = 0
+  BorderStyle = bsToolWindow
+  Caption = 'Sefaz paralisado!'
+  ClientHeight = 251
+  ClientWidth = 761
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  KeyPreview = True
+  OldCreateOrder = False
+  Position = poScreenCenter
+  OnCreate = FormCreate
+  OnKeyDown = FormKeyDown
+  OnShow = FormShow
+  PixelsPerInch = 96
+  TextHeight = 13
+  object edtTexto: TRichEdit
+    Left = 0
+    Top = 0
+    Width = 761
+    Height = 251
+    TabStop = False
+    Align = alClient
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -11
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    ReadOnly = True
+    TabOrder = 0
+    Zoom = 100
+  end
+end

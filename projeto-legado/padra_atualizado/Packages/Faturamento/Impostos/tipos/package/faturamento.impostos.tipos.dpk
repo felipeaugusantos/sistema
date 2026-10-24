@@ -1,0 +1,71 @@
+package faturamento.impostos.tipos;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$IMPLICITBUILD ON}
+{$SetPEFlags $0400} // -> If Image is on removable media, copy and run from the swap file.
+{$SetPEFlags $0800} // -> If Image is on Net, copy and run from the swap file.
+
+requires
+  rtl,
+  faturamento.impostos.interfaces;
+
+contains
+  Faturamento.Impostos.Tipos.Ipi in '..\source\Faturamento.Impostos.Tipos.Ipi.pas',
+  Faturamento.Impostos.Tipos.STCustoAquisicao in '..\source\Faturamento.Impostos.Tipos.STCustoAquisicao.pas',
+  Faturamento.Impostos.Tipos.Icms in '..\source\Faturamento.Impostos.Tipos.Icms.pas',
+  Faturamento.Impostos.Tipos.ST in '..\source\Faturamento.Impostos.Tipos.ST.pas',
+  Faturamento.Impostos.Tipos.Difal in '..\source\Faturamento.Impostos.Tipos.Difal.pas',
+  Faturamento.Impostos.Tipos.FCP in '..\source\Faturamento.Impostos.Tipos.FCP.pas',
+  Faturamento.Impostos.Tipos.IcmsEfetivo in '..\source\Faturamento.Impostos.Tipos.IcmsEfetivo.pas',
+  Faturamento.Impostos.Tipos.IcmsOrgaoPublico in '..\source\Faturamento.Impostos.Tipos.IcmsOrgaoPublico.pas',
+  Faturamento.Impostos.Tipos.Model in '..\source\Faturamento.Impostos.Tipos.Model.pas',
+  Faturamento.Impostos.Tipos.ZerarImpostos.Icms in '..\source\Faturamento.Impostos.Tipos.ZerarImpostos.Icms.pas',
+  Faturamento.Impostos.Tipos.ZerarImpostos in '..\source\Faturamento.Impostos.Tipos.ZerarImpostos.pas',
+  Faturamento.Impostos.Tipos.ClassificacoesTransferencias in '..\source\Faturamento.Impostos.Tipos.ClassificacoesTransferencias.pas',
+  Faturamento.Impostos.Tipos.DadosFiscais.ClassificacaoItem in '..\source\Faturamento.Impostos.Tipos.DadosFiscais.ClassificacaoItem.pas',
+  Faturamento.Impostos.Tipos.DadosFiscais.Aliquota in '..\source\Faturamento.Impostos.Tipos.DadosFiscais.Aliquota.pas',
+  Faturamento.Impostos.Tipos.Tributacao in '..\source\Faturamento.Impostos.Tipos.Tributacao.pas',
+  Faturamento.Impostos.Tipos.IcmsSt in '..\source\Faturamento.Impostos.Tipos.IcmsSt.pas',
+  Faturamento.Impostos.Tipos.Iva in '..\source\Faturamento.Impostos.Tipos.Iva.pas',
+  Faturamento.Impostos.Tipos.ST_Simulada in '..\source\Faturamento.Impostos.Tipos.ST_Simulada.pas',
+  Faturamento.Impostos.Tipos.ZerarImpostos.ST in '..\source\Faturamento.Impostos.Tipos.ZerarImpostos.ST.pas',
+  Faturamento.Impostos.Tipos.Tributacao.DepoisDoCalculo in '..\source\Faturamento.Impostos.Tipos.Tributacao.DepoisDoCalculo.pas',
+  Faturamento.Impostos.Tipos.Servicos.Classe.Icms in '..\source\Faturamento.Impostos.Tipos.Servicos.Classe.Icms.pas',
+  Faturamento.Impostos.Tipos.Servicos.Classe.St in '..\source\Faturamento.Impostos.Tipos.Servicos.Classe.St.pas',
+  Faturamento.Impostos.Tipos.Servicos.Classe.IcmsOrgaoPublico in '..\source\Faturamento.Impostos.Tipos.Servicos.Classe.IcmsOrgaoPublico.pas',
+  Faturamento.Impostos.Tipos.Servicos.Classe.StCustoAquisicao in '..\source\Faturamento.Impostos.Tipos.Servicos.Classe.StCustoAquisicao.pas',
+  Faturamento.Impostos.Tipos.AliquotasDeRetencao in '..\source\Faturamento.Impostos.Tipos.AliquotasDeRetencao.pas',
+  Faturamento.Impostos.Tipos.FcpDifal in '..\source\Faturamento.Impostos.Tipos.FcpDifal.pas',
+  Faturamento.Impostos.Tipos.Servicos.Classe.Fcp in '..\source\Faturamento.Impostos.Tipos.Servicos.Classe.Fcp.pas',
+  Faturamento.Impostos.Tipos.Servicos.Classe.DifalFcp in '..\source\Faturamento.Impostos.Tipos.Servicos.Classe.DifalFcp.pas',
+  Faturamento.Impostos.Tipos.ZerarImpostos.Fcp in '..\source\Faturamento.Impostos.Tipos.ZerarImpostos.Fcp.pas',
+  Faturamento.Impostos.Tipos.Servicos.Classe.Devolucao.DifalFcp in '..\source\Faturamento.Impostos.Tipos.Servicos.Classe.Devolucao.DifalFcp.pas',
+  Faturamento.Impostos.Tipos.Servicos.Classe.Difal in '..\source\Faturamento.Impostos.Tipos.Servicos.Classe.Difal.pas',
+  Faturamento.Impostos.Tipos.ZerarImpostos.Difal in '..\source\Faturamento.Impostos.Tipos.ZerarImpostos.Difal.pas',
+  Faturamento.Impostos.Tipos.ClassificacaoItem.TransferenciaEstoqueEmpresa in '..\source\Faturamento.Impostos.Tipos.ClassificacaoItem.TransferenciaEstoqueEmpresa.pas';
+
+end.

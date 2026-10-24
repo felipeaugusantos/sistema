@@ -1,0 +1,916 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{eba07e12-73a5-428b-bef4-287a0c257922}</ProjectGuid>
+        <MainSource>libRelEstoque.dpr</MainSource>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+        <DCC_DependencyCheckOutputName>..\..\..\libRelEstoque.dll</DCC_DependencyCheckOutputName>
+        <FrameworkType>VCL</FrameworkType>
+        <ProjectVersion>18.1</ProjectVersion>
+        <Base>True</Base>
+        <Config Condition="'$(Config)'==''">Release</Config>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <TargetedPlatforms>1</TargetedPlatforms>
+        <AppType>Library</AppType>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+        <Base_Win32>true</Base_Win32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Base)'=='true') or '$(Base_Win64)'!=''">
+        <Base_Win64>true</Base_Win64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_1)'!=''">
+        <Cfg_1>true</Cfg_1>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win32)'!=''">
+        <Cfg_1_Win32>true</Cfg_1_Win32>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_2)'!=''">
+        <Cfg_2>true</Cfg_2>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win32)'!=''">
+        <Cfg_2_Win32>true</Cfg_2_Win32>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base)'!=''">
+        <SanitizedProjectName>libRelEstoque</SanitizedProjectName>
+        <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Winapi;System.Win;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
+        <VerInfo_Build>2</VerInfo_Build>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Release>2</VerInfo_Release>
+        <VerInfo_MajorVer>379</VerInfo_MajorVer>
+        <VerInfo_Keys>CompanyName=Citel Software;FileDescription=;FileVersion=379.48.2.2;InternalName=;LegalCopyright=Citel Software;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=379.48.2.2;Comments=</VerInfo_Keys>
+        <GenDll>true</GenDll>
+        <VerInfo_MinorVer>48</VerInfo_MinorVer>
+        <VerInfo_Locale>1046</VerInfo_Locale>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <DCC_Namespace>Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <Icon_MainIcon>libRelEstoque_Icon.ico</Icon_MainIcon>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <Debugger_HostApplication>..\..\..\autcom.exe</Debugger_HostApplication>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win64)'!=''">
+        <Icon_MainIcon>libRelEstoque_Icon.ico</Icon_MainIcon>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1)'!=''">
+        <Version>7.0</Version>
+        <DCC_DebugInformation>0</DCC_DebugInformation>
+        <DCC_LocalDebugSymbols>False</DCC_LocalDebugSymbols>
+        <DCC_Optimize>False</DCC_Optimize>
+        <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+        <DCC_Warnings>False</DCC_Warnings>
+        <DCC_MapFile>3</DCC_MapFile>
+        <DCC_ExeOutput>C:\autpas\379.48\padra_atualizado\</DCC_ExeOutput>
+        <DCC_DcuOutput>temp\</DCC_DcuOutput>
+        <DCC_ObjOutput>temp\</DCC_ObjOutput>
+        <DCC_HppOutput>temp\</DCC_HppOutput>
+        <DCC_Define>madExcept;RELEASE;UNIDAC;$(DCC_Define)</DCC_Define>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+        <VerInfo_MinorVer>999</VerInfo_MinorVer>
+        <VerInfo_MajorVer>999</VerInfo_MajorVer>
+        <VerInfo_Release>999</VerInfo_Release>
+        <VerInfo_DLL>true</VerInfo_DLL>
+        <DCC_LocalDebugSymbols>true</DCC_LocalDebugSymbols>
+        <DCC_DebugInformation>1</DCC_DebugInformation>
+        <DCC_Warnings>true</DCC_Warnings>
+        <DCC_ExeOutput>..\..\..\</DCC_ExeOutput>
+        <VerInfo_Build>999</VerInfo_Build>
+        <Manifest_File>None</Manifest_File>
+        <VerInfo_Keys>CompanyName=Citel Software;FileDescription=Biblioteca de Relatórios de Estoque;FileVersion=999.999.999.999;InternalName=libRelEstoque;LegalCopyright=Citel Software;LegalTrademarks=;OriginalFilename=libRelEstoque;ProductName=Autcom;ProductVersion=999.999.999.999;Comments=</VerInfo_Keys>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2)'!=''">
+        <Version>7.0</Version>
+        <DCC_Optimize>False</DCC_Optimize>
+        <DCC_SymbolReferenceInfo>2</DCC_SymbolReferenceInfo>
+        <DCC_Warnings>False</DCC_Warnings>
+        <DCC_MapFile>3</DCC_MapFile>
+        <DCC_ExeOutput>..\..\..\</DCC_ExeOutput>
+        <DCC_DcuOutput>temp\</DCC_DcuOutput>
+        <DCC_ObjOutput>temp\</DCC_ObjOutput>
+        <DCC_HppOutput>temp\</DCC_HppOutput>
+        <DCC_Define>madExcept;DEBUG;UNIDAC;$(DCC_Define)</DCC_Define>
+        <DCC_GenerateStackFrames>True</DCC_GenerateStackFrames>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
+        <VerInfo_Build>0</VerInfo_Build>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <Manifest_File>None</Manifest_File>
+        <DCC_Namespace>vcltee;$(DCC_Namespace)</DCC_Namespace>
+        <VerInfo_MinorVer>0</VerInfo_MinorVer>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <VerInfo_Release>0</VerInfo_Release>
+        <VerInfo_MajorVer>1</VerInfo_MajorVer>
+    </PropertyGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Delphi.Personality.12</Borland.Personality>
+        <Borland.ProjectType>VCLApplication</Borland.ProjectType>
+        <BorlandProject>
+            <Delphi.Personality>
+                <Parameters>
+                    <Parameters Name="UseLauncher">False</Parameters>
+                    <Parameters Name="LoadAllSymbols">True</Parameters>
+                    <Parameters Name="LoadUnspecifiedSymbols">False</Parameters>
+                    <Parameters Name="HostApplication">..\..\..\autcom.exe</Parameters>
+                </Parameters>
+                <VersionInfo>
+                    <VersionInfo Name="IncludeVerInfo">True</VersionInfo>
+                    <VersionInfo Name="AutoIncBuild">False</VersionInfo>
+                    <VersionInfo Name="MajorVer">379</VersionInfo>
+                    <VersionInfo Name="MinorVer">48</VersionInfo>
+                    <VersionInfo Name="Release">2</VersionInfo>
+                    <VersionInfo Name="Build">2</VersionInfo>
+                    <VersionInfo Name="Debug">False</VersionInfo>
+                    <VersionInfo Name="PreRelease">False</VersionInfo>
+                    <VersionInfo Name="Special">False</VersionInfo>
+                    <VersionInfo Name="Private">False</VersionInfo>
+                    <VersionInfo Name="DLL">False</VersionInfo>
+                    <VersionInfo Name="Locale">1046</VersionInfo>
+                    <VersionInfo Name="CodePage">1252</VersionInfo>
+                </VersionInfo>
+                <VersionInfoKeys>
+                    <VersionInfoKeys Name="CompanyName">Citel Software</VersionInfoKeys>
+                    <VersionInfoKeys Name="FileDescription"/>
+                    <VersionInfoKeys Name="FileVersion">379.48.2.2</VersionInfoKeys>
+                    <VersionInfoKeys Name="InternalName"/>
+                    <VersionInfoKeys Name="LegalCopyright">Citel Software</VersionInfoKeys>
+                    <VersionInfoKeys Name="LegalTrademarks"/>
+                    <VersionInfoKeys Name="OriginalFilename"/>
+                    <VersionInfoKeys Name="ProductName"/>
+                    <VersionInfoKeys Name="ProductVersion">379.48.2.2</VersionInfoKeys>
+                    <VersionInfoKeys Name="Comments"/>
+                </VersionInfoKeys>
+                <Source>
+                    <Source Name="MainSource">libRelEstoque.dpr</Source>
+                </Source>
+                <Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k230.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp230.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="C:\COMPONENTES\Instalacoes\DX10\FastReport 5\LibD23\dclfsbde23.bpl">File C:\COMPONENTES\Instalacoes\DX10\FastReport 5\LibD23\dclfsbde23.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="C:\COMPONENTES\Instalacoes\DX10\FastReport 5\LibD23\dclfrxbde23.bpl">File C:\COMPONENTES\Instalacoes\DX10\FastReport 5\LibD23\dclfrxbde23.bpl not found</Excluded_Packages>
+                </Excluded_Packages>
+            </Delphi.Personality>
+            <ModelSupport>False</ModelSupport>
+            <Platforms>
+                <Platform value="OSX32">False</Platform>
+                <Platform value="Win32">True</Platform>
+                <Platform value="Win64">False</Platform>
+            </Platforms>
+            <Deployment Version="2">
+                <DeployFile LocalName="..\..\..\libRelEstoque.dll" Configuration="Release" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>libRelEstoque.dll</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployClass Name="ProjectiOSDeviceResourceRules"/>
+                <DeployClass Name="ProjectOSXResource">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\Resources</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidClassesDexFile">
+                    <Platform Name="Android">
+                        <RemoteDir>classes</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon144">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AdditionalDebugSymbols">
+                    <Platform Name="Win32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidLibnativeMipsFile">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\mips</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch768">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Required="true" Name="ProjectOutput">
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="DependencyFramework">
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                        <Extensions>.framework</Extensions>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch640">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidLibnativeX86File">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\x86</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSDeviceDebug">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).app.dSYM\Contents\Resources\DWARF</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <RemoteDir>..\$(PROJECTNAME).app.dSYM\Contents\Resources\DWARF</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch1024">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch320">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSInfoPList"/>
+                <DeployClass Name="AndroidLibnativeArmeabiFile">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="DebugSymbols">
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch1536">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage470">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-normal</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon96">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage640">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-large</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch640x1136">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSEntitlements"/>
+                <DeployClass Name="AndroidGDBServer">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon72">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-hdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectOSXInfoPList"/>
+                <DeployClass Name="ProjectOSXEntitlements"/>
+                <DeployClass Name="iPad_Launch2048">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidSplashStyles">
+                    <Platform Name="Android">
+                        <RemoteDir>res\values</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage426">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-small</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidSplashImageDef">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSResource">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectAndroidManifest">
+                    <Platform Name="Android">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_DefaultAppIcon">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="File">
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="Android">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidServiceOutput">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Required="true" Name="DependencyPackage">
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                        <Extensions>.bpl</Extensions>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon48">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-mdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage960">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xlarge</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon36">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-ldpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="DependencyModule">
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                        <Extensions>.dll;.bpl</Extensions>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                </DeployClass>
+                <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="iOSDevice64" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="iOSDevice32" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="Win32" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="Android" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="iOSSimulator" Name="$(PROJECTNAME).app"/>
+            </Deployment>
+        </BorlandProject>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+    <Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets"/>
+    <ItemGroup>
+        <DelphiCompile Include="$(MainSource)">
+            <MainSource>MainSource</MainSource>
+        </DelphiCompile>
+        <DCCReference Include="..\..\genericos\untConstantes.pas"/>
+        <DCCReference Include="..\..\Genericos\untPaiSimples.pas">
+            <Form>frmPaiSimples</Form>
+        </DCCReference>
+        <DCCReference Include="untRelEstoque.pas"/>
+        <DCCReference Include="..\..\relatorios\estoque\untRelLstPreAlt.pas">
+            <Form>frmRelLstPreAlt</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untQckLstPreAlt.pas">
+            <Form>frmQckLstPreAlt</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untRelEstListaPrecos.pas">
+            <Form>frmRelEstListaPrecos</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untRelEstPosicaoEst.pas">
+            <Form>frmRelEstPosicaoEst</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untQckEstPosicaoEst.pas">
+            <Form>frmQckEstPosicaoEst</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untRelEstContEst.pas">
+            <Form>frmRelEstContEst</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untQckEstContEst.pas">
+            <Form>frmQckEstContEst</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untRelEstKardex.pas">
+            <Form>frmRelEstKardex</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untQckEstKardex.pas">
+            <Form>frmQckEstKardex</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untRelEstSemMov.pas">
+            <Form>frmRelEstSemMov</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untQckEstSemMov.pas">
+            <Form>frmQckEstSemMov</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untRelEstSaldoLoj.pas">
+            <Form>frmRelEstSaldoLoj</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untQckEstSaldoLoj.pas">
+            <Form>frmQckEstSaldoLoj</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untRelEstInvFisico.pas">
+            <Form>frmRelEstInvFisico</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untRelEstGirEstVenda.pas">
+            <Form>frmRelEstGirEstVenda</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untQckEstGirEstVenda.pas">
+            <Form>frmQckEstGirEstVenda</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untRelEstGirEstCompra.pas">
+            <Form>frmRelEstGirEstCompra</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untQckEstGirEstCompra.pas">
+            <Form>frmQckEstGirEstCompra</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untRelEstPedCompraDtaVencto.pas">
+            <Form>frmRelEstPedCompraDtaVencto</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untQckEstPedCompra.pas">
+            <Form>frmQckEstPedCompra</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untRelEstGirEstVenda12Meses.pas">
+            <Form>frmRelEstGirEstVenda12Meses</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untQckEstGirEstVenda12Meses.pas">
+            <Form>frmQckEstGirEstVenda12Meses</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untRelEstSaldoReservado.pas">
+            <Form>frmRelEstSaldoReservado</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untQckEstSaldoReservado.pas">
+            <Form>frmQckEstSaldoReservado</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untRelEstEvoCompras.pas">
+            <Form>frmRelEstEvoCompras</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untQckEstEvoCompras.pas">
+            <Form>frmQckEstEvoCompras</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untRelEstListaAjuste.pas">
+            <Form>frmRelEstListaAjuste</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untQckEstListaAjuste.pas">
+            <Form>frmQckEstListaAjuste</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untRelEstKardexGramas.pas">
+            <Form>frmRelEstKardexGramas</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untQckEstKardexGramas.pas">
+            <Form>frmQckEstKardexGramas</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untRelEstEntregaFutura.pas">
+            <Form>frmRelEstEntregaFutura</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\genericos\untPaiEdit.pas">
+            <Form>frmPaiEdit</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untRelEstPedCompraGrid.pas">
+            <Form>frmRelEstPedCompraGrid</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untRelEstConfControleEntrega.pas">
+            <Form>frmRelEstConfControleEntrega</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untRelEstEstoqueMaxMin.pas">
+            <Form>frmRelEstEstoqueMaxMin</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untQckEstPedCompraSint.pas">
+            <Form>frmQckEstPedCompraSint</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untRelEspNotaEntDev.pas">
+            <Form>frmRelEspNotaEntDev</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untQckEspelhoNotaDevolucao.pas">
+            <Form>frmQckEspelhoNotaDevolucao</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untEspelhoNotaDevolucao.pas"/>
+        <DCCReference Include="..\..\genericos\untExcel.pas"/>
+        <DCCReference Include="..\..\relatorios\estoque\untRelEstPosicaoEstData.pas">
+            <Form>frmRelEstPosicaoEstData</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untQckEstInvFisicoArt63.pas">
+            <Form>frmQckEstInvFisicoArt63</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untQckEstContEstAle.pas">
+            <Form>frmQckEstContEstAle</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untRelEstContEstAle.pas">
+            <Form>frmRelEstContEstAle</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untRelEstKardexAcabado.pas">
+            <Form>frmRelEstKardexAcabado</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untRelEstEvoComprasGrafico.pas">
+            <Form>frmRelEstEvoComprasGrafico</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untRelEstPrazoMedRecebMerc.pas">
+            <Form>frmRelEstPrazoMedRecebMerc</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\genericos\untMostraGraficoEvolucao.pas">
+            <Form>frmMostraGraficoEvolucao</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untModuloRelEstPrazoMedRecebMerc.pas">
+            <Form>frmModuloRelEstPrazoMedRecebMerc</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\libFuncoes\untClassPanelCx.pas"/>
+        <DCCReference Include="..\..\relatorios\estoque\untRelEstPrecosNaoAlt.pas">
+            <Form>frmRelEstPrecosNaoAlt</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untRelEstPedidosDev.pas">
+            <Form>frmRelEstPedidosDev</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untQckEstPedCompraSintForn.pas">
+            <Form>frmQckEstPedCompraSintForn</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untRelEstPosicaoEstProAca.pas">
+            <Form>frmRelEstPosicaoEstProAca</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untModuloRelEstPosicaoEstProAca.pas">
+            <Form>frmModuloRelEstPosicaoEstProAca</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\iTintas\untITintasDeMaquina.pas"/>
+        <DCCReference Include="..\..\iTintas\untIConfTinta.pas"/>
+        <DCCReference Include="..\..\relatorios\estoque\untRelEstListaPrecosTab.pas">
+            <Form>frmRelEstListaPrecosTab</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untModuloRelEstListaPrecosTab.pas">
+            <Form>frmModuloRelEstListaPrecosTab</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\genericos\untExcelOfc.pas"/>
+        <DCCReference Include="..\..\genericos\untExcelBRO.pas"/>
+        <DCCReference Include="..\..\relatorios\estoque\untRelEstLogAlteracaoMinMax.pas">
+            <Form>frmRelEstLogAlteracaoMinMax</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untRelEstPontoReposArm.pas">
+            <Form>frmRelEstPontoReposArm</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untRelEstTransfEntreArm.pas">
+            <Form>frmRelEstTransfEntreArm</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untRelEstComprasCondPagto.pas">
+            <Form>frmRelEstComprasCondPagto</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untRelEstComparativoPrecosFornec.pas">
+            <Form>frmRelEstComparativoPrecosFornec</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untRelEstEfetivacaoPrecos.pas">
+            <Form>frmRelEstEfetivacaoPrecos</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untRelEstMarkupCompras.pas">
+            <Form>frmRelEstMarkupCompras</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untRelEstFornecFormacaoPrecos.pas">
+            <Form>frmRelEstFornecFormacaoPrecos</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untRelEstListaPrecoGerFor.pas">
+            <Form>frmRelEstListaPrecoGerFor</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untRelEstAnaliseAbastMultEmp.pas">
+            <Form>frmRelEstAnaliseAbastMultEmp</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untRelEstListaPrecosGer.pas">
+            <Form>frmRelEstListaPrecosGer</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untRelEstLogLibPreNotaEntrada.pas">
+            <Form>FrmRelEstLogLibPreNotaEntrada</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untRelEstEvolucaoProducaoMensal.pas">
+            <Form>frmRelEstEvolucaoProducaoMensal</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untRelEstMovProducaoAjuste.pas">
+            <Form>frmRelEstMovProducaoAjuste</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untRelEstEntFutPosEntrega.pas">
+            <Form>frmRelEstEntFutPosEntrega</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untRelEstConferPreco.pas">
+            <Form>frmRelEstConferPreco</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untModuloRelEstMetasComprador.pas">
+            <Form>frmModuloRelEstMetasComprador</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untRelEstPosicaoEstDataFuncoes.pas"/>
+        <DCCReference Include="..\..\relatorios\estoque\untPosicaoEstDataThread.pas"/>
+        <DCCReference Include="..\..\relatorios\estoque\untRelEstMetasRapel.pas">
+            <Form>frmRelEstMetasRapel</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untRelEstPosicaoEstLocFis.pas">
+            <Form>frmRelEstPosicaoEstLocFis</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\configuracoes\untIConfiguracao.pas"/>
+        <DCCReference Include="..\..\relatorios\estoque\untRelEstPedCompra.pas">
+            <Form>frmRelEstPedCompra</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\genericos\untGravando.pas">
+            <Form>frmGravando</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\genericos\untGenericProcedureFormGravando.pas"/>
+        <DCCReference Include="..\..\Genericos\untModuloSPR.pas">
+            <Form>frmModuloSPR</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untModuloAnalitico.pas">
+            <Form>frmModuloAnalitico</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untModuloSintetico.pas">
+            <Form>frmModuloSintetico</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untModuloAnaSintPaisagem.pas">
+            <Form>frmModuloAnaSintPaisagem</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untAnaliticoEmbSep.pas">
+            <Form>frmAnaliticoEmbSep</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untModuloRelEstGirEstVendaC2.pas">
+            <Form>rmModuloRelEstGirEstVendaC2</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untModuloRelEstGirEstVendaR2.pas">
+            <Form>frmModuloRelEstGirEstVendaR2</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untModuloRelEstGirEstVendaC3.pas">
+            <Form>frmModuloRelEstGirEstVendaC3</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untModuloRelEstGirEstVendaR3.pas">
+            <Form>frmModuloRelEstGirEstVendaR3</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untRelEstLogTransfLocFisGlobalWMS.pas">
+            <Form>frmRelEstLogTransfLocFisGlobalWMS</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\interfaces\untIFuncoes.pas"/>
+        <DCCReference Include="..\..\genericos\untTypesSistema.pas"/>
+        <DCCReference Include="..\..\cadastros\untICamGer.pas"/>
+        <DCCReference Include="..\..\cadastros\untIControlePagtoFunc.pas"/>
+        <DCCReference Include="..\..\relatorios\faturamento\untIValorRecebido.pas"/>
+        <DCCReference Include="..\..\util\untIFastPrint.pas"/>
+        <DCCReference Include="..\..\genericos\untIMetAno.pas"/>
+        <DCCReference Include="..\..\FuncoesCentralizadas\untInterfacedObjectNoCount.pas"/>
+        <DCCReference Include="..\geral\TypesRel.pas"/>
+        <DCCReference Include="..\..\relatorios\genericos\untPaiQck.pas">
+            <Form>frmPaiQck</Form>
+        </DCCReference>
+        <DCCReference Include="..\geral\untModulo.pas">
+            <Form>frmModulo</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\genericos\untPai.pas">
+            <Form>frmPai</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\funcoes\untFuncoesFactory.pas"/>
+        <DCCReference Include="..\..\cadastros\untIIteBar.pas"/>
+        <DCCReference Include="..\..\util\EditorEtiquetas\untIFuncoesEditorFast.pas"/>
+        <DCCReference Include="..\..\util\EditorEtiquetas\untIOrdenacao.pas"/>
+        <DCCReference Include="..\..\faturamento\untIMadeireira.pas"/>
+        <DCCReference Include="..\..\faturamento\untIFinanceira.pas"/>
+        <DCCReference Include="..\..\util\EditorEtiquetas\untIDocumentos.pas"/>
+        <DCCReference Include="..\..\genericos\untICamposUso.pas"/>
+        <DCCReference Include="..\..\genericos\untIFuncMacro.pas"/>
+        <DCCReference Include="..\..\genericos\untIZClient.pas"/>
+        <DCCReference Include="..\..\relatorios\genericos\untPaiCad.pas">
+            <Form>frmPaiCad</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\genericos\untCadConfRelatorios.pas">
+            <Form>frmCadConfRelatorios</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\genericos\untPaiRelatorio.pas">
+            <Form>frmPaiRelatorio</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\genericos\untGeraExcel.pas"/>
+        <DCCReference Include="..\..\cadastros\untICadLote.pas"/>
+        <DCCReference Include="..\..\genericos\untIFiltrosRelatorio.pas"/>
+        <DCCReference Include="..\..\relatorios\genericos\untPaiOrdena.pas">
+            <Form>frmPaiOrdena</Form>
+        </DCCReference>
+        <DCCReference Include="..\geral\untDllRelatorios.pas"/>
+        <DCCReference Include="..\..\relatorios\estoque\untRelEstReposicaoPickink.pas">
+            <Form>frmRelEstReposicaoPickink</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\genericos\untCfgRel.pas"/>
+        <DCCReference Include="..\..\genericos\untFuncoesLibFuncoes.pas"/>
+        <DCCReference Include="..\..\..\..\LibTintas\libTintasComum\Tipos\untGTinForTipos.pas"/>
+        <DCCReference Include="..\..\..\..\LibTintas\libTintasComum\Tipos\untTipoTinta.pas"/>
+        <DCCReference Include="..\..\relatorios\estoque\untRelEstCorrecoesBxOp.pas">
+            <Form>frmRelEstCorrecoesBxOp</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untQckRelEstCorrecoesBxOp.pas">
+            <Form>frmQckRelEstCorrecoesBxOp</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\movimentacaoitens\PedidoDeCompra\untIMesesGiro.pas"/>
+        <DCCReference Include="..\..\cadastros\untSelFilImpressao.pas">
+            <Form>frmSelFilImpressao</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untModuloRelEstMetasDespesas.pas">
+            <Form>frmModuloRelEstMetasDespesas</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untRelEstEnderecamentoComOperador.pas">
+            <Form>frmRelEstEnderecamentoComOperador</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\genericos\untITSQLTrace.pas"/>
+        <DCCReference Include="..\..\genericos\untPaiSQLTrace.pas">
+            <Form>frmPaiSQLTrace</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\..\genericos\untLogForm.pas"/>
+        <DCCReference Include="..\..\..\..\AutcomTinta\untConsultaCadAcaLojas.pas">
+            <Form>frmConsultaCadAcaLojas</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untModuloRelEstPosicaoEstData.pas">
+            <Form>frmModuloRelEstPosicaoEstData</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\estoque\untRelCatalogoLinhaGrupo.pas">
+            <Form>frmRelCatalogoLinhaGrupo</Form>
+        </DCCReference>
+        <BuildConfiguration Include="Debug">
+            <Key>Cfg_2</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Base">
+            <Key>Base</Key>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Release">
+            <Key>Cfg_1</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+    </ItemGroup>
+    <Import Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj" Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')"/>
+    <Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
+    <Import Project="$(MSBuildProjectName).deployproj" Condition="Exists('$(MSBuildProjectName).deployproj')"/>
+</Project>

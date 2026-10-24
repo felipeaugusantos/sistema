@@ -1,0 +1,29 @@
+object fraCheckComboBoxOcorrencia: TfraCheckComboBoxOcorrencia
+  Left = 0
+  Top = 0
+  Width = 405
+  Height = 26
+  TabOrder = 0
+  object chkcbOcorrencia: TcxCheckComboBox
+    Left = 2
+    Top = 2
+    Properties.EmptySelectionText = 'Selecione'
+    Properties.DropDownRows = 20
+    Properties.EditValueFormat = cvfCaptions
+    Properties.Items = <>
+    Style.LookAndFeel.Kind = lfUltraFlat
+    Style.LookAndFeel.NativeStyle = False
+    Style.LookAndFeel.ScrollbarMode = sbmClassic
+    StyleDisabled.LookAndFeel.Kind = lfUltraFlat
+    StyleDisabled.LookAndFeel.NativeStyle = False
+    StyleDisabled.LookAndFeel.ScrollbarMode = sbmClassic
+    StyleFocused.LookAndFeel.Kind = lfUltraFlat
+    StyleFocused.LookAndFeel.NativeStyle = False
+    StyleFocused.LookAndFeel.ScrollbarMode = sbmClassic
+    StyleHot.LookAndFeel.Kind = lfUltraFlat
+    StyleHot.LookAndFeel.NativeStyle = False
+    StyleHot.LookAndFeel.ScrollbarMode = sbmClassic
+    TabOrder = 0
+    Width = 400
+  end
+end

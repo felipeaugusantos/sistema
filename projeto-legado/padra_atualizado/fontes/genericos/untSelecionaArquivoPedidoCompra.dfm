@@ -1,0 +1,147 @@
+inherited frmSelecionaArquivoPedidoCompra: TfrmSelecionaArquivoPedidoCompra
+  Width = 432
+  Height = 213
+  Caption = 'Selecione o arquivo'
+  ExplicitWidth = 432
+  ExplicitHeight = 213
+  PixelsPerInch = 96
+  TextHeight = 14
+  object Label1: TLabel [0]
+    Left = 8
+    Top = 3
+    Width = 96
+    Height = 14
+    Caption = 'Selecione o Arquivo'
+  end
+  object Label2: TLabel [1]
+    Left = 8
+    Top = 52
+    Width = 125
+    Height = 14
+    Caption = 'Modelo que ser'#225' utilizado:'
+  end
+  object lblModelo: TLabel [2]
+    Left = 139
+    Top = 52
+    Width = 54
+    Height = 14
+    Caption = 'lblModelo'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clBlue
+    Font.Height = 14
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Style = [fsBold, fsUnderline]
+    ParentFont = False
+    OnClick = lblModeloClick
+  end
+  object Label4: TLabel [3]
+    Left = 0
+    Top = 128
+    Width = 426
+    Height = 14
+    Align = alBottom
+    Alignment = taCenter
+    Caption = 'clique sobre o modelo para alter'#225'-lo.'
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clRed
+    Font.Height = 14
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Style = []
+    ParentFont = False
+    ExplicitTop = 70
+    ExplicitWidth = 175
+  end
+  inherited pnlBotoes: TPanel
+    Top = 142
+    Width = 426
+    ExplicitTop = 84
+    ExplicitWidth = 426
+    inherited FlwBotoes: TFlowPanel
+      Width = 345
+      ExplicitWidth = 345
+    end
+    inherited btnSair: TBitBtnLocked
+      Left = 347
+      Top = 2
+      Align = alRight
+      ExplicitLeft = 347
+      ExplicitTop = 2
+    end
+  end
+  inherited pnlStatus: TPanel
+    Top = 168
+    Width = 426
+    ExplicitTop = 110
+    ExplicitWidth = 426
+    inherited pnlNomeForm: TPanel
+      Left = 255
+      ExplicitLeft = 255
+    end
+    inherited pnlInfo: TPanel
+      Width = 255
+      ExplicitWidth = 255
+    end
+  end
+  object edtArquivo: TFilenameEditFocus [6]
+    Left = 8
+    Top = 20
+    Properties.Buttons = <
+      item
+        Default = True
+        Glyph.SourceDPI = 96
+        Glyph.Data = {
+          424D360400000000000036000000280000001000000010000000010020000000
+          000000000000C40E0000C40E0000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          00000000000000000000000000000000000000000000004080FF4060A0FF4060
+          A0FF4060A0FF4060A0FF4060A0FF4060A0FF4060A0FF4060A0FF4060A0FF4060
+          A0FF4060A0FF4060A0FF004080FF00000000000000004060A0FF4060A0FF80A0
+          E0FF80C0E0FF40A0E0FF40A0E0FF40A0E0FF40A0E0FF40A0E0FF40A0E0FF40A0
+          E0FF40A0E0FF40A0E0FF4080C0FF002040FF000000004060A0FF4080C0FF4080
+          C0FF80E0E0FF80C0E0FF40C0E0FF40A0E0FF40A0E0FF40A0E0FF40A0E0FF40A0
+          E0FF40A0E0FF40A0E0FF40A0E0FF004080FF000000004060C0FF80A0E0FF4080
+          C0FF80E0E0FF80E0E0FF80C0E0FF80C0E0FF80C0E0FF40C0E0FF40C0E0FF40C0
+          E0FF40C0E0FF40A0E0FF40A0E0FF4060C0FF000000004080C0FF80C0E0FF40A0
+          E0FF80C0E0FFF0FBFFFF80C0E0FF80C0E0FF80C0E0FF80C0E0FF80C0E0FF80C0
+          E0FF80C0E0FF80C0E0FF80C0E0FF4080C0FF002040FF4080C0FF80E0E0FF80C0
+          E0FF40A0E0FFF0FBFFFFF0FBFFFFF0FBFFFFF0FBFFFFF0FBFFFFF0FBFFFFF0FB
+          FFFFF0FBFFFFF0FBFFFFF0FBFFFF80C0E0FF406080FF4080C0FFF0FBFFFF80E0
+          E0FF80C0E0FF40A0E0FF40A0E0FF40A0E0FF40A0C0FF40A0C0FF40A0C0FF40A0
+          C0FF40A0C0FF4080C0FF4080C0FF4080C0FF4060A0FF4080C0FFF0FBFFFF80E0
+          E0FF80E0E0FF80E0E0FF80E0E0FF80E0E0FF80E0E0FF80E0E0FF80E0E0FF80E0
+          E0FF80E0E0FF4060C0FF0000000000000000000000004080C0FFF0FBFFFF80E0
+          E0FF80E0E0FF80E0E0FF80E0E0FFF0FBFFFFF0FBFFFFF0FBFFFFF0FBFFFFF0FB
+          FFFFF0FBFFFF4080C0FF00000000000000000000000040A0C0FFF0FBFFFFF0FB
+          FFFFF0FBFFFFF0FBFFFFF0FBFFFF40A0C0FF4080C0FF4080C0FF4080C0FF4080
+          C0FF4080C0FF4060A0FF00000000000000000000000040A0C0FFF0FBFFFFF0FB
+          FFFFF0FBFFFFF0FBFFFF4080C0FF000000000000000000000000000000000000
+          000000000000000000000000000000000000000000004080A0FF40A0E0FF40A0
+          E0FF40A0E0FF40A0C0FF004040FF000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          00000000000000000000000000000000000000000000}
+        Kind = bkGlyph
+      end>
+    StyleFocused.Color = clInfoBk
+    TabOrder = 2
+    Width = 406
+  end
+  object rgpQuantidade: TRadioGroup [7]
+    Left = 8
+    Top = 71
+    Width = 405
+    Height = 51
+    Caption = 'O'#231#245'es para quantidades'
+    ItemIndex = 0
+    Items.Strings = (
+      'Acumular'
+      'Manter quantidade do arquivo ('#250'ltima quantidade encontrada)')
+    TabOrder = 3
+  end
+end

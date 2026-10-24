@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TfrxReport Version="4.3.61" DotMatrixReport="False" IniFile="\Software\Fast Reports" PreviewOptions.Buttons="4095" PreviewOptions.Zoom="1" PrintOptions.Printer="Padrão" PrintOptions.PrintOnSheet="0" ReportOptions.CreateDate="39520,6367656713" ReportOptions.Description.Text="" ReportOptions.LastChange="40080,4704115972" ScriptLanguage="PascalScript" ScriptText.Text="begin&#13;&#10;&#13;&#10;end." PropData="044C65667403900103546F7002500844617461736574730100095661726961626C65730100055374796C650100">
+  <TfrxDataPage Name="Data" Height="1000" Left="0" Top="0" Width="1000"/>
+  <TfrxReportPage Name="Page1" PaperWidth="95" PaperHeight="45" PaperSize="256" LeftMargin="0" RightMargin="0" TopMargin="0" BottomMargin="3,17" ColumnWidth="0" ColumnPositions.Text="" Frame.Width="5" HGuides.Text="" VGuides.Text="">
+    <TfrxMemoView Name="rllNomVen" Left="190,60637" Top="16,86611" Width="154,66141" Height="18,89765" DisplayFormat.DecimalSeparator="," Font.Charset="1" Font.Color="0" Font.Height="-11" Font.Name="Arial" Font.Style="0" ParentFont="False" WordWrap="False" Text="[NOMVE2]"/>
+    <TfrxMemoView Name="rllDesTin" Left="10,77953" Top="89" Width="334,48825" Height="37,11812" DisplayFormat.DecimalSeparator="," Font.Charset="1" Font.Color="0" Font.Height="-12" Font.Name="Arial" Font.Style="7" ParentFont="False" Text="[DESTIN]"/>
+    <TfrxMemoView Name="rllDtaEmi" Left="10,77953" Top="132,29128" Width="158,48825" Height="18,89765" DisplayFormat.DecimalSeparator="," Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="0" ParentFont="False" WordWrap="False" Text="[DTAEMI]"/>
+    <TfrxMemoView Name="rllDtaVal" Left="181,77953" Top="132,29128" Width="163,48825" Height="18,89765" DisplayFormat.DecimalSeparator="," Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="0" HAlign="haRight" ParentFont="False" WordWrap="False" Text="[DTAVAL]"/>
+    <TfrxPictureView Name="imgLogo" Left="7" Top="13" Width="108,28355" Height="64,33859"/>
+    <TfrxMemoView Name="Memo1" Left="120,94496" Top="16,89765" Width="67,73222" Height="18,89765" DisplayFormat.DecimalSeparator="," Font.Charset="1" Font.Color="0" Font.Height="-11" Font.Name="Arial" Font.Style="0" ParentFont="False" WordWrap="False" Text="VENDEDOR:"/>
+    <TfrxMemoView Name="rllNumDoc" Left="120,94496" Top="64,25201" Width="221,74026" Height="15,11812" DisplayFormat.DecimalSeparator="," Font.Charset="1" Font.Color="0" Font.Height="-11" Font.Name="Arial" Font.Style="0" ParentFont="False" WordWrap="False" Text="COD.COLORISTA: _____________________"/>
+  </TfrxReportPage>
+</TfrxReport>

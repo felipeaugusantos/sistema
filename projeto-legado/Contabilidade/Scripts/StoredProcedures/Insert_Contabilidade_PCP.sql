@@ -1,0 +1,252 @@
+DELIMITER $$
+
+DROP PROCEDURE IF EXISTS `Insert_Contabilidade_PCP` $$
+
+CREATE PROCEDURE `Insert_Contabilidade_PCP` () 
+BEGIN
+  INSERT CONLOG (
+    LOG_TIPLAN,
+    LOG_EMPLAN,
+    LOG_TABELA,
+    LOG_PROCES,
+    LOG_INCDOC,
+    LOG_MODLAN,
+    LOG_STATUS
+  ) 
+  SELECT DISTINCT 
+    "PCP",
+    CTP.CTP_CODEMP,
+    "CADPAG",
+    0,
+    CTP.AUTOINCREM,
+    1,
+    NULL 
+  FROM
+    CADPAG CTP 
+    LEFT JOIN CFGSIS 
+      ON SIS_CODEMP = CTP.CTP_CODEMP 
+      AND SIS_VALCFG = 'CFG_EXUCCP' 
+    LEFT JOIN CTPDET D 
+      ON CTP.CTP_CODFOR = D.CTP_CODFOR 
+      AND CTP.CTP_NUMDUP = D.CTP_NUMDUP 
+      AND CTP.CTP_PARCEL = D.CTP_PARCEL 
+      AND CTP.CTP_CODEMP = D.CTP_EMPORI 
+      AND (
+        (CTP.CTP_SERIE_ = D.CTP_SERIE_) 
+        OR (
+          (
+            (CTP.CTP_SERIE_ IS NULL) 
+            OR (CTP.CTP_SERIE_ = "")
+          ) 
+          AND (
+            (D.CTP_SERIE_ IS NULL) 
+            OR (D.CTP_SERIE_ = "")
+          )
+        )
+      ) 
+    LEFT JOIN CADCTA CTACAD 
+      ON CTACAD.CTA_CODCTA = IF(
+        D.CTP_CODCTA IS NULL,
+        CTP.CTP_CODCTA,
+        D.CTP_CODCTA
+      ) 
+    LEFT JOIN DUPAGP AGR 
+      ON AGR.CTP_NUMAGR = CTP.CTP_NUMDUP 
+      AND AGR.CTP_EMPAGR = CTP.CTP_CODEMP 
+      AND AGR.CTP_CODFOR = CTP.CTP_CODFOR 
+      AND AGR.CTP_PARCEL = CTP.CTP_PARCEL 
+    LEFT JOIN CADFIS 
+      ON FIS_NUMDOC = IF(
+        SUBSTRING(CTP.CTP_NUMDUP, 1, 2) = "AG",
+        AGR.CTP_NUMDUP,
+        CTP.CTP_NUMDUP
+      ) 
+      AND FIS_CODEMP = IF(
+        SUBSTRING(CTP.CTP_NUMDUP, 1, 2) = "AG",
+        AGR.CTP_CODEMP,
+        CTP.CTP_CODEMP
+      ) 
+      AND FIS_FORCLI = IF(
+        SUBSTRING(CTP.CTP_NUMDUP, 1, 2) = "AG",
+        AGR.CTP_CODFOR,
+        CTP.CTP_CODFOR
+      ) 
+      AND FIS_TIP_FC = "F" 
+      AND IFNULL(FIS_SERIE_, "") = IF(
+        SUBSTRING(CTP.CTP_NUMDUP, 1, 2) = "AG",
+        IFNULL(AGR.CTP_SERIE_, ""),
+        IFNULL(CTP.CTP_SERIE_, "")
+      ) 
+  WHERE CTP.CTP_DTACAD = CURRENT_DATE 
+    AND (
+      IF(
+        IFNULL(SIS_VALCFG, "S") = "S",
+        TRUE,
+        CTP.CTP_USOCON = "N"
+      )
+    ) 
+    AND CTACAD.CTA_PROCON = 1 
+    AND CADFIS.AUTOINCREM IS NULL 
+  UNION
+  ALL 
+  SELECT DISTINCT 
+    "PCP",
+    CTP.CTP_CODEMP,
+    "CADPAG",
+    0,
+    CTP.AUTOINCREM,
+    2,
+    NULL 
+  FROM
+    DEL_CADPAG CTP 
+    LEFT JOIN CFGSIS 
+      ON SIS_CODEMP = CTP.CTP_CODEMP 
+      AND SIS_VALCFG = 'CFG_EXUCCP' 
+    LEFT JOIN DEL_CTPDET D 
+      ON CTP.CTP_CODFOR = D.CTP_CODFOR 
+      AND CTP.CTP_NUMDUP = D.CTP_NUMDUP 
+      AND CTP.CTP_PARCEL = D.CTP_PARCEL 
+      AND CTP.CTP_CODEMP = D.CTP_EMPORI 
+      AND (
+        (CTP.CTP_SERIE_ = D.CTP_SERIE_) 
+        OR (
+          (
+            (CTP.CTP_SERIE_ IS NULL) 
+            OR (CTP.CTP_SERIE_ = "")
+          ) 
+          AND (
+            (D.CTP_SERIE_ IS NULL) 
+            OR (D.CTP_SERIE_ = "")
+          )
+        )
+      ) 
+    LEFT JOIN CADCTA CTACAD 
+      ON CTACAD.CTA_CODCTA = IF(
+        D.CTP_CODCTA IS NULL,
+        CTP.CTP_CODCTA,
+        D.CTP_CODCTA
+      ) 
+    LEFT JOIN DUPAGP AGR 
+      ON AGR.CTP_NUMAGR = CTP.CTP_NUMDUP 
+      AND AGR.CTP_EMPAGR = CTP.CTP_CODEMP 
+      AND AGR.CTP_CODFOR = CTP.CTP_CODFOR 
+      AND AGR.CTP_PARCEL = CTP.CTP_PARCEL 
+    LEFT JOIN CADFIS 
+      ON FIS_NUMDOC = IF(
+        SUBSTRING(CTP.CTP_NUMDUP, 1, 2) = "AG",
+        AGR.CTP_NUMDUP,
+        CTP.CTP_NUMDUP
+      ) 
+      AND FIS_CODEMP = IF(
+        SUBSTRING(CTP.CTP_NUMDUP, 1, 2) = "AG",
+        AGR.CTP_CODEMP,
+        CTP.CTP_CODEMP
+      ) 
+      AND FIS_FORCLI = IF(
+        SUBSTRING(CTP.CTP_NUMDUP, 1, 2) = "AG",
+        AGR.CTP_CODFOR,
+        CTP.CTP_CODFOR
+      ) 
+      AND FIS_TIP_FC = "F" 
+      AND IFNULL(FIS_SERIE_, "") = IF(
+        SUBSTRING(CTP.CTP_NUMDUP, 1, 2) = "AG",
+        IFNULL(AGR.CTP_SERIE_, ""),
+        IFNULL(CTP.CTP_SERIE_, "")
+      ) 
+  WHERE CTP.DTADEL = CURRENT_DATE 
+    AND (
+      IF(
+        IFNULL(SIS_VALCFG, "S") = "S",
+        TRUE,
+        CTP.CTP_USOCON = "N"
+      )
+    ) 
+    AND CTACAD.CTA_PROCON = 1 
+    AND CADFIS.AUTOINCREM IS NULL 
+  UNION
+  ALL 
+  SELECT DISTINCT 
+    "PCP",
+    CTP.CTP_CODEMP,
+    "CADPAG",
+    0,
+    CTP.AUTOINCREM,
+    2,
+    NULL 
+  FROM
+    LOGCTP LCP 
+    JOIN CADPAG CTP 
+      ON CTP.CTP_NUMDUP = LCP.CTP_NUMDUP 
+      AND CTP.CTP_CODEMP = LCP.CTP_CODEMP 
+      AND CTP.CTP_CODFOR = LCP.CTP_CODFOR 
+      AND CTP.CTP_PARCEL = LCP.CTP_PARCEL 
+      AND CTP.CTP_SEQBAI = LCP.CTP_SEQBAI 
+      AND IFNULL(CTP.CTP_SERIE_, "") = IFNULL(LCP.CTP_SERIE_, "") 
+    LEFT JOIN CFGSIS 
+      ON SIS_CODEMP = CTP.CTP_CODEMP 
+      AND SIS_VALCFG = 'CFG_EXUCCP' 
+    LEFT JOIN CTPDET D 
+      ON CTP.CTP_CODFOR = D.CTP_CODFOR 
+      AND CTP.CTP_NUMDUP = D.CTP_NUMDUP 
+      AND CTP.CTP_PARCEL = D.CTP_PARCEL 
+      AND CTP.CTP_CODEMP = D.CTP_EMPORI 
+      AND (
+        (CTP.CTP_SERIE_ = D.CTP_SERIE_) 
+        OR (
+          (
+            (CTP.CTP_SERIE_ IS NULL) 
+            OR (CTP.CTP_SERIE_ = "")
+          ) 
+          AND (
+            (D.CTP_SERIE_ IS NULL) 
+            OR (D.CTP_SERIE_ = "")
+          )
+        )
+      ) 
+    LEFT JOIN CADCTA CTACAD 
+      ON CTACAD.CTA_CODCTA = IF(
+        D.CTP_CODCTA IS NULL,
+        CTP.CTP_CODCTA,
+        D.CTP_CODCTA
+      ) 
+    LEFT JOIN DUPAGP AGR 
+      ON AGR.CTP_NUMAGR = CTP.CTP_NUMDUP 
+      AND AGR.CTP_EMPAGR = CTP.CTP_CODEMP 
+      AND AGR.CTP_CODFOR = CTP.CTP_CODFOR 
+      AND AGR.CTP_PARCEL = CTP.CTP_PARCEL 
+    LEFT JOIN CADFIS 
+      ON FIS_NUMDOC = IF(
+        SUBSTRING(CTP.CTP_NUMDUP, 1, 2) = "AG",
+        AGR.CTP_NUMDUP,
+        CTP.CTP_NUMDUP
+      ) 
+      AND FIS_CODEMP = IF(
+        SUBSTRING(CTP.CTP_NUMDUP, 1, 2) = "AG",
+        AGR.CTP_CODEMP,
+        CTP.CTP_CODEMP
+      ) 
+      AND FIS_FORCLI = IF(
+        SUBSTRING(CTP.CTP_NUMDUP, 1, 2) = "AG",
+        AGR.CTP_CODFOR,
+        CTP.CTP_CODFOR
+      ) 
+      AND FIS_TIP_FC = "F" 
+      AND IFNULL(FIS_SERIE_, "") = IF(
+        SUBSTRING(CTP.CTP_NUMDUP, 1, 2) = "AG",
+        IFNULL(AGR.CTP_SERIE_, ""),
+        IFNULL(CTP.CTP_SERIE_, "")
+      ) 
+  WHERE LCP.CTP_DESCRI LIKE '%ESTORNO%' 
+    AND LCP.CTP_DTALOG = CURRENT_DATE 
+    AND (
+      IF(
+        IFNULL(SIS_VALCFG, "S") = "S",
+        TRUE,
+        CTP.CTP_USOCON = "N"
+      )
+    ) 
+    AND CTACAD.CTA_PROCON = 1 
+    AND CADFIS.AUTOINCREM IS NULL  ;
+END $$
+  
+DELIMITER ;

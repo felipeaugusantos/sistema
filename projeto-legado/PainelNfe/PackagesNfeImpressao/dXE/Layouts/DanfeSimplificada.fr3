@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<TfrxReport Tag="1" Version="5.6.11" DotMatrixReport="False" EngineOptions.DoublePass="True" IniFile="\Software\Fast Reports" PreviewOptions.Buttons="3577" PreviewOptions.Zoom="1" PrintOptions.Printer="Default" PrintOptions.PrintOnSheet="0" ReportOptions.CreateDate="40401,475989294" ReportOptions.Description.Text="" ReportOptions.LastChange="44258,4578696644" ScriptLanguage="PascalScript" ScriptText.Text="begin&#13;&#10;&#13;&#10;end." OnReportPrint="frxReportOnReportPrint">
+  <Datasets>
+    <item DataSetName="Identificacao"/>
+    <item DataSetName="Emitente"/>
+    <item DataSetName="Destinatario"/>
+    <item DataSetName="DadosProdutos"/>
+    <item DataSetName="Parametros"/>
+    <item DataSetName="Duplicatas"/>
+    <item DataSetName="CalculoImposto"/>
+    <item DataSetName="Transportador"/>
+    <item DataSetName="Veiculo"/>
+    <item DataSetName="Volumes"/>
+    <item DataSetName="Eventos"/>
+    <item DataSetName="ISSQN"/>
+    <item DataSetName="Fatura"/>
+    <item DataSetName="LocalRetirada"/>
+    <item DataSetName="LocalEntrega"/>
+    <item DataSetName="InformacoesAdicionais"/>
+    <item DataSetName="Pagamento"/>
+    <item DataSetName="Inutilizacao"/>
+  </Datasets>
+  <Variables>
+    <item Name=" User"/>
+    <item Name="LinhasImpressas"/>
+    <item Name="NumeroPagina"/>
+    <item Name="TamRodapeMinimo"/>
+    <item Name="TamObsPrevisto"/>
+    <item Name="TamObsNormal"/>
+  </Variables>
+  <TfrxDataPage Name="Data" Height="1000" Left="0" Top="0" Width="1000"/>
+  <TfrxReportPage Name="Page1" PaperWidth="100" PaperHeight="150" PaperSize="256" LeftMargin="6" RightMargin="6,5" TopMargin="5" BottomMargin="4" ColumnWidth="0" ColumnPositions.Text="" BackPictureVisible="False" LargeDesignHeight="True" HGuides.Text="" VGuides.Text="" OnBeforePrint="Page1OnBeforePrint">
+    <TfrxPageHeader Name="Header" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Height="161,763779527559" Left="0" Top="18,89765" Width="330,708875" OnBeforePrint="EmitenteOnBeforePrint" Child="CEmitente">
+      <TfrxBarCodeView Name="BarCodeChave" Left="22,36981756" Top="51,17316" Width="277" Height="37,79527559" BarType="bcCode128C" DataField="Id" DataSetName="Identificacao" Rotation="0" ShowText="False" TestLine="False" Text="12345678901234567890123456789012345678901234" WideBarRatio="2" Zoom="1" Font.Charset="1" Font.Color="0" Font.Height="-12" Font.Name="Arial" Font.Style="0"/>
+      <TfrxMemoView Name="Memo6" Left="0" Top="88,74799" Width="321,26005" Height="15,11812" Font.Charset="0" Font.Color="0" Font.Height="-9" Font.Name="Courier New" Font.Style="1" Frame.Width="0,5" GapY="2" HAlign="haCenter" ParentFont="False" Text="CHAVE DE ACESSO"/>
+      <TfrxMemoView Name="Memo8" Left="0" Top="102,30701339" Width="321,26005" Height="11,33859" Font.Charset="1" Font.Color="0" Font.Height="-9" Font.Name="Courier New" Font.Style="1" Frame.Width="0,5" HAlign="haCenter" ParentFont="False" VAlign="vaBottom" Text="[Identificacao.&#34;Chave&#34;]"/>
+      <TfrxMemoView Name="Memo12" Left="1,77953" Top="5,05504" Width="219,21274" Height="37,7953" Font.Charset="0" Font.Color="0" Font.Height="-11" Font.Name="Courier New" Font.Style="1" Frame.Width="0,5" HAlign="haCenter" ParentFont="False" VAlign="vaCenter" Text="DANFE SIMPLIFICADO&#13;&#10;DOCUMENTO AUXILIAR DA NOTA FISCAL ELETRÔNICA"/>
+      <TfrxMemoView Name="Memo13" Left="257,02381" Top="26,51175" Width="64,25201" Height="22,67718" Font.Charset="1" Font.Color="0" Font.Height="-9" Font.Name="Courier New" Font.Style="0" Frame.Width="0,5" HAlign="haRight" ParentFont="False" WordWrap="False" Text="[Identificacao.&#34;NNF&#34;]&#13;&#10;[Identificacao.&#34;Serie&#34; #n#000]">
+        <Formats>
+          <item/>
+          <item/>
+        </Formats>
+      </TfrxMemoView>
+      <TfrxMemoView Name="Memo15" Left="223,00804" Top="5,05504" Width="64,25201" Height="18,89765" Font.Charset="0" Font.Color="0" Font.Height="-8" Font.Name="Courier New" Font.Style="0" Frame.Width="0,5" ParentFont="False" VAlign="vaCenter" Text="0 - ENTRADA&#13;&#10;1 - SAÍDA"/>
+      <TfrxMemoView Name="Memo16" Left="302,37818465" Top="8,05505465" Width="18,89763535" Height="15,11810535" Font.Charset="0" Font.Color="0" Font.Height="-11" Font.Name="Courier New" Font.Style="1" Frame.Typ="15" Frame.Width="0,5" HAlign="haCenter" ParentFont="False" WordWrap="False" VAlign="vaCenter" Text="[Identificacao.&#34;TpNF&#34;]"/>
+      <TfrxMemoView Name="Memo19" Left="3,77953" Top="135,61411953" Width="166,29932" Height="13,22834646" Font.Charset="0" Font.Color="0" Font.Height="-9" Font.Name="Courier New" Font.Style="1" Frame.Width="0,5" GapY="2" ParentFont="False" Text="NATUREZA DA OPERAÇÃO"/>
+      <TfrxMemoView Name="Memo21" Left="0" Top="112,55906" Width="321,26005" Height="11,33857535" Font.Charset="0" Font.Color="0" Font.Height="-8" Font.Name="Courier New" Font.Style="0" Frame.Width="0,5" GapY="2" HAlign="haCenter" ParentFont="False" Text="[Parametros.&#34;Contingencia_Descricao&#34;]"/>
+      <TfrxMemoView Name="Memo22" Left="0" Top="123,87394252" Width="321,26005" Height="13,22834402" Font.Charset="1" Font.Color="0" Font.Height="-9" Font.Name="Courier New" Font.Style="0" Frame.Width="0,5" HAlign="haCenter" ParentFont="False" VAlign="vaBottom" Text="[Parametros.&#34;Contingencia_Valor&#34;]"/>
+      <TfrxMemoView Name="Memo2" Left="223,00804" Top="26,51175" Width="34,01577" Height="22,67718" Font.Charset="1" Font.Color="0" Font.Height="-9" Font.Name="Courier New" Font.Style="0" Frame.Width="0,5" ParentFont="False" WordWrap="False" Text="Nº&#13;&#10;SÉRIE">
+        <Formats>
+          <item/>
+          <item/>
+        </Formats>
+      </TfrxMemoView>
+      <TfrxMemoView Name="Memo3" Left="226,55133" Top="135,61411953" Width="94,48825" Height="13,22834646" Font.Charset="1" Font.Color="0" Font.Height="-9" Font.Name="Courier New" Font.Style="0" Frame.Width="0,5" HAlign="haRight" ParentFont="False" WordWrap="False" VAlign="vaCenter" Text="[Identificacao.&#34;DEmi&#34;] [Identificacao.&#34;HEmi&#34;]">
+        <Formats>
+          <item/>
+          <item/>
+        </Formats>
+      </TfrxMemoView>
+      <TfrxMemoView Name="Memo4" Left="171,41744" Top="135,61411953" Width="52,91342" Height="13,22834646" Font.Charset="1" Font.Color="0" Font.Height="-9" Font.Name="Courier New" Font.Style="1" Frame.Width="0,5" ParentFont="False" WordWrap="False" Text="EMISSÃO"/>
+      <TfrxMemoView Name="Memo5" Left="226,55133" Top="147,96073" Width="94,48825" Height="13,22834646" Font.Charset="1" Font.Color="0" Font.Height="-9" Font.Name="Courier New" Font.Style="0" Frame.Width="0,5" HAlign="haRight" ParentFont="False" WordWrap="False" VAlign="vaCenter" Text="__/__/____ __:__">
+        <Formats>
+          <item/>
+          <item/>
+        </Formats>
+      </TfrxMemoView>
+      <TfrxMemoView Name="Memo7" Left="171,41744" Top="147,96073" Width="52,91342" Height="13,22834646" Font.Charset="1" Font.Color="0" Font.Height="-9" Font.Name="Courier New" Font.Style="1" Frame.Width="0,5" ParentFont="False" WordWrap="False" Text="SAÍDA"/>
+      <TfrxMemoView Name="Memo14" Left="3,77953" Top="147,96073" Width="166,29932" Height="13,22834646" Font.Charset="0" Font.Color="0" Font.Height="-9" Font.Name="Courier New" Font.Style="1" Frame.Width="0,5" GapY="2" ParentFont="False" Text="[Identificacao.&#34;NatOp&#34;]"/>
+      <TfrxMemoView Name="Memo20" Left="0" Top="0" Width="332,59864" Height="7,55906" Font.Charset="0" Font.Color="0" Font.Height="-8" Font.Name="Courier New" Font.Style="0" Frame.Width="0,5" GapX="0" GapY="0" ParentFont="False" WordWrap="False" VAlign="vaBottom" Text="---------------------------------------------------------------------"/>
+    </TfrxPageHeader>
+    <TfrxPageFooter Name="Rodape" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Height="17,00786913" Left="0" Top="653,85869" Width="330,708875">
+      <TfrxMemoView Name="memDataHora" Left="0" Top="5,13385827" Width="332,59864" Height="11,3385778" StretchMode="smMaxHeight" Font.Charset="0" Font.Color="0" Font.Height="-8" Font.Name="Courier New" Font.Style="0" Frame.Width="0,5" GapX="0" GapY="0" HAlign="haCenter" ParentFont="False" VAlign="vaCenter" Text="[Date #ddd/mm/yyyy] [Time #dhh:mm:ss] - [Parametros.&#34;Sistema&#34;]">
+        <Formats>
+          <item/>
+          <item/>
+          <item/>
+        </Formats>
+      </TfrxMemoView>
+      <TfrxMemoView Name="Memo35" Left="0" Top="0" Width="332,59864" Height="7,55906" Font.Charset="0" Font.Color="0" Font.Height="-8" Font.Name="Courier New" Font.Style="0" Frame.Width="0,5" GapX="0" GapY="0" ParentFont="False" WordWrap="False" VAlign="vaBottom" Text="---------------------------------------------------------------------"/>
+    </TfrxPageFooter>
+    <TfrxMasterData Name="Destinatario" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Height="27,21256425" Left="0" Top="294,80334" Width="330,708875" ColumnWidth="0" ColumnGap="0" DataSetName="Identificacao" RowCount="1" Stretched="True">
+      <TfrxMemoView Name="Memo17" Left="3,77953" Top="13,8188" Width="317,48052" Height="13,22830252" StretchMode="smMaxHeight" Font.Charset="0" Font.Color="0" Font.Height="-8" Font.Name="Courier New" Font.Style="0" Frame.Width="0,5" GapX="1" ParentFont="False" Text="[Destinatario.&#34;XNome&#34;]&#13;&#10;[Destinatario.&#34;XLgr&#34;], [Destinatario.&#34;Nro&#34;]  [Destinatario.&#34;XCpl&#34;]&#13;&#10;[Destinatario.&#34;XBairro&#34;]&#13;&#10;[Destinatario.&#34;CEP&#34;] - [Destinatario.&#34;XMun&#34;] - [Destinatario.&#34;UF&#34;]&#13;&#10;CPF/CNPJ:   [Destinatario.&#34;CNPJCPF&#34;]   IE:   [Destinatario.&#34;IE&#34;]">
+        <Formats>
+          <item/>
+          <item/>
+          <item/>
+          <item/>
+          <item/>
+          <item/>
+          <item/>
+          <item/>
+        </Formats>
+      </TfrxMemoView>
+      <TfrxMemoView Name="Memo23" Left="1,77953" Top="1,77953" Width="317,48052" Height="11,33859" Font.Charset="0" Font.Color="0" Font.Height="-9" Font.Name="Courier New" Font.Style="1" Frame.Width="0,5" GapY="2" ParentFont="False" Text="DESTINATÁRIO"/>
+      <TfrxMemoView Name="Memo25" Left="0" Top="0" Width="332,59864" Height="7,55906" Font.Charset="0" Font.Color="0" Font.Height="-8" Font.Name="Courier New" Font.Style="0" Frame.Width="0,5" GapX="0" GapY="0" ParentFont="False" WordWrap="False" VAlign="vaBottom" Text="---------------------------------------------------------------------"/>
+    </TfrxMasterData>
+    <TfrxMasterData Name="Imposto" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Height="63,11811512" Left="0" Top="343,93723" Width="330,708875" OnBeforePrint="ImpostoOnBeforePrint" ColumnWidth="0" ColumnGap="0" DataSetName="CalculoImposto" RowCount="1">
+      <TfrxMemoView Name="QuadroVBC" Left="68,40950252" Top="15,01576024" Width="58,96062992" Height="11,33858268" Font.Charset="0" Font.Color="0" Font.Height="-8" Font.Name="Courier New" Font.Style="0" Frame.Width="0,5" GapY="2" ParentFont="False" Text="BC ICMS"/>
+      <TfrxMemoView Name="memVBC" Left="68,40950252" Top="26,56692913" Width="58,96062992" Height="12,09448819" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" Font.Charset="1" Font.Color="0" Font.Height="-8" Font.Name="Courier New" Font.Style="0" Frame.Width="0,5" GapY="2" ParentFont="False" WordWrap="False" VAlign="vaBottom" Text="[CalculoImposto.&#34;VBC&#34;]"/>
+      <TfrxMemoView Name="QuadroVICMS" Left="3,77953" Top="15,01576024" Width="58,96062992" Height="11,33858268" Font.Charset="0" Font.Color="0" Font.Height="-8" Font.Name="Courier New" Font.Style="0" Frame.Width="0,5" GapY="2" ParentFont="False" Text="VL ICMS"/>
+      <TfrxMemoView Name="memVICMS" Left="3,77953" Top="26,56692913" Width="58,96062992" Height="12,09448819" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" Font.Charset="1" Font.Color="0" Font.Height="-8" Font.Name="Courier New" Font.Style="0" Frame.Width="0,5" GapY="2" ParentFont="False" WordWrap="False" VAlign="vaBottom" Text="[CalculoImposto.&#34;VICMS&#34;]"/>
+      <TfrxMemoView Name="Memo18" Left="1,77953" Top="3,55906" Width="317,48052" Height="11,33859" Font.Charset="0" Font.Color="0" Font.Height="-9" Font.Name="Courier New" Font.Style="1" Frame.Width="0,5" GapY="2" ParentFont="False" Text="CÁLCULO DO IMPOSTO"/>
+      <TfrxMemoView Name="Memo29" Left="133,03947504" Top="15,01576024" Width="58,96062992" Height="11,33858268" Font.Charset="0" Font.Color="0" Font.Height="-8" Font.Name="Courier New" Font.Style="0" Frame.Width="0,5" GapY="2" ParentFont="False" Text="BC ICMSST"/>
+      <TfrxMemoView Name="Memo30" Left="133,03947504" Top="26,56692913" Width="58,96062992" Height="12,09448819" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" Font.Charset="1" Font.Color="0" Font.Height="-8" Font.Name="Courier New" Font.Style="0" Frame.Width="0,5" GapY="2" ParentFont="False" WordWrap="False" VAlign="vaBottom" Text="[CalculoImposto.&#34;VBCST&#34;]"/>
+      <TfrxMemoView Name="Memo31" Left="197,66944756" Top="15,01576024" Width="58,96062992" Height="11,33858268" Font.Charset="0" Font.Color="0" Font.Height="-8" Font.Name="Courier New" Font.Style="0" Frame.Width="0,5" GapY="2" ParentFont="False" Text="VL ICMSST"/>
+      <TfrxMemoView Name="Memo32" Left="197,66944756" Top="26,56692913" Width="58,96062992" Height="12,09448819" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" Font.Charset="1" Font.Color="0" Font.Height="-8" Font.Name="Courier New" Font.Style="0" Frame.Width="0,5" GapY="2" ParentFont="False" WordWrap="False" VAlign="vaBottom" Text="[CalculoImposto.&#34;VST&#34;]"/>
+      <TfrxMemoView Name="Memo33" Left="262,29942008" Top="15,01576024" Width="58,96062992" Height="11,33858268" Font.Charset="0" Font.Color="0" Font.Height="-8" Font.Name="Courier New" Font.Style="0" Frame.Width="0,5" GapY="2" ParentFont="False" Text="TOT PROD"/>
+      <TfrxMemoView Name="Memo34" Left="262,29942008" Top="26,56692913" Width="58,96062992" Height="12,09448819" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" Font.Charset="1" Font.Color="0" Font.Height="-8" Font.Name="Courier New" Font.Style="0" Frame.Width="0,5" GapY="2" ParentFont="False" WordWrap="False" VAlign="vaBottom" Text="[CalculoImposto.&#34;VProd&#34;]"/>
+      <TfrxMemoView Name="Memo37" Left="3,77953" Top="38,91342" Width="58,96062992" Height="11,33858268" Font.Charset="0" Font.Color="0" Font.Height="-8" Font.Name="Courier New" Font.Style="0" Frame.Width="0,5" GapY="2" ParentFont="False" Text="VL FRETE"/>
+      <TfrxMemoView Name="Memo38" Left="3,77953" Top="50,14177133" Width="58,96062992" Height="12,09448819" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" Font.Charset="1" Font.Color="0" Font.Height="-8" Font.Name="Courier New" Font.Style="0" Frame.Width="0,5" GapY="2" ParentFont="False" WordWrap="False" VAlign="vaBottom" Text="[CalculoImposto.&#34;VFrete&#34;]"/>
+      <TfrxMemoView Name="Memo39" Left="68,40950252" Top="38,91342" Width="58,96062992" Height="11,33858268" Font.Charset="0" Font.Color="0" Font.Height="-8" Font.Name="Courier New" Font.Style="0" Frame.Width="0,5" GapY="2" ParentFont="False" Text="VL DESCONTO"/>
+      <TfrxMemoView Name="Memo40" Left="68,40950252" Top="50,14177377" Width="58,96062992" Height="12,09448819" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" Font.Charset="1" Font.Color="0" Font.Height="-8" Font.Name="Courier New" Font.Style="0" Frame.Width="0,5" GapY="2" ParentFont="False" WordWrap="False" VAlign="vaBottom" Text="[CalculoImposto.&#34;VDesc&#34;]"/>
+      <TfrxMemoView Name="Memo41" Left="133,03947504" Top="38,91342" Width="58,96062992" Height="11,33858268" Font.Charset="0" Font.Color="0" Font.Height="-8" Font.Name="Courier New" Font.Style="0" Frame.Width="0,5" GapY="2" ParentFont="False" Text="VL OUTROS"/>
+      <TfrxMemoView Name="Memo42" Left="133,03947504" Top="50,14177377" Width="58,96062992" Height="12,09448819" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" Font.Charset="1" Font.Color="0" Font.Height="-8" Font.Name="Courier New" Font.Style="0" Frame.Width="0,5" GapY="2" ParentFont="False" WordWrap="False" VAlign="vaBottom" Text="[CalculoImposto.&#34;VOutro&#34;]"/>
+      <TfrxMemoView Name="Memo43" Left="197,66944756" Top="38,91342" Width="58,96062992" Height="11,33858268" Font.Charset="0" Font.Color="0" Font.Height="-8" Font.Name="Courier New" Font.Style="0" Frame.Width="0,5" GapY="2" ParentFont="False" Text="VL IPI"/>
+      <TfrxMemoView Name="Memo44" Left="197,66944756" Top="50,14177377" Width="58,96062992" Height="12,09448819" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" Font.Charset="1" Font.Color="0" Font.Height="-8" Font.Name="Courier New" Font.Style="0" Frame.Width="0,5" GapY="2" ParentFont="False" WordWrap="False" VAlign="vaBottom" Text="[CalculoImposto.&#34;VIPI&#34;]"/>
+      <TfrxMemoView Name="Memo45" Left="262" Top="38,91342" Width="58,96062992" Height="11,33858268" Font.Charset="0" Font.Color="0" Font.Height="-8" Font.Name="Courier New" Font.Style="0" Frame.Width="0,5" GapY="2" ParentFont="False" Text="TOT NFE"/>
+      <TfrxMemoView Name="Memo46" Left="262" Top="50,14177377" Width="58,96062992" Height="12,09448819" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" Font.Charset="1" Font.Color="0" Font.Height="-8" Font.Name="Courier New" Font.Style="0" Frame.Width="0,5" GapY="2" ParentFont="False" WordWrap="False" VAlign="vaBottom" Text="[CalculoImposto.&#34;VNF&#34;]"/>
+      <TfrxMemoView Name="Memo26" Left="0" Top="0" Width="332,59864" Height="7,55905512" Font.Charset="0" Font.Color="0" Font.Height="-8" Font.Name="Courier New" Font.Style="0" Frame.Width="0,5" GapX="0" GapY="0" ParentFont="False" WordWrap="False" VAlign="vaBottom" Text="---------------------------------------------------------------------"/>
+    </TfrxMasterData>
+    <TfrxMasterData Name="TransportadorVolumes" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Height="28,3464566929134" Left="0" Top="430,86642" Width="330,708875" Child="DadosAdicionais" ColumnWidth="0" ColumnGap="0" DataSetName="Transportador" RowCount="1">
+      <TfrxMemoView Name="Memo10" Left="3,77953" Top="15,03927" Width="317,48052" Height="12,47244094" Font.Charset="0" Font.Color="0" Font.Height="-8" Font.Name="Courier New" Font.Style="0" Frame.Width="0,5" GapX="1" ParentFont="False" Text="[Transportador.&#34;XNome&#34;]"/>
+      <TfrxMemoView Name="Memo11" Left="1,77953" Top="3" Width="317,48052" Height="11,33859" Font.Charset="0" Font.Color="0" Font.Height="-9" Font.Name="Courier New" Font.Style="1" Frame.Width="0,5" GapY="2" ParentFont="False" Text="TRANSPORTADORA"/>
+      <TfrxMemoView Name="Memo27" Left="0" Top="0" Width="332,59864" Height="7,55906" Font.Charset="0" Font.Color="0" Font.Height="-8" Font.Name="Courier New" Font.Style="0" Frame.Width="0,5" GapX="0" GapY="0" ParentFont="False" WordWrap="False" VAlign="vaBottom" Text="---------------------------------------------------------------------"/>
+    </TfrxMasterData>
+    <TfrxChild Name="DadosAdicionais" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Height="108,472440944882" Left="0" Top="483,77984" Width="330,708875" OnAfterPrint="DadosAdicionaisOnAfterPrint" AllowSplit="True">
+      <TfrxMemoView Name="memObs" Left="3,77953" Top="14,00787402" Width="321,26005" Height="93,73228346" Font.Charset="1" Font.Color="0" Font.Height="-8" Font.Name="Courier New" Font.Style="0" Frame.Width="0,5" GapY="2" ParentFont="False" WordBreak="True" Text="[Trim(&#60;InformacoesAdicionais.&#34;OBS&#34;&#62;)]"/>
+      <TfrxMemoView Name="Memo47" Left="1,77953" Top="2" Width="317,48052" Height="11,33859" Font.Charset="0" Font.Color="0" Font.Height="-9" Font.Name="Courier New" Font.Style="1" Frame.Width="0,5" GapY="2" ParentFont="False" Text="DADOS ADICIONAIS"/>
+      <TfrxMemoView Name="Memo28" Left="0" Top="0" Width="332,59864" Height="7,55906" Font.Charset="0" Font.Color="0" Font.Height="-8" Font.Name="Courier New" Font.Style="0" Frame.Width="0,5" GapX="0" GapY="0" ParentFont="False" WordWrap="False" VAlign="vaBottom" Text="---------------------------------------------------------------------"/>
+    </TfrxChild>
+    <TfrxChild Name="CEmitente" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Height="28,3464566929134" Left="0" Top="204,09462" Width="330,708875" OnAfterPrint="CEmitenteOnAfterPrint" Stretched="True">
+      <TfrxMemoView Name="memDadosEmitente" Left="3,77953" Top="14,37783559" Width="317,48052" Height="13,2283074" StretchMode="smMaxHeight" Font.Charset="0" Font.Color="0" Font.Height="-8" Font.Name="Courier New" Font.Style="0" Frame.Width="0,5" GapX="1" ParentFont="False" Text="[Emitente.&#34;XNome&#34;]&#13;&#10;[Emitente.&#34;DADOS_ENDERECO&#34;]&#13;&#10;CNPJ:    [Emitente.&#34;CNPJ&#34;]    IE:    [Emitente.&#34;IE&#34;]">
+        <Formats>
+          <item/>
+          <item/>
+        </Formats>
+      </TfrxMemoView>
+      <TfrxMemoView Name="Memo9" Left="1,77953" Top="3,11812" Width="317,48052" Height="11,33859" Font.Charset="0" Font.Color="0" Font.Height="-9" Font.Name="Courier New" Font.Style="1" Frame.Width="0,5" GapY="2" ParentFont="False" Text="EMITENTE"/>
+      <TfrxMemoView Name="Memo24" Left="0" Top="0" Width="332,59864" Height="7,55905512" Font.Charset="0" Font.Color="0" Font.Height="-8" Font.Name="Courier New" Font.Style="0" Frame.Width="0,5" GapX="0" GapY="0" ParentFont="False" WordWrap="False" VAlign="vaBottom" Text="---------------------------------------------------------------------"/>
+    </TfrxChild>
+  </TfrxReportPage>
+</TfrxReport>

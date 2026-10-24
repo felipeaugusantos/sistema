@@ -1,0 +1,2046 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{1d5a488e-1696-4c5b-b3f5-4b35c810d940}</ProjectGuid>
+        <MainSource>AutBan.dpr</MainSource>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+        <DCC_DependencyCheckOutputName>..\padra_atualizado\autban\AutBan.exe</DCC_DependencyCheckOutputName>
+        <FrameworkType>VCL</FrameworkType>
+        <ProjectVersion>18.1</ProjectVersion>
+        <Base>True</Base>
+        <Config Condition="'$(Config)'==''">Release</Config>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <TargetedPlatforms>1</TargetedPlatforms>
+        <AppType>Application</AppType>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+        <Base_Win32>true</Base_Win32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Base)'=='true') or '$(Base_Win64)'!=''">
+        <Base_Win64>true</Base_Win64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_1)'!=''">
+        <Cfg_1>true</Cfg_1>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win32)'!=''">
+        <Cfg_1_Win32>true</Cfg_1_Win32>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_2)'!=''">
+        <Cfg_2>true</Cfg_2>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win32)'!=''">
+        <Cfg_2_Win32>true</Cfg_2_Win32>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base)'!=''">
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+        <Icon_MainIcon>AutBan_Icon.ico</Icon_MainIcon>
+        <SanitizedProjectName>AutBan</SanitizedProjectName>
+        <DCC_Namespace>Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;System;Xml;Data;Datasnap;Web;Soap;Winapi;$(DCC_Namespace)</DCC_Namespace>
+        <VerInfo_Build>2</VerInfo_Build>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Release>2</VerInfo_Release>
+        <VerInfo_Locale>1046</VerInfo_Locale>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=379.48.2.2;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=379.48.2.2;Comments=</VerInfo_Keys>
+        <VerInfo_MajorVer>379</VerInfo_MajorVer>
+        <VerInfo_MinorVer>48</VerInfo_MinorVer>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
+        <DCC_Namespace>System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <Icon_MainIcon>AutBan_Icon.ico</Icon_MainIcon>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win64)'!=''">
+        <Icon_MainIcon>AutBan_Icon.ico</Icon_MainIcon>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1)'!=''">
+        <Icon_MainIcon>AutBan_Icon.ico</Icon_MainIcon>
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+        <Version>7.0</Version>
+        <DCC_DebugInformation>0</DCC_DebugInformation>
+        <DCC_LocalDebugSymbols>False</DCC_LocalDebugSymbols>
+        <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+        <DCC_Warnings>False</DCC_Warnings>
+        <DCC_MapFile>3</DCC_MapFile>
+        <DCC_ExeOutput>C:\autpas\379.48\padra_atualizado\autban</DCC_ExeOutput>
+        <DCC_DcuOutput>temp\</DCC_DcuOutput>
+        <DCC_ObjOutput>temp\</DCC_ObjOutput>
+        <DCC_HppOutput>temp\</DCC_HppOutput>
+        <DCC_Define>madExcept;RELEASE;UNIDAC;$(DCC_Define)</DCC_Define>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+        <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
+        <VerInfo_MajorVer>999</VerInfo_MajorVer>
+        <VerInfo_MinorVer>999</VerInfo_MinorVer>
+        <VerInfo_Release>999</VerInfo_Release>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <DCC_Warnings>true</DCC_Warnings>
+        <DCC_ExeOutput>..\padra_atualizado\autban</DCC_ExeOutput>
+        <DCC_LocalDebugSymbols>true</DCC_LocalDebugSymbols>
+        <DCC_DebugInformation>1</DCC_DebugInformation>
+        <VerInfo_Keys>CompanyName=Citel Software;FileDescription=Sistema de Controle Bancários;FileVersion=999.999.999.999;InternalName=AutBan;LegalCopyright=Citel Software;LegalTrademarks=;OriginalFilename=AutBan;ProductName=AutBan;ProductVersion=999.999.999.999;Comments=</VerInfo_Keys>
+        <VerInfo_Build>999</VerInfo_Build>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2)'!=''">
+        <Version>7.0</Version>
+        <DCC_Warnings>False</DCC_Warnings>
+        <DCC_MapFile>3</DCC_MapFile>
+        <DCC_ExeOutput>..\padra_atualizado\autban\</DCC_ExeOutput>
+        <DCC_Define>madExcept;DEBUG;UNIDAC;$(DCC_Define)</DCC_Define>
+        <DCC_GenerateStackFrames>True</DCC_GenerateStackFrames>
+        <DCC_DcuOutput>temp\</DCC_DcuOutput>
+        <DCC_ObjOutput>temp\</DCC_ObjOutput>
+        <DCC_HppOutput>temp\</DCC_HppOutput>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
+        <VerInfo_Release>0</VerInfo_Release>
+        <VerInfo_MinorVer>0</VerInfo_MinorVer>
+        <VerInfo_MajorVer>1</VerInfo_MajorVer>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <VerInfo_Build>0</VerInfo_Build>
+    </PropertyGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Delphi.Personality.12</Borland.Personality>
+        <Borland.ProjectType>VCLApplication</Borland.ProjectType>
+        <BorlandProject>
+            <Delphi.Personality>
+                <Parameters>
+                    <Parameters Name="UseLauncher">False</Parameters>
+                    <Parameters Name="LoadAllSymbols">True</Parameters>
+                    <Parameters Name="LoadUnspecifiedSymbols">False</Parameters>
+                </Parameters>
+                <VersionInfo>
+                    <VersionInfo Name="IncludeVerInfo">True</VersionInfo>
+                    <VersionInfo Name="AutoIncBuild">False</VersionInfo>
+                    <VersionInfo Name="MajorVer">379</VersionInfo>
+                    <VersionInfo Name="MinorVer">48</VersionInfo>
+                    <VersionInfo Name="Release">2</VersionInfo>
+                    <VersionInfo Name="Build">2</VersionInfo>
+                    <VersionInfo Name="Debug">False</VersionInfo>
+                    <VersionInfo Name="PreRelease">False</VersionInfo>
+                    <VersionInfo Name="Special">False</VersionInfo>
+                    <VersionInfo Name="Private">False</VersionInfo>
+                    <VersionInfo Name="DLL">False</VersionInfo>
+                    <VersionInfo Name="Locale">1046</VersionInfo>
+                    <VersionInfo Name="CodePage">1252</VersionInfo>
+                </VersionInfo>
+                <VersionInfoKeys>
+                    <VersionInfoKeys Name="CompanyName"/>
+                    <VersionInfoKeys Name="FileDescription"/>
+                    <VersionInfoKeys Name="FileVersion">379.48.2.2</VersionInfoKeys>
+                    <VersionInfoKeys Name="InternalName"/>
+                    <VersionInfoKeys Name="LegalCopyright"/>
+                    <VersionInfoKeys Name="LegalTrademarks"/>
+                    <VersionInfoKeys Name="OriginalFilename"/>
+                    <VersionInfoKeys Name="ProductName"/>
+                    <VersionInfoKeys Name="ProductVersion">379.48.2.2</VersionInfoKeys>
+                    <VersionInfoKeys Name="Comments"/>
+                </VersionInfoKeys>
+                <Source>
+                    <Source Name="MainSource">AutBan.dpr</Source>
+                </Source>
+                <Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k230.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp230.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+                </Excluded_Packages>
+            </Delphi.Personality>
+            <Platforms>
+                <Platform value="Win32">True</Platform>
+                <Platform value="Win64">False</Platform>
+            </Platforms>
+            <Deployment Version="2">
+                <DeployFile LocalName="..\padra_atualizado\autban\AutBan.exe" Configuration="Release" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>AutBan.exe</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployClass Name="DependencyModule">
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                        <Extensions>.dll;.bpl</Extensions>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectOSXResource">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\Resources</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidClassesDexFile">
+                    <Platform Name="Android">
+                        <RemoteDir>classes</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon144">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AdditionalDebugSymbols">
+                    <Platform Name="Win32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidLibnativeMipsFile">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\mips</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch768">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Required="true" Name="ProjectOutput">
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="DependencyFramework">
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                        <Extensions>.framework</Extensions>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch640">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidLibnativeX86File">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\x86</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSDeviceDebug">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).app.dSYM\Contents\Resources\DWARF</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <RemoteDir>..\$(PROJECTNAME).app.dSYM\Contents\Resources\DWARF</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch1024">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch320">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSInfoPList"/>
+                <DeployClass Name="AndroidLibnativeArmeabiFile">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="DebugSymbols">
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch1536">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage470">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-normal</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon96">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage640">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-large</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch640x1136">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSEntitlements"/>
+                <DeployClass Name="AndroidGDBServer">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon72">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-hdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectOSXInfoPList"/>
+                <DeployClass Name="ProjectOSXEntitlements"/>
+                <DeployClass Name="iPad_Launch2048">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidSplashStyles">
+                    <Platform Name="Android">
+                        <RemoteDir>res\values</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage426">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-small</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidSplashImageDef">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSResource">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectAndroidManifest">
+                    <Platform Name="Android">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_DefaultAppIcon">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="File">
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="Android">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidServiceOutput">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Required="true" Name="DependencyPackage">
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                        <Extensions>.bpl</Extensions>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon48">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-mdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage960">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xlarge</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon36">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-ldpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSDeviceResourceRules"/>
+                <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="iOSDevice64" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="iOSDevice32" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="Win32" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="Android" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="iOSSimulator" Name="$(PROJECTNAME).app"/>
+            </Deployment>
+        </BorlandProject>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+    <Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets"/>
+    <ItemGroup>
+        <DelphiCompile Include="$(MainSource)">
+            <MainSource>MainSource</MainSource>
+        </DelphiCompile>
+        <DCCReference Include="..\padra_atualizado\VirtualUI\VirtualUI_AutoRun.pas"/>
+        <DCCReference Include="..\padra_atualizado\VirtualUI\VirtualUI_SDK.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\Genericos\untModuloSPR.pas">
+            <Form>frmModuloSPR</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\relatorios\genericos\untPaiSimples.pas">
+            <Form>frmPaiSimples</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\Genericos\untConstantes.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\Genericos\untDigDuplicata.pas">
+            <Form>frmDigDuplicata</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\Genericos\untGetMenu.pas">
+            <Form>frmGetMenu</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\Genericos\untMensagem.pas">
+            <Form>frmMensagem</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\Genericos\untMenuFilas.pas">
+            <Form>frmMenuFilas</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\Genericos\untMenuTipImp.pas">
+            <Form>frmMenuTipImp</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\Genericos\untModulo.pas">
+            <Form>frmModulo</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\Genericos\untModuloCons.pas">
+            <Form>frmModuloCons</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\Genericos\untDigParcelas.pas">
+            <Form>frmDigParcelas</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\Genericos\untWaitWindow.pas">
+            <Form>frmWaitWindow</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\Cadastros\untSelClienteFiltro.pas">
+            <Form>frmSelClienteFiltro</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\Genericos\untFuncAutban.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\BatchSQL\untTBatchSQL.Helper.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\BatchSQL\untTBatchSQL.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\Genericos\untThreadUtils.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\Genericos\untPesqAux.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\Genericos\untDesbloqueiodaCopia.pas">
+            <Form>frmDesbloqueiodaCopia</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\Genericos\untDigData.pas">
+            <Form>frmDigData</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\Genericos\untDigEmailCtaCorrente.pas">
+            <Form>frmDigEmailCtaCorrente</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\FechamentosMensais\untFecGiroEstoque.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\Genericos\untBaseFechamento.pas">
+            <Form>frmBaseFechamento</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\Genericos\untModuloCfgAtb.pas">
+            <Form>frmModuloCfgAtb</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\Genericos\untCfgAtb.pas">
+            <Form>frmCfgAtb</Form>
+        </DCCReference>
+        <DCCReference Include="Bradesco\untExpArqRemBradesco.pas">
+            <Form>frmExpArqRemBradesco</Form>
+        </DCCReference>
+        <DCCReference Include="Bradesco\untConfigBradesco.pas">
+            <Form>frmConfigBradesco</Form>
+        </DCCReference>
+        <DCCReference Include="Itau\untExpArqRemItau.pas">
+            <Form>frmExpArqRemItau</Form>
+        </DCCReference>
+        <DCCReference Include="Itau\untConfigItau.pas">
+            <Form>frmConfigItau</Form>
+        </DCCReference>
+        <DCCReference Include="Hsbc\untExpArqRemHsbc.pas">
+            <Form>frmExpArqRemHsbc</Form>
+        </DCCReference>
+        <DCCReference Include="Hsbc\untConfigHsbc.pas">
+            <Form>frmConfigHsbc</Form>
+        </DCCReference>
+        <DCCReference Include="Mercantil\untExpArqRemMerc.pas">
+            <Form>frmExpArqRemMerc</Form>
+        </DCCReference>
+        <DCCReference Include="Mercantil\untConfigMercantil.pas">
+            <Form>frmConfigMercantil</Form>
+        </DCCReference>
+        <DCCReference Include="banrisul\untExpArqRemBanrisul.pas">
+            <Form>frmExpArqRemBanrisul</Form>
+        </DCCReference>
+        <DCCReference Include="banrisul\untConfigBanrisul.pas">
+            <Form>frmConfigBanrisul</Form>
+        </DCCReference>
+        <DCCReference Include="Banco do Brasil 6d\untExpArqRemBrasil.pas">
+            <Form>frmExpArqRemBrasil</Form>
+        </DCCReference>
+        <DCCReference Include="Banco do Brasil 6d\untConfigBrasil.pas">
+            <Form>frmConfigBrasil</Form>
+        </DCCReference>
+        <DCCReference Include="Banco do Brasil 7d\untExpArqRemBrasil7d.pas">
+            <Form>frmExpArqRemBrasil7d</Form>
+        </DCCReference>
+        <DCCReference Include="Banco do Brasil 7d\untConfigBrasil7d.pas">
+            <Form>frmConfigBrasil7d</Form>
+        </DCCReference>
+        <DCCReference Include="Caixa Federal 240p\untExpArqRemCxFed.pas">
+            <Form>frmExpArqRemCxFed</Form>
+        </DCCReference>
+        <DCCReference Include="Caixa Federal 240p\untConfigCxFederal.pas">
+            <Form>frmConfigCxFederal</Form>
+        </DCCReference>
+        <DCCReference Include="Caixa Federal 400p\untExpArqRemCxFed400p.pas">
+            <Form>frmExpArqRemCxFed400p</Form>
+        </DCCReference>
+        <DCCReference Include="Caixa Federal 400p\untConfigCxFederal400p.pas">
+            <Form>frmConfigCxFederal400p</Form>
+        </DCCReference>
+        <DCCReference Include="Relatorios\untRelRetBco.pas">
+            <Form>frmRelRetBco</Form>
+        </DCCReference>
+        <DCCReference Include="Relatorios\untRelRelDuplicatas.pas">
+            <Form>frmRelRelDuplicatas</Form>
+        </DCCReference>
+        <DCCReference Include="Modulos\untModuloRetBco.pas">
+            <Form>frmModuloRetBco</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="Modulos\untModuloCadCbi.pas">
+            <Form>frmModuloCadCbi</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="Genericos\untPedePortador.pas">
+            <Form>frmPedePortador</Form>
+        </DCCReference>
+        <DCCReference Include="Genericos\untGerDupSel.pas">
+            <Form>frmGerDupSel</Form>
+        </DCCReference>
+        <DCCReference Include="Genericos\untGerDup.pas">
+            <Form>frmGerDup</Form>
+        </DCCReference>
+        <DCCReference Include="Genericos\untRetBco.pas">
+            <Form>frmRetBco</Form>
+        </DCCReference>
+        <DCCReference Include="Genericos\untEstorno.pas">
+            <Form>frmEstorno</Form>
+        </DCCReference>
+        <DCCReference Include="Genericos\untArqNaoGravados.pas">
+            <Form>frmArqNaoGravados</Form>
+        </DCCReference>
+        <DCCReference Include="Genericos\untPrincipal.pas">
+            <Form>frmPrincipal</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\Financeiro\ContasaReceber\untCtrMostraAgrupadas.pas">
+            <Form>frmCtrMostraAgrupadas</Form>
+        </DCCReference>
+        <DCCReference Include="sicredi\untConfigSicredi.pas">
+            <Form>frmConfigSicredi</Form>
+        </DCCReference>
+        <DCCReference Include="sicredi\untExpArqRemSicredi.pas">
+            <Form>frmExpArqRemSicredi</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untFuncoesConsulta.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\configuracoes\untCfgGenericas_AutBan.pas">
+            <Form>frmCfgGenericas_AutBan</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\relatorios\cadastros\untQckHTMLCliente.pas">
+            <Form>frmQckHTMLCliente</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untModuloReplicacao.pas">
+            <Form>frmModuloReplicacao</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untBaixaBusca.pas">
+            <Form>frmBaixaBusca</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untObservacao.pas">
+            <Form>frmObservacao</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\relatorios\financeiro\contasareceber\untRelCtrDebitosCliente.pas">
+            <Form>frmRelCtrDebitosCliente</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untFuncoesSimples.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untCalculoPrecoVenda.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\PlaySound\untPlaySound.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\relatorios_dll\geral\untFuncoesRel.pas"/>
+        <DCCReference Include="modulos\untModuloCadPgi.pas">
+            <Form>frmModuloCadPgi</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="relatorios\untRelRelCtaDuplicatas.pas">
+            <Form>frmRelRelCtaDuplicatas</Form>
+        </DCCReference>
+        <DCCReference Include="itau\untConfigItauCta.pas">
+            <Form>frmConfigItauCta</Form>
+        </DCCReference>
+        <DCCReference Include="itau\untExpArqRemItauCta.pas">
+            <Form>frmExpArqRemItauCta</Form>
+        </DCCReference>
+        <DCCReference Include="modulos\untModuloRetCtp.pas">
+            <Form>frmModuloRetCtp</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="relatorios\untRelRetBcoCta.pas">
+            <Form>frmRelRetBcoCta</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untPaiOrdena.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untPaiEdit.pas">
+            <Form>frmPaiEdit</Form>
+        </DCCReference>
+        <DCCReference Include="Banestes\untExpArqRemBanestes.pas">
+            <Form>frmExpArqRemBanestes</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untSenhaEmpresa.pas">
+            <Form>frmSenhaEmpresa</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untDigQuantidade.pas">
+            <Form>frmDigQuantidade</Form>
+        </DCCReference>
+        <DCCReference Include="bancoob\untConfigBancoob.pas">
+            <Form>frmConfigBancoob</Form>
+        </DCCReference>
+        <DCCReference Include="bancoob\untExpArqRemBancoob.pas">
+            <Form>frmExpArqRemBancoob</Form>
+        </DCCReference>
+        <DCCReference Include="Serasa\untProcArqSerasa.pas">
+            <Form>frmProcArqSerasa</Form>
+        </DCCReference>
+        <DCCReference Include="Serasa\untGeraArqSerasaSel.pas">
+            <Form>frmGeraArqSerasaSel</Form>
+        </DCCReference>
+        <DCCReference Include="Serasa\untGeraArqSerasa.pas">
+            <Form>frmGeraArqSerasa</Form>
+        </DCCReference>
+        <DCCReference Include="Serasa\untExpArqSer.pas">
+            <Form>frmExpArqSer</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untAutcomDllTinta.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untMensagemSonora.pas">
+            <Form>frmMensagemSonora</Form>
+        </DCCReference>
+        <DCCReference Include="Serasa\untGeraArqSerasaCon.pas">
+            <Form>frmGeraArqSerasaCon</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\cadastros\untCadLote.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\ecf\untSweda9000.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\ecf\untSweda7000.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\paf\untPafRegistroR04.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\paf\untPafRegistroR07.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\paf\untPafRegistroR01.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\paf\untPafRegistroR02.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\paf\untPafRegistroR03.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\paf\untPafRegistroR05.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\paf\untPafRegistroR06.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\ecf\untSwedaDeclaracoes.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\util\untRelacaoLocks.pas">
+            <Form>frmRelacaoLocks</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\movimentacaoitens\untGiroProdutos.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untFuncoes.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\util\operacoesrefitens\untPreAlt.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\financeiro\contasareceber\untCadRec.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\financeiro\contasapagar\untCadPag.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\cadastros\untCadIte.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\libFuncoes\untClassPanelCx.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\libFuncoes\untConfiguraConsultaOperadores.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untDigValor.pas">
+            <Form>frmDigValor</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untPaiConfirma.pas">
+            <Form>frmPaiConfirma</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untConsultas.pas"/>
+        <DCCReference Include="santander\untConfigSantanderBan.pas">
+            <Form>frmConfigSantanderBan</Form>
+        </DCCReference>
+        <DCCReference Include="santander\untExpArqRemSantanderBan.pas">
+            <Form>frmExpArqRemSantanderBan</Form>
+        </DCCReference>
+        <DCCReference Include="sofisa\untConfigSofisa.pas">
+            <Form>frmConfigSofisa</Form>
+        </DCCReference>
+        <DCCReference Include="sofisa\untExpArqRemSofisa.pas">
+            <Form>frmExpArqRemSofisa</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\fechamentosmensais\untBloqueioProdutos.pas">
+            <Form>frmBloqueioProdutos</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\cadastros\untLegendasItem.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untZClient.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\boleto\Genericos\untBancos.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\boleto\Genericos\untDesCam.pas">
+            <Form>frmDesCam</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\boleto\Genericos\untFuncoesBoleto.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\boleto\untQckBancos.pas">
+            <Form>frmQckBancos</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\faturamento\untFatMostraCreditos.pas">
+            <Form>frmFatMostraCreditos</Form>
+        </DCCReference>
+        <DCCReference Include="bancoob 240p\untConfigBancoob240.pas">
+            <Form>frmConfigBancoob240</Form>
+        </DCCReference>
+        <DCCReference Include="bancoob 240p\untExpArqRemBancoob240.pas">
+            <Form>frmExpArqRemBancoob240</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\relatorios\financeiro\contasapagar\untQckCtpCompPgtoMod.pas">
+            <Form>frmQckCtpCompPgtoMod</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untFuncoesGenerica.pas"/>
+        <DCCReference Include="santander\untExpArqRemSantanderCta.pas">
+            <Form>frmExpArqRemSantanderCta</Form>
+        </DCCReference>
+        <DCCReference Include="santander\untConfigSantanderCta.pas">
+            <Form>frmConfigSantanderCta</Form>
+        </DCCReference>
+        <DCCReference Include="SerasaPEFIN\untGeraArqSerasaPEFINSel.pas">
+            <Form>frmGeraArqSerasaPEFINSel</Form>
+        </DCCReference>
+        <DCCReference Include="SerasaPEFIN\untExpArqSerPEFIN.pas">
+            <Form>frmExpArqSerPEFIN</Form>
+        </DCCReference>
+        <DCCReference Include="SerasaPEFIN\untGeraArqSerasaPEFIN.pas">
+            <Form>frmGeraArqSerasaPEFIN</Form>
+        </DCCReference>
+        <DCCReference Include="SerasaPEFIN\untProcArqSerasaPEFIN.pas">
+            <Form>frmProcArqSerasaPEFIN</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\faturamento\untSQLRepositorio.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\faturamento\untSQLServicos.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\faturamento\untSQLFaturamento.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untParCalculaPrecoCusto.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untCalculoPrecoMedio.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\configuracoes\untTConfiguracao.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\configuracoes\untIConfiguracao.pas"/>
+        <DCCReference Include="genericos\untArqDivRetBco.pas">
+            <Form>frmArqDivRetBco</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untListaLogErros.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\util\untLogTrace.pas">
+            <Form>frmLogTrace</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\faturamento\untMadeireira.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\relatorios\interfaces\untIFuncoes.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untTypesSistema.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\iTintas\untITintasDeMaquina.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\cadastros\untICamGer.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\relatorios\faturamento\untIValorRecebido.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\Interfaces\untIConfTinta.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\cadastros\untIControlePagtoFunc.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\util\untIFastPrint.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untIMetAno.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\FuncoesCentralizadas\untInterfacedObjectNoCount.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\cadastros\untCfgRel.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\PontoEntrada\PontoEntrada.Script.Interfaces.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\PontoEntrada\PontoEntrada.Script.Classes.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\PontoEntrada\PontoEntrada.Script.Editor.pas">
+            <Form>frmScriptEditor</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\PontoEntrada\PontoEntrada.FormEvent.Classes.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\PontoEntrada\PontoEntrada.FormEvent.Configurar.pas">
+            <Form>frmConfigurarEventosFormulario</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untWorkStationInfo.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untSpoolImpressao.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untWord.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untWordBRO.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untWordOfc.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untSpoolPrintDialog.pas">
+            <Form>SpoolPrintDialog</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untPai.pas">
+            <Form>frmPai</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untPaiCad.pas">
+            <Form>frmPaiCad</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\Cadastros\untCadConfRelatorios.pas">
+            <Form>frmCadConfRelatorios</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untPaiQck.pas">
+            <Form>frmPaiQck</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untPaiRelatorio.pas">
+            <Form>frmPaiRelatorio</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\relatorios_dll\geral\TypesRel.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\relatorios_dll\geral\untFuncoesRel2.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untFuncoesRelatorios.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\Genericos\untFuncTinta.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untTMatrizSaldosColorantes.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\iTintas\untIIdentificadorTinta.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\iTintas\untITransferencias.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\iTintas\untIFatOrdProTintaMaquina.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\iTintas\untIDadosTinta.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\iTintas\untIDadosTintasComponentes.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\Interfaces\untICalculadorFatVendas.pas"/>
+        <DCCReference Include="..\LibTintas\libTintasComum\Interfaces\untITintaDeMaquina.pas"/>
+        <DCCReference Include="..\LibTintas\libTintasComum\Interfaces\untITintaDeMaquinaComponente.pas"/>
+        <DCCReference Include="..\LibTintas\libTintasComum\Genericos\untTintaDeMaquinaComponenteTipo.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\cadastros\untCadPro.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untValorPorExtenso.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untTipoFreteAtc.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\libNfe\untInterfaces.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\Cadastros\untCamGer.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\relatorios\faturamento\untRelValorRecebido.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\cadastros\untControlePagtoFunc.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\util\untFastPrintEditor.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\relatorios\faturamento\untExtratoComissaoProfissional.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untTMetAno.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\util\EditorEtiquetas\untIFuncoesEditorFast.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\cadastros\untIIteBar.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\util\EditorEtiquetas\untIOrdenacao.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\faturamento\untIMadeireira.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\faturamento\untIFinanceira.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untICamposUso.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untIFuncMacro.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\util\EditorEtiquetas\untIDocumentos.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untIZClient.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\cadastros\untICadLote.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untDigEmail.pas">
+            <Form>frmDigEmail</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\relatorios\financeiro\etiquetas\untInfAdicEtiqItens.pas">
+            <Form>frmInfAdicEtiqItens</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\relatorios\financeiro\etiquetas\untCnfEtiqueta.pas">
+            <Form>frmCnfEtiqueta</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\relatorios\financeiro\contasareceber\untCtrSelClienteImp.pas">
+            <Form>frmCtrSelClienteImp</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untTFuncMacro.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\Genericos\untFuncMacro.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\cadastros\untCadRcxx.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\configuracoes\untCfgRepositorio.pas">
+            <Form>frmCfgRepositorio</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\configuracoes\untCfgPontosImpressao.pas">
+            <Form>frmCfgPontosImpressao</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\configuracoes\untCfgModCartaCob.pas">
+            <Form>frmCfgModCartaCob</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\configuracoes\untCfgPais.pas">
+            <Form>frmCfgPais</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\configuracoes\untCfgModCartaDes.pas">
+            <Form>frmCfgModCartaDes</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\configuracoes\untCfgCamposClientesCRM.pas">
+            <Form>frmCfgCamposClientesCRM</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\configuracoes\untCfgCamposFornecedoresCRM.pas">
+            <Form>frmCfgCamposFornecedoresCRM</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\configuracoes\untCfgModCartaPro.pas">
+            <Form>frmCfgModCartaPro</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\configuracoes\untCfgModCartaAnu.pas">
+            <Form>frmCfgModCartaAnu</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\cadastros\untIteBar.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\cadastros\untCadEmbalagens.pas">
+            <Form>frmCadEmbalagens</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\util\EditorEtiquetas\untTFuncoesEditorFast.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\util\EditorEtiquetas\untFuncoesEditorFast.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\util\EditorEtiquetas\untOrdenacao.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\faturamento\untTMadeireira.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\faturamento\untFinanceira.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untIFiltrosRelatorio.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untGeraExcel.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untExcel.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untExcelBRO.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untExcelOfc.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\relatorios\funcoes\untFuncoesFactory.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untFiltrosRelatorio.pas"/>
+        <DCCReference Include="bradesco\untConfigBradescoCta.pas">
+            <Form>frmConfigBradescoCta</Form>
+        </DCCReference>
+        <DCCReference Include="bradesco\untExpArqRemBradescoCta.pas">
+            <Form>frmExpArqRemBradescoCta</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\relatorios\faturamento\untRelFatVendasClienteF9.pas">
+            <Form>frmRelFatVendasClienteF9</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\relatorios\faturamento\untRelFatVendasCliente.pas">
+            <Form>frmRelFatVendasCliente</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\relatorios\faturamento\untRelFatVendasItensF9.pas">
+            <Form>frmRelFatVendasItensF9</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\relatorios\faturamento\untOpcSoVenda.pas">
+            <Form>frmOpcSoVenda</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\relatorios\faturamento\untRelFatVendasPorLinha.pas">
+            <Form>frmRelFatVendasPorLinha</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untGenericProcedureFormGravando.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untGravando.pas">
+            <Form>frmGravando</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\financeiro\contasareceber\untConsultaFiltrosCtaReceber.pas">
+            <Form>frmConsultaFiltrosCtaReceber</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\cadastros\untConDet.pas"/>
+        <DCCReference Include="..\LibTintas\libTintasComum\Tipos\untGTinForTipos.pas"/>
+        <DCCReference Include="..\LibTintas\libTintasComum\Tipos\untTipoTinta.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\configuracoes\untCfgItensOrdenaPadrao.pas">
+            <Form>frmCfgItensOrdenaPadrao</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untSeqCom.pas"/>
+        <DCCReference Include="Cecred\untConfigCecred.pas">
+            <Form>frmConfigCecred</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Cecred\untExpArqRemCecred.pas">
+            <Form>frmExpArqRemCecred</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\financeiro\gerais\untReciboCtp.pas"/>
+        <DCCReference Include="banco da amazonia\untConfigBancoAmazonia.pas">
+            <Form>frmConfigBancoAmazonia</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="banco da amazonia\untExpArqRemBancoAmazonia.pas">
+            <Form>frmExpArqRemBancoAmazonia</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Rendimento\untConfigRendimento.pas">
+            <Form>frmConfigRendimento</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Rendimento\untExpArqRemRendimento.pas">
+            <Form>frmExpArqRemRendimento</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untDigDtaNovo.pas">
+            <Form>frmDigDtaNovo</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\financeiro\gerais\untDtaEstorno.pas">
+            <Form>frmDtaEstorno</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untGravaINNODBStatus.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\relatorios_dll\geral\untFuncoesEtiquetas.pas"/>
+        <DCCReference Include="genericos\untTIntegracaoExtrant.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\movimentacaoitens\PedidoDeCompra\untIMesesGiro.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\movimentacaoitens\PedidoDeCompra\untMesesGiro.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\movimentacaoitens\PedidoDeCompra\untSelecionaMeses.pas">
+            <Form>frmSelecionaMeses</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Unicred\untConfigUnicred.pas">
+            <Form>frmConfigUnicred</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Unicred\untExpArqRemUnicred.pas">
+            <Form>frmExpArqRemUnicred</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Unicred400\untConfigUnicred400.pas">
+            <Form>frmConfigUnicred400</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Unicred400\untExpArqRemUnicred400.pas">
+            <Form>frmExpArqRemUnicred400</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\financeiro\contasapagar\untTCadPag.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\CamadaPersistencia\untObjectManager.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\financeiro\contasapagar\untLogCtp.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\financeiro\contasapagar\untTCadPagRepository.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\resumodecaixa\untTCadRcxx.pas"/>
+        <DCCReference Include="ABC Brasil\untConfigABCBrasil.pas">
+            <Form>frmConfigABCBrasil</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="ABC Brasil\untExpArqRemABCBrasil.pas">
+            <Form>frmExpArqRemABCBrasil</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\cadastros\untSelFilImpressao.pas">
+            <Form>frmSelFilImpressao</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\CamadaPersistencia\untUtilRepository.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\CamadaPersistencia\untFieldFiltros.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\financeiro\gerais\untTMovBan.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\CamadaPersistencia\untDelRepository.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\boleto\untFuncBancarias.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\cadastros\untTCadFor.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untConsultasTinta.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untPesqItem.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\libFuncoes\untFuncoesGen.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\libFuncoes\untConsultaCxGridNova.pas">
+            <Form>frmConsultaCxGridNova</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\libFuncoes\untConfiguraConsulta.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\libFuncoes\untPesquisa.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\libFuncoes\untFuncoesCXGrid.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\libFuncoes\untConfiguraConsultaEdicao.pas">
+            <Form>frmConfiguraConsultaEdicao</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untLogSQL.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untTSQLTrace.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\Interfaces\untICfgSis.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\util\testabilidade\untTestabilidade.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\libFuncoes\untIFuncoesCXGrid.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\configuracoes\untTCliAtiRepository.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\configuracoes\untTCliAti.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\cadastros\untTCadAti.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\configuracoes\untCfgCliAti.pas">
+            <Form>frmCfgCliAti</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\financeiro\gerais\untLogBan.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\financeiro\gerais\untTBanCtp.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\financeiro\gerais\untTBanCtpRepository.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\financeiro\gerais\untTBanCtr.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\financeiro\gerais\untTBanCtrRepository.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\cadastros\untTCadCta.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\cadastros\untTCadCli.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untMemo.pas">
+            <Form>frmMemo</Form>
+        </DCCReference>
+        <DCCReference Include="safra\untConfigSafra.pas">
+            <Form>frmConfigSafra</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="safra\untExpArqRemSafra.pas">
+            <Form>frmExpArqRemSafra</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="real\untConfigReal.pas">
+            <Form>frmConfigReal</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="real\untExpArqRemReal.pas">
+            <Form>frmExpArqRemReal</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\faturamento\untCadNegBussiness.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untLogForm.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untHelperCitel.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untLiberacaoFactory.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untILiberacao.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untMsgLiberacao.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\email\model\untTCadPrv.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\direitosdeacesso\untTCadOpeRepository.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\direitosdeacesso\untTCadOpe.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\email\controller\untTEnvioEmail.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\email\view\untEnvioEmail.pas">
+            <Form>frmEnvioEmail</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\email\view\untEditorHtml.pas">
+            <Form>frmEditorHtml</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\email\model\untTEmaEnv.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untControlaNotSaldoMin.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\cadastros\untMsgInterna.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untAdiantamentoClienteGenerico.pas"/>
+        <DCCReference Include="DDA\untCtaAtuDupDDA.pas">
+            <Form>frmCtaAtuDupDDA</Form>
+        </DCCReference>
+        <DCCReference Include="DDA\untCtaCadDupDDA.pas">
+            <Form>frmCtaCadDupDDA</Form>
+        </DCCReference>
+        <DCCReference Include="DDA\untCtaDigDadosDDA.pas">
+            <Form>frmCtaDigDadosDDA</Form>
+        </DCCReference>
+        <DCCReference Include="DDA\untCtaImpDDA.pas">
+            <Form>frmCtaImpDDA</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untDuplicatas.pas"/>
+        <DCCReference Include="DDA\untCtaRelDupDDA.pas">
+            <Form>frmCtaRelDupDDA</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\cadastros\untICadastros.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\email\view\untCadContatosEmail.pas">
+            <Form>frmCadContatosEmail</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\email\view\untConsultaContatosEmail.pas">
+            <Form>frmConsultaContatosEmail</Form>
+        </DCCReference>
+        <DCCReference Include="bancoob 240p\untConfigBancoobCta.pas">
+            <Form>frmConfigBancoobCta</Form>
+        </DCCReference>
+        <DCCReference Include="bancoob 240p\untExpArqRemBancoobCta.pas">
+            <Form>frmExpArqRemBancoobCta</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\libFuncoes\untModuloReplicacaoLibFuncoes.pas">
+            <Form>frmModuloReplicacaoLibFuncoes</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="SPC Brasil\untGeraArqSPC.pas">
+            <Form>frmGeraArqSPC</Form>
+        </DCCReference>
+        <DCCReference Include="SPC Brasil\untGeraArqSPCSel.pas">
+            <Form>frmGeraArqSPCSel</Form>
+        </DCCReference>
+        <DCCReference Include="SPC Brasil\untExpArqSPC.pas">
+            <Form>frmExpArqSPC</Form>
+        </DCCReference>
+        <DCCReference Include="SPC Brasil\untConfigSPC.pas">
+            <Form>frmConfigSPC</Form>
+        </DCCReference>
+        <DCCReference Include="SPC Brasil\untProcArqSPC.pas">
+            <Form>frmProcArqSPC</Form>
+        </DCCReference>
+        <DCCReference Include="bradesco\untConfigBradescoCta240.pas">
+            <Form>frmConfigBradescoCta240</Form>
+        </DCCReference>
+        <DCCReference Include="bradesco\untExpArqRemBradescoCta240.pas">
+            <Form>frmExpArqRemBradescoCta240</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untDisparaEmailAut.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untThreadEnviaEmail.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\configuracoes\untCfgEmailAutSaida.pas">
+            <Form>frmCfgEmailAutSaida</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\configuracoes\untCfgModeloEmail.pas">
+            <Form>frmCfgModeloEmail</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\configuracoes\untCfgEmailAutenticacao.pas">
+            <Form>frmCfgEmailAutenticacao</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\iTintas\untIExecutaSQLReplicacaoTinta.pas"/>
+        <DCCReference Include="Bradesco 240p Vendor\untConfigBradesco240Vendor.pas">
+            <Form>frmConfigBradesco240Vendor</Form>
+        </DCCReference>
+        <DCCReference Include="Bradesco 240p Vendor\untExpArqRemBradesco240Vendor.pas">
+            <Form>frmExpArqRemBradesco240Vendor</Form>
+        </DCCReference>
+        <DCCReference Include="capital_financas\untConfigCapitalFinancas.pas">
+            <Form>frmConfigCapitalFinancas</Form>
+        </DCCReference>
+        <DCCReference Include="capital_financas\untExpArqRemCapitalFinancas.pas">
+            <Form>frmExpArqRemCapitalFinancas</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untMensagemTabela.pas">
+            <Form>frmMensagemTabela</Form>
+        </DCCReference>
+        <DCCReference Include="genericos\untRelNossoNum.pas">
+            <Form>frmRelNossoNum</Form>
+        </DCCReference>
+        <DCCReference Include="safra\untConfigSafraCta.pas">
+            <Form>frmConfigSafraCta</Form>
+        </DCCReference>
+        <DCCReference Include="safra\untExpArqRemSafraCta.pas">
+            <Form>frmExpArqRemSafraCta</Form>
+        </DCCReference>
+        <DCCReference Include="safra\untFuncoesBco422.pas"/>
+        <DCCReference Include="banco brb\untConfigBRB400p.pas">
+            <Form>frmConfigBRB400p</Form>
+        </DCCReference>
+        <DCCReference Include="banco brb\untExpArqRemBRB400p.pas">
+            <Form>frmExpArqRemBRB400p</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\cadastros\untFormulaCustoProduto.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\cadastros\untFormulaCustoProdutoEdicao.pas">
+            <Form>frmFormulaCustoProdutoEdicao</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\configuracoes\untCfgFormulasPrecoCusto.pas">
+            <Form>frmFormulaCalcPCusto</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\configuracoes\untCfgOcorrenciaEvento.pas">
+            <Form>frmCfgOcorrenciaEvento</Form>
+        </DCCReference>
+        <DCCReference Include="genericos\untGerDupCob.pas">
+            <Form>frmGerDupCob</Form>
+        </DCCReference>
+        <DCCReference Include="CobrancaJudicial\untExpArqCobJudicial.pas">
+            <Form>frmExpArqCobJudicial</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\financeiro\contasareceber\untTCadRec.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\financeiro\contasareceber\untTCadRecRepository.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\financeiro\contasareceber\untLogCtr.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\iTintas\untILibTintaDllRelacao.pas"/>
+        <DCCReference Include="DDA\untTImportaDDA.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\Interfaces\untIFatDefineLotesPedidoWMS.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untImagemBase64.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untFuncoesImagem.pas"/>
+        <DCCReference Include="banco do nordeste\untConfigNordeste400.pas">
+            <Form>frmConfigNordeste400</Form>
+        </DCCReference>
+        <DCCReference Include="banco do nordeste\untExpArqRemNordeste400.pas">
+            <Form>frmExpArqRemNordeste400</Form>
+        </DCCReference>
+        <DCCReference Include="genericos\untCadOcoCartei.pas">
+            <Form>frmCadOcoCartei</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untCNFOCO_Class.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untCNFOCO_Dao.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\sms\untCfgModeloSMS.pas">
+            <Form>frmCfgModeloSMS</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\sms\untCfgSMS.pas">
+            <Form>frmCfgSMS</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\sms\untDisparaSMSAut.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\sms\untTEnvioSMS.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\sms\untThreadEnviaSMS.pas"/>
+        <DCCReference Include="Banestes\untExpArqRemBanestesCta.pas">
+            <Form>frmExpArqRemBanestesCta</Form>
+        </DCCReference>
+        <DCCReference Include="Banestes\untConfigBanestesCta.pas">
+            <Form>frmConfigBanestesCta</Form>
+        </DCCReference>
+        <DCCReference Include="Banestes\untConfigBanestes.pas">
+            <Form>frmConfigBanestes</Form>
+        </DCCReference>
+        <DCCReference Include="PagFor\untTPagFor.pas"/>
+        <DCCReference Include="PagFor\untConfigPagFor.pas">
+            <Form>frmConfigPagFor</Form>
+        </DCCReference>
+        <DCCReference Include="PagFor\untExpArqPagFor.pas">
+            <Form>frmExpArqPagFor</Form>
+        </DCCReference>
+        <DCCReference Include="PagFor\untRetPagFor.pas">
+            <Form>frmRetPagFor</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\cadastros\untTCadCtaRepository.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\cadastros\untTCadForRepository.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\cadastros\untTCadCliRepository.pas"/>
+        <DCCReference Include="genericos\untBaixaMovimentacaoBancariaDesmembrado.pas"/>
+        <DCCReference Include="Uniprime\untConfigUniprime400.pas">
+            <Form>frmConfigUniprime400</Form>
+        </DCCReference>
+        <DCCReference Include="Uniprime\untExpArqRemUniprime400.pas">
+            <Form>frmExpArqRemUniprime400</Form>
+        </DCCReference>
+        <DCCReference Include="boa vista\untTBoaVista.pas"/>
+        <DCCReference Include="Credisan 400p\untConfigCredisan400.pas">
+            <Form>frmConfigCredisan400</Form>
+        </DCCReference>
+        <DCCReference Include="Credisan 400p\untExpArqRemCredisan400.pas">
+            <Form>frmExpArqRemCredisan400</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\configuracoes\untCfgFpfAti.pas">
+            <Form>frmCfgFpfAti</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\configuracoes\untCfgOcoFid.pas">
+            <Form>frmCfgOcoFid</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\faturamento\untTSituacaoPedidoVenda.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untModuloLegenda.pas">
+            <Form>frmModuloLegenda</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untLegenda.pas">
+            <Form>frmLegenda</Form>
+        </DCCReference>
+        <DCCReference Include="Sicredi 240p\untConfigSicredi240.pas">
+            <Form>frmConfigSicredi240</Form>
+        </DCCReference>
+        <DCCReference Include="Sicredi 240p\untExpArqRemSicredi240.pas">
+            <Form>frmExpArqRemSicredi240</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untDisparaEmailAutEnt.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\configuracoes\untCfgEmailAutEntrada.pas">
+            <Form>frmCfgEmailAutEntrada</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\Imports\CAPICOM_TLB.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\movimentacaoitens\PedidoDeCompra\untSaldoPedidoCompra.pas"/>
+        <DCCReference Include="FomentoMercantil\untConfigFomentoMercantil400.pas">
+            <Form>frmConfigFomentoMercantil400</Form>
+        </DCCReference>
+        <DCCReference Include="FomentoMercantil\untExpArqRemFomentoMercantil400.pas">
+            <Form>frmExpArqRemFomentoMercantil400</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untDigDataHora.pas">
+            <Form>frmDigDataHora</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\relatorios\crm\untQckOcorrenciasCRM.pas">
+            <Form>frmQckOcorrenciasCRM</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\CRM\untFuncoesCRM.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\crm\untDivergenciasDevAD.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\CRM\untAtualizaOcorrenciasCRM.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\CRM\untTypesCRM.pas"/>
+        <DCCReference Include="protestos\IEPTB\untConfigIEPTBSP.pas">
+            <Form>frmConfigIEPTBSP</Form>
+        </DCCReference>
+        <DCCReference Include="protestos\IEPTB\untExpArqRemIEPTBSP.pas">
+            <Form>frmExpArqRemIEPTBSP</Form>
+        </DCCReference>
+        <DCCReference Include="itau\untFuncoesBco341.pas"/>
+        <DCCReference Include="daycoval\untConfigDaycoval.pas">
+            <Form>frmConfigDaycoval</Form>
+        </DCCReference>
+        <DCCReference Include="daycoval\untExpArqRemDaycoval.pas">
+            <Form>frmExpArqRemDaycoval</Form>
+        </DCCReference>
+        <DCCReference Include="redasset\untConfigRedasset.pas">
+            <Form>frmConfigRedasset</Form>
+        </DCCReference>
+        <DCCReference Include="redasset\untExpArqRemRedasset.pas">
+            <Form>frmExpArqRemRedasset</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\faturamento\untIFatReservaSaldo.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\faturamento\untTFatReservaSaldo.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\Genericos\synalist\blcksock.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\Genericos\synalist\httpsend.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\Genericos\synalist\ssl_openssl.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\Genericos\synalist\ssl_openssl_lib.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\Genericos\synalist\synacode.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\Genericos\synalist\synafpc.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\Genericos\synalist\synaip.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\Genericos\synalist\synautil.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\Genericos\synalist\synsock.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untUtilMonitor.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\crm\untIFuncoesCRM.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\faturamento\untValidaSituacaoFinanceiraPedido.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\faturamento\untIFatEntregaFutura.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\faturamento\untTFatEntregaFutura.pas"/>
+        <DCCReference Include="credit brasil\untConfigCreditBrasil.pas">
+            <Form>frmConfigCreditBrasil</Form>
+        </DCCReference>
+        <DCCReference Include="credit brasil\untExpArqRemCreditBrasil.pas">
+            <Form>frmExpArqRemCreditBrasil</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untSeqTmp.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\Controller\Bpl\Faturamento\Impostos\Interfaces\Controller.Faturamento.Interfaces.Impostos.Parametros.Comum.pas"/>
+        <DCCReference Include="..\padra_atualizado\Packages\Faturamento\Impostos\interfaces\source\Faturamento.Impostos.Interfaces.Model.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\faturamento\Controller.Faturamento.Interfaces.Cache.pas"/>
+        <DCCReference Include="..\padra_atualizado\Packages\Shared\Functions\source\Shared.Functions.Funcoes.Faturamento.pas"/>
+        <DCCReference Include="..\padra_atualizado\Packages\Shared\Functions\source\Shared.Functions.Core.pas"/>
+        <DCCReference Include="..\padra_atualizado\Packages\Shared\Functions\source\Shared.Functions.Constantes.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\financeiro\contasapagar\untTCtpDet.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\financeiro\contasapagar\untTCtpDetRepository.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\financeiro\contasapagar\untLogCtpDet.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\Interfaces\untIFuncoesSaldos.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untCFGBAN_Class.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untCFGBAN_Dao.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untSubjectClass.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untSubjectIntf.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untGravandoObs.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\configuracoes\untConfiguraEtiquetas.pas">
+            <Form>frmConfiguraEtiquetas</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\configuracoes\untConfiguraEtiquetasFuncoes.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\email\view\untListaEmail.pas">
+            <Form>frmListaEmail</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\Financeiro\Gerais\untInfCobrancaAgeRelHist.pas">
+            <Form>frmInfCobrancaAgeRelHist</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\cadastros\untCadCob.pas"/>
+        <DCCReference Include="banrisul 240p\untConfigBanrisul240.pas">
+            <Form>frmConfigBanrisul240</Form>
+        </DCCReference>
+        <DCCReference Include="banrisul 240p\untExpArqRemBanrisul240.pas">
+            <Form>frmExpArqRemBanrisul240</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untFilasImpressaoNFCe.pas">
+            <Form>frmFilasImpressaoNFCe</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\libFuncoes\untLoadConsultaSQL.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\libFuncoes\untConfiguraSQLConsultaEdicao.pas">
+            <Form>frmConfiguraSQLConsultaEdicao</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\libFuncoes\untConfiguraSQLConsulta.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\editorRelatorios\untMsgErroSQL.pas">
+            <Form>frmMsgErroSQL</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\libFuncoes\untPedeDadosCampoSQL.pas">
+            <Form>frmPedeDadosCampoSQL</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\boleto\untTBoletoCarne.pas"/>
+        <DCCReference Include="Athena Atlanta\untConfigAthenaAtlanta.pas">
+            <Form>frmConfigAthenaAtlanta</Form>
+        </DCCReference>
+        <DCCReference Include="Athena Atlanta\untExpArqRemAthenaAtlanta.pas">
+            <Form>frmExpArqRemAthenaAtlanta</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\boleto\untTBoletoLayImp.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\faturamento\untValidacoesSistemaDEPS.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untFrameDirectoryEditFocus.pas">
+            <Form>fraDirectoryEditFocus</Form>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untFrameCentroCustoEditFocus.pas">
+            <Form>fraCentroCustoEditFocus</Form>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\Core\Faturamento.Connections.Functions.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\Shared.Functions.Conexao.UniDac.pas"/>
+        <DCCReference Include="..\padra_atualizado\Packages\Shared\Functions\source\Shared.Functions.DataSet.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untDicionarioResultadoQuerySimples.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untFuncoesDicionarios.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\Core\Core.Funcoes.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\Core\Shared.Core.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\Core\Conexao\Faturamento.Interfaces.Conexao.pas"/>
+        <DCCReference Include="..\padra_atualizado\Packages\Shared\Functions\source\Shared.Functions.Interfaces.pas"/>
+        <DCCReference Include="..\padra_atualizado\Packages\Shared\Functions\source\Shared.Functions.Tipos.pas"/>
+        <DCCReference Include="..\padra_atualizado\Packages\Shared\Functions\source\Shared.Functions.Types.pas"/>
+        <DCCReference Include="..\padra_atualizado\Packages\Shared\Functions\source\Shared.Functions.Utils.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\fechamentosmensais\untFechamentoFinanceiro.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\fechamentosmensais\untTFecFin.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\fechamentosmensais\untTFecFinRepository.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\configuracoes\untCfgClientesEmail.pas">
+            <Form>frmCfgClientesEmail</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\cadastros\untCtaDet.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untConfiguracoes.pas"/>
+        <DCCReference Include="..\padra_atualizado\Packages\Shared\Functions\source\Shared.Functions.Configuracoes.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untConstantesUtils.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\libNfe\untConstantesNFe.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untFrameCheckComboBoxEmpresa.pas">
+            <Form>fraCheckComboBoxEmpresa</Form>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untTLock.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\financeiro\gerais\api.yapay\api\Yapay.Api.Resources.pas"/>
+        <DCCReference Include="genericos\untFrameCheckComboBoxOcorrencia.pas">
+            <Form>fraCheckComboBoxOcorrencia</Form>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="PagFor\untDigDataPagamento.pas">
+            <Form>frmDigDataPagamento</Form>
+        </DCCReference>
+        <DCCReference Include="Garson Credito\untConfigGarsonCredito.pas">
+            <Form>frmConfigGarsonCredito</Form>
+        </DCCReference>
+        <DCCReference Include="Garson Credito\untExpArqRemGarsonCredito.pas">
+            <Form>frmExpArqRemGarsonCredito</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\cadastros\untCategoriaCadLead.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\faturamento\Promocao\Promocao.Regra.Preco.Sugestao.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\Controller\Bpl\Faturamento\Precos\PrecoCusto\Controller.Faturamento.Precos.PrecoCusto.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\Controller\Bpl\Faturamento\Precos\Interfaces\Controller.Faturamento.Interfaces.Precos.PrecoCusto.pas"/>
+        <DCCReference Include="..\padra_atualizado\Packages\Faturamento\Precos\interfaces\source\Faturamento.Precos.Interfaces.PrecoCusto.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\faturamento\untFatCalcularPrecosService.pas"/>
+        <DCCReference Include="..\padra_atualizado\Packages\Faturamento\Precos\interfaces\source\Faturamento.Precos.Interfaces.Servicos.Disponiveis.pas"/>
+        <DCCReference Include="..\padra_atualizado\Packages\Faturamento\Precos\interfaces\source\Faturamento.Precos.Interfaces.Servicos.Disponiveis.PrecoCusto.pas"/>
+        <DCCReference Include="..\padra_atualizado\Packages\Faturamento\Precos\tipos\source\Faturamento.Precos.Tipos.PrecoCusto.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untFuncoesGenCompartilhada.pas"/>
+        <DCCReference Include="..\padra_atualizado\Packages\Shared\Functions\source\Shared.Functions.SQL.pas"/>
+        <DCCReference Include="..\padra_atualizado\Packages\Shared\Functions\source\Shared.Functions.Funcoes.Faturamento.Precos.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\Controller\Bpl\Faturamento\Precos\Generic\Controller.Faturamento.Precos.Generic.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\Controller\Bpl\Faturamento\Precos\Interfaces\Controller.Faturamento.Interfaces.Precos.Generic.pas"/>
+        <DCCReference Include="..\padra_atualizado\Packages\Faturamento\Margem\interfaces\source\Faturamento.Margem.Interfaces.MargemBruta.pas"/>
+        <DCCReference Include="..\padra_atualizado\Packages\Faturamento\Margem\interfaces\source\Faturamento.Margem.Interfaces.Servicos.Disponiveis.pas"/>
+        <DCCReference Include="..\padra_atualizado\Packages\Faturamento\Margem\interfaces\source\Faturamento.Margem.Interfaces.Servicos.Disponiveis.MargemBruta.pas"/>
+        <DCCReference Include="..\padra_atualizado\Packages\Faturamento\Margem\tipos\source\Faturamento.Margem.Tipos.MargemBruta.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\faturamento\untFatCalcularMargemService.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\Controller\Bpl\Faturamento\Margem\Interfaces\Controller.Faturamento.Interfaces.Margem.Generic.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\Controller\Bpl\Faturamento\Margem\MargemBruta\Controller.Faturamento.Margem.MargemBruta.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\Controller\Bpl\Faturamento\Margem\Interfaces\Controller.Faturamento.Interfaces.Margem.MargemBruta.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\Controller\Bpl\Faturamento\Margem\Generic\Controller.Faturamento.Margem.Generic.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\Controller\Bpl\Faturamento\Margem\Interfaces\Controller.Faturamento.Interfaces.Margem.MargemVenda.pas"/>
+        <DCCReference Include="..\padra_atualizado\Packages\Faturamento\Margem\interfaces\source\Faturamento.Margem.Interfaces.MargemVenda.pas"/>
+        <DCCReference Include="..\padra_atualizado\Packages\Faturamento\Margem\interfaces\source\Faturamento.Margem.Interfaces.Servicos.Disponiveis.MargemVenda.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\Controller\Bpl\Faturamento\Margem\MargemVenda\Controller.Faturamento.Margem.MargemVenda.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untFuncoesPrecoCusto.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untFuncoesTintaDeMaquinaBpl.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\faturamento\untFatCalcularServicePath.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\faturamento\untIcmsSTParteVenda.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\Estoque\Estoque.Lote.TSQLSaldoLote.pas"/>
+        <DCCReference Include="Sifra\untConfigSifra.pas">
+            <Form>frmConfigSifra</Form>
+        </DCCReference>
+        <DCCReference Include="Sifra\untExpArqRemSifra.pas">
+            <Form>frmExpArqRemSifra</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\movimentacaoitens\OrdemProducaoIndustrial\OrdemProducaoIndustrial.Funcoes.pas"/>
+        <DCCReference Include="Unicred400_136\untConfigUnicred400_136.pas">
+            <Form>frmConfigUnicred400_136</Form>
+        </DCCReference>
+        <DCCReference Include="Unicred400_136\untExpArqRemUnicred400_136.pas">
+            <Form>frmExpArqRemUnicred400_136</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\faturamento\untPesqCliVend.pas">
+            <Form>frmPesqCliVend</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\cadastros\Produto.TProdutos.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\cadastros\Produto.TSQLProdutos.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\cadastros\Gs1Cnp\interfaces\Produto.GS1CNP.Interfaces.Cadastro.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\cadastros\Gs1Cnp\shared\Produto.GS1CNP.Shared.Types.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\cadastros\Gs1Cnp\controller\Produto.GS1CNP.Controller.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\cadastros\Gs1Cnp\interfaces\Produto.GS1CNP.Interfaces.Controller.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\cadastros\Gs1Cnp\interfaces\Produto.GS1CNP.Interfaces.Atualiza.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\cadastros\Gs1Cnp\factory\Produto.GS1CNP.Consulta.Factory.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\cadastros\Gs1Cnp\interfaces\Produto.GS1CNP.Interfaces.Consulta.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\cadastros\Gs1Cnp\view\Produto.GS1CNP.Consulta.View.pas">
+            <Form>ProdutoGS1CNPConsultaView</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\cadastros\Gs1Cnp\interfaces\Produto.GS1CNP.Interfaces.Service.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\cadastros\Gs1Cnp\service\Produto.GS1CNP.Service.Consulta.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\cadastros\Gs1Cnp\tipos\Produto.GS1CNP.Tipos.Consulta.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\cadastros\Gs1Cnp\auth\Produto.GS1CNP.Auth.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\cadastros\Gs1Cnp\shared\Produto.GS1CNP.Shared.Exception.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\cadastros\Gs1Cnp\factory\Produto.GS1CNP.Cadastro.Factory.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\cadastros\Gs1Cnp\tipos\Produto.GS1CNP.Tipos.Cadastro.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\cadastros\Gs1Cnp\service\Produto.GS1CNP.Service.Cadastro.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\cadastros\Gs1Cnp\interfaces\Produto.GS1CNP.Interfaces.JSONParse.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\cadastros\Gs1Cnp\shared\Produto.GS1CNP.Shared.JSONParse.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\cadastros\Gs1Cnp\shared\Produto.GS1CNP.Shared.Functions.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\cadastros\Gs1Cnp\factory\Produto.GS1CNP.Parametros.Factory.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\cadastros\Gs1Cnp\interfaces\Produto.GS1CNP.Interfaces.Parametros.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\cadastros\Gs1Cnp\tipos\Produto.GS1CNP.Tipos.Atualiza.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\cadastros\Gs1Cnp\factory\Produto.GS1CNP.Atualiza.Factory.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\cadastros\Gs1Cnp\service\Produto.GS1CNP.Service.Atualiza.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\cadastros\Gs1Cnp\view\Produto.GS1CNP.Inconsistencia.View.pas">
+            <Form>ProdutoGS1CNPInconsistenciaView</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\cadastros\Gs1Cnp\interfaces\Produto.GS1CNP.Interfaces.Http.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\cadastros\Gs1Cnp\http\Produto.GS1CNP.Http.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\cadastros\Gs1Cnp\model\Produto.GS1CNP.Model.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\cadastros\Gs1Cnp\shared\Produto.GS1CNP.Shared.Constants.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\editorRelatorios\untAjudaVariaveis.pas">
+            <Form>frmAjudaVariaveis</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\util\operacoesrefitens\untHistoricoBalanco.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\util\operacoesrefitens\untBalancoEstoqueAjuste.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\financeiro\gerais\untValidacaoCredito.pas"/>
+        <DCCReference Include="genericos\untVerCreditos.pas">
+            <Form>frmVerCreditos</Form>
+        </DCCReference>
+        <DCCReference Include="Santander 240p\untConfigSantander240p.pas">
+            <Form>frmConfigSantander240p</Form>
+        </DCCReference>
+        <DCCReference Include="Santander 240p\untExpArqRemSantander240p.pas">
+            <Form>frmExpArqRemSantander240p</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untVersaoProg.pas"/>
+        <DCCReference Include="caixa federal 240p[7D]\untConfigCxFederal7D.pas">
+            <Form>frmConfigCxFederal7D</Form>
+        </DCCReference>
+        <DCCReference Include="caixa federal 240p[7D]\untExpArqRemCxFed7D.pas">
+            <Form>frmExpArqRemCxFed7D</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\financeiro\contasareceber\EmailContasReceber.Classes.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\boleto\untTCuttly.pas"/>
+        <DCCReference Include="daycoval_707\untConfigDaycoval_707.pas">
+            <Form>frmConfigDaycoval_707</Form>
+        </DCCReference>
+        <DCCReference Include="daycoval_707\untExpArqRemDaycoval_707.pas">
+            <Form>frmExpArqRemDaycoval_707</Form>
+        </DCCReference>
+        <DCCReference Include="genericos\untFramePlanoDeContasMaskEdit.pas">
+            <Form>fraPlanoDeContasMskEdit</Form>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="BancoInter\untTBancoInter.pas"/>
+        <DCCReference Include="BancoInter\untConfigBancoInter.pas">
+            <Form>frmConfigBancoInter</Form>
+        </DCCReference>
+        <DCCReference Include="genericos\untRetBcoAPI.pas">
+            <Form>frmRetBcoAPI</Form>
+        </DCCReference>
+        <DCCReference Include="BancoInter\untTBancoInterMenu.pas"/>
+        <DCCReference Include="banrisul 240p\untConfigBanrisulCta240.pas">
+            <Form>frmConfigBanrisulCta240</Form>
+        </DCCReference>
+        <DCCReference Include="banrisul 240p\untExpArqRemBanrisulCta240.pas">
+            <Form>frmExpArqRemBanrisulCta240</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\sms\untCfgSMSAviCob.pas">
+            <Form>frmCfgSMSAviCob</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\Util_DLL\OpeRefProd\untControleContagemBalancoEstoque.pas"/>
+        <DCCReference Include="Serrana\untConfigSerrana.pas">
+            <Form>frmConfigSerrana</Form>
+        </DCCReference>
+        <DCCReference Include="Serrana\untExpArqRemSerrana.pas">
+            <Form>frmExpArqRemSerrana</Form>
+        </DCCReference>
+        <DCCReference Include="Serrana\untTSerranaMenu.pas"/>
+        <DCCReference Include="Rubi\untConfigRubi.pas">
+            <Form>frmConfigRubi</Form>
+        </DCCReference>
+        <DCCReference Include="Rubi\untExpArqRemRubi.pas">
+            <Form>frmExpArqRemRubi</Form>
+        </DCCReference>
+        <DCCReference Include="Rubi\untTRubiMenu.pas"/>
+        <DCCReference Include="Banco do Brasil PGG\untConfiguracaoBancoBrasilPGG.pas">
+            <Form>frmConfiguracaoBancoBrasilPGG</Form>
+        </DCCReference>
+        <DCCReference Include="Banco do Brasil PGG\untExpRemessaBancoBrasilPGG.pas">
+            <Form>frmExpRemessaBancoBrasilPGG</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\cadastros\untPreAlt_Trigger.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\configuracoes\untCfgPortadoresAutorizadosEmail.pas">
+            <Form>frmCfgPortadoresAutorizadosEmail</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\email\controller\untTDupEma.pas"/>
+        <DCCReference Include="santander\untTFolhaPagamentoSantanderContasPagar.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\configuracoes\untCfgCfopCst.pas"/>
+        <DCCReference Include="genericos\untTRegBol.pas"/>
+        <DCCReference Include="genericos\untTDetalhamentoRetorno.pas"/>
+        <DCCReference Include="genericos\untConfigPagInfo.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\whatsapp\untQualiZapEnqueueMessageToSend.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\whatsapp\untQualiZapUploadFile.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\faturamento\untRestApi.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\whatsapp\untQualiZapRestApi.pas"/>
+        <DCCReference Include="genericos\untAlteraBoletoApi.pas">
+            <Form>frmAlteraBoletoApi</Form>
+        </DCCReference>
+        <DCCReference Include="Banco do Brasil API\untConfigBancoDoBrasilAPI.pas">
+            <Form>frmConfigBancoDoBrasilAPI</Form>
+        </DCCReference>
+        <DCCReference Include="Banco do Brasil API\untTBancoDoBrasilAPI.pas"/>
+        <DCCReference Include="Banco do Brasil API\untTBancoDoBrasilMenu.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\configuracoes\untCfgEmailAviCob.pas">
+            <Form>frmCfgEmailAviCob</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untRelAjudaMod.pas">
+            <Form>frmRelAjudaMod</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untTMemoriaCalculoPrecoVendaMargem.pas"/>
+        <DCCReference Include="SB Credito\untConfigSBCredito.pas">
+            <Form>frmConfigSBCredito</Form>
+        </DCCReference>
+        <DCCReference Include="SB Credito\untExpArqRemSBCredito.pas">
+            <Form>frmExpArqRemSBCredito</Form>
+        </DCCReference>
+        <DCCReference Include="SB Credito Bradesco\untConfigSBCredito_Bradesco.pas">
+            <Form>frmConfigSBCredito_Bradesco</Form>
+        </DCCReference>
+        <DCCReference Include="SB Credito Bradesco\untExpArqRemSBCredito_Bradesco.pas">
+            <Form>frmExpArqRemSBCredito_Bradesco</Form>
+        </DCCReference>
+        <DCCReference Include="ABC Brasil\untConfigABCBrasilCta.pas">
+            <Form>frmConfigABCBrasilCta</Form>
+        </DCCReference>
+        <DCCReference Include="ABC Brasil\untExpArqRemABCBrasilCta.pas">
+            <Form>frmExpArqRemABCBrasilCta</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\financeiro\contasareceber\untLogMovCtr.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\whatsapp\untFilaEContatoEnvio.pas">
+            <Form>frmFilaEContatoEnvio</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\whatsapp\untQualiZapGetClientOpenChats.pas"/>
+        <DCCReference Include="DDA\untCtaSelecionaDuplicataDDA.pas">
+            <Form>frmCtaSelecionaDuplicataDDA</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untCadCtaPagarSimplificado.pas">
+            <Form>frmCadCtaPagarSimplificado</Form>
+        </DCCReference>
+        <DCCReference Include="DDA\untTraducaoCxCompsAutBan.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\util\untMinioStorageAPICitel.pas"/>
+        <DCCReference Include="Sofisa 444p\untConfigSofisa_444.pas">
+            <Form>frmConfigSofisa_444</Form>
+        </DCCReference>
+        <DCCReference Include="Sofisa 444p\untExpArqRemSofisa_444.pas">
+            <Form>frmExpArqRemSofisa_444</Form>
+        </DCCReference>
+        <DCCReference Include="genericos\untFrameMenuPrincipal.pas">
+            <Form>frmFrameMenuPrincipal</Form>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="Credisis\untConfigCredisisAPI.pas">
+            <Form>frmConfigCredisisAPI</Form>
+        </DCCReference>
+        <DCCReference Include="Credisis\untTBancoCredisisAPI.pas"/>
+        <DCCReference Include="Credisis\untTBancoCredisisMenu.pas"/>
+        <DCCReference Include="genericos\untTOcoBanCache.pas"/>
+        <DCCReference Include="genericos\untTDeleteRetBcoLote.pas"/>
+        <DCCReference Include="genericos\untTInsertMovCtrLote.pas"/>
+        <DCCReference Include="genericos\untTInsertLogMcrLote.pas"/>
+        <DCCReference Include="genericos\untTUpdateBolCtrLote.pas"/>
+        <DCCReference Include="genericos\untTUpdateDupCobLote.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untProcessaAtualizacaoOcorrenciasCRM.pas"/>
+        <DCCReference Include="genericos\untFrameGerarPixBoleto.pas">
+            <Form>fraGerarPixBoleto</Form>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\financeiro\pix\untIIntegracaoPixCitel.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\financeiro\pix\untTIntegracaoPixCitel.pas"/>
+        <DCCReference Include="..\libIntegracaoPixCitel\fontes\genericos\untTiposPix.pas"/>
+        <DCCReference Include="..\libIntegracaoPixCitel\fontes\Dataset\untIDataSet.pas"/>
+        <DCCReference Include="..\libIntegracaoPixCitel\fontes\Dataset\untUniQueryDataSetWrapper.pas"/>
+        <DCCReference Include="..\libIntegracaoPixCitel\fontes\Dataset\untDataSetIDataSetWrapper.pas"/>
+        <DCCReference Include="..\libIntegracaoPixCitel\fontes\Dataset\untFieldDataSetFieldWrapper.pas"/>
+        <DCCReference Include="..\libIntegracaoPixCitel\fontes\Dataset\untParamDataSetWrapper.pas"/>
+        <DCCReference Include="Btg Pactual\untConfigBtgPactual_240p.pas">
+            <Form>frmConfigBtgPactual_240p</Form>
+        </DCCReference>
+        <DCCReference Include="Btg Pactual\untExpArqRemBtgPactual_240p.pas">
+            <Form>frmExpArqRemBtgPactual_240p</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untLogAut.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\sms\untMkmServiceRestApi.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\sms\untMkmServiceSms.pas"/>
+        <DCCReference Include="Cresol 240p\untConfigCresol240p.pas">
+            <Form>frmConfigCresol240p</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Cresol 240p\untExpArqRemCresol240p.pas">
+            <Form>frmExpArqRemCresol240p</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Gerencianet 240p\untConfigGerencianet240p.pas">
+            <Form>frmConfigGerencianet240p</Form>
+        </DCCReference>
+        <DCCReference Include="Gerencianet 240p\untExpArqRemGerencianet240p.pas">
+            <Form>frmExpArqRemGerencianet240p</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\configuracoes\untCfgEmailAviDeb.pas">
+            <Form>frmCfgEmailAviDeb</Form>
+        </DCCReference>
+        <DCCReference Include="Sicredi API\untConfigSicrediAPI.pas">
+            <Form>frmConfigSicrediAPI</Form>
+        </DCCReference>
+        <DCCReference Include="Sicredi API\untTBancoSicrediAPI.pas"/>
+        <DCCReference Include="Sicredi API\untTBancoSicrediMenu.pas"/>
+        <DCCReference Include="..\padra_atualizado\Monitors\Shared\untTMonitorGeraBoletos.pas"/>
+        <DCCReference Include="BMPMoneyPlus\untConfigBMPMoneyPlus.pas">
+            <Form>frmConfigBMPMoneyPlus</Form>
+        </DCCReference>
+        <DCCReference Include="BMPMoneyPlus\untExpArqRemBMPMoneyPlus.pas">
+            <Form>frmExpArqRemBMPMoneyPlus</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\boleto\untTBoleto1Via_Comprovante.pas"/>
+        <DCCReference Include="genericos\untTRestSynalistAutban.pas"/>
+        <DCCReference Include="PagFor\untPagForAPIAutenticacaoFrame.pas">
+            <Form>fraPagForAPIAutenticacaoFrame</Form>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="PagFor\untTPagForMenu.pas"/>
+        <DCCReference Include="Banco do Brasil API\untTPagForBancoDoBrasilAPI.pas"/>
+        <DCCReference Include="PagFor\untTiposPagFor.pas"/>
+        <DCCReference Include="PagFor\untPagForAPIRetPagForFrame.pas">
+            <Form>fraPagForAPIRetPagForFrame</Form>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\libIntegracaoPixCitel\fontes\requisicoes\untTFuncoesAuxiliaresPix.pas"/>
+        <DCCReference Include="Itau API\untTItauMenu.pas"/>
+        <DCCReference Include="Itau API\untConfigItauAPI.pas">
+            <Form>frmConfigItauAPI</Form>
+        </DCCReference>
+        <DCCReference Include="Itau API\untTBancoItauAPI.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\Genericos\untMensagemExplicativa.pas">
+            <Form>frmMensagemExplicativa</Form>
+        </DCCReference>
+        <DCCReference Include="Sparti\untConfigSparti.pas">
+            <Form>frmConfigSparti</Form>
+        </DCCReference>
+        <DCCReference Include="Sparti\untExpArqRemSparti.pas">
+            <Form>frmExpArqRemSparti</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\financeiro\pix\views\untSelecionaChavePix.pas">
+            <Form>frmSelecionaChavePix</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\libFuncoes\untFuncoesCitelGrid.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\libFuncoes\untIFuncoesCitelGrid.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\util\operacoesrefitens\untBalancoEstoqueManutencao.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\configuracoes\untCfgEnvioXmlFornecedor.pas">
+            <Form>frmCfgEnvioXmlFornecedor</Form>
+        </DCCReference>
+        <DCCReference Include="Lecca\untConfigBancoLecca.pas">
+            <Form>frmConfigBancoLecca</Form>
+        </DCCReference>
+        <DCCReference Include="Lecca\untExpArqRemBancoLecca.pas">
+            <Form>frmExpArqRemBancoLecca</Form>
+        </DCCReference>
+        <DCCReference Include="Sisprime\untConfigSisprime.pas">
+            <Form>frmConfigSisprime</Form>
+        </DCCReference>
+        <DCCReference Include="Sisprime\untExpArqRemSisprime.pas">
+            <Form>frmExpArqRemSisprime</Form>
+        </DCCReference>
+        <DCCReference Include="genericos\untTRegPgi.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untHorarioSistema.pas"/>
+        <DCCReference Include="Multibank\untConfigMultibank.pas">
+            <Form>frmConfigMultibank</Form>
+        </DCCReference>
+        <DCCReference Include="Multibank\untExpArqRemMultibank.pas">
+            <Form>frmExpArqRemMultibank</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untProximoCodigo.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\Core\Conexao\untConnection.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\Core\Conexao\untFiredac.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\Core\Conexao\untUnidac.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\Core\Conexao\untQuery.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\Core\Conexao\untQueryParam.pas"/>
+        <DCCReference Include="SRM\untConfigSRM.pas">
+            <Form>frmConfigSRM</Form>
+        </DCCReference>
+        <DCCReference Include="SRM\untExpArqRemSRM.pas">
+            <Form>frmExpArqRemSRM</Form>
+        </DCCReference>
+        <DCCReference Include="Fidussia\untConfigFidussia.pas">
+            <Form>frmConfigFidussia</Form>
+        </DCCReference>
+        <DCCReference Include="Fidussia\untExpArqRemFidussia.pas">
+            <Form>frmExpArqRemFidussia</Form>
+        </DCCReference>
+        <DCCReference Include="Multiplike\untConfigMultiplike.pas">
+            <Form>frmConfigMultiplike</Form>
+        </DCCReference>
+        <DCCReference Include="Multiplike\untExpArqRemMultiplike.pas">
+            <Form>frmExpArqRemMultiplike</Form>
+        </DCCReference>
+        <DCCReference Include="Grupo Sifra\untConfigGrupoSifra.pas">
+            <Form>frmConfigGrupoSifra</Form>
+        </DCCReference>
+        <DCCReference Include="Grupo Sifra\untExpArqRemGrupoSifra.pas">
+            <Form>frmExpArqRemGrupoSifra</Form>
+        </DCCReference>
+        <DCCReference Include="JpiFidc\untConfigJpiFidc.pas">
+            <Form>frmConfigJpiFidc</Form>
+        </DCCReference>
+        <DCCReference Include="JpiFidc\untExpArqRemJpiFidc.pas">
+            <Form>frmExpArqRemJpiFidc</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\email\controller\untTCadastroProvedores.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\email\controller\untTEnvioEmailAutenticacaoOAuth2.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\email\controller\untTEnvioEmailOutlookOAuth2.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\email\controller\untTEnvioEmailRestSynalist.pas"/>
+        <DCCReference Include="Sicoob API\untConfigSicoobApi.pas">
+            <Form>frmConfigSicoobApi</Form>
+        </DCCReference>
+        <DCCReference Include="Sicoob API\untTBancoSicoobApi.pas"/>
+        <DCCReference Include="Sicoob API\untTBancoSicoobMenu.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\TypesLayoutPedidoCompra.pas"/>
+        <DCCReference Include="Santander API\untConfigSantanderAPI.pas">
+            <Form>frmConfigSantanderAPI</Form>
+        </DCCReference>
+        <DCCReference Include="Santander API\untTBancoSantanderAPI.pas"/>
+        <DCCReference Include="Santander API\untTBancoSantanderMenu.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\Api.Client.Loader.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untConsulta.pas">
+            <Form>frmConsulta</Form>
+        </DCCReference>
+        <DCCReference Include="Lake Bank\untConfigLakeBank.pas">
+            <Form>frmConfigLakeBank</Form>
+        </DCCReference>
+        <DCCReference Include="Lake Bank\untExpArqRemLakeBank.pas">
+            <Form>frmExpArqRemLakeBank</Form>
+        </DCCReference>
+        <DCCReference Include="Lotus\untConfigLotus.pas">
+            <Form>frmConfigLotus</Form>
+        </DCCReference>
+        <DCCReference Include="Lotus\untExpArqRemLotus.pas">
+            <Form>frmExpArqRemLotus</Form>
+        </DCCReference>
+        <DCCReference Include="JP Capital\untConfigJPCapital.pas">
+            <Form>frmConfigJPCapital</Form>
+        </DCCReference>
+        <DCCReference Include="JP Capital\untExpArqRemJPCapital.pas">
+            <Form>frmExpArqRemJPCapital</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\faturamento\untIntelipost.webhook.pas"/>
+        <DCCReference Include="Olam\untConfigOlam.pas">
+            <Form>frmConfigOlam</Form>
+        </DCCReference>
+        <DCCReference Include="Olam\untExpArqRemOlam.pas">
+            <Form>frmExpArqRemOlam</Form>
+        </DCCReference>
+        <DCCReference Include="Bela Vista\untConfigBelaVista.pas">
+            <Form>frmConfigBelaVista</Form>
+        </DCCReference>
+        <DCCReference Include="Bela Vista\untExpArqRemBelaVista.pas">
+            <Form>frmExpArqRemBelaVista</Form>
+        </DCCReference>
+        <DCCReference Include="DDA\untTDDAMenu.pas"/>
+        <DCCReference Include="DDA\untRetDDAAPI.pas">
+            <Form>frmRetDDAAPI</Form>
+        </DCCReference>
+        <DCCReference Include="DDA\untDDAAPIRetDDAFrame.pas">
+            <Form>fraDDAAPIRetDDAFrame</Form>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="DDA\untTiposDDA.pas"/>
+        <DCCReference Include="Sicoob API\untTDDASicoobAPI.pas"/>
+        <DCCReference Include="DDA\untDDAApiHelpers.pas"/>
+        <DCCReference Include="DDA\untDDAAPIAutenticacaoFrame.pas">
+            <Form>fraDDAAPIAutenticacaoFrame</Form>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="DDA\untConfigCtaDDA.pas">
+            <Form>frmConfigCtaDDA</Form>
+        </DCCReference>
+        <DCCReference Include="Sofisa LP 444p\untConfigSofisa_LP_444.pas">
+            <Form>frmConfigSofisa_LP_444</Form>
+        </DCCReference>
+        <DCCReference Include="Sofisa LP 444p\untExpArqRemSofisa_LP_444.pas">
+            <Form>frmExpArqRemSofisa_LP_444</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\boleto\untTDigBoleto.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untFuncoesBucket.pas"/>
+        <DCCReference Include="BMPMoneyPlus LP\untConfigBMPMoneyPlus_LP_400.pas">
+            <Form>frmConfigBMPMoneyPlus_LP_400</Form>
+        </DCCReference>
+        <DCCReference Include="BMPMoneyPlus LP\untExpArqRemBMPMoneyPlus_LP_400.pas">
+            <Form>frmExpArqRemBMPMoneyPlus_LP_400</Form>
+        </DCCReference>
+        <DCCReference Include="Safra API\untConfigSafraAPI.pas">
+            <Form>frmConfigSafraAPI</Form>
+        </DCCReference>
+        <DCCReference Include="Safra API\untTBancoSafraAPI.pas"/>
+        <DCCReference Include="Safra API\untTBancoSafraMenu.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\FuncoesCentralizadas\Faturamento.Classes.CNPJ.pas"/>
+        <DCCReference Include="Bradesco API\untConfigBradescoAPI.pas">
+            <Form>frmConfigBradescoAPI</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Bradesco API\untTBancoBradescoAPI.pas"/>
+        <DCCReference Include="Bradesco API\untTBancoBradescoMenu.pas"/>
+        <BuildConfiguration Include="Debug">
+            <Key>Cfg_2</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Base">
+            <Key>Base</Key>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Release">
+            <Key>Cfg_1</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+    </ItemGroup>
+    <Import Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj" Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')"/>
+    <Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
+    <Import Project="$(MSBuildProjectName).deployproj" Condition="Exists('$(MSBuildProjectName).deployproj')"/>
+</Project>

@@ -1,0 +1,161 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{AB2A19D3-60A6-4F48-AAC1-27A4F177FA5B}</ProjectGuid>
+        <ProjectVersion>18.1</ProjectVersion>
+        <FrameworkType>None</FrameworkType>
+        <Base>True</Base>
+        <Config Condition="'$(Config)'==''">Debug</Config>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <TargetedPlatforms>1</TargetedPlatforms>
+        <AppType>Console</AppType>
+        <MainSource>AutcomTestesIcmsClientes.dpr</MainSource>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+        <Base_Win32>true</Base_Win32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Base)'=='true') or '$(Base_Win64)'!=''">
+        <Base_Win64>true</Base_Win64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_1)'!=''">
+        <Cfg_1>true</Cfg_1>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win32)'!=''">
+        <Cfg_1_Win32>true</Cfg_1_Win32>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_2)'!=''">
+        <Cfg_2>true</Cfg_2>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base)'!=''">
+        <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
+        <DCC_Define>_CONSOLE_TESTRUNNER;$(DCC_Define)</DCC_Define>
+        <DCC_UnitSearchPath>$(BDS)\Source\DUnit\src;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+        <DCC_DcuOutput>.</DCC_DcuOutput>
+        <DCC_ExeOutput>.\$(Platform)\$(Config)</DCC_ExeOutput>
+        <DCC_E>false</DCC_E>
+        <DCC_N>false</DCC_N>
+        <DCC_S>false</DCC_S>
+        <DCC_F>false</DCC_F>
+        <DCC_K>false</DCC_K>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <DCC_UsePackage>DBXSqliteDriver;DBXDb2Driver;dxCoreRS23;vclactnband;dxPSdxLCLnkRS23;vclFireDAC;dxPSLnksRS23;frxe23;tethering;cxDataRS23;dxPSdxOCLnkRS23;dxTabbedMDIRS23;FireDACADSDriver;dxSkinBlackRS23;dxSkinLondonLiquidSkyRS23;fsTee23;UniClientDataSet;dxSpreadSheetCoreRS23;dxDBXServerModeRS23;dxHttpIndyRequestRS23;dxSpreadSheetCoreConditionalFormattingDialogsRS23;cxSchedulerRS23;FireDACMSSQLDriver;dxPScxGridLnkRS23;vcltouch;BCEditor.Delphi.Seattle;vcldb;Intraweb;svn;dxWizardControlRS23;dxSkinMcSkinRS23;dxPScxCommonRS23;frxcs23;dxSkinOffice2007BlueRS23;dxBarRS23;cxSchedulerRibbonStyleEventEditorRS23;dxSkinOffice2013WhiteRS23;crcontrols230;dxPSTeeChartRS23;cxLibraryRS23;dxSkinVisualStudio2013LightRS23;vclib;cxPivotGridChartRS23;dxSkinSummer2008RS23;dxPSdxDBOCLnkRS23;dxGDIPlusRS23;fsDB23;dxSkinDarkSideRS23;FireDACDBXDriver;dxSkinFoggyRS23;dxSkinSevenRS23;vclx;dxSkinOffice2010SilverRS23;dxdborRS23;AdvMenusPkgDX10;RESTBackendComponents;dxLayoutControlRS23;dxPSPrVwRibbonRS23;VCLRESTComponents;dxSkinDevExpressStyleRS23;dxSkinWhiteprintRS23;vclie;bindengine;CloudService;FireDACMySQLDriver;dxSkinOffice2013DarkGrayRS23;DataSnapClient;dxPScxPCProdRS23;fsADO23;bindcompdbx;DBXSybaseASEDriver;IndyIPServer;dxSkinPumpkinRS23;IndySystem;dsnapcon;cxTreeListdxBarPopupMenuRS23;FireDACMSAccDriver;fmxFireDAC;FireDACInfxDriver;vclimg;dxSkinLilianRS23;dxRichEditDocumentModelRS23;dxRichEditCoreRS23;dxSpreadSheetConditionalFormattingDialogsRS23;frxADO23;dxBarDBNavRS23;dxFlowChartRS23;dxSkinOffice2016ColorfulRS23;DBXOdbcDriver;FireDACTDataDriver;FMXTee;fs23;soaprtl;DbxCommonDriver;unidac230;dxSpreadSheetRS23;dxSkinOffice2007PinkRS23;dxPSdxSpreadSheetLnkRS23;xmlrtl;soapmidas;DataSnapNativeClient;fmxobj;dxSkinHighContrastRS23;dxSkinSevenClassicRS23;rtl;dxSkinTheAsphaltWorldRS23;DbxClientDriver;dxSkinDevExpressDarkStyleRS23;DBXSybaseASADriver;dxNavBarRS23;dxSkinMetropolisDarkRS23;dxRichEditControlCoreRS23;dxRichEditControlRS23;dxOfficeCoreRS23;appanalytics;cxPivotGridRS23;dxPScxVGridLnkRS23;IndyIPClient;dxRibbonRS23;dxPScxTLLnkRS23;frxDB23;dxSkinOffice2007SilverRS23;dxSpreadSheetInplaceRichEditRS23;bindcompvcl;dxMapControlRS23;TeeUI;dxSpreadSheetCoreDialogsRS23;VclSmp;dxPScxSchedulerLnkRS23;cxTreeListRS23;FireDACODBCDriver;DataSnapIndy10ServerTransport;aurelius;dxRibbonCustomizationFormRS23;dxPSRichEditControlLnkRS23;dxBarExtDBItemsRS23;DataSnapProviderClient;FireDACMongoDBDriver;dxSpreadSheetReportDesignerRS23;dxSkiniMaginaryRS23;dxSpellCheckerRS23;frx23;dxSkinCoffeeRS23;DataSnapServerMidas;RESTComponents;DBXInterBaseDriver;dxADOServerModeRS23;CitelValidation;emsclientfiredac;DataSnapFireDAC;svnui;dxmdsRS23;dxSkinLiquidSkyRS23;dxPSDBTeeChartRS23;dxSkinSpringTimeRS23;dxdbtrRS23;dxPSCoreRS23;DBXMSSQLDriver;dxSkinXmas2008BlueRS23;DatasnapConnectorsFreePascal;bindcompfmx;DBXOracleDriver;dxSkinSilverRS23;dxSkinValentineRS23;inetdb;dac230;dxPSdxMapControlLnkRS23;FmxTeeUI;dxBarExtItemsRS23;FireDACIBDriver;fmx;fmxdae;dxServerModeRS23;frxDBX23;dxPsPrVwAdvRS23;dxSkinOffice2010BlackRS23;cxPageControlRS23;dxSkinStardustRS23;cxSchedulerGridRS23;frxCSVExporterTestabilidade;dbexpress;IndyCore;dxSkinSharpPlusRS23;dsnap;DataSnapCommon;emsclient;FireDACCommon;dxSkinOffice2010BlueRS23;dxSkinVS2010RS23;dxSkinMetropolisRS23;DataSnapConnectors;cxVerticalGridRS23;soapserver;dxSkinCaramelRS23;dxTileControlRS23;frxTee23;CompFocus;cxGridRS23;UniDataSetProvider;FireDACOracleDriver;DBXMySQLDriver;DBXFirebirdDriver;unidacfmx230;FireDACCommonDriver;inet;IndyIPCommon;dxSkinDarkRoomRS23;dxDockingRS23;vcl;dxSkinOffice2007GreenRS23;dxPScxExtCommonRS23;dxSkinsCoreRS23;FireDACDb2Driver;dxThemeRS23;dxSkinVisualStudio2013BlueRS23;madExcept_;dacfmx230;dxSkinMoneyTwinsRS23;dxPSdxFCLnkRS23;madBasic_;dxtrmdRS23;TeeDB;FireDAC;cxSchedulerTreeBrowserRS23;dacvcl230;dxFireDACServerModeRS23;dxSkinBlueRS23;FireDACSqliteDriver;FireDACPgDriver;ibmonitor;FireDACASADriver;cxEditorsRS23;dxSkinGlassOceansRS23;dxGaugeControlRS23;ibxpress;Tee;dxSkinSharpRS23;DataSnapServer;ibxbindings;cxPivotGridOLAPRS23;dxPSdxPDFViewerLnkRS23;vclwinx;FireDACDSDriver;RLibWinDX10;madDisAsm_;dxSkinBlueprintRS23;dxSkinOffice2007BlackRS23;CustomIPTransport;vcldsnap;dxSkinOffice2013LightGrayRS23;bindcomp;DBXInformixDriver;dxPSdxGaugeControlLnkRS23;fsIBX23;unidacvcl230;dxRichEditInplaceRS23;dxPScxPivotGridLnkRS23;dxorgcRS23;dxPSdxDBTVLnkRS23;vclribbon;dbxcds;vquery230;dxPDFViewerRS23;adortl;frxIBX23;dxComnRS23;dsnapxml;dbrtl;inetdbxpress;IndyProtocols;cxExportRS23;dxSkinOffice2016DarkRS23;dxFlowChartAdvancedCustomizeFormRS23;dxSkinVisualStudio2013DarkRS23;fmxase;$(DCC_UsePackage)</DCC_UsePackage>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win64)'!=''">
+        <DCC_UsePackage>DBXSqliteDriver;DBXDb2Driver;dxCoreRS23;vclactnband;dxPSdxLCLnkRS23;vclFireDAC;dxPSLnksRS23;tethering;cxDataRS23;dxPSdxOCLnkRS23;dxTabbedMDIRS23;FireDACADSDriver;dxSkinBlackRS23;dxSkinLondonLiquidSkyRS23;dxSpreadSheetCoreRS23;dxDBXServerModeRS23;dxHttpIndyRequestRS23;dxSpreadSheetCoreConditionalFormattingDialogsRS23;cxSchedulerRS23;FireDACMSSQLDriver;dxPScxGridLnkRS23;vcltouch;BCEditor.Delphi.Seattle;vcldb;Intraweb;dxWizardControlRS23;dxSkinMcSkinRS23;dxPScxCommonRS23;dxSkinOffice2007BlueRS23;dxBarRS23;cxSchedulerRibbonStyleEventEditorRS23;dxSkinOffice2013WhiteRS23;dxPSTeeChartRS23;cxLibraryRS23;dxSkinVisualStudio2013LightRS23;vclib;cxPivotGridChartRS23;dxSkinSummer2008RS23;dxPSdxDBOCLnkRS23;dxGDIPlusRS23;dxSkinDarkSideRS23;FireDACDBXDriver;dxSkinFoggyRS23;dxSkinSevenRS23;vclx;dxSkinOffice2010SilverRS23;dxdborRS23;RESTBackendComponents;dxLayoutControlRS23;dxPSPrVwRibbonRS23;VCLRESTComponents;dxSkinDevExpressStyleRS23;dxSkinWhiteprintRS23;vclie;bindengine;CloudService;FireDACMySQLDriver;dxSkinOffice2013DarkGrayRS23;DataSnapClient;dxPScxPCProdRS23;bindcompdbx;DBXSybaseASEDriver;IndyIPServer;dxSkinPumpkinRS23;IndySystem;dsnapcon;cxTreeListdxBarPopupMenuRS23;FireDACMSAccDriver;fmxFireDAC;FireDACInfxDriver;vclimg;dxSkinLilianRS23;dxRichEditDocumentModelRS23;dxRichEditCoreRS23;dxSpreadSheetConditionalFormattingDialogsRS23;dxBarDBNavRS23;dxFlowChartRS23;dxSkinOffice2016ColorfulRS23;DBXOdbcDriver;FireDACTDataDriver;FMXTee;soaprtl;DbxCommonDriver;dxSpreadSheetRS23;dxSkinOffice2007PinkRS23;dxPSdxSpreadSheetLnkRS23;xmlrtl;soapmidas;DataSnapNativeClient;fmxobj;dxSkinHighContrastRS23;dxSkinSevenClassicRS23;rtl;dxSkinTheAsphaltWorldRS23;DbxClientDriver;dxSkinDevExpressDarkStyleRS23;DBXSybaseASADriver;dxNavBarRS23;dxSkinMetropolisDarkRS23;dxRichEditControlCoreRS23;dxRichEditControlRS23;dxOfficeCoreRS23;appanalytics;cxPivotGridRS23;dxPScxVGridLnkRS23;IndyIPClient;dxRibbonRS23;dxPScxTLLnkRS23;dxSkinOffice2007SilverRS23;dxSpreadSheetInplaceRichEditRS23;bindcompvcl;dxMapControlRS23;TeeUI;dxSpreadSheetCoreDialogsRS23;VclSmp;dxPScxSchedulerLnkRS23;cxTreeListRS23;FireDACODBCDriver;DataSnapIndy10ServerTransport;aurelius;dxRibbonCustomizationFormRS23;dxPSRichEditControlLnkRS23;dxBarExtDBItemsRS23;DataSnapProviderClient;FireDACMongoDBDriver;dxSpreadSheetReportDesignerRS23;dxSkiniMaginaryRS23;dxSpellCheckerRS23;dxSkinCoffeeRS23;DataSnapServerMidas;RESTComponents;DBXInterBaseDriver;dxADOServerModeRS23;emsclientfiredac;DataSnapFireDAC;dxmdsRS23;dxSkinLiquidSkyRS23;dxPSDBTeeChartRS23;dxSkinSpringTimeRS23;dxdbtrRS23;dxPSCoreRS23;DBXMSSQLDriver;dxSkinXmas2008BlueRS23;DatasnapConnectorsFreePascal;bindcompfmx;DBXOracleDriver;dxSkinSilverRS23;dxSkinValentineRS23;inetdb;dxPSdxMapControlLnkRS23;FmxTeeUI;dxBarExtItemsRS23;FireDACIBDriver;fmx;fmxdae;dxServerModeRS23;dxPsPrVwAdvRS23;dxSkinOffice2010BlackRS23;cxPageControlRS23;dxSkinStardustRS23;cxSchedulerGridRS23;frxCSVExporterTestabilidade;dbexpress;IndyCore;dxSkinSharpPlusRS23;dsnap;DataSnapCommon;emsclient;FireDACCommon;dxSkinOffice2010BlueRS23;dxSkinVS2010RS23;dxSkinMetropolisRS23;DataSnapConnectors;cxVerticalGridRS23;soapserver;dxSkinCaramelRS23;dxTileControlRS23;CompFocus;cxGridRS23;FireDACOracleDriver;DBXMySQLDriver;DBXFirebirdDriver;FireDACCommonDriver;inet;IndyIPCommon;dxSkinDarkRoomRS23;dxDockingRS23;vcl;dxSkinOffice2007GreenRS23;dxPScxExtCommonRS23;dxSkinsCoreRS23;FireDACDb2Driver;dxThemeRS23;dxSkinVisualStudio2013BlueRS23;dxSkinMoneyTwinsRS23;dxPSdxFCLnkRS23;dxtrmdRS23;TeeDB;FireDAC;cxSchedulerTreeBrowserRS23;dxFireDACServerModeRS23;dxSkinBlueRS23;FireDACSqliteDriver;FireDACPgDriver;ibmonitor;FireDACASADriver;cxEditorsRS23;dxSkinGlassOceansRS23;dxGaugeControlRS23;ibxpress;Tee;dxSkinSharpRS23;DataSnapServer;ibxbindings;cxPivotGridOLAPRS23;dxPSdxPDFViewerLnkRS23;vclwinx;FireDACDSDriver;dxSkinBlueprintRS23;dxSkinOffice2007BlackRS23;CustomIPTransport;vcldsnap;dxSkinOffice2013LightGrayRS23;bindcomp;DBXInformixDriver;dxPSdxGaugeControlLnkRS23;dxRichEditInplaceRS23;dxPScxPivotGridLnkRS23;dxorgcRS23;dxPSdxDBTVLnkRS23;vclribbon;dbxcds;dxPDFViewerRS23;adortl;dxComnRS23;dsnapxml;dbrtl;inetdbxpress;IndyProtocols;cxExportRS23;dxSkinOffice2016DarkRS23;dxFlowChartAdvancedCustomizeFormRS23;dxSkinVisualStudio2013DarkRS23;fmxase;$(DCC_UsePackage)</DCC_UsePackage>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1)'!=''">
+        <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+        <DCC_DebugDCUs>true</DCC_DebugDCUs>
+        <DCC_Optimize>false</DCC_Optimize>
+        <DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>
+        <DCC_DebugInfoInExe>true</DCC_DebugInfoInExe>
+        <DCC_RemoteDebug>true</DCC_RemoteDebug>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+        <DCC_MapFile>3</DCC_MapFile>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <DCC_ExeOutput>..\</DCC_ExeOutput>
+        <Manifest_File>None</Manifest_File>
+        <DCC_UnitSearchPath>..\Packages\dcp;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+        <DCC_RemoteDebug>false</DCC_RemoteDebug>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2)'!=''">
+        <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+        <DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+        <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+        <DCC_DebugInformation>0</DCC_DebugInformation>
+    </PropertyGroup>
+    <ItemGroup>
+        <DelphiCompile Include="$(MainSource)">
+            <MainSource>MainSource</MainSource>
+        </DelphiCompile>
+        <DCCReference Include="..\TestesUnitarios\padra_atualizado\fontes\genericos\untTestFloatUtils.pas"/>
+        <DCCReference Include="..\TestesUnitarios\padra_atualizado\fontes\untFuncoes.pas"/>
+        <DCCReference Include="..\TestesUnitarios\padra_atualizado\fontes\genericos\untTestConfiguracoes.pas"/>
+        <DCCReference Include="..\TestesUnitarios\padra_atualizado\fontes\genericos\untTestConstantesUtils.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\calculos\source\Faturamento.Impostos.Calculos.Icms.pas"/>
+        <DCCReference Include="..\fontes\faturamento\Impostos\Faturamento.Impostos.IcmsEfetivo.SQL.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\calculos\source\Faturamento.Impostos.Calculos.IcmsEfetivo.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\calculos\source\Faturamento.Impostos.Calculos.IcmsOrgaoPublico.pas"/>
+        <DCCReference Include="..\fontes\genericos\untConstantes.pas"/>
+        <DCCReference Include="..\fontes\libNfe\untConstantesNFe.pas"/>
+        <DCCReference Include="..\Packages\Shared\Functions\source\Shared.Functions.FloatUtils.pas"/>
+        <DCCReference Include="..\Packages\Shared\Functions\source\Shared.Functions.Configuracoes.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\interfaces\source\Faturamento.Impostos.Interfaces.Icms.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\tipos\source\Faturamento.Impostos.Tipos.Icms.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\interfaces\source\Faturamento.Impostos.Interfaces.FCP.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\tipos\source\Faturamento.Impostos.Tipos.IcmsEfetivo.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\interfaces\source\Faturamento.Impostos.Interfaces.IcmsEfetivo.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\tipos\source\Faturamento.Impostos.Tipos.Model.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\interfaces\source\Faturamento.Impostos.Interfaces.Model.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\tipos\source\Faturamento.Impostos.Tipos.IcmsOrgaoPublico.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\interfaces\source\Faturamento.Impostos.Interfaces.IcmsOrgaoPublico.pas"/>
+        <DCCReference Include="..\Packages\Shared\Functions\source\Shared.Functions.Types.pas"/>
+        <DCCReference Include="..\Packages\Shared\Functions\source\Shared.Functions.Constantes.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\interfaces\source\Faturamento.Impostos.Interfaces.ZerarImpostos.Icms.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\tipos\source\Faturamento.Impostos.Tipos.ZerarImpostos.Icms.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\interfaces\source\Faturamento.Impostos.Interfaces.ZerarImpostos.Types.pas"/>
+        <DCCReference Include="..\Packages\Shared\Functions\source\Shared.Functions.Funcoes.Faturamento.pas"/>
+        <DCCReference Include="..\Packages\Shared\Functions\source\Shared.Functions.DataSet.pas"/>
+        <DCCReference Include="..\fontes\Core\Core.Funcoes.pas"/>
+        <DCCReference Include="..\Packages\Shared\Functions\source\Shared.Functions.Interfaces.pas"/>
+        <DCCReference Include="..\Packages\Shared\Functions\source\Shared.Functions.Tipos.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\calculos\source\TestFaturamento.Impostos.Calculos.Icms.DarkaLoja1_03.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\calculos\source\TestFaturamento.Impostos.Calculos.Icms.FeniorLoja1_03.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\calculos\source\TestFaturamento.Impostos.Calculos.IcmsOrgaoPublico.TECHGEL_COMERCI_Lj002_20191101.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\calculos\source\TestFaturamento.Impostos.Calculos.IcmsOrgaoPublico.JABU_ENGENHARIA_Lj001_20191106.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\calculos\source\TestFaturamento.Impostos.Calculos.IcmsOrgaoPublico.TECHGEL_COMERCI_Lj002_20191118.pas"/>
+        <BuildConfiguration Include="Release">
+            <Key>Cfg_2</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Base">
+            <Key>Base</Key>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Debug">
+            <Key>Cfg_1</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Delphi.Personality.12</Borland.Personality>
+        <Borland.ProjectType>Application</Borland.ProjectType>
+        <BorlandProject>
+            <Delphi.Personality>
+                <Source>
+                    <Source Name="MainSource">AutcomTestesIcmsClientes.dpr</Source>
+                </Source>
+            </Delphi.Personality>
+            <Deployment Version="2"/>
+            <Platforms>
+                <Platform value="Win32">True</Platform>
+                <Platform value="Win64">False</Platform>
+            </Platforms>
+            <UnitTesting>
+                <TestFramework>DUnit / Delphi Win32</TestFramework>
+                <TestRunner>GUI</TestRunner>
+                <SourceProjectName>C:\Users\paulo.zanon\Documents\Autpas\379.48.2.30.74\padra_atualizado\Packages\Shared\Functions\package\Shared.Functions.dproj</SourceProjectName>
+            </UnitTesting>
+        </BorlandProject>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+    <Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
+    <Import Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj" Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')"/>
+</Project>

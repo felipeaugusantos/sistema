@@ -1,0 +1,2 @@
+const SVN_REVISION = '350550';
+const SVN_URL = 'svn://10.0.0.205/Autban/27.18/27.18.379/379.48.2.30.74.111';

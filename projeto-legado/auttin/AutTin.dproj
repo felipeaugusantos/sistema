@@ -1,0 +1,875 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{B30965C7-4806-43C5-8B0C-DDECF248FE7F}</ProjectGuid>
+        <MainSource>AutTin.dpr</MainSource>
+        <Base>True</Base>
+        <Config Condition="'$(Config)'==''">Debug</Config>
+        <TargetedPlatforms>1</TargetedPlatforms>
+        <AppType>Application</AppType>
+        <FrameworkType>VCL</FrameworkType>
+        <ProjectVersion>18.1</ProjectVersion>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+        <Base_Win32>true</Base_Win32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Base)'=='true') or '$(Base_Win64)'!=''">
+        <Base_Win64>true</Base_Win64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_1)'!=''">
+        <Cfg_1>true</Cfg_1>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_2)'!=''">
+        <Cfg_2>true</Cfg_2>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win32)'!=''">
+        <Cfg_2_Win32>true</Cfg_2_Win32>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base)'!=''">
+        <DCC_UNIT_PLATFORM>false</DCC_UNIT_PLATFORM>
+        <DCC_S>false</DCC_S>
+        <DCC_SymbolReferenceInfo>1</DCC_SymbolReferenceInfo>
+        <DCC_MapFile>3</DCC_MapFile>
+        <DCC_Namespace>Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;System;Xml;Data;Datasnap;Web;Soap;Winapi;$(DCC_Namespace)</DCC_Namespace>
+        <DCC_ImageBase>00400000</DCC_ImageBase>
+        <SanitizedProjectName>AutTin</SanitizedProjectName>
+        <DCC_SYMBOL_PLATFORM>false</DCC_SYMBOL_PLATFORM>
+        <DCC_N>true</DCC_N>
+        <DCC_F>false</DCC_F>
+        <DCC_UsePackage>vcl;rtl;dbrtl;adortl;vcldb;vclx;bdertl;vcldbx;ibxpress;dsnap;cds;bdecds;qrpt;teeui;teedb;tee;dss;teeqr;visualclx;visualdbclx;dsnapcrba;dsnapcon;VclSmp;vclshlctrls;vclie;xmlrtl;inet;inetdbbde;inetdbxpress;inetdb;nmfast;webdsnap;websnap;dbexpress;dbxcds;indy;dclOffice2k;RxCtl6;RxDB6;RxBDE6;ZipMaster;RLibWinD6vcl;$(DCC_UsePackage)</DCC_UsePackage>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <DCC_DebugInformation>1</DCC_DebugInformation>
+        <VerInfo_MinorVer>27</VerInfo_MinorVer>
+        <DCC_Define>madExcept;$(DCC_Define)</DCC_Define>
+        <VerInfo_Locale>1046</VerInfo_Locale>
+        <DCC_SYMBOL_DEPRECATED>false</DCC_SYMBOL_DEPRECATED>
+        <VerInfo_Keys>CompanyName=Citel Software;FileDescription=;FileVersion=1.27.16.333;InternalName=;LegalCopyright=Citel Software;LegalTrademarks=;OriginalFilename=;ProductName=Auttin;ProductVersion=1.27.16.333;Comments=</VerInfo_Keys>
+        <DCC_ExeOutput>..\padra_atualizado\auttin</DCC_ExeOutput>
+        <DCC_E>false</DCC_E>
+        <DCC_K>false</DCC_K>
+        <VerInfo_Build>333</VerInfo_Build>
+        <VerInfo_Release>16</VerInfo_Release>
+        <DCC_DcuOutput>temp\</DCC_DcuOutput>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+        <DCC_Namespace>System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <Icon_MainIcon>AutTin_Icon.ico</Icon_MainIcon>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win64)'!=''">
+        <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+        <Icon_MainIcon>AutTin_Icon1.ico</Icon_MainIcon>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1)'!=''">
+        <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+        <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+        <DCC_DebugInformation>0</DCC_DebugInformation>
+        <DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2)'!=''">
+        <DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>
+        <DCC_Optimize>false</DCC_Optimize>
+        <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
+        <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
+        <VerInfo_MajorVer>999</VerInfo_MajorVer>
+        <DCC_Define>AUTCOM;$(DCC_Define)</DCC_Define>
+        <VerInfo_MinorVer>999</VerInfo_MinorVer>
+        <VerInfo_Build>999</VerInfo_Build>
+        <VerInfo_Release>999</VerInfo_Release>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <VerInfo_Keys>CompanyName=Citel Software;FileDescription=;FileVersion=999.999.999.999;InternalName=AutTin;LegalCopyright=Citel Software;LegalTrademarks=;OriginalFilename=AutTin;ProductName=AutTin;ProductVersion=999.999.999.999;Comments=</VerInfo_Keys>
+    </PropertyGroup>
+    <ItemGroup>
+        <DelphiCompile Include="$(MainSource)">
+            <MainSource>MainSource</MainSource>
+        </DelphiCompile>
+        <DCCReference Include="..\padra_atualizado\VirtualUI\VirtualUI_AutoRun.pas"/>
+        <DCCReference Include="..\padra_atualizado\VirtualUI\VirtualUI_SDK.pas"/>
+        <DCCReference Include="untFuncTinta.pas"/>
+        <DCCReference Include="untModuloTinta.pas">
+            <Form>frmModuloTinta</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="untPesqItem.pas"/>
+        <DCCReference Include="untConfiguracoes.pas">
+            <Form>frmConfiguracoes</Form>
+        </DCCReference>
+        <DCCReference Include="untPesqAux.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\Genericos\untConstantes.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\Genericos\untModuloSPR.pas">
+            <Form>frmModuloSPR</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untLiberacaoCliente.pas">
+            <Form>frmLiberacaoCliente.pas</Form>
+        </DCCReference>
+        <DCCReference Include="untPai.pas">
+            <Form>frmPai</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untPaiCad.pas">
+            <Form>frmPaiCad</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untPaiSimples.pas">
+            <Form>frmPaiSimples</Form>
+        </DCCReference>
+        <DCCReference Include="Funcoes\untFuncoes.pas"/>
+        <DCCReference Include="Funcoes\untTSQLTrace.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untSQLTraceOpcoes.pas">
+            <Form>frmSQLTraceOpcoes</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\Genericos\untGetMenu.pas">
+            <Form>frmGetMenu</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\Genericos\untMensagem.pas">
+            <Form>frmMensagem</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\Genericos\untModulo.pas">
+            <Form>frmModulo</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\Genericos\untModuloCons.pas">
+            <Form>frmModuloCons</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\Genericos\untWaitWindow.pas">
+            <Form>frmWaitWindow</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\Genericos\untDesbloqueiodaCopia.pas">
+            <Form>frmDesbloqueiodaCopia</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\Genericos\untDigData.pas">
+            <Form>frmDigData</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\Genericos\untModuloCfgAtb.pas">
+            <Form>frmModuloCfgAtb</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="untInkLayoutReader.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untModuloReplicacao.pas">
+            <Form>frmModuloReplicacao</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="funcoes\untFuncoesSimples.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untSenhaEmpresa.pas">
+            <Form>frmSenhaEmpresa</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untFuncoesConsulta.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untMensagemSonora.pas">
+            <Form>frmMensagemSonora</Form>
+        </DCCReference>
+        <DCCReference Include="Zip\ZipMstr.pas"/>
+        <DCCReference Include="Zip\ZipDll.pas"/>
+        <DCCReference Include="Zip\ZCallBck.pas"/>
+        <DCCReference Include="Zip\UnzDll.pas"/>
+        <DCCReference Include="Zip\ZipMsg.pas"/>
+        <DCCReference Include="Zip\ZipStructs.pas"/>
+        <DCCReference Include="untPaiGeraArq.pas">
+            <Form>frmPaiGeraArq</Form>
+        </DCCReference>
+        <DCCReference Include="untTintadeMaquina.pas"/>
+        <DCCReference Include="Glasurit\untGlasuritDinamica.pas"/>
+        <DCCReference Include="Glasurit\untGlasurit.pas"/>
+        <DCCReference Include="Glasurit\untConfiguracoesGlasurit.pas">
+            <Form>frmConfiguracoesGlasurit</Form>
+        </DCCReference>
+        <DCCReference Include="Glasurit\untCadGlaNovasFormulas.pas">
+            <Form>frmCadGlaNovasFormulas</Form>
+        </DCCReference>
+        <DCCReference Include="Glasurit\untCadGlaGeraArquivo.pas">
+            <Form>frmCadGlaGeraArquivo</Form>
+        </DCCReference>
+        <DCCReference Include="Glasurit\untCadGlaBases.pas">
+            <Form>frmCadGlaBases</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untPaiEdit.pas">
+            <Form>frmPaiEdit</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untPaiOrdena.pas">
+            <Form>frmPaiOrdena</Form>
+        </DCCReference>
+        <DCCReference Include="untConfConsulta.pas">
+            <Form>frmConfConsulta</Form>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\util\untRelacaoLocks.pas">
+            <Form>frmRelacaoLocks</Form>
+        </DCCReference>
+        <DCCReference Include="Funcoes\untConsultas.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\libFuncoes\untClassPanelCx.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\libFuncoes\untConfiguraConsultaOperadores.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untPaiConfirma.pas">
+            <Form>frmPaiConfirma</Form>
+        </DCCReference>
+        <DCCReference Include="Glasurit\untGlasuritSQLServer.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\iTintas\untITransferencias.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\iTintas\untIFatOrdProTintaMaquina.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\cadastros\untLegendasItem.pas"/>
+        <DCCReference Include="funcoes\untZClient.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\iTintas\untIConfEmb.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untFuncoesGenerica.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untDDLFactory.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\iTintas\untIProcessadorGravandoExecucao.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\iTintas\untINovaFormula.pas"/>
+        <DCCReference Include="untPrincipal.pas">
+            <Form>frmPrincipal</Form>
+        </DCCReference>
+        <DCCReference Include="Genericos\untAbstractGravando.pas">
+            <Form>frmAbstractGravando</Form>
+        </DCCReference>
+        <DCCReference Include="Genericos\untAbstractGravandoExecucao.pas"/>
+        <DCCReference Include="Genericos\untGenericGravando.pas">
+            <Form>frmGenericGravando</Form>
+        </DCCReference>
+        <DCCReference Include="Genericos\untGravandoFactory.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untAbrirQuery.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untThreadAbrirQuery.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untComponentHelper.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\iTintas\untIDataSetFactory.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untDataSetFactory.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untAbstractDataSetFactory.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untClientDataSetFactory.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\configuracoes\untIConfiguracao.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\configuracoes\untTConfiguracao.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untListaLogErros.pas"/>
+        <DCCReference Include="untICadastroTintaBaseAutomotiva.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\iTintas\untITintasDeMaquina.pas"/>
+        <DCCReference Include="Funcoes\untIFuncoes.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untTypesSistema.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\util\untIFastPrint.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\libNfe\untInterfaces.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\util\untFastPrintEditor.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\util\EditorEtiquetas\untIOrdenacao.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untICamposUso.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untIFuncMacro.pas"/>
+        <DCCReference Include="funcoes\untIZClient.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untGenericProcedureFormGravando.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untGravando.pas">
+            <Form>frmGravando</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTintas\libTintasComum\Interfaces\untIConsulta.pas"/>
+        <DCCReference Include="..\LibTintas\libTintasComum\Interfaces\untIConsultaTinta.pas"/>
+        <DCCReference Include="..\LibTintas\libTintasComum\Genericos\untConsultaCadastro.pas"/>
+        <DCCReference Include="..\LibTintas\libTintasComum\Interfaces\untIGravando.pas"/>
+        <DCCReference Include="..\LibTintas\libTintasComum\Interfaces\untIConfTinta.pas"/>
+        <DCCReference Include="..\LibTintas\libTintasComum\Tipos\untGTinForTipos.pas"/>
+        <DCCReference Include="..\LibTintas\libTintasComum\Interfaces\untILibTintaFactory.pas"/>
+        <DCCReference Include="..\LibTintas\libTintasComum\Interfaces\untILibTinta.pas"/>
+        <DCCReference Include="..\LibTintas\libTintasComum\Tipos\untTipoTinta.pas"/>
+        <DCCReference Include="..\LibTintas\libTintasComum\Interfaces\untITintadeMaquinaWrapper.pas"/>
+        <DCCReference Include="..\LibTintas\libTintasComum\Interfaces\untIConfiguradorConsulta.pas"/>
+        <DCCReference Include="..\LibTintas\libTintasComum\Interfaces\untIConsultaComp.pas"/>
+        <DCCReference Include="..\LibTintas\libTintasComum\Interfaces\untIConsultaCompTintaNovaConfigurador.pas"/>
+        <DCCReference Include="..\LibTintas\libTintasComum\Interfaces\untIDataSet.pas"/>
+        <DCCReference Include="..\LibTintas\libTintasComum\Interfaces\untIDicionario.pas"/>
+        <DCCReference Include="..\LibTintas\libTintasComum\Interfaces\untIAuttinMenuItem.pas"/>
+        <DCCReference Include="Genericos\untGerenciadorMenuAuttinDlls.pas"/>
+        <DCCReference Include="..\LibTintas\libTintasComum\Interfaces\untStatusGravando.pas"/>
+        <DCCReference Include="..\LibTintas\libTintasComum\Interfaces\untIAuttinWrapper.pas"/>
+        <DCCReference Include="Genericos\untAuttinWrapper.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\iTintas\untIProcessadorGravandoExecucaoArquivos.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untDataSetIDataSetWrapper.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untFieldDataSetFieldWrapper.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untParamDataSetWrapper.pas"/>
+        <DCCReference Include="..\LibTintas\libTintasComum\Interfaces\untIGravandoExecucao.pas"/>
+        <DCCReference Include="..\LibTintas\libTintasComum\Interfaces\untIGravandoExecucaoNome.pas"/>
+        <DCCReference Include="Genericos\untGravandoExecucaoWrapper.pas"/>
+        <DCCReference Include="Genericos\untCfgTin.pas">
+            <Form>frmCfgTin</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTintas\libTintasComum\Interfaces\untIConfiguradorTinta.pas"/>
+        <DCCReference Include="Genericos\untGerenciadorPropriedadesCx.pas"/>
+        <DCCReference Include="Genericos\untCadLibTintas.pas">
+            <Form>frmCadLibTintas</Form>
+        </DCCReference>
+        <DCCReference Include="..\LibTintas\libTintasComum\Interfaces\untICadLibTintas.pas"/>
+        <DCCReference Include="..\LibTintas\libTintasComum\Interfaces\untILibTintaControleVisual.pas"/>
+        <DCCReference Include="Genericos\untLibTintaControleFactory.pas"/>
+        <DCCReference Include="..\LibTintas\libTintasComum\Interfaces\untILibTintaControleVisualPropriedade.pas"/>
+        <DCCReference Include="Interfaces\untILibTintaControleFactory.pas"/>
+        <DCCReference Include="Genericos\untAbstractLibTintaControleFactory.pas"/>
+        <DCCReference Include="Genericos\untPanelLibTintaControleFactory.pas"/>
+        <DCCReference Include="Genericos\untEditLibTintaControleFactory.pas"/>
+        <DCCReference Include="Genericos\untLabelLibTintaControleFactory.pas"/>
+        <DCCReference Include="Genericos\untSpeedButtonLibTintaControleFactory.pas"/>
+        <DCCReference Include="Genericos\untLibTintaControleVisualEventosFactory.pas"/>
+        <DCCReference Include="Genericos\untControlILibTintaControleVisualWrapper.pas"/>
+        <DCCReference Include="Genericos\untDBEditFocusLibTintaControleFactory.pas"/>
+        <DCCReference Include="Genericos\untEditFocusLibTintaControleFactory.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untComponentFactory.pas"/>
+        <DCCReference Include="Genericos\untLibTintaControleVisualImplementacaoFactory.pas"/>
+        <DCCReference Include="Genericos\untDBCheckBoxLibTintaControleFactory.pas"/>
+        <DCCReference Include="Genericos\untGroupBoxLibTintaControleFactory.pas"/>
+        <DCCReference Include="..\LibTintas\libTintasComum\Interfaces\untISaldosColorantes.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untUniQueryDataSetWrapper.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\FuncoesCentralizadas\untInterfacedObjectNoCount.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untGravaINNODBStatus.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\CamadaPersistencia\untObjectManager.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untConsultasTinta.pas"/>
+        <DCCReference Include="Funcoes\untFuncoesGen.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\libFuncoes\untConsultaCxGridNova.pas">
+            <Form>frmConsultaCxGridNova</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\libFuncoes\untConfiguraConsulta.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\libFuncoes\untPesquisa.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\libFuncoes\untFuncoesCXGrid.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\libFuncoes\untConfiguraConsultaEdicao.pas">
+            <Form>frmConfiguraConsultaEdicao</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untITSQLTrace.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untLogSQL.pas"/>
+        <DCCReference Include="untCfgRepositorio.pas">
+            <Form>frmCfgRepositorio</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untSeqCom.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\Interfaces\untICfgSis.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untPaiSQLTrace.pas">
+            <Form>frmPaiSQLTrace</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Genericos\untDBMemoFocusLibTintaControleFactory.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\util\testabilidade\untTestabilidade.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\libFuncoes\untIFuncoesCXGrid.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\CamadaPersistencia\untFieldFiltros.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\CamadaPersistencia\untUtilRepository.pas"/>
+        <DCCReference Include="..\LibTintas\libTintasComum\Genericos\untValidarBaseItemAmarracao.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untLogForm.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untHelperCitel.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untILiberacao.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untMsgLiberacao.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\email\controller\untTCadPrvController.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\email\model\untTCadPrvRepository.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\email\model\untTCadPrv.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\direitosdeacesso\untTCadOpeRepository.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\direitosdeacesso\untTCadOpe.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\cadastros\untMsgInterna.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\cadastros\untICadastros.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\crm\untIFuncoesCRM.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\crm\untTypesCRM.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\libFuncoes\untModuloReplicacaoLibFuncoes.pas">
+            <Form>frmModuloReplicacaoLibFuncoes</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\iTintas\untIExecutaSQLReplicacaoTinta.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untExecutaSQLReplicacaoTinta.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untMensagemTabela.pas">
+            <Form>frmMensagemTabela</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\iTintas\untILibTintaDllRelacao.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\Interfaces\untIFatDefineLotesPedidoWMS.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untFuncoesImagem.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untImagemBase64.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untModuloLegenda.pas">
+            <Form>frmModuloLegenda</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\Imports\CAPICOM_TLB.pas"/>
+        <DCCReference Include="Salcomix\untCadSalBases.pas">
+            <Form>frmCadSalBases</Form>
+        </DCCReference>
+        <DCCReference Include="Salcomix\untCadSalNovasFormulas.pas">
+            <Form>frmCadSalNovasFormulas</Form>
+        </DCCReference>
+        <DCCReference Include="Salcomix\untSalcomix.pas"/>
+        <DCCReference Include="Salcomix\untConfiguracoesSalcomix.pas">
+            <Form>frmConfiguracoesSalcomix</Form>
+        </DCCReference>
+        <DCCReference Include="Salcomix\untCadSalGeraArquivo.pas">
+            <Form>frmCadSalGeraArquivo</Form>
+        </DCCReference>
+        <DCCReference Include="Salcomix\untSalcomixDinamica.pas"/>
+        <DCCReference Include="Salcomix\untSalcomixSQLServer.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\Interfaces\untIFuncoesSaldos.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\libFuncoes\untLoadConsultaSQL.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\libFuncoes\untConfiguraSQLConsultaEdicao.pas">
+            <Form>frmConfiguraSQLConsultaEdicao</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\libFuncoes\untConfiguraSQLConsulta.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\editorRelatorios\untMsgErroSQL.pas">
+            <Form>frmMsgErroSQL</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\libFuncoes\untPedeDadosCampoSQL.pas">
+            <Form>frmPedeDadosCampoSQL</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untCfgGrid.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untCfgGridEdicao.pas">
+            <Form>frmCfgGridEdicao</Form>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untFrameDirectoryEditFocus.pas">
+            <Form>fraDirectoryEditFocus</Form>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untLogAut.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\genericos\untVersaoProg.pas"/>
+        <DCCReference Include="..\padra_atualizado\fontes\editorRelatorios\untAjudaVariaveis.pas">
+            <Form>frmAjudaVariaveis</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <BuildConfiguration Include="Debug">
+            <Key>Cfg_2</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Base">
+            <Key>Base</Key>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Release">
+            <Key>Cfg_1</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Delphi.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Delphi.Personality>
+                <Source>
+                    <Source Name="MainSource">AutTin.dpr</Source>
+                </Source>
+                <Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k230.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp230.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="C:\COMPONENTES\Instalacoes\DX10\FastReport 5\LibD23\dclfsbde23.bpl">File C:\COMPONENTES\Instalacoes\DX10\FastReport 5\LibD23\dclfsbde23.bpl not found</Excluded_Packages>
+                    <Excluded_Packages Name="C:\COMPONENTES\Instalacoes\DX10\FastReport 5\LibD23\dclfrxbde23.bpl">File C:\COMPONENTES\Instalacoes\DX10\FastReport 5\LibD23\dclfrxbde23.bpl not found</Excluded_Packages>
+                </Excluded_Packages>
+            </Delphi.Personality>
+            <Platforms>
+                <Platform value="Win32">True</Platform>
+                <Platform value="Win64">False</Platform>
+            </Platforms>
+            <Deployment Version="2">
+                <DeployFile LocalName="..\padra_atualizado\auttin\AutTin.exe" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>AutTin.exe</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployClass Name="DependencyModule">
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                        <Extensions>.dll;.bpl</Extensions>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectOSXResource">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\Resources</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidClassesDexFile">
+                    <Platform Name="Android">
+                        <RemoteDir>classes</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon144">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AdditionalDebugSymbols">
+                    <Platform Name="Win32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidLibnativeMipsFile">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\mips</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch768">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Required="true" Name="ProjectOutput">
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="DependencyFramework">
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>1</Operation>
+                        <Extensions>.framework</Extensions>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch640">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidLibnativeX86File">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\x86</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSDeviceDebug">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).app.dSYM\Contents\Resources\DWARF</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <RemoteDir>..\$(PROJECTNAME).app.dSYM\Contents\Resources\DWARF</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch1024">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSSimulatorInfoPList">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch320">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSInfoPList">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidLibnativeArmeabiFile">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="DebugSymbols">
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch1536">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage470">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-normal</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon96">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage640">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-large</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch640x1136">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSEntitlements">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>../</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <RemoteDir>../</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidGDBServer">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon72">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-hdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectOSXInfoPList">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectOSXEntitlements">
+                    <Platform Name="OSX32">
+                        <RemoteDir>../</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch2048">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSDeviceInfoPList">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage426">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-small</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidSplashImageDef">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSResource">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidSplashStyles">
+                    <Platform Name="Android">
+                        <RemoteDir>res\values</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectAndroidManifest">
+                    <Platform Name="Android">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_DefaultAppIcon">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="File">
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\Resources\StartUp\</RemoteDir>
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="Android">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidServiceOutput">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Required="true" Name="DependencyPackage">
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                        <Extensions>.bpl</Extensions>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon48">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-mdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage960">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xlarge</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon36">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-ldpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSDeviceResourceRules">
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="iOSDevice64" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="iOSDevice32" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="Win32" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="Android" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="iOSSimulator" Name="$(PROJECTNAME).app"/>
+            </Deployment>
+        </BorlandProject>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+    <Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
+    <Import Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj" Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')"/>
+    <Import Project="$(MSBuildProjectName).deployproj" Condition="Exists('$(MSBuildProjectName).deployproj')"/>
+</Project>

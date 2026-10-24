@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TfrxReport Version="4.3.61" DataSetName="frxEtiquetaItens" DotMatrixReport="False" IniFile="\Software\Fast Reports" PreviewOptions.Buttons="4095" PreviewOptions.Zoom="1" PrintOptions.Printer="IMP_EDUARDO" PrintOptions.PrintOnSheet="0" ReportOptions.CreateDate="39377,5490293519" ReportOptions.Description.Text="" ReportOptions.LastChange="40086,4820779051" ScriptLanguage="PascalScript" ScriptText.Text="begin&#13;&#10;&#13;&#10;end." StoreInDFM="False" PropData="044C65667403D80103546F7003900108446174617365747301010C3000000020446174615365743D226672784442496D704574692220446174615365744E616D653D226672784442496D70457469220000095661726961626C65730100055374796C650100">
+  <TfrxDataPage Name="Data" Height="1000" Left="0" Top="0" Width="1000"/>
+  <TfrxReportPage Name="qckPagina" PaperWidth="215" PaperHeight="280" PaperSize="256" LeftMargin="14,4" RightMargin="14,4" TopMargin="12,5" BottomMargin="13" ColumnWidth="0" ColumnPositions.Text="" HGuides.Text="" VGuides.Text="">
+    <TfrxMasterData Name="MasterData1" Height="48" Left="0" Top="18,89765" Width="703,748486" Columns="4" ColumnWidth="168" ColumnGap="11,3385826771654" DataSet="frxDBImpEti" DataSetName="frxDBImpEti" RowCount="0">
+      <TfrxMemoView Name="Memo1" Left="3,77953" Top="0,779530000000001" Width="158,74015748" Height="15,11811024" DataField="CODITE" DataSet="frxDBImpEti" DataSetName="frxDBImpEti" DisplayFormat.DecimalSeparator="," Font.Charset="0" Font.Color="0" Font.Height="-11" Font.Name="Verdana" Font.Style="0" ParentFont="False" Text="[frxDBImpEti.&#34;CODITE&#34;]"/>
+      <TfrxMemoView Name="Memo2" Left="3,77953" Top="16,89765" Width="158,74026" Height="29,1023622" DataField="DESITE" DataSet="frxDBImpEti" DataSetName="frxDBImpEti" DisplayFormat.DecimalSeparator="," Font.Charset="0" Font.Color="0" Font.Height="-9" Font.Name="Verdana" Font.Style="0" ParentFont="False" Text="[frxDBImpEti.&#34;DESITE&#34;]"/>
+    </TfrxMasterData>
+  </TfrxReportPage>
+</TfrxReport>

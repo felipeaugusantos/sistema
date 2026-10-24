@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<TfrxReport Version="5.6.11" DotMatrixReport="False" IniFile="\Software\Fast Reports" PreviewOptions.Buttons="3577" PreviewOptions.Zoom="1" PrintOptions.Printer="Padrão" PrintOptions.PrintMode="pmSplit" PrintOptions.PrintOnSheet="0" ReportOptions.CreateDate="43649,3255964005" ReportOptions.Description.Text="" ReportOptions.LastChange="46129,388078669" ScriptLanguage="PascalScript" ScriptText.Text="begin&#13;&#10;&#13;&#10;end.">
+  <Datasets>
+    <item DataSet="frxItensSintetizados1" DataSetName="frxItensSintetizados1"/>
+  </Datasets>
+  <TfrxDataPage Name="Data" Height="1000" Left="0" Top="0" Width="1000"/>
+  <TfrxReportPage Name="qckPagina" PaperWidth="72" PaperHeight="327,9" PaperSize="256" LeftMargin="0" RightMargin="0" TopMargin="0" BottomMargin="0" ColumnWidth="0" ColumnPositions.Text="" Frame.Typ="4" EndlessHeight="True" HGuides.Text="" VGuides.Text="">
+    <TfrxMasterData Name="MasterData1" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Height="18,89760118" Left="0" Top="207,87415" Width="272,12616" ColumnWidth="0" ColumnGap="0" DataSet="frxItensSintetizados1" DataSetName="frxItensSintetizados1" RowCount="0" Stretched="True">
+      <TfrxMemoView Name="mmoZebra" Align="baClient" Left="0" Top="0" Width="272,12616" Height="18,89760118" Font.Charset="1" Font.Color="-16777208" Font.Height="-13" Font.Name="Arial" Font.Style="0" Highlight.Font.Charset="1" Highlight.Font.Color="255" Highlight.Font.Height="-13" Highlight.Font.Name="Arial" Highlight.Font.Style="0" Highlight.Condition="&#60;Line&#62; Mod 2 = 0" Highlight.FillType="ftBrush" Highlight.Fill.BackColor="12632256" ParentFont="False" Text=""/>
+      <TfrxMemoView Name="Memo7" Left="173,102362204724" Top="0" Width="45,3543307086614" Height="15,11812" Font.Charset="1" Font.Color="-16777208" Font.Height="-9" Font.Name="Arial" Font.Style="0" ParentFont="False" WordWrap="False" Text="[frxItensSintetizados1.&#34;ITE_LOCFIS&#34;]"/>
+      <TfrxMemoView Name="Memo8" Left="27,96843071" Top="0" Width="30,2362204724409" Height="15,11812" Font.Charset="1" Font.Color="-16777208" Font.Height="-9" Font.Name="Arial" Font.Style="0" ParentFont="False" WordWrap="False" Text="[frxItensSintetizados1.&#34;FDO_CODITE&#34;]"/>
+      <TfrxMemoView Name="Memo10" Left="58,20472441" Top="0" Width="113,38579504" Height="15,11811024" StretchMode="smActualHeight" Font.Charset="1" Font.Color="-16777208" Font.Height="-9" Font.Name="Arial" Font.Style="0" ParentFont="False" Text="[frxItensSintetizados1.&#34;FDO_DESCRI&#34;]"/>
+      <TfrxMemoView Name="Memo12" Left="220,346456692913" Top="0" Width="34,0157480314961" Height="15,11811024" DisplayFormat.FormatStr="%2.2f" DisplayFormat.Kind="fkNumeric" Font.Charset="1" Font.Color="-16777208" Font.Height="-9" Font.Name="Arial" Font.Style="0" HAlign="haRight" ParentFont="False" WordWrap="False" Text="[frxItensSintetizados1.&#34;FDO_QTDITE&#34;]"/>
+    </TfrxMasterData>
+    <TfrxGroupHeader Name="GroupHeader1" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Height="117,16543" Left="0" Top="18,89765" Width="272,12616" Condition="frxItensSintetizados1.&#34;FGO_SEQSEP&#34;" StartNewPage="True">
+      <TfrxMemoView Name="Memo13" Align="baCenter" Left="77,480365" Top="5,889765" Width="117,16543" Height="18,89765" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="1" ParentFont="False" Text="Itens Sintetizados"/>
+      <TfrxBarCodeView Name="BarCode1" Align="baCenter" Left="71,56308" Top="26,33859" Width="129" Height="52,91342" BarType="bcCode39" Expression="&#60;frxItensSintetizados1.&#34;FGO_SEQSEP&#34;&#62;" Rotation="0" TestLine="False" Text="12345678" WideBarRatio="2" Zoom="1" Font.Charset="1" Font.Color="0" Font.Height="-12" Font.Name="Arial" Font.Style="0"/>
+      <TfrxMemoView Name="Memo1" Left="173,1812" Top="99,43307087" Width="45,3543307086614" Height="11,33859" Font.Charset="1" Font.Color="-16777208" Font.Height="-8" Font.Name="Arial" Font.Style="0" ParentFont="False" Text="LOC FIS"/>
+      <TfrxMemoView Name="Memo2" Left="27,22047" Top="99,4015748" Width="30,23624" Height="11,33859" Font.Charset="1" Font.Color="-16777208" Font.Height="-8" Font.Name="Arial" Font.Style="0" ParentFont="False" Text="SKU"/>
+      <TfrxMemoView Name="Memo4" Left="58,35435756" Top="99,43307087" Width="113,3859" Height="11,33859" Font.Charset="1" Font.Color="-16777208" Font.Height="-8" Font.Name="Arial" Font.Style="0" ParentFont="False" Text="PRODUTO"/>
+      <TfrxMemoView Name="Memo6" Left="220,33086" Top="99,43307087" Width="34,01572118" Height="11,33859" Font.Charset="1" Font.Color="-16777208" Font.Height="-8" Font.Name="Arial" Font.Style="0" HAlign="haRight" ParentFont="False" Text="QTD"/>
+      <TfrxLineView Name="Line1" Left="3,77953" Top="98,47248" Width="264,56690961" Height="0" Color="0" Frame.Typ="4"/>
+      <TfrxLineView Name="Line2" Left="3,77952756" Top="114,72449" Width="264,56690961" Height="0" Color="0" Frame.Typ="4"/>
+      <TfrxLineView Name="Line3" Left="3,77953" Top="79,37013" Width="264,56690961" Height="0" Color="0" Frame.Typ="4"/>
+      <TfrxMemoView Name="Memo22" Left="27,2125984251969" Top="5,88976378" Width="45,35432827" Height="15,11812" Font.Charset="1" Font.Color="-16777208" Font.Height="-8" Font.Name="Arial" Font.Style="0" ParentFont="False" Text="[DATA]"/>
+      <TfrxMemoView Name="Memo23" Left="201,33086" Top="5,88976378" Width="49,13385827" Height="15,11812" Font.Charset="1" Font.Color="-16777208" Font.Height="-8" Font.Name="Arial" Font.Style="0" HAlign="haRight" ParentFont="False" Text="[HORA]"/>
+      <TfrxMemoView Name="Memo24" Left="27,2125984251969" Top="82,37013" Width="226,7718" Height="15,11812" Font.Charset="1" Font.Color="-16777208" Font.Height="-8" Font.Name="Arial" Font.Style="0" ParentFont="False" Text="Vendedor(es): [VENDEDOR]"/>
+    </TfrxGroupHeader>
+    <TfrxGroupHeader Name="GroupHeader2" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Height="26,45671" Left="0" Top="158,74026" Width="272,12616" Condition="&#60;frxItensSintetizados1.&#34;FGO_SEQSEP&#34;&#62;+&#60;frxItensSintetizados1.&#34;LOC_SEPARACAO&#34;&#62;">
+      <TfrxMemoView Name="Memo27" Left="27,21259843" Top="9" Width="226,77171457" Height="15,11812" Font.Charset="1" Font.Color="-16777208" Font.Height="-9" Font.Name="Arial" Font.Style="1" ParentFont="False" WordWrap="False" Text="LOCAL DE SEPARAÇÃO: [frxItensSintetizados1.&#34;LOC_SEPARACAO&#34;]"/>
+    </TfrxGroupHeader>
+  </TfrxReportPage>
+</TfrxReport>

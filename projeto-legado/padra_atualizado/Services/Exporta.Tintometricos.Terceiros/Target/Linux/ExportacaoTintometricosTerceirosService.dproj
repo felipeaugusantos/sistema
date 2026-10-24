@@ -1,0 +1,2948 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{52333726-D8F5-4A05-A91D-236E408E1908}</ProjectGuid>
+        <ProjectVersion>18.8</ProjectVersion>
+        <FrameworkType>VCL</FrameworkType>
+        <MainSource>ExportacaoTintometricosTerceirosService.dpr</MainSource>
+        <Base>True</Base>
+        <Config Condition="'$(Config)'==''">Debug</Config>
+        <Platform Condition="'$(Platform)'==''">Linux64</Platform>
+        <TargetedPlatforms>128</TargetedPlatforms>
+        <AppType>Console</AppType>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Android' and '$(Base)'=='true') or '$(Base_Android)'!=''">
+        <Base_Android>true</Base_Android>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Android64' and '$(Base)'=='true') or '$(Base_Android64)'!=''">
+        <Base_Android64>true</Base_Android64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='iOSDevice32' and '$(Base)'=='true') or '$(Base_iOSDevice32)'!=''">
+        <Base_iOSDevice32>true</Base_iOSDevice32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='iOSDevice64' and '$(Base)'=='true') or '$(Base_iOSDevice64)'!=''">
+        <Base_iOSDevice64>true</Base_iOSDevice64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='iOSSimulator' and '$(Base)'=='true') or '$(Base_iOSSimulator)'!=''">
+        <Base_iOSSimulator>true</Base_iOSSimulator>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Linux64' and '$(Base)'=='true') or '$(Base_Linux64)'!=''">
+        <Base_Linux64>true</Base_Linux64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='OSX32' and '$(Base)'=='true') or '$(Base_OSX32)'!=''">
+        <Base_OSX32>true</Base_OSX32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='OSX64' and '$(Base)'=='true') or '$(Base_OSX64)'!=''">
+        <Base_OSX64>true</Base_OSX64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+        <Base_Win32>true</Base_Win32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Base)'=='true') or '$(Base_Win64)'!=''">
+        <Base_Win64>true</Base_Win64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_1)'!=''">
+        <Cfg_1>true</Cfg_1>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Linux64' and '$(Cfg_1)'=='true') or '$(Cfg_1_Linux64)'!=''">
+        <Cfg_1_Linux64>true</Cfg_1_Linux64>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win32)'!=''">
+        <Cfg_1_Win32>true</Cfg_1_Win32>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_2)'!=''">
+        <Cfg_2>true</Cfg_2>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Linux64' and '$(Cfg_2)'=='true') or '$(Cfg_2_Linux64)'!=''">
+        <Cfg_2_Linux64>true</Cfg_2_Linux64>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base)'!=''">
+        <DCC_DcuOutput>.\$(Platform)\$(Config)</DCC_DcuOutput>
+        <DCC_ExeOutput>.\$(Platform)\$(Config)</DCC_ExeOutput>
+        <DCC_E>false</DCC_E>
+        <DCC_N>false</DCC_N>
+        <DCC_S>false</DCC_S>
+        <DCC_F>false</DCC_F>
+        <DCC_K>false</DCC_K>
+        <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
+        <SanitizedProjectName>ExportacaoTintometricosTerceirosService</SanitizedProjectName>
+        <FeatureFilesAdded>Interbase;DB2;Firebird;SQLite;&quot;Interbase;DB2;Firebird;SQLite&quot;</FeatureFilesAdded>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Android)'!=''">
+        <DCC_UsePackage>DBXSqliteDriver;RESTComponents;DBXInterBaseDriver;emsclientfiredac;DataSnapFireDAC;tethering;bindcompfmx;FmxTeeUI;FireDACIBDriver;fmx;FireDACDBXDriver;dbexpress;IndyCore;dsnap;DataSnapCommon;emsclient;FireDACCommon;RESTBackendComponents;soapserver;bindengine;CloudService;FireDACCommonDriver;DataSnapClient;inet;bindcompdbx;IndyIPCommon;IndyIPServer;IndySystem;fmxFireDAC;FireDAC;FireDACSqliteDriver;ibmonitor;FMXTee;soaprtl;DbxCommonDriver;ibxpress;xmlrtl;soapmidas;DataSnapNativeClient;ibxbindings;rtl;DbxClientDriver;FireDACDSDriver;CustomIPTransport;bindcomp;IndyIPClient;dbxcds;dsnapxml;DataSnapProviderClient;dbrtl;IndyProtocols;$(DCC_UsePackage)</DCC_UsePackage>
+        <Android_LauncherIcon36>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_36x36.png</Android_LauncherIcon36>
+        <Android_LauncherIcon48>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_48x48.png</Android_LauncherIcon48>
+        <Android_LauncherIcon72>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_72x72.png</Android_LauncherIcon72>
+        <Android_LauncherIcon96>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_96x96.png</Android_LauncherIcon96>
+        <Android_LauncherIcon144>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_144x144.png</Android_LauncherIcon144>
+        <Android_SplashImage426>$(BDS)\bin\Artwork\Android\FM_SplashImage_426x320.png</Android_SplashImage426>
+        <Android_SplashImage470>$(BDS)\bin\Artwork\Android\FM_SplashImage_470x320.png</Android_SplashImage470>
+        <Android_SplashImage640>$(BDS)\bin\Artwork\Android\FM_SplashImage_640x480.png</Android_SplashImage640>
+        <Android_SplashImage960>$(BDS)\bin\Artwork\Android\FM_SplashImage_960x720.png</Android_SplashImage960>
+        <Android_NotificationIcon24>$(BDS)\bin\Artwork\Android\FM_NotificationIcon_24x24.png</Android_NotificationIcon24>
+        <Android_NotificationIcon36>$(BDS)\bin\Artwork\Android\FM_NotificationIcon_36x36.png</Android_NotificationIcon36>
+        <Android_NotificationIcon48>$(BDS)\bin\Artwork\Android\FM_NotificationIcon_48x48.png</Android_NotificationIcon48>
+        <Android_NotificationIcon72>$(BDS)\bin\Artwork\Android\FM_NotificationIcon_72x72.png</Android_NotificationIcon72>
+        <Android_NotificationIcon96>$(BDS)\bin\Artwork\Android\FM_NotificationIcon_96x96.png</Android_NotificationIcon96>
+        <EnabledSysJars>android-support-v4.dex.jar;cloud-messaging.dex.jar;com-google-android-gms.play-services-ads-base.17.2.0.dex.jar;com-google-android-gms.play-services-ads-identifier.16.0.0.dex.jar;com-google-android-gms.play-services-ads-lite.17.2.0.dex.jar;com-google-android-gms.play-services-ads.17.2.0.dex.jar;com-google-android-gms.play-services-analytics-impl.16.0.8.dex.jar;com-google-android-gms.play-services-analytics.16.0.8.dex.jar;com-google-android-gms.play-services-base.16.0.1.dex.jar;com-google-android-gms.play-services-basement.16.2.0.dex.jar;com-google-android-gms.play-services-gass.17.2.0.dex.jar;com-google-android-gms.play-services-identity.16.0.0.dex.jar;com-google-android-gms.play-services-maps.16.1.0.dex.jar;com-google-android-gms.play-services-measurement-base.16.4.0.dex.jar;com-google-android-gms.play-services-measurement-sdk-api.16.4.0.dex.jar;com-google-android-gms.play-services-stats.16.0.1.dex.jar;com-google-android-gms.play-services-tagmanager-v4-impl.16.0.8.dex.jar;com-google-android-gms.play-services-tasks.16.0.1.dex.jar;com-google-android-gms.play-services-wallet.16.0.1.dex.jar;com-google-firebase.firebase-analytics.16.4.0.dex.jar;com-google-firebase.firebase-common.16.1.0.dex.jar;com-google-firebase.firebase-iid-interop.16.0.1.dex.jar;com-google-firebase.firebase-iid.17.1.1.dex.jar;com-google-firebase.firebase-measurement-connector.17.0.1.dex.jar;com-google-firebase.firebase-messaging.17.5.0.dex.jar;fmx.dex.jar;google-play-billing.dex.jar;google-play-licensing.dex.jar</EnabledSysJars>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Android64)'!=''">
+        <DCC_UsePackage>DBXSqliteDriver;RESTComponents;DBXInterBaseDriver;emsclientfiredac;DataSnapFireDAC;tethering;bindcompfmx;FmxTeeUI;FireDACIBDriver;fmx;FireDACDBXDriver;dbexpress;IndyCore;dsnap;DataSnapCommon;emsclient;FireDACCommon;RESTBackendComponents;soapserver;bindengine;CloudService;FireDACCommonDriver;DataSnapClient;inet;bindcompdbx;IndyIPCommon;IndyIPServer;IndySystem;fmxFireDAC;FireDAC;FireDACSqliteDriver;ibmonitor;FMXTee;soaprtl;DbxCommonDriver;ibxpress;xmlrtl;soapmidas;DataSnapNativeClient;ibxbindings;rtl;DbxClientDriver;FireDACDSDriver;CustomIPTransport;bindcomp;IndyIPClient;dbxcds;dsnapxml;DataSnapProviderClient;dbrtl;IndyProtocols;$(DCC_UsePackage)</DCC_UsePackage>
+        <Android_LauncherIcon36>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_36x36.png</Android_LauncherIcon36>
+        <Android_LauncherIcon48>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_48x48.png</Android_LauncherIcon48>
+        <Android_LauncherIcon72>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_72x72.png</Android_LauncherIcon72>
+        <Android_LauncherIcon96>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_96x96.png</Android_LauncherIcon96>
+        <Android_LauncherIcon144>$(BDS)\bin\Artwork\Android\FM_LauncherIcon_144x144.png</Android_LauncherIcon144>
+        <Android_SplashImage426>$(BDS)\bin\Artwork\Android\FM_SplashImage_426x320.png</Android_SplashImage426>
+        <Android_SplashImage470>$(BDS)\bin\Artwork\Android\FM_SplashImage_470x320.png</Android_SplashImage470>
+        <Android_SplashImage640>$(BDS)\bin\Artwork\Android\FM_SplashImage_640x480.png</Android_SplashImage640>
+        <Android_SplashImage960>$(BDS)\bin\Artwork\Android\FM_SplashImage_960x720.png</Android_SplashImage960>
+        <Android_NotificationIcon24>$(BDS)\bin\Artwork\Android\FM_NotificationIcon_24x24.png</Android_NotificationIcon24>
+        <Android_NotificationIcon36>$(BDS)\bin\Artwork\Android\FM_NotificationIcon_36x36.png</Android_NotificationIcon36>
+        <Android_NotificationIcon48>$(BDS)\bin\Artwork\Android\FM_NotificationIcon_48x48.png</Android_NotificationIcon48>
+        <Android_NotificationIcon72>$(BDS)\bin\Artwork\Android\FM_NotificationIcon_72x72.png</Android_NotificationIcon72>
+        <Android_NotificationIcon96>$(BDS)\bin\Artwork\Android\FM_NotificationIcon_96x96.png</Android_NotificationIcon96>
+        <EnabledSysJars>android-support-v4.dex.jar;cloud-messaging.dex.jar;com-google-android-gms.play-services-ads-base.17.2.0.dex.jar;com-google-android-gms.play-services-ads-identifier.16.0.0.dex.jar;com-google-android-gms.play-services-ads-lite.17.2.0.dex.jar;com-google-android-gms.play-services-ads.17.2.0.dex.jar;com-google-android-gms.play-services-analytics-impl.16.0.8.dex.jar;com-google-android-gms.play-services-analytics.16.0.8.dex.jar;com-google-android-gms.play-services-base.16.0.1.dex.jar;com-google-android-gms.play-services-basement.16.2.0.dex.jar;com-google-android-gms.play-services-gass.17.2.0.dex.jar;com-google-android-gms.play-services-identity.16.0.0.dex.jar;com-google-android-gms.play-services-maps.16.1.0.dex.jar;com-google-android-gms.play-services-measurement-base.16.4.0.dex.jar;com-google-android-gms.play-services-measurement-sdk-api.16.4.0.dex.jar;com-google-android-gms.play-services-stats.16.0.1.dex.jar;com-google-android-gms.play-services-tagmanager-v4-impl.16.0.8.dex.jar;com-google-android-gms.play-services-tasks.16.0.1.dex.jar;com-google-android-gms.play-services-wallet.16.0.1.dex.jar;com-google-firebase.firebase-analytics.16.4.0.dex.jar;com-google-firebase.firebase-common.16.1.0.dex.jar;com-google-firebase.firebase-iid-interop.16.0.1.dex.jar;com-google-firebase.firebase-iid.17.1.1.dex.jar;com-google-firebase.firebase-measurement-connector.17.0.1.dex.jar;com-google-firebase.firebase-messaging.17.5.0.dex.jar;fmx.dex.jar;google-play-billing.dex.jar;google-play-licensing.dex.jar</EnabledSysJars>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_iOSDevice32)'!=''">
+        <DCC_UsePackage>DBXSqliteDriver;RESTComponents;DBXInterBaseDriver;emsclientfiredac;DataSnapFireDAC;tethering;bindcompfmx;FmxTeeUI;FireDACIBDriver;fmx;FireDACDBXDriver;dbexpress;IndyCore;dsnap;DataSnapCommon;emsclient;FireDACCommon;RESTBackendComponents;soapserver;bindengine;CloudService;FireDACCommonDriver;DataSnapClient;inet;bindcompdbx;IndyIPCommon;IndyIPServer;IndySystem;fmxFireDAC;FireDAC;FireDACSqliteDriver;ibmonitor;FMXTee;soaprtl;DbxCommonDriver;ibxpress;xmlrtl;soapmidas;DataSnapNativeClient;ibxbindings;rtl;DbxClientDriver;FireDACDSDriver;CustomIPTransport;bindcomp;IndyIPClient;dbxcds;dsnapxml;DataSnapProviderClient;dbrtl;IndyProtocols;fmxase;$(DCC_UsePackage)</DCC_UsePackage>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_iOSDevice64)'!=''">
+        <DCC_UsePackage>DBXSqliteDriver;RESTComponents;DBXInterBaseDriver;emsclientfiredac;DataSnapFireDAC;tethering;bindcompfmx;FmxTeeUI;FireDACIBDriver;fmx;FireDACDBXDriver;dbexpress;IndyCore;dsnap;DataSnapCommon;emsclient;FireDACCommon;RESTBackendComponents;soapserver;bindengine;CloudService;FireDACCommonDriver;DataSnapClient;inet;bindcompdbx;IndyIPCommon;IndyIPServer;IndySystem;fmxFireDAC;FireDAC;FireDACSqliteDriver;ibmonitor;FMXTee;soaprtl;DbxCommonDriver;ibxpress;xmlrtl;soapmidas;DataSnapNativeClient;ibxbindings;rtl;DbxClientDriver;FireDACDSDriver;CustomIPTransport;bindcomp;IndyIPClient;dbxcds;dsnapxml;DataSnapProviderClient;dbrtl;IndyProtocols;fmxase;$(DCC_UsePackage)</DCC_UsePackage>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_iOSSimulator)'!=''">
+        <DCC_UsePackage>DBXSqliteDriver;RESTComponents;DBXInterBaseDriver;emsclientfiredac;DataSnapFireDAC;tethering;bindcompfmx;FmxTeeUI;FireDACIBDriver;fmx;FireDACDBXDriver;dbexpress;IndyCore;dsnap;DataSnapCommon;emsclient;FireDACCommon;RESTBackendComponents;soapserver;bindengine;CloudService;FireDACCommonDriver;DataSnapClient;inet;bindcompdbx;IndyIPCommon;IndyIPServer;IndySystem;fmxFireDAC;FireDAC;FireDACSqliteDriver;ibmonitor;FMXTee;soaprtl;DbxCommonDriver;ibxpress;xmlrtl;soapmidas;DataSnapNativeClient;ibxbindings;rtl;DbxClientDriver;FireDACDSDriver;CustomIPTransport;bindcomp;IndyIPClient;dbxcds;dsnapxml;DataSnapProviderClient;dbrtl;IndyProtocols;fmxase;$(DCC_UsePackage)</DCC_UsePackage>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Linux64)'!=''">
+        <DCC_UsePackage>RESTComponents;DataSnapServerMidas;emsclientfiredac;DataSnapFireDAC;FireDACADSDriver;DatasnapConnectorsFreePascal;FireDACMSSQLDriver;inetdb;emsedge;FireDACIBDriver;dbexpress;IndyCore;dsnap;DataSnapCommon;emsclient;FireDACCommon;RESTBackendComponents;DataSnapConnectors;soapserver;bindengine;FireDACOracleDriver;CloudService;FireDACMySQLDriver;FireDACCommonODBC;FireDACCommonDriver;DataSnapClient;inet;IndySystem;FireDACDb2Driver;FireDACInfxDriver;FireDAC;emshosting;FireDACSqliteDriver;FireDACPgDriver;FireDACASADriver;FireDACTDataDriver;soaprtl;DbxCommonDriver;DataSnapServer;xmlrtl;soapmidas;DataSnapNativeClient;rtl;emsserverresource;DbxClientDriver;CustomIPTransport;bindcomp;dbxcds;FireDACODBCDriver;DataSnapIndy10ServerTransport;dsnapxml;dbrtl;FireDACMongoDBDriver;IndyProtocols;$(DCC_UsePackage)</DCC_UsePackage>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_OSX32)'!=''">
+        <DCC_UsePackage>DBXSqliteDriver;RESTComponents;DataSnapServerMidas;DBXInterBaseDriver;emsclientfiredac;DataSnapFireDAC;tethering;FireDACMSSQLDriver;bindcompfmx;DBXOracleDriver;inetdb;FmxTeeUI;FireDACIBDriver;fmx;fmxdae;FireDACDBXDriver;dbexpress;IndyCore;dsnap;DataSnapCommon;emsclient;FireDACCommon;RESTBackendComponents;soapserver;bindengine;DBXMySQLDriver;FireDACOracleDriver;CloudService;FireDACMySQLDriver;DBXFirebirdDriver;FireDACCommonODBC;FireDACCommonDriver;DataSnapClient;inet;bindcompdbx;IndyIPCommon;IndyIPServer;IndySystem;fmxFireDAC;FireDAC;FireDACSqliteDriver;FireDACPgDriver;ibmonitor;FireDACASADriver;FireDACTDataDriver;FMXTee;soaprtl;DbxCommonDriver;ibxpress;DataSnapServer;xmlrtl;soapmidas;DataSnapNativeClient;fmxobj;ibxbindings;rtl;DbxClientDriver;FireDACDSDriver;DBXSybaseASADriver;CustomIPTransport;bindcomp;DBXInformixDriver;IndyIPClient;dbxcds;FireDACODBCDriver;DataSnapIndy10ServerTransport;dsnapxml;DataSnapProviderClient;dbrtl;inetdbxpress;FireDACMongoDBDriver;IndyProtocols;fmxase;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_ConsoleTarget>true</DCC_ConsoleTarget>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_OSX64)'!=''">
+        <DCC_UsePackage>DBXSqliteDriver;RESTComponents;DataSnapServerMidas;DBXInterBaseDriver;emsclientfiredac;DataSnapFireDAC;tethering;FireDACMSSQLDriver;bindcompfmx;DBXOracleDriver;inetdb;FmxTeeUI;FireDACIBDriver;fmx;fmxdae;FireDACDBXDriver;dbexpress;IndyCore;dsnap;DataSnapCommon;emsclient;FireDACCommon;RESTBackendComponents;soapserver;bindengine;DBXMySQLDriver;FireDACOracleDriver;CloudService;FireDACMySQLDriver;DBXFirebirdDriver;FireDACCommonODBC;FireDACCommonDriver;DataSnapClient;inet;bindcompdbx;IndyIPCommon;IndyIPServer;IndySystem;fmxFireDAC;FireDAC;FireDACSqliteDriver;FireDACPgDriver;ibmonitor;FireDACASADriver;FireDACTDataDriver;FMXTee;soaprtl;DbxCommonDriver;ibxpress;DataSnapServer;xmlrtl;soapmidas;DataSnapNativeClient;fmxobj;ibxbindings;rtl;DbxClientDriver;FireDACDSDriver;DBXSybaseASADriver;CustomIPTransport;bindcomp;DBXInformixDriver;IndyIPClient;dbxcds;FireDACODBCDriver;DataSnapIndy10ServerTransport;dsnapxml;DataSnapProviderClient;dbrtl;inetdbxpress;FireDACMongoDBDriver;IndyProtocols;fmxase;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_ConsoleTarget>true</DCC_ConsoleTarget>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <DCC_UsePackage>DBXSqliteDriver;RESTComponents;DataSnapServerMidas;DBXDb2Driver;DBXInterBaseDriver;vclactnband;vclFireDAC;emsclientfiredac;DataSnapFireDAC;svnui;tethering;FireDACADSDriver;DBXMSSQLDriver;DatasnapConnectorsFreePascal;FireDACMSSQLDriver;vcltouch;vcldb;bindcompfmx;svn;DBXOracleDriver;inetdb;FmxTeeUI;emsedge;FireDACIBDriver;fmx;fmxdae;vclib;FireDACDBXDriver;dbexpress;IndyCore;vclx;dsnap;DataSnapCommon;emsclient;FireDACCommon;RESTBackendComponents;DataSnapConnectors;VCLRESTComponents;soapserver;vclie;bindengine;DBXMySQLDriver;FireDACOracleDriver;CloudService;FireDACMySQLDriver;DBXFirebirdDriver;FireDACCommonODBC;FireDACCommonDriver;DataSnapClient;inet;bindcompdbx;IndyIPCommon;vcl;DBXSybaseASEDriver;IndyIPServer;IndySystem;FireDACDb2Driver;dsnapcon;FireDACMSAccDriver;fmxFireDAC;FireDACInfxDriver;vclimg;TeeDB;FireDAC;emshosting;FireDACSqliteDriver;FireDACPgDriver;ibmonitor;FireDACASADriver;DBXOdbcDriver;FireDACTDataDriver;FMXTee;soaprtl;DbxCommonDriver;ibxpress;Tee;DataSnapServer;xmlrtl;soapmidas;DataSnapNativeClient;fmxobj;vclwinx;ibxbindings;rtl;emsserverresource;DbxClientDriver;FireDACDSDriver;DBXSybaseASADriver;CustomIPTransport;vcldsnap;bindcomp;appanalytics;DBXInformixDriver;IndyIPClient;bindcompvcl;TeeUI;dbxcds;VclSmp;adortl;FireDACODBCDriver;DataSnapIndy10ServerTransport;dsnapxml;DataSnapProviderClient;dbrtl;inetdbxpress;FireDACMongoDBDriver;IndyProtocols;fmxase;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+        <BT_BuildType>Debug</BT_BuildType>
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProgramID=com.embarcadero.$(MSBuildProjectName);ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <DCC_ConsoleTarget>true</DCC_ConsoleTarget>
+        <UWP_DelphiLogo44>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png</UWP_DelphiLogo44>
+        <UWP_DelphiLogo150>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png</UWP_DelphiLogo150>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win64)'!=''">
+        <DCC_UsePackage>DBXSqliteDriver;RESTComponents;DataSnapServerMidas;DBXDb2Driver;DBXInterBaseDriver;vclactnband;vclFireDAC;emsclientfiredac;DataSnapFireDAC;tethering;FireDACADSDriver;DBXMSSQLDriver;DatasnapConnectorsFreePascal;FireDACMSSQLDriver;vcltouch;vcldb;bindcompfmx;DBXOracleDriver;inetdb;FmxTeeUI;emsedge;FireDACIBDriver;fmx;fmxdae;vclib;FireDACDBXDriver;dbexpress;IndyCore;vclx;dsnap;DataSnapCommon;emsclient;FireDACCommon;RESTBackendComponents;DataSnapConnectors;VCLRESTComponents;soapserver;vclie;bindengine;DBXMySQLDriver;FireDACOracleDriver;CloudService;FireDACMySQLDriver;DBXFirebirdDriver;FireDACCommonODBC;FireDACCommonDriver;DataSnapClient;inet;bindcompdbx;IndyIPCommon;vcl;DBXSybaseASEDriver;IndyIPServer;IndySystem;FireDACDb2Driver;dsnapcon;FireDACMSAccDriver;fmxFireDAC;FireDACInfxDriver;vclimg;TeeDB;FireDAC;emshosting;FireDACSqliteDriver;FireDACPgDriver;ibmonitor;FireDACASADriver;DBXOdbcDriver;FireDACTDataDriver;FMXTee;soaprtl;DbxCommonDriver;ibxpress;Tee;DataSnapServer;xmlrtl;soapmidas;DataSnapNativeClient;fmxobj;vclwinx;ibxbindings;rtl;emsserverresource;DbxClientDriver;FireDACDSDriver;DBXSybaseASADriver;CustomIPTransport;vcldsnap;bindcomp;appanalytics;DBXInformixDriver;IndyIPClient;bindcompvcl;TeeUI;dbxcds;VclSmp;adortl;FireDACODBCDriver;DataSnapIndy10ServerTransport;dsnapxml;DataSnapProviderClient;dbrtl;inetdbxpress;FireDACMongoDBDriver;IndyProtocols;fmxase;$(DCC_UsePackage)</DCC_UsePackage>
+        <DCC_ConsoleTarget>true</DCC_ConsoleTarget>
+        <UWP_DelphiLogo44>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_44.png</UWP_DelphiLogo44>
+        <UWP_DelphiLogo150>$(BDS)\bin\Artwork\Windows\UWP\delphi_UwpDefault_150.png</UWP_DelphiLogo150>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1)'!=''">
+        <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+        <DCC_DebugDCUs>true</DCC_DebugDCUs>
+        <DCC_Optimize>false</DCC_Optimize>
+        <DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>
+        <DCC_DebugInfoInExe>true</DCC_DebugInfoInExe>
+        <DCC_RemoteDebug>true</DCC_RemoteDebug>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_Linux64)'!=''">
+        <Debugger_RunParams>-e002</Debugger_RunParams>
+        <Debugger_Launcher>/usr/bin/xterm -e &quot;%debuggee%&quot;</Debugger_Launcher>
+        <DCC_ExeOutput>..\..\..\bin</DCC_ExeOutput>
+        <DCC_DcuOutput>..\..\..\tmp</DCC_DcuOutput>
+        <Manifest_File>..\..\..\Status.Pedido\Target\Linux\(None)</Manifest_File>
+        <UsePackages>true</UsePackages>
+        <DCC_UsePackage>faturamento.impostos.servicos;faturamento.impostos.regras;faturamento.model;faturamento.impostos.calculos;faturamento.impostos.tipos;faturamento.impostos.interfaces;Shared.Functions</DCC_UsePackage>
+        <VerInfo_Keys>CFBundleVersion=1.0.0</VerInfo_Keys>
+        <PreBuildEvent><![CDATA[copy "$(BDS)\redist\$(Platform)\bplfaturamento*.so" "$(PROJECTDIR)\..\..\..\bin"
+copy "$(BDS)\redist\$(Platform)\bplShared*.so" "$(PROJECTDIR)\..\..\..\bin"
+copy "$(BDS)\redist\$(Platform)\libmidas.so.2" "$(PROJECTDIR)\..\..\..\bin"
+copy "$(BDS)\redist\$(Platform)\bplrtl260.so" "$(PROJECTDIR)\..\..\..\bin"
+$(PreBuildEvent)]]></PreBuildEvent>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+        <DCC_RemoteDebug>false</DCC_RemoteDebug>
+        <DCC_ExeOutput>..\..\bin</DCC_ExeOutput>
+        <DCC_DcuOutput>..\..\tmp</DCC_DcuOutput>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <Manifest_File>..\..\..\Status.Pedido\Target\Linux\(None)</Manifest_File>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2)'!=''">
+        <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+        <DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+        <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+        <DCC_DebugInformation>0</DCC_DebugInformation>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Linux64)'!=''">
+        <DCC_ExeOutput>..\..\..\bin</DCC_ExeOutput>
+        <DCC_DcuOutput>..\..\..\tmp</DCC_DcuOutput>
+        <Debugger_Launcher>/usr/bin/xterm -e &quot;%debuggee%&quot;</Debugger_Launcher>
+        <Manifest_File>..\..\..\Status.Pedido\Target\Linux\(None)</Manifest_File>
+        <Debugger_RunParams>NEX -e002</Debugger_RunParams>
+        <UsePackages>true</UsePackages>
+        <DCC_UsePackage>faturamento.impostos.interfaces;faturamento.impostos.servicos;faturamento.impostos.regras;faturamento.model;faturamento.impostos.calculos;faturamento.impostos.tipos;Shared.Functions</DCC_UsePackage>
+        <VerInfo_Keys>CFBundleVersion=1.0.0</VerInfo_Keys>
+        <PreBuildEvent><![CDATA[copy "$(BDS)\redist\$(Platform)\bplfaturamento*.so" "$(PROJECTDIR)\..\..\..\bin"
+copy "$(BDS)\redist\$(Platform)\bplShared*.so" "$(PROJECTDIR)\..\..\..\bin"
+copy "$(BDS)\redist\$(Platform)\libmidas.so.2" "$(PROJECTDIR)\..\..\..\bin"
+copy "$(BDS)\redist\$(Platform)\bplrtl260.so" "$(PROJECTDIR)\..\..\..\bin"
+$(PreBuildEvent)]]></PreBuildEvent>
+    </PropertyGroup>
+    <ItemGroup>
+        <DelphiCompile Include="$(MainSource)">
+            <MainSource>MainSource</MainSource>
+        </DelphiCompile>
+        <DCCReference Include="..\..\..\Core\Services.Core.Cache.pas"/>
+        <DCCReference Include="..\..\..\Core\Services.Core.Connection.Interfaces.pas"/>
+        <DCCReference Include="..\..\..\Core\Services.Core.Connection.Manager.pas"/>
+        <DCCReference Include="..\..\..\Core\Services.Core.Connection.UniDac.pas"/>
+        <DCCReference Include="..\..\..\Core\Services.Core.Settings.pas"/>
+        <DCCReference Include="..\..\..\Core\Services.Core.Task.Lock.pas"/>
+        <DCCReference Include="..\..\..\Core\Services.Core.Task.Monitor.pas"/>
+        <DCCReference Include="..\..\..\Core\Services.Core.Types.pas"/>
+        <DCCReference Include="..\..\..\Core\Services.Core.Utils.pas"/>
+        <DCCReference Include="..\..\..\Core\Services.Core.Rest.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\Controller\Bpl\Faturamento\Impostos\FcpDifal\Controller.Faturamento.Impostos.FcpDifal.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\Controller\Bpl\Faturamento\Impostos\Generic\Controller.Faturamento.Impostos.Generic.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\Controller\Bpl\Faturamento\Impostos\IcmsEfetivo\Controller.Faturamento.Impostos.IcmsEfetivo.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\Controller\Bpl\Faturamento\Impostos\IcmsSt\Controller.Faturamento.Impostos.IcmsSt.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\Controller\Bpl\Faturamento\Impostos\Ipi\Controller.Faturamento.Impostos.Ipi.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\Faturamento\Controller.Faturamento.Interfaces.Cache.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\Controller\Bpl\Faturamento\Impostos\Interfaces\Controller.Faturamento.Interfaces.Impostos.FcpDifal.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\Controller\Bpl\Faturamento\Impostos\Generic\Controller.Faturamento.Interfaces.Impostos.Generic.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\Controller\Bpl\Faturamento\Impostos\Interfaces\Controller.Faturamento.Interfaces.Impostos.IcmsEfetivo.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\Controller\Bpl\Faturamento\Impostos\Interfaces\Controller.Faturamento.Interfaces.Impostos.IcmsSt.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\Controller\Bpl\Faturamento\Impostos\Interfaces\Controller.Faturamento.Interfaces.Impostos.Ipi.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\Controller\Bpl\Faturamento\Impostos\Interfaces\Controller.Faturamento.Interfaces.Impostos.Parametros.Comum.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\Controller\Bpl\Faturamento\Margem\Interfaces\Controller.Faturamento.Interfaces.Margem.Generic.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\Controller\Bpl\Faturamento\Margem\Interfaces\Controller.Faturamento.Interfaces.Margem.MargemBruta.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\Controller\Bpl\Faturamento\Margem\Interfaces\Controller.Faturamento.Interfaces.Margem.MargemVenda.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\Controller\Bpl\Faturamento\Precos\Interfaces\Controller.Faturamento.Interfaces.Precos.Generic.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\Controller\Bpl\Faturamento\Precos\Interfaces\Controller.Faturamento.Interfaces.Precos.PrecoCusto.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\Controller\Bpl\Faturamento\Margem\Generic\Controller.Faturamento.Margem.Generic.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\Controller\Bpl\Faturamento\Margem\MargemBruta\Controller.Faturamento.Margem.MargemBruta.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\Controller\Bpl\Faturamento\Margem\MargemVenda\Controller.Faturamento.Margem.MargemVenda.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\Controller\Bpl\Faturamento\Precos\Generic\Controller.Faturamento.Precos.Generic.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\Controller\Bpl\Faturamento\Precos\PrecoCusto\Controller.Faturamento.Precos.PrecoCusto.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\Controller\Bpl\Faturamento\Impostos\Tipos\Controller.Faturamento.Tipos.Impostos.IcmsEfetivo.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\Controller\Bpl\Faturamento\Impostos\Tipos\Controller.Faturamento.Tipos.Impostos.IcmsSt.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\Controller\Bpl\Faturamento\Impostos\Tipos\Controller.Faturamento.Tipos.Impostos.Ipi.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\Controller\Bpl\Faturamento\Impostos\Tipos\Controller.Faturamento.Tipos.Impostos.Parametros.Comum.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\Core\Core.Funcoes.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\Estoque\Estoque.Lote.TSQLSaldoLote.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\faturamento\Auditoria\Faturamento.Auditoria.Cat17.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\faturamento\Auditoria\Faturamento.Auditoria.EmbalagemFechada.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\faturamento\Auditoria\Faturamento.Auditoria.Interfaces.Cat17.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\faturamento\Auditoria\Faturamento.Auditoria.Interfaces.EmbalagemFechada.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\faturamento\Faturamento.Classes.TDadosCTe.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\faturamento\Faturamento.Classes.TFatVendaBase.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\Core\Faturamento.Connections.Functions.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\faturamento\Faturamento.Consignacao.Classes.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\faturamento\Faturamento.Impostos.Calculos.TesteUnitarioLog.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\faturamento\Impostos\Faturamento.Impostos.IcmsEfetivo.SQL.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\Core\Conexao\Faturamento.Interfaces.Conexao.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\faturamento\Origem\Faturamento.Origem.TOrigemFaturamento.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\movimentacaoitens\OrdemProducaoIndustrial\OrdemProducaoIndustrial.Funcoes.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\faturamento\Promocao\Promocao.Regra.Preco.Sugestao.pas"/>
+        <DCCReference Include="..\..\Source\Services.Exportacao.Tintometrico.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\Core\Shared.Core.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\Shared.Functions.Conexao.UniDac.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\crm\untAtualizaOcorrenciasCRM.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\faturamento\untAuditoriaGravacaoFaturamento.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untAutcomDllTinta.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\util\operacoesrefitens\untBalancoEstoqueAjuste.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\cadastros\untBonGer.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\cadastros\untCadIBPT.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\cadastros\untCadIte.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\cadastros\untCadLote.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\faturamento\untCadNegBussiness.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\cadastros\untCadPro.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\financeiro\contasareceber\untCadRec.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\faturamento\untCalcularMargemLucro.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\fiscal\untCalculoIpi.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untCalculoPisCofins.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untCalculoPrecoVenda.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\Cadastros\untCamGer.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\cadastros\untConDet.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untConfiguracoes.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untConstantes.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\libNfe\untConstantesNFe.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untConstantesUtils.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untControlaNotSaldoMin.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\Util_DLL\OpeRefProd\untControleContagemBalancoEstoque.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\faturamento\untCustoItemFaturamento.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\faturamento\untDespesasFaturamento.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untDicionarioResultadoQuerySimples.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\crm\untDivergenciasDevAD.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\cadastros\untEnderecoEntrega.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\faturamento\untEstruturaMargemLucro.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExecutaSQLReplicacaoTinta.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\faturamento\untFatCalcComissaoVendedor.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\faturamento\untFatCalcularImpostosService.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\faturamento\untFatCalcularMargemService.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\faturamento\untFatCalcularPrecosService.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\faturamento\untFatCalcularServicePath.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\faturamento\untFatComboVenda.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\faturamento\untFatDefineLotesPedidoWMSWrapper.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\faturamento\untFatEstruturaVidro.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\faturamento\untFatMostraTravaMinimaHelper.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\faturamento\untFatOrdProTintaMaquina.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\faturamento\untFatOrdSer.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\faturamento\untFatRegrasImpostos.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\faturamento\untFatSeriesItem.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\faturamento\untFatVendasCalculadorWrapper.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\faturamento\untFatVendasCalculadorWrapperTAB.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\faturamento\untFinanceira.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\faturamento\untFuncFatTypes.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\Genericos\untFuncTinta.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untFuncoesAutocenter.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\crm\untFuncoesCRM.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untFuncoesDicionarios.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untFuncoesGenCompartilhada.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untFuncoesGenerica.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\faturamento\untFuncoesSaldos.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untFuncoesTintaDeMaquinaBpl.pas"/>
+        <DCCReference Include="..\..\..\..\..\LibTintas\libTintasComum\Tipos\untGTinForTipos.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untHelperCitel.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\util\operacoesrefitens\untHistoricoBalanco.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\cadastros\untICadLote.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\Interfaces\untICalculadorFatVendas.pas"/>
+        <DCCReference Include="..\..\..\..\..\LibTintas\libTintasComum\Interfaces\untICalculadorFatVendasLibTintas.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\Interfaces\untICalculadorFatVendasTAB.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\cadastros\untICamGer.pas"/>
+        <DCCReference Include="..\..\..\..\..\LibTintas\libTintasComum\Interfaces\untIConfTinta.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\configuracoes\untIConfiguracao.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\configuracoes\untCfgRepositorio.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\iTintas\untIDadosTinta.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\iTintas\untIDadosTintasComponentes.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\Dataset\untIDataSet.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\iTintas\untIExecutaSQLReplicacaoTinta.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\Interfaces\untIFatDefineLotesPedidoWMS.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\faturamento\untIFatEntregaFutura.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\iTintas\untIFatOrdProTintaMaquina.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\faturamento\untIFatReservaSaldo.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\faturamento\untIFinanceira.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\crm\untIFuncoesCRM.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\Interfaces\untIFuncoesSaldos.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\iTintas\untIIdentificadorTinta.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\iTintas\untILibTintaDllRelacao.pas"/>
+        <DCCReference Include="..\..\..\..\..\LibTintas\libTintasComum\Interfaces\untITintaDeMaquina.pas"/>
+        <DCCReference Include="..\..\..\..\..\LibTintas\libTintasComum\Interfaces\untITintaDeMaquinaComponente.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\iTintas\untITintasDeMaquina.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\iTintas\untITransferencias.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untIZClient.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\faturamento\untIcmsSTParteVenda.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untIliberacao.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untImportaTintometricosTerceirosTabelas.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untImpostosFatConexao.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\FuncoesCentralizadas\untInterfacedObjectNoCount.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\libNfe\untInterfaces.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untLiberacao.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\financeiro\contasareceber\untLogCtr.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\faturamento\untMadeireira.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\faturamento\untMargemLucro.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\faturamento\untMovGer.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\cadastros\untMsgInterna.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untMsgLiberacao.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\cadastros\untNotCom.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untParCalculaPrecoCusto.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\util\operacoesrefitens\untPreAlt.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\cadastros\untPreAlt_Trigger.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\faturamento\untSQLFaturamento.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\faturamento\untSQLRepositorio.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\faturamento\untSQLServicos.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\movimentacaoitens\PedidoDeCompra\untSaldoPedidoCompra.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untSeqTmp.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\configuracoes\untTConfiguracao.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\faturamento\untTEstruturaPersonalizada.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\cadastros\untTFaixaDescTabPrecoLinhaGrupo.Classes.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\faturamento\untTFatEntregaFutura.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\faturamento\untTFatReprocessarSaldoItem.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\faturamento\untTFatReservaSaldo.pas"/>
+        <DCCReference Include="..\..\..\..\..\libIntegracaoPixCitel\fontes\requisicoes\untTFuncoesAuxiliaresPix.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untTMatrizSaldosColorantes.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untTMemoriaCalculoPrecoVendaMargem.pas"/>
+        <DCCReference Include="..\..\..\..\..\LibTintas\libTintasComum\Genericos\untTintaDeMaquinaComponenteTipo.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untTipoFreteAtc.pas"/>
+        <DCCReference Include="..\..\..\..\..\LibTintas\libTintasComum\Tipos\untTipoTinta.pas"/>
+        <DCCReference Include="..\..\..\..\..\libIntegracaoPixCitel\fontes\genericos\untTiposPix.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\faturamento\untTransferencias.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\crm\untTypesCRM.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untTypesSistema.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\faturamento\untValidacoesSistemaDEPS.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untValorPorExtenso.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untZClient.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\financeiro\gerais\api.yapay\api\Yapay.Api.Resources.pas"/>
+        <DCCReference Include="..\..\..\Consulta.Preco.Tinta\Source\Services.ConsultarPreco.Tinta.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceiros.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosAdvance.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosAdvanceStr.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosAdvanceTintoSystem.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosAlessiImobiliaria.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosAlterPlus.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosAnjoAutomotiva.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosAnjoImobiliaria.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosAnjoSintetica.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosAnnetta.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosAutoluks.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosAutomotiva.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosBautech.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosBellaCor.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosBellaCorTintavel.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosBrasimixAutomotiva.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosBrasimixImobiliaria.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosBrazilianColor.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosCalamar.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosChreon.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosCiaCollor.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosColorbraz.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosColorPro.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosCoralImobiliaria.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosDacar.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosDacasa.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosDupont.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosDuxone.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosDuxone2.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosEucatex.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosFalcao.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosFarbenAutomotiva.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosFutura.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosGeneral.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosGlobalBc.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosGlobalBsn.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosGlobalCc11.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosGlobalColor.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosGlobalCsn.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosGrafftex.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosHydronorthImobiliaria.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosImobiliaria.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosIndustrial.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosInkor.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosInternational.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosIquine.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosJotun.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosKilling.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosKillingIndustrial.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosKresil.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosLazzumix.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosLechler.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosLeinertex.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosLiko.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosLukscolor.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosLukscolor2.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosLuztol.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosMaestria.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosMaxVinil.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosMazaAutomotiva.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosMazaImobiliaria.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosMazaIndustrial.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosMegaTintas.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosMontana.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosNexa.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosPPG.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosPpgNexa.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosQualyVinil.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosRecoa.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosRennerImobiliaria.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosRennerIndustrial.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosRennerPerformance.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosRoberlo.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosResicolor.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosSayerlack.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosSherwinWilliams.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosSherwinWilliams2.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosSinteplast.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosSkymixAutomotiva.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosSparlack.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosStandox.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosStarmix.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosStarmixWeb.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosSuvinil.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosTexturaCia.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosTopCoat.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosUniverso.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosVelutex.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosWeg.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untThreadExportacaoTerceiros.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untExportaTintometricosTerceirosMiniFabrica.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\resumodecaixa\untAuditoriaGravacaoResumoCaixa.pas"/>
+        <BuildConfiguration Include="Release">
+            <Key>Cfg_2</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Base">
+            <Key>Base</Key>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Debug">
+            <Key>Cfg_1</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Delphi.Personality.12</Borland.Personality>
+        <Borland.ProjectType>Application</Borland.ProjectType>
+        <BorlandProject>
+            <Delphi.Personality>
+                <Source>
+                    <Source Name="MainSource">ExportacaoTintometricosTerceirosService.dpr</Source>
+                </Source>
+                <Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k260.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp260.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\20.0\Bpl\LockBox3FMXDD260.bpl">TurboPack LockBox 3 FMX designtime package</Excluded_Packages>
+                </Excluded_Packages>
+            </Delphi.Personality>
+            <Deployment Version="3">
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaLukscolor.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaLukscolor.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaInkor.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaInkor.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaAlessiImobiliaria.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaAlessiImobiliaria.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaNexa.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaNexa.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaColorPro.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaColorPro.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaBautech.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaBautech.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaWeg.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaWeg.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\libmysqlclient.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteName>libmysqlclient.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaMontana.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaMontana.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaVelutexImobiliaria.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaVelutexImobiliaria.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\bplfaturamento.margem.interfaces.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteName>bplfaturamento.margem.interfaces.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaNexa.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaNexa.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaStarmixWeb.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaStarmixWeb.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\redist\linux64\bplfaturamento.precos.interfaces.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteName>bplfaturamento.precos.interfaces.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaMiniFabrica.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaMiniFabrica.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaBautech.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaBautech.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\redist\linux64\bplfaturamento.precos.tipos.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteName>bplfaturamento.precos.tipos.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaMazaIndustrial.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaMazaIndustrial.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaLazzumix.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaLazzumix.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\redist\osx32\libmidas.dylib" Configuration="Release" Class="File">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaLukscolor2.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaLukscolor2.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaAlterPlus.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaAlterPlus.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaAnjoImobiliaria.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaAnjoImobiliaria.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaResicolor.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaResicolor.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaFutura.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaFutura.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaSayerlack.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaSayerlack.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaGlobalBsn.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaGlobalBsn.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\redist\linux64\bplfaturamento.precos.calculos.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteName>bplfaturamento.precos.calculos.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaFarbenAutomotiva.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaFarbenAutomotiva.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaMaxVinil.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaMaxVinil.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaGeneral.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaGeneral.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\Redist\iossimulator\libcgunwind.1.0.dylib" Class="DependencyModule">
+                    <Platform Name="iOSSimulator">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaLiko.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaLiko.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaSherwinWilliams.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaSherwinWilliams.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaLukscolor2.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaLukscolor2.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaMontana.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaMontana.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaStarmixWeb.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaStarmixWeb.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaLechler.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaLechler.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\Redist\osx32\libcgunwind.1.0.dylib" Class="DependencyModule">
+                    <Platform Name="OSX32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaRoberlo.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaRoberlo.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\bplfaturamento.impostos.servicos.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteName>bplfaturamento.impostos.servicos.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaLeinertex.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaLeinertex.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaBrasimixAutomotiva.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaBrasimixAutomotiva.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaBrazilianColorAutomotiva.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaBrazilianColorAutomotiva.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaAdvanceTintoSystem.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaAdvanceTintoSystem.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaAnjoSintetica.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaAnjoSintetica.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaMiniFabrica.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaMiniFabrica.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\redist\linux64\bplfaturamento.margem.interfaces.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteName>bplfaturamento.margem.interfaces.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaPpgNexa.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaPpgNexa.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\Lib\libmysqlclient.a" Configuration="Debug" Class="File">
+                    <Platform Name="Win32">
+                        <RemoteName>libmysqlclient.a</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaSayerlack.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaSayerlack.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaSherwinWilliams2.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaSherwinWilliams2.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaUniverso.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaUniverso.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaAnnetta.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaAnnetta.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaMazaIndustrial.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaMazaIndustrial.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaQualyVinil.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaQualyVinil.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaCalamar.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaCalamar.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\bin64\midas.dll" Configuration="Debug" Class="File">
+                    <Platform Name="Win64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaLuztol.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaLuztol.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaIquine.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaIquine.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaKillingIndustrial.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaKillingIndustrial.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaMaxVinil.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaMaxVinil.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaGlobalCsn.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaGlobalCsn.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaDacasa.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaDacasa.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaKilling.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaKilling.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaLazzumix.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaLazzumix.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaSinteplast.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaSinteplast.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaKresil.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaKresil.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaRecoa.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaRecoa.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaGlobalColor.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaGlobalColor.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaPpgNexa.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaPpgNexa.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaColorbraz.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaColorbraz.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaLukscolor.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaLukscolor.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaGlobalBc.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaGlobalBc.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\bplfaturamento.precos.servicos.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteName>bplfaturamento.precos.servicos.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaDuxone2.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaDuxone2.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaFarbenAutomotiva.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaFarbenAutomotiva.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\bplfaturamento.model.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteName>bplfaturamento.model.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaIquine.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaIquine.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaChreon.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaChreon.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaPpg.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaPpg.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\libAutcomTinta.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\</RemoteDir>
+                        <RemoteName>libAutcomTinta.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaDacar.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaDacar.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\Redist\Linux64\bplShared.Functions.so" Configuration="Debug" Class="DependencyPackage">
+                    <Platform Name="Linux64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaColorPro.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaColorPro.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaColorbraz.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaColorbraz.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\redist\iossimulator\libmidas.dylib" Configuration="Debug" Class="File">
+                    <Platform Name="iOSSimulator">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\Redist\Linux64\bplrtl260.so" Configuration="Release" Class="DependencyPackage">
+                    <Platform Name="Linux64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaGrafftex.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaGrafftex.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaMazaImobiliaria.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaMazaImobiliaria.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaBrazilianColorAutomotiva.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaBrazilianColorAutomotiva.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaTexturaCia.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaTexturaCia.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaKilling.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaKilling.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\bplfaturamento.margem.calculos.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteName>bplfaturamento.margem.calculos.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaMazaAutomotiva.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaMazaAutomotiva.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\Redist\Linux64\bplfaturamento.impostos.interfaces.so" Configuration="Release" Class="DependencyPackage">
+                    <Platform Name="Linux64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaStandox.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaStandox.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaGlobalCc11.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaGlobalCc11.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\redist\linux64\bplfaturamento.precos.servicos.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteName>bplfaturamento.precos.servicos.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\redist\osx32\libmidas.dylib" Configuration="Debug" Class="File">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaAnjoSintetica.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaAnjoSintetica.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaRennerImobiliaria.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaRennerImobiliaria.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaHydronorthImobiliaria.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaHydronorthImobiliaria.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\bplfaturamento.precos.calculos.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteName>bplfaturamento.precos.calculos.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaDuxone2.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaDuxone2.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\Redist\iossimulator\libpcre.dylib" Class="DependencyModule">
+                    <Platform Name="iOSSimulator">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaBellaCorTintavel.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaBellaCorTintavel.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\bplfaturamento.margem.tipos.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteName>bplfaturamento.margem.tipos.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaSinteplast.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaSinteplast.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\redist\linux64\bplfaturamento.impostos.tipos.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteName>bplfaturamento.impostos.tipos.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\Redist\Linux64\bplfaturamento.impostos.tipos.so" Configuration="Debug" Class="DependencyPackage">
+                    <Platform Name="Linux64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaDacar.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaDacar.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\bplfaturamento.margem.servicos.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteName>bplfaturamento.margem.servicos.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaBellaCor.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaBellaCor.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaMazaAutomotiva.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaMazaAutomotiva.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaLuztol.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaLuztol.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\redist\linux64\bplfaturamento.model.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteName>bplfaturamento.model.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaMazaImobiliaria.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaMazaImobiliaria.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaGrafftex.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaGrafftex.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaTopCoat.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaTopCoat.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaCalamar.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaCalamar.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\redist\linux64\bplfaturamento.impostos.regras.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteName>bplfaturamento.impostos.regras.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaDuxone.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaDuxone.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaDuxone.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaDuxone.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaGlobalBsn.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaGlobalBsn.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\ExportacaoTintometricosTerceirosService" Configuration="Release" Class="ProjectOutput">
+                    <Platform Name="Linux64">
+                        <RemoteName>ExportacaoTintometricosTerceirosService</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaSparlack.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaSparlack.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\redist\linux64\bplfaturamento.margem.calculos.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteName>bplfaturamento.margem.calculos.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaGlobalCsn.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaGlobalCsn.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaDacasa.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaDacasa.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\redist\linux64\libmidas.so.2" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaLiko.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaLiko.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaSuvinil.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaSuvinil.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaInternational.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaInternational.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\bplfaturamento.precos.tipos.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteName>bplfaturamento.precos.tipos.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\bin\ExportacaoTintometricosTerceirosService.exe" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>ExportacaoTintometricosTerceirosService.exe</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaJotun.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaJotun.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\redist\linux64\bplfaturamento.impostos.interfaces.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteName>bplfaturamento.impostos.interfaces.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaRecoa.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaRecoa.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaGlobalCc11.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaGlobalCc11.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaAlessiImobiliaria.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaAlessiImobiliaria.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaPpg.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaPpg.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\ExportacaoTintometricosTerceirosService" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Linux64">
+                        <RemoteName>ExportacaoTintometricosTerceirosService</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaLechler.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaLechler.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\bin64\midas.dll" Configuration="Release" Class="File">
+                    <Platform Name="Win64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaSkyMixAutomotiva.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaSkyMixAutomotiva.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaRennerPerformance.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaRennerPerformance.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\redist\osx64\libmidas.dylib" Configuration="Release" Class="File">
+                    <Platform Name="OSX64">
+                        <RemoteDir>Contents\MacOS\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaSherwinWilliams.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaSherwinWilliams.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaCoralImobiliaria.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaCoralImobiliaria.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaChreon.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaChreon.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaEucatexImobiliaria.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaEucatexImobiliaria.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaWeg.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaWeg.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaAdvance.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaAdvance.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaMegaTintas.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaMegaTintas.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaEucatexImobiliaria.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaEucatexImobiliaria.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaKresil.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaKresil.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\bplfaturamento.impostos.regras.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteName>bplfaturamento.impostos.regras.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\redist\linux64\bplfaturamento.impostos.servicos.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteName>bplfaturamento.impostos.servicos.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaStarmix.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaStarmix.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaSkyMixAutomotiva.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaSkyMixAutomotiva.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaTopCoat.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaTopCoat.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaInkor.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaInkor.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\redist\iossimulator\libmidas.dylib" Configuration="Release" Class="File">
+                    <Platform Name="iOSSimulator">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaAdvanceTintoSystem.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaAdvanceTintoSystem.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaUniverso.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaUniverso.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaInternational.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaInternational.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaGlobalColor.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaGlobalColor.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaMaestria.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaMaestria.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaRoberlo.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaRoberlo.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaGlobalBc.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaGlobalBc.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaJotun.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaJotun.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaGeneral.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaGeneral.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaAlterPlus.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaAlterPlus.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaRennerPerformance.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaRennerPerformance.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaSuvinil.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaSuvinil.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\libAutcomTinta.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\</RemoteDir>
+                        <RemoteName>libAutcomTinta.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaSparlack.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaSparlack.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaSherwinWilliams2.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaSherwinWilliams2.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\Lib\libmysqlclient.so" Configuration="Debug" Class="File">
+                    <Platform Name="Win32">
+                        <RemoteName>libmysqlclient.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaKillingIndustrial.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaKillingIndustrial.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\redist\linux64\bplfaturamento.impostos.calculos.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteName>bplfaturamento.impostos.calculos.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\Redist\Linux64\bplShared.Functions.so" Configuration="Release" Class="DependencyPackage">
+                    <Platform Name="Linux64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\Redist\Linux64\bplfaturamento.impostos.tipos.so" Configuration="Release" Class="DependencyPackage">
+                    <Platform Name="Linux64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaBellaCor.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaBellaCor.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\redist\linux64\libmidas.so.2" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaRennerIndustrial.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaRennerIndustrial.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\Redist\Linux64\bplfaturamento.impostos.interfaces.so" Configuration="Debug" Class="DependencyPackage">
+                    <Platform Name="Linux64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaBrasimixImobiliaria.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaBrasimixImobiliaria.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\libmysqlclient.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteName>libmysqlclient.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaStarmix.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaStarmix.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaCiacollor.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaCiacollor.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaAnjoImobiliaria.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaAnjoImobiliaria.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\opcoes.ini" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteName>opcoes.ini</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaAutoluks.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaAutoluks.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\bplfaturamento.precos.interfaces.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteName>bplfaturamento.precos.interfaces.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\opcoes.ini" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteName>opcoes.ini</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaFutura.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaFutura.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaAnjoAutomotiva.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaAnjoAutomotiva.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaVelutexImobiliaria.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaVelutexImobiliaria.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaMaestria.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaMaestria.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaCiacollor.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaCiacollor.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaLeinertex.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaLeinertex.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaAnnetta.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaAnnetta.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaHydronorthImobiliaria.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaHydronorthImobiliaria.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\redist\osx64\libmidas.dylib" Configuration="Debug" Class="File">
+                    <Platform Name="OSX64">
+                        <RemoteDir>Contents\MacOS\</RemoteDir>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaAnjoAutomotiva.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaAnjoAutomotiva.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaBrasimixAutomotiva.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaBrasimixAutomotiva.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\bin\midas.dll" Configuration="Release" Class="File">
+                    <Platform Name="Win32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaBellaCorTintavel.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaBellaCorTintavel.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaBrasimixImobiliaria.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaBrasimixImobiliaria.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaDupont.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaDupont.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaAdvance.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaAdvance.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaAutoluks.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaAutoluks.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaAdvanceStr.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaAdvanceStr.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaRennerImobiliaria.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaRennerImobiliaria.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaAdvanceStr.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaAdvanceStr.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\redist\linux64\bplShared.Functions.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteName>bplShared.Functions.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\bplfaturamento.impostos.calculos.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteName>bplfaturamento.impostos.calculos.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaRennerIndustrial.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaRennerIndustrial.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\bin\midas.dll" Configuration="Debug" Class="File">
+                    <Platform Name="Win32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaQualyVinil.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaQualyVinil.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaMegaTintas.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaMegaTintas.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\Redist\Linux64\bplrtl260.so" Configuration="Debug" Class="DependencyPackage">
+                    <Platform Name="Linux64">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaDupont.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaDupont.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\redist\linux64\bplfaturamento.margem.tipos.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteName>bplfaturamento.margem.tipos.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\redist\linux64\bplfaturamento.margem.servicos.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteName>bplfaturamento.margem.servicos.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaStandox.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaStandox.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaFalcao.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaFalcao.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaResicolor.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaResicolor.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaTexturaCia.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaTexturaCia.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaFalcao.so" Configuration="Debug" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaFalcao.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\tintas\libTintaCoralImobiliaria.so" Configuration="Release" Class="File">
+                    <Platform Name="Linux64">
+                        <RemoteDir>.\auttin\tintas\</RemoteDir>
+                        <RemoteName>libTintaCoralImobiliaria.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployClass Name="AdditionalDebugSymbols">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidClassesDexFile">
+                    <Platform Name="Android">
+                        <RemoteDir>classes</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>classes</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidFileProvider">
+                    <Platform Name="Android">
+                        <RemoteDir>res\xml</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\xml</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidGDBServer">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidLibnativeArmeabiFile">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>library\lib\armeabi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidLibnativeArmeabiv7aFile">
+                    <Platform Name="Android64">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidLibnativeMipsFile">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\mips</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>library\lib\mips</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidServiceOutput">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>library\lib\arm64-v8a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidServiceOutput_Android32">
+                    <Platform Name="Android64">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidSplashImageDef">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidSplashStyles">
+                    <Platform Name="Android">
+                        <RemoteDir>res\values</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\values</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidSplashStylesV21">
+                    <Platform Name="Android">
+                        <RemoteDir>res\values-v21</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\values-v21</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_Colors">
+                    <Platform Name="Android">
+                        <RemoteDir>res\values</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\values</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_DefaultAppIcon">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon144">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-xxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon36">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-ldpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-ldpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon48">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-mdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-mdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon72">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-hdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-hdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon96">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-xhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_NotificationIcon24">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-mdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-mdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_NotificationIcon36">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-hdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-hdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_NotificationIcon48">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-xhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_NotificationIcon72">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-xxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_NotificationIcon96">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xxxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-xxxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage426">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-small</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-small</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage470">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-normal</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-normal</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage640">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-large</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-large</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage960">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xlarge</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-xlarge</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_Strings">
+                    <Platform Name="Android">
+                        <RemoteDir>res\values</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\values</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="DebugSymbols">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="DependencyFramework">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>1</Operation>
+                        <Extensions>.framework</Extensions>
+                    </Platform>
+                    <Platform Name="OSX64">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>1</Operation>
+                        <Extensions>.framework</Extensions>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="DependencyModule">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="OSX64">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                        <Extensions>.dll;.bpl</Extensions>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Required="true" Name="DependencyPackage">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="OSX64">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                        <Extensions>.bpl</Extensions>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="File">
+                    <Platform Name="Android">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\Resources\StartUp\</RemoteDir>
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="OSX64">
+                        <RemoteDir>Contents\Resources\StartUp\</RemoteDir>
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch1024x768">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch1536x2048">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch1668">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch1668x2388">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch2048x1536">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch2048x2732">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch2224">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch2388x1668">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch2732x2048">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch768x1024">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch1125">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch1136x640">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch1242">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch1242x2688">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch1334">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch1792">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch2208">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch2436">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch2688x1242">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch320">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch640">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch640x1136">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch750">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch828">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectAndroidManifest">
+                    <Platform Name="Android">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSDeviceDebug">
+                    <Platform Name="iOSDevice32">
+                        <RemoteDir>..\$(PROJECTNAME).app.dSYM\Contents\Resources\DWARF</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).app.dSYM\Contents\Resources\DWARF</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSDeviceResourceRules">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSEntitlements">
+                    <Platform Name="iOSDevice32">
+                        <RemoteDir>..\</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSInfoPList">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSResource">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectOSXDebug">
+                    <Platform Name="OSX64">
+                        <RemoteDir>..\$(PROJECTNAME).app.dSYM\Contents\Resources\DWARF</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectOSXEntitlements">
+                    <Platform Name="OSX32">
+                        <RemoteDir>..\</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX64">
+                        <RemoteDir>..\</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectOSXInfoPList">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX64">
+                        <RemoteDir>Contents</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectOSXResource">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\Resources</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX64">
+                        <RemoteDir>Contents\Resources</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Required="true" Name="ProjectOutput">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>library\lib\arm64-v8a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Linux64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX64">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectOutput_Android32">
+                    <Platform Name="Android64">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectUWPManifest">
+                    <Platform Name="Win32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win64">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="UWP_DelphiLogo150">
+                    <Platform Name="Win32">
+                        <RemoteDir>Assets</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win64">
+                        <RemoteDir>Assets</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="UWP_DelphiLogo44">
+                    <Platform Name="Win32">
+                        <RemoteDir>Assets</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win64">
+                        <RemoteDir>Assets</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <ProjectRoot Platform="iOSDevice64" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="iOSDevice32" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="Linux64" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="Win32" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="Android" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="OSX64" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="iOSSimulator" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="Android64" Name="$(PROJECTNAME)"/>
+            </Deployment>
+            <Platforms>
+                <Platform value="Android">False</Platform>
+                <Platform value="Android64">False</Platform>
+                <Platform value="iOSDevice32">False</Platform>
+                <Platform value="iOSDevice64">False</Platform>
+                <Platform value="iOSSimulator">False</Platform>
+                <Platform value="Linux64">True</Platform>
+                <Platform value="OSX32">False</Platform>
+                <Platform value="OSX64">False</Platform>
+                <Platform value="Win32">False</Platform>
+                <Platform value="Win64">False</Platform>
+            </Platforms>
+        </BorlandProject>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+    <Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
+    <Import Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj" Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')"/>
+    <Import Project="$(MSBuildProjectName).deployproj" Condition="Exists('$(MSBuildProjectName).deployproj')"/>
+    <PropertyGroup Condition="'$(Config)'=='Debug' And '$(Platform)'=='Linux64'">
+        <PreBuildEvent>copy &quot;$(BDS)\redist\$(Platform)\bplfaturamento*.so&quot; &quot;$(PROJECTDIR)\..\..\..\bin&quot;&amp;&amp;copy &quot;$(BDS)\redist\$(Platform)\bplShared*.so&quot; &quot;$(PROJECTDIR)\..\..\..\bin&quot;&amp;&amp;copy &quot;$(BDS)\redist\$(Platform)\libmidas.so.2&quot; &quot;$(PROJECTDIR)\..\..\..\bin&quot;&amp;&amp;copy &quot;$(BDS)\redist\$(Platform)\bplrtl260.so&quot; &quot;$(PROJECTDIR)\..\..\..\bin&quot;</PreBuildEvent>
+        <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
+        <PreLinkEvent/>
+        <PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
+        <PostBuildEvent/>
+        <PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' And '$(Platform)'=='Linux64'">
+        <PreBuildEvent>copy &quot;$(BDS)\redist\$(Platform)\bplfaturamento*.so&quot; &quot;$(PROJECTDIR)\..\..\..\bin&quot;&amp;&amp;copy &quot;$(BDS)\redist\$(Platform)\bplShared*.so&quot; &quot;$(PROJECTDIR)\..\..\..\bin&quot;&amp;&amp;copy &quot;$(BDS)\redist\$(Platform)\libmidas.so.2&quot; &quot;$(PROJECTDIR)\..\..\..\bin&quot;&amp;&amp;copy &quot;$(BDS)\redist\$(Platform)\bplrtl260.so&quot; &quot;$(PROJECTDIR)\..\..\..\bin&quot;</PreBuildEvent>
+        <PreBuildEventIgnoreExitCode>False</PreBuildEventIgnoreExitCode>
+        <PreLinkEvent/>
+        <PreLinkEventIgnoreExitCode>False</PreLinkEventIgnoreExitCode>
+        <PostBuildEvent/>
+        <PostBuildEventIgnoreExitCode>False</PostBuildEventIgnoreExitCode>
+    </PropertyGroup>
+</Project>

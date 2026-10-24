@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<TfrxReport Version="5.6.11" DotMatrixReport="False" IniFile="\Software\Fast Reports" PreviewOptions.Buttons="3577" PreviewOptions.Zoom="1" PrintOptions.Printer="Padrão" PrintOptions.PrintOnSheet="0" ReportOptions.CreateDate="43915,3664192593" ReportOptions.Description.Text="" ReportOptions.LastChange="45041,3507286111" ScriptLanguage="PascalScript" ScriptText.Text="begin&#13;&#10;&#13;&#10;end.">
+  <TfrxDataPage Name="Data" Height="1000" Left="0" Top="0" Width="1000"/>
+  <TfrxReportPage Name="Page1" PaperWidth="74" PaperHeight="160" PaperSize="256" LeftMargin="10" RightMargin="10" TopMargin="10" BottomMargin="10" ColumnWidth="4,8" ColumnPositions.Text="" HGuides.Text="" VGuides.Text="">
+    <TfrxReportTitle Name="ReportTitle1" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Height="22,67718" Left="0" Top="18,89765" Width="204,09462" Child="Child1"/>
+    <TfrxChild Name="Child1" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Height="449,76407" Left="0" Top="64,25201" Width="204,09462">
+      <TfrxMemoView Name="Memo1" Left="8,33859" Top="4,55906" Width="185,19697" Height="45,35436" Font.Charset="1" Font.Color="0" Font.Height="-11" Font.Name="Arial" Font.Style="0" ParentFont="False" Text="CUPOM PROMOCIONAL REFERENTE AO CUPOM FISCAL [NUMDOC]"/>
+      <TfrxMemoView Name="Memo2" Left="7,55906" Top="61,25201" Width="188,9765" Height="41,57483" Font.Charset="1" Font.Color="0" Font.Height="-11" Font.Name="Arial" Font.Style="0" ParentFont="False" Text="=============================&#13;&#10;CAMPANHA SGUARIO E MAKITA&#13;&#10;============================="/>
+      <TfrxMemoView Name="Memo3" Left="5,33859" Top="115,72449" Width="192,75603" Height="68,03154" Font.Charset="1" Font.Color="0" Font.Height="-11" Font.Name="Arial" Font.Style="0" ParentFont="False" Text="NA COMPRA ACIMA DE R$300,00 EM PRODUTOS MAKITA VOCÊ RECEBE UM CUPOM PARA CONCORRER A 10 VALE COMPRAS NO VALOR DE 300,00. SORTEIO NO DIA 31/05/2023."/>
+      <TfrxMemoView Name="Memo4" Left="3,77952756" Top="194,75603" Width="192,75603" Height="34,01577" Font.Charset="1" Font.Color="0" Font.Height="-11" Font.Name="Arial" Font.Style="0" ParentFont="False" Text="NOME:[NOME]"/>
+      <TfrxMemoView Name="Memo5" Left="3,77952756" Top="232,7718" Width="192,75590551" Height="18,89765" Font.Charset="1" Font.Color="0" Font.Height="-11" Font.Name="Arial" Font.Style="0" ParentFont="False" Text="CPF:[CPF]"/>
+      <TfrxMemoView Name="Memo6" Left="3,77952756" Top="255,78757" Width="192,75590551" Height="18,89765" Font.Charset="1" Font.Color="0" Font.Height="-11" Font.Name="Arial" Font.Style="0" ParentFont="False" Text="RG:[RG]"/>
+      <TfrxMemoView Name="Memo7" Left="3,77952756" Top="280,02381" Width="192,75590551" Height="18,89765" Font.Charset="1" Font.Color="0" Font.Height="-11" Font.Name="Arial" Font.Style="0" ParentFont="False" Text="TELEFONE:[FONE]"/>
+      <TfrxMemoView Name="Memo8" Left="3,77952756" Top="305,81911" Width="192,75590551" Height="18,89765" Font.Charset="1" Font.Color="0" Font.Height="-11" Font.Name="Arial" Font.Style="0" ParentFont="False" Text="VENDEDOR:[VENDEDOR]"/>
+      <TfrxMemoView Name="Memo9" Left="5,55906" Top="341,59864" Width="188,9765" Height="30,23624" Font.Charset="1" Font.Color="0" Font.Height="-11" Font.Name="Arial" Font.Style="0" ParentFont="False" Text="CONSULTE O REGULAMENTO DA LOJA"/>
+      <TfrxMemoView Name="Memo11" Left="3,77952756" Top="382,52783" Width="192,75590551" Height="15,1181078" Font.Charset="1" Font.Color="0" Font.Height="-11" Font.Name="Arial" Font.Style="0" ParentFont="False" Text="DATA/HORARIO: [DATA]  [HORA]"/>
+      <TfrxMemoView Name="Memo12" Left="3,77952756" Top="402,32313" Width="192,75590551" Height="15,1181078" Font.Charset="1" Font.Color="0" Font.Height="-11" Font.Name="Arial" Font.Style="0" ParentFont="False" Text="OPERADOR:[OPERADOR]"/>
+      <TfrxMemoView Name="Memo14" Left="75,5906" Top="427,11843" Width="120,94496" Height="18,89765" Font.Charset="1" Font.Color="0" Font.Height="-11" Font.Name="Arial" Font.Style="0" ParentFont="False" Text="[DTACUP]    [HORCUP]"/>
+    </TfrxChild>
+  </TfrxReportPage>
+</TfrxReport>

@@ -1,0 +1,46 @@
+package faturamento.margem.servicos;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$IMPLICITBUILD ON}
+{$SetPEFlags $0400} // -> If Image is on removable media, copy and run from the swap file.
+{$SetPEFlags $0800} // -> If Image is on Net, copy and run from the swap file.
+
+requires
+  rtl,
+  shared.functions,
+  faturamento.Margem.interfaces,
+  faturamento.Margem.tipos,
+  faturamento.Margem.calculos;
+
+contains
+  Faturamento.Margem.Servicos.Disponiveis in '..\source\Faturamento.Margem.Servicos.Disponiveis.pas',
+  Faturamento.Margem.Servicos.Disponiveis.MargemBruta in '..\source\Faturamento.Margem.Servicos.Disponiveis.MargemBruta.pas',
+  Faturamento.Margem.Servicos.Disponiveis.MargemVenda in '..\source\Faturamento.Margem.Servicos.Disponiveis.MargemVenda.pas',
+  Faturamento.Margem.Servicos.Classe.MargemBruta in '..\source\Faturamento.Margem.Servicos.Classe.MargemBruta.pas',
+  Faturamento.Margem.Servicos.Classe.MargemVenda in '..\source\Faturamento.Margem.Servicos.Classe.MargemVenda.pas';
+
+end.

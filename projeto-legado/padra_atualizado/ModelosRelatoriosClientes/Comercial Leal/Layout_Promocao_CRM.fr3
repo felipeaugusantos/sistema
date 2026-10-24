@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<TfrxReport Version="5.6.11" DotMatrixReport="False" EngineOptions.DoublePass="True" IniFile="\Software\Fast Reports" PreviewOptions.Buttons="4095" PreviewOptions.Zoom="1" PrintOptions.Printer="Default" PrintOptions.PrintMode="pmScale" PrintOptions.PrintOnSheet="9" ReportOptions.CreateDate="43130,4925213542" ReportOptions.Description.Text="" ReportOptions.LastChange="45244,831751169" ScriptLanguage="PascalScript" ScriptText.Text="procedure MasterData1OnBeforePrint(Sender: TfrxComponent);&#13;&#10;begin&#13;&#10;   pCarregarImagemProduto;&#13;&#10;end;&#13;&#10;&#13;&#10;begin&#13;&#10;&#13;&#10;end.">
+  <Datasets>
+    <item DataSet="frxRelatorio" DataSetName="frxRelatorio"/>
+  </Datasets>
+  <TfrxDataPage Name="Data" Height="1000" Left="0" Top="0" Width="1000"/>
+  <TfrxReportPage Name="pgnInicial" PaperWidth="210" PaperHeight="297" PaperSize="9" LeftMargin="0" RightMargin="0" TopMargin="0" BottomMargin="0" ColumnWidth="0" ColumnPositions.Text="" HGuides.Text="5&#13;&#10;6&#13;&#10;18" VGuides.Text="" OnAfterPrint="Page1OnAfterPrint">
+    <TfrxPageHeader Name="pghCabecalho" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Height="143,622047244094" Left="0" Top="18,89765" Width="793,7013">
+      <TfrxGradientView Name="grdCor" Align="baClient" Left="0" Top="0" Width="793,7013" Height="143,622047244094" BeginColor="4269603" EndColor="4333338" Style="gsHorizontal" Color="4268831"/>
+      <TfrxPictureView Name="imgLogo" Align="baRight" Left="486,53411778" Top="3,10235" Width="307,16718222" Height="119,69292559" HightQuality="False" Transparent="False" TransparentColor="16777215"/>
+      <TfrxGradientView Name="grdLinha" Align="baBottom" Left="0" Top="138,724397244094" Width="988,48825" Height="4,89765" BeginColor="16296455" EndColor="16296455" Style="gsHorizontal" Color="16296455"/>
+    </TfrxPageHeader>
+    <TfrxPageFooter Name="pgfRodape" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Height="27,21259843" Left="0" Top="551,81138" Width="793,7013">
+      <TfrxMemoView Name="memRodape" ShiftMode="smDontShift" Left="26,83464567" Top="0" Width="610,00028559" Height="19,11811268" DataSet="frmFatSelItensCatalogoPromocoes.frxRelatorio" DataSetName="frxRelatorio" Font.Charset="1" Font.Color="5658455" Font.Height="-13" Font.Name="Ebrima" Font.Style="0" ParentFont="False" Text="[REL_RODAPE]">
+        <Formats>
+          <item/>
+          <item/>
+        </Formats>
+      </TfrxMemoView>
+    </TfrxPageFooter>
+    <TfrxMasterData Name="mtdDados" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Height="235,08661417" Left="0" Top="257,00804" Width="793,7013" OnBeforePrint="MasterData1OnBeforePrint" Columns="2" ColumnWidth="393,070866141732" ColumnGap="-18,8976377952756" DataSet="frmFatSelItensCatalogoPromocoes.frxRelatorio" DataSetName="frxRelatorio" RowCount="0">
+      <TfrxShapeView Name="shpRetangulo" Left="27" Top="0,55102" Width="355,27559055" Height="226,77165354" Curve="2" Fill.BackColor="16777215" Fill.ForeColor="-16777203" Frame.Color="13999426" Frame.Typ="11" Frame.Width="1,5" Shape="skRoundRectangle"/>
+      <TfrxMemoView Name="memDescProd" Left="193,133858267717" Top="11" Width="171,05517913" Height="55,74311024" StretchMode="smMaxHeight" DataField="Descrição" DataSet="frmFatSelItensCatalogoPromocoes.frxRelatorio" DataSetName="frxRelatorio" Font.Charset="1" Font.Color="8598824" Font.Height="-13" Font.Name="Arial Black" Font.Style="0" ParentFont="False" Text="[frxRelatorio.&#34;Descrição&#34;]"/>
+      <TfrxMemoView Name="memValor" Left="193,13385827" Top="192,12059333" Width="168,70864189" Height="23,89764024" DataSet="frmFatSelItensCatalogoPromocoes.frxRelatorio" DataSetName="frxRelatorio" DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" Font.Charset="1" Font.Color="11099136" Font.Height="-16" Font.Name="Arial Black" Font.Style="1" HAlign="haRight" ParentFont="False" Text="R$ [frxRelatorio.&#34;Preço&#34;]"/>
+      <TfrxMemoView Name="memRefProd" ShiftMode="smDontShift" Left="193,13385827" Top="131,43568333" Width="168,79527559" Height="19,11811268" DataSet="frmFatSelItensCatalogoPromocoes.frxRelatorio" DataSetName="frxRelatorio" Font.Charset="1" Font.Color="5658455" Font.Height="-13" Font.Name="Ebrima" Font.Style="0" ParentFont="False" Text="Ref: [frxRelatorio.&#34;Referência&#34;]"/>
+      <TfrxPictureView Name="imgProduto" Left="41" Top="11,19171333" Width="142,11023622" Height="204,91342" DataSet="frmFatSelItensCatalogoPromocoes.frxRelatorio" DataSetName="frxRelatorio" HightQuality="False" Transparent="False" TransparentColor="16777215"/>
+      <TfrxMemoView Name="memCodProd" ShiftMode="smDontShift" Left="193,13385827" Top="106,98670333" Width="171,57480559" Height="19,11811268" DataSet="frmFatSelItensCatalogoPromocoes.frxRelatorio" DataSetName="frxRelatorio" Font.Charset="1" Font.Color="5658455" Font.Height="-13" Font.Name="Ebrima" Font.Style="0" ParentFont="False" Text="Cód: [frxRelatorio.&#34;Código&#34;]"/>
+    </TfrxMasterData>
+    <TfrxHeader Name="hdrDados" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Height="10,2047244094488" Left="0" Top="222,99227" Width="793,7013" ReprintOnNewPage="True">
+      <TfrxMemoView Name="memObservacao" Left="768,21305" Top="0" Width="24,48825" Height="906,89765" StretchMode="smActualHeight" Font.Charset="0" Font.Color="10197915" Font.Height="-9" Font.Name="Arial" Font.Style="2" HAlign="haCenter" ParentFont="False" Rotation="90" Text="Imagens meramente ilustrativas. Consulte condições e quantidade mínimas. Válido por tempo limitado ou enquanto durarem os estoques. Valores em Real Brasileiro."/>
+    </TfrxHeader>
+  </TfrxReportPage>
+</TfrxReport>

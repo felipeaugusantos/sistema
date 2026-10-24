@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TfrxReport Version="4.3.61" DotMatrixReport="True" IniFile="\Software\Fast Reports" PreviewOptions.Buttons="4095" PreviewOptions.Zoom="1" PreviewOptions.ZoomMode="zmWholePage" PrintOptions.Printer="Padrão" PrintOptions.PrintOnSheet="0" PrintOptions.ShowDialog="False" ReportOptions.CreateDate="39343,4831909259" ReportOptions.Description.Text="" ReportOptions.LastChange="40010,4239603125" ScriptLanguage="PascalScript" ScriptText.Text="begin&#13;&#10;end." PropData="044C65667403780203546F7003B80008446174617365747301010C2F00000020446174615365743D2266727852656C61746F72696F2220446174615365744E616D653D2266727852656C4D7367220000095661726961626C65730100055374796C650100">
+  <TfrxDataPage Name="Data" Height="1000" Left="0" Top="0" Width="1000"/>
+  <TfrxDMPPage Name="qckPagina" PaperWidth="200,659870407167" PaperHeight="148,431154138213" PaperSize="256" LeftMargin="2,53999835958439" RightMargin="2,53999835958439" TopMargin="4,49791376176403" BottomMargin="4,49791376176403" ColumnWidth="2,53999835958439" ColumnPositions.Text="" HGuides.Text="" VGuides.Text="" FontStyle="128">
+    <TfrxPageHeader Name="rlbCabecalho" Height="153" Left="0" Top="17" Width="739,2" Stretched="True">
+      <TfrxDMPMemoView Name="frxUserRelstrTitRel" Align="baCenter" Left="192" Top="17" Width="364,8" Height="17" DisplayFormat.DecimalSeparator="," FontStyle="129" HAlign="haCenter" ParentFont="False" Text="COMUNICACAO INTERNA"/>
+      <TfrxDMPLineView Name="DMPLine2" Align="baWidth" Left="4,8" Top="93,5" Width="729,6" Height="0"/>
+      <TfrxDMPCommand Name="DMPCommand2" Left="9,6" Top="0" Width="96" Height="17" Command="#27#64#18#27#80"/>
+      <TfrxDMPMemoView Name="" Left="9,6" Top="34" Width="537,6" Height="17" DisplayFormat.DecimalSeparator="," Text="[OPEENV]"/>
+      <TfrxDMPMemoView Name="DMPMemo3" Left="9,6" Top="51" Width="537,6" Height="17" DisplayFormat.DecimalSeparator="," Text="[OPEREC]"/>
+      <TfrxDMPMemoView Name="DMPMemo4" Left="9,6" Top="68" Width="537,6" Height="17" DisplayFormat.DecimalSeparator="," Text="[DTAEMI]"/>
+      <TfrxDMPMemoView Name="DMPMemo2" Left="9,6" Top="102" Width="537,6" Height="17" DisplayFormat.DecimalSeparator="," Text="[MSGTIT]"/>
+      <TfrxDMPMemoView Name="frxRelatorioHORENV" Left="9,6" Top="136" Width="720" Height="17" StretchMode="smMaxHeight" DataSet="frmPaiRelatorio.frxRelatorio" DataSetName="frxRelatorio" DisplayFormat.DecimalSeparator="," Text="[MENSAG]"/>
+      <TfrxDMPLineView Name="DMPLine1" Align="baWidth" Left="4,8" Top="127,5" Width="729,6" Height="0"/>
+      <TfrxDMPMemoView Name="DMPMemo1" Left="566,4" Top="17" Width="172,8" Height="17" DisplayFormat.DecimalSeparator="," FontStyle="129" HAlign="haRight" ParentFont="False" Text="[NUMERO]"/>
+    </TfrxPageHeader>
+    <TfrxPageFooter Name="PageFooter1" Height="17" Left="0" Top="204" Width="739,2">
+      <TfrxDMPLineView Name="DMPLine3" Align="baWidth" Left="4,8" Top="8,5" Width="729,6" Height="0"/>
+    </TfrxPageFooter>
+  </TfrxDMPPage>
+</TfrxReport>

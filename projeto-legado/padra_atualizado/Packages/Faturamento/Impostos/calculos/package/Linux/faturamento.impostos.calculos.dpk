@@ -1,0 +1,46 @@
+package faturamento.impostos.calculos;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$IMPLICITBUILD ON}
+
+requires
+  rtl,
+  faturamento.impostos.interfaces,
+  faturamento.impostos.tipos,
+  Shared.Functions;
+
+contains
+  Faturamento.Impostos.Calculos.Ipi in '..\..\source\Faturamento.Impostos.Calculos.Ipi.pas',
+  Faturamento.Impostos.Calculos.STCustoAquisicao in '..\..\source\Faturamento.Impostos.Calculos.STCustoAquisicao.pas',
+  Faturamento.Impostos.Calculos.Icms in '..\..\source\Faturamento.Impostos.Calculos.Icms.pas',
+  Faturamento.Impostos.Calculos.ST in '..\..\source\Faturamento.Impostos.Calculos.ST.pas',
+  Faturamento.Impostos.Calculos.Difal in '..\..\source\Faturamento.Impostos.Calculos.Difal.pas',
+  Faturamento.Impostos.Calculos.FCP in '..\..\source\Faturamento.Impostos.Calculos.FCP.pas',
+  Faturamento.Impostos.Calculos.IcmsEfetivo in '..\..\source\Faturamento.Impostos.Calculos.IcmsEfetivo.pas',
+  Faturamento.Impostos.Calculos.IcmsOrgaoPublico in '..\..\source\Faturamento.Impostos.Calculos.IcmsOrgaoPublico.pas';
+
+end.

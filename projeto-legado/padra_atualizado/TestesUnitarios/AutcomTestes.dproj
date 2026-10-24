@@ -1,0 +1,1091 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{61984E87-2947-41E4-97DE-D5AF6168CCBE}</ProjectGuid>
+        <ProjectVersion>18.1</ProjectVersion>
+        <FrameworkType>VCL</FrameworkType>
+        <Base>True</Base>
+        <Config Condition="'$(Config)'==''">Debug</Config>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <TargetedPlatforms>1</TargetedPlatforms>
+        <AppType>Console</AppType>
+        <MainSource>AutcomTestes.dpr</MainSource>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+        <Base_Win32>true</Base_Win32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Base)'=='true') or '$(Base_Win64)'!=''">
+        <Base_Win64>true</Base_Win64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_1)'!=''">
+        <Cfg_1>true</Cfg_1>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win32)'!=''">
+        <Cfg_1_Win32>true</Cfg_1_Win32>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_2)'!=''">
+        <Cfg_2>true</Cfg_2>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base)'!=''">
+        <DCC_UnitSearchPath>$(BDS)\Source\DUnit\src;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+        <DCC_Define>_CONSOLE_TESTRUNNER;$(DCC_Define)</DCC_Define>
+        <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
+        <SanitizedProjectName>AutcomTestes</SanitizedProjectName>
+        <DCC_DcuOutput>.</DCC_DcuOutput>
+        <DCC_ExeOutput>.\$(Platform)\$(Config)</DCC_ExeOutput>
+        <DCC_E>false</DCC_E>
+        <DCC_N>false</DCC_N>
+        <DCC_S>false</DCC_S>
+        <DCC_F>false</DCC_F>
+        <DCC_K>false</DCC_K>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win64)'!=''">
+        <DCC_UsePackage>DBXSqliteDriver;DBXDb2Driver;dxCoreRS23;vclactnband;dxPSdxLCLnkRS23;vclFireDAC;dxPSLnksRS23;tethering;cxDataRS23;dxPSdxOCLnkRS23;dxTabbedMDIRS23;FireDACADSDriver;dxSkinBlackRS23;dxSkinLondonLiquidSkyRS23;dxSpreadSheetCoreRS23;dxDBXServerModeRS23;dxHttpIndyRequestRS23;dxSpreadSheetCoreConditionalFormattingDialogsRS23;cxSchedulerRS23;FireDACMSSQLDriver;dxPScxGridLnkRS23;vcltouch;BCEditor.Delphi.Seattle;vcldb;Intraweb;dxWizardControlRS23;dxSkinMcSkinRS23;dxPScxCommonRS23;dxSkinOffice2007BlueRS23;dxBarRS23;cxSchedulerRibbonStyleEventEditorRS23;dxSkinOffice2013WhiteRS23;dxPSTeeChartRS23;cxLibraryRS23;dxSkinVisualStudio2013LightRS23;vclib;cxPivotGridChartRS23;dxSkinSummer2008RS23;dxPSdxDBOCLnkRS23;dxGDIPlusRS23;dxSkinDarkSideRS23;FireDACDBXDriver;dxSkinFoggyRS23;dxSkinSevenRS23;vclx;dxSkinOffice2010SilverRS23;dxdborRS23;RESTBackendComponents;dxLayoutControlRS23;dxPSPrVwRibbonRS23;VCLRESTComponents;dxSkinDevExpressStyleRS23;dxSkinWhiteprintRS23;vclie;bindengine;CloudService;FireDACMySQLDriver;dxSkinOffice2013DarkGrayRS23;DataSnapClient;dxPScxPCProdRS23;bindcompdbx;DBXSybaseASEDriver;IndyIPServer;dxSkinPumpkinRS23;IndySystem;dsnapcon;cxTreeListdxBarPopupMenuRS23;FireDACMSAccDriver;fmxFireDAC;FireDACInfxDriver;vclimg;dxSkinLilianRS23;dxRichEditDocumentModelRS23;dxRichEditCoreRS23;dxSpreadSheetConditionalFormattingDialogsRS23;dxBarDBNavRS23;dxFlowChartRS23;dxSkinOffice2016ColorfulRS23;DBXOdbcDriver;FireDACTDataDriver;FMXTee;soaprtl;DbxCommonDriver;dxSpreadSheetRS23;dxSkinOffice2007PinkRS23;dxPSdxSpreadSheetLnkRS23;xmlrtl;soapmidas;DataSnapNativeClient;fmxobj;dxSkinHighContrastRS23;dxSkinSevenClassicRS23;rtl;dxSkinTheAsphaltWorldRS23;DbxClientDriver;dxSkinDevExpressDarkStyleRS23;DBXSybaseASADriver;dxNavBarRS23;dxSkinMetropolisDarkRS23;dxRichEditControlCoreRS23;dxRichEditControlRS23;dxOfficeCoreRS23;appanalytics;cxPivotGridRS23;dxPScxVGridLnkRS23;IndyIPClient;dxRibbonRS23;dxPScxTLLnkRS23;dxSkinOffice2007SilverRS23;dxSpreadSheetInplaceRichEditRS23;bindcompvcl;dxMapControlRS23;TeeUI;dxSpreadSheetCoreDialogsRS23;VclSmp;dxPScxSchedulerLnkRS23;cxTreeListRS23;FireDACODBCDriver;DataSnapIndy10ServerTransport;aurelius;dxRibbonCustomizationFormRS23;dxPSRichEditControlLnkRS23;dxBarExtDBItemsRS23;DataSnapProviderClient;FireDACMongoDBDriver;dxSpreadSheetReportDesignerRS23;dxSkiniMaginaryRS23;dxSpellCheckerRS23;dxSkinCoffeeRS23;DataSnapServerMidas;RESTComponents;DBXInterBaseDriver;dxADOServerModeRS23;emsclientfiredac;DataSnapFireDAC;dxmdsRS23;dxSkinLiquidSkyRS23;dxPSDBTeeChartRS23;dxSkinSpringTimeRS23;dxdbtrRS23;dxPSCoreRS23;DBXMSSQLDriver;dxSkinXmas2008BlueRS23;DatasnapConnectorsFreePascal;bindcompfmx;DBXOracleDriver;dxSkinSilverRS23;dxSkinValentineRS23;inetdb;dxPSdxMapControlLnkRS23;FmxTeeUI;dxBarExtItemsRS23;FireDACIBDriver;fmx;fmxdae;dxServerModeRS23;dxPsPrVwAdvRS23;dxSkinOffice2010BlackRS23;cxPageControlRS23;dxSkinStardustRS23;cxSchedulerGridRS23;frxCSVExporterTestabilidade;dbexpress;IndyCore;dxSkinSharpPlusRS23;dsnap;DataSnapCommon;emsclient;FireDACCommon;dxSkinOffice2010BlueRS23;dxSkinVS2010RS23;dxSkinMetropolisRS23;DataSnapConnectors;cxVerticalGridRS23;soapserver;dxSkinCaramelRS23;dxTileControlRS23;CompFocus;cxGridRS23;FireDACOracleDriver;DBXMySQLDriver;DBXFirebirdDriver;FireDACCommonDriver;inet;IndyIPCommon;dxSkinDarkRoomRS23;dxDockingRS23;vcl;dxSkinOffice2007GreenRS23;dxPScxExtCommonRS23;dxSkinsCoreRS23;dxThemeRS23;FireDACDb2Driver;dxSkinVisualStudio2013BlueRS23;dxSkinMoneyTwinsRS23;dxPSdxFCLnkRS23;dxtrmdRS23;TeeDB;FireDAC;cxSchedulerTreeBrowserRS23;dxFireDACServerModeRS23;dxSkinBlueRS23;FireDACSqliteDriver;FireDACPgDriver;ibmonitor;cxEditorsRS23;FireDACASADriver;dxSkinGlassOceansRS23;dxGaugeControlRS23;ibxpress;Tee;dxSkinSharpRS23;DataSnapServer;ibxbindings;cxPivotGridOLAPRS23;dxPSdxPDFViewerLnkRS23;vclwinx;FireDACDSDriver;dxSkinBlueprintRS23;dxSkinOffice2007BlackRS23;CustomIPTransport;vcldsnap;dxSkinOffice2013LightGrayRS23;bindcomp;DBXInformixDriver;dxPSdxGaugeControlLnkRS23;dxRichEditInplaceRS23;dxPScxPivotGridLnkRS23;dxorgcRS23;dxPSdxDBTVLnkRS23;vclribbon;dbxcds;dxPDFViewerRS23;adortl;dxComnRS23;dsnapxml;dbrtl;inetdbxpress;IndyProtocols;cxExportRS23;dxSkinOffice2016DarkRS23;dxFlowChartAdvancedCustomizeFormRS23;dxSkinVisualStudio2013DarkRS23;fmxase;$(DCC_UsePackage)</DCC_UsePackage>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1)'!=''">
+        <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+        <DCC_DebugDCUs>true</DCC_DebugDCUs>
+        <DCC_Optimize>false</DCC_Optimize>
+        <DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>
+        <DCC_DebugInfoInExe>true</DCC_DebugInfoInExe>
+        <DCC_RemoteDebug>true</DCC_RemoteDebug>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+        <DCC_DcuOutput>temp</DCC_DcuOutput>
+        <DCC_UsePackage>faturamento.impostos.interfaces;faturamento.impostos.tipos;shared.functions;faturamento.precos.interfaces;faturamento.precos.tipos;faturamento.margem.interfaces;faturamento.margem.tipos;$(DCC_UsePackage)</DCC_UsePackage>
+        <UsePackages>true</UsePackages>
+        <DCC_UnitSearchPath>..\Packages\dcp;$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+        <DCC_ExeOutput>..\</DCC_ExeOutput>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <DCC_MapFile>3</DCC_MapFile>
+        <Manifest_File>None</Manifest_File>
+        <DCC_RemoteDebug>false</DCC_RemoteDebug>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2)'!=''">
+        <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+        <DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+        <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+        <DCC_DebugInformation>0</DCC_DebugInformation>
+    </PropertyGroup>
+    <ItemGroup>
+        <DelphiCompile Include="$(MainSource)">
+            <MainSource>MainSource</MainSource>
+        </DelphiCompile>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\calculos\source\TestFaturamento.Impostos.Calculos.Ipi.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\calculos\source\Faturamento.Impostos.Calculos.Ipi.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\calculos\source\TestFaturamento.Impostos.Calculos.STCustoAquisicao.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\calculos\source\Faturamento.Impostos.Calculos.STCustoAquisicao.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\calculos\source\TestFaturamento.Impostos.Calculos.Icms.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\calculos\source\Faturamento.Impostos.Calculos.Icms.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\calculos\source\TestFaturamento.Impostos.Calculos.ST.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\calculos\source\Faturamento.Impostos.Calculos.ST.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\movimentacaoitens\OrdemProducaoIndustrial\TestOrdemProducaoIndustrial.Dados.TCorrecao.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\movimentacaoitens\OrdemProducaoIndustrial\TestOrdemProducaoIndustrial.Dados.TEmbalagem.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\movimentacaoitens\OrdemProducaoIndustrial\TestOrdemProducaoIndustrial.Dados.TMateriaPrima.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\movimentacaoitens\OrdemProducaoIndustrial\TestOrdemProducaoIndustrial.Funcoes.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\movimentacaoitens\OrdemProducaoIndustrial\TestOrdemProducaoIndustrial.TComposicao.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\movimentacaoitens\OrdemProducaoIndustrial\TestOrdemProducaoIndustrial.TCorrecao.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\movimentacaoitens\OrdemProducaoIndustrial\TestOrdemProducaoIndustrial.TEmbalagem.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\movimentacaoitens\OrdemProducaoIndustrial\TestOrdemProducaoIndustrial.TFormula.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\movimentacaoitens\OrdemProducaoIndustrial\TestOrdemProducaoIndustrial.Tipos.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\movimentacaoitens\OrdemProducaoIndustrial\TestOrdemProducaoIndustrial.TMateriaPrima.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\movimentacaoitens\OrdemProducaoIndustrial\TestOrdemProducaoIndustrial.TOrdemProducao.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\movimentacaoitens\OrdemProducaoIndustrial\TestOrdemProducaoIndustrial.TProdutoAcabado.pas"/>
+        <DCCReference Include="..\fontes\movimentacaoitens\OrdemProducaoIndustrial\OrdemProducaoIndustrial.Funcoes.pas"/>
+        <DCCReference Include="..\fontes\movimentacaoitens\OrdemProducaoIndustrial\OrdemProducaoIndustrial.TComposicao.pas"/>
+        <DCCReference Include="..\fontes\movimentacaoitens\OrdemProducaoIndustrial\OrdemProducaoIndustrial.TCor.pas"/>
+        <DCCReference Include="..\fontes\movimentacaoitens\OrdemProducaoIndustrial\OrdemProducaoIndustrial.TCorrecao.pas"/>
+        <DCCReference Include="..\fontes\movimentacaoitens\OrdemProducaoIndustrial\OrdemProducaoIndustrial.TEmbalagem.pas"/>
+        <DCCReference Include="..\fontes\movimentacaoitens\OrdemProducaoIndustrial\OrdemProducaoIndustrial.TFormula.pas"/>
+        <DCCReference Include="..\fontes\movimentacaoitens\OrdemProducaoIndustrial\OrdemProducaoIndustrial.Tipos.pas"/>
+        <DCCReference Include="..\fontes\movimentacaoitens\OrdemProducaoIndustrial\OrdemProducaoIndustrial.TMateriaPrima.pas"/>
+        <DCCReference Include="..\fontes\movimentacaoitens\OrdemProducaoIndustrial\OrdemProducaoIndustrial.TOrdemProducao.pas"/>
+        <DCCReference Include="..\fontes\movimentacaoitens\OrdemProducaoIndustrial\OrdemProducaoIndustrial.TProdutoAcabado.pas"/>
+        <DCCReference Include="..\fontes\movimentacaoitens\OrdemProducaoIndustrial\OrdemProducaoIndustrial.TProdutoGranel.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\untFuncoes.pas"/>
+        <DCCReference Include="Contabilidade\Outros\TestContabilidade.SQL.pas"/>
+        <DCCReference Include="..\..\Contabilidade\Outros\Contabilidade.SQL.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\calculos\source\TestFaturamento.Impostos.Calculos.FCP.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\calculos\source\Faturamento.Impostos.Calculos.FCP.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\calculos\source\TestFaturamento.Impostos.Calculos.Difal.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\calculos\source\Faturamento.Impostos.Calculos.Difal.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\movimentacaoitens\OrdemProducaoIndustrial\TestOrdemProducaoIndustrial.TCor.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\movimentacaoitens\OrdemProducaoIndustrial\TestOrdemProducaoIndustrial.TProdutoGranel.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\genericos\untTestConfiguracoes.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\calculos\source\TestFaturamento.Impostos.Calculos.IcmsEfetivo.pas"/>
+        <DCCReference Include="..\fontes\faturamento\Impostos\Faturamento.Impostos.IcmsEfetivo.SQL.pas"/>
+        <DCCReference Include="Faturamento\Outros\TestFaturamento.Impostos.IcmsEfetivo.SQL.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\calculos\source\Faturamento.Impostos.Calculos.IcmsEfetivo.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\calculos\source\TestFaturamento.Impostos.Calculos.IcmsOrgaoPublico.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\calculos\source\Faturamento.Impostos.Calculos.IcmsOrgaoPublico.pas"/>
+        <DCCReference Include="Faturamento\Impostos\untTestTransferenciaEstoqueEmpresaDadosDB.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\genericos\untTestConstantesUtils.pas"/>
+        <DCCReference Include="..\fontes\genericos\untConstantes.pas"/>
+        <DCCReference Include="padra_atualizado\packages\shared\functions\TestShared.Functions.Faturamento.Impostos.Regras.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\interfaces\source\Faturamento.Impostos.Interfaces.Ipi.pas"/>
+        <DCCReference Include="..\Packages\Shared\Functions\source\Shared.Functions.Core.pas"/>
+        <DCCReference Include="..\Packages\Shared\Functions\source\Shared.Functions.Configuracoes.pas"/>
+        <DCCReference Include="..\Packages\Shared\Functions\source\Shared.Functions.FormulaPrecoCusto.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\tipos\source\Faturamento.Impostos.Tipos.STCustoAquisicao.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\interfaces\source\Faturamento.Impostos.Interfaces.STCustoAquisicao.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\interfaces\source\Faturamento.Impostos.Interfaces.Icms.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\tipos\source\Faturamento.Impostos.Tipos.Icms.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\interfaces\source\Faturamento.Impostos.Interfaces.ST.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\tipos\source\Faturamento.Impostos.Tipos.ST.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\tipos\source\Faturamento.Impostos.Tipos.FCP.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\interfaces\source\Faturamento.Impostos.Interfaces.FCP.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\tipos\source\Faturamento.Impostos.Tipos.Difal.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\interfaces\source\Faturamento.Impostos.Interfaces.Difal.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\tipos\source\Faturamento.Impostos.Tipos.IcmsEfetivo.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\interfaces\source\Faturamento.Impostos.Interfaces.IcmsEfetivo.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\tipos\source\Faturamento.Impostos.Tipos.Model.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\interfaces\source\Faturamento.Impostos.Interfaces.Model.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\tipos\source\Faturamento.Impostos.Tipos.IcmsOrgaoPublico.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\interfaces\source\Faturamento.Impostos.Interfaces.IcmsOrgaoPublico.pas"/>
+        <DCCReference Include="..\Packages\Shared\Functions\source\Shared.Functions.Types.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\interfaces\source\Faturamento.Impostos.Interfaces.ClassificacaoItem.TransferenciaEstoqueEmpresa.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\tipos\source\Faturamento.Impostos.Tipos.ClassificacaoItem.TransferenciaEstoqueEmpresa.pas"/>
+        <DCCReference Include="..\Packages\Shared\Functions\source\Shared.Functions.Constantes.pas"/>
+        <DCCReference Include="..\Packages\Shared\Functions\source\Shared.Functions.Faturamento.Impostos.Regras.pas">
+            <Form>$R *.RES</Form>
+        </DCCReference>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\regras\source\TestFaturamento.Impostos.Regras.ZerarImpostos.Icms.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\regras\source\Faturamento.Impostos.Regras.ZerarImpostos.Icms.pas"/>
+        <DCCReference Include="padra_atualizado\packages\shared\functions\TestShared.Functions.Faturamento.Impostos.Regras.ZerarImpostos.pas"/>
+        <DCCReference Include="..\Packages\Shared\Functions\source\Shared.Functions.Faturamento.Impostos.Regras.ZerarImpostos.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\interfaces\source\Faturamento.Impostos.Interfaces.ZerarImpostos.Icms.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\tipos\source\Faturamento.Impostos.Tipos.ZerarImpostos.Icms.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\interfaces\source\Faturamento.Impostos.Interfaces.ZerarImpostos.Types.pas"/>
+        <DCCReference Include="padra_atualizado\packages\shared\functions\TestShared.Functions.Funcoes.Faturamento.pas"/>
+        <DCCReference Include="..\Packages\Shared\Functions\source\Shared.Functions.Funcoes.Faturamento.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\regras\source\TestFaturamento.Impostos.Regras.ClassificacoesTransferencias.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\regras\source\Faturamento.Impostos.Regras.ClassificacoesTransferencias.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\interfaces\source\Faturamento.Impostos.Interfaces.ClassificacoesTransferencias.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\tipos\source\Faturamento.Impostos.Tipos.ClassificacoesTransferencias.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\interfaces\source\Faturamento.Impostos.Interfaces.ZerarImpostos.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\tipos\source\Faturamento.Impostos.Tipos.ZerarImpostos.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\regras\source\TestFaturamento.Impostos.Regras.DadosFiscais.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\regras\source\Faturamento.Impostos.Regras.DadosFiscais.ClassificacaoItem.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\Interfaces\source\Faturamento.Impostos.Interfaces.DadosFiscais.Aliquota.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\tipos\source\Faturamento.Impostos.Tipos.DadosFiscais.Aliquota.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\tipos\source\Faturamento.Impostos.Tipos.DadosFiscais.ClassificacaoItem.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\Regras\source\Faturamento.Impostos.Regras.DadosFiscais.Aliquota.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\interfaces\source\Faturamento.Impostos.Interfaces.DadosFiscais.ClassificacaoItem.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\tipos\source\TestFaturamento.Impostos.Tipos.DadosFiscais.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\regras\source\TestFaturamento.Impostos.Regras.DadosFiscais.Aliquota.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\interfaces\source\Faturamento.Impostos.Interfaces.Servicos.Classe.Ipi.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\interfaces\source\Faturamento.Impostos.Interfaces.Servicos.Disponiveis.ipi.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\interfaces\source\Faturamento.Impostos.Interfaces.Servicos.Classe.IcmsSt.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\interfaces\source\Faturamento.Impostos.Interfaces.Servicos.Disponiveis.IcmsSt.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\interfaces\source\Faturamento.Impostos.Interfaces.Servicos.Disponiveis.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Model\source\Faturamento.Model.Cliente.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Model\source\Faturamento.Model.Empresa.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Model\source\Faturamento.Model.Produto.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Model\source\Faturamento.Model.AbreviacaoIcms.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\servicos\source\Faturamento.Impostos.Servicos.Classe.Ipi.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\servicos\source\Faturamento.Impostos.Servicos.Disponiveis.Ipi.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\servicos\source\Faturamento.Impostos.Servicos.Classe.IcmsSt.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\servicos\source\Faturamento.Impostos.Servicos.Disponiveis.IcmsSt.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\servicos\source\Faturamento.Impostos.Servicos.Disponiveis.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\faturamento\untFuncFatTypes.pas"/>
+        <DCCReference Include="..\Packages\Shared\Functions\source\Shared.Functions.DataSet.pas"/>
+        <DCCReference Include="..\fontes\genericos\untFuncoesDicionarios.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\servicos\source\TestFaturamento.Impostos.Servicos.Disponiveis.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\servicos\source\TestFaturamento.Impostos.Servicos.Disponiveis.Ipi.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Model\source\Faturamento.Model.Fornecedor.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\model\source\TestFaturamento.Impostos.Tipos.Model.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\genericos\TestuntConstantes.pas"/>
+        <DCCReference Include="..\fontes\libNfe\untConstantesNFe.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\tipos\source\TestFaturamento.Impostos.Tipos.STCustoAquisicao.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\tipos\source\TestFaturamento.Impostos.Tipos.Icms.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\tipos\source\TestFaturamento.Impostos.Tipos.ST.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\tipos\source\TestFaturamento.Impostos.Tipos.FCP.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\tipos\source\TestFaturamento.Impostos.Tipos.Difal.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\tipos\source\TestFaturamento.Impostos.Tipos.IcmsEfetivo.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\tipos\source\TestFaturamento.Impostos.Tipos.IcmsOrgaoPublico.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\tipos\source\Faturamento.Impostos.Tipos.Ipi.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\tipos\source\TestFaturamento.Impostos.Tipos.Ipi.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\tipos\source\TestFaturamento.Impostos.Tipos.ClassificacaoItem.TransferenciaEstoqueEmpresa.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\tipos\source\TestFaturamento.Impostos.Tipos.ZerarImpostos.Icms.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\tipos\source\TestFaturamento.Impostos.Tipos.ClassificacoesTransferencias.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\tipos\source\TestFaturamento.Impostos.Tipos.ZerarImpostos.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\tipos\source\TestFaturamento.Impostos.Tipos.DadosFiscais.Aliquota.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\tipos\source\TestFaturamento.Impostos.Tipos.DadosFiscais.ClassificacaoItem.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\genericos\untTestMyCampoTabela.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\genericos\untTestObjMyCampoTabela.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\genericos\untTestCore.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\model\source\TestFaturamento.Model.Cliente.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\model\source\TestFaturamento.Model.Empresa.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\model\source\TestFaturamento.Model.Fornecedor.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\model\source\TestFaturamento.Model.Produto.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\servicos\source\TestFaturamento.Impostos.Servicos.Classe.Ipi.pas"/>
+        <DCCReference Include="padra_atualizado\packages\shared\functions\TestShared.Functions.Constantes.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\regras\source\TestFaturamento.Impostos.Regras.DadosFiscais.ClassificacaoItem.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\genericos\TestuntFuncoesDicionarios.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\servicos\source\Faturamento.Impostos.Servicos.Funcoes.pas"/>
+        <DCCReference Include="..\fontes\Core\Core.Funcoes.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\interfaces\source\Faturamento.Impostos.Interfaces.Tributacao.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\tipos\source\Faturamento.Impostos.Tipos.Tributacao.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\regras\source\Faturamento.Impostos.Regras.Tributacao.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\regras\source\Faturamento.Impostos.Regras.Tributacao.Factory.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\model\source\TestFaturamento.Model.AbreviacaoIcms.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\servicos\source\TestFaturamento.Impostos.Servicos.Classe.IcmsSt.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\regras\source\TestFaturamento.Impostos.Regras.Tributacao.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\servicos\source\TestFaturamento.Impostos.Servicos.Disponiveis.IcmsSt.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\regras\source\TestFaturamento.Impostos.Regras.Tributacao.Factory.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\tipos\source\TestFaturamento.Impostos.Tipos.Tributacao.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\servicos\source\TestFaturamento.Impostos.Servicos.Funcoes.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\core\TestCore.Funcoes.pas"/>
+        <DCCReference Include="padra_atualizado\packages\shared\functions\TestShared.Functions.DataSet.pas"/>
+        <DCCReference Include="..\Packages\Shared\Functions\source\Shared.Functions.Interfaces.pas"/>
+        <DCCReference Include="..\Packages\Shared\Functions\source\Shared.Functions.Tipos.pas"/>
+        <DCCReference Include="..\Packages\Shared\Functions\source\Shared.Functions.Utils.pas"/>
+        <DCCReference Include="padra_atualizado\packages\shared\functions\TestShared.Functions.Tipos.pas"/>
+        <DCCReference Include="padra_atualizado\packages\shared\functions\TestShared.Functions.Utils.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\interfaces\source\Faturamento.Impostos.Interfaces.IcmsSt.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\tipos\source\Faturamento.Impostos.Tipos.IcmsSt.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\tipos\source\TestFaturamento.Impostos.Tipos.IcmsSt.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\interfaces\source\Faturamento.Impostos.Interfaces.Iva.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\tipos\source\Faturamento.Impostos.Tipos.Iva.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\regras\source\Faturamento.Impostos.Regras.Tributacao.Iva.St.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\regras\source\Faturamento.Impostos.Regras.Tributacao.Iva.Icms.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\interfaces\source\Faturamento.Impostos.Interfaces.ST_Simulada.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\tipos\source\Faturamento.Impostos.Tipos.ST_Simulada.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\regras\source\Faturamento.Impostos.Regras.Tributacao.Iva.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\regras\source\Faturamento.Impostos.Regras.Tributacao.ST_Simulada.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\tipos\source\TestFaturamento.Impostos.Tipos.Iva.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\tipos\source\Faturamento.Impostos.Tipos.ZerarImpostos.ST.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\regras\source\Faturamento.Impostos.Regras.ZerarImpostos.ST.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\interfaces\source\Faturamento.Impostos.Interfaces.ZerarImpostos.ST.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\tipos\source\TestFaturamento.Impostos.Tipos.ZerarImpostos.ST.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\tipos\source\TestFaturamento.Impostos.Tipos.ST_Simulada.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\regras\source\TestFaturamento.Impostos.Regras.ZerarImpostos.ST.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\Interfaces\source\Faturamento.Impostos.Interfaces.Tributacao.DepoisDoCalculo.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\Tipos\source\Faturamento.Impostos.Tipos.Tributacao.DepoisDoCalculo.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\Regras\source\Faturamento.Impostos.Regras.Tributacao.DepoisDoCalculo.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\tipos\source\TestFaturamento.Impostos.Tipos.Tributacao.DepoisDoCalculo.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\Regras\source\TestFaturamento.Impostos.Regras.Tributacao.DepoisDoCalculo.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\regras\source\TestFaturamento.Impostos.Regras.Tributacao.Iva.Icms.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\regras\source\TestFaturamento.Impostos.Regras.Tributacao.Iva.St.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\regras\source\TestFaturamento.Impostos.Regras.Tributacao.Iva.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\regras\source\TestFaturamento.Impostos.Regras.Tributacao.ST_Simulada.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\interfaces\source\Faturamento.Impostos.Interfaces.Servicos.Classe.Icms.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\interfaces\source\Faturamento.Impostos.Interfaces.Servicos.Classe.IcmsOrgaoPublico.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\interfaces\source\Faturamento.Impostos.Interfaces.Servicos.Classe.St.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\servicos\source\Faturamento.Impostos.Servicos.Classe.IcmsOrgaoPublico.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\servicos\source\Faturamento.Impostos.Servicos.Classe.St.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\tipos\source\Faturamento.Impostos.Tipos.Servicos.Classe.Icms.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\tipos\source\Faturamento.Impostos.Tipos.Servicos.Classe.IcmsOrgaoPublico.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\tipos\source\Faturamento.Impostos.Tipos.Servicos.Classe.St.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\servicos\source\Faturamento.Impostos.Servicos.Classe.Icms.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\servicos\source\TestFaturamento.Impostos.Servicos.Classe.Icms.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\servicos\source\TestFaturamento.Impostos.Servicos.Classe.IcmsOrgaoPublico.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\servicos\source\TestFaturamento.Impostos.Servicos.Classe.St.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\tipos\source\TestFaturamento.Impostos.Tipos.Servicos.Classe.Icms.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\tipos\source\TestFaturamento.Impostos.Tipos.Servicos.Classe.IcmsOrgaoPublico.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\tipos\source\TestFaturamento.Impostos.Tipos.Servicos.Classe.St.pas"/>
+        <DCCReference Include="..\fontes\Controller\Bpl\Faturamento\Impostos\Interfaces\Controller.Faturamento.Interfaces.Impostos.Ipi.pas"/>
+        <DCCReference Include="..\fontes\Controller\Bpl\Faturamento\Impostos\Interfaces\Controller.Faturamento.Interfaces.Impostos.IcmsSt.pas"/>
+        <DCCReference Include="..\fontes\Controller\Bpl\Faturamento\Impostos\Interfaces\Controller.Faturamento.Interfaces.Impostos.IcmsEfetivo.pas"/>
+        <DCCReference Include="..\fontes\Controller\Bpl\Faturamento\Impostos\Interfaces\Controller.Faturamento.Interfaces.Impostos.FcpDifal.pas"/>
+        <DCCReference Include="..\fontes\Controller\Bpl\Faturamento\Impostos\Tipos\Controller.Faturamento.Tipos.Impostos.Ipi.pas"/>
+        <DCCReference Include="..\fontes\Controller\Bpl\Faturamento\Impostos\Tipos\Controller.Faturamento.Tipos.Impostos.IcmsEfetivo.pas"/>
+        <DCCReference Include="..\fontes\Controller\Bpl\Faturamento\Impostos\Tipos\Controller.Faturamento.Tipos.Impostos.IcmsSt.pas"/>
+        <DCCReference Include="..\fontes\Controller\Bpl\Faturamento\Impostos\Tipos\Controller.Faturamento.Tipos.Impostos.Parametros.Comum.pas"/>
+        <DCCReference Include="..\fontes\Controller\Bpl\Faturamento\Impostos\Interfaces\Controller.Faturamento.Interfaces.Impostos.Parametros.Comum.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\interfaces\source\Faturamento.Impostos.Interfaces.Servicos.Classe.StCustoAquisicao.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\servicos\source\Faturamento.Impostos.Servicos.Classe.StCustoAquisicao.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\tipos\source\Faturamento.Impostos.Tipos.Servicos.Classe.StCustoAquisicao.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\tipos\source\TestFaturamento.Impostos.Tipos.Servicos.Classe.StCustoAquisicao.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\servicos\source\TestFaturamento.Impostos.Servicos.Classe.StCustoAquisicao.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\Interfaces\source\Faturamento.Impostos.Interfaces.AliquotasDeRetencao.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\Tipos\source\Faturamento.Impostos.Tipos.AliquotasDeRetencao.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\regras\source\Faturamento.Impostos.Regras.AliquotasDeRetencao.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\tipos\source\TestFaturamento.Impostos.Tipos.AliquotasDeRetencao.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\regras\source\TestFaturamento.Impostos.Regras.AliquotasDeRetencao.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\interfaces\source\Faturamento.Impostos.Interfaces.Servicos.Disponiveis.IcmsEfetivo.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\interfaces\source\Faturamento.Impostos.Interfaces.Servicos.Classe.IcmsEfetivo.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\servicos\source\Faturamento.Impostos.Servicos.Disponiveis.IcmsEfetivo.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\servicos\source\Faturamento.Impostos.Servicos.Classe.IcmsEfetivo.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\impostos\Fat\Tipos\TestController.Faturamento.Tipos.Impostos.IcmsEfetivo.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\impostos\Fat\Tipos\TestController.Faturamento.Tipos.Impostos.Ipi.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\impostos\Fat\Tipos\TestController.Faturamento.Tipos.Impostos.IcmsSt.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\servicos\source\TestFaturamento.Impostos.Servicos.Classe.IcmsEfetivo.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\servicos\source\TestFaturamento.Impostos.Servicos.Disponiveis.IcmsEfetivo.pas"/>
+        <DCCReference Include="..\Packages\Shared\Functions\source\Shared.Functions.SQL.pas"/>
+        <DCCReference Include="padra_atualizado\packages\shared\functions\source\TestShared.Functions.SQL.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\interfaces\source\Faturamento.Impostos.Interfaces.FcpDifal.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\interfaces\source\Faturamento.Impostos.Interfaces.Servicos.Disponiveis.FcpDifal.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\interfaces\source\Faturamento.Impostos.Interfaces.Servicos.Classe.FcpDifal.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\interfaces\source\Faturamento.Impostos.Interfaces.Servicos.Classe.Fcp.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\interfaces\source\Faturamento.Impostos.Interfaces.ZerarImpostos.Fcp.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\tipos\source\Faturamento.Impostos.Tipos.FcpDifal.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\tipos\source\Faturamento.Impostos.Tipos.Servicos.Classe.Fcp.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\tipos\source\Faturamento.Impostos.Tipos.ZerarImpostos.Fcp.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\regras\source\Faturamento.Impostos.Regras.ZerarImpostos.Fcp.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\servicos\source\Faturamento.Impostos.Servicos.Classe.FcpDifal.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\servicos\source\Faturamento.Impostos.Servicos.Disponiveis.FcpDifal.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\servicos\source\Faturamento.Impostos.Servicos.Classe.Fcp.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\tipos\source\TestFaturamento.Impostos.Tipos.FcpDifal.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\tipos\source\TestFaturamento.Impostos.Tipos.Servicos.Classe.Fcp.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\tipos\source\TestFaturamento.Impostos.Tipos.ZerarImpostos.Fcp.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\regras\source\TestFaturamento.Impostos.Regras.ZerarImpostos.Fcp.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\servicos\source\TestFaturamento.Impostos.Servicos.Disponiveis.FcpDifal.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\servicos\source\TestFaturamento.Impostos.Servicos.Classe.Fcp.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\servicos\source\TestFaturamento.Impostos.Servicos.Classe.FcpDifal.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\genericos\TestShared.Functions.Conexao.ClientDataSet.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\tipos\source\Faturamento.Impostos.Tipos.Servicos.Classe.DifalFcp.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\servicos\source\Faturamento.Impostos.Servicos.Classe.DifalFcp.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\interfaces\source\Faturamento.Impostos.Interfaces.Servicos.Classe.DifalFcp.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\interfaces\source\Faturamento.Impostos.Interfaces.Servicos.Classe.Devolucao.DifalFcp.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\Tipos\source\Faturamento.Impostos.Tipos.Servicos.Classe.Devolucao.DifalFcp.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\servicos\source\Faturamento.Impostos.Servicos.Classe.Devolucao.DifalFcp.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\servicos\source\Faturamento.Impostos.Servicos.Classe.Difal.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\Interfaces\source\Faturamento.Impostos.Interfaces.Servicos.Classe.Difal.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\Tipos\source\Faturamento.Impostos.Tipos.Servicos.Classe.Difal.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\servicos\source\TestFaturamento.Impostos.Servicos.Classe.DifalFcp.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\tipos\source\TestFaturamento.Impostos.Tipos.Servicos.Classe.Devolucao.DifalFcp.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\tipos\source\TestFaturamento.Impostos.Tipos.Servicos.Classe.DifalFcp.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\tipos\source\TestFaturamento.Impostos.Tipos.Servicos.Classe.Difal.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\servicos\source\TestFaturamento.Impostos.Servicos.Classe.Difal.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\tipos\source\Faturamento.Impostos.Tipos.ZerarImpostos.Difal.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\regras\source\Faturamento.Impostos.Regras.ZerarImpostos.Difal.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Impostos\Interfaces\source\Faturamento.Impostos.Interfaces.ZerarImpostos.Difal.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\tipos\source\TestFaturamento.Impostos.tipos.Zerarimpostos.Difal.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\regras\source\TestFaturamento.Impostos.Regras.Zerarimpostos.Difal.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\impostos\servicos\source\TestFaturamento.Impostos.Servicos.Classe.Devolucao.DifalFCP.pas"/>
+        <DCCReference Include="..\fontes\cadastros\untCategoriaCadLead.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\cadastros\TestUntCategoriaCadLead.pas"/>
+        <DCCReference Include="..\fontes\movimentacaoitens\OrdemProducaoIndustrial\OrdemProducaoIndustrial.TEtiquetaProdutoAcabado.pas"/>
+        <DCCReference Include="..\fontes\movimentacaoitens\OrdemProducaoIndustrial\OrdemProducaoIndustrial.TEtiquetaProdutoAcabadoFields.pas"/>
+        <DCCReference Include="..\fontes\movimentacaoitens\OrdemProducaoIndustrial\OrdemProducaoIndustrial.TCdsEtiquetaProdutoAcabado.pas"/>
+        <DCCReference Include="..\fontes\movimentacaoitens\OrdemProducaoIndustrial\OrdemProducaoIndustrial.Constantes.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\movimentacaoitens\OrdemProducaoIndustrial\TestOrdemProducaoIndustrial.TEtiquetaProdutoAcabado.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\movimentacaoitens\OrdemProducaoIndustrial\TestOrdemProducaoIndustrial.Dados.TCdsItensEtiquetaProdutoAcabado.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\movimentacaoitens\OrdemProducaoIndustrial\TestOrdemProducaoIndustrial.TEtiquetaProdutoAcabadoFields.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\movimentacaoitens\OrdemProducaoIndustrial\TestOrdemProducaoIndustrial.TCdsEtiquetaProdutoAcabado.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\movimentacaoitens\OrdemProducaoIndustrial\TestOrdemProducaoIndustrial.Constantes.pas"/>
+        <DCCReference Include="..\fontes\util\EditorEtiquetas\untEtiquetaGarantias.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\Util\EditorEtiquetas\TestuntEtiquetaGarantias.pas"/>
+        <DCCReference Include="..\fontes\SigepWeb\untSigepWebValidaObjetosDuplicadosPLP.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\SigepWeb\TestuntSigepWebValidaObjetosDuplicadosPLP.pas"/>
+        <DCCReference Include="..\Packages\Shared\Functions\source\Shared.Functions.Funcoes.Faturamento.Precos.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Precos\calculos\source\Faturamento.Precos.Calculos.PrecoCusto.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Precos\interfaces\source\Faturamento.Precos.Interfaces.PrecoCusto.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Precos\interfaces\source\Faturamento.Precos.Interfaces.Servicos.Classe.PrecoCusto.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Precos\interfaces\source\Faturamento.Precos.Interfaces.Servicos.Disponiveis.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Precos\interfaces\source\Faturamento.Precos.Interfaces.Servicos.Disponiveis.PrecoCusto.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Precos\tipos\source\Faturamento.Precos.Tipos.PrecoCusto.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Precos\servicos\source\Faturamento.Precos.Servicos.Classe.PrecoCusto.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Precos\servicos\source\Faturamento.Precos.Servicos.Disponiveis.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Precos\servicos\source\Faturamento.Precos.Servicos.Disponiveis.PrecoCusto.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Precos\servicos\source\Faturamento.Precos.Servicos.Funcoes.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\precos\servicos\source\TestFaturamento.Precos.Servicos.Disponiveis.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\precos\servicos\source\TestFaturamento.Precos.Servicos.Disponiveis.PrecoCusto.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\precos\servicos\source\TestFaturamento.Precos.Servicos.Classe.PrecoCusto.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\precos\calculos\source\TestFaturamento.Precos.Calculos.PrecoCusto.pas"/>
+        <DCCReference Include="padra_atualizado\packages\shared\functions\TestShared.Functions.Funcoes.Faturamento.Precos.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\precos\tipos\TestFaturamento.Precos.Tipos.PrecoCusto.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\precos\servicos\source\TestFaturamento.Precos.Servicos.Funcoes.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\Margem\servicos\source\TestFaturamento.Margem.Servicos.Disponiveis.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\Margem\servicos\source\TestFaturamento.Margem.Servicos.Disponiveis.MargemBruta.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\Margem\servicos\source\TestFaturamento.Margem.Servicos.Classe.MargemBruta.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\Margem\calculos\source\TestFaturamento.Margem.Calculos.MargemBruta.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\Margem\tipos\TestFaturamento.Margem.Tipos.MargemBruta.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Margem\calculos\source\Faturamento.Margem.Calculos.MargemBruta.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Margem\calculos\source\Faturamento.Margem.Calculos.MargemVenda.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Margem\interfaces\source\Faturamento.Margem.Interfaces.MargemBruta.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Margem\interfaces\source\Faturamento.Margem.Interfaces.Servicos.Classe.MargemBruta.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Margem\interfaces\source\Faturamento.Margem.Interfaces.Servicos.Classe.MargemVenda.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Margem\interfaces\source\Faturamento.Margem.Interfaces.Servicos.Disponiveis.MargemBruta.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Margem\interfaces\source\Faturamento.Margem.Interfaces.Servicos.Disponiveis.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Margem\servicos\source\Faturamento.Margem.Servicos.Classe.MargemBruta.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Margem\servicos\source\Faturamento.Margem.Servicos.Disponiveis.MargemBruta.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Margem\servicos\source\Faturamento.Margem.Servicos.Disponiveis.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Margem\tipos\source\Faturamento.Margem.Tipos.MargemBruta.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Margem\tipos\source\Faturamento.Margem.Tipos.MargemVenda.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Margem\interfaces\source\Faturamento.Margem.Interfaces.MargemVenda.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\genericos\TestuntFuncoesGenCompartilhada.pas"/>
+        <DCCReference Include="..\fontes\genericos\untFuncoesGenCompartilhada.pas"/>
+        <DCCReference Include="..\fontes\genericos\untFormulaPrecoCusto.pas"/>
+        <DCCReference Include="..\fontes\genericos\untFuncoesPrecoCusto.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Margem\servicos\source\Faturamento.Margem.Servicos.Disponiveis.MargemVenda.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Margem\interfaces\source\Faturamento.Margem.Interfaces.Servicos.Disponiveis.MargemVenda.pas"/>
+        <DCCReference Include="..\Packages\Faturamento\Margem\servicos\source\Faturamento.Margem.Servicos.Classe.MargemVenda.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\margem\tipos\TestFaturamento.Margem.Tipos.MargemVenda.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\margem\calculos\source\TestFaturamento.Margem.Calculos.MargemVenda.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\margem\servicos\source\TestFaturamento.Margem.Servicos.Classe.MargemVenda.pas"/>
+        <DCCReference Include="padra_atualizado\packages\faturamento\margem\servicos\source\TestFaturamento.Margem.Servicos.Disponiveis.MargemVenda.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\faturamento\TestuntCalcularMargemLucro.pas"/>
+        <DCCReference Include="..\fontes\faturamento\untCalcularMargemLucro.pas"/>
+        <DCCReference Include="..\fontes\Controller\Bpl\Faturamento\Margem\Interfaces\Controller.Faturamento.Interfaces.Margem.MargemVenda.pas"/>
+        <DCCReference Include="..\fontes\faturamento\untFatCalcularMargemService.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\faturamento\TestController.Faturamento.Margem.MargemVenda.pas"/>
+        <DCCReference Include="..\fontes\Controller\Bpl\Faturamento\Margem\MargemVenda\Controller.Faturamento.Margem.MargemVenda.pas"/>
+        <DCCReference Include="padra_atualizado\packages\shared\functions\TestShared.Functions.FormulaPrecoCusto.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\genericos\untZClient.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\genericos\untIZClient.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\faturamento\Testuntfuncoesprecocusto.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\faturamento\TestuntFormulaPrecoCusto.pas"/>
+        <DCCReference Include="..\fontes\movimentacaoitens\OrdemProducaoIndustrial\OrdemProducaoIndustrial.TSQLFormulaImpressao.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\movimentacaoitens\OrdemProducaoIndustrial\TestOrdemProducaoIndustrial.TSQLFormulaImpressao.pas"/>
+        <DCCReference Include="..\fontes\movimentacaoitens\Garantia\Garantia.Constantes.pas"/>
+        <DCCReference Include="..\fontes\movimentacaoitens\Garantia\Garantia.TCancelamentoGarantia.pas"/>
+        <DCCReference Include="..\fontes\movimentacaoitens\Garantia\Garantia.TSQLMovimentacaoPosterior.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\movimentacaoitens\Garantia\TestGarantia.Constantes.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\movimentacaoitens\Garantia\TestGarantia.TCancelamentoGarantia.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\movimentacaoitens\Garantia\TestGarantia.TSQLMovimentacaoPosterior.pas"/>
+        <DCCReference Include="..\fontes\Core\Conexao\Faturamento.Interfaces.Conexao.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\impostos\Fat\Comum\TestController.Faturamento.Tipos.Impostos.Parametros.Comum.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\genericos\untTintaDeMaquinaBpl.pas"/>
+        <DCCReference Include="..\fontes\movimentacaoitens\OrdemProducaoIndustrial\OrdemProducaoIndustrial.TAgrupamentoPedidoEstoque.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\movimentacaoitens\OrdemProducaoIndustrial\TestOrdemProducaoIndustrial.TAgrupamentoPedidoEstoque.pas"/>
+        <DCCReference Include="..\Packages\Shared\Functions\source\Shared.Functions.Faturamento.TintaDeMaquina.pas"/>
+        <DCCReference Include="padra_atualizado\packages\shared\functions\TestShared.Functions.Faturamento.TintaDeMaquina.pas"/>
+        <DCCReference Include="..\fontes\Controller\Bpl\Faturamento\Margem\MargemBruta\Controller.Faturamento.Margem.MargemBruta.pas"/>
+        <DCCReference Include="..\fontes\Controller\Bpl\Faturamento\Margem\Interfaces\Controller.Faturamento.Interfaces.Margem.MargemBruta.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\faturamento\TestController.Faturamento.Impostos.Ipi.pas"/>
+        <DCCReference Include="..\fontes\Controller\Bpl\Faturamento\Impostos\Ipi\Controller.Faturamento.Impostos.Ipi.pas"/>
+        <DCCReference Include="..\fontes\faturamento\untFatCalcularImpostosService.pas"/>
+        <DCCReference Include="..\fontes\faturamento\Faturamento.Impostos.Calculos.TesteUnitarioLog.pas"/>
+        <DCCReference Include="..\fontes\Controller\Bpl\Faturamento\Precos\PrecoCusto\Controller.Faturamento.Precos.PrecoCusto.pas"/>
+        <DCCReference Include="..\fontes\Controller\Bpl\Faturamento\Precos\Interfaces\Controller.Faturamento.Interfaces.Precos.PrecoCusto.pas"/>
+        <DCCReference Include="..\fontes\faturamento\untFatCalcularPrecosService.pas"/>
+        <DCCReference Include="..\fontes\faturamento\untFatCalcularServicePath.pas"/>
+        <DCCReference Include="..\fontes\movimentacaoitens\OrdemProducaoIndustrial\OrdemProducaoIndustrial.TReservaSaldoOrdemProducaoIndustrial.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\Estoque\TestEstoque.Lote.TSQLSaldoLote.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\movimentacaoitens\OrdemProducaoIndustrial\TestOrdemProducaoIndustrial.TReservaSaldoOrdemProducaoIndustrial.pas"/>
+        <DCCReference Include="..\fontes\Estoque\Estoque.Lote.TSQLSaldoLote.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\faturamento\TestController.Faturamento.Impostos.IcmsEfetivo.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\faturamento\TestController.Faturamento.Precos.PrecoCusto.pas"/>
+        <DCCReference Include="..\fontes\Controller\Bpl\Faturamento\Impostos\IcmsEfetivo\Controller.Faturamento.Impostos.IcmsEfetivo.pas"/>
+        <DCCReference Include="..\fontes\Controller\Bpl\Faturamento\Impostos\FcpDifal\Controller.Faturamento.Impostos.FcpDifal.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\faturamento\TestController.Faturamento.Impostos.FcpDifal.pas"/>
+        <DCCReference Include="..\fontes\Controller\Bpl\Faturamento\Impostos\IcmsSt\Controller.Faturamento.Impostos.IcmsSt.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\faturamento\TestController.Faturamento.Impostos.IcmsSt.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\faturamento\TestController.Faturamento.Margem.MargemBruta.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\faturamento\TestuntFatCalcularServicePath.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\faturamento\TestController.Faturamento.Impostos.Generic.pas"/>
+        <DCCReference Include="..\fontes\Controller\Bpl\Faturamento\Impostos\Generic\Controller.Faturamento.Impostos.Generic.pas"/>
+        <DCCReference Include="..\fontes\Controller\Bpl\Faturamento\Precos\Generic\Controller.Faturamento.Precos.Generic.pas"/>
+        <DCCReference Include="..\fontes\Controller\Bpl\Faturamento\Precos\Interfaces\Controller.Faturamento.Interfaces.Precos.Generic.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\faturamento\TestController.Faturamento.Precos.Generic.pas"/>
+        <DCCReference Include="..\fontes\Controller\Bpl\Faturamento\Margem\Generic\Controller.Faturamento.Margem.Generic.pas"/>
+        <DCCReference Include="..\fontes\Controller\Bpl\Faturamento\Impostos\Generic\Controller.Faturamento.Interfaces.Impostos.Generic.pas"/>
+        <DCCReference Include="..\fontes\Controller\Bpl\Faturamento\Margem\Interfaces\Controller.Faturamento.Interfaces.Margem.Generic.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\faturamento\TestController.Faturamento.Margem.Generic.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\faturamento\TestuntFatCalcularPrecosService.pas"/>
+        <DCCReference Include="..\fontes\Garantia\Garantia.TSQLGarantiaFiltroCancelamentoEspecieOF.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\cadastros\Garantia\TestGarantia.TSQLGarantiaFiltroCancelamentoEspecieOF.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\faturamento\Expedicao\TestExpedicao.TManutencaoSeparadoresPorLocalConstantes.pas"/>
+        <DCCReference Include="..\fontes\faturamento\Expedicao\Expedicao.TManutencaoSeparadoresPorLocalConstantes.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\faturamento\Expedicao\TestExpedicao.TSQLSeparadorLocalSeparacao.pas"/>
+        <DCCReference Include="..\fontes\faturamento\Expedicao\Expedicao.TSQLSeparadorLocalSeparacao.pas"/>
+        <DCCReference Include="..\fontes\faturamento\Expedicao\Expedicao.TManutencaoSeparadoresPorLocal.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\faturamento\Expedicao\TestExpedicao.TManutencaoSeparadoresPorLocal.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\cadastros\TestLote.ValidaLoteLocalizacao.pas"/>
+        <DCCReference Include="..\fontes\cadastros\Lote.ValidaLoteLocalizacao.pas"/>
+        <DCCReference Include="..\fontes\cadastros\cadastro.TSQLEstruturaIndustrial.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\cadastros\Testcadastro.TSQLEstruturaIndustrial.pas"/>
+        <DCCReference Include="..\fontes\movimentacaoitens\OrdemProducaoIndustrial\OrdemProducaoIndustrial.TSQLOrdProdIndustrial.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\movimentacaoitens\OrdemProducaoIndustrial\TestOrdemProducaoIndustrial.TSQLOrdProdIndustrial.pas"/>
+        <DCCReference Include="..\fontes\Garantia\Garantia.TSQLGarantiaRetornoFornecedor.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\Cadastros\Garantia\TestGarantia.TSQLGarantiaRetornoFornecedor.pas"/>
+        <DCCReference Include="..\fontes\faturamento\Expedicao\Expedicao.TSeparacaoAvulsa.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\faturamento\Expedicao\TestExpedicao.TSeparacaoAvulsa.pas"/>
+        <DCCReference Include="..\fontes\cadastros\Produto.TProdutos.pas"/>
+        <DCCReference Include="..\fontes\cadastros\Produto.TSQLProdutos.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\cadastros\TestProduto.TSQLProdutos.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\cadastros\TestProduto.TProdutos.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\movimentacaoitens\Garantia\TestGarantia.TValidacaoEspelhoXML.pas"/>
+        <DCCReference Include="..\fontes\movimentacaoitens\Garantia\Garantia.TItemValidacaoEspelhoXML.pas"/>
+        <DCCReference Include="..\fontes\movimentacaoitens\Garantia\Garantia.TValidacaoEspelhoXML.pas"/>
+        <DCCReference Include="..\fontes\movimentacaoitens\Garantia\Garantia.TValidacaoNotaRecebimentoCliente.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\movimentacaoitens\Garantia\TestGarantia.TValidacaoNotaRecebimentoCliente.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\movimentacaoitens\Garantia\TestGarantia.TItemValidacaoEspelhoXML.pas"/>
+        <DCCReference Include="..\fontes\genericos\untObjectListHelper.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\movimentacaoitens\Garantia\TestuntObjectListHelper.pas"/>
+        <DCCReference Include="..\fontes\movimentacaoitens\Garantia\Garantia.TItemNotaRecebimentoCliente.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\movimentacaoitens\Garantia\TestGarantia.TItemNotaRecebimentoCliente.pas"/>
+        <DCCReference Include="..\fontes\movimentacaoitens\Garantia\Garantia.TCdsValidacaoEspelhoXML.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\movimentacaoitens\Garantia\TestGarantia.TCdsValidacaoEspelhoXML.pas"/>
+        <DCCReference Include="..\fontes\faturamento\Devolucao\Faturamento.Devolucao.TNotaDevolucaoPessoaJuridica.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\faturamento\Devolucao\TestFaturamento.Devolucao.TNotaDevolucaoPessoaJuridica.pas"/>
+        <DCCReference Include="..\fontes\faturamento\Controller.Faturamento.Interfaces.Cache.pas"/>
+        <DCCReference Include="..\fontes\genericos\untTypesSistema.pas"/>
+        <DCCReference Include="Faturamento\Outros\TestuntValidaCondicaoPagamento.pas"/>
+        <DCCReference Include="..\fontes\faturamento\untValidaCondicaoPagamento.pas"/>
+        <DCCReference Include="Faturamento\Impostos\IPI\TestCalculoImpostoIPI.pas"/>
+        <DCCReference Include="..\fontes\faturamento\Impostos\IPI\untCalculoImpostoIPI.pas"/>
+        <DCCReference Include="..\fontes\faturamento\Impostos\IPI\untTypesIPI.pas"/>
+        <DCCReference Include="..\fontes\faturamento\Model\untConsultaModelFaturamento.pas"/>
+        <DCCReference Include="..\fontes\faturamento\Impostos\untFaturamentoImpostosFuncoes.pas"/>
+        <DCCReference Include="..\fontes\faturamento\Impostos\untTypesGenericosImpostos.pas"/>
+        <DCCReference Include="Faturamento\Model\untConsultaModelFaturamentoMemory.pas"/>
+        <DCCReference Include="Faturamento\Model\untConsultaModelClienteFornecedorMemory.pas"/>
+        <DCCReference Include="Faturamento\Model\untConsultaModelEmpresaMemory.pas"/>
+        <DCCReference Include="Faturamento\Model\untConsultaModelProdutoMemory.pas"/>
+        <DCCReference Include="Faturamento\Model\untFactoryClienteFornecedorMemory.pas"/>
+        <DCCReference Include="Faturamento\Model\untFactoryProdutoMemory.pas"/>
+        <DCCReference Include="Faturamento\Model\untFactoryEmpresaMemory.pas"/>
+        <DCCReference Include="Faturamento\Impostos\BeneficioREIDI\TestCalculoImpostoBeneficioREIDI.pas"/>
+        <DCCReference Include="..\fontes\faturamento\Impostos\BeneficioREIDI\untCalculoImpostoBeneficioREIDI.pas"/>
+        <DCCReference Include="..\fontes\faturamento\Impostos\BeneficioREIDI\untTypesBeneficioREIDI.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\fiscal\TestCFOPAkzoNobel.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\fiscal\TestCFOPAtivoImobilizado.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\fiscal\TestCFOPBaixaEntregaFutura.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\fiscal\TestCFOPBrinde.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\fiscal\TestCFOPClienteFilial.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\fiscal\TestCFOPClienteZonaFrancaOuReducaoBaseIcmsST.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\fiscal\TestCFOPConfirmacaoDeCupom.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\fiscal\TestCFOPConsumidorForaDoEstadoOuAtendeDifal.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\fiscal\TestCFOPDevolucaoDemonstracao.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\fiscal\TestCFOPDevolucaoOuOutrasEntradas.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\fiscal\TestCFOPRegrasDeTributacaoEstado.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\fiscal\TestCFOPClienteExterior.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\fiscal\TestCFOPEnvioGarantiaFornecedor.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\fiscal\TestCFOPUsoEConsumo.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\fiscal\TestCFOPSimplesRemessaDeConcreto.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\fiscal\TestCFOPTipoOperacaoPedidoVenda.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\fiscal\TestCFOPRetornoConsignacao.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\fiscal\TestCFOPRemessaPorContaEOrdem.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\fiscal\TestCFOPRemessaDeMercadoriaFaltante.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\fiscal\TestCFOPRemessaEstoqueExterno.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\fiscal\TestCFOPPedidoDeRemessaParaGarantia.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\fiscal\TestCFOPOrdemDeProducaoAvulsaTintometrico.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\fiscal\TestCFOPExcecoesServico.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\fiscal\TestCFOPEntregaFutura.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\fiscal\TestCFOPEmprestimo.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\fiscal\TestCFOPNotaImportacao.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\fiscal\TestCFOPRecebimentoGarantiaOutrasEntradas.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\fiscal\TestCFOPOutrasSaidasParaConserto.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\fiscal\TestCFOPConfirmacaoAjustes.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\fiscal\TestCFOPEnvioRemessa.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\fiscal\TestCFOPFaturamentoRemessa.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\fiscal\TestCFOPRetornoRemessa.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\fiscal\TestCFOPNFComplementoFornecedorValor.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\fiscal\TestCFOPNFAmostraGratis.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\fiscal\TestCFOPReposicaoClienteGarantia.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\fiscal\TestCFOPConsignacaoEnvio.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\fiscal\TestCFOPNotaFiscalTintometricoEspiritoSanto.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\fiscal\TestCFOPFaturamentoConsignacao.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\fiscal\TestCFOPBaixaRefugo.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\fiscal\TestCFOPClienteExportacaoIndireta.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\fiscal\TestCFOPComodatoCilindroVasilhame.pas"/>
+        <DCCReference Include="padra_atualizado\fontes\fiscal\TestDefineCFOP.pas"/>
+        <DCCReference Include="..\fontes\fiscal\CFOP\untTypesCFOP.pas"/>
+        <DCCReference Include="..\fontes\fiscal\CFOP\untCFOPAkzoNobel.pas"/>
+        <DCCReference Include="..\fontes\fiscal\CFOP\untCFOPAtivoImobilizado.pas"/>
+        <DCCReference Include="..\fontes\fiscal\CFOP\untCFOPBaixaEntregaFutura.pas"/>
+        <DCCReference Include="..\fontes\fiscal\CFOP\untCFOPBrinde.pas"/>
+        <DCCReference Include="..\fontes\fiscal\CFOP\untCFOPClienteFilial.pas"/>
+        <DCCReference Include="..\fontes\fiscal\CFOP\untCFOPClienteZonaFrancaOuReducaoBaseIcmsST.pas"/>
+        <DCCReference Include="..\fontes\fiscal\CFOP\untCFOPConfirmacaoDeCupom.pas"/>
+        <DCCReference Include="..\fontes\fiscal\CFOP\untCFOPConsumidorForaDoEstadoOuAtendeDifal.pas"/>
+        <DCCReference Include="..\fontes\fiscal\CFOP\untCFOPDevolucaoDemonstracao.pas"/>
+        <DCCReference Include="..\fontes\fiscal\CFOP\untCFOPDevolucaoOuOutrasEntradas.pas"/>
+        <DCCReference Include="..\fontes\fiscal\CFOP\untCFOPRegrasDeTributacaoEstado.pas"/>
+        <DCCReference Include="..\fontes\fiscal\CFOP\untCFOPClienteExterior.pas"/>
+        <DCCReference Include="..\fontes\fiscal\CFOP\untCFOPEnvioGarantiaFornecedor.pas"/>
+        <DCCReference Include="..\fontes\fiscal\CFOP\untCFOPUsoEConsumo.pas"/>
+        <DCCReference Include="..\fontes\fiscal\CFOP\untCFOPSimplesRemessaDeConcreto.pas"/>
+        <DCCReference Include="..\fontes\fiscal\CFOP\untCFOPTipoOperacaoPedidoVenda.pas"/>
+        <DCCReference Include="..\fontes\fiscal\CFOP\untCFOPRetornoConsignacao.pas"/>
+        <DCCReference Include="..\fontes\fiscal\CFOP\untCFOPRemessaPorContaEOrdem.pas"/>
+        <DCCReference Include="..\fontes\fiscal\CFOP\untCFOPRemessaDeMercadoriaFaltante.pas"/>
+        <DCCReference Include="..\fontes\fiscal\CFOP\untCFOPRemessaEstoqueExterno.pas"/>
+        <DCCReference Include="..\fontes\fiscal\CFOP\untCFOPPedidoDeRemessaParaGarantia.pas"/>
+        <DCCReference Include="..\fontes\fiscal\CFOP\untCFOPOrdemDeProducaoAvulsaTintometrico.pas"/>
+        <DCCReference Include="..\fontes\fiscal\CFOP\untCFOPExcecoesServico.pas"/>
+        <DCCReference Include="..\fontes\fiscal\CFOP\untCFOPEntregaFutura.pas"/>
+        <DCCReference Include="..\fontes\fiscal\CFOP\untCFOPEmprestimo.pas"/>
+        <DCCReference Include="..\fontes\fiscal\CFOP\untCFOPNotaImportacao.pas"/>
+        <DCCReference Include="..\fontes\fiscal\CFOP\untCFOPRecebimentoGarantiaOutrasEntradas.pas"/>
+        <DCCReference Include="..\fontes\fiscal\CFOP\untCFOPOutrasSaidasParaConserto.pas"/>
+        <DCCReference Include="..\fontes\fiscal\CFOP\untCFOPConfirmacaoAjustes.pas"/>
+        <DCCReference Include="..\fontes\fiscal\CFOP\untCFOPEnvioRemessa.pas"/>
+        <DCCReference Include="..\fontes\fiscal\CFOP\untCFOPFaturamentoRemessa.pas"/>
+        <DCCReference Include="..\fontes\fiscal\CFOP\untCFOPRetornoRemessa.pas"/>
+        <DCCReference Include="..\fontes\fiscal\CFOP\untCFOPNFComplementoFornecedorValor.pas"/>
+        <DCCReference Include="..\fontes\fiscal\CFOP\untCFOPNFAmostraGratis.pas"/>
+        <DCCReference Include="..\fontes\fiscal\CFOP\untCFOPReposicaoClienteGarantia.pas"/>
+        <DCCReference Include="..\fontes\fiscal\CFOP\untCFOPConsignacaoEnvio.pas"/>
+        <DCCReference Include="..\fontes\fiscal\CFOP\untCFOPNotaFiscalTintometricoEspiritoSanto.pas"/>
+        <DCCReference Include="..\fontes\fiscal\CFOP\untCFOPFaturamentoConsignacao.pas"/>
+        <DCCReference Include="..\fontes\fiscal\CFOP\untCFOPBaixaRefugo.pas"/>
+        <DCCReference Include="..\fontes\fiscal\CFOP\untCFOPClienteExportacaoIndireta.pas"/>
+        <DCCReference Include="..\fontes\fiscal\CFOP\untCFOPComodatoCilindroVasilhame.pas"/>
+        <DCCReference Include="..\fontes\fiscal\CFOP\untDefineCFOP.pas"/>
+        <DCCReference Include="..\fontes\fiscal\CFOP\untCFOPNotaEspecialVendaABaseDeTroca.pas"/>
+        <BuildConfiguration Include="Release">
+            <Key>Cfg_2</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Base">
+            <Key>Base</Key>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Debug">
+            <Key>Cfg_1</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Delphi.Personality.12</Borland.Personality>
+        <Borland.ProjectType>Application</Borland.ProjectType>
+        <BorlandProject>
+            <Delphi.Personality>
+                <Source>
+                    <Source Name="MainSource">AutcomTestes.dpr</Source>
+                </Source>
+                <Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k230.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp230.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+                </Excluded_Packages>
+            </Delphi.Personality>
+            <Deployment Version="2">
+                <DeployFile LocalName="..\AutcomTestes.exe" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>AutcomTestes.exe</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\Redist\osx32\libcgunwind.1.0.dylib" Class="DependencyModule">
+                    <Platform Name="OSX32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\Redist\iossimulator\libcgunwind.1.0.dylib" Class="DependencyModule">
+                    <Platform Name="iOSSimulator">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\Redist\iossimulator\libPCRE.dylib" Class="DependencyModule">
+                    <Platform Name="iOSSimulator">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployClass Name="ProjectiOSDeviceResourceRules">
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectOSXResource">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\Resources</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidClassesDexFile">
+                    <Platform Name="Android">
+                        <RemoteDir>classes</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AdditionalDebugSymbols">
+                    <Platform Name="Win32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch768">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon144">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidLibnativeMipsFile">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\mips</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Required="true" Name="ProjectOutput">
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="DependencyFramework">
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>1</Operation>
+                        <Extensions>.framework</Extensions>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch640">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch1024">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSDeviceDebug">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).app.dSYM\Contents\Resources\DWARF</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <RemoteDir>..\$(PROJECTNAME).app.dSYM\Contents\Resources\DWARF</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidLibnativeX86File">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\x86</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch320">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSInfoPList">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidLibnativeArmeabiFile">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="DebugSymbols">
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch1536">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage470">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-normal</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon96">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage640">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-large</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch640x1136">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSEntitlements">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>../</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <RemoteDir>../</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon72">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-hdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidGDBServer">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectOSXInfoPList">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectOSXEntitlements">
+                    <Platform Name="OSX32">
+                        <RemoteDir>../</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch2048">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidSplashStyles">
+                    <Platform Name="Android">
+                        <RemoteDir>res\values</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage426">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-small</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidSplashImageDef">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSResource">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectAndroidManifest">
+                    <Platform Name="Android">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_DefaultAppIcon">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="File">
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\Resources\StartUp\</RemoteDir>
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="Android">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidServiceOutput">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Required="true" Name="DependencyPackage">
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                        <Extensions>.bpl</Extensions>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon48">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-mdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage960">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xlarge</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon36">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-ldpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="DependencyModule">
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                        <Extensions>.dll;.bpl</Extensions>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                </DeployClass>
+                <ProjectRoot Platform="iOSDevice64" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="iOSDevice32" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="Win32" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="Android" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="iOSSimulator" Name="$(PROJECTNAME).app"/>
+            </Deployment>
+            <Platforms>
+                <Platform value="Win32">True</Platform>
+                <Platform value="Win64">False</Platform>
+            </Platforms>
+            <UnitTesting>
+                <TestFramework>DUnit / Delphi Win32</TestFramework>
+                <TestRunner>GUI</TestRunner>
+                <TestProjectName/>
+                <SourceProjectName/>
+            </UnitTesting>
+        </BorlandProject>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+    <Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
+    <Import Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj" Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')"/>
+    <Import Project="$(MSBuildProjectName).deployproj" Condition="Exists('$(MSBuildProjectName).deployproj')"/>
+</Project>

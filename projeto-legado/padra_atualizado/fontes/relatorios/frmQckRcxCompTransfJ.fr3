@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TfrxReport Version="4.3.61" DotMatrixReport="False" IniFile="\Software\Fast Reports" PreviewOptions.Buttons="4095" PreviewOptions.Zoom="1" PrintOptions.Printer="Padrão" PrintOptions.PrintOnSheet="0" ReportOptions.CreateDate="39343,4831909259" ReportOptions.Description.Text="" ReportOptions.LastChange="40205,3678577083" ScriptLanguage="PascalScript" ScriptText.Text="procedure rllPaginaOnBeforePrint(Sender: TfrxComponent);&#13;&#10;begin&#13;&#10;  rllPagina.Text := 'PAGINA: ' + rllPagina.Text;                                                                &#13;&#10;end;&#13;&#10;&#13;&#10;procedure rllTotalImpressoOnBeforePrint(Sender: TfrxComponent);&#13;&#10;begin&#13;&#10;//  rllTotalImpresso.Text := 'REGISTROS IMPRESSOS: ' + rllTotalImpresso.Text;                                                                    &#13;&#10;end;&#13;&#10;  &#13;&#10;begin&#13;&#10;&#13;&#10;end." PropData="044C656674022003546F70022308446174617365747301010C3000000020446174615365743D2266727844424361726372652220446174615365744E616D653D2266727844424361724372652200010C3000000020446174615365743D2266727844424368654176692220446174615365744E616D653D2266727844424368654176692200010C3000000020446174615365743D2266727844424368655072652220446174615365744E616D653D2266727844424368655072652200010C3600000020446174615365743D2266727855736572446174615365742220446174615365744E616D653D226672785573657244617461536574220000095661726961626C65730100055374796C650100">
+  <TfrxDataPage Name="Data" Height="1000" Left="0" Top="0" Width="1000"/>
+  <TfrxReportPage Name="qckPagina" PaperWidth="210" PaperHeight="297" PaperSize="9" LeftMargin="10" RightMargin="10" TopMargin="4,49791376176403" BottomMargin="4,49791376176403" ColumnWidth="2,53999835958439" ColumnPositions.Text="" HGuides.Text="" VGuides.Text="">
+    <TfrxPageFooter Name="rlbRodape" Height="34" Left="0" Top="1065,82746" Width="718,1107">
+      <TfrxMemoView Name="rllNomeForm" Left="5,82047" Top="5,66141000000016" Width="374,4" Height="17" DataSet="frxGen" DataSetName="frxGen" DisplayFormat.DecimalSeparator="," Text="[NOMROD]"/>
+      <TfrxLineView Name="Line11" Align="baWidth" Left="0" Top="3,77953000000002" Width="718,1107" Height="0" Frame.Typ="4"/>
+    </TfrxPageFooter>
+    <TfrxPageHeader Name="rlbCabecalho" Height="102" Left="0" Top="18,89765" Width="718,1107">
+      <TfrxMemoView Name="rllNomeEmpresa" Align="baCenter" Left="-5,74465000000002" Top="17" Width="729,6" Height="17" DataSet="frxGen" DataSetName="frxGen" DisplayFormat.DecimalSeparator="," Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="0" HAlign="haCenter" ParentFont="False" Text="[EMPRESA]"/>
+      <TfrxMemoView Name="rllNomeRelatorio" Align="baCenter" Left="114,25535" Top="34" Width="489,6" Height="17" DisplayFormat.DecimalSeparator="," HAlign="haCenter" Text="[NOMREL]"/>
+      <TfrxMemoView Name="rllPagina" Left="601,62486" Top="56,67718" Width="115,2" Height="17" OnBeforePrint="rllPaginaOnBeforePrint" HAlign="haRight" Text="[Page]"/>
+      <TfrxMemoView Name="Time" Left="640,02486" Top="73,67718" Width="76,8" Height="17" HAlign="haRight" Text="[Time]"/>
+      <TfrxMemoView Name="Date" Left="511,44533" Top="73,67718" Width="124,8" Height="17" HAlign="haRight" Text="[Date]"/>
+    </TfrxPageHeader>
+    <TfrxChild Name="ChildChePre" Height="17" Left="0" Top="616,06339" Width="718,1107" AllowSplit="True" Child="ChildCarCreCabec" PrintChildIfInvisible="True">
+      <TfrxSubreport Name="subChePre" Left="0" Top="0" Width="96" Height="17" Page="pagChqPre"/>
+    </TfrxChild>
+    <TfrxChild Name="ChildDinheiro" Height="85" Left="0" Top="245,66945" Width="718,1107" Child="ChildCheAviCabec" PrintChildIfInvisible="True">
+      <TfrxMemoView Name="Memo45" Align="baCenter" Left="252,283705" Top="17" Width="213,54329" Height="17" DisplayFormat.DecimalSeparator="," Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="1" HAlign="haCenter" ParentFont="False" Text="TRANSFERENCIA EM DINHEIRO"/>
+      <TfrxMemoView Name="Memo50" Left="9,6" Top="50,9999999999999" Width="407,05504" Height="17" DisplayFormat.DecimalSeparator="," Text="[PORDINHEI]"/>
+      <TfrxMemoView Name="Memo52" Left="501,0141" Top="50,9999999999999" Width="153,6" Height="17" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" HAlign="haRight" Text="[VALDINHEI]"/>
+      <TfrxMemoView Name="Memo60" Left="430,03457" Top="50,9999999999999" Width="67,2" Height="17" DisplayFormat.DecimalSeparator="," Text="VALOR:"/>
+      <TfrxLineView Name="Line1" Align="baWidth" Left="0" Top="7,55905999999999" Width="718,1107" Height="0" Frame.Typ="4"/>
+      <TfrxLineView Name="Line2" Align="baWidth" Left="0" Top="79,3701299999999" Width="718,1107" Height="0" Frame.Typ="4"/>
+    </TfrxChild>
+    <TfrxChild Name="ChildOrdemPagto" Height="90,66141" Left="0" Top="808,81942" Width="718,1107" Child="ChildRodape" PrintChildIfInvisible="True">
+      <TfrxMemoView Name="Memo57" Align="baCenter" Left="191,05535" Top="15,11811024" Width="336" Height="17" DisplayFormat.DecimalSeparator="," Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="1" HAlign="haCenter" ParentFont="False" Text="TRANSFERENCIA EM ORDEM DE PAGAMENTO"/>
+      <TfrxMemoView Name="Memo58" Left="9,6" Top="51,02362205" Width="407,05504" Height="17" DisplayFormat.DecimalSeparator="," Text="[PORORDPAG]"/>
+      <TfrxMemoView Name="Memo59" Left="501,0141" Top="51,0236220472441" Width="153,6" Height="17" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" HAlign="haRight" Text="[VALORDPAG]"/>
+      <TfrxMemoView Name="Memo61" Left="430,03457" Top="51,0236220472441" Width="67,2" Height="17" DisplayFormat.DecimalSeparator="," Text="VALOR:"/>
+      <TfrxLineView Name="Line9" Align="baWidth" Left="0" Top="7,55905511811022" Width="718,1107" Height="0" Frame.Typ="4"/>
+      <TfrxLineView Name="Line10" Align="baWidth" Left="0" Top="79,3700787401575" Width="718,1107" Height="0" Frame.Typ="4"/>
+    </TfrxChild>
+    <TfrxChild Name="ChildCarCre" Height="17" Left="0" Top="767,24459" Width="718,1107" AllowSplit="True" Child="ChildOrdemPagto" PrintChildIfInvisible="True">
+      <TfrxSubreport Name="subCarCre" Left="0" Top="0" Width="96" Height="17" Page="pagCarCre"/>
+    </TfrxChild>
+    <TfrxChild Name="ChildCheAvi" Height="17" Left="0" Top="464,88219" Width="718,1107" AllowSplit="True" Child="ChildChePreCabec" PrintChildIfInvisible="True">
+      <TfrxSubreport Name="subCheAvi" Left="0" Top="0" Width="96" Height="17" Page="pagCheAvi"/>
+    </TfrxChild>
+    <TfrxChild Name="ChildChePreCabec" Height="86,88188" Left="0" Top="506,45702" Width="718,1107" Child="ChildChePre" PrintChildIfInvisible="True">
+      <TfrxMemoView Name="Memo25" Align="baCenter" Left="205,45535" Top="15,1023499999999" Width="307,2" Height="17" DisplayFormat.DecimalSeparator="," Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="1" HAlign="haCenter" ParentFont="False" Text="TRANSFERENCIA DE CHEQUES A PRAZO"/>
+      <TfrxMemoView Name="Memo26" Left="9,6" Top="51,0236220472441" Width="407,05504" Height="17" DisplayFormat.DecimalSeparator="," Text="[PORCHEPRE]"/>
+      <TfrxMemoView Name="Memo27" Left="501,0141" Top="51,0236220472441" Width="153,6" Height="17" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" HAlign="haRight" Text="[VALCHEPRE]"/>
+      <TfrxMemoView Name="Memo63" Left="430,03457" Top="51,0236220472441" Width="67,2" Height="17" DisplayFormat.DecimalSeparator="," Text="VALOR:"/>
+      <TfrxLineView Name="Line5" Align="baWidth" Left="0" Top="7,55905511811017" Width="718,1107" Height="0" Frame.Typ="4"/>
+      <TfrxLineView Name="Line6" Align="baWidth" Left="0" Top="79,3700787401575" Width="718,1107" Height="0" Frame.Typ="4"/>
+    </TfrxChild>
+    <TfrxChild Name="ChildCheAviCabec" Height="86,88188" Left="0" Top="355,27582" Width="718,1107" Child="ChildCheAvi" PrintChildIfInvisible="True">
+      <TfrxMemoView Name="Memo17" Align="baCenter" Left="205,45535" Top="15,11811024" Width="307,2" Height="17" DisplayFormat.DecimalSeparator="," Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="1" HAlign="haCenter" ParentFont="False" Text="TRANSFERENCIA DE CHEQUES A VISTA"/>
+      <TfrxMemoView Name="Memo35" Left="9,6" Top="51,0236220472441" Width="407,05504" Height="17" DisplayFormat.DecimalSeparator="," Text="[PORCHEAVI]"/>
+      <TfrxMemoView Name="Memo36" Left="501,0141" Top="51,0236220472441" Width="153,6" Height="17" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" HAlign="haRight" Text="[VALCHEAVI]"/>
+      <TfrxMemoView Name="Memo62" Left="430,03457" Top="51,0236220472441" Width="67,2" Height="17" DisplayFormat.DecimalSeparator="," Text="VALOR:"/>
+      <TfrxLineView Name="Line3" Align="baWidth" Left="0" Top="7,55906000000004" Width="718,1107" Height="0" Frame.Typ="4"/>
+      <TfrxLineView Name="Line4" Align="baWidth" Left="0" Top="79,37013" Width="718,1107" Height="0" Frame.Typ="4"/>
+    </TfrxChild>
+    <TfrxChild Name="ChildCarCreCabec" Height="86,88188" Left="0" Top="657,63822" Width="718,1107" Child="ChildCarCre" PrintChildIfInvisible="True">
+      <TfrxMemoView Name="Memo46" Align="baCenter" Left="195,85535" Top="15,11811024" Width="326,4" Height="17" DisplayFormat.DecimalSeparator="," Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="1" HAlign="haCenter" ParentFont="False" Text="TRANSFERENCIA EM CARTAO DE CREDITO"/>
+      <TfrxMemoView Name="Memo47" Left="9,6" Top="51,0236220472441" Width="407,05504" Height="17" DisplayFormat.DecimalSeparator="," Text="[PORCARCRE]"/>
+      <TfrxMemoView Name="Memo48" Left="501,0141" Top="51,0236220472441" Width="153,6" Height="17" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" HAlign="haRight" Text="[VALCARCRE]"/>
+      <TfrxMemoView Name="Memo64" Left="430,03457" Top="51,0236220472441" Width="67,2" Height="17" DisplayFormat.DecimalSeparator="," Text="VALOR:"/>
+      <TfrxLineView Name="Line7" Align="baWidth" Left="0" Top="7,55905511811022" Width="718,1107" Height="0" Frame.Typ="4"/>
+      <TfrxLineView Name="Line8" Align="baWidth" Left="0" Top="79,3700787401575" Width="718,1107" Height="0" Frame.Typ="4"/>
+    </TfrxChild>
+    <TfrxMasterData Name="MasterData5" Height="11,33859" Left="0" Top="181,41744" Width="718,1107" ColumnWidth="0" ColumnGap="0" DataSet="frxUserDataSet" DataSetName="frxUserDataSet" RowCount="0">
+      <TfrxMemoView Name="frxUserDataSetfrxUserDataSet" Left="0" Top="0" Width="79,37013" Height="7,55906" DataSet="frxUserDataSet" DataSetName="frxUserDataSet" DisplayFormat.DecimalSeparator="," Font.Charset="1" Font.Color="-16777208" Font.Height="-13" Font.Name="Arial" Font.Style="0" ParentFont="False" Text="[frxUserDataSet.&#34;VAZIO&#34;]"/>
+    </TfrxMasterData>
+    <TfrxFooter Name="Footer1" Height="7,55906" Left="0" Top="215,43321" Width="718,1107" Child="ChildDinheiro"/>
+    <TfrxChild Name="ChildRodape" Height="83,14966" Left="0" Top="922,20532" Width="718,1107">
+      <TfrxMemoView Name="Memo16" Left="11,33859" Top="45,35436" Width="304,40303" Height="17" DisplayFormat.DecimalSeparator="," Text="[OPERADOR]"/>
+      <TfrxMemoView Name="Memo66" Left="11,33859" Top="22,67718" Width="85,19029" Height="17" DisplayFormat.DecimalSeparator="," Text="[DTADOC]"/>
+      <TfrxMemoView Name="Memo67" Left="105,82684" Top="22,67718" Width="92,74935" Height="17" DisplayFormat.DecimalSeparator="," Text="[HORDOC]"/>
+      <TfrxLineView Name="Line12" Left="362,83488" Top="49,1338899999999" Width="325,03958" Height="0" Frame.Typ="4"/>
+      <TfrxMemoView Name="Memo68" Left="480,00031" Top="52,91342" Width="109,60637" Height="18,89765" DisplayFormat.DecimalSeparator="," Font.Charset="1" Font.Color="-16777208" Font.Height="-13" Font.Name="Arial" Font.Style="0" ParentFont="False" Text="RESPONSAVEL"/>
+    </TfrxChild>
+  </TfrxReportPage>
+  <TfrxReportPage Name="pagCheAvi" PaperWidth="210" PaperHeight="297" PaperSize="9" LeftMargin="10" RightMargin="10" TopMargin="4,49791376176403" BottomMargin="4,49791376176403" ColumnWidth="0" ColumnPositions.Text="" HGuides.Text="" VGuides.Text="">
+    <TfrxHeader Name="Header3" Font.Charset="1" Font.Color="0" Font.Height="-11" Font.Name="Arial" Font.Style="0" Height="15,10235" Left="0" ParentFont="False" Top="18,89765" Width="718,1107" ReprintOnNewPage="True">
+      <TfrxShapeView Name="Shape3" Left="0" Top="0" Width="718,1107" Height="15,13389" Color="12632256"/>
+      <TfrxMemoView Name="Memo1" Left="2,04094" Top="0" Width="162,06611" Height="13,22047" DisplayFormat.DecimalSeparator="," Font.Charset="1" Font.Color="0" Font.Height="-11" Font.Name="Arial" Font.Style="1" ParentFont="False" Text="BANCO-AGENCIA-CONTA"/>
+      <TfrxMemoView Name="Memo2" Left="166,14799" Top="0" Width="84,66141" Height="13,22047" DisplayFormat.DecimalSeparator="," Font.Charset="1" Font.Color="0" Font.Height="-11" Font.Name="Arial" Font.Style="1" ParentFont="False" Text="NUM.CHEQUE"/>
+      <TfrxMemoView Name="Memo3" Left="252,85034" Top="0" Width="50,34329" Height="13,22047" DisplayFormat.DecimalSeparator="," Font.Charset="1" Font.Color="0" Font.Height="-11" Font.Name="Arial" Font.Style="1" ParentFont="False" Text="COD.CLI."/>
+      <TfrxMemoView Name="Memo4" Left="305,23457" Top="0" Width="180,96376" Height="13,22047" DisplayFormat.DecimalSeparator="," Font.Charset="1" Font.Color="0" Font.Height="-11" Font.Name="Arial" Font.Style="1" ParentFont="False" Text="NOME DO CLIENTE"/>
+      <TfrxMemoView Name="Memo5" Left="488,08794" Top="0" Width="104,16376" Height="13,22047" DisplayFormat.DecimalSeparator="," Font.Charset="1" Font.Color="0" Font.Height="-11" Font.Name="Arial" Font.Style="1" HAlign="haRight" ParentFont="False" Text="VALOR"/>
+      <TfrxMemoView Name="Memo6" Left="594,29264" Top="0" Width="77,10235" Height="13,22047" DisplayFormat.DecimalSeparator="," Font.Charset="1" Font.Color="0" Font.Height="-11" Font.Name="Arial" Font.Style="1" ParentFont="False" Text="VENCIMENTO"/>
+      <TfrxMemoView Name="Memo7" Left="677,21546" Top="0" Width="39,6094" Height="13,22047" DisplayFormat.DecimalSeparator="," Font.Charset="1" Font.Color="0" Font.Height="-11" Font.Name="Arial" Font.Style="1" HAlign="haRight" ParentFont="False" Text="DIAS"/>
+    </TfrxHeader>
+    <TfrxMasterData Name="MasterData3" Font.Charset="1" Font.Color="0" Font.Height="-11" Font.Name="Arial" Font.Style="0" Height="17" Left="0" ParentFont="False" Top="56,69295" Width="718,1107" ColumnWidth="0" ColumnGap="0" DataSet="frxDBCheAvi" DataSetName="frxDBCheAvi" RowCount="0">
+      <TfrxMemoView Name="mmoZebraAvi" Left="0" Top="0" Width="718,1107" Height="13,22834646" DataSet="frmPaiRelatorio.frxRelatorio" DataSetName="frxRelatorio" DisplayFormat.DecimalSeparator="," Font.Charset="1" Font.Color="0" Font.Height="-11" Font.Name="Arial" Font.Style="0" Highlight.Font.Charset="1" Highlight.Font.Color="255" Highlight.Font.Height="-11" Highlight.Font.Name="Arial" Highlight.Font.Style="0" Highlight.Condition="&#60;Line#&#62; mod 2 = 0" ParentFont="False" WordWrap="False" Text=""/>
+      <TfrxMemoView Name="Memo8" Left="2,04094" Top="0" Width="21,24094" Height="13,22047" DataSetName="frxUserCheques" DisplayFormat.DecimalSeparator="," WordWrap="False" Text="[frxDBCheAvi.&#34;BANCO&#34;]"/>
+      <TfrxMemoView Name="Memo9" Left="26,10235" Top="0" Width="48" Height="13,22047" DataSetName="frxUserCheques" DisplayFormat.DecimalSeparator="," WordWrap="False" Text="[frxDBCheAvi.&#34;AGENCIA&#34;]"/>
+      <TfrxMemoView Name="Memo10" Left="78,14329" Top="0" Width="84,96376" Height="13,22047" DataSetName="frxUserCheques" DisplayFormat.DecimalSeparator="," WordWrap="False" Text="[frxDBCheAvi.&#34;CONTA&#34;]"/>
+      <TfrxMemoView Name="Memo11" Left="166,14799" Top="0" Width="84,66141" Height="13,22047" DataSetName="frxUserCheques" DisplayFormat.DecimalSeparator="," WordWrap="False" Text="[frxDBCheAvi.&#34;NUMERO&#34;]"/>
+      <TfrxMemoView Name="Memo12" Left="252,85034" Top="0" Width="50,34329" Height="13,22047" DataSetName="frxUserCheques" DisplayFormat.DecimalSeparator="," WordWrap="False" Text="[frxDBCheAvi.&#34;CODCLI&#34;]"/>
+      <TfrxMemoView Name="Memo13" Left="305,23457" Top="0" Width="180,81243" Height="13,22047" DataSetName="frxUserCheques" DisplayFormat.DecimalSeparator="," WordWrap="False" Text="[Trim(&#60;frxDBCheAvi.&#34;NOMEMI&#34;&#62;)]"/>
+      <TfrxMemoView Name="Memo14" Left="484,30841" Top="0" Width="107,94329" Height="13,22047" DataSetName="frxUserCheques" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" HAlign="haRight" WordWrap="False" Text="[frxDBCheAvi.&#34;VALOR&#34;]"/>
+      <TfrxMemoView Name="Memo15" Left="594,29264" Top="0" Width="77,10235" Height="13,22047" DataSetName="frxUserCheques" DisplayFormat.DecimalSeparator="," WordWrap="False" Text="[frxDBCheAvi.&#34;DTAVEN&#34;]"/>
+      <TfrxMemoView Name="Memo65" Left="677,21546" Top="0" Width="39,6094" Height="13,22047" DataSetName="frxUserCheques" DisplayFormat.DecimalSeparator="," HAlign="haRight" WordWrap="False" Text="[frxDBCheAvi.&#34;QTDDIA&#34;]"/>
+    </TfrxMasterData>
+  </TfrxReportPage>
+  <TfrxReportPage Name="pagChqPre" PaperWidth="210" PaperHeight="297" PaperSize="9" LeftMargin="10" RightMargin="10" TopMargin="4,49791376176403" BottomMargin="4,49791376176403" ColumnWidth="0" ColumnPositions.Text="" HGuides.Text="" VGuides.Text="">
+    <TfrxHeader Name="Header1" Font.Charset="1" Font.Color="0" Font.Height="-11" Font.Name="Arial" Font.Style="0" Height="15,10235" Left="0" ParentFont="False" Top="18,89765" Width="718,1107" ReprintOnNewPage="True">
+      <TfrxShapeView Name="Shape2" Left="0" Top="0" Width="718,1107" Height="15,13389" Color="12632256"/>
+      <TfrxMemoView Name="Memo18" Left="2,04094" Top="0" Width="162,06611" Height="13,22047" DisplayFormat.DecimalSeparator="," Font.Charset="1" Font.Color="0" Font.Height="-11" Font.Name="Arial" Font.Style="1" ParentFont="False" Text="BANCO-AGENCIA-CONTA"/>
+      <TfrxMemoView Name="Memo19" Left="166,14799" Top="0" Width="84,66141" Height="13,22047" DisplayFormat.DecimalSeparator="," Font.Charset="1" Font.Color="0" Font.Height="-11" Font.Name="Arial" Font.Style="1" ParentFont="False" Text="NUM.CHEQUE"/>
+      <TfrxMemoView Name="Memo20" Left="252,85034" Top="0" Width="50,34329" Height="13,22047" DisplayFormat.DecimalSeparator="," Font.Charset="1" Font.Color="0" Font.Height="-11" Font.Name="Arial" Font.Style="1" ParentFont="False" Text="COD.CLI."/>
+      <TfrxMemoView Name="Memo21" Left="305,23457" Top="0" Width="180,96376" Height="13,22047" DisplayFormat.DecimalSeparator="," Font.Charset="1" Font.Color="0" Font.Height="-11" Font.Name="Arial" Font.Style="1" ParentFont="False" Text="NOME DO CLIENTE"/>
+      <TfrxMemoView Name="Memo22" Left="488,08794" Top="0" Width="104,16376" Height="13,22047" DisplayFormat.DecimalSeparator="," Font.Charset="1" Font.Color="0" Font.Height="-11" Font.Name="Arial" Font.Style="1" HAlign="haRight" ParentFont="False" Text="VALOR"/>
+      <TfrxMemoView Name="Memo23" Left="594,29264" Top="0" Width="77,10235" Height="13,22047" DisplayFormat.DecimalSeparator="," Font.Charset="1" Font.Color="0" Font.Height="-11" Font.Name="Arial" Font.Style="1" ParentFont="False" Text="VENCIMENTO"/>
+      <TfrxMemoView Name="Memo24" Left="677,21546" Top="0" Width="39,6094" Height="13,22047" DisplayFormat.DecimalSeparator="," Font.Charset="1" Font.Color="0" Font.Height="-11" Font.Name="Arial" Font.Style="1" HAlign="haRight" ParentFont="False" Text="DIAS"/>
+    </TfrxHeader>
+    <TfrxMasterData Name="MasterData1" Font.Charset="1" Font.Color="0" Font.Height="-11" Font.Name="Arial" Font.Style="0" Height="17" Left="0" ParentFont="False" Top="56,69295" Width="718,1107" ColumnWidth="0" ColumnGap="0" DataSet="frxDBChePre" DataSetName="frxDBChePre" RowCount="0">
+      <TfrxMemoView Name="mmoZebraPre" Left="0" Top="0" Width="718,1107" Height="13,22834646" DataSet="frmPaiRelatorio.frxRelatorio" DataSetName="frxRelatorio" DisplayFormat.DecimalSeparator="," Font.Charset="1" Font.Color="0" Font.Height="-11" Font.Name="Arial" Font.Style="0" Highlight.Font.Charset="1" Highlight.Font.Color="255" Highlight.Font.Height="-11" Highlight.Font.Name="Arial" Highlight.Font.Style="0" Highlight.Condition="&#60;Line#&#62; mod 2 = 0" ParentFont="False" WordWrap="False" Text=""/>
+      <TfrxMemoView Name="Memo28" Left="2,04094" Top="0" Width="21,24094" Height="13,22047" DataSetName="frxUserCheques" DisplayFormat.DecimalSeparator="," WordWrap="False" Text="[frxDBChePre.&#34;BANCO&#34;]"/>
+      <TfrxMemoView Name="Memo29" Left="26,10235" Top="0" Width="48" Height="13,22047" DataSetName="frxUserCheques" DisplayFormat.DecimalSeparator="," WordWrap="False" Text="[frxDBChePre.&#34;AGENCIA&#34;]"/>
+      <TfrxMemoView Name="Memo30" Left="78,14329" Top="0" Width="84,96376" Height="13,22047" DataSetName="frxUserCheques" DisplayFormat.DecimalSeparator="," WordWrap="False" Text="[frxDBChePre.&#34;CONTA&#34;]"/>
+      <TfrxMemoView Name="Memo31" Left="166,14799" Top="0" Width="84,66141" Height="13,22047" DataSetName="frxUserCheques" DisplayFormat.DecimalSeparator="," WordWrap="False" Text="[frxDBChePre.&#34;NUMERO&#34;]"/>
+      <TfrxMemoView Name="Memo32" Left="252,85034" Top="0" Width="50,34329" Height="13,22047" DataSetName="frxUserCheques" DisplayFormat.DecimalSeparator="," WordWrap="False" Text="[frxDBChePre.&#34;CODCLI&#34;]"/>
+      <TfrxMemoView Name="Memo33" Left="305,23457" Top="0" Width="180,81243" Height="13,22047" DataSetName="frxUserCheques" DisplayFormat.DecimalSeparator="," WordWrap="False" Text="[Trim(&#60;frxDBChePre.&#34;NOMEMI&#34;&#62;)]"/>
+      <TfrxMemoView Name="Memo34" Left="484,30841" Top="0" Width="107,94329" Height="13,22047" DataSetName="frxUserCheques" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" HAlign="haRight" WordWrap="False" Text="[frxDBChePre.&#34;VALOR&#34;]"/>
+      <TfrxMemoView Name="Memo37" Left="594,29264" Top="0" Width="77,10235" Height="13,22047" DataSetName="frxUserCheques" DisplayFormat.DecimalSeparator="," WordWrap="False" Text="[frxDBChePre.&#34;DTAVEN&#34;]"/>
+      <TfrxMemoView Name="Memo38" Left="677,21546" Top="0" Width="39,6094" Height="13,22047" DataSetName="frxUserCheques" DisplayFormat.DecimalSeparator="," HAlign="haRight" WordWrap="False" Text="[frxDBChePre.&#34;QTDDIA&#34;]"/>
+    </TfrxMasterData>
+  </TfrxReportPage>
+  <TfrxReportPage Name="pagCarCre" PaperWidth="210" PaperHeight="297" PaperSize="9" LeftMargin="10" RightMargin="10" TopMargin="4,49791376176403" BottomMargin="4,49791376176403" ColumnWidth="0" ColumnPositions.Text="" HGuides.Text="" VGuides.Text="">
+    <TfrxHeader Name="Header2" Font.Charset="1" Font.Color="0" Font.Height="-11" Font.Name="Arial" Font.Style="0" Height="15,10235" Left="0" ParentFont="False" Top="18,89765" Width="718,1107" ReprintOnNewPage="True">
+      <TfrxShapeView Name="Shape1" Left="0" Top="0" Width="718,1107" Height="15,13389" Color="12632256"/>
+      <TfrxMemoView Name="Memo39" Left="2,04094" Top="0" Width="76,8" Height="13,22047" DisplayFormat.DecimalSeparator="," Font.Charset="1" Font.Color="0" Font.Height="-11" Font.Name="Arial" Font.Style="1" ParentFont="False" Text="CARTAO"/>
+      <TfrxMemoView Name="Memo40" Left="84,66141" Top="0" Width="162,36846" Height="13,22047" DisplayFormat.DecimalSeparator="," Font.Charset="1" Font.Color="0" Font.Height="-11" Font.Name="Arial" Font.Style="1" ParentFont="False" Text="NUMERO DA LIBERACAO"/>
+      <TfrxMemoView Name="Memo41" Left="252,8503937" Top="0" Width="50,2677165354331" Height="13,22047" DisplayFormat.DecimalSeparator="," Font.Charset="1" Font.Color="0" Font.Height="-11" Font.Name="Arial" Font.Style="1" ParentFont="False" Text="COD.CLI."/>
+      <TfrxMemoView Name="Memo42" Left="305,38582677" Top="0" Width="177,18423" Height="13,22047" DisplayFormat.DecimalSeparator="," Font.Charset="1" Font.Color="0" Font.Height="-11" Font.Name="Arial" Font.Style="1" ParentFont="False" Text="NOME DO CLIENTE"/>
+      <TfrxMemoView Name="Memo43" Left="487,93700787" Top="0" Width="104,314960629921" Height="13,22047" DisplayFormat.DecimalSeparator="," Font.Charset="1" Font.Color="0" Font.Height="-11" Font.Name="Arial" Font.Style="1" HAlign="haRight" ParentFont="False" Text="VALOR"/>
+      <TfrxMemoView Name="Memo44" Left="594,141732283465" Top="0" Width="80,88188" Height="13,22047" DisplayFormat.DecimalSeparator="," Font.Charset="1" Font.Color="0" Font.Height="-11" Font.Name="Arial" Font.Style="1" ParentFont="False" Text="VENCIMENTO"/>
+    </TfrxHeader>
+    <TfrxMasterData Name="MasterData2" Font.Charset="1" Font.Color="0" Font.Height="-11" Font.Name="Arial" Font.Style="0" Height="17" Left="0" ParentFont="False" Top="56,69295" Width="718,1107" ColumnWidth="0" ColumnGap="0" DataSet="frxDBCarcre" DataSetName="frxDBCarCre" RowCount="0">
+      <TfrxMemoView Name="mmoZebraCre" Left="0" Top="0" Width="718,1107" Height="13,22834646" DataSet="frmPaiRelatorio.frxRelatorio" DataSetName="frxRelatorio" DisplayFormat.DecimalSeparator="," Font.Charset="1" Font.Color="0" Font.Height="-11" Font.Name="Arial" Font.Style="0" Highlight.Font.Charset="1" Highlight.Font.Color="255" Highlight.Font.Height="-11" Highlight.Font.Name="Arial" Highlight.Font.Style="0" Highlight.Condition="&#60;Line#&#62; mod 2 = 0" ParentFont="False" WordWrap="False" Text=""/>
+      <TfrxMemoView Name="Memo49" Left="2,04094" Top="0" Width="76,8" Height="13,22047" DataSetName="frxUserCheques" DisplayFormat.DecimalSeparator="," WordWrap="False" Text="[frxDBCarCre.&#34;CODCAR&#34;]"/>
+      <TfrxMemoView Name="Memo51" Left="84,66141" Top="0" Width="162,36846" Height="13,22047" DataSetName="frxUserCheques" DisplayFormat.DecimalSeparator="," WordWrap="False" Text="[frxDBCarCre.&#34;NUMCCD&#34;]"/>
+      <TfrxMemoView Name="Memo53" Left="252,85034" Top="0" Width="54,12282" Height="13,22047" DataSetName="frxUserCheques" DisplayFormat.DecimalSeparator="," WordWrap="False" Text="[frxDBCarCre.&#34;CODCLI&#34;]"/>
+      <TfrxMemoView Name="Memo54" Left="305,38582677" Top="0" Width="177,0329" Height="13,22047" DataSetName="frxUserCheques" DisplayFormat.DecimalSeparator="," WordWrap="False" Text="[Trim(&#60;frxDBCarCre.&#34;NOMEMI&#34;&#62;)]"/>
+      <TfrxMemoView Name="Memo55" Left="487,93700787" Top="0" Width="104,314960629921" Height="13,22047" DataSetName="frxUserCheques" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" HAlign="haRight" WordWrap="False" Text="[frxDBCarCre.&#34;VALOR&#34;]"/>
+      <TfrxMemoView Name="Memo56" Left="594,141732283465" Top="0" Width="80,88188" Height="13,22047" DataSetName="frxUserCheques" DisplayFormat.DecimalSeparator="," WordWrap="False" Text="[frxDBCarCre.&#34;DTAVEN&#34;]"/>
+    </TfrxMasterData>
+  </TfrxReportPage>
+</TfrxReport>

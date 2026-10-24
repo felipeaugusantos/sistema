@@ -1,0 +1,56 @@
+package faturamento.impostos.regras;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$IMPLICITBUILD ON}
+
+requires
+  rtl,
+  Shared.Functions,
+  faturamento.impostos.interfaces,
+  faturamento.model,
+  faturamento.impostos.tipos;
+
+contains
+  Faturamento.Impostos.Regras.ZerarImpostos in '..\..\source\Faturamento.Impostos.Regras.ZerarImpostos.pas',
+  Faturamento.Impostos.Regras.ZerarImpostos.Icms in '..\..\source\Faturamento.Impostos.Regras.ZerarImpostos.Icms.pas',
+  Faturamento.Impostos.Regras.ClassificacoesTransferencias in '..\..\source\Faturamento.Impostos.Regras.ClassificacoesTransferencias.pas',
+  Faturamento.Impostos.Regras.DadosFiscais.ClassificacaoItem in '..\..\source\Faturamento.Impostos.Regras.DadosFiscais.ClassificacaoItem.pas',
+  Faturamento.Impostos.Regras.DadosFiscais.Aliquota in '..\..\source\Faturamento.Impostos.Regras.DadosFiscais.Aliquota.pas',
+  Faturamento.Impostos.Regras.Tributacao in '..\..\source\Faturamento.Impostos.Regras.Tributacao.pas',
+  Faturamento.Impostos.Regras.Tributacao.Factory in '..\..\source\Faturamento.Impostos.Regras.Tributacao.Factory.pas',
+  Faturamento.Impostos.Regras.Tributacao.Iva in '..\..\source\Faturamento.Impostos.Regras.Tributacao.Iva.pas',
+  Faturamento.Impostos.Regras.Tributacao.Iva.Icms in '..\..\source\Faturamento.Impostos.Regras.Tributacao.Iva.Icms.pas',
+  Faturamento.Impostos.Regras.Tributacao.Iva.St in '..\..\source\Faturamento.Impostos.Regras.Tributacao.Iva.St.pas',
+  Faturamento.Impostos.Regras.Tributacao.ST_Simulada in '..\..\source\Faturamento.Impostos.Regras.Tributacao.ST_Simulada.pas',
+  Faturamento.Impostos.Regras.ZerarImpostos.ST in '..\..\source\Faturamento.Impostos.Regras.ZerarImpostos.ST.pas',
+  Faturamento.Impostos.Regras.Tributacao.DepoisDoCalculo in '..\..\source\Faturamento.Impostos.Regras.Tributacao.DepoisDoCalculo.pas',
+  Faturamento.Impostos.Regras.AliquotasDeRetencao in '..\..\source\Faturamento.Impostos.Regras.AliquotasDeRetencao.pas',
+  Faturamento.Impostos.Regras.ZerarImpostos.Fcp in '..\..\source\Faturamento.Impostos.Regras.ZerarImpostos.Fcp.pas',
+  Faturamento.Impostos.Regras.ZerarImpostos.Difal in '..\..\source\Faturamento.Impostos.Regras.ZerarImpostos.Difal.pas';
+
+end.
+

@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TfrxReport Version="4.3.61" DotMatrixReport="False" IniFile="\Software\Fast Reports" PreviewOptions.Buttons="4095" PreviewOptions.Zoom="1" PrintOptions.Printer="Padrão" PrintOptions.PrintMode="pmScale" PrintOptions.PrintOnSheet="0" ReportOptions.CreateDate="39343,4831909259" ReportOptions.Description.Text="" ReportOptions.LastChange="39944,3599714236" ScriptLanguage="PascalScript" ScriptText.Text="Var&#13;&#10;  strImpCreD,&#13;&#10;  strImpCreC: String;&#13;&#10;  &#13;&#10;procedure rllPaginaOnBeforePrint(Sender: TfrxComponent);&#13;&#10;begin&#13;&#10;  rlbTitulo.Visible := Not fFimDeArquivo;    &#13;&#10;  rllPagina.Text := 'PAGINA: ' + rllPagina.Text;                                                                &#13;&#10;end;&#13;&#10;&#13;&#10;procedure rllTotalImpressoOnBeforePrint(Sender: TfrxComponent);&#13;&#10;begin&#13;&#10;                                                                    &#13;&#10;end;&#13;&#10;  &#13;&#10;procedure mmoClaFisDOnBeforePrint(Sender: TfrxComponent);&#13;&#10;begin&#13;&#10;  TfrxMemoView(sender).Visible := &#60;frxRelatorio.&#34;CLAFSC&#34;&#62; &#60; '5000';                                                                              &#13;&#10;end;&#13;&#10;&#13;&#10;procedure mmoVlrConDOnBeforePrint(Sender: TfrxComponent);&#13;&#10;begin&#13;&#10;  TfrxMemoView(sender).Visible := &#60;frxRelatorio.&#34;CLAFSC&#34;&#62; &#60; '5000';          &#13;&#10;end;&#13;&#10;&#13;&#10;procedure mmoBasIcmDOnBeforePrint(Sender: TfrxComponent);&#13;&#10;begin&#13;&#10;  TfrxMemoView(sender).Visible := &#60;frxRelatorio.&#34;CLAFSC&#34;&#62; &#60; '5000';    &#13;&#10;end;&#13;&#10;&#13;&#10;procedure mmoVlrImcDOnBeforePrint(Sender: TfrxComponent);&#13;&#10;begin&#13;&#10;  TfrxMemoView(sender).Visible := &#60;frxRelatorio.&#34;CLAFSC&#34;&#62; &#60; '5000';    &#13;&#10;end;&#13;&#10;&#13;&#10;procedure mmoRetidoDOnBeforePrint(Sender: TfrxComponent);&#13;&#10;begin&#13;&#10;  TfrxMemoView(sender).Visible := &#60;frxRelatorio.&#34;CLAFSC&#34;&#62; &#60; '5000';    &#13;&#10;end;&#13;&#10;&#13;&#10;procedure mmoOutrasDOnBeforePrint(Sender: TfrxComponent);&#13;&#10;begin&#13;&#10;  TfrxMemoView(sender).Visible := &#60;frxRelatorio.&#34;CLAFSC&#34;&#62; &#60; '5000';    &#13;&#10;end;&#13;&#10;&#13;&#10;procedure mmoVlrIpiDOnBeforePrint(Sender: TfrxComponent);&#13;&#10;begin&#13;&#10;  TfrxMemoView(sender).Visible := &#60;frxRelatorio.&#34;CLAFSC&#34;&#62; &#60; '5000';  &#13;&#10;end;&#13;&#10;&#13;&#10;procedure mmoClaFscCOnBeforePrint(Sender: TfrxComponent);&#13;&#10;begin&#13;&#10;  TfrxMemoView(sender).Visible :=&#60;frxRelatorio.&#34;CLAFSC&#34;&#62; &#62;= '5000';  &#13;&#10;end;&#13;&#10;&#13;&#10;procedure mmoVlrConCOnBeforePrint(Sender: TfrxComponent);&#13;&#10;begin&#13;&#10;  TfrxMemoView(sender).Visible := &#60;frxRelatorio.&#34;CLAFSC&#34;&#62; &#62;= '5000';  &#13;&#10;end;&#13;&#10;&#13;&#10;procedure mmoBasIcmCOnBeforePrint(Sender: TfrxComponent);&#13;&#10;begin&#13;&#10;  TfrxMemoView(sender).Visible := &#60;frxRelatorio.&#34;CLAFSC&#34;&#62; &#62;= '5000';  &#13;&#10;end;&#13;&#10;&#13;&#10;procedure mmoVlrIcmCOnBeforePrint(Sender: TfrxComponent);&#13;&#10;begin&#13;&#10;  TfrxMemoView(sender).Visible := &#60;frxRelatorio.&#34;CLAFSC&#34;&#62; &#62;= '5000';  &#13;&#10;end;&#13;&#10;&#13;&#10;procedure mmoRetidoCOnBeforePrint(Sender: TfrxComponent);&#13;&#10;begin&#13;&#10;  TfrxMemoView(sender).Visible := &#60;frxRelatorio.&#34;CLAFSC&#34;&#62; &#62;= '5000';  &#13;&#10;end;&#13;&#10;&#13;&#10;procedure mmoOutrasCOnBeforePrint(Sender: TfrxComponent);&#13;&#10;begin&#13;&#10;  TfrxMemoView(sender).Visible := &#60;frxRelatorio.&#34;CLAFSC&#34;&#62; &#62;= '5000';  &#13;&#10;end;&#13;&#10;&#13;&#10;procedure mmoVlrIPICOnBeforePrint(Sender: TfrxComponent);&#13;&#10;begin&#13;&#10;  TfrxMemoView(sender).Visible := &#60;frxRelatorio.&#34;CLAFSC&#34;&#62; &#62;= '5000';  &#13;&#10;end;&#13;&#10;&#13;&#10;procedure mmoTot001OnBeforePrint(Sender: TfrxComponent);&#13;&#10;begin&#13;&#10;  TfrxMemoView(sender).Text := strImpCreC;                          &#13;&#10;end;&#13;&#10;&#13;&#10;procedure mmoTot005OnBeforePrint(Sender: TfrxComponent);&#13;&#10;begin&#13;&#10;  TfrxMemoView(sender).Text := strImpCreC;  &#13;&#10;end;&#13;&#10;&#13;&#10;procedure mmoTot006OnBeforePrint(Sender: TfrxComponent);&#13;&#10;begin&#13;&#10;  TfrxMemoView(sender).Text := strImpCreD;  &#13;&#10;end;&#13;&#10;&#13;&#10;procedure mmoTot010OnBeforePrint(Sender: TfrxComponent);&#13;&#10;begin&#13;&#10;  TfrxMemoView(sender).Text := strImpCreD;  &#13;&#10;end;&#13;&#10;&#13;&#10;procedure mmoTot012OnBeforePrint(Sender: TfrxComponent);&#13;&#10;begin&#13;&#10;  TfrxDMPMemoView(sender).Text := FormatFloat('#,##0.00', fStrToFloat(strImpCreD) + &#60;ICMANT&#62;);  &#13;&#10;end;&#13;&#10;&#13;&#10;procedure mmoTot013OnBeforePrint(Sender: TfrxComponent);&#13;&#10;begin&#13;&#10;  TfrxDMPMemoView(sender).Text :=&#13;&#10;     FormatFloat('#,##0.00', fStrToFloat(strImpCreC) - &#13;&#10;                            (fStrToFloat(strImpCreD) + &#60;ICMANT&#62;) );&#13;&#10;end;&#13;&#10;&#13;&#10;procedure mmoTot015OnBeforePrint(Sender: TfrxComponent);&#13;&#10;  Var&#13;&#10;    fltValor: Double;                                                         &#13;&#10;begin&#13;&#10;  fltValor :=  fStrToFloat(strImpCreC) - (fStrToFloat(strImpCreD) + &#60;ICMANT&#62;);  &#13;&#10;  &#13;&#10;  If fltValor &#60; 0 Then&#13;&#10;    fltValor := 0;                              &#13;&#10;  &#13;&#10;  TfrxDMPMemoView(sender).Text := FormatFloat('#,##0.00', fltValor);  &#13;&#10;end;&#13;&#10;&#13;&#10;procedure mmoImpCreDOnAfterPrint(Sender: TfrxComponent);&#13;&#10;begin&#13;&#10;  strImpCreD := mmoImpCreD.Text;                      &#13;&#10;end;&#13;&#10;&#13;&#10;procedure mmoImpCreCOnAfterPrint(Sender: TfrxComponent);&#13;&#10;begin&#13;&#10;  strImpCreC := mmoImpCreC.Text;                      &#13;&#10;end;&#13;&#10;&#13;&#10;procedure mmo16OnBeforePrint(Sender: TfrxComponent);&#13;&#10;  Var&#13;&#10;    fltValor: Double;                                                         &#13;&#10;begin&#13;&#10;  fltValor :=  fStrToFloat(strImpCreC) - (fStrToFloat(strImpCreD) + &#60;ICMANT&#62;);  &#13;&#10;  &#13;&#10;  If fltValor &#62; 0 Then&#13;&#10;    fltValor := 0                              &#13;&#10;  Else&#13;&#10;    fltValor := - fltValor;           &#13;&#10;    &#13;&#10;  TfrxDMPMemoView(sender).Text := FormatFloat('#,##0.00', fltValor);  &#13;&#10;end;&#13;&#10;&#13;&#10;begin&#13;&#10;&#13;&#10;end." PropData="044C65667403E00003546F70021608446174617365747301010C3600000020446174615365743D2266726D50616952656C61746F72696F2E66727847656E2220446174615365744E616D653D2266727847656E2200010C4200000020446174615365743D2266726D50616952656C61746F72696F2E66727852656C61746F72696F2220446174615365744E616D653D2266727852656C61746F72696F220000095661726961626C65730100055374796C650100">
+  <TfrxDataPage Name="Data" Height="1000" Left="0" Top="0" Width="1000"/>
+  <TfrxReportPage Name="qckPagina" Orientation="poLandscape" PaperWidth="604,2" PaperHeight="285" PaperSize="256" LeftMargin="10" RightMargin="10" TopMargin="10" BottomMargin="10" ColumnWidth="2,53999835958439" ColumnPositions.Text="" HGuides.Text="" VGuides.Text="" OnBeforePrint="qckPaginaOnBeforePrint">
+    <TfrxMasterData Name="rlbDetalhes" Height="17,00787402" Left="0" Top="325,03958" Width="2208,001426" ColumnWidth="0" ColumnGap="0" DataSet="frmPaiRelatorio.frxRelatorio" DataSetName="frxRelatorio" RowCount="0">
+      <TfrxMemoView Name="mmoClaFisD" Left="9,6" Top="0" Width="115,2" Height="17" OnBeforePrint="mmoClaFisDOnBeforePrint" DataSet="frmPaiRelatorio.frxRelatorio" DataSetName="frxRelatorio" DisplayFormat.DecimalSeparator="," HAlign="haCenter" Text="[frxRelatorio.&#34;CLAFSC&#34;]"/>
+      <TfrxMemoView Name="mmoVlrConD" Left="163,2" Top="0" Width="134,4" Height="17" OnBeforePrint="mmoVlrConDOnBeforePrint" DataSet="frmPaiRelatorio.frxRelatorio" DataSetName="frxRelatorio" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" HAlign="haRight" Text="[frxRelatorio.&#34;VLRCON&#34;]"/>
+      <TfrxMemoView Name="mmoBasIcmD" Left="316,8" Top="0" Width="153,6" Height="17" OnBeforePrint="mmoBasIcmDOnBeforePrint" DataSet="frmPaiRelatorio.frxRelatorio" DataSetName="frxRelatorio" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" HAlign="haRight" Text="[frxRelatorio.&#34;BASICM&#34;]"/>
+      <TfrxMemoView Name="mmoVlrImcD" Left="489,6" Top="0" Width="134,4" Height="17" OnBeforePrint="mmoVlrImcDOnBeforePrint" DataSet="frmPaiRelatorio.frxRelatorio" DataSetName="frxRelatorio" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" HAlign="haRight" Text="[frxRelatorio.&#34;VLRICM&#34;]"/>
+      <TfrxMemoView Name="mmoRetidoD" Left="643,2" Top="0" Width="134,4" Height="17" OnBeforePrint="mmoRetidoDOnBeforePrint" DataSet="frmPaiRelatorio.frxRelatorio" DataSetName="frxRelatorio" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" HAlign="haRight" Text="[frxRelatorio.&#34;RETIDO&#34;]"/>
+      <TfrxMemoView Name="mmoOutrasD" Left="796,8" Top="0" Width="134,4" Height="17" OnBeforePrint="mmoOutrasDOnBeforePrint" DataSet="frmPaiRelatorio.frxRelatorio" DataSetName="frxRelatorio" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" HAlign="haRight" Text="[frxRelatorio.&#34;OUTRAS&#34;]"/>
+      <TfrxMemoView Name="mmoVlrIpiD" Left="950,4" Top="0" Width="134,4" Height="17" OnBeforePrint="mmoVlrIpiDOnBeforePrint" DataSet="frmPaiRelatorio.frxRelatorio" DataSetName="frxRelatorio" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" HAlign="haRight" Text="[frxRelatorio.&#34;VLRIPI&#34;]"/>
+      <TfrxMemoView Name="mmoClaFscC" Left="1104" Top="0" Width="134,4" Height="17" OnBeforePrint="mmoClaFscCOnBeforePrint" DataSet="frmPaiRelatorio.frxRelatorio" DataSetName="frxRelatorio" DisplayFormat.DecimalSeparator="," HAlign="haCenter" Text="[frxRelatorio.&#34;CLAFSC&#34;]"/>
+      <TfrxMemoView Name="mmoVlrConC" Left="1257,6" Top="0" Width="134,4" Height="17" OnBeforePrint="mmoVlrConCOnBeforePrint" DataSet="frmPaiRelatorio.frxRelatorio" DataSetName="frxRelatorio" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" HAlign="haRight" Text="[frxRelatorio.&#34;VLRCON&#34;]"/>
+      <TfrxMemoView Name="mmoBasIcmC" Left="1411,2" Top="0" Width="153,6" Height="17" OnBeforePrint="mmoBasIcmCOnBeforePrint" DataSet="frmPaiRelatorio.frxRelatorio" DataSetName="frxRelatorio" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" HAlign="haRight" Text="[frxRelatorio.&#34;BASICM&#34;]"/>
+      <TfrxMemoView Name="mmoVlrIcmC" Left="1584" Top="0" Width="134,4" Height="17" OnBeforePrint="mmoVlrIcmCOnBeforePrint" DataSet="frmPaiRelatorio.frxRelatorio" DataSetName="frxRelatorio" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" HAlign="haRight" Text="[frxRelatorio.&#34;VLRICM&#34;]"/>
+      <TfrxMemoView Name="mmoRetidoC" Left="1737,6" Top="0" Width="134,4" Height="17" OnBeforePrint="mmoRetidoCOnBeforePrint" DataSet="frmPaiRelatorio.frxRelatorio" DataSetName="frxRelatorio" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" HAlign="haRight" Text="[frxRelatorio.&#34;RETIDO&#34;]"/>
+      <TfrxMemoView Name="mmoOutrasC" Left="1891,2" Top="0" Width="134,4" Height="17" OnBeforePrint="mmoOutrasCOnBeforePrint" DataSet="frmPaiRelatorio.frxRelatorio" DataSetName="frxRelatorio" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" HAlign="haRight" Text="[frxRelatorio.&#34;OUTRAS&#34;]"/>
+      <TfrxMemoView Name="mmoVlrIPIC" Left="2044,8" Top="0" Width="134,4" Height="17" OnBeforePrint="mmoVlrIPICOnBeforePrint" DataSet="frmPaiRelatorio.frxRelatorio" DataSetName="frxRelatorio" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" HAlign="haRight" Text="[frxRelatorio.&#34;VLRIPI&#34;]"/>
+      <TfrxLineView Name="Line70" Left="148,91338583" Top="0" Width="0" Height="17,00787402" Frame.Typ="1"/>
+      <TfrxLineView Name="Line72" Left="4,91338583" Top="0" Width="0" Height="17,00787402" Frame.Typ="1"/>
+      <TfrxLineView Name="Line73" Left="302,3624" Top="0" Width="0" Height="17,00787402" Frame.Typ="1"/>
+      <TfrxLineView Name="Line74" Left="475,08661417" Top="0" Width="0" Height="17,00787402" Frame.Typ="1"/>
+      <TfrxLineView Name="Line75" Left="628,91338583" Top="0" Width="0" Height="17,00787402" Frame.Typ="1"/>
+      <TfrxLineView Name="Line76" Left="782,36271" Top="0" Width="0" Height="17,00787402" Frame.Typ="1"/>
+      <TfrxLineView Name="Line77" Left="936,18897638" Top="0" Width="0" Height="17,00787402" Frame.Typ="1"/>
+      <TfrxLineView Name="Line78" Left="1089,63779528" Top="0" Width="0" Height="17,00787402" Frame.Typ="1"/>
+      <TfrxLineView Name="Line79" Left="1243,08661417" Top="0" Width="0" Height="17,00787402" Frame.Typ="1"/>
+      <TfrxLineView Name="Line80" Left="1396,91338583" Top="0" Width="0" Height="17,00787402" Frame.Typ="1"/>
+      <TfrxLineView Name="Line81" Left="1569,63779528" Top="0" Width="0" Height="17,00787402" Frame.Typ="1"/>
+      <TfrxLineView Name="Line82" Left="1723,08661417" Top="0" Width="0" Height="17,00787402" Frame.Typ="1"/>
+      <TfrxLineView Name="Line83" Left="1876,91338583" Top="0" Width="0" Height="17,00787402" Frame.Typ="1"/>
+      <TfrxLineView Name="Line84" Left="2030,36220472" Top="0" Width="0" Height="17,00787402" Frame.Typ="1"/>
+      <TfrxLineView Name="Line85" Left="2193,63779528" Top="0" Width="0" Height="17,00787402" Frame.Typ="1"/>
+    </TfrxMasterData>
+    <TfrxPageFooter Name="rlbRodape" Height="34" Left="0" Top="952,44156" Width="2208,001426">
+      <TfrxMemoView Name="rllNomeForm" Left="9,6" Top="17" Width="374,4" Height="17" DataField="REL_NOMREL" DataSet="frmPaiRelatorio.frxGen" DataSetName="frxGen" DisplayFormat.DecimalSeparator="," Text="[frxGen.&#34;REL_NOMREL&#34;]"/>
+      <TfrxLineView Name="Line1" Align="baWidth" Left="0" Top="8,5" Width="2208,001426" Height="0" Frame.Typ="4"/>
+    </TfrxPageFooter>
+    <TfrxHeader Name="rlbTitulo" Height="119" Left="0" Top="181,41744" Width="2208,001426" ReprintOnNewPage="True">
+      <TfrxMemoView Name="Memo4" Left="9,6" Top="34" Width="115,2" Height="34" DisplayFormat.DecimalSeparator="," HAlign="haCenter" Text="CODIGO&#13;&#10;FISCAL"/>
+      <TfrxMemoView Name="Memo5" Left="163,2" Top="34" Width="134,4" Height="34" DisplayFormat.DecimalSeparator="," HAlign="haCenter" Text="VALORES&#13;&#10;CONTABEIS"/>
+      <TfrxMemoView Name="Memo6" Left="316,8" Top="17" Width="768" Height="17" DisplayFormat.DecimalSeparator="," HAlign="haCenter" Text="I . C . M . S ."/>
+      <TfrxMemoView Name="Memo7" Left="316,8" Top="51" Width="153,6" Height="34" DisplayFormat.DecimalSeparator="," HAlign="haCenter" Text="OP.C/ CREDITO&#13;&#10;BASE DE CALCULO"/>
+      <TfrxMemoView Name="Memo8" Left="489,6" Top="51" Width="134,4" Height="34" DisplayFormat.DecimalSeparator="," HAlign="haCenter" Text="IMPOSTO&#13;&#10;CREDITADO"/>
+      <TfrxMemoView Name="Memo9" Left="643,2" Top="51" Width="134,4" Height="34" DisplayFormat.DecimalSeparator="," HAlign="haCenter" Text="VALOR&#13;&#10;RETIDO"/>
+      <TfrxMemoView Name="Memo10" Left="796,8" Top="68" Width="134,4" Height="17" DisplayFormat.DecimalSeparator="," HAlign="haCenter" Text="OUTRAS"/>
+      <TfrxMemoView Name="Memo11" Left="950,4" Top="51" Width="134,4" Height="34" DisplayFormat.DecimalSeparator="," HAlign="haCenter" Text="VALOR&#13;&#10;I.P.I."/>
+      <TfrxMemoView Name="Memo12" Left="1104" Top="34" Width="134,4" Height="34" DisplayFormat.DecimalSeparator="," HAlign="haCenter" Text="CODIGO&#13;&#10;FISCAL"/>
+      <TfrxMemoView Name="Memo13" Left="1257,6" Top="34" Width="134,4" Height="34" DisplayFormat.DecimalSeparator="," HAlign="haCenter" Text="VALORES&#13;&#10;CONTABEIS"/>
+      <TfrxMemoView Name="Memo15" Left="1411,2" Top="51" Width="153,6" Height="34" DisplayFormat.DecimalSeparator="," HAlign="haCenter" Text="OP.C/ CREDITO&#13;&#10;BASE DE CALCULO"/>
+      <TfrxMemoView Name="Memo16" Left="1584" Top="51" Width="134,4" Height="34" DisplayFormat.DecimalSeparator="," HAlign="haCenter" Text="IMPOSTO&#13;&#10;DEBITADO"/>
+      <TfrxMemoView Name="Memo17" Left="1737,6" Top="51" Width="134,4" Height="34" DisplayFormat.DecimalSeparator="," HAlign="haCenter" Text="VALOR&#13;&#10;RETIDO"/>
+      <TfrxMemoView Name="Memo18" Left="1891,2" Top="68" Width="134,4" Height="17" DisplayFormat.DecimalSeparator="," HAlign="haCenter" Text="OUTRAS"/>
+      <TfrxMemoView Name="Memo19" Left="2044,8" Top="51" Width="134,4" Height="34" DisplayFormat.DecimalSeparator="," HAlign="haCenter" Text="VALOR&#13;&#10;I.P.I."/>
+      <TfrxMemoView Name="Memo14" Left="1411,2" Top="17" Width="768" Height="17" DisplayFormat.DecimalSeparator="," HAlign="haCenter" Text="I . C . M . S ."/>
+      <TfrxLineView Name="Line5" Left="4,8" Top="93,5" Width="2188,8" Height="0" Frame.Typ="4"/>
+      <TfrxLineView Name="Line6" Left="4,8" Top="110,5" Width="2188,8" Height="0" Frame.Typ="4"/>
+      <TfrxLineView Name="Line4" Left="4,8" Top="8,5" Width="2188,8" Height="0" Frame.Typ="4"/>
+      <TfrxLineView Name="Line52" Left="4,8" Top="8,5" Width="0" Height="86,5511811023622" Frame.Typ="1"/>
+      <TfrxLineView Name="Line53" Left="148,8" Top="8,5" Width="0" Height="85" Frame.Typ="1"/>
+      <TfrxLineView Name="Line54" Left="302,4" Top="8,5" Width="0" Height="85" Frame.Typ="1"/>
+      <TfrxLineView Name="Line55" Left="475,2" Top="42,5" Width="0" Height="51" Frame.Typ="1"/>
+      <TfrxLineView Name="Line56" Left="302,4" Top="42,5" Width="787,2" Height="0" Frame.Typ="4"/>
+      <TfrxLineView Name="Line57" Left="1089,6" Top="8,5" Width="0" Height="85" Frame.Typ="1"/>
+      <TfrxLineView Name="Line58" Left="936" Top="42,5" Width="0" Height="51" Frame.Typ="1"/>
+      <TfrxLineView Name="Line59" Left="782,4" Top="42,5" Width="0" Height="51" Frame.Typ="1"/>
+      <TfrxLineView Name="Line60" Left="628,8" Top="42,5" Width="0" Height="51" Frame.Typ="1"/>
+      <TfrxLineView Name="Line61" Left="1243,2" Top="8,5" Width="0" Height="85" Frame.Typ="1"/>
+      <TfrxLineView Name="Line62" Left="1396,8" Top="8,5" Width="0" Height="85" Frame.Typ="1"/>
+      <TfrxLineView Name="Line63" Left="1569,6" Top="42,5" Width="0" Height="51" Frame.Typ="1"/>
+      <TfrxLineView Name="Line64" Left="1396,8" Top="42,5" Width="796,8" Height="0" Frame.Typ="4"/>
+      <TfrxLineView Name="Line65" Left="1723,2" Top="42,5" Width="0" Height="51" Frame.Typ="1"/>
+      <TfrxLineView Name="Line66" Left="1876,8" Top="42,5" Width="0" Height="51" Frame.Typ="1"/>
+      <TfrxLineView Name="Line67" Left="2030,4" Top="42,5" Width="0" Height="51" Frame.Typ="1"/>
+      <TfrxLineView Name="Line68" Left="2193,6" Top="8,5" Width="0" Height="86,5511811023622" Frame.Typ="1"/>
+      <TfrxLineView Name="Line86" Left="4,91338583" Top="110,36220472" Width="0" Height="8,31496063" Frame.Typ="1"/>
+      <TfrxLineView Name="Line87" Left="148,913385826772" Top="110,36220472" Width="0" Height="8,31496063" Frame.Typ="1"/>
+      <TfrxLineView Name="Line88" Left="302,3624" Top="110,36220472" Width="0" Height="8,31496063" Frame.Typ="1"/>
+      <TfrxLineView Name="Line89" Left="475,086614173228" Top="110,36220472" Width="0" Height="8,31496063" Frame.Typ="1"/>
+      <TfrxLineView Name="Line90" Left="628,913385826772" Top="110,36220472" Width="0" Height="8,31496063" Frame.Typ="1"/>
+      <TfrxLineView Name="Line91" Left="782,36271" Top="110,36220472" Width="0" Height="8,31496063" Frame.Typ="1"/>
+      <TfrxLineView Name="Line92" Left="936,188976377953" Top="110,36220472" Width="0" Height="8,31496063" Frame.Typ="1"/>
+      <TfrxLineView Name="Line93" Left="1089,63779527559" Top="110,36220472" Width="0" Height="8,31496063" Frame.Typ="1"/>
+      <TfrxLineView Name="Line94" Left="1243,08661417323" Top="110,36220472" Width="0" Height="8,31496063" Frame.Typ="1"/>
+      <TfrxLineView Name="Line95" Left="1396,91338582677" Top="110,36220472" Width="0" Height="8,31496063" Frame.Typ="1"/>
+      <TfrxLineView Name="Line96" Left="1569,63779527559" Top="110,36220472" Width="0" Height="8,31496063" Frame.Typ="1"/>
+      <TfrxLineView Name="Line97" Left="1723,08661417323" Top="110,36220472" Width="0" Height="8,31496063" Frame.Typ="1"/>
+      <TfrxLineView Name="Line98" Left="1876,91338582677" Top="110,36220472" Width="0" Height="8,31496063" Frame.Typ="1"/>
+      <TfrxLineView Name="Line99" Left="2030,36220472441" Top="110,36220472" Width="0" Height="8,31496063" Frame.Typ="1"/>
+      <TfrxLineView Name="Line100" Left="2193,63779527559" Top="110,36220472" Width="0" Height="8,31496063" Frame.Typ="1"/>
+    </TfrxHeader>
+    <TfrxPageHeader Name="rlbCabecalho" Height="102" Left="0" Top="18,89765" Width="2208,001426">
+      <TfrxMemoView Name="rllPagina" Left="2064" Top="34" Width="115,2" Height="17" OnBeforePrint="rllPaginaOnBeforePrint" HAlign="haRight" Text="[Page]"/>
+      <TfrxMemoView Name="Time" Left="2112" Top="51" Width="67,2" Height="17" HAlign="haRight" Text="[Time]"/>
+      <TfrxMemoView Name="Date" Left="1968" Top="51" Width="124,8" Height="17" HAlign="haRight" Text="[Date]"/>
+      <TfrxMemoView Name="Memo1" Left="92,74966" Top="34" Width="669,42987" Height="17" DisplayFormat.DecimalSeparator="," Text="[EMPRESA]"/>
+      <TfrxMemoView Name="Memo2" Left="92,74966" Top="51" Width="669,42987" Height="17" DisplayFormat.DecimalSeparator="," Text="[CGC]"/>
+      <TfrxMemoView Name="Memo3" Left="9,6" Top="68" Width="748,8" Height="17" DisplayFormat.DecimalSeparator="," Text="[PERIODO]"/>
+      <TfrxLineView Name="Line2" Left="4,8" Top="25,5" Width="2188,8" Height="0" Frame.Typ="4"/>
+      <TfrxLineView Name="Line3" Left="4,8" Top="93,5" Width="2188,8" Height="0" Frame.Typ="4"/>
+      <TfrxLineView Name="Line51" Left="4,8" Top="25,5" Width="0" Height="68" Frame.Typ="1"/>
+      <TfrxLineView Name="Line69" Left="2193,6" Top="25,5" Width="0" Height="68" Frame.Typ="1"/>
+      <TfrxMemoView Name="Memo34" Left="7,55906" Top="34,01577" Width="79,82319" Height="17" DisplayFormat.DecimalSeparator="," Text="EMPRESA:"/>
+      <TfrxMemoView Name="Memo83" Left="7,55906" Top="51,02362205" Width="79,82319" Height="17" DisplayFormat.DecimalSeparator="," Text="CGC:"/>
+    </TfrxPageHeader>
+    <TfrxFooter Name="Footer1" Height="102" Left="0" Top="366,61441" Width="2208,001426" Child="ChildDebito">
+      <TfrxMemoView Name="Memo20" Left="9,6" Top="17" Width="96" Height="17" DisplayFormat.DecimalSeparator="," Text="NO ESTADO"/>
+      <TfrxMemoView Name="Memo21" Left="9,6" Top="34" Width="134,4" Height="17" DisplayFormat.DecimalSeparator="," Text="FORA DO ESTADO"/>
+      <TfrxMemoView Name="Memo22" Left="9,6" Top="68" Width="134,4" Height="17" DisplayFormat.DecimalSeparator="," Text="TOTAIS"/>
+      <TfrxMemoView Name="Memo23" Left="163,2" Top="68" Width="134,4" Height="17" DataSet="frmPaiRelatorio.frxRelatorio" DataSetName="frxRelatorio" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" HAlign="haRight" Text="[SUM(IIF(&#60;frxRelatorio.&#34;CLAFSC&#34;&#62; &#60; '5000', &#60;frxRelatorio.&#34;VLRCON&#34;&#62;,0), rlbDetalhes)]"/>
+      <TfrxMemoView Name="mmoBasCal" Left="316,8" Top="68" Width="153,6" Height="17" DataSet="frmPaiRelatorio.frxRelatorio" DataSetName="frxRelatorio" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" HAlign="haRight" Text="[SUM(IIF(&#60;frxRelatorio.&#34;CLAFSC&#34;&#62; &#60; '5000', &#60;frxRelatorio.&#34;BASICM&#34;&#62;,0), rlbDetalhes)]"/>
+      <TfrxMemoView Name="mmoImpCreD" Left="489,6" Top="68" Width="134,4" Height="17" OnAfterPrint="mmoImpCreDOnAfterPrint" DataSet="frmPaiRelatorio.frxRelatorio" DataSetName="frxRelatorio" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" HAlign="haRight" Text="[SUM(IIF(&#60;frxRelatorio.&#34;CLAFSC&#34;&#62; &#60; '5000', &#60;frxRelatorio.&#34;VLRICM&#34;&#62;,0), rlbDetalhes)]"/>
+      <TfrxMemoView Name="Memo26" Left="643,2" Top="68" Width="134,4" Height="17" DataSet="frmPaiRelatorio.frxRelatorio" DataSetName="frxRelatorio" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" HAlign="haRight" Text="[SUM(IIF(&#60;frxRelatorio.&#34;CLAFSC&#34;&#62; &#60; '5000', &#60;frxRelatorio.&#34;RETIDO&#34;&#62;,0), rlbDetalhes)]"/>
+      <TfrxMemoView Name="Memo27" Left="796,8" Top="68" Width="134,4" Height="17" DataSet="frmPaiRelatorio.frxRelatorio" DataSetName="frxRelatorio" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" HAlign="haRight" Text="[SUM(IIF(&#60;frxRelatorio.&#34;CLAFSC&#34;&#62; &#60; '5000', &#60;frxRelatorio.&#34;OUTRAS&#34;&#62;,0), rlbDetalhes)]"/>
+      <TfrxMemoView Name="Memo28" Left="950,4" Top="68" Width="134,4" Height="17" DataSet="frmPaiRelatorio.frxRelatorio" DataSetName="frxRelatorio" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" HAlign="haRight" Text="[SUM(IIF(&#60;frxRelatorio.&#34;CLAFSC&#34;&#62; &#60; '5000', &#60;frxRelatorio.&#34;VLRIPI&#34;&#62;,0), rlbDetalhes)]"/>
+      <TfrxMemoView Name="Memo29" Left="1104" Top="17" Width="96" Height="17" DisplayFormat.DecimalSeparator="," Text="NO ESTADO"/>
+      <TfrxMemoView Name="Memo30" Left="1104" Top="34" Width="134,4" Height="17" DisplayFormat.DecimalSeparator="," Text="FORA DO ESTADO"/>
+      <TfrxMemoView Name="Memo31" Left="1104" Top="68" Width="134,4" Height="17" DisplayFormat.DecimalSeparator="," Text="TOTAIS"/>
+      <TfrxMemoView Name="Memo32" Left="1257,6" Top="68" Width="134,4" Height="17" DataSet="frmPaiRelatorio.frxRelatorio" DataSetName="frxRelatorio" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" HAlign="haRight" Text="[SUM(IIF(&#60;frxRelatorio.&#34;CLAFSC&#34;&#62; &#62;= '5000', &#60;frxRelatorio.&#34;VLRCON&#34;&#62;,0), rlbDetalhes)]"/>
+      <TfrxMemoView Name="Memo33" Left="1411,2" Top="68" Width="153,6" Height="17" DataSet="frmPaiRelatorio.frxRelatorio" DataSetName="frxRelatorio" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" HAlign="haRight" Text="[SUM(IIF(&#60;frxRelatorio.&#34;CLAFSC&#34;&#62; &#62;= '5000', &#60;frxRelatorio.&#34;BASICM&#34;&#62;,0), rlbDetalhes)]"/>
+      <TfrxMemoView Name="mmoImpCreC" Left="1584" Top="68" Width="134,4" Height="17" OnAfterPrint="mmoImpCreCOnAfterPrint" DataSet="frmPaiRelatorio.frxRelatorio" DataSetName="frxRelatorio" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" HAlign="haRight" Text="[SUM(IIF(&#60;frxRelatorio.&#34;CLAFSC&#34;&#62; &#62;= '5000', &#60;frxRelatorio.&#34;VLRICM&#34;&#62;,0), rlbDetalhes)]"/>
+      <TfrxMemoView Name="Memo35" Left="1737,6" Top="68" Width="134,4" Height="17" DataSet="frmPaiRelatorio.frxRelatorio" DataSetName="frxRelatorio" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" HAlign="haRight" Text="[SUM(IIF(&#60;frxRelatorio.&#34;CLAFSC&#34;&#62; &#62;= '5000', &#60;frxRelatorio.&#34;RETIDO&#34;&#62;,0), rlbDetalhes)]"/>
+      <TfrxMemoView Name="Memo36" Left="1891,2" Top="68" Width="134,4" Height="17" DataSet="frmPaiRelatorio.frxRelatorio" DataSetName="frxRelatorio" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" HAlign="haRight" Text="[SUM(IIF(&#60;frxRelatorio.&#34;CLAFSC&#34;&#62; &#62;= '5000', &#60;frxRelatorio.&#34;OUTRAS&#34;&#62;,0), rlbDetalhes)]"/>
+      <TfrxMemoView Name="Memo37" Left="2044,8" Top="68" Width="134,4" Height="17" DataSet="frmPaiRelatorio.frxRelatorio" DataSetName="frxRelatorio" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" HAlign="haRight" Text="[SUM(IIF(&#60;frxRelatorio.&#34;CLAFSC&#34;&#62; &#62;= '5000', &#60;frxRelatorio.&#34;VLRIPI&#34;&#62;,0), rlbDetalhes)]"/>
+      <TfrxMemoView Name="Memo59" Left="163,2" Top="17" Width="134,4" Height="17" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" HAlign="haRight" Text="[D_D_VLRCON]"/>
+      <TfrxMemoView Name="Memo60" Left="316,8" Top="17" Width="153,6" Height="17" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" HAlign="haRight" Text="[D_D_BASICM]"/>
+      <TfrxMemoView Name="Memo61" Left="489,6" Top="17" Width="134,4" Height="17" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" HAlign="haRight" Text="[D_D_VLRICM]"/>
+      <TfrxMemoView Name="Memo62" Left="643,2" Top="17" Width="134,4" Height="17" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" HAlign="haRight" Text="[D_D_RETIDO]"/>
+      <TfrxMemoView Name="Memo63" Left="796,8" Top="17" Width="134,4" Height="17" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" HAlign="haRight" Text="[D_D_OUTRAS]"/>
+      <TfrxMemoView Name="Memo64" Left="950,4" Top="17" Width="134,4" Height="17" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" HAlign="haRight" Text="[D_D_VLRIPI]"/>
+      <TfrxMemoView Name="Memo65" Left="163,2" Top="34" Width="134,4" Height="17" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" HAlign="haRight" Text="[F_D_VLRCON]"/>
+      <TfrxMemoView Name="Memo66" Left="316,8" Top="34" Width="153,6" Height="17" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" HAlign="haRight" Text="[F_D_BASICM]"/>
+      <TfrxMemoView Name="Memo67" Left="489,6" Top="34" Width="134,4" Height="17" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" HAlign="haRight" Text="[F_D_VLRICM]"/>
+      <TfrxMemoView Name="Memo68" Left="643,2" Top="34" Width="134,4" Height="17" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" HAlign="haRight" Text="[F_D_RETIDO]"/>
+      <TfrxMemoView Name="Memo69" Left="796,8" Top="34" Width="134,4" Height="17" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" HAlign="haRight" Text="[F_D_OUTRAS]"/>
+      <TfrxMemoView Name="Memo70" Left="950,4" Top="34" Width="134,4" Height="17" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" HAlign="haRight" Text="[F_D_VLRIPI]"/>
+      <TfrxMemoView Name="Memo71" Left="1257,6" Top="17" Width="134,4" Height="17" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" HAlign="haRight" Text="[D_C_VLRCON]"/>
+      <TfrxMemoView Name="Memo72" Left="1411,2" Top="17" Width="153,6" Height="17" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" HAlign="haRight" Text="[D_C_BASICM]"/>
+      <TfrxMemoView Name="Memo73" Left="1584" Top="17" Width="134,4" Height="17" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" HAlign="haRight" Text="[D_C_VLRICM]"/>
+      <TfrxMemoView Name="Memo74" Left="1737,6" Top="17" Width="134,4" Height="17" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" HAlign="haRight" Text="[D_C_RETIDO]"/>
+      <TfrxMemoView Name="Memo75" Left="1891,2" Top="17" Width="134,4" Height="17" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" HAlign="haRight" Text="[D_C_OUTRAS]"/>
+      <TfrxMemoView Name="Memo76" Left="2044,8" Top="17" Width="134,4" Height="17" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" HAlign="haRight" Text="[D_C_VLRIPI]"/>
+      <TfrxMemoView Name="Memo77" Left="1257,6" Top="34" Width="134,4" Height="17" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" HAlign="haRight" Text="[F_C_VLRCON]"/>
+      <TfrxMemoView Name="Memo78" Left="1411,2" Top="34" Width="153,6" Height="17" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" HAlign="haRight" Text="[F_C_BASICM]"/>
+      <TfrxMemoView Name="Memo79" Left="1584" Top="34" Width="134,4" Height="17" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" HAlign="haRight" Text="[F_C_VLRICM]"/>
+      <TfrxMemoView Name="Memo80" Left="1737,6" Top="34" Width="134,4" Height="17" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" HAlign="haRight" Text="[F_C_RETIDO]"/>
+      <TfrxMemoView Name="Memo81" Left="1891,2" Top="34" Width="134,4" Height="17" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" HAlign="haRight" Text="[F_C_OUTRAS]"/>
+      <TfrxMemoView Name="Memo82" Left="2044,8" Top="34" Width="134,4" Height="17" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" HAlign="haRight" Text="[F_C_VLRIPI]"/>
+      <TfrxLineView Name="Line7" Left="4,8" Top="8,5" Width="2188,8" Height="0" Frame.Typ="4"/>
+      <TfrxLineView Name="Line8" Left="4,8" Top="93,5" Width="2188,8" Height="0" Frame.Typ="4"/>
+      <TfrxLineView Name="Line36" Left="4,8" Top="0" Width="0" Height="94,488188976378" Frame.Typ="1"/>
+      <TfrxLineView Name="Line37" Left="148,8" Top="0" Width="0" Height="94,488188976378" Frame.Typ="1"/>
+      <TfrxLineView Name="Line38" Left="302,4" Top="0" Width="0" Height="94,488188976378" Frame.Typ="1"/>
+      <TfrxLineView Name="Line39" Left="475,2" Top="0" Width="0" Height="94,488188976378" Frame.Typ="1"/>
+      <TfrxLineView Name="Line40" Left="628,8" Top="0" Width="0" Height="94,488188976378" Frame.Typ="1"/>
+      <TfrxLineView Name="Line41" Left="782,4" Top="0" Width="0" Height="94,488188976378" Frame.Typ="1"/>
+      <TfrxLineView Name="Line42" Left="936" Top="0" Width="0" Height="94,488188976378" Frame.Typ="1"/>
+      <TfrxLineView Name="Line43" Left="1089,6" Top="0" Width="0" Height="94,488188976378" Frame.Typ="1"/>
+      <TfrxLineView Name="Line44" Left="1243,2" Top="0" Width="0" Height="94,488188976378" Frame.Typ="1"/>
+      <TfrxLineView Name="Line45" Left="1396,8" Top="0" Width="0" Height="94,488188976378" Frame.Typ="1"/>
+      <TfrxLineView Name="Line46" Left="1569,6" Top="0" Width="0" Height="94,488188976378" Frame.Typ="1"/>
+      <TfrxLineView Name="Line47" Left="1723,2" Top="0" Width="0" Height="94,488188976378" Frame.Typ="1"/>
+      <TfrxLineView Name="Line48" Left="1876,8" Top="0" Width="0" Height="94,488188976378" Frame.Typ="1"/>
+      <TfrxLineView Name="Line49" Left="2030,4" Top="0" Width="0" Height="94,488188976378" Frame.Typ="1"/>
+      <TfrxLineView Name="Line50" Left="2193,6" Top="0" Width="0" Height="94,488188976378" Frame.Typ="1"/>
+      <TfrxLineView Name="Line16" Left="-4,8" Top="93,5" Width="0" Height="34" Frame.Typ="1"/>
+    </TfrxFooter>
+    <TfrxChild Name="ChildDebito" Height="187" Left="0" Top="491,3389" Width="2208,001426" Child="ChildCredito">
+      <TfrxMemoView Name="Memo38" Left="9,6" Top="17" Width="1104" Height="17" DisplayFormat.DecimalSeparator="," HAlign="haCenter" Text="D E B I T O   D O   I M P O S T O"/>
+      <TfrxMemoView Name="Memo39" Left="1180,8" Top="17" Width="1008" Height="17" DisplayFormat.DecimalSeparator="," HAlign="haCenter" Text="A P U R A C A O   D E   S A L D O S"/>
+      <TfrxMemoView Name="Memo40" Left="9,6" Top="50,9999999999999" Width="403,2" Height="17" DisplayFormat.DecimalSeparator="," Text="001 - POR SAIDAS COM DEBITO DO IMPOSTO"/>
+      <TfrxMemoView Name="Memo41" Left="9,6" Top="67,9999999999999" Width="403,2" Height="17" DisplayFormat.DecimalSeparator="," Text="002 - OUTROS DEBITOS"/>
+      <TfrxMemoView Name="Memo42" Left="9,6" Top="102" Width="403,2" Height="17" DisplayFormat.DecimalSeparator="," Text="003 - ESTORNOS DE CREDITOS"/>
+      <TfrxMemoView Name="Memo43" Left="9,6" Top="153" Width="403,2" Height="17" DisplayFormat.DecimalSeparator="," Text="005 - TOTAL"/>
+      <TfrxMemoView Name="Memo44" Left="1180,8" Top="50,9999999999999" Width="393,6" Height="17" DisplayFormat.DecimalSeparator="," Text="013 - SALDO DEVEDOR (DEBITO - CREDITO)"/>
+      <TfrxMemoView Name="Memo45" Left="1180,8" Top="67,9999999999999" Width="393,6" Height="17" DisplayFormat.DecimalSeparator="," Text="014 - DEDUCOES"/>
+      <TfrxMemoView Name="Memo46" Left="1180,8" Top="102" Width="393,6" Height="17" DisplayFormat.DecimalSeparator="," Text="015 - IMPOSTO A RECOLHER"/>
+      <TfrxMemoView Name="Memo47" Left="1180,8" Top="119" Width="624" Height="17" DisplayFormat.DecimalSeparator="," Text="016 - SALDO CREDOR (CREDITO - DEBITO) - TRANSP.P/ O MES SEGUINTE"/>
+      <TfrxMemoView Name="mmoTot001" Left="940,8" Top="50,9999999999999" Width="172,8" Height="17" OnBeforePrint="mmoTot001OnBeforePrint" DisplayFormat.DecimalSeparator="," HAlign="haRight" Text=""/>
+      <TfrxMemoView Name="mmoTot005" Left="940,8" Top="153" Width="172,8" Height="17" OnBeforePrint="mmoTot005OnBeforePrint" DisplayFormat.DecimalSeparator="," HAlign="haRight" Text=""/>
+      <TfrxMemoView Name="mmoTot013" Left="2016" Top="50,9999999999999" Width="172,8" Height="17" OnBeforePrint="mmoTot013OnBeforePrint" DisplayFormat.DecimalSeparator="," HAlign="haRight" Text=""/>
+      <TfrxMemoView Name="mmoTot015" Left="2016" Top="102" Width="172,8" Height="17" OnBeforePrint="mmoTot015OnBeforePrint" DisplayFormat.DecimalSeparator="," HAlign="haRight" Text=""/>
+      <TfrxLineView Name="Line9" Left="4,8" Top="8,50000000000006" Width="1123,2" Height="0" Frame.Typ="4"/>
+      <TfrxLineView Name="Line10" Left="4,8" Top="42,4999999999999" Width="1123,2" Height="0" Frame.Typ="4"/>
+      <TfrxLineView Name="Line14" Left="4,8" Top="178,5" Width="1123,2" Height="0" Frame.Typ="4"/>
+      <TfrxLineView Name="Line17" Left="4,8" Top="8,50000000000006" Width="0" Height="170" Frame.Typ="1"/>
+      <TfrxLineView Name="Line18" Left="1128" Top="8,50000000000006" Width="0" Height="170" Frame.Typ="1"/>
+      <TfrxLineView Name="Line19" Left="1166,4" Top="8,50000000000006" Width="0" Height="170" Frame.Typ="1"/>
+      <TfrxLineView Name="Line20" Left="2193,6" Top="8,50000000000006" Width="0" Height="170" Frame.Typ="1"/>
+      <TfrxLineView Name="Line21" Left="1166,4" Top="8,50000000000006" Width="1027,2" Height="0" Frame.Typ="4"/>
+      <TfrxLineView Name="Line22" Left="1166,4" Top="42,4999999999999" Width="1027,2" Height="0" Frame.Typ="4"/>
+      <TfrxLineView Name="Line23" Left="1166,4" Top="178,5" Width="1027,2" Height="0" Frame.Typ="4"/>
+      <TfrxLineView Name="Line32" Left="2011,2" Top="42,4999999999999" Width="0" Height="136" Frame.Typ="1"/>
+      <TfrxLineView Name="Line34" Left="936" Top="42,4999999999999" Width="0" Height="136" Frame.Typ="1"/>
+      <TfrxMemoView Name="mmo16" Left="2016,26902" Top="119,05511811" Width="172,8" Height="17" OnBeforePrint="mmo16OnBeforePrint" DisplayFormat.DecimalSeparator="," HAlign="haRight" Text=""/>
+    </TfrxChild>
+    <TfrxChild Name="ChildCredito" Height="187" Left="0" Top="702,99258" Width="2208,001426">
+      <TfrxMemoView Name="Memo48" Left="9,6" Top="17" Width="1104" Height="17" DisplayFormat.DecimalSeparator="," HAlign="haCenter" Text="C R E D I T O   D O   I M P O S T O"/>
+      <TfrxMemoView Name="Memo49" Left="1180,8" Top="17" Width="1008" Height="17" DisplayFormat.DecimalSeparator="," HAlign="haCenter" Text="OBSERVACOES"/>
+      <TfrxMemoView Name="Memo50" Left="9,6" Top="51" Width="403,2" Height="17" DisplayFormat.DecimalSeparator="," Text="006 - POR ENTRADAS COM CREDITO DO IMPOSTO"/>
+      <TfrxMemoView Name="Memo51" Left="9,6" Top="68" Width="403,2" Height="17" DisplayFormat.DecimalSeparator="," Text="007 - OUTROS CREDITOS"/>
+      <TfrxMemoView Name="Memo52" Left="9,6" Top="85" Width="403,2" Height="17" DisplayFormat.DecimalSeparator="," Text="003 - ESTORNOS DE DEBITOS"/>
+      <TfrxMemoView Name="Memo53" Left="9,6" Top="102" Width="403,2" Height="17" DisplayFormat.DecimalSeparator="," Text="010 - SUBTOTAL"/>
+      <TfrxMemoView Name="Memo54" Left="9,6" Top="119" Width="403,2" Height="17" DisplayFormat.DecimalSeparator="," Text="011 - SALDO CREDOR - PERIODO ANTERIOR"/>
+      <TfrxMemoView Name="Memo55" Left="9,6" Top="136" Width="403,2" Height="17" DisplayFormat.DecimalSeparator="," Text="012 - TOTAL"/>
+      <TfrxMemoView Name="Memo56" Left="1180,8" Top="102" Width="393,6" Height="17" DisplayFormat.DecimalSeparator="," Text="VENDAS"/>
+      <TfrxMemoView Name="Memo57" Left="1180,8" Top="119" Width="393,6" Height="17" DisplayFormat.DecimalSeparator="," Text="MAO DE OBRA"/>
+      <TfrxMemoView Name="Memo58" Left="1180,8" Top="136" Width="393,6" Height="17" DisplayFormat.DecimalSeparator="," Text="FATURAMENTO"/>
+      <TfrxMemoView Name="mmoTot006" Left="940,8" Top="51" Width="172,8" Height="17" OnBeforePrint="mmoTot006OnBeforePrint" DisplayFormat.DecimalSeparator="," HAlign="haRight" Text=""/>
+      <TfrxMemoView Name="mmoTot010" Left="940,8" Top="102" Width="172,8" Height="17" OnBeforePrint="mmoTot010OnBeforePrint" DisplayFormat.DecimalSeparator="," HAlign="haRight" Text=""/>
+      <TfrxMemoView Name="mmoTot011" Left="940,8" Top="119" Width="172,8" Height="17" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" HAlign="haRight" Text="[ICMANT]"/>
+      <TfrxMemoView Name="mmoTot012" Left="940,8" Top="136" Width="172,8" Height="17" OnBeforePrint="mmoTot012OnBeforePrint" DisplayFormat.DecimalSeparator="," HAlign="haRight" Text=""/>
+      <TfrxMemoView Name="Memo88" Left="2016" Top="119" Width="172,8" Height="17" DisplayFormat.DecimalSeparator="," HAlign="haRight" Text="0,00"/>
+      <TfrxMemoView Name="Memo24" Left="2016" Top="102" Width="172,8" Height="17" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" HAlign="haRight" Text="[F_C_VLRCOV + D_C_VLRCOV]"/>
+      <TfrxMemoView Name="Memo25" Left="2016" Top="136" Width="172,8" Height="17" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" HAlign="haRight" Text="[F_C_VLRCOV + D_C_VLRCOV]"/>
+      <TfrxLineView Name="Line11" Left="4,8" Top="8,5" Width="1123,2" Height="0" Frame.Typ="4"/>
+      <TfrxLineView Name="Line12" Left="4,8" Top="42,5" Width="1123,2" Height="0" Frame.Typ="4"/>
+      <TfrxLineView Name="Line13" Left="4,8" Top="161,5" Width="1123,2" Height="0" Frame.Typ="4"/>
+      <TfrxLineView Name="Line15" Left="4,8" Top="178,5" Width="1123,2" Height="0" Frame.Typ="4"/>
+      <TfrxLineView Name="Line24" Left="4,8" Top="8,5" Width="0" Height="170" Frame.Typ="1"/>
+      <TfrxLineView Name="Line25" Left="1128" Top="8,5" Width="0" Height="170" Frame.Typ="1"/>
+      <TfrxLineView Name="Line26" Left="1166,4" Top="8,5" Width="0" Height="170" Frame.Typ="1"/>
+      <TfrxLineView Name="Line27" Left="2193,6" Top="8,5" Width="0" Height="170" Frame.Typ="1"/>
+      <TfrxLineView Name="Line28" Left="1166,4" Top="8,5" Width="1027,2" Height="0" Frame.Typ="4"/>
+      <TfrxLineView Name="Line29" Left="1166,4" Top="178,5" Width="1027,2" Height="0" Frame.Typ="4"/>
+      <TfrxLineView Name="Line30" Left="1166,4" Top="161,5" Width="1027,2" Height="0" Frame.Typ="4"/>
+      <TfrxLineView Name="Line31" Left="2011,2" Top="42,5" Width="0" Height="119" Frame.Typ="1"/>
+      <TfrxLineView Name="Line33" Left="1166,4" Top="42,5" Width="1027,2" Height="0" Frame.Typ="4"/>
+      <TfrxLineView Name="Line35" Left="936" Top="42,5" Width="0" Height="119" Frame.Typ="1"/>
+    </TfrxChild>
+  </TfrxReportPage>
+</TfrxReport>

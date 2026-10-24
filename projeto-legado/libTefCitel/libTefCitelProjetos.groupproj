@@ -1,0 +1,84 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{BBD71163-2E4E-4456-A112-3DA1319B6E01}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="libTefCitel.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Estacao\TefEstacaoService.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Estacao\Atualizador\TefEstacaoAtualizador.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Estacao\ClientPlugin\TefCitelDvcPlugin.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Estacao\UpdatePlugin\TefCitelDvcUpdate.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="libTefCitel">
+        <MSBuild Projects="libTefCitel.dproj"/>
+    </Target>
+    <Target Name="libTefCitel:Clean">
+        <MSBuild Projects="libTefCitel.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="libTefCitel:Make">
+        <MSBuild Projects="libTefCitel.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TefEstacaoService">
+        <MSBuild Projects="Estacao\TefEstacaoService.dproj"/>
+    </Target>
+    <Target Name="TefEstacaoService:Clean">
+        <MSBuild Projects="Estacao\TefEstacaoService.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TefEstacaoService:Make">
+        <MSBuild Projects="Estacao\TefEstacaoService.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TefEstacaoAtualizador">
+        <MSBuild Projects="Estacao\Atualizador\TefEstacaoAtualizador.dproj"/>
+    </Target>
+    <Target Name="TefEstacaoAtualizador:Clean">
+        <MSBuild Projects="Estacao\Atualizador\TefEstacaoAtualizador.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TefEstacaoAtualizador:Make">
+        <MSBuild Projects="Estacao\Atualizador\TefEstacaoAtualizador.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TefCitelDvcPlugin">
+        <MSBuild Projects="Estacao\ClientPlugin\TefCitelDvcPlugin.dproj"/>
+    </Target>
+    <Target Name="TefCitelDvcPlugin:Clean">
+        <MSBuild Projects="Estacao\ClientPlugin\TefCitelDvcPlugin.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TefCitelDvcPlugin:Make">
+        <MSBuild Projects="Estacao\ClientPlugin\TefCitelDvcPlugin.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TefCitelDvcUpdate">
+        <MSBuild Projects="Estacao\UpdatePlugin\TefCitelDvcUpdate.dproj"/>
+    </Target>
+    <Target Name="TefCitelDvcUpdate:Clean">
+        <MSBuild Projects="Estacao\UpdatePlugin\TefCitelDvcUpdate.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TefCitelDvcUpdate:Make">
+        <MSBuild Projects="Estacao\UpdatePlugin\TefCitelDvcUpdate.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="libTefCitel;TefEstacaoService;TefEstacaoAtualizador;TefCitelDvcPlugin;TefCitelDvcUpdate"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="libTefCitel:Clean;TefEstacaoService:Clean;TefEstacaoAtualizador:Clean;TefCitelDvcPlugin:Clean;TefCitelDvcUpdate:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="libTefCitel:Make;TefEstacaoService:Make;TefEstacaoAtualizador:Make;TefCitelDvcPlugin:Make;TefCitelDvcUpdate:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

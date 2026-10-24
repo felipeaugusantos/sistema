@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TfrxReport Version="4.3.61" DotMatrixReport="True" IniFile="\Software\Fast Reports" PreviewOptions.Buttons="4095" PreviewOptions.Zoom="1" PrintOptions.Printer="Default" PrintOptions.PrintOnSheet="0" ReportOptions.CreateDate="39585,352479375" ReportOptions.Description.Text="" ReportOptions.LastChange="39602,5850685995" ScriptLanguage="PascalScript" ScriptText.Text="begin&#13;&#10;&#13;&#10;end." PropData="044C65667403000103546F70022008446174617365747301010C2C00000020446174615365743D224672784368657175652220446174615365744E616D653D224672784368657175652200010C3400000020446174615365743D226672784475706C6963617461732220446174615365744E616D653D226672784475706C696361746173220000095661726961626C65730100055374796C650100">
+  <TfrxDataPage Name="Data" Height="1000" Left="0" Top="0" Width="1000"/>
+  <TfrxDMPPage Name="Page1" PaperWidth="304,799803150127" PaperHeight="134,937412852921" PaperSize="256" LeftMargin="0" RightMargin="0" TopMargin="0" BottomMargin="0" ColumnWidth="0" ColumnPositions.Text="" HGuides.Text="" VGuides.Text="" FontStyle="0">
+    <TfrxHeader Name="HCheque" Height="272" Left="0" Top="17" Width="1152">
+      <TfrxDMPMemoView Name="FrxChequeVALOR_CHEQUE" Left="912" Top="0" Width="211,2" Height="17" DataSet="FrxCheque" DataSetName="FrxCheque" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="###,#0.00" DisplayFormat.Kind="fkNumeric" HAlign="haRight" WordWrap="False" Text="( [FrxCheque.&#34;VALOR_CHEQUE&#34;] )"/>
+      <TfrxDMPMemoView Name="FrxChequeEXTENSO_CHEQUE" Left="144" Top="34" Width="883,2" Height="17" DataField="EXTENSO_CHEQUE" DataSet="FrxCheque" DataSetName="FrxCheque" WordWrap="False" Text="[FrxCheque.&#34;EXTENSO_CHEQUE&#34;]"/>
+      <TfrxDMPMemoView Name="FrxChequeFAVORECIDO_CHEQUE" Left="144" Top="102" Width="883,2" Height="17" DataField="FAVORECIDO_CHEQUE" DataSet="FrxCheque" DataSetName="FrxCheque" Text="[FrxCheque.&#34;FAVORECIDO_CHEQUE&#34;]"/>
+      <TfrxDMPMemoView Name="FrxChequeCIDADE_CHEQUE" Left="393,6" Top="136" Width="268,8" Height="17" DataField="CIDADE_CHEQUE" DataSet="FrxCheque" DataSetName="FrxCheque" HAlign="haRight" WordWrap="False" Text="[FrxCheque.&#34;CIDADE_CHEQUE&#34;]"/>
+      <TfrxDMPMemoView Name="FrxChequeDATA_CHEQUE" Left="720" Top="136" Width="345,6" Height="17" DataField="DATA_CHEQUE" DataSet="FrxCheque" DataSetName="FrxCheque" WordWrap="False" Text="[FrxCheque.&#34;DATA_CHEQUE&#34;]"/>
+      <TfrxDMPMemoView Name="FrxChequeBOMPARA_CHEQUE" Left="844,8" Top="238" Width="211,2" Height="17" DataField="BOMPARA_CHEQUE" DataSet="FrxCheque" DataSetName="FrxCheque" HAlign="haRight" Text="[FrxCheque.&#34;BOMPARA_CHEQUE&#34;]"/>
+      <TfrxDMPCommand Name="DMPCommand1" Left="0" Top="0" Width="729,6" Height="17" Command="#27#64#27#67#33#15#27#80"/>
+      <TfrxDMPMemoView Name="DMPMemo10" Left="19,2" Top="68" Width="931,2" Height="17" DataSet="FrxCheque" DataSetName="FrxCheque" DisplayFormat.DecimalSeparator="," WordWrap="False" Text="[FrxCheque.&#34;EXTENSO2_CHEQUE&#34;]"/>
+    </TfrxHeader>
+    <TfrxGroupHeader Name="GHDuplicatas" Height="68" Left="0" Top="306" Width="1152" Condition="frxDuplicatas.&#34;EMI_NUMCHQ&#34;">
+      <TfrxDMPMemoView Name="DMPMemo1" Left="220,8" Top="0" Width="307,2" Height="17" DisplayFormat.DecimalSeparator="," WordWrap="False" Text="[frxDuplicatas.&#34;EMI_NUMCHQ&#34;]"/>
+      <TfrxDMPMemoView Name="DMPMemo2" Left="38,4" Top="0" Width="182,4" Height="17" DisplayFormat.DecimalSeparator="," Text="NUMERO DO CHEQUE : "/>
+      <TfrxDMPMemoView Name="DMPMemo3" Left="38,4" Top="17" Width="182,4" Height="17" DisplayFormat.DecimalSeparator="," Text="PORTADOR         : "/>
+      <TfrxDMPMemoView Name="FrxChequePORTADOR_CHEQUE" Left="220,8" Top="17" Width="384" Height="17" DataField="PORTADOR_CHEQUE" DataSet="FrxCheque" DataSetName="FrxCheque" WordWrap="False" Text="[FrxCheque.&#34;PORTADOR_CHEQUE&#34;]"/>
+      <TfrxDMPMemoView Name="DMPMemo11" Left="38,4" Top="34" Width="182,4" Height="17" DisplayFormat.DecimalSeparator="," Text="BANCO            : "/>
+      <TfrxDMPMemoView Name="DMPMemo12" Left="220,8" Top="34" Width="384" Height="17" DisplayFormat.DecimalSeparator="," WordWrap="False" Text="[frxDuplicatas.&#34;EMI_CODBCO&#34;]"/>
+      <TfrxDMPMemoView Name="DMPMemo13" Left="604,8" Top="17" Width="163,2" Height="17" DisplayFormat.DecimalSeparator="," Text="AGENCIA        : "/>
+      <TfrxDMPMemoView Name="DMPMemo14" Left="604,8" Top="34" Width="163,2" Height="17" DisplayFormat.DecimalSeparator="," Text="CONTA CORRENTE : "/>
+      <TfrxDMPMemoView Name="DMPMemo15" Left="768" Top="17" Width="307,2" Height="17" DisplayFormat.DecimalSeparator="," WordWrap="False" Text="[frxDuplicatas.&#34;EMI_NUMAGE&#34;]"/>
+      <TfrxDMPMemoView Name="DMPMemo16" Left="768" Top="34" Width="307,2" Height="17" DisplayFormat.DecimalSeparator="," WordWrap="False" Text="[frxDuplicatas.&#34;EMI_CONCOR&#34;]"/>
+    </TfrxGroupHeader>
+    <TfrxMasterData Name="MDDuplicatas" Height="17" Left="0" Top="391" Width="1152" ColumnWidth="0" ColumnGap="0" DataSet="frxDuplicatas" DataSetName="frxDuplicatas" RowCount="0">
+      <TfrxDMPMemoView Name="DMPMemo4" Left="38,4" Top="0" Width="38,4" Height="17" DisplayFormat.DecimalSeparator="," Text="DP: "/>
+      <TfrxDMPMemoView Name="DMPMemo5" Left="76,8" Top="0" Width="249,6" Height="17" DisplayFormat.DecimalSeparator="," WordWrap="False" Text="[frxDuplicatas.&#34;EMI_NUMDUP&#34;]"/>
+      <TfrxDMPMemoView Name="DMPMemo6" Left="336" Top="0" Width="38,4" Height="17" DisplayFormat.DecimalSeparator="," Text="VR: "/>
+      <TfrxDMPMemoView Name="DMPMemo7" Left="374,4" Top="0" Width="153,6" Height="17" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="###,#0.00" DisplayFormat.Kind="fkNumeric" HAlign="haRight" WordWrap="False" Text="[frxDuplicatas.&#34;EMI_VALBAI&#34;]"/>
+      <TfrxDMPMemoView Name="DMPMemo8" Left="556,8" Top="0" Width="57,6" Height="17" DisplayFormat.DecimalSeparator="," Text="FORN: "/>
+      <TfrxDMPMemoView Name="DMPMemo9" Left="614,4" Top="0" Width="528" Height="17" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="###,#0.00" DisplayFormat.Kind="fkNumeric" WordWrap="False" Text="[frxDuplicatas.&#34;FOR_NOMFOR&#34;]"/>
+    </TfrxMasterData>
+  </TfrxDMPPage>
+</TfrxReport>

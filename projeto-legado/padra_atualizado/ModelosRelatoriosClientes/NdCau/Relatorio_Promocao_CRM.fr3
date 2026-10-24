@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<TfrxReport Version="5.6.11" DotMatrixReport="False" EngineOptions.DoublePass="True" IniFile="\Software\Fast Reports" PreviewOptions.Buttons="4095" PreviewOptions.Zoom="1" PrintOptions.Printer="Default" PrintOptions.PrintOnSheet="0" ReportOptions.CreateDate="43130,4925213542" ReportOptions.Description.Text="" ReportOptions.LastChange="44517,389444456" ScriptLanguage="PascalScript" ScriptText.Text="&#13;&#10;procedure ImgProdutoOnAfterData(Sender: TfrxComponent);&#13;&#10;begin&#13;&#10;  pCarregarImagemProduto;&#13;&#10;end;&#13;&#10;&#13;&#10;begin&#13;&#10;&#13;&#10;end.">
+  <Datasets>
+    <item DataSet="frxRelatorio" DataSetName="frxRelatorio"/>
+  </Datasets>
+  <TfrxDataPage Name="Data" Height="1000" Left="0" Top="0" Width="1000"/>
+  <TfrxReportPage Name="Page1" Orientation="poLandscape" PaperWidth="279,4" PaperHeight="215,9" PaperSize="1" LeftMargin="5" RightMargin="5" TopMargin="5" BottomMargin="5" ColumnWidth="0" ColumnPositions.Text="" HGuides.Text="" VGuides.Text="" OnAfterPrint="Page1OnAfterPrint">
+    <TfrxMasterData Name="MasterData1" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Height="130,01574803" Left="0" Top="211,65368" Width="1018,205382" Columns="4" ColumnWidth="254,362204724409" ColumnGap="0" DataSet="frxRelatorio" DataSetName="frxRelatorio" RowCount="0">
+      <TfrxShapeView Name="shpBorda" Left="-1,22047" Top="0" Width="254,36220472" Height="130,01574803"/>
+      <TfrxMemoView Name="memReferencia" Left="110" Top="86,9291338582677" Width="141,73227858" Height="15,11811268" DataSet="frxRelatorio" DataSetName="frxRelatorio" Font.Charset="1" Font.Color="0" Font.Height="-9" Font.Name="Arial" Font.Style="1" ParentFont="False" Text="Ref: [frxRelatorio.&#34;Referência&#34;]"/>
+      <TfrxMemoView Name="memDescricao" Left="110" Top="18,89763535" Width="141,73227858" Height="45,35433071" DataSet="frxRelatorio" DataSetName="frxRelatorio" Font.Charset="1" Font.Color="0" Font.Height="-9" Font.Name="Arial" Font.Style="1" ParentFont="False" Text="[frxRelatorio.&#34;Descrição&#34;]"/>
+      <TfrxMemoView Name="memPrePromo" Left="178,03154" Top="103,937007874016" Width="73,70073858" Height="22,67717268" Font.Charset="1" Font.Color="255" Font.Height="-15" Font.Name="Arial" Font.Style="1" HAlign="haRight" ParentFont="False" Text="[frxRelatorio.&#34;Preço&#34;]"/>
+      <TfrxMemoView Name="memCodigo" Left="109,60637" Top="3,77952999999999" Width="141,73227858" Height="15,11811268" DataSet="frxRelatorio" DataSetName="frxRelatorio" Font.Charset="1" Font.Color="0" Font.Height="-9" Font.Name="Arial" Font.Style="1" ParentFont="False" Text="Cód: [frxRelatorio.&#34;Código&#34;]"/>
+      <TfrxMemoView Name="labelMarca" Left="52,91342" Top="115,275590551181" Width="56,69291339" Height="15,11811024" DataSet="frxRelatorio" DataSetName="frxRelatorio" Font.Charset="1" Font.Color="0" Font.Height="-9" Font.Name="Arial" Font.Style="1" HAlign="haRight" ParentFont="False" Text="Marca:"/>
+      <TfrxMemoView Name="labelMontadora" Left="53,29130197" Top="102,04724409" Width="56,69291339" Height="15,11811024" DataSet="frxRelatorio" DataSetName="frxRelatorio" Font.Charset="1" Font.Color="0" Font.Height="-9" Font.Name="Arial" Font.Style="1" HAlign="haRight" ParentFont="False" Text="Montadora:"/>
+      <TfrxMemoView Name="memAplicacao" Left="109,98425197" Top="65,76377953" Width="141,73227858" Height="22,6771653543307" DataSet="frxRelatorio" DataSetName="frxRelatorio" Font.Charset="1" Font.Color="0" Font.Height="-9" Font.Name="Arial" Font.Style="1" ParentFont="False" Text="[frxRelatorio.&#34;Aplicacao&#34;]"/>
+      <TfrxMemoView Name="memMontadora" Left="109,60637" Top="102,04724409" Width="68,03149606" Height="15,11811024" DataSet="frxRelatorio" DataSetName="frxRelatorio" Font.Charset="1" Font.Color="0" Font.Height="-9" Font.Name="Arial" Font.Style="1" ParentFont="False" Text="[frxRelatorio.&#34;Montadora&#34;]"/>
+      <TfrxMemoView Name="memMarca" Left="109,60637" Top="115,275590551181" Width="68,03149606" Height="13,2283464566929" DataSet="frxRelatorio" DataSetName="frxRelatorio" Font.Charset="1" Font.Color="0" Font.Height="-9" Font.Name="Arial" Font.Style="1" ParentFont="False" Text="[frxRelatorio.&#34;Marca&#34;]"/>
+      <TfrxPictureView Name="ImgProduto" Left="3,77953" Top="3,77953" Width="103,3859" Height="94,488188976378" OnAfterData="ImgProdutoOnAfterData" DataSet="frxRelatorio" DataSetName="frxRelatorio" HightQuality="False" Transparent="False" TransparentColor="16777215"/>
+    </TfrxMasterData>
+    <TfrxPageHeader Name="PageHeader1" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Height="133,79527803" Left="0" Top="18,89765" Width="1018,205382">
+      <TfrxMemoView Name="Memo5" Align="baCenter" Left="292,6732375" Top="10,23624" Width="432,858907" Height="64,25201" Font.Charset="1" Font.Color="-16777208" Font.Height="-53" Font.Name="Arial" Font.Style="1" HAlign="haCenter" ParentFont="False" Text="[TITULO]"/>
+      <TfrxMemoView Name="Memo6" Align="baRight" Left="736,527675" Top="3,77952756" Width="281,677707" Height="26,45671" Font.Charset="1" Font.Color="-16777208" Font.Height="-21" Font.Name="Arial" Font.Style="1" HAlign="haRight" ParentFont="False" Text="[OPE_NOMOPE]"/>
+      <TfrxMemoView Name="Memo9" Align="baRight" Left="736,527675" Top="37,7953" Width="281,677707" Height="18,89765" Font.Charset="1" Font.Color="-16777208" Font.Height="-15" Font.Name="Arial" Font.Style="1" HAlign="haRight" ParentFont="False" Text="[OPE_EMAIL_]"/>
+      <TfrxMemoView Name="memHomePage" Align="baRight" Left="736,8707345" Top="94,48825" Width="281,3346475" Height="22,67718" Font.Charset="1" Font.Color="-16777208" Font.Height="-15" Font.Name="Arial" Font.Style="1" HAlign="haRight" ParentFont="False" VAlign="vaCenter" Text="[EMP_HOMEPA]"/>
+      <TfrxPictureView Name="imgLogo" Align="baLeft" Left="0" Top="3,77953" Width="254,36220472" Height="130,01574803" Center="True" HightQuality="False" Transparent="False" TransparentColor="16777215"/>
+      <TfrxMemoView Name="Memo8" Align="baCenter" Left="291,779716" Top="75,5906" Width="434,64595" Height="37,7953" Font.Charset="1" Font.Color="0" Font.Height="-15" Font.Name="Arial" Font.Style="1" HAlign="haCenter" ParentFont="False" VAlign="vaCenter" Text="IMPOSTOS NÃO INCLUSOS"/>
+      <TfrxMemoView Name="Memo13" Align="baRight" Left="736,527675" Top="68,03154" Width="281,677707" Height="18,89765" Font.Charset="1" Font.Color="-16777208" Font.Height="-15" Font.Name="Arial" Font.Style="1" HAlign="haRight" ParentFont="False" Text="[EMP_FONE01]"/>
+    </TfrxPageHeader>
+    <TfrxPageFooter Name="PageFooter1" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Height="96,48825732" Left="0" Top="400,63018" Width="1018,205382">
+      <TfrxMemoView Name="memObsPromocao" Align="baRight" Left="678,84695115" Top="0" Width="339,35843085" Height="49,13387535" Font.Charset="1" Font.Color="-16777208" Font.Height="-13" Font.Name="Arial" Font.Style="1" HAlign="haCenter" ParentFont="False" VAlign="vaCenter" Text="Promoção válida até 00/00/0000"/>
+      <TfrxMemoView Name="Memo7" Align="baLeft" Left="0" Top="7,32000000880362E-6" Width="603,45305085" Height="18,89765" Font.Charset="1" Font.Color="-16777208" Font.Height="-13" Font.Name="Arial" Font.Style="1" ParentFont="False" Text="Data e Hora da Emissão da Promoção: [REL_EXEC]"/>
+      <TfrxMemoView Name="Memo4" Align="baLeft" Left="0" Top="26,45671732" Width="603,45305085" Height="22,67718" Font.Charset="1" Font.Color="-16777208" Font.Height="-13" Font.Name="Arial" Font.Style="1" ParentFont="False" Text="[EMP_ENDERE]"/>
+      <TfrxMemoView Name="Memo11" Align="baLeft" Left="0" Top="54,91342732" Width="603,45305085" Height="18,89765" Font.Charset="1" Font.Color="-16777208" Font.Height="-13" Font.Name="Arial" Font.Style="1" ParentFont="False" Text="[EMP_NOMCID]"/>
+      <TfrxMemoView Name="rllPagina" Left="873,07143" Top="75,59060732" Width="141,65671" Height="17" OnBeforePrint="rllPaginaOnBeforePrint" Font.Charset="1" Font.Color="0" Font.Height="-11" Font.Name="Arial" Font.Style="0" HAlign="haRight" ParentFont="False" Text="Página: [Page]/[TotalPages]">
+        <Formats>
+          <item/>
+          <item/>
+        </Formats>
+      </TfrxMemoView>
+    </TfrxPageFooter>
+  </TfrxReportPage>
+</TfrxReport>

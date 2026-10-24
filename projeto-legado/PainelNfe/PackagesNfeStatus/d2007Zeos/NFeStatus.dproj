@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{e1bcd93c-a8d8-4a15-8113-2cccc683c97a}</ProjectGuid>
+    <MainSource>NFeStatus.dpr</MainSource>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+    <DCC_DependencyCheckOutputName>..\..\NFeStatus.exe</DCC_DependencyCheckOutputName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Version>7.0</Version>
+    <DCC_DebugInformation>False</DCC_DebugInformation>
+    <DCC_LocalDebugSymbols>False</DCC_LocalDebugSymbols>
+    <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+    <DCC_Define>RELEASE</DCC_Define>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <Version>7.0</Version>
+    <DCC_Define>DEBUG;madExcept</DCC_Define>
+    <DCC_MapFile>3</DCC_MapFile>
+    <DCC_ExeOutput>..\..\</DCC_ExeOutput>
+    <DCC_DcuOutput>temp</DCC_DcuOutput>
+    <DCC_ObjOutput>temp</DCC_ObjOutput>
+    <DCC_HppOutput>temp</DCC_HppOutput>
+  </PropertyGroup>
+  <ProjectExtensions>
+    <Borland.Personality>Delphi.Personality</Borland.Personality>
+    <Borland.ProjectType>VCLApplication</Borland.ProjectType>
+    <BorlandProject>
+<BorlandProject><Delphi.Personality><Parameters><Parameters Name="UseLauncher">False</Parameters><Parameters Name="LoadAllSymbols">True</Parameters><Parameters Name="LoadUnspecifiedSymbols">False</Parameters><Parameters Name="RunParams">NFE_COORDENADOR_STATUS</Parameters></Parameters><VersionInfo><VersionInfo Name="IncludeVerInfo">True</VersionInfo><VersionInfo Name="AutoIncBuild">False</VersionInfo><VersionInfo Name="MajorVer">5</VersionInfo><VersionInfo Name="MinorVer">0</VersionInfo><VersionInfo Name="Release">0</VersionInfo><VersionInfo Name="Build">1</VersionInfo><VersionInfo Name="Debug">False</VersionInfo><VersionInfo Name="PreRelease">False</VersionInfo><VersionInfo Name="Special">False</VersionInfo><VersionInfo Name="Private">False</VersionInfo><VersionInfo Name="DLL">False</VersionInfo><VersionInfo Name="Locale">1046</VersionInfo><VersionInfo Name="CodePage">1252</VersionInfo></VersionInfo><VersionInfoKeys><VersionInfoKeys Name="CompanyName"></VersionInfoKeys><VersionInfoKeys Name="FileDescription"></VersionInfoKeys><VersionInfoKeys Name="FileVersion">5.0.0.1</VersionInfoKeys><VersionInfoKeys Name="InternalName"></VersionInfoKeys><VersionInfoKeys Name="LegalCopyright"></VersionInfoKeys><VersionInfoKeys Name="LegalTrademarks"></VersionInfoKeys><VersionInfoKeys Name="OriginalFilename"></VersionInfoKeys><VersionInfoKeys Name="ProductName"></VersionInfoKeys><VersionInfoKeys Name="ProductVersion">5.0.0.0</VersionInfoKeys><VersionInfoKeys Name="Comments"></VersionInfoKeys></VersionInfoKeys><Excluded_Packages>
+      
+      
+      
+      
+      
+      
+      <Excluded_Packages Name="$(BDS)\bin\dcloffice2k100.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+      <Excluded_Packages Name="$(BDS)\bin\dclofficexp100.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+    </Excluded_Packages><Source><Source Name="MainSource">NFeStatus.dpr</Source></Source></Delphi.Personality></BorlandProject></BorlandProject>
+  </ProjectExtensions>
+  <Import Project="$(MSBuildBinPath)\Borland.Delphi.Targets" />
+  <ItemGroup>
+    <DelphiCompile Include="NFeStatus.dpr">
+      <MainSource>MainSource</MainSource>
+    </DelphiCompile>
+    <DCCReference Include="..\..\consultastatus\untCoordenadorStatusNFe.pas" />
+    <DCCReference Include="..\..\consultastatus\untEnviarXMLSat.pas" />
+    <DCCReference Include="..\..\consultastatus\untLimparDanfes.pas" />
+    <DCCReference Include="..\..\consultastatus\untPendenciasDPEC.pas" />
+    <DCCReference Include="..\..\consultastatus\untProcessarTarefaNFe.pas" />
+    <DCCReference Include="..\..\consultastatus\untRegistrarTarefa.pas" />
+    <DCCReference Include="..\..\consultastatus\untVerificarStatus.pas" />
+    <DCCReference Include="..\..\genericos\untConectando.pas">
+      <Form>frmConectando</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\genericos\untGravando.pas">
+      <Form>frmGravando</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\libNfe\untConfigNFE.pas" />
+    <DCCReference Include="..\..\libNfe\untInterfaces.pas" />
+    <DCCReference Include="..\..\libNfe\untInterfacesManifestoEletronico.pas" />
+    <DCCReference Include="..\..\libNfe\untManifestoEletronico.pas" />
+    <DCCReference Include="..\..\testabilidade\untTestabilidade.pas" />
+    <DCCReference Include="..\..\untConfiguracoes.pas">
+      <Form>frmConfiguracoes</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\untLibNfe.pas" />
+    <DCCReference Include="..\..\untModulo.pas">
+      <Form>frmModulo</Form>
+      <DesignClass>TDataModule</DesignClass>
+    </DCCReference>
+    <DCCReference Include="..\..\untModuloReplicacao.pas">
+      <DesignClass>TDataModule</DesignClass>
+      <Form>frmModuloReplicacao</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\untModuloReplicacaoZeos.pas" />
+    <DCCReference Include="..\..\untPontosImpressao.pas">
+      <Form>frmPontosImpressao</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\untUtil.pas" />
+  </ItemGroup>
+</Project>

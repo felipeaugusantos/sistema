@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<TfrxReport Version="4.15.13" DotMatrixReport="False" IniFile="\Software\Fast Reports" PreviewOptions.Buttons="3577" PreviewOptions.Zoom="1" PrintOptions.Printer="Padrão" PrintOptions.PrintOnSheet="0" ReportOptions.CreateDate="39422,3660112616" ReportOptions.Description.Text="" ReportOptions.LastChange="40564,3683492477" ScriptLanguage="PascalScript" ScriptText.Text="begin&#13;&#10;&#13;&#10;end." PropData="044C656674021803546F7002100844617461736574730101063020446174615365743D226672784442496D704574692220446174615365744E616D653D226672784442496D70457469220000095661726961626C65730100055374796C650100">
+  <TfrxDataPage Name="Data" Height="1000" Left="0" Top="0" Width="1000"/>
+  <TfrxReportPage Name="Page1" PaperWidth="95" PaperHeight="50" PaperSize="256" LeftMargin="0" RightMargin="0" TopMargin="0" BottomMargin="0" ColumnWidth="0" ColumnPositions.Text="" HGuides.Text="" VGuides.Text="">
+    <TfrxMasterData Name="MasterData1" Height="170,1" Left="0" Top="18,89765" Width="793,7013" Columns="1" ColumnWidth="359,1" ColumnGap="0" DataSet="frxDBImpEti" DataSetName="frxDBImpEti" RowCount="0">
+      <TfrxMemoView Name="" Description="#18#27#80#27#87#49" Left="8" Top="12" Width="51" Height="19" ShowHint="False" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Courier New" Font.Style="1" Frame.Width="0" ParentFont="False" Text="[&#60;frxDBImpEti.&#34;CODEMP&#34;&#62;]"/>
+      <TfrxBarCodeView Name="" Left="9" Top="88" Width="328" Height="63" ShowHint="False" BarType="bcCode39" DataField="CODBAR" DataSet="frxDBImpEti" DataSetName="frxDBImpEti" Rotation="0" WideBarRatio="2" Zoom="1,40772532188841" Font.Charset="1" Font.Color="0" Font.Height="-12" Font.Name="Courier New" Font.Style="1"/>
+      <TfrxMemoView Name="" Description="#18#27#80#27#87#49" Left="61" Top="12" Width="276" Height="18,9" ShowHint="False" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Courier New" Font.Style="1" Frame.Width="0" ParentFont="False" Text="[&#60;frxDBImpEti.&#34;NOMEMP&#34;&#62;]"/>
+      <TfrxMemoView Name="" Description="#18#27#80#27#87#49" Left="9" Top="44" Width="329" Height="39" ShowHint="False" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Courier New" Font.Style="1" Frame.Width="0" ParentFont="False" Text="[&#60;frxDBImpEti.&#34;ENEMP2&#34;&#62;]"/>
+    </TfrxMasterData>
+  </TfrxReportPage>
+</TfrxReport>

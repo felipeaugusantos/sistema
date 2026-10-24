@@ -1,0 +1,1452 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{3EDEDFF6-614A-4A76-B296-560FBA04C663}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="..\Packages\Shared\Functions\package\Linux\Shared.Functions.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Packages\Faturamento\Impostos\interfaces\package\Linux\faturamento.impostos.interfaces.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Packages\Faturamento\Impostos\tipos\package\Linux\faturamento.impostos.tipos.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Packages\Faturamento\Model\package\Linux\faturamento.model.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Packages\Faturamento\Impostos\calculos\package\Linux\faturamento.impostos.calculos.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Packages\Faturamento\Impostos\regras\package\Linux\faturamento.impostos.regras.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Packages\Faturamento\Impostos\servicos\package\Linux\faturamento.impostos.servicos.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Packages\Faturamento\Precos\interfaces\package\Linux\faturamento.precos.interfaces.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Packages\Faturamento\Precos\tipos\package\Linux\faturamento.precos.tipos.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Packages\Faturamento\Precos\calculos\package\Linux\faturamento.precos.calculos.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Packages\Faturamento\Precos\servicos\package\Linux\faturamento.precos.servicos.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Packages\Faturamento\Margem\interfaces\package\Linux\faturamento.margem.interfaces.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Packages\Faturamento\Margem\tipos\package\Linux\faturamento.margem.tipos.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Packages\Faturamento\Margem\calculos\package\Linux\faturamento.margem.calculos.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\Packages\Faturamento\Margem\servicos\package\Linux\faturamento.margem.servicos.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Consulta.Preco.Tinta\Target\Linux\ConsultarPrecoTintaService.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Entrega.Futura\Target\Linux\EntregaFuturaService.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Exporta.Tintometricos.Terceiros\Target\Linux\ExportacaoTintometricosTerceirosService.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Faturamento.Services.API\Target\Linux\FaturamentoServicesAPI.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Fusion.Envia.Registros\Target\Linux\FusionEnviaRegistrosService.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Fusion.Obtem.Romaneios\Target\Linux\FusionObtemRomaneiosService.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="iMendesIntegracao\Target\Linux\iMendesIntegracaoService.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="OrdemProducaoIndustrial.AtualizarCustos\Target\Linux\OrdemProducaoIndustrial.AtualizarCustosService.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Calculo.Rota\Target\Linux\ProcessaCalculoRota.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Cobranca.Eletronica\Target\Linux\ProcessaCobrancaEletronica.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Link.Pagamento\Target\Linux\ProcessaLinkPagamento.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Recebiveis.Alpe\Target\Linux\ProcessaRecebiveisAlpe.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Reserva.Item.Pedido\Target\Linux\ReservaItemPedidoService.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Saldo.Reservado\Target\Linux\SaldoReservadoService.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Saldo.Reservado.Analitico\Target\Linux\SaldoReservadoAnaliticoService.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Status.Item.Pedido\Target\Linux\StatusItemPedidoService.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Status.Pedido\Target\Linux\StatusPedidoService.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\autcomtinta\Linux\AutcomTinta.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaAdvance\TintaAdvance.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaAdvanceStr\TintaAdvanceStr.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaAdvanceTintoSystem\TintaAdvanceTintoSystem.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaAlessiImobiliaria\TintaAlessiImobiliaria.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaAlterPlus\TintaAlterPlus.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaAnjoAutomotiva\TintaAnjoAutomotiva.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaAnjoImobiliaria\TintaAnjoImobiliaria.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaAnjoSinterica\TintaAnjoSintetica.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaAnnetta\TintaAnnetta.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaAutoluks\TintaAutoluks.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaBautech\TintaBautech.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaBellaCor\TintaBellaCor.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libtintaBellaCorTintavel\TintaBellaCorTintavel.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaBrasimixAutomotiva\TintaBrasimixAutomotiva.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaBrasimixImobiliaria\TintaBrasimixImobiliaria.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaBrazilianColorAutomotiva\TintaBrazilianColorAutomotiva.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaCalamar\TintaCalamar.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaChreon\TintaChreon.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaCiacollor\TintaCiacollor.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaColorbraz\TintaColorbraz.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaColorPro\TintaColorPro.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaCoralImobiliaria\TintaCoralImobiliaria.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaDacar\TintaDacar.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaDacasa\TintaDacasa.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaDupont\TintaDupont.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaDuxone\TintaDuxone.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaDuxone2\TintaDuxone2.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaEucatexImobiliaria\TintaEucatexImobiliaria.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaFalcao\TintaFalcao.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaFarbenAutomotiva\TintaFarbenAutomotiva.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaFutura\TintaFutura.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaGeneral\TintaGeneral.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libtintaGlobalBc\TintaGlobalBc.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libtintaGlobalBsn\TintaGlobalBsn.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaGlobalCc11\TintaGlobalCc11.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaGlobalColor\TintaGlobalColor.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libtintaGlobalCsn\TintaGlobalCsn.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaGrafftex\TintaGrafftex.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaHydronorthImobiliaria\TintaHydronorthImobiliaria.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaInkor\TintaInkor.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaInternational\TintaInternational.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaIquine\TintaIquine.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaJotun\TintaJotun.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaKilling\TintaKilling.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaKillingIndustrial\TintaKillingIndustrial.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaKresil\TintaKresil.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaLazzumix\TintaLazzumix.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaLechler\TintaLechler.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaLeinertex\TintaLeinertex.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaLiko\TintaLiko.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaLukscolor\TintaLukscolor.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaLukscolor2\TintaLukscolor2.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaLuztol\TintaLuztol.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaMaestria\TintaMaestria.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaMaxVinil\TintaMaxVinil.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaMazaAutomotiva\TintaMazaAutomotiva.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaMazaImobiliaria\TintaMazaImobiliaria.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaMazaIndustrial\TintaMazaIndustrial.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaMegaTintas\TintaMegaTintas.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaMiniFabrica\TintaMiniFabrica.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaMontana\TintaMontana.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaNexa\TintaNexa.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaPpg\TintaPpg.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaPpgNexa\TintaPpgNexa.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaQualyVinil\TintaQualyVinil.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaRecoa\TintaRecoa.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaRennerImobiliaria\TintaRennerImobiliaria.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaRennerIndustrial\TintaRennerIndustrial.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaRennerPerformance\TintaRennerPerformance.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaResicolor\TintaResicolor.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaRoberlo\TintaRoberlo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaSayerlack\TintaSayerlack.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaSherwinWilliams\TintaSherwinWilliams.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaSherwinWilliams2\TintaSherwinWilliams2.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaSinteplast\TintaSinteplast.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaSkyMixAutomotiva\TintaSkyMixAutomotiva.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaSparlack\TintaSparlack.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaStandox\TintaStandox.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaStarmix\TintaStarmix.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaStarmixWeb\TintaStarmixWeb.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaSuvinil\TintaSuvinil.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaTexturaCia\TintaTexturaCia.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaTopCoat\TintaTopCoat.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaUniverso\TintaUniverso.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaVelutexImobiliaria\TintaVelutexImobiliaria.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="Lib\LibTintas\libTintaWeg\TintaWeg.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="Shared_Functions">
+        <MSBuild Projects="..\Packages\Shared\Functions\package\Linux\Shared.Functions.dproj"/>
+    </Target>
+    <Target Name="Shared_Functions:Clean">
+        <MSBuild Projects="..\Packages\Shared\Functions\package\Linux\Shared.Functions.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Shared_Functions:Make">
+        <MSBuild Projects="..\Packages\Shared\Functions\package\Linux\Shared.Functions.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="faturamento_impostos_interfaces">
+        <MSBuild Projects="..\Packages\Faturamento\Impostos\interfaces\package\Linux\faturamento.impostos.interfaces.dproj"/>
+    </Target>
+    <Target Name="faturamento_impostos_interfaces:Clean">
+        <MSBuild Projects="..\Packages\Faturamento\Impostos\interfaces\package\Linux\faturamento.impostos.interfaces.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="faturamento_impostos_interfaces:Make">
+        <MSBuild Projects="..\Packages\Faturamento\Impostos\interfaces\package\Linux\faturamento.impostos.interfaces.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="faturamento_impostos_tipos">
+        <MSBuild Projects="..\Packages\Faturamento\Impostos\tipos\package\Linux\faturamento.impostos.tipos.dproj"/>
+    </Target>
+    <Target Name="faturamento_impostos_tipos:Clean">
+        <MSBuild Projects="..\Packages\Faturamento\Impostos\tipos\package\Linux\faturamento.impostos.tipos.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="faturamento_impostos_tipos:Make">
+        <MSBuild Projects="..\Packages\Faturamento\Impostos\tipos\package\Linux\faturamento.impostos.tipos.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="faturamento_model">
+        <MSBuild Projects="..\Packages\Faturamento\Model\package\Linux\faturamento.model.dproj"/>
+    </Target>
+    <Target Name="faturamento_model:Clean">
+        <MSBuild Projects="..\Packages\Faturamento\Model\package\Linux\faturamento.model.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="faturamento_model:Make">
+        <MSBuild Projects="..\Packages\Faturamento\Model\package\Linux\faturamento.model.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="faturamento_impostos_calculos">
+        <MSBuild Projects="..\Packages\Faturamento\Impostos\calculos\package\Linux\faturamento.impostos.calculos.dproj"/>
+    </Target>
+    <Target Name="faturamento_impostos_calculos:Clean">
+        <MSBuild Projects="..\Packages\Faturamento\Impostos\calculos\package\Linux\faturamento.impostos.calculos.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="faturamento_impostos_calculos:Make">
+        <MSBuild Projects="..\Packages\Faturamento\Impostos\calculos\package\Linux\faturamento.impostos.calculos.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="faturamento_impostos_regras">
+        <MSBuild Projects="..\Packages\Faturamento\Impostos\regras\package\Linux\faturamento.impostos.regras.dproj"/>
+    </Target>
+    <Target Name="faturamento_impostos_regras:Clean">
+        <MSBuild Projects="..\Packages\Faturamento\Impostos\regras\package\Linux\faturamento.impostos.regras.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="faturamento_impostos_regras:Make">
+        <MSBuild Projects="..\Packages\Faturamento\Impostos\regras\package\Linux\faturamento.impostos.regras.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="faturamento_impostos_servicos">
+        <MSBuild Projects="..\Packages\Faturamento\Impostos\servicos\package\Linux\faturamento.impostos.servicos.dproj"/>
+    </Target>
+    <Target Name="faturamento_impostos_servicos:Clean">
+        <MSBuild Projects="..\Packages\Faturamento\Impostos\servicos\package\Linux\faturamento.impostos.servicos.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="faturamento_impostos_servicos:Make">
+        <MSBuild Projects="..\Packages\Faturamento\Impostos\servicos\package\Linux\faturamento.impostos.servicos.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="faturamento_precos_interfaces">
+        <MSBuild Projects="..\Packages\Faturamento\Precos\interfaces\package\Linux\faturamento.precos.interfaces.dproj"/>
+    </Target>
+    <Target Name="faturamento_precos_interfaces:Clean">
+        <MSBuild Projects="..\Packages\Faturamento\Precos\interfaces\package\Linux\faturamento.precos.interfaces.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="faturamento_precos_interfaces:Make">
+        <MSBuild Projects="..\Packages\Faturamento\Precos\interfaces\package\Linux\faturamento.precos.interfaces.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="faturamento_precos_tipos">
+        <MSBuild Projects="..\Packages\Faturamento\Precos\tipos\package\Linux\faturamento.precos.tipos.dproj"/>
+    </Target>
+    <Target Name="faturamento_precos_tipos:Clean">
+        <MSBuild Projects="..\Packages\Faturamento\Precos\tipos\package\Linux\faturamento.precos.tipos.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="faturamento_precos_tipos:Make">
+        <MSBuild Projects="..\Packages\Faturamento\Precos\tipos\package\Linux\faturamento.precos.tipos.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="faturamento_precos_calculos">
+        <MSBuild Projects="..\Packages\Faturamento\Precos\calculos\package\Linux\faturamento.precos.calculos.dproj"/>
+    </Target>
+    <Target Name="faturamento_precos_calculos:Clean">
+        <MSBuild Projects="..\Packages\Faturamento\Precos\calculos\package\Linux\faturamento.precos.calculos.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="faturamento_precos_calculos:Make">
+        <MSBuild Projects="..\Packages\Faturamento\Precos\calculos\package\Linux\faturamento.precos.calculos.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="faturamento_precos_servicos">
+        <MSBuild Projects="..\Packages\Faturamento\Precos\servicos\package\Linux\faturamento.precos.servicos.dproj"/>
+    </Target>
+    <Target Name="faturamento_precos_servicos:Clean">
+        <MSBuild Projects="..\Packages\Faturamento\Precos\servicos\package\Linux\faturamento.precos.servicos.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="faturamento_precos_servicos:Make">
+        <MSBuild Projects="..\Packages\Faturamento\Precos\servicos\package\Linux\faturamento.precos.servicos.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="faturamento_margem_interfaces">
+        <MSBuild Projects="..\Packages\Faturamento\Margem\interfaces\package\Linux\faturamento.margem.interfaces.dproj"/>
+    </Target>
+    <Target Name="faturamento_margem_interfaces:Clean">
+        <MSBuild Projects="..\Packages\Faturamento\Margem\interfaces\package\Linux\faturamento.margem.interfaces.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="faturamento_margem_interfaces:Make">
+        <MSBuild Projects="..\Packages\Faturamento\Margem\interfaces\package\Linux\faturamento.margem.interfaces.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="faturamento_margem_tipos">
+        <MSBuild Projects="..\Packages\Faturamento\Margem\tipos\package\Linux\faturamento.margem.tipos.dproj"/>
+    </Target>
+    <Target Name="faturamento_margem_tipos:Clean">
+        <MSBuild Projects="..\Packages\Faturamento\Margem\tipos\package\Linux\faturamento.margem.tipos.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="faturamento_margem_tipos:Make">
+        <MSBuild Projects="..\Packages\Faturamento\Margem\tipos\package\Linux\faturamento.margem.tipos.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="faturamento_margem_calculos">
+        <MSBuild Projects="..\Packages\Faturamento\Margem\calculos\package\Linux\faturamento.margem.calculos.dproj"/>
+    </Target>
+    <Target Name="faturamento_margem_calculos:Clean">
+        <MSBuild Projects="..\Packages\Faturamento\Margem\calculos\package\Linux\faturamento.margem.calculos.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="faturamento_margem_calculos:Make">
+        <MSBuild Projects="..\Packages\Faturamento\Margem\calculos\package\Linux\faturamento.margem.calculos.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="faturamento_margem_servicos">
+        <MSBuild Projects="..\Packages\Faturamento\Margem\servicos\package\Linux\faturamento.margem.servicos.dproj"/>
+    </Target>
+    <Target Name="faturamento_margem_servicos:Clean">
+        <MSBuild Projects="..\Packages\Faturamento\Margem\servicos\package\Linux\faturamento.margem.servicos.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="faturamento_margem_servicos:Make">
+        <MSBuild Projects="..\Packages\Faturamento\Margem\servicos\package\Linux\faturamento.margem.servicos.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ConsultarPrecoTintaService">
+        <MSBuild Projects="Consulta.Preco.Tinta\Target\Linux\ConsultarPrecoTintaService.dproj"/>
+    </Target>
+    <Target Name="ConsultarPrecoTintaService:Clean">
+        <MSBuild Projects="Consulta.Preco.Tinta\Target\Linux\ConsultarPrecoTintaService.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ConsultarPrecoTintaService:Make">
+        <MSBuild Projects="Consulta.Preco.Tinta\Target\Linux\ConsultarPrecoTintaService.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="EntregaFuturaService">
+        <MSBuild Projects="Entrega.Futura\Target\Linux\EntregaFuturaService.dproj"/>
+    </Target>
+    <Target Name="EntregaFuturaService:Clean">
+        <MSBuild Projects="Entrega.Futura\Target\Linux\EntregaFuturaService.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="EntregaFuturaService:Make">
+        <MSBuild Projects="Entrega.Futura\Target\Linux\EntregaFuturaService.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ExportacaoTintometricosTerceirosService">
+        <MSBuild Projects="Exporta.Tintometricos.Terceiros\Target\Linux\ExportacaoTintometricosTerceirosService.dproj"/>
+    </Target>
+    <Target Name="ExportacaoTintometricosTerceirosService:Clean">
+        <MSBuild Projects="Exporta.Tintometricos.Terceiros\Target\Linux\ExportacaoTintometricosTerceirosService.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ExportacaoTintometricosTerceirosService:Make">
+        <MSBuild Projects="Exporta.Tintometricos.Terceiros\Target\Linux\ExportacaoTintometricosTerceirosService.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FaturamentoServicesAPI">
+        <MSBuild Projects="Faturamento.Services.API\Target\Linux\FaturamentoServicesAPI.dproj"/>
+    </Target>
+    <Target Name="FaturamentoServicesAPI:Clean">
+        <MSBuild Projects="Faturamento.Services.API\Target\Linux\FaturamentoServicesAPI.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FaturamentoServicesAPI:Make">
+        <MSBuild Projects="Faturamento.Services.API\Target\Linux\FaturamentoServicesAPI.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FusionEnviaRegistrosService">
+        <MSBuild Projects="Fusion.Envia.Registros\Target\Linux\FusionEnviaRegistrosService.dproj"/>
+    </Target>
+    <Target Name="FusionEnviaRegistrosService:Clean">
+        <MSBuild Projects="Fusion.Envia.Registros\Target\Linux\FusionEnviaRegistrosService.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FusionEnviaRegistrosService:Make">
+        <MSBuild Projects="Fusion.Envia.Registros\Target\Linux\FusionEnviaRegistrosService.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="FusionObtemRomaneiosService">
+        <MSBuild Projects="Fusion.Obtem.Romaneios\Target\Linux\FusionObtemRomaneiosService.dproj"/>
+    </Target>
+    <Target Name="FusionObtemRomaneiosService:Clean">
+        <MSBuild Projects="Fusion.Obtem.Romaneios\Target\Linux\FusionObtemRomaneiosService.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="FusionObtemRomaneiosService:Make">
+        <MSBuild Projects="Fusion.Obtem.Romaneios\Target\Linux\FusionObtemRomaneiosService.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="iMendesIntegracaoService">
+        <MSBuild Projects="iMendesIntegracao\Target\Linux\iMendesIntegracaoService.dproj"/>
+    </Target>
+    <Target Name="iMendesIntegracaoService:Clean">
+        <MSBuild Projects="iMendesIntegracao\Target\Linux\iMendesIntegracaoService.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="iMendesIntegracaoService:Make">
+        <MSBuild Projects="iMendesIntegracao\Target\Linux\iMendesIntegracaoService.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="OrdemProducaoIndustrial_AtualizarCustosService">
+        <MSBuild Projects="OrdemProducaoIndustrial.AtualizarCustos\Target\Linux\OrdemProducaoIndustrial.AtualizarCustosService.dproj"/>
+    </Target>
+    <Target Name="OrdemProducaoIndustrial_AtualizarCustosService:Clean">
+        <MSBuild Projects="OrdemProducaoIndustrial.AtualizarCustos\Target\Linux\OrdemProducaoIndustrial.AtualizarCustosService.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="OrdemProducaoIndustrial_AtualizarCustosService:Make">
+        <MSBuild Projects="OrdemProducaoIndustrial.AtualizarCustos\Target\Linux\OrdemProducaoIndustrial.AtualizarCustosService.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ProcessaCalculoRota">
+        <MSBuild Projects="Calculo.Rota\Target\Linux\ProcessaCalculoRota.dproj"/>
+    </Target>
+    <Target Name="ProcessaCalculoRota:Clean">
+        <MSBuild Projects="Calculo.Rota\Target\Linux\ProcessaCalculoRota.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ProcessaCalculoRota:Make">
+        <MSBuild Projects="Calculo.Rota\Target\Linux\ProcessaCalculoRota.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ProcessaCobrancaEletronica">
+        <MSBuild Projects="Cobranca.Eletronica\Target\Linux\ProcessaCobrancaEletronica.dproj"/>
+    </Target>
+    <Target Name="ProcessaCobrancaEletronica:Clean">
+        <MSBuild Projects="Cobranca.Eletronica\Target\Linux\ProcessaCobrancaEletronica.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ProcessaCobrancaEletronica:Make">
+        <MSBuild Projects="Cobranca.Eletronica\Target\Linux\ProcessaCobrancaEletronica.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ProcessaLinkPagamento">
+        <MSBuild Projects="Link.Pagamento\Target\Linux\ProcessaLinkPagamento.dproj"/>
+    </Target>
+    <Target Name="ProcessaLinkPagamento:Clean">
+        <MSBuild Projects="Link.Pagamento\Target\Linux\ProcessaLinkPagamento.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ProcessaLinkPagamento:Make">
+        <MSBuild Projects="Link.Pagamento\Target\Linux\ProcessaLinkPagamento.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ProcessaRecebiveisAlpe">
+        <MSBuild Projects="Recebiveis.Alpe\Target\Linux\ProcessaRecebiveisAlpe.dproj"/>
+    </Target>
+    <Target Name="ProcessaRecebiveisAlpe:Clean">
+        <MSBuild Projects="Recebiveis.Alpe\Target\Linux\ProcessaRecebiveisAlpe.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ProcessaRecebiveisAlpe:Make">
+        <MSBuild Projects="Recebiveis.Alpe\Target\Linux\ProcessaRecebiveisAlpe.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="ReservaItemPedidoService">
+        <MSBuild Projects="Reserva.Item.Pedido\Target\Linux\ReservaItemPedidoService.dproj"/>
+    </Target>
+    <Target Name="ReservaItemPedidoService:Clean">
+        <MSBuild Projects="Reserva.Item.Pedido\Target\Linux\ReservaItemPedidoService.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="ReservaItemPedidoService:Make">
+        <MSBuild Projects="Reserva.Item.Pedido\Target\Linux\ReservaItemPedidoService.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="SaldoReservadoService">
+        <MSBuild Projects="Saldo.Reservado\Target\Linux\SaldoReservadoService.dproj"/>
+    </Target>
+    <Target Name="SaldoReservadoService:Clean">
+        <MSBuild Projects="Saldo.Reservado\Target\Linux\SaldoReservadoService.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SaldoReservadoService:Make">
+        <MSBuild Projects="Saldo.Reservado\Target\Linux\SaldoReservadoService.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="SaldoReservadoAnaliticoService">
+        <MSBuild Projects="Saldo.Reservado.Analitico\Target\Linux\SaldoReservadoAnaliticoService.dproj"/>
+    </Target>
+    <Target Name="SaldoReservadoAnaliticoService:Clean">
+        <MSBuild Projects="Saldo.Reservado.Analitico\Target\Linux\SaldoReservadoAnaliticoService.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="SaldoReservadoAnaliticoService:Make">
+        <MSBuild Projects="Saldo.Reservado.Analitico\Target\Linux\SaldoReservadoAnaliticoService.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="StatusItemPedidoService">
+        <MSBuild Projects="Status.Item.Pedido\Target\Linux\StatusItemPedidoService.dproj"/>
+    </Target>
+    <Target Name="StatusItemPedidoService:Clean">
+        <MSBuild Projects="Status.Item.Pedido\Target\Linux\StatusItemPedidoService.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="StatusItemPedidoService:Make">
+        <MSBuild Projects="Status.Item.Pedido\Target\Linux\StatusItemPedidoService.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="StatusPedidoService">
+        <MSBuild Projects="Status.Pedido\Target\Linux\StatusPedidoService.dproj"/>
+    </Target>
+    <Target Name="StatusPedidoService:Clean">
+        <MSBuild Projects="Status.Pedido\Target\Linux\StatusPedidoService.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="StatusPedidoService:Make">
+        <MSBuild Projects="Status.Pedido\Target\Linux\StatusPedidoService.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="AutcomTinta">
+        <MSBuild Projects="Lib\autcomtinta\Linux\AutcomTinta.dproj"/>
+    </Target>
+    <Target Name="AutcomTinta:Clean">
+        <MSBuild Projects="Lib\autcomtinta\Linux\AutcomTinta.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AutcomTinta:Make">
+        <MSBuild Projects="Lib\autcomtinta\Linux\AutcomTinta.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaAdvance">
+        <MSBuild Projects="Lib\LibTintas\libTintaAdvance\TintaAdvance.dproj"/>
+    </Target>
+    <Target Name="TintaAdvance:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaAdvance\TintaAdvance.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaAdvance:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaAdvance\TintaAdvance.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaAdvanceStr">
+        <MSBuild Projects="Lib\LibTintas\libTintaAdvanceStr\TintaAdvanceStr.dproj"/>
+    </Target>
+    <Target Name="TintaAdvanceStr:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaAdvanceStr\TintaAdvanceStr.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaAdvanceStr:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaAdvanceStr\TintaAdvanceStr.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaAdvanceTintoSystem">
+        <MSBuild Projects="Lib\LibTintas\libTintaAdvanceTintoSystem\TintaAdvanceTintoSystem.dproj"/>
+    </Target>
+    <Target Name="TintaAdvanceTintoSystem:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaAdvanceTintoSystem\TintaAdvanceTintoSystem.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaAdvanceTintoSystem:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaAdvanceTintoSystem\TintaAdvanceTintoSystem.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaAlessiImobiliaria">
+        <MSBuild Projects="Lib\LibTintas\libTintaAlessiImobiliaria\TintaAlessiImobiliaria.dproj"/>
+    </Target>
+    <Target Name="TintaAlessiImobiliaria:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaAlessiImobiliaria\TintaAlessiImobiliaria.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaAlessiImobiliaria:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaAlessiImobiliaria\TintaAlessiImobiliaria.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaAlterPlus">
+        <MSBuild Projects="Lib\LibTintas\libTintaAlterPlus\TintaAlterPlus.dproj"/>
+    </Target>
+    <Target Name="TintaAlterPlus:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaAlterPlus\TintaAlterPlus.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaAlterPlus:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaAlterPlus\TintaAlterPlus.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaAnjoAutomotiva">
+        <MSBuild Projects="Lib\LibTintas\libTintaAnjoAutomotiva\TintaAnjoAutomotiva.dproj"/>
+    </Target>
+    <Target Name="TintaAnjoAutomotiva:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaAnjoAutomotiva\TintaAnjoAutomotiva.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaAnjoAutomotiva:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaAnjoAutomotiva\TintaAnjoAutomotiva.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaAnjoImobiliaria">
+        <MSBuild Projects="Lib\LibTintas\libTintaAnjoImobiliaria\TintaAnjoImobiliaria.dproj"/>
+    </Target>
+    <Target Name="TintaAnjoImobiliaria:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaAnjoImobiliaria\TintaAnjoImobiliaria.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaAnjoImobiliaria:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaAnjoImobiliaria\TintaAnjoImobiliaria.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaAnjoSintetica">
+        <MSBuild Projects="Lib\LibTintas\libTintaAnjoSinterica\TintaAnjoSintetica.dproj"/>
+    </Target>
+    <Target Name="TintaAnjoSintetica:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaAnjoSinterica\TintaAnjoSintetica.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaAnjoSintetica:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaAnjoSinterica\TintaAnjoSintetica.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaAnnetta">
+        <MSBuild Projects="Lib\LibTintas\libTintaAnnetta\TintaAnnetta.dproj"/>
+    </Target>
+    <Target Name="TintaAnnetta:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaAnnetta\TintaAnnetta.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaAnnetta:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaAnnetta\TintaAnnetta.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaAutoluks">
+        <MSBuild Projects="Lib\LibTintas\libTintaAutoluks\TintaAutoluks.dproj"/>
+    </Target>
+    <Target Name="TintaAutoluks:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaAutoluks\TintaAutoluks.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaAutoluks:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaAutoluks\TintaAutoluks.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaBautech">
+        <MSBuild Projects="Lib\LibTintas\libTintaBautech\TintaBautech.dproj"/>
+    </Target>
+    <Target Name="TintaBautech:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaBautech\TintaBautech.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaBautech:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaBautech\TintaBautech.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaBellaCor">
+        <MSBuild Projects="Lib\LibTintas\libTintaBellaCor\TintaBellaCor.dproj"/>
+    </Target>
+    <Target Name="TintaBellaCor:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaBellaCor\TintaBellaCor.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaBellaCor:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaBellaCor\TintaBellaCor.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaBellaCorTintavel">
+        <MSBuild Projects="Lib\LibTintas\libtintaBellaCorTintavel\TintaBellaCorTintavel.dproj"/>
+    </Target>
+    <Target Name="TintaBellaCorTintavel:Clean">
+        <MSBuild Projects="Lib\LibTintas\libtintaBellaCorTintavel\TintaBellaCorTintavel.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaBellaCorTintavel:Make">
+        <MSBuild Projects="Lib\LibTintas\libtintaBellaCorTintavel\TintaBellaCorTintavel.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaBrasimixAutomotiva">
+        <MSBuild Projects="Lib\LibTintas\libTintaBrasimixAutomotiva\TintaBrasimixAutomotiva.dproj"/>
+    </Target>
+    <Target Name="TintaBrasimixAutomotiva:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaBrasimixAutomotiva\TintaBrasimixAutomotiva.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaBrasimixAutomotiva:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaBrasimixAutomotiva\TintaBrasimixAutomotiva.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaBrasimixImobiliaria">
+        <MSBuild Projects="Lib\LibTintas\libTintaBrasimixImobiliaria\TintaBrasimixImobiliaria.dproj"/>
+    </Target>
+    <Target Name="TintaBrasimixImobiliaria:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaBrasimixImobiliaria\TintaBrasimixImobiliaria.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaBrasimixImobiliaria:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaBrasimixImobiliaria\TintaBrasimixImobiliaria.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaBrazilianColorAutomotiva">
+        <MSBuild Projects="Lib\LibTintas\libTintaBrazilianColorAutomotiva\TintaBrazilianColorAutomotiva.dproj"/>
+    </Target>
+    <Target Name="TintaBrazilianColorAutomotiva:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaBrazilianColorAutomotiva\TintaBrazilianColorAutomotiva.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaBrazilianColorAutomotiva:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaBrazilianColorAutomotiva\TintaBrazilianColorAutomotiva.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaCalamar">
+        <MSBuild Projects="Lib\LibTintas\libTintaCalamar\TintaCalamar.dproj"/>
+    </Target>
+    <Target Name="TintaCalamar:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaCalamar\TintaCalamar.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaCalamar:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaCalamar\TintaCalamar.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaChreon">
+        <MSBuild Projects="Lib\LibTintas\libTintaChreon\TintaChreon.dproj"/>
+    </Target>
+    <Target Name="TintaChreon:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaChreon\TintaChreon.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaChreon:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaChreon\TintaChreon.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaCiacollor">
+        <MSBuild Projects="Lib\LibTintas\libTintaCiacollor\TintaCiacollor.dproj"/>
+    </Target>
+    <Target Name="TintaCiacollor:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaCiacollor\TintaCiacollor.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaCiacollor:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaCiacollor\TintaCiacollor.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaColorbraz">
+        <MSBuild Projects="Lib\LibTintas\libTintaColorbraz\TintaColorbraz.dproj"/>
+    </Target>
+    <Target Name="TintaColorbraz:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaColorbraz\TintaColorbraz.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaColorbraz:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaColorbraz\TintaColorbraz.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaColorPro">
+        <MSBuild Projects="Lib\LibTintas\libTintaColorPro\TintaColorPro.dproj"/>
+    </Target>
+    <Target Name="TintaColorPro:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaColorPro\TintaColorPro.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaColorPro:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaColorPro\TintaColorPro.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaCoralImobiliaria">
+        <MSBuild Projects="Lib\LibTintas\libTintaCoralImobiliaria\TintaCoralImobiliaria.dproj"/>
+    </Target>
+    <Target Name="TintaCoralImobiliaria:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaCoralImobiliaria\TintaCoralImobiliaria.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaCoralImobiliaria:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaCoralImobiliaria\TintaCoralImobiliaria.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaDacar">
+        <MSBuild Projects="Lib\LibTintas\libTintaDacar\TintaDacar.dproj"/>
+    </Target>
+    <Target Name="TintaDacar:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaDacar\TintaDacar.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaDacar:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaDacar\TintaDacar.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaDacasa">
+        <MSBuild Projects="Lib\LibTintas\libTintaDacasa\TintaDacasa.dproj"/>
+    </Target>
+    <Target Name="TintaDacasa:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaDacasa\TintaDacasa.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaDacasa:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaDacasa\TintaDacasa.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaDupont">
+        <MSBuild Projects="Lib\LibTintas\libTintaDupont\TintaDupont.dproj"/>
+    </Target>
+    <Target Name="TintaDupont:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaDupont\TintaDupont.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaDupont:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaDupont\TintaDupont.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaDuxone">
+        <MSBuild Projects="Lib\LibTintas\libTintaDuxone\TintaDuxone.dproj"/>
+    </Target>
+    <Target Name="TintaDuxone:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaDuxone\TintaDuxone.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaDuxone:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaDuxone\TintaDuxone.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaDuxone2">
+        <MSBuild Projects="Lib\LibTintas\libTintaDuxone2\TintaDuxone2.dproj"/>
+    </Target>
+    <Target Name="TintaDuxone2:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaDuxone2\TintaDuxone2.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaDuxone2:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaDuxone2\TintaDuxone2.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaEucatexImobiliaria">
+        <MSBuild Projects="Lib\LibTintas\libTintaEucatexImobiliaria\TintaEucatexImobiliaria.dproj"/>
+    </Target>
+    <Target Name="TintaEucatexImobiliaria:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaEucatexImobiliaria\TintaEucatexImobiliaria.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaEucatexImobiliaria:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaEucatexImobiliaria\TintaEucatexImobiliaria.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaFalcao">
+        <MSBuild Projects="Lib\LibTintas\libTintaFalcao\TintaFalcao.dproj"/>
+    </Target>
+    <Target Name="TintaFalcao:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaFalcao\TintaFalcao.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaFalcao:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaFalcao\TintaFalcao.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaFarbenAutomotiva">
+        <MSBuild Projects="Lib\LibTintas\libTintaFarbenAutomotiva\TintaFarbenAutomotiva.dproj"/>
+    </Target>
+    <Target Name="TintaFarbenAutomotiva:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaFarbenAutomotiva\TintaFarbenAutomotiva.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaFarbenAutomotiva:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaFarbenAutomotiva\TintaFarbenAutomotiva.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaFutura">
+        <MSBuild Projects="Lib\LibTintas\libTintaFutura\TintaFutura.dproj"/>
+    </Target>
+    <Target Name="TintaFutura:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaFutura\TintaFutura.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaFutura:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaFutura\TintaFutura.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaGeneral">
+        <MSBuild Projects="Lib\LibTintas\libTintaGeneral\TintaGeneral.dproj"/>
+    </Target>
+    <Target Name="TintaGeneral:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaGeneral\TintaGeneral.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaGeneral:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaGeneral\TintaGeneral.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaGlobalBc">
+        <MSBuild Projects="Lib\LibTintas\libtintaGlobalBc\TintaGlobalBc.dproj"/>
+    </Target>
+    <Target Name="TintaGlobalBc:Clean">
+        <MSBuild Projects="Lib\LibTintas\libtintaGlobalBc\TintaGlobalBc.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaGlobalBc:Make">
+        <MSBuild Projects="Lib\LibTintas\libtintaGlobalBc\TintaGlobalBc.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaGlobalBsn">
+        <MSBuild Projects="Lib\LibTintas\libtintaGlobalBsn\TintaGlobalBsn.dproj"/>
+    </Target>
+    <Target Name="TintaGlobalBsn:Clean">
+        <MSBuild Projects="Lib\LibTintas\libtintaGlobalBsn\TintaGlobalBsn.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaGlobalBsn:Make">
+        <MSBuild Projects="Lib\LibTintas\libtintaGlobalBsn\TintaGlobalBsn.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaGlobalCc11">
+        <MSBuild Projects="Lib\LibTintas\libTintaGlobalCc11\TintaGlobalCc11.dproj"/>
+    </Target>
+    <Target Name="TintaGlobalCc11:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaGlobalCc11\TintaGlobalCc11.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaGlobalCc11:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaGlobalCc11\TintaGlobalCc11.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaGlobalColor">
+        <MSBuild Projects="Lib\LibTintas\libTintaGlobalColor\TintaGlobalColor.dproj"/>
+    </Target>
+    <Target Name="TintaGlobalColor:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaGlobalColor\TintaGlobalColor.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaGlobalColor:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaGlobalColor\TintaGlobalColor.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaGlobalCsn">
+        <MSBuild Projects="Lib\LibTintas\libtintaGlobalCsn\TintaGlobalCsn.dproj"/>
+    </Target>
+    <Target Name="TintaGlobalCsn:Clean">
+        <MSBuild Projects="Lib\LibTintas\libtintaGlobalCsn\TintaGlobalCsn.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaGlobalCsn:Make">
+        <MSBuild Projects="Lib\LibTintas\libtintaGlobalCsn\TintaGlobalCsn.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaGrafftex">
+        <MSBuild Projects="Lib\LibTintas\libTintaGrafftex\TintaGrafftex.dproj"/>
+    </Target>
+    <Target Name="TintaGrafftex:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaGrafftex\TintaGrafftex.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaGrafftex:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaGrafftex\TintaGrafftex.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaHydronorthImobiliaria">
+        <MSBuild Projects="Lib\LibTintas\libTintaHydronorthImobiliaria\TintaHydronorthImobiliaria.dproj"/>
+    </Target>
+    <Target Name="TintaHydronorthImobiliaria:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaHydronorthImobiliaria\TintaHydronorthImobiliaria.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaHydronorthImobiliaria:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaHydronorthImobiliaria\TintaHydronorthImobiliaria.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaInkor">
+        <MSBuild Projects="Lib\LibTintas\libTintaInkor\TintaInkor.dproj"/>
+    </Target>
+    <Target Name="TintaInkor:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaInkor\TintaInkor.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaInkor:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaInkor\TintaInkor.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaInternational">
+        <MSBuild Projects="Lib\LibTintas\libTintaInternational\TintaInternational.dproj"/>
+    </Target>
+    <Target Name="TintaInternational:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaInternational\TintaInternational.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaInternational:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaInternational\TintaInternational.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaIquine">
+        <MSBuild Projects="Lib\LibTintas\libTintaIquine\TintaIquine.dproj"/>
+    </Target>
+    <Target Name="TintaIquine:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaIquine\TintaIquine.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaIquine:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaIquine\TintaIquine.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaJotun">
+        <MSBuild Projects="Lib\LibTintas\libTintaJotun\TintaJotun.dproj"/>
+    </Target>
+    <Target Name="TintaJotun:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaJotun\TintaJotun.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaJotun:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaJotun\TintaJotun.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaKilling">
+        <MSBuild Projects="Lib\LibTintas\libTintaKilling\TintaKilling.dproj"/>
+    </Target>
+    <Target Name="TintaKilling:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaKilling\TintaKilling.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaKilling:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaKilling\TintaKilling.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaKillingIndustrial">
+        <MSBuild Projects="Lib\LibTintas\libTintaKillingIndustrial\TintaKillingIndustrial.dproj"/>
+    </Target>
+    <Target Name="TintaKillingIndustrial:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaKillingIndustrial\TintaKillingIndustrial.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaKillingIndustrial:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaKillingIndustrial\TintaKillingIndustrial.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaKresil">
+        <MSBuild Projects="Lib\LibTintas\libTintaKresil\TintaKresil.dproj"/>
+    </Target>
+    <Target Name="TintaKresil:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaKresil\TintaKresil.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaKresil:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaKresil\TintaKresil.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaLazzumix">
+        <MSBuild Projects="Lib\LibTintas\libTintaLazzumix\TintaLazzumix.dproj"/>
+    </Target>
+    <Target Name="TintaLazzumix:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaLazzumix\TintaLazzumix.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaLazzumix:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaLazzumix\TintaLazzumix.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaLechler">
+        <MSBuild Projects="Lib\LibTintas\libTintaLechler\TintaLechler.dproj"/>
+    </Target>
+    <Target Name="TintaLechler:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaLechler\TintaLechler.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaLechler:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaLechler\TintaLechler.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaLeinertex">
+        <MSBuild Projects="Lib\LibTintas\libTintaLeinertex\TintaLeinertex.dproj"/>
+    </Target>
+    <Target Name="TintaLeinertex:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaLeinertex\TintaLeinertex.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaLeinertex:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaLeinertex\TintaLeinertex.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaLiko">
+        <MSBuild Projects="Lib\LibTintas\libTintaLiko\TintaLiko.dproj"/>
+    </Target>
+    <Target Name="TintaLiko:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaLiko\TintaLiko.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaLiko:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaLiko\TintaLiko.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaLukscolor">
+        <MSBuild Projects="Lib\LibTintas\libTintaLukscolor\TintaLukscolor.dproj"/>
+    </Target>
+    <Target Name="TintaLukscolor:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaLukscolor\TintaLukscolor.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaLukscolor:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaLukscolor\TintaLukscolor.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaLukscolor2">
+        <MSBuild Projects="Lib\LibTintas\libTintaLukscolor2\TintaLukscolor2.dproj"/>
+    </Target>
+    <Target Name="TintaLukscolor2:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaLukscolor2\TintaLukscolor2.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaLukscolor2:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaLukscolor2\TintaLukscolor2.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaLuztol">
+        <MSBuild Projects="Lib\LibTintas\libTintaLuztol\TintaLuztol.dproj"/>
+    </Target>
+    <Target Name="TintaLuztol:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaLuztol\TintaLuztol.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaLuztol:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaLuztol\TintaLuztol.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaMaestria">
+        <MSBuild Projects="Lib\LibTintas\libTintaMaestria\TintaMaestria.dproj"/>
+    </Target>
+    <Target Name="TintaMaestria:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaMaestria\TintaMaestria.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaMaestria:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaMaestria\TintaMaestria.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaMaxVinil">
+        <MSBuild Projects="Lib\LibTintas\libTintaMaxVinil\TintaMaxVinil.dproj"/>
+    </Target>
+    <Target Name="TintaMaxVinil:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaMaxVinil\TintaMaxVinil.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaMaxVinil:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaMaxVinil\TintaMaxVinil.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaMazaAutomotiva">
+        <MSBuild Projects="Lib\LibTintas\libTintaMazaAutomotiva\TintaMazaAutomotiva.dproj"/>
+    </Target>
+    <Target Name="TintaMazaAutomotiva:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaMazaAutomotiva\TintaMazaAutomotiva.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaMazaAutomotiva:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaMazaAutomotiva\TintaMazaAutomotiva.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaMazaImobiliaria">
+        <MSBuild Projects="Lib\LibTintas\libTintaMazaImobiliaria\TintaMazaImobiliaria.dproj"/>
+    </Target>
+    <Target Name="TintaMazaImobiliaria:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaMazaImobiliaria\TintaMazaImobiliaria.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaMazaImobiliaria:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaMazaImobiliaria\TintaMazaImobiliaria.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaMazaIndustrial">
+        <MSBuild Projects="Lib\LibTintas\libTintaMazaIndustrial\TintaMazaIndustrial.dproj"/>
+    </Target>
+    <Target Name="TintaMazaIndustrial:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaMazaIndustrial\TintaMazaIndustrial.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaMazaIndustrial:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaMazaIndustrial\TintaMazaIndustrial.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaMegaTintas">
+        <MSBuild Projects="Lib\LibTintas\libTintaMegaTintas\TintaMegaTintas.dproj"/>
+    </Target>
+    <Target Name="TintaMegaTintas:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaMegaTintas\TintaMegaTintas.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaMegaTintas:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaMegaTintas\TintaMegaTintas.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaMiniFabrica">
+        <MSBuild Projects="Lib\LibTintas\libTintaMiniFabrica\TintaMiniFabrica.dproj"/>
+    </Target>
+    <Target Name="TintaMiniFabrica:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaMiniFabrica\TintaMiniFabrica.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaMiniFabrica:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaMiniFabrica\TintaMiniFabrica.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaMontana">
+        <MSBuild Projects="Lib\LibTintas\libTintaMontana\TintaMontana.dproj"/>
+    </Target>
+    <Target Name="TintaMontana:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaMontana\TintaMontana.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaMontana:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaMontana\TintaMontana.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaNexa">
+        <MSBuild Projects="Lib\LibTintas\libTintaNexa\TintaNexa.dproj"/>
+    </Target>
+    <Target Name="TintaNexa:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaNexa\TintaNexa.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaNexa:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaNexa\TintaNexa.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaPpg">
+        <MSBuild Projects="Lib\LibTintas\libTintaPpg\TintaPpg.dproj"/>
+    </Target>
+    <Target Name="TintaPpg:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaPpg\TintaPpg.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaPpg:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaPpg\TintaPpg.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaPpgNexa">
+        <MSBuild Projects="Lib\LibTintas\libTintaPpgNexa\TintaPpgNexa.dproj"/>
+    </Target>
+    <Target Name="TintaPpgNexa:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaPpgNexa\TintaPpgNexa.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaPpgNexa:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaPpgNexa\TintaPpgNexa.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaQualyVinil">
+        <MSBuild Projects="Lib\LibTintas\libTintaQualyVinil\TintaQualyVinil.dproj"/>
+    </Target>
+    <Target Name="TintaQualyVinil:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaQualyVinil\TintaQualyVinil.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaQualyVinil:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaQualyVinil\TintaQualyVinil.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaRecoa">
+        <MSBuild Projects="Lib\LibTintas\libTintaRecoa\TintaRecoa.dproj"/>
+    </Target>
+    <Target Name="TintaRecoa:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaRecoa\TintaRecoa.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaRecoa:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaRecoa\TintaRecoa.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaRennerImobiliaria">
+        <MSBuild Projects="Lib\LibTintas\libTintaRennerImobiliaria\TintaRennerImobiliaria.dproj"/>
+    </Target>
+    <Target Name="TintaRennerImobiliaria:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaRennerImobiliaria\TintaRennerImobiliaria.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaRennerImobiliaria:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaRennerImobiliaria\TintaRennerImobiliaria.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaRennerIndustrial">
+        <MSBuild Projects="Lib\LibTintas\libTintaRennerIndustrial\TintaRennerIndustrial.dproj"/>
+    </Target>
+    <Target Name="TintaRennerIndustrial:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaRennerIndustrial\TintaRennerIndustrial.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaRennerIndustrial:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaRennerIndustrial\TintaRennerIndustrial.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaRennerPerformance">
+        <MSBuild Projects="Lib\LibTintas\libTintaRennerPerformance\TintaRennerPerformance.dproj"/>
+    </Target>
+    <Target Name="TintaRennerPerformance:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaRennerPerformance\TintaRennerPerformance.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaRennerPerformance:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaRennerPerformance\TintaRennerPerformance.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaResicolor">
+        <MSBuild Projects="Lib\LibTintas\libTintaResicolor\TintaResicolor.dproj"/>
+    </Target>
+    <Target Name="TintaResicolor:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaResicolor\TintaResicolor.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaResicolor:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaResicolor\TintaResicolor.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaRoberlo">
+        <MSBuild Projects="Lib\LibTintas\libTintaRoberlo\TintaRoberlo.dproj"/>
+    </Target>
+    <Target Name="TintaRoberlo:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaRoberlo\TintaRoberlo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaRoberlo:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaRoberlo\TintaRoberlo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaSayerlack">
+        <MSBuild Projects="Lib\LibTintas\libTintaSayerlack\TintaSayerlack.dproj"/>
+    </Target>
+    <Target Name="TintaSayerlack:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaSayerlack\TintaSayerlack.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaSayerlack:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaSayerlack\TintaSayerlack.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaSherwinWilliams">
+        <MSBuild Projects="Lib\LibTintas\libTintaSherwinWilliams\TintaSherwinWilliams.dproj"/>
+    </Target>
+    <Target Name="TintaSherwinWilliams:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaSherwinWilliams\TintaSherwinWilliams.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaSherwinWilliams:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaSherwinWilliams\TintaSherwinWilliams.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaSherwinWilliams2">
+        <MSBuild Projects="Lib\LibTintas\libTintaSherwinWilliams2\TintaSherwinWilliams2.dproj"/>
+    </Target>
+    <Target Name="TintaSherwinWilliams2:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaSherwinWilliams2\TintaSherwinWilliams2.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaSherwinWilliams2:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaSherwinWilliams2\TintaSherwinWilliams2.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaSinteplast">
+        <MSBuild Projects="Lib\LibTintas\libTintaSinteplast\TintaSinteplast.dproj"/>
+    </Target>
+    <Target Name="TintaSinteplast:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaSinteplast\TintaSinteplast.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaSinteplast:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaSinteplast\TintaSinteplast.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaSkyMixAutomotiva">
+        <MSBuild Projects="Lib\LibTintas\libTintaSkyMixAutomotiva\TintaSkyMixAutomotiva.dproj"/>
+    </Target>
+    <Target Name="TintaSkyMixAutomotiva:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaSkyMixAutomotiva\TintaSkyMixAutomotiva.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaSkyMixAutomotiva:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaSkyMixAutomotiva\TintaSkyMixAutomotiva.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaSparlack">
+        <MSBuild Projects="Lib\LibTintas\libTintaSparlack\TintaSparlack.dproj"/>
+    </Target>
+    <Target Name="TintaSparlack:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaSparlack\TintaSparlack.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaSparlack:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaSparlack\TintaSparlack.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaStandox">
+        <MSBuild Projects="Lib\LibTintas\libTintaStandox\TintaStandox.dproj"/>
+    </Target>
+    <Target Name="TintaStandox:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaStandox\TintaStandox.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaStandox:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaStandox\TintaStandox.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaStarmix">
+        <MSBuild Projects="Lib\LibTintas\libTintaStarmix\TintaStarmix.dproj"/>
+    </Target>
+    <Target Name="TintaStarmix:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaStarmix\TintaStarmix.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaStarmix:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaStarmix\TintaStarmix.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaStarmixWeb">
+        <MSBuild Projects="Lib\LibTintas\libTintaStarmixWeb\TintaStarmixWeb.dproj"/>
+    </Target>
+    <Target Name="TintaStarmixWeb:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaStarmixWeb\TintaStarmixWeb.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaStarmixWeb:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaStarmixWeb\TintaStarmixWeb.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaSuvinil">
+        <MSBuild Projects="Lib\LibTintas\libTintaSuvinil\TintaSuvinil.dproj"/>
+    </Target>
+    <Target Name="TintaSuvinil:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaSuvinil\TintaSuvinil.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaSuvinil:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaSuvinil\TintaSuvinil.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaTexturaCia">
+        <MSBuild Projects="Lib\LibTintas\libTintaTexturaCia\TintaTexturaCia.dproj"/>
+    </Target>
+    <Target Name="TintaTexturaCia:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaTexturaCia\TintaTexturaCia.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaTexturaCia:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaTexturaCia\TintaTexturaCia.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaTopCoat">
+        <MSBuild Projects="Lib\LibTintas\libTintaTopCoat\TintaTopCoat.dproj"/>
+    </Target>
+    <Target Name="TintaTopCoat:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaTopCoat\TintaTopCoat.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaTopCoat:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaTopCoat\TintaTopCoat.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaUniverso">
+        <MSBuild Projects="Lib\LibTintas\libTintaUniverso\TintaUniverso.dproj"/>
+    </Target>
+    <Target Name="TintaUniverso:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaUniverso\TintaUniverso.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaUniverso:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaUniverso\TintaUniverso.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaVelutexImobiliaria">
+        <MSBuild Projects="Lib\LibTintas\libTintaVelutexImobiliaria\TintaVelutexImobiliaria.dproj"/>
+    </Target>
+    <Target Name="TintaVelutexImobiliaria:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaVelutexImobiliaria\TintaVelutexImobiliaria.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaVelutexImobiliaria:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaVelutexImobiliaria\TintaVelutexImobiliaria.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="TintaWeg">
+        <MSBuild Projects="Lib\LibTintas\libTintaWeg\TintaWeg.dproj"/>
+    </Target>
+    <Target Name="TintaWeg:Clean">
+        <MSBuild Projects="Lib\LibTintas\libTintaWeg\TintaWeg.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="TintaWeg:Make">
+        <MSBuild Projects="Lib\LibTintas\libTintaWeg\TintaWeg.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="Shared_Functions;faturamento_impostos_interfaces;faturamento_impostos_tipos;faturamento_model;faturamento_impostos_calculos;faturamento_impostos_regras;faturamento_impostos_servicos;faturamento_precos_interfaces;faturamento_precos_tipos;faturamento_precos_calculos;faturamento_precos_servicos;faturamento_margem_interfaces;faturamento_margem_tipos;faturamento_margem_calculos;faturamento_margem_servicos;ConsultarPrecoTintaService;EntregaFuturaService;ExportacaoTintometricosTerceirosService;FaturamentoServicesAPI;FusionEnviaRegistrosService;FusionObtemRomaneiosService;iMendesIntegracaoService;OrdemProducaoIndustrial_AtualizarCustosService;ProcessaCalculoRota;ProcessaCobrancaEletronica;ProcessaLinkPagamento;ProcessaRecebiveisAlpe;ReservaItemPedidoService;SaldoReservadoService;SaldoReservadoAnaliticoService;StatusItemPedidoService;StatusPedidoService;AutcomTinta;TintaAdvance;TintaAdvanceStr;TintaAdvanceTintoSystem;TintaAlessiImobiliaria;TintaAlterPlus;TintaAnjoAutomotiva;TintaAnjoImobiliaria;TintaAnjoSintetica;TintaAnnetta;TintaAutoluks;TintaBautech;TintaBellaCor;TintaBellaCorTintavel;TintaBrasimixAutomotiva;TintaBrasimixImobiliaria;TintaBrazilianColorAutomotiva;TintaCalamar;TintaChreon;TintaCiacollor;TintaColorbraz;TintaColorPro;TintaCoralImobiliaria;TintaDacar;TintaDacasa;TintaDupont;TintaDuxone;TintaDuxone2;TintaEucatexImobiliaria;TintaFalcao;TintaFarbenAutomotiva;TintaFutura;TintaGeneral;TintaGlobalBc;TintaGlobalBsn;TintaGlobalCc11;TintaGlobalColor;TintaGlobalCsn;TintaGrafftex;TintaHydronorthImobiliaria;TintaInkor;TintaInternational;TintaIquine;TintaJotun;TintaKilling;TintaKillingIndustrial;TintaKresil;TintaLazzumix;TintaLechler;TintaLeinertex;TintaLiko;TintaLukscolor;TintaLukscolor2;TintaLuztol;TintaMaestria;TintaMaxVinil;TintaMazaAutomotiva;TintaMazaImobiliaria;TintaMazaIndustrial;TintaMegaTintas;TintaMiniFabrica;TintaMontana;TintaNexa;TintaPpg;TintaPpgNexa;TintaQualyVinil;TintaRecoa;TintaRennerImobiliaria;TintaRennerIndustrial;TintaRennerPerformance;TintaResicolor;TintaRoberlo;TintaSayerlack;TintaSherwinWilliams;TintaSherwinWilliams2;TintaSinteplast;TintaSkyMixAutomotiva;TintaSparlack;TintaStandox;TintaStarmix;TintaStarmixWeb;TintaSuvinil;TintaTexturaCia;TintaTopCoat;TintaUniverso;TintaVelutexImobiliaria;TintaWeg"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="Shared_Functions:Clean;faturamento_impostos_interfaces:Clean;faturamento_impostos_tipos:Clean;faturamento_model:Clean;faturamento_impostos_calculos:Clean;faturamento_impostos_regras:Clean;faturamento_impostos_servicos:Clean;faturamento_precos_interfaces:Clean;faturamento_precos_tipos:Clean;faturamento_precos_calculos:Clean;faturamento_precos_servicos:Clean;faturamento_margem_interfaces:Clean;faturamento_margem_tipos:Clean;faturamento_margem_calculos:Clean;faturamento_margem_servicos:Clean;ConsultarPrecoTintaService:Clean;EntregaFuturaService:Clean;ExportacaoTintometricosTerceirosService:Clean;FaturamentoServicesAPI:Clean;FusionEnviaRegistrosService:Clean;FusionObtemRomaneiosService:Clean;iMendesIntegracaoService:Clean;OrdemProducaoIndustrial_AtualizarCustosService:Clean;ProcessaCalculoRota:Clean;ProcessaCobrancaEletronica:Clean;ProcessaLinkPagamento:Clean;ProcessaRecebiveisAlpe:Clean;ReservaItemPedidoService:Clean;SaldoReservadoService:Clean;SaldoReservadoAnaliticoService:Clean;StatusItemPedidoService:Clean;StatusPedidoService:Clean;AutcomTinta:Clean;TintaAdvance:Clean;TintaAdvanceStr:Clean;TintaAdvanceTintoSystem:Clean;TintaAlessiImobiliaria:Clean;TintaAlterPlus:Clean;TintaAnjoAutomotiva:Clean;TintaAnjoImobiliaria:Clean;TintaAnjoSintetica:Clean;TintaAnnetta:Clean;TintaAutoluks:Clean;TintaBautech:Clean;TintaBellaCor:Clean;TintaBellaCorTintavel:Clean;TintaBrasimixAutomotiva:Clean;TintaBrasimixImobiliaria:Clean;TintaBrazilianColorAutomotiva:Clean;TintaCalamar:Clean;TintaChreon:Clean;TintaCiacollor:Clean;TintaColorbraz:Clean;TintaColorPro:Clean;TintaCoralImobiliaria:Clean;TintaDacar:Clean;TintaDacasa:Clean;TintaDupont:Clean;TintaDuxone:Clean;TintaDuxone2:Clean;TintaEucatexImobiliaria:Clean;TintaFalcao:Clean;TintaFarbenAutomotiva:Clean;TintaFutura:Clean;TintaGeneral:Clean;TintaGlobalBc:Clean;TintaGlobalBsn:Clean;TintaGlobalCc11:Clean;TintaGlobalColor:Clean;TintaGlobalCsn:Clean;TintaGrafftex:Clean;TintaHydronorthImobiliaria:Clean;TintaInkor:Clean;TintaInternational:Clean;TintaIquine:Clean;TintaJotun:Clean;TintaKilling:Clean;TintaKillingIndustrial:Clean;TintaKresil:Clean;TintaLazzumix:Clean;TintaLechler:Clean;TintaLeinertex:Clean;TintaLiko:Clean;TintaLukscolor:Clean;TintaLukscolor2:Clean;TintaLuztol:Clean;TintaMaestria:Clean;TintaMaxVinil:Clean;TintaMazaAutomotiva:Clean;TintaMazaImobiliaria:Clean;TintaMazaIndustrial:Clean;TintaMegaTintas:Clean;TintaMiniFabrica:Clean;TintaMontana:Clean;TintaNexa:Clean;TintaPpg:Clean;TintaPpgNexa:Clean;TintaQualyVinil:Clean;TintaRecoa:Clean;TintaRennerImobiliaria:Clean;TintaRennerIndustrial:Clean;TintaRennerPerformance:Clean;TintaResicolor:Clean;TintaRoberlo:Clean;TintaSayerlack:Clean;TintaSherwinWilliams:Clean;TintaSherwinWilliams2:Clean;TintaSinteplast:Clean;TintaSkyMixAutomotiva:Clean;TintaSparlack:Clean;TintaStandox:Clean;TintaStarmix:Clean;TintaStarmixWeb:Clean;TintaSuvinil:Clean;TintaTexturaCia:Clean;TintaTopCoat:Clean;TintaUniverso:Clean;TintaVelutexImobiliaria:Clean;TintaWeg:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="Shared_Functions:Make;faturamento_impostos_interfaces:Make;faturamento_impostos_tipos:Make;faturamento_model:Make;faturamento_impostos_calculos:Make;faturamento_impostos_regras:Make;faturamento_impostos_servicos:Make;faturamento_precos_interfaces:Make;faturamento_precos_tipos:Make;faturamento_precos_calculos:Make;faturamento_precos_servicos:Make;faturamento_margem_interfaces:Make;faturamento_margem_tipos:Make;faturamento_margem_calculos:Make;faturamento_margem_servicos:Make;ConsultarPrecoTintaService:Make;EntregaFuturaService:Make;ExportacaoTintometricosTerceirosService:Make;FaturamentoServicesAPI:Make;FusionEnviaRegistrosService:Make;FusionObtemRomaneiosService:Make;iMendesIntegracaoService:Make;OrdemProducaoIndustrial_AtualizarCustosService:Make;ProcessaCalculoRota:Make;ProcessaCobrancaEletronica:Make;ProcessaLinkPagamento:Make;ProcessaRecebiveisAlpe:Make;ReservaItemPedidoService:Make;SaldoReservadoService:Make;SaldoReservadoAnaliticoService:Make;StatusItemPedidoService:Make;StatusPedidoService:Make;AutcomTinta:Make;TintaAdvance:Make;TintaAdvanceStr:Make;TintaAdvanceTintoSystem:Make;TintaAlessiImobiliaria:Make;TintaAlterPlus:Make;TintaAnjoAutomotiva:Make;TintaAnjoImobiliaria:Make;TintaAnjoSintetica:Make;TintaAnnetta:Make;TintaAutoluks:Make;TintaBautech:Make;TintaBellaCor:Make;TintaBellaCorTintavel:Make;TintaBrasimixAutomotiva:Make;TintaBrasimixImobiliaria:Make;TintaBrazilianColorAutomotiva:Make;TintaCalamar:Make;TintaChreon:Make;TintaCiacollor:Make;TintaColorbraz:Make;TintaColorPro:Make;TintaCoralImobiliaria:Make;TintaDacar:Make;TintaDacasa:Make;TintaDupont:Make;TintaDuxone:Make;TintaDuxone2:Make;TintaEucatexImobiliaria:Make;TintaFalcao:Make;TintaFarbenAutomotiva:Make;TintaFutura:Make;TintaGeneral:Make;TintaGlobalBc:Make;TintaGlobalBsn:Make;TintaGlobalCc11:Make;TintaGlobalColor:Make;TintaGlobalCsn:Make;TintaGrafftex:Make;TintaHydronorthImobiliaria:Make;TintaInkor:Make;TintaInternational:Make;TintaIquine:Make;TintaJotun:Make;TintaKilling:Make;TintaKillingIndustrial:Make;TintaKresil:Make;TintaLazzumix:Make;TintaLechler:Make;TintaLeinertex:Make;TintaLiko:Make;TintaLukscolor:Make;TintaLukscolor2:Make;TintaLuztol:Make;TintaMaestria:Make;TintaMaxVinil:Make;TintaMazaAutomotiva:Make;TintaMazaImobiliaria:Make;TintaMazaIndustrial:Make;TintaMegaTintas:Make;TintaMiniFabrica:Make;TintaMontana:Make;TintaNexa:Make;TintaPpg:Make;TintaPpgNexa:Make;TintaQualyVinil:Make;TintaRecoa:Make;TintaRennerImobiliaria:Make;TintaRennerIndustrial:Make;TintaRennerPerformance:Make;TintaResicolor:Make;TintaRoberlo:Make;TintaSayerlack:Make;TintaSherwinWilliams:Make;TintaSherwinWilliams2:Make;TintaSinteplast:Make;TintaSkyMixAutomotiva:Make;TintaSparlack:Make;TintaStandox:Make;TintaStarmix:Make;TintaStarmixWeb:Make;TintaSuvinil:Make;TintaTexturaCia:Make;TintaTopCoat:Make;TintaUniverso:Make;TintaVelutexImobiliaria:Make;TintaWeg:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

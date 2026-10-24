@@ -1,0 +1,60 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{DA449F3F-9E2F-48FA-BA3E-DFA3C65A0B1E}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="AutcomTestCase.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\379.48.02.30.Desenv\padra_atualizado\Packages\Shared\Functions\package\Shared.Functions.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\379.48.02.30.Desenv\padra_atualizado\Packages\Faturamento\Impostos\regras\package\faturamento.impostos.regras.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="AutcomTestCase">
+        <MSBuild Projects="AutcomTestCase.dproj"/>
+    </Target>
+    <Target Name="AutcomTestCase:Clean">
+        <MSBuild Projects="AutcomTestCase.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AutcomTestCase:Make">
+        <MSBuild Projects="AutcomTestCase.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Shared_Functions">
+        <MSBuild Projects="..\379.48.02.30.Desenv\padra_atualizado\Packages\Shared\Functions\package\Shared.Functions.dproj"/>
+    </Target>
+    <Target Name="Shared_Functions:Clean">
+        <MSBuild Projects="..\379.48.02.30.Desenv\padra_atualizado\Packages\Shared\Functions\package\Shared.Functions.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Shared_Functions:Make">
+        <MSBuild Projects="..\379.48.02.30.Desenv\padra_atualizado\Packages\Shared\Functions\package\Shared.Functions.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="faturamento_impostos_regras">
+        <MSBuild Projects="..\379.48.02.30.Desenv\padra_atualizado\Packages\Faturamento\Impostos\regras\package\faturamento.impostos.regras.dproj"/>
+    </Target>
+    <Target Name="faturamento_impostos_regras:Clean">
+        <MSBuild Projects="..\379.48.02.30.Desenv\padra_atualizado\Packages\Faturamento\Impostos\regras\package\faturamento.impostos.regras.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="faturamento_impostos_regras:Make">
+        <MSBuild Projects="..\379.48.02.30.Desenv\padra_atualizado\Packages\Faturamento\Impostos\regras\package\faturamento.impostos.regras.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="AutcomTestCase;Shared_Functions;faturamento_impostos_regras"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="AutcomTestCase:Clean;Shared_Functions:Clean;faturamento_impostos_regras:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="AutcomTestCase:Make;Shared_Functions:Make;faturamento_impostos_regras:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

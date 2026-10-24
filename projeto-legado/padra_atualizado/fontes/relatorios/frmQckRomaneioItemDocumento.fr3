@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TfrxReport Version="4.3.61" DotMatrixReport="True" IniFile="\Software\Fast Reports" PreviewOptions.Buttons="4095" PreviewOptions.Zoom="1" PrintOptions.Printer="Padrão" PrintOptions.PrintOnSheet="0" PrintOptions.ShowDialog="False" ReportOptions.CreateDate="39343,4831909259" ReportOptions.Description.Text="" ReportOptions.LastChange="40078,3518015741" ScriptLanguage="PascalScript" ScriptText.Text="&#13;&#10;procedure rllPaginaOnBeforePrint(Sender: TfrxComponent);&#13;&#10;begin&#13;&#10;  rllPagina.Text := 'PAGINA: ' + rllPagina.Text;                                                                &#13;&#10;end;&#13;&#10;&#13;&#10;procedure rllTotalImpressoOnBeforePrint(Sender: TfrxComponent);&#13;&#10;begin&#13;&#10;  rllTotalImpresso.Text := 'REGISTROS IMPRESSOS: ' + rllTotalImpresso.Text;                                                                    &#13;&#10;end;&#13;&#10;      &#13;&#10;&#13;&#10;procedure frxDBItensCliGER_FONEOnAfterData(Sender: TfrxComponent);&#13;&#10;begin&#13;&#10;  frxDBItensCliGER_FONE.Text := FormatMaskText('(99)9999-9999;0;_',frxDBItensCliGER_FONE.Text);                                                                                                                  &#13;&#10;end;&#13;&#10;&#13;&#10;begin&#13;&#10;    &#13;&#10;end." PropData="044C65667403B00003546F70021008446174617365747301010C3400000020446174615365743D2266727844424974656E73436C692220446174615365744E616D653D2266727844424974656E73436C69220000095661726961626C65730100055374796C650100">
+  <TfrxDataPage Name="Data" Height="1000" Left="0" Top="0" Width="1000"/>
+  <TfrxDMPPage Name="qckAnalitico" PaperWidth="241,299844160517" PaperHeight="143,933240376449" PaperSize="256" LeftMargin="2,53999835958439" RightMargin="2,53999835958439" TopMargin="0" BottomMargin="4,49791376176403" ColumnWidth="2,53999835958439" ColumnPositions.Text="" HGuides.Text="" VGuides.Text="" FontStyle="128">
+    <TfrxMasterData Name="rlbDetalhes" Height="17" Left="0" Top="306" Width="892,8" ColumnWidth="0" ColumnGap="0" DataSet="frxDBItensCli" DataSetName="frxDBItensCli" RowCount="0" Stretched="True">
+      <TfrxDMPMemoView Name="frxDBItensCliDET_ITEM" Left="9,6" Top="0" Width="105,6" Height="17" DataField="DET_ITEM" DataSet="frxDBItensCli" DataSetName="frxDBItensCli" Text="[frxDBItensCli.&#34;DET_ITEM&#34;]"/>
+      <TfrxDMPMemoView Name="frxDBItensCliDET_DESCRI" Left="124,8" Top="0" Width="441,6" Height="17" StretchMode="smActualHeight" DataField="DET_DESCRI" DataSet="frxDBItensCli" DataSetName="frxDBItensCli" Text="[frxDBItensCli.&#34;DET_DESCRI&#34;]"/>
+      <TfrxDMPMemoView Name="frxDBItensCliDET_UNIDAD" Left="576" Top="0" Width="28,8" Height="17" DataField="DET_UNIDAD" DataSet="frxDBItensCli" DataSetName="frxDBItensCli" Text="[frxDBItensCli.&#34;DET_UNIDAD&#34;]"/>
+      <TfrxDMPMemoView Name="frxDBItensCliMAR_DESMAR" Left="614,4" Top="0" Width="163,2" Height="17" StretchMode="smActualHeight" DataField="MAR_DESMAR" DataSet="frxDBItensCli" DataSetName="frxDBItensCli" Text="[frxDBItensCli.&#34;MAR_DESMAR&#34;]"/>
+      <TfrxDMPMemoView Name="frxDBItensCliDET_QTDITE" Left="787,2" Top="0" Width="105,6" Height="17" DataField="DET_QTDITE" DataSet="frxDBItensCli" DataSetName="frxDBItensCli" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2f" DisplayFormat.Kind="fkNumeric" Text="[frxDBItensCli.&#34;DET_QTDITE&#34;]"/>
+    </TfrxMasterData>
+    <TfrxPageFooter Name="rlbRodape" Height="34" Left="0" Top="493" Width="892,8">
+      <TfrxDMPMemoView Name="rllTotalImpresso" Left="9,6" Top="17" Width="873,6" Height="17" OnBeforePrint="rllTotalImpressoOnBeforePrint" DisplayFormat.DecimalSeparator="," Frame.Typ="4" HAlign="haRight" Text="[COUNT(rlbDetalhes)]"/>
+    </TfrxPageFooter>
+    <TfrxPageHeader Name="rlbCabecalho" Height="68" Left="0" Top="17" Width="892,8">
+      <TfrxDMPMemoView Name="rllNomeEmpresa" Align="baCenter" Left="144" Top="17" Width="614,4" Height="17" DataSet="frmPaiRelatorio.frxGen" DataSetName="frxGen" DisplayFormat.DecimalSeparator="," FontStyle="193" HAlign="haCenter" ParentFont="False" Text="[NOMEMP]"/>
+      <TfrxDMPMemoView Name="rllNomeRelatorio" Align="baCenter" Left="201,6" Top="34" Width="489,6" Height="17" DisplayFormat.DecimalSeparator="," HAlign="haCenter" Text="[NOMREL]"/>
+      <TfrxDMPMemoView Name="rllPagina" Left="768" Top="17" Width="115,2" Height="17" OnBeforePrint="rllPaginaOnBeforePrint" HAlign="haRight" Text="[Page]"/>
+      <TfrxDMPMemoView Name="Time" Left="816" Top="34" Width="67,2" Height="17" HAlign="haRight" Text="[Time]"/>
+      <TfrxDMPMemoView Name="Date" Left="691,2" Top="34" Width="124,8" Height="17" HAlign="haRight" Text="[Date]"/>
+      <TfrxDMPMemoView Name="DMPMemo1" Align="baCenter" Left="144" Top="51" Width="604,8" Height="17" DisplayFormat.DecimalSeparator="," HAlign="haCenter" Text="[PERIODO]"/>
+      <TfrxDMPCommand Name="DMPCommand2" Left="9,6" Top="0" Width="96" Height="17" Command="#27#64#27#64#27#67#65#18#27#77"/>
+      <TfrxDMPCommand Name="DMPCommand1" Left="115,2" Top="0" Width="96" Height="17" Command="#27#67#33"/>
+    </TfrxPageHeader>
+    <TfrxGroupHeader Name="GroupHeader1" Height="170" Left="0" Top="119" Width="892,8" Condition="frxDBItensCli.&#34;DOCQUEBRA&#34;" KeepChild="True" KeepTogether="True" StartNewPage="True">
+      <TfrxDMPMemoView Name="frxDBItensCliDET_NOMCLI" Left="9,6" Top="17" Width="432" Height="17" DataField="DET_NOMCLI" DataSet="frxDBItensCli" DataSetName="frxDBItensCli" Text="[frxDBItensCli.&#34;DET_NOMCLI&#34;]"/>
+      <TfrxDMPMemoView Name="frxDBItensCliGER_CEPCLI" Left="624" Top="17" Width="134,4" Height="17" DataSet="frxDBItensCli" DataSetName="frxDBItensCli" DisplayFormat.DecimalSeparator="," Text="CEP: [frxDBItensCli.&#34;GER_CEPCLI&#34;]"/>
+      <TfrxDMPMemoView Name="frxDBItensCliGER_FONE" Left="768" Top="17" Width="124,8" Height="17" OnAfterData="frxDBItensCliGER_FONEOnAfterData" DataSet="frxDBItensCli" DataSetName="frxDBItensCli" DisplayFormat.DecimalSeparator="," HAlign="haRight" Text="[frxDBItensCli.&#34;GER_FONE&#34;]"/>
+      <TfrxDMPMemoView Name="frxDBItensCliGER_NOMCID" Left="508,8" Top="51" Width="374,4" Height="17" DataSet="frxDBItensCli" DataSetName="frxDBItensCli" DisplayFormat.DecimalSeparator="," Text="CIDADE: [frxDBItensCli.&#34;GER_NOMCID&#34;]"/>
+      <TfrxDMPMemoView Name="frxDBItensCliGER_ENDCLI" Left="9,6" Top="34" Width="873,6" Height="17" DataSet="frxDBItensCli" DataSetName="frxDBItensCli" DisplayFormat.DecimalSeparator="," Text="ENDERECO: [frxDBItensCli.&#34;GER_ENDCLI&#34;]"/>
+      <TfrxDMPMemoView Name="frxDBItensCliGER_BAICLI" Left="9,6" Top="51" Width="489,6" Height="17" DataSet="frxDBItensCli" DataSetName="frxDBItensCli" DisplayFormat.DecimalSeparator="," Text="BAIRRO..: [frxDBItensCli.&#34;GER_BAICLI&#34;]"/>
+      <TfrxDMPMemoView Name="frxDBItensCliGER_NUMDOC" Left="451,2" Top="17" Width="57,6" Height="17" DataSet="frxDBItensCli" DataSetName="frxDBItensCli" DisplayFormat.DecimalSeparator="," Text="[frxDBItensCli.&#34;GER_NUMDOC&#34;]"/>
+      <TfrxDMPLineView Name="DMPLine2" Align="baWidth" Left="4,8" Top="127,5" Width="883,2" Height="0"/>
+      <TfrxDMPMemoView Name="DMPMemo2" Left="9,6" Top="136" Width="105,6" Height="17" DisplayFormat.DecimalSeparator="," Text="CODIGO"/>
+      <TfrxDMPMemoView Name="DMPMemo3" Left="124,8" Top="136" Width="220,8" Height="17" DisplayFormat.DecimalSeparator="," Text="DESCRICAO / REFERENCIA"/>
+      <TfrxDMPMemoView Name="DMPMemo4" Left="787,2" Top="136" Width="105,6" Height="17" DisplayFormat.DecimalSeparator="," Text="QUANTIDADE"/>
+      <TfrxDMPMemoView Name="DMPMemo5" Left="614,4" Top="136" Width="105,6" Height="17" DisplayFormat.DecimalSeparator="," Text="MARCA"/>
+      <TfrxDMPMemoView Name="DMPMemo6" Left="576" Top="136" Width="19,2" Height="17" DisplayFormat.DecimalSeparator="," Text="UN"/>
+      <TfrxDMPMemoView Name="frxDBItensCliGER_ESPDOC" Left="518,4" Top="17" Width="19,2" Height="17" DataField="GER_ESPDOC" DataSet="frxDBItensCli" DataSetName="frxDBItensCli" Text="[frxDBItensCli.&#34;GER_ESPDOC&#34;]"/>
+      <TfrxDMPMemoView Name="frxDBItensCliGER_CODEMP" Left="547,2" Top="17" Width="28,8" Height="17" DataField="GER_CODEMP" DataSet="frxDBItensCli" DataSetName="frxDBItensCli" Text="[frxDBItensCli.&#34;GER_CODEMP&#34;]"/>
+      <TfrxDMPLineView Name="DMPLine4" Align="baWidth" Left="4,8" Top="8,5" Width="883,2" Height="0"/>
+      <TfrxDMPLineView Name="DMPLine1" Left="4,8" Top="161,5" Width="883,2" Height="0"/>
+      <TfrxDMPMemoView Name="DMPMemo9" Left="9,6" Top="68" Width="873,6" Height="17" DataSet="frxDBItensCli" DataSetName="frxDBItensCli" DisplayFormat.DecimalSeparator="," WordWrap="False" Text="MENS1...: [frxDBItensCli.&#34;GER_MEN001&#34;]"/>
+      <TfrxDMPMemoView Name="DMPMemo10" Left="9,6" Top="85" Width="873,6" Height="17" DataSet="frxDBItensCli" DataSetName="frxDBItensCli" DisplayFormat.DecimalSeparator="," WordWrap="False" Text="MENS2...: [frxDBItensCli.&#34;GER_MEN002&#34;]"/>
+      <TfrxDMPMemoView Name="DMPMemo11" Left="105,6" Top="102" Width="566,4" Height="17" DataSet="frxDBItensCli" DataSetName="frxDBItensCli" DisplayFormat.DecimalSeparator="," Text="[frxDBItensCli.&#34;GER_NOMVEN&#34;]"/>
+      <TfrxDMPMemoView Name="DMPMemo12" Left="9,6" Top="102" Width="86,4" Height="17" DisplayFormat.DecimalSeparator="," Text="VENDEDOR:"/>
+    </TfrxGroupHeader>
+    <TfrxGroupFooter Name="GroupFooter1" Height="119" Left="0" Top="340" Width="892,8">
+      <TfrxDMPMemoView Name="DMPMemo17" Left="508,8" Top="17" Width="268,8" Height="17" DisplayFormat.DecimalSeparator="," HAlign="haRight" Text="TOTAIS"/>
+      <TfrxDMPMemoView Name="rllTempTot" Left="787,2" Top="17" Width="96" Height="17" DataSet="frxDBItensCli" DataSetName="frxDBItensCli" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2f" DisplayFormat.Kind="fkNumeric" HAlign="haRight" Text="[SUM(&#60;frxDBItensCli.&#34;DET_QTDITE&#34;&#62;,rlbDetalhes)]"/>
+      <TfrxDMPLineView Name="DMPLine3" Left="4,8" Top="8,5" Width="883,2" Height="0"/>
+      <TfrxDMPMemoView Name="DMPMemo7" Left="201,6" Top="68" Width="393,6" Height="34" DisplayFormat.DecimalSeparator="," HAlign="haRight" Text="FAVOR CONFERIR  OS PRODUTOS ENTREGUES.&#13;&#10;NAO ACEITAREMOS RECLAMACOES POSTERIORES."/>
+      <TfrxDMPMemoView Name="DMPMemo8" Left="624" Top="102" Width="259,2" Height="17" DisplayFormat.DecimalSeparator="," Frame.Typ="4" HAlign="haCenter" Text="CONFERIDO: ASSINATURA"/>
+    </TfrxGroupFooter>
+  </TfrxDMPPage>
+</TfrxReport>

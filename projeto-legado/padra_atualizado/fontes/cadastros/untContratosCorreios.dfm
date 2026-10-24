@@ -1,0 +1,414 @@
+inherited frmContratosCorreios: TfrmContratosCorreios
+  Width = 800
+  Height = 445
+  Caption = 'Cadastro de Contratos - Correios'
+  ExplicitWidth = 800
+  ExplicitHeight = 445
+  PixelsPerInch = 96
+  TextHeight = 14
+  object Label1: TLabel [0]
+    Left = 8
+    Top = 6
+    Width = 96
+    Height = 14
+    Caption = 'N'#250'mero do Contrato'
+  end
+  object Label2: TLabel [1]
+    Left = 135
+    Top = 6
+    Width = 152
+    Height = 14
+    Caption = 'N'#250'mero do Cart'#227'o de Postagem'
+  end
+  object Label3: TLabel [2]
+    Left = 303
+    Top = 6
+    Width = 95
+    Height = 14
+    Caption = 'C'#243'digo Admistrativo'
+  end
+  object Label4: TLabel [3]
+    Left = 425
+    Top = 6
+    Width = 37
+    Height = 14
+    Caption = 'Usu'#225'rio'
+  end
+  object Label5: TLabel [4]
+    Left = 547
+    Top = 6
+    Width = 31
+    Height = 14
+    Caption = 'Senha'
+  end
+  object lblCodAce: TLabel [5]
+    Left = 8
+    Top = 46
+    Width = 106
+    Height = 14
+    Caption = 'C'#243'digo de Acesso API'
+  end
+  inherited pnlBotoes: TPanel
+    Top = 374
+    Width = 794
+    TabOrder = 11
+    ExplicitTop = 374
+    ExplicitWidth = 794
+    inherited FlwBotoes: TFlowPanel
+      Width = 713
+      ExplicitWidth = 713
+      inherited btnConfirma: TBitBtnLocked
+        Width = 113
+        Align = alRight
+        ModalResult = 0
+        ExplicitWidth = 113
+      end
+      object btnCarregarContrato: TBitBtnLocked
+        Left = 113
+        Top = 0
+        Width = 135
+        Height = 22
+        Align = alRight
+        Caption = '&Carregar Contrato'
+        Glyph.Data = {
+          36040000424D3604000000000000360000002800000010000000100000000100
+          2000000000000004000000000000000000000000000000000000000000080000
+          000C0000000E0000000E0000000E0000000E0000000F0000000F0000000F0000
+          0010000000100000000F0000000A000000020000000000000000815A4DBFB57D
+          6BFFB57C6BFFB47D6BFFB47C6BFFB47C6AFFB37B69FFB37B6AFFB37B6AFFB47B
+          69FFB37A69FFB37A68FF81584CC10000000A0000000000000000B6806EFFF9F0
+          EBFFF8F0EAFFF8F0EAFFF8EFE9FFF8EFE9FFF7EFE9FFF8EEE8FFF7EEE9FFF7EE
+          E8FFF7EEE9FFFAF4F1FFB47C6BFF0000000E0000000000000000B98271FFF9F1
+          ECFF39B78FFF36AE86FF2A8B67FF257F5DFF309F79FF32A17AFF298361FF3198
+          74FF257F5CFFFBF6F3FFB67F6DFF0000000E0000000000000000BB8574FFFAF3
+          EEFF41C097FF35A07DFF6AC6B1FF37AA85FF246B73FF2B5EB6FF287378FF2D8E
+          6AFF298764FFFCF8F5FFB88270FF0000000D0000000000000000C08E7EFFFBF5
+          F1FF53CCA6FF43AC8AFF3978B1FF366BB8FF3469B3FF71C2EEFF336BB4FF3367
+          B1FF306DA7FFFCF9F7FFBA8573FF0000000C0000000000000000C49585FFFAF7
+          F3FF5DD3ADFF53C09EFF467BBCFF8ED5F4FF66A5E1FF76D6F9FF599EDEFF69C6
+          F2FF3E75BBFFFDFAF9FFBD8776FF0000000B0000000000000000C89A8AFFFBF7
+          F5FF62D4B1FF55ACADFF558ECAFF71B1E5FF5E9DD0FF335EA8FF5295CCFF60A7
+          E2FF4882C4FFFEFBFAFFBE8B79FF0000000A0000000000000000CA9F90FFFCF9
+          F7FFEAD5ABFF6590CEFF96D5F4FFAAECFEFF3E77BBFF90BCE0FF87A7CFFFB0E6
+          F7FF89CFF2FFFEFCFBFFC08E7EFF000000090000000000000000CEA394FFFDFA
+          F8FFF2E3C3FFBABEBDFF7EA8D6FF8FC8EFFF6FB6E2FF96B7D9FFA28775FFA8B6
+          BAFFA9C1DCFFFAF9F9FFD6BFB7FF000000130000000400000001D1A899FFFFFE
+          FEFFF9EDD3FFECE0C8FF89B2DAFFACE7FBFF9ED5F4FFCEEBF3FFAC744CFF9867
+          41FFA39F9FFFE5E4E2FF975D32FF613A1CBC0C07032700000007C99C8BFFFFFE
+          FEFFFFFEFEFFFFFEFEFFFFFEFEFFFFFEFEFFFFFEFEFFF8F7F7FFBD9171FFDBB8
+          91FFB07F53FF9B643AFF9F663DFFDBB67EFF8F5C32EE311D0F679B7C70BFD1A7
+          96FFD0A796FFD0A696FFD0A695FFD0A695FFCFA594FFE1C8BEFFD3B7A6FFC498
+          70FFEAD2B1FFFCF0D0FFFEF2D3FFFEE9BBFFF7E6C5FFA36C43FF000000010000
+          000200000002000000020000000200000003000000030000000300000006382C
+          2150987758CABF946DFAC3966DFFEAD3B4FFB7906CEE3D2E215B000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          00010000000200000005CAA27AFF846A50AC110D0A1B00000002000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000001000000010000000000000000}
+        TabOrder = 1
+        OnClick = btnCarregarContratoClick
+      end
+      object btnNovoContrato: TBitBtnLocked
+        Left = 248
+        Top = 0
+        Width = 127
+        Height = 22
+        Align = alRight
+        Caption = '&Novo Contrato'
+        Glyph.Data = {
+          36040000424D3604000000000000360000002800000010000000100000000100
+          2000000000000004000000000000000000000000000000000000000000030000
+          000C000000120000001400000014000000140000001400000014000000150000
+          0015000000140000000D000000030000000000000000000000000000000B7A5B
+          50C3AB7F6FFFAA7E6FFFAB7D6FFFAA7D6EFFAA7D6EFFA97C6DFFA97C6DFFAA7C
+          6DFFA87B6CFF79584DC50000000D00000000000000000000000000000010AD82
+          72FFFBF7F4FFFAF6F4FFFBF6F4FFFBF6F3FFFBF5F3FFFAF5F2FFFAF5F2FFFAF4
+          F1FFFAF4F1FFAA7C6EFF0000001300000000000000000000000000000011AF84
+          75FFFCF8F7FFF6EEE8FFF7EDE8FFF6EDE8FFF6EDE7FFF6EDE7FFF6ECE7FFF6EC
+          E7FFFBF5F3FFAB7E6FFF0000001300000000000000000000000000000010B187
+          78FFFDFAF8FFF8EFEAFFC39C8CFFC29B8AFFC29B89FFC29A89FFC19989FFC199
+          88FFECE2DEFFDDD3D0FF000000260000000E00000003000000000000000FB389
+          7BFFFDFBFAFFF8F1EDFFF8F0EDFFF8F0ECFFF7F0ECFFF7F0ECFFF7EFEBFFF7EF
+          EBFFF2F1F1FF528771FF267255FF1A503BC50000000D000000000000000EB68D
+          7EFFFEFCFCFFF9F2EFFFC6A191FFC5A090FFC5A090FFC59F8FFFEEE5E0FFE7DE
+          D9FFD6CDC9FF2A7C5EFF27D596FF287758FF0000001F0000000C0000000DB890
+          81FFFEFDFDFFFAF5F2FFF9F4F1FFF9F4F1FFF9F3F1FFF9F3F0FFF5F4F3FF60A0
+          89FF2E8767FF2D8364FF33DBA0FF2B7D5FFF297B5DFF1D5641C20000000DBA93
+          85FFFEFEFEFFFAF6F4FF00A361FF00A060FF009C5BFF009758FFB8DBCCFF3291
+          70FF98F1D6FF41E2ADFF40E3AAFF3DE1AAFF3CE0A9FF2B7F61FF0000000CBC97
+          88FFFFFEFEFFFBF8F6FFFBF7F6FFFAF7F6FFFBF7F5FFFAF7F4FFF9F8F7FF64AD
+          94FF349674FF329372FF4AE8B6FF308D6CFF2F8A6AFF22634CC40000000BC099
+          8BFFFFFFFFFFFCF8F8FFCDAD9DFFCCAC9DFFCCAB9CFFCBAB9BFFF1E9E5FFEEE5
+          E1FFE9E0DCFF369A78FFB9F8E7FF339473FF0000000D000000050000000AC19D
+          8EFFFFFFFFFFFCFAF9FFFCFAF9FFFCFAF8FFFCF9F8FFFBFAF8FFFCF9F8FFFBF9
+          F8FFFCFCFCFF65B095FF379E7CFF28735AC0000000040000000000000009C4A0
+          91FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFEEE4E1FF0000000D000000020000000100000000000000069379
+          6EC3C5A294FFC5A294FFC4A193FFC4A092FFC3A092FFC39F91FFC29F90FFC29E
+          90FFC29D8FFF8F7469C400000007000000000000000000000000000000010000
+          00050000000800000009000000090000000900000009000000090000000A0000
+          000A000000090000000700000002000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000}
+        TabOrder = 2
+        OnClick = btnNovoContratoClick
+      end
+      object btnSelecionaLayout: TBitBtnLocked
+        Left = 375
+        Top = 0
+        Width = 200
+        Height = 22
+        Align = alRight
+        Caption = '&Escolher Layout de Impress'#227'o '
+        Glyph.Data = {
+          36040000424D3604000000000000360000002800000010000000100000000100
+          2000000000000004000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000020000
+          000A000000160000001B000000170000000B0000000200000000000000010000
+          00060000000B0000000F0000000C0000000600000001000000000000000F2616
+          1072583424D8693D2AFF4D2C1FD91D110B750000001200000003000000082416
+          1162513023CF613927FF45281BD01A0F0A630000000900000001291A136DA380
+          70FFD4C5BDFFEDE5E1FFCFBEB7FF907163FF1F120C770000000F2C1C1663A181
+          72FFD4C6BEFFEEE8E4FFCDC0B8FF866A5DFF190E096000000005734937DEE3D7
+          D1FFCEAE9EFFAF7957FFD0B39EFFD7C9C3FF553324E00000001B77503FD8E2D7
+          D2FFD0AD9BFFB37753FFD2B29AFFD6CBC5FF4A2B1ED90000000A8E5A47FBF8F6
+          F4FFAE725BFFE7AF66FFB27F5EFFF0EBE8FF744835FF000000489A6B55FFF8F6
+          F3FFB27056FFE8AF64FFB67E59FFEAE3DFFF613B29FA0000000B90604DF8F1E8
+          E4FFD2B0A5FFAA6C53FFD4B6A7FFCDC0BAFF71422FFF4C2920FF80513DFFF1E8
+          E3FFD3ADA1FFAE684FFFD4B2A1FFC5B6AFFF6A4231F700000009583C31A2CAAF
+          A3FFF7F2EEFFFDFCFBFFEAE0DAFF9E847AFF774835FF663E36FF855944FFE8D9
+          CFFFF7F0EDFFFCFAF9FFDFD4CEFF8A6657FF452D229A000000050805041D9F72
+          5DF8E8DBD4FFE6D7CEFFCDB7AAFF8B6B5EFF7D4C3AFF865F56FF8B5F4BFFE9D8
+          CEFFEADCD4FFCFB9ACFF997B6DFF966A54F70705041600000001000000076047
+          3BA4D0B7ADFFEEE3DFFFD5C1B7FF93766CFF82533FFF734635FF926550FFECE0
+          D9FFEBDED8FFC4B0A5FF9B7868FF5F45389D0000000400000000000000022219
+          1541B89383FFF3EBE8FFD9C9C2FFA99389FFA67966FF00000026B48B76FFF0E7
+          E3FFEADED9FFBDA79FFFA67D6CFF211915390000000100000000000000000000
+          0007846554C6DDCCC4FFE6DCD8FFC2A99EFFA67E69F90000000CB38E79F8E0D1
+          C9FFE9DFDAFFBCA497FF846555C2000000030000000000000000000000000000
+          0002130F0D237D6152B7AF8673FA7B6050B9130E0C270000000414100E1E8365
+          58B3B68F79F9806455B3130F0D1E000000010000000000000000000000000000
+          0000000000010000000400000006000000050000000200000000000000000000
+          0001000000010000000100000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000}
+        TabOrder = 3
+        OnClick = btnSelecionaLayoutClick
+      end
+    end
+    inherited btnSair: TBitBtnLocked
+      Left = 715
+      Top = 2
+      Align = alRight
+      ModalResult = 0
+      ExplicitLeft = 715
+      ExplicitTop = 2
+    end
+  end
+  inherited pnlStatus: TPanel
+    Top = 400
+    Width = 794
+    TabOrder = 9
+    ExplicitTop = 400
+    ExplicitWidth = 794
+    inherited pnlNomeForm: TPanel
+      Left = 623
+      ExplicitLeft = 623
+    end
+    inherited pnlInfo: TPanel
+      Width = 623
+      ExplicitWidth = 623
+    end
+  end
+  object dbeNumCon: TDBEditFocus [8]
+    Tag = 99
+    Left = 8
+    Top = 21
+    Width = 121
+    Height = 22
+    DataField = 'CFG_NUMCON'
+    TabOrder = 0
+    NormalColor = clWindow
+    FocusColor = clInfoBk
+    RequeridoColor = clRed
+    Requerido = False
+    CompZeros = False
+    TipoTexto = ttAlfanumerico
+  end
+  object dbeNumCar: TDBEditFocus [9]
+    Tag = 99
+    Left = 135
+    Top = 21
+    Width = 162
+    Height = 22
+    DataField = 'CFG_NUMCAR'
+    TabOrder = 1
+    NormalColor = clWindow
+    FocusColor = clInfoBk
+    RequeridoColor = clRed
+    Requerido = False
+    CompZeros = False
+    TipoTexto = ttAlfanumerico
+  end
+  object dbeNumAdm: TDBEditFocus [10]
+    Tag = 99
+    Left = 303
+    Top = 21
+    Width = 116
+    Height = 22
+    DataField = 'CFG_NUMADM'
+    TabOrder = 2
+    NormalColor = clWindow
+    FocusColor = clInfoBk
+    RequeridoColor = clRed
+    Requerido = False
+    CompZeros = False
+    TipoTexto = ttAlfanumerico
+  end
+  object dbeNomUsu: TDBEditFocus [11]
+    Tag = 99
+    Left = 425
+    Top = 21
+    Width = 116
+    Height = 22
+    DataField = 'CFG_NOMUSU'
+    TabOrder = 3
+    NormalColor = clWindow
+    FocusColor = clInfoBk
+    RequeridoColor = clRed
+    Requerido = False
+    CompZeros = False
+    TipoTexto = ttAlfanumerico
+  end
+  object dbeSenha_: TDBEditFocus [12]
+    Tag = 99
+    Left = 547
+    Top = 21
+    Width = 116
+    Height = 22
+    DataField = 'CFG_SENHA_'
+    PasswordChar = '*'
+    TabOrder = 4
+    NormalColor = clWindow
+    FocusColor = clInfoBk
+    RequeridoColor = clRed
+    Requerido = False
+    CompZeros = False
+    TipoTexto = ttAlfanumerico
+  end
+  object dbcHomolo: TDBCheckBox [13]
+    Left = 669
+    Top = 8
+    Width = 104
+    Height = 17
+    Caption = 'Em Homologa'#231#227'o'
+    DataField = 'CFG_HOMOLO'
+    TabOrder = 5
+    ValueChecked = 'S'
+    ValueUnchecked = 'N'
+  end
+  object btnServicos: TBitBtnLocked [14]
+    Left = 425
+    Top = 58
+    Width = 238
+    Height = 25
+    Caption = 'Carregar/Atualizar Servi'#231'os Dispon'#237'veis'
+    TabOrder = 8
+    OnClick = btnServicosClick
+  end
+  object cxgServicos: TcxGridCitel [15]
+    Left = 8
+    Top = 89
+    Width = 778
+    Height = 279
+    TabOrder = 10
+    LookAndFeel.ScrollbarMode = sbmClassic
+    object cxgServicosTableView: TcxGridDBTableViewCitel
+      Navigator.Buttons.CustomButtons = <>
+      DataController.Filter.Options = [fcoCaseInsensitive]
+      DataController.Summary.DefaultGroupSummaryItems = <>
+      DataController.Summary.FooterSummaryItems = <>
+      DataController.Summary.SummaryGroups = <>
+      FilterRow.InfoText = 'Clique aqui para definir um filtro'
+      FilterRow.ApplyChanges = fracDelayed
+      OptionsData.CancelOnExit = False
+      OptionsData.Deleting = False
+      OptionsData.DeletingConfirmation = False
+      OptionsData.Editing = False
+      OptionsData.Inserting = False
+      OptionsView.NoDataToDisplayInfoText = 'Sem dados para exibir'
+      OptionsView.GroupByBox = False
+      Zebra = True
+      Destaque = True
+      CorZebra = clMoneyGreen
+      object cxgServicosTableViewCODIGO: TcxGridDBColumn
+        Caption = 'C'#243'digo Interno'
+        DataBinding.FieldName = 'CSE_CODIGO'
+        Width = 82
+      end
+      object cxgServicosTableViewIDSERV: TcxGridDBColumn
+        Caption = 'ID Correios'
+        DataBinding.FieldName = 'CSE_IDSERV'
+        Width = 75
+      end
+      object cxgServicosTableViewCODSER: TcxGridDBColumn
+        Caption = 'C'#243'd.Correios'
+        DataBinding.FieldName = 'CSE_CODSER'
+        Width = 73
+      end
+      object cxgServicosTableViewDESCRI: TcxGridDBColumn
+        Caption = 'Descri'#231#227'o'
+        DataBinding.FieldName = 'CSE_DESCRI'
+        Width = 229
+      end
+      object cxgServicosTableViewLAY_DESCRI: TcxGridDBColumn
+        Caption = 'Layout de Impress'#227'o'
+        DataBinding.FieldName = 'LAY_DESCRI'
+        Width = 296
+      end
+    end
+    object cxgServicosLevel: TcxGridLevel
+      GridView = cxgServicosTableView
+    end
+  end
+  object dbcStatus: TDBCheckBox [16]
+    Left = 669
+    Top = 26
+    Width = 91
+    Height = 17
+    Caption = 'Contrato Ativo'
+    DataField = 'CFG_STATUS'
+    TabOrder = 6
+    ValueChecked = 'A'
+    ValueUnchecked = 'I'
+  end
+  object dbeCodAce: TDBEditFocus [17]
+    Tag = 99
+    Left = 8
+    Top = 61
+    Width = 411
+    Height = 22
+    DataField = 'CFG_CODACE'
+    TabOrder = 7
+    NormalColor = clWindow
+    FocusColor = clInfoBk
+    RequeridoColor = clRed
+    Requerido = False
+    CompZeros = False
+    TipoTexto = ttAlfanumerico
+  end
+  inherited mnuAuxiliar: TPopupMenu
+    Left = 328
+    Top = 168
+  end
+  inherited ApplicationEvents: TApplicationEvents
+    Top = 256
+  end
+  inherited frxCSVExportTestabilidade: TfrxCSVExportTestabilidade
+    Left = 136
+    Top = 216
+  end
+end

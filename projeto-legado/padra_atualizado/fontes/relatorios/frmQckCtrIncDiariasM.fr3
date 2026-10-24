@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TfrxReport Version="4.3.61" DotMatrixReport="True" IniFile="\Software\Fast Reports" PreviewOptions.Buttons="4095" PreviewOptions.Zoom="1" PreviewOptions.ZoomMode="zmWholePage" PrintOptions.Printer="Padrão" PrintOptions.PrintOnSheet="0" ReportOptions.CreateDate="39343,4831909259" ReportOptions.Description.Text="" ReportOptions.LastChange="40151,6234150694" ScriptLanguage="PascalScript" ScriptText.Text="procedure rllPaginaOnBeforePrint(Sender: TfrxComponent);&#13;&#10;begin&#13;&#10;  rllPagina.Text := 'PAGINA: ' + rllPagina.Text;                                                                &#13;&#10;end;&#13;&#10;&#13;&#10;procedure rllTotalImpressoOnBeforePrint(Sender: TfrxComponent);&#13;&#10;begin&#13;&#10;  rllTotalImpresso.Text := 'REGISTROS IMPRESSOS: ' + rllTotalImpresso.Text;                                                                    &#13;&#10;end;&#13;&#10;&#13;&#10;procedure rllDPD1OnBeforePrint(Sender: TfrxComponent);&#13;&#10;begin&#13;&#10;   if &#60;frxRelatorio.&#34;CTR_DTAREC&#34;&#62; &#60;&#62; 0  Then&#13;&#10;     rllDPD1.Text := 'q'&#13;&#10;end;&#13;&#10;&#13;&#10;procedure rllDPD2OnBeforePrint(Sender: TfrxComponent);&#13;&#10;begin&#13;&#10;   if &#60;frxRelatorio.&#34;CTR_DTAREC&#34;&#62; &#60;&#62; 0  Then&#13;&#10;     rllDPD2.Text := 'q'    &#13;&#10;end;&#13;&#10;&#13;&#10;Begin&#13;&#10;  &#13;&#10;end." PropData="044C65667403D00003546F7003880008446174617365747301010C2600000020446174615365743D2266727847656E2220446174615365744E616D653D2266727847656E2200010C3200000020446174615365743D2266727852656C61746F72696F2220446174615365744E616D653D2266727852656C61746F72696F220000095661726961626C65730100055374796C650100">
+  <TfrxDataPage Name="Data" Height="1000" Left="0" Top="0" Width="1000"/>
+  <TfrxDMPPage Name="qckPagina" PaperWidth="337,819781824724" PaperHeight="292,364394514662" PaperSize="256" LeftMargin="2,53999835958439" RightMargin="2,53999835958439" TopMargin="4,49791376176403" BottomMargin="4,49791376176403" ColumnWidth="2,53999835958439" ColumnPositions.Text="" HGuides.Text="" VGuides.Text="" OnBeforePrint="qckPaginaOnBeforePrint" FontStyle="128">
+    <TfrxMasterData Name="MSDDTACAD" Height="17" Left="0" Top="357" Width="1257,6" Child="CEndCom01" ColumnWidth="0" ColumnGap="0" DataSet="frmPaiRelatorio.frxRelatorio" DataSetName="frxRelatorio" RowCount="0">
+      <TfrxDMPMemoView Name="DMPDTACAD" Left="9,6" Top="0" Width="96" Height="17" DataSet="frxRelatorio" DataSetName="frxRelatorio" DisplayFormat.DecimalSeparator="," WordWrap="False" Text="[frxRelatorio.&#34;CTR_DTACAD&#34;]"/>
+      <TfrxDMPMemoView Name="DMPDUPESP" Left="115,2" Top="0" Width="96" Height="17" DataSet="frxRelatorio" DataSetName="frxRelatorio" DisplayFormat.DecimalSeparator="," WordWrap="False" Text="[frxRelatorio.&#34;CTR_NUMDUP&#34;][frxRelatorio.&#34;CTR_PARCEL&#34;]-[frxRelatorio.&#34;CTR_ESPDOC&#34;]"/>
+      <TfrxDMPMemoView Name="DMPLOJA" Left="220,8" Top="0" Width="28,8" Height="17" DataField="CTR_CODEMP" DataSet="frxRelatorio" DataSetName="frxRelatorio" DisplayFormat.DecimalSeparator="," WordWrap="False" Text="[frxRelatorio.&#34;CTR_CODEMP&#34;]"/>
+      <TfrxDMPMemoView Name="DMPVENDE" Left="259,2" Top="0" Width="28,8" Height="17" DataField="CTR_CODVEN" DataSet="frxRelatorio" DataSetName="frxRelatorio" DisplayFormat.DecimalSeparator="," WordWrap="False" Text="[frxRelatorio.&#34;CTR_CODVEN&#34;]"/>
+      <TfrxDMPMemoView Name="HIST01" Left="681,6" Top="0" Width="288" Height="17" DataSet="frxRelatorio" DataSetName="frxRelatorio" DisplayFormat.DecimalSeparator="," WordWrap="False" Text="[frxRelatorio.&#34;CTR_HIST01&#34;]"/>
+      <TfrxDMPMemoView Name="DMPDTAVEN" Left="979,2" Top="0" Width="105,6" Height="17" DataSet="frxRelatorio" DataSetName="frxRelatorio" DisplayFormat.DecimalSeparator="," HAlign="haCenter" WordWrap="False" Text="[frxRelatorio.&#34;CTR_DTAVEN&#34;]"/>
+      <TfrxDMPMemoView Name="DMPVALDUP" Left="1094,4" Top="0" Width="134,4" Height="17" DataSet="frxRelatorio" DataSetName="frxRelatorio" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="#,##0.00" DisplayFormat.Kind="fkNumeric" HAlign="haRight" WordWrap="False" Text="[frxRelatorio.&#34;CTR_VALORI&#34;]"/>
+      <TfrxDMPMemoView Name="rllDPD1" Left="1228,8" Top="0" Width="19,2" Height="17" OnBeforePrint="rllDPD1OnBeforePrint" DisplayFormat.DecimalSeparator="," HAlign="haCenter" Text=""/>
+      <TfrxDMPMemoView Name="DMPMemo32" Left="297,6" Top="0" Width="374,4" Height="17" DisplayFormat.DecimalSeparator="," Text="[frxRelatorio.&#34;CTR_CODCLI&#34;]-[frxRelatorio.&#34;CLI_NOMCLI&#34;]"/>
+    </TfrxMasterData>
+    <TfrxHeader Name="rlbTitulo" Height="51" Left="0" Top="255" Width="1257,6" ReprintOnNewPage="True">
+      <TfrxDMPMemoView Name="DMPMemo8" Left="9,6" Top="17" Width="96" Height="17" DataSet="frxRelatorio" DataSetName="frxRelatorio" DisplayFormat.DecimalSeparator="," Frame.Typ="12" Text="DTA.CAD"/>
+      <TfrxDMPMemoView Name="DMPMemo9" Left="115,2" Top="17" Width="96" Height="17" DisplayFormat.DecimalSeparator="," Frame.Typ="12" Text="DUPLIC"/>
+      <TfrxDMPMemoView Name="DMPMemo10" Left="220,8" Top="17" Width="28,8" Height="17" DisplayFormat.DecimalSeparator="," Frame.Typ="12" Text="LOJ"/>
+      <TfrxDMPMemoView Name="DMPMemo11" Left="259,2" Top="17" Width="28,8" Height="17" DisplayFormat.DecimalSeparator="," Frame.Typ="12" Text="VEN"/>
+      <TfrxDMPMemoView Name="DMPMemo12" Left="297,6" Top="17" Width="374,4" Height="17" DisplayFormat.DecimalSeparator="," Frame.Typ="12" Text="CODIGO-NOME DO CLIENTE"/>
+      <TfrxDMPMemoView Name="RLLHIST" Left="681,6" Top="17" Width="288" Height="17" DisplayFormat.DecimalSeparator="," Frame.Typ="12" Text="HISTORICO"/>
+      <TfrxDMPMemoView Name="DMPMemo14" Left="979,2" Top="17" Width="105,6" Height="17" DisplayFormat.DecimalSeparator="," Frame.Typ="12" HAlign="haCenter" Text="DTA.VENC."/>
+      <TfrxDMPMemoView Name="DMPMemo15" Left="1094,4" Top="17" Width="153,6" Height="17" DisplayFormat.DecimalSeparator="," Frame.Typ="12" HAlign="haCenter" Text="VAL.DUP"/>
+    </TfrxHeader>
+    <TfrxPageHeader Name="rlbCabecalho" Height="204" Left="0" Top="17" Width="1257,6">
+      <TfrxDMPMemoView Name="rllNomeEmpresa" Align="baCenter" Left="259,2" Top="17" Width="729,6" Height="17" DataField="EMP_NOMEMP" DataSet="frmPaiRelatorio.frxGen" DataSetName="frxGen" DisplayFormat.DecimalSeparator="," FontStyle="193" HAlign="haCenter" ParentFont="False" Text="[frxGen.&#34;EMP_NOMEMP&#34;]"/>
+      <TfrxDMPMemoView Name="rllNomeRelatorio" Align="baCenter" Left="144" Top="34" Width="960" Height="17" DisplayFormat.DecimalSeparator="," HAlign="haCenter" Text="[NOMREL]"/>
+      <TfrxDMPMemoView Name="rllPagina" Left="1132,8" Top="17" Width="115,2" Height="17" OnBeforePrint="rllPaginaOnBeforePrint" HAlign="haRight" Text="[Page]"/>
+      <TfrxDMPMemoView Name="Time" Left="1171,2" Top="34" Width="76,8" Height="17" HAlign="haRight" Text="[Time]"/>
+      <TfrxDMPMemoView Name="Date" Left="1036,8" Top="34" Width="124,8" Height="17" HAlign="haRight" Text="[Date]"/>
+      <TfrxDMPMemoView Name="DMPMemo1" Align="baCenter" Left="259,2" Top="51" Width="729,6" Height="17" DisplayFormat.DecimalSeparator="," HAlign="haCenter" Text="[PERIODO]"/>
+      <TfrxDMPMemoView Name="rllEmpresa" Left="9,6" Top="187" Width="604,8" Height="17" DisplayFormat.DecimalSeparator="," Text="[FILEMP]"/>
+      <TfrxDMPMemoView Name="rllPortador" Left="9,6" Top="119" Width="604,8" Height="17" DisplayFormat.DecimalSeparator="," Text="[FILPOR]"/>
+      <TfrxDMPMemoView Name="rllCliente" Left="9,6" Top="102" Width="604,8" Height="17" DisplayFormat.DecimalSeparator="," Text="[FILCLI]"/>
+      <TfrxDMPMemoView Name="rllTitulos" Align="baRight" Left="614,4" Top="102" Width="633,6" Height="17" DisplayFormat.DecimalSeparator="," HAlign="haRight" Text="[FILTIT]"/>
+      <TfrxDMPMemoView Name="rllEventos" Align="baRight" Left="614,4" Top="85" Width="633,6" Height="17" DisplayFormat.DecimalSeparator="," HAlign="haRight" Text="[FILEVE]"/>
+      <TfrxDMPCommand Name="DMPCommand1" Left="0" Top="0" Width="96" Height="17" Command="#27#64#27#67#65#15#27#80"/>
+      <TfrxDMPMemoView Name="DMPMemo2" Left="9,6" Top="153" Width="604,8" Height="17" DisplayFormat.DecimalSeparator="," Text="[FILVEN]"/>
+      <TfrxDMPMemoView Name="DMPMemo3" Left="9,6" Top="170" Width="604,8" Height="17" DisplayFormat.DecimalSeparator="," Text="[FILREC]"/>
+      <TfrxDMPMemoView Name="DMPMemo4" Left="9,6" Top="136" Width="604,8" Height="17" DisplayFormat.DecimalSeparator="," Text="[FILESP]"/>
+      <TfrxDMPMemoView Name="DMPMemo6" Align="baRight" Left="614,4" Top="153" Width="633,6" Height="17" DisplayFormat.DecimalSeparator="," HAlign="haRight" Text="[FILDPD]"/>
+      <TfrxDMPMemoView Name="rllCndPag" Align="baRight" Left="614,4" Top="170" Width="633,6" Height="17" DisplayFormat.DecimalSeparator="," HAlign="haRight" Text="[FILCDP]"/>
+      <TfrxDMPMemoView Name="DMPMemo5" Align="baRight" Left="614,4" Top="136" Width="633,6" Height="17" DisplayFormat.DecimalSeparator="," HAlign="haRight" Text="[FILORD]"/>
+      <TfrxDMPMemoView Name="DMPMemo7" Align="baRight" Left="614,4" Top="119" Width="633,6" Height="17" DisplayFormat.DecimalSeparator="," HAlign="haRight" Text="[FILDOC]"/>
+      <TfrxDMPMemoView Name="DMPMemo28" Left="9,6" Top="85" Width="604,8" Height="17" DisplayFormat.DecimalSeparator="," Text="[FILVED]"/>
+    </TfrxPageHeader>
+    <TfrxGroupFooter Name="GPFDTACAD" Height="34" Left="0" Top="425" Width="1257,6">
+      <TfrxDMPMemoView Name="DMPMemo24" Left="729,6" Top="0" Width="240" Height="17" DisplayFormat.DecimalSeparator="," HAlign="haRight" Text="Total Parcial do dia:"/>
+      <TfrxDMPLineView Name="DMPLine1" Left="4,8" Top="25,5" Width="1497,6" Height="0"/>
+      <TfrxDMPMemoView Name="DMPMemo35" Left="1094,4" Top="0" Width="134,4" Height="17" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="#,##0.00" DisplayFormat.Kind="fkNumeric" HAlign="haRight" Text="[SUM(&#60;frxRelatorio.&#34;CTR_VALORI&#34;&#62;,MSDDTACAD)]"/>
+      <TfrxDMPMemoView Name="DMPMemo25" Left="979,2" Top="0" Width="105,6" Height="17" DataSet="frxRelatorio" DataSetName="frxRelatorio" DisplayFormat.DecimalSeparator="," HAlign="haCenter" WordWrap="False" Text="[frxRelatorio.&#34;CTR_DTACAD&#34;]"/>
+    </TfrxGroupFooter>
+    <TfrxGroupHeader Name="GPHDTACAD" Height="17" Left="0" Top="323" Width="1257,6" Condition="frxRelatorio.&#34;CTR_DTACAD&#34;" ReprintOnNewPage="True"/>
+    <TfrxReportSummary Name="RPSUMMARY" Height="34" Left="0" Top="850" Width="1257,6">
+      <TfrxDMPMemoView Name="DMPMemo36" Left="844,8" Top="0" Width="240" Height="17" DisplayFormat.DecimalSeparator="," HAlign="haRight" Text="Total Geral:"/>
+      <TfrxDMPLineView Name="DMPLine2" Left="4,8" Top="25,5" Width="1497,6" Height="0"/>
+      <TfrxDMPMemoView Name="TOTGER" Left="1094,4" Top="0" Width="134,4" Height="17" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="#,##0.00" DisplayFormat.Kind="fkNumeric" HAlign="haRight" Text="[SUM(&#60;frxRelatorio.&#34;CTR_VALORI&#34;&#62;,MSDDTACAD)]"/>
+    </TfrxReportSummary>
+    <TfrxPageFooter Name="rlbRodape" Height="34" Left="0" Top="901" Width="1257,6">
+      <TfrxDMPMemoView Name="rllNomeForm" Left="9,6" Top="17" Width="758,4" Height="17" DataField="REL_NOMREL" DataSet="frmPaiRelatorio.frxGen" DataSetName="frxGen" DisplayFormat.DecimalSeparator="," Frame.Typ="4" Text="[frxGen.&#34;REL_NOMREL&#34;]"/>
+      <TfrxDMPMemoView Name="rllTotalImpresso" Left="777,6" Top="17" Width="470,4" Height="17" OnBeforePrint="rllTotalImpressoOnBeforePrint" DisplayFormat.DecimalSeparator="," Frame.Typ="4" HAlign="haRight" Text="[COUNT(MSDDTACAD)]"/>
+    </TfrxPageFooter>
+    <TfrxGroupHeader Name="GPHLINHA" Height="17" Left="0" Top="476" Visible="False" Width="1257,6" Condition="frxRelatorio.&#34;LINHA&#34;" ReprintOnNewPage="True">
+      <TfrxDMPMemoView Name="DMPMemo13" Left="9,6" Top="0" Width="57,6" Height="17" DataSet="frxRelatorio" DataSetName="frxRelatorio" DisplayFormat.DecimalSeparator="," Text="LINHA:"/>
+      <TfrxDMPMemoView Name="DMPMemo17" Left="76,8" Top="0" Width="729,6" Height="17" OnBeforePrint="DMPMemo17OnBeforePrint" DataSet="frxRelatorio" DataSetName="frxRelatorio" DisplayFormat.DecimalSeparator="," Text="[frxRelatorio.&#34;LINHA&#34;]"/>
+    </TfrxGroupHeader>
+    <TfrxGroupHeader Name="GPHGRUPO" Height="17" Left="0" Top="510" Visible="False" Width="1257,6" Condition="frxRelatorio.&#34;GRUPO&#34;" ReprintOnNewPage="True">
+      <TfrxDMPMemoView Name="DMPMemo16" Left="19,2" Top="0" Width="57,6" Height="17" DataSet="frxRelatorio" DataSetName="frxRelatorio" DisplayFormat.DecimalSeparator="," Text="GRUPO:"/>
+      <TfrxDMPMemoView Name="DMPMemo18" Left="86,4" Top="0" Width="720" Height="17" OnBeforePrint="DMPMemo18OnBeforePrint" DataSet="frxRelatorio" DataSetName="frxRelatorio" DisplayFormat.DecimalSeparator="," Text="[frxRelatorio.&#34;GRUPO&#34;]"/>
+    </TfrxGroupHeader>
+    <TfrxGroupHeader Name="GPHCONTA" Height="34" Left="0" Top="544" Visible="False" Width="1257,6" Condition="frxRelatorio.&#34;CONTA&#34;" ReprintOnNewPage="True">
+      <TfrxDMPMemoView Name="DMPMemo19" Left="28,8" Top="0" Width="153,6" Height="17" DataSet="frxRelatorio" DataSetName="frxRelatorio" DisplayFormat.DecimalSeparator="," Text="CENTRO DE CUSTO:"/>
+      <TfrxDMPMemoView Name="DMPMemo20" Left="192" Top="0" Width="614,4" Height="17" OnBeforePrint="DMPMemo20OnBeforePrint" DataSet="frxRelatorio" DataSetName="frxRelatorio" DisplayFormat.DecimalSeparator="," Text="[frxRelatorio.&#34;CONTA&#34;]"/>
+    </TfrxGroupHeader>
+    <TfrxMasterData Name="MSDLINHA" Height="17" Left="0" Top="595" Visible="False" Width="1257,6" Child="CEndCom02" ColumnWidth="0" ColumnGap="0" DataSet="frmPaiRelatorio.frxRelatorio" DataSetName="frxRelatorio" RowCount="0">
+      <TfrxDMPMemoView Name="DMPMemo21" Left="9,6" Top="0" Width="96" Height="17" DataSet="frxRelatorio" DataSetName="frxRelatorio" DisplayFormat.DecimalSeparator="," WordWrap="False" Text="[frxRelatorio.&#34;CTR_DTACAD&#34;]"/>
+      <TfrxDMPMemoView Name="DMPMemo22" Left="115,2" Top="0" Width="96" Height="17" DataSet="frxRelatorio" DataSetName="frxRelatorio" DisplayFormat.DecimalSeparator="," WordWrap="False" Text="[frxRelatorio.&#34;CTR_NUMDUP&#34;]-[frxRelatorio.&#34;CTR_ESPDOC&#34;]"/>
+      <TfrxDMPMemoView Name="DMPMemo23" Left="220,8" Top="0" Width="28,8" Height="17" DataField="CTR_CODEMP" DataSet="frxRelatorio" DataSetName="frxRelatorio" DisplayFormat.DecimalSeparator="," WordWrap="False" Text="[frxRelatorio.&#34;CTR_CODEMP&#34;]"/>
+      <TfrxDMPMemoView Name="DMPMemo26" Left="259,2" Top="0" Width="28,8" Height="17" DataField="CTR_CODVEN" DataSet="frxRelatorio" DataSetName="frxRelatorio" DisplayFormat.DecimalSeparator="," WordWrap="False" Text="[frxRelatorio.&#34;CTR_CODVEN&#34;]"/>
+      <TfrxDMPMemoView Name="HIST02" Left="681,6" Top="0" Width="288" Height="17" DataSet="frxRelatorio" DataSetName="frxRelatorio" DisplayFormat.DecimalSeparator="," WordWrap="False" Text="[frxRelatorio.&#34;CTR_HIST01&#34;]"/>
+      <TfrxDMPMemoView Name="DMPMemo29" Left="979,2" Top="0" Width="105,6" Height="17" DataSet="frxRelatorio" DataSetName="frxRelatorio" DisplayFormat.DecimalSeparator="," HAlign="haCenter" WordWrap="False" Text="[frxRelatorio.&#34;CTR_DTAVEN&#34;]"/>
+      <TfrxDMPMemoView Name="DMPMemo30" Left="1094,4" Top="0" Width="134,4" Height="17" DataSet="frxRelatorio" DataSetName="frxRelatorio" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="#,##0.00" DisplayFormat.Kind="fkNumeric" HAlign="haRight" WordWrap="False" Text="[frxRelatorio.&#34;CTR_VALORI&#34;]"/>
+      <TfrxDMPMemoView Name="rllDPD2" Left="1228,8" Top="0" Width="19,2" Height="17" OnBeforePrint="rllDPD2OnBeforePrint" DisplayFormat.DecimalSeparator="," HAlign="haCenter" Text=""/>
+      <TfrxDMPMemoView Name="DMPMemo27" Left="297,6" Top="0" Width="374,4" Height="17" DisplayFormat.DecimalSeparator="," Text="[frxRelatorio.&#34;CTR_CODCLI&#34;]-[frxRelatorio.&#34;CLI_NOMCLI&#34;]"/>
+    </TfrxMasterData>
+    <TfrxGroupFooter Name="GPFLINHA" Height="34" Left="0" Top="782" Visible="False" Width="1257,6">
+      <TfrxDMPMemoView Name="DMPMemo31" Left="844,8" Top="0" Width="240" Height="17" DisplayFormat.DecimalSeparator="," HAlign="haRight" Text="Total Linha:"/>
+      <TfrxDMPLineView Name="DMPLine3" Left="4,8" Top="25,5" Width="1497,6" Height="0"/>
+      <TfrxDMPMemoView Name="DMPMemo33" Left="1094,4" Top="0" Width="134,4" Height="17" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="#,##0.00" DisplayFormat.Kind="fkNumeric" HAlign="haRight" Text="[SUM(&#60;frxRelatorio.&#34;CTR_VALORI&#34;&#62;,MSDLINHA)]"/>
+    </TfrxGroupFooter>
+    <TfrxGroupFooter Name="GPFCONTA" Height="51" Left="0" Top="663" Visible="False" Width="1257,6">
+      <TfrxDMPMemoView Name="DMPMemo37" Left="844,8" Top="17" Width="240" Height="17" DisplayFormat.DecimalSeparator="," HAlign="haRight" Text="Total Conta:"/>
+      <TfrxDMPLineView Name="DMPLine4" Left="4,8" Top="42,5" Width="1497,6" Height="0"/>
+      <TfrxDMPMemoView Name="DMPMemo38" Left="1094,4" Top="17" Width="134,4" Height="17" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="#,##0.00" DisplayFormat.Kind="fkNumeric" HAlign="haRight" Text="[SUM(&#60;frxRelatorio.&#34;CTR_VALORI&#34;&#62;,MSDLINHA)]"/>
+    </TfrxGroupFooter>
+    <TfrxGroupFooter Name="GPFGRUPO" Height="34" Left="0" Top="731" Visible="False" Width="1257,6">
+      <TfrxDMPMemoView Name="DMPMemo40" Left="844,8" Top="0" Width="240" Height="17" DisplayFormat.DecimalSeparator="," HAlign="haRight" Text="Total Grupo:"/>
+      <TfrxDMPLineView Name="DMPLine5" Left="4,8" Top="25,5" Width="1497,6" Height="0"/>
+      <TfrxDMPMemoView Name="DMPMemo41" Left="1094,4" Top="0" Width="134,4" Height="17" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="#,##0.00" DisplayFormat.Kind="fkNumeric" HAlign="haRight" Text="[SUM(&#60;frxRelatorio.&#34;CTR_VALORI&#34;&#62;,MSDLINHA)]"/>
+    </TfrxGroupFooter>
+    <TfrxChild Name="CEndCom02" Height="17" Left="0" Top="629" Width="1257,6">
+      <TfrxDMPMemoView Name="DMPMemo34" Left="9,6" Top="0" Width="1238,4" Height="17" DataSet="frxRelatorio" DataSetName="frxRelatorio" DisplayFormat.DecimalSeparator="," WordWrap="False" Text="[(fRetEndCompleto(&#60;frxRelatorio.&#34;CTR_CODCLI&#34;&#62;))]"/>
+    </TfrxChild>
+    <TfrxChild Name="CEndCom01" Height="17" Left="0" Top="391" Width="1257,6">
+      <TfrxDMPMemoView Name="DMPMemo39" Left="9,6" Top="0" Width="1238,4" Height="17" DataSet="frxRelatorio" DataSetName="frxRelatorio" DisplayFormat.DecimalSeparator="," WordWrap="False" Text="[(fRetEndCompleto(&#60;frxRelatorio.&#34;CTR_CODCLI&#34;&#62;))]"/>
+    </TfrxChild>
+  </TfrxDMPPage>
+</TfrxReport>

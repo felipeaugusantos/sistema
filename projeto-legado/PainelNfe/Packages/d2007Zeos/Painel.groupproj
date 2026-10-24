@@ -1,0 +1,64 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{46ee466f-7b82-4353-a367-a4fb7a26716f}</ProjectGuid>
+  </PropertyGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Projects Include="..\..\libNfe\Package\d2007\libNfe.dproj" />
+    <Projects Include="..\..\PackagesNfeImpressao\d2007Zeos\NFeImpressao.dproj" />
+    <Projects Include="..\..\PackagesNfeStatus\d2007Zeos\NFeStatus.dproj" />
+    <Projects Include="PainelNFe.dproj" />
+  </ItemGroup>
+  <ProjectExtensions>
+    <Borland.Personality>Default.Personality</Borland.Personality>
+    <Borland.ProjectType />
+    <BorlandProject>
+<BorlandProject xmlns=""><Default.Personality></Default.Personality></BorlandProject></BorlandProject>
+  </ProjectExtensions>
+  <Target Name="PainelNFe">
+    <MSBuild Projects="PainelNFe.dproj" Targets="" />
+  </Target>
+  <Target Name="PainelNFe:Clean">
+    <MSBuild Projects="PainelNFe.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="PainelNFe:Make">
+    <MSBuild Projects="PainelNFe.dproj" Targets="Make" />
+  </Target>
+  <Target Name="libNfe">
+    <MSBuild Projects="..\..\libNfe\Package\d2007\libNfe.dproj" Targets="" />
+  </Target>
+  <Target Name="libNfe:Clean">
+    <MSBuild Projects="..\..\libNfe\Package\d2007\libNfe.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="libNfe:Make">
+    <MSBuild Projects="..\..\libNfe\Package\d2007\libNfe.dproj" Targets="Make" />
+  </Target>
+  <Target Name="NFeStatus">
+    <MSBuild Projects="..\..\PackagesNfeStatus\d2007Zeos\NFeStatus.dproj" Targets="" />
+  </Target>
+  <Target Name="NFeStatus:Clean">
+    <MSBuild Projects="..\..\PackagesNfeStatus\d2007Zeos\NFeStatus.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="NFeStatus:Make">
+    <MSBuild Projects="..\..\PackagesNfeStatus\d2007Zeos\NFeStatus.dproj" Targets="Make" />
+  </Target>
+  <Target Name="NFeImpressao">
+    <MSBuild Projects="..\..\PackagesNfeImpressao\d2007Zeos\NFeImpressao.dproj" Targets="" />
+  </Target>
+  <Target Name="NFeImpressao:Clean">
+    <MSBuild Projects="..\..\PackagesNfeImpressao\d2007Zeos\NFeImpressao.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="NFeImpressao:Make">
+    <MSBuild Projects="..\..\PackagesNfeImpressao\d2007Zeos\NFeImpressao.dproj" Targets="Make" />
+  </Target>
+  <Target Name="Build">
+    <CallTarget Targets="PainelNFe;libNfe;NFeStatus;NFeImpressao" />
+  </Target>
+  <Target Name="Clean">
+    <CallTarget Targets="PainelNFe:Clean;libNfe:Clean;NFeStatus:Clean;NFeImpressao:Clean" />
+  </Target>
+  <Target Name="Make">
+    <CallTarget Targets="PainelNFe:Make;libNfe:Make;NFeStatus:Make;NFeImpressao:Make" />
+  </Target>
+  <Import Condition="Exists('$(MSBuildBinPath)\Borland.Group.Targets')" Project="$(MSBuildBinPath)\Borland.Group.Targets" />
+</Project>

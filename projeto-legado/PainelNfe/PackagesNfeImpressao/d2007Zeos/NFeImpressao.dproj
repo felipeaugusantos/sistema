@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{e4867ea1-161a-40f7-a5ff-14dcfef41c79}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+    <DCC_DependencyCheckOutputName>..\..\NFeImpressao.exe</DCC_DependencyCheckOutputName>
+    <MainSource>NFeImpressao.dpr</MainSource>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Version>7.0</Version>
+    <DCC_DebugInformation>False</DCC_DebugInformation>
+    <DCC_LocalDebugSymbols>False</DCC_LocalDebugSymbols>
+    <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+    <DCC_Define>RELEASE</DCC_Define>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <Version>7.0</Version>
+    <DCC_Define>DEBUG;madExcept</DCC_Define>
+    <DCC_ExeOutput>..\..\</DCC_ExeOutput>
+    <DCC_DcuOutput>temp</DCC_DcuOutput>
+    <DCC_ObjOutput>temp</DCC_ObjOutput>
+    <DCC_HppOutput>temp</DCC_HppOutput>
+    <DCC_MapFile>3</DCC_MapFile>
+  </PropertyGroup>
+  <ProjectExtensions>
+    <Borland.Personality>Delphi.Personality</Borland.Personality>
+    <Borland.ProjectType />
+    <BorlandProject>
+<BorlandProject><Delphi.Personality><Parameters><Parameters Name="UseLauncher">False</Parameters><Parameters Name="LoadAllSymbols">True</Parameters><Parameters Name="LoadUnspecifiedSymbols">False</Parameters></Parameters><VersionInfo><VersionInfo Name="IncludeVerInfo">True</VersionInfo><VersionInfo Name="AutoIncBuild">False</VersionInfo><VersionInfo Name="MajorVer">1</VersionInfo><VersionInfo Name="MinorVer">0</VersionInfo><VersionInfo Name="Release">0</VersionInfo><VersionInfo Name="Build">0</VersionInfo><VersionInfo Name="Debug">False</VersionInfo><VersionInfo Name="PreRelease">False</VersionInfo><VersionInfo Name="Special">False</VersionInfo><VersionInfo Name="Private">False</VersionInfo><VersionInfo Name="DLL">False</VersionInfo><VersionInfo Name="Locale">1046</VersionInfo><VersionInfo Name="CodePage">1252</VersionInfo></VersionInfo><VersionInfoKeys><VersionInfoKeys Name="CompanyName"></VersionInfoKeys><VersionInfoKeys Name="FileDescription"></VersionInfoKeys><VersionInfoKeys Name="FileVersion">1.0.0.0</VersionInfoKeys><VersionInfoKeys Name="InternalName"></VersionInfoKeys><VersionInfoKeys Name="LegalCopyright"></VersionInfoKeys><VersionInfoKeys Name="LegalTrademarks"></VersionInfoKeys><VersionInfoKeys Name="OriginalFilename"></VersionInfoKeys><VersionInfoKeys Name="ProductName"></VersionInfoKeys><VersionInfoKeys Name="ProductVersion">1.0.0.0</VersionInfoKeys><VersionInfoKeys Name="Comments"></VersionInfoKeys></VersionInfoKeys><Source><Source Name="MainSource">NFeImpressao.dpr</Source></Source><Excluded_Packages>
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <Excluded_Packages Name="$(BDS)\bin\dcloffice2k100.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+      <Excluded_Packages Name="$(BDS)\bin\dclofficexp100.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+    </Excluded_Packages></Delphi.Personality></BorlandProject></BorlandProject>
+  </ProjectExtensions>
+  <Import Project="$(MSBuildBinPath)\Borland.Delphi.Targets" />
+  <ItemGroup>
+    <DelphiCompile Include="NFeImpressao.dpr">
+      <MainSource>MainSource</MainSource>
+    </DelphiCompile>
+    <DCCReference Include="..\..\imprimenfe\ACBr\ACBrComum\ACBrBase.pas" />
+    <DCCReference Include="..\..\imprimenfe\ACBr\ACBrComum\ACBrConsts.pas" />
+    <DCCReference Include="..\..\imprimenfe\ACBr\ACBrComum\ACBrUtil.pas" />
+    <DCCReference Include="..\..\imprimenfe\ACBr\ACBrDFe\ACBrDFe.pas" />
+    <DCCReference Include="..\..\imprimenfe\ACBr\ACBrDFe\ACBrDFeException.pas" />
+    <DCCReference Include="..\..\imprimenfe\ACBr\ACBrDFe\ACBrDFeUtil.pas" />
+    <DCCReference Include="..\..\imprimenfe\ACBr\ACBrDFe\ACBrNFe\ACBrNFe.pas" />
+    <DCCReference Include="..\..\imprimenfe\ACBr\ACBrDFe\ACBrNFe\ACBrNFeNotasFiscais.pas" />
+    <DCCReference Include="..\..\imprimenfe\ACBr\ACBrDFe\ACBrNFe\DANFE\ACBrNFeDANFEClass.pas" />
+    <DCCReference Include="..\..\imprimenfe\ACBr\ACBrDFe\ACBrNFe\DANFE\NFe\Fast\ACBrNFeDANFEFR.pas" />
+    <DCCReference Include="..\..\imprimenfe\ACBr\ACBrDFe\ACBrNFe\DANFE\NFe\Fast\ACBrNFeDANFEFRDM.pas" />
+    <DCCReference Include="..\..\imprimenfe\ACBr\ACBrDFe\ACBrNFe\NFe\untConversaoNFe.pas" />
+    <DCCReference Include="..\..\imprimenfe\ACBr\ACBrDFe\ACBrNFe\NFe\untNFe.pas" />
+    <DCCReference Include="..\..\imprimenfe\ACBr\ACBrDFe\ACBrNFe\NFe\untNFeConsts.pas" />
+    <DCCReference Include="..\..\imprimenfe\ACBr\ACBrDFe\ACBrNFe\NFe\untNFeR.pas" />
+    <DCCReference Include="..\..\imprimenfe\ACBr\ACBrDFe\ACBrNFe\NFe\untProcNFe.pas" />
+    <DCCReference Include="..\..\imprimenfe\ACBr\ACBrDFe\ACBrNFe\PCNNFe\pcnConversaoNFe.pas" />
+    <DCCReference Include="..\..\imprimenfe\ACBr\ACBrDFe\ACBrNFe\PCNNFe\pcnNFe.pas" />
+    <DCCReference Include="..\..\imprimenfe\ACBr\ACBrDFe\ACBrNFe\PCNNFe\pcnNFeConsts.pas" />
+    <DCCReference Include="..\..\imprimenfe\ACBr\ACBrDFe\ACBrNFe\PCNNFe\pcnNFeR.pas" />
+    <DCCReference Include="..\..\imprimenfe\ACBr\ACBrDFe\ACBrNFe\PCNNFe\pcnProcNFe.pas" />
+    <DCCReference Include="..\..\imprimenfe\ACBr\ACBrDFe\ACBrNFe\PCNNFe\untConversaoNFe.pas" />
+    <DCCReference Include="..\..\imprimenfe\ACBr\ACBrDFe\ACBrNFe\PCNNFe\untNFe.pas" />
+    <DCCReference Include="..\..\imprimenfe\ACBr\ACBrDFe\ACBrNFe\PCNNFe\untNFeConsts.pas" />
+    <DCCReference Include="..\..\imprimenfe\ACBr\ACBrDFe\ACBrNFe\PCNNFe\untNFeR.pas" />
+    <DCCReference Include="..\..\imprimenfe\ACBr\ACBrDFe\ACBrNFe\PCNNFe\untProcNFe.pas" />
+    <DCCReference Include="..\..\imprimenfe\ACBr\ACBrDiversos\ACBrValidador.pas" />
+    <DCCReference Include="..\..\imprimenfe\ACBr\Comum\untAuxiliar.pas" />
+    <DCCReference Include="..\..\imprimenfe\ACBr\Comum\untConsts.pas" />
+    <DCCReference Include="..\..\imprimenfe\ACBr\Comum\untConversao.pas" />
+    <DCCReference Include="..\..\imprimenfe\ACBr\Comum\untLeitor.pas" />
+    <DCCReference Include="..\..\imprimenfe\ACBr\Comum\untSignature.pas" />
+    <DCCReference Include="..\..\imprimenfe\ACBr\PCNComum\pcnAuxiliar.pas" />
+    <DCCReference Include="..\..\imprimenfe\ACBr\PCNComum\pcnConsts.pas" />
+    <DCCReference Include="..\..\imprimenfe\ACBr\PCNComum\pcnConversao.pas" />
+    <DCCReference Include="..\..\imprimenfe\ACBr\PCNComum\pcnLeitor.pas" />
+    <DCCReference Include="..\..\imprimenfe\ACBr\PCNComum\pcnSignature.pas" />
+    <DCCReference Include="..\..\imprimenfe\ACBr\PCNComum\untAuxiliar.pas" />
+    <DCCReference Include="..\..\imprimenfe\ACBr\PCNComum\untConsts.pas" />
+    <DCCReference Include="..\..\imprimenfe\ACBr\PCNComum\untConversao.pas" />
+    <DCCReference Include="..\..\imprimenfe\ACBr\PCNComum\untLeitor.pas" />
+    <DCCReference Include="..\..\imprimenfe\ACBr\PCNComum\untSignature.pas" />
+    <DCCReference Include="..\..\imprimenfe\ACBr\Terceiros\synalist\synafpc.pas" />
+    <DCCReference Include="..\..\imprimenfe\ACBr\Terceiros\synalist\synautil.pas" />
+    <DCCReference Include="..\..\imprimenfe\untConexaoBD.pas" />
+    <DCCReference Include="..\..\imprimenfe\untConfImpressaoNFe.pas">
+      <Form>frmConfImpressaoNFe</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\imprimenfe\untConfImpressora.pas" />
+    <DCCReference Include="..\..\imprimenfe\untImagemBase64.pas" />
+    <DCCReference Include="..\..\imprimenfe\untImpressaoNFe.pas" />
+    <DCCReference Include="..\..\imprimenfe\untModulo.pas">
+      <Form>frmModulo</Form>
+      <DesignClass>TDataModule</DesignClass>
+    </DCCReference>
+    <DCCReference Include="..\..\imprimenfe\untModuloReplicacaoZeos.pas">
+      <Form>frmModuloReplicacao</Form>
+      <DesignClass>TDataModule</DesignClass>
+    </DCCReference>
+    <DCCReference Include="..\..\imprimenfe\untUtil.pas" />
+  </ItemGroup>
+</Project>

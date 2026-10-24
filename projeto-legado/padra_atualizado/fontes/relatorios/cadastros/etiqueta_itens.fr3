@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TfrxReport Version="4.3.61" DataSetName="frxEtiquetaItens" DotMatrixReport="False" IniFile="\Software\Fast Reports" PreviewOptions.Buttons="4095" PreviewOptions.Zoom="1" PrintOptions.Printer="IMP_EDUARDO" PrintOptions.PrintOnSheet="0" ReportOptions.CreateDate="39377,5490293519" ReportOptions.Description.Text="" ReportOptions.LastChange="39826,4916813079" ScriptLanguage="PascalScript" ScriptText.Text="begin&#13;&#10;&#13;&#10;end." PropData="044C65667403B00103546F7003B00008446174617365747301010C3000000020446174615365743D226672784442496D704574692220446174615365744E616D653D226672784442496D70457469220000095661726961626C65730100055374796C650100">
+  <TfrxDataPage Name="Data" Height="1000" Left="0" Top="0" Width="1000"/>
+  <TfrxReportPage Name="qckPagina" PaperWidth="210" PaperHeight="297" PaperSize="9" LeftMargin="0" RightMargin="0" TopMargin="0" BottomMargin="0" ColumnWidth="0" ColumnPositions.Text="" HGuides.Text="" VGuides.Text="">
+    <TfrxMasterData Name="MasterData1" Height="151,18110236" Left="0" Top="18,89765" Width="793,7013" Columns="3" ColumnWidth="0" ColumnGap="264,566929133858" DataSet="frxDBImpEti" DataSetName="frxDBImpEti" RowCount="0">
+      <TfrxMemoView Name="Memo1" Left="18,89765" Top="18,89765" Width="230,55133" Height="18,89765" DataSetName="frxDBDataset1" DisplayFormat.DecimalSeparator="," Font.Charset="1" Font.Color="0" Font.Height="-11" Font.Name="Arial" Font.Style="0" ParentFont="False" Text="[frxDBImpEti.&#34;NOMEMP&#34;]"/>
+      <TfrxMemoView Name="Memo2" Left="18,89765" Top="56,69295" Width="230,55133" Height="18,89765" DataSetName="frxDBDataset1" DisplayFormat.DecimalSeparator="," Font.Charset="1" Font.Color="0" Font.Height="-16" Font.Name="Arial" Font.Style="0" ParentFont="False" Text="[frxDBImpEti.&#34;DESITE&#34;]"/>
+      <TfrxMemoView Name="Memo3" Left="18,89765" Top="86,92919" Width="230,55133" Height="60,47248" DataSetName="frxDBDataset1" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="%2.2n" DisplayFormat.Kind="fkNumeric" Font.Charset="1" Font.Color="0" Font.Height="-48" Font.Name="Arial" Font.Style="0" HAlign="haRight" ParentFont="False" Text="[frxDBImpEti.&#34;VALITE&#34;]"/>
+    </TfrxMasterData>
+  </TfrxReportPage>
+</TfrxReport>

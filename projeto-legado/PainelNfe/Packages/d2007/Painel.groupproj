@@ -1,0 +1,44 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{2d55fe09-f25e-4c70-9241-e1aa6c810460}</ProjectGuid>
+  </PropertyGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Projects Include="..\..\libNfe\Package\d2007Uni\libNfe.dproj" />
+    <Projects Include="PainelNFe.dproj" />
+  </ItemGroup>
+  <ProjectExtensions>
+    <Borland.Personality>Default.Personality</Borland.Personality>
+    <Borland.ProjectType />
+    <BorlandProject>
+<BorlandProject xmlns=""><Default.Personality></Default.Personality></BorlandProject></BorlandProject>
+  </ProjectExtensions>
+  <Target Name="PainelNFe">
+    <MSBuild Projects="PainelNFe.dproj" Targets="" />
+  </Target>
+  <Target Name="PainelNFe:Clean">
+    <MSBuild Projects="PainelNFe.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="PainelNFe:Make">
+    <MSBuild Projects="PainelNFe.dproj" Targets="Make" />
+  </Target>
+  <Target Name="libNfe">
+    <MSBuild Projects="..\..\libNfe\Package\d2007Uni\libNfe.dproj" Targets="" />
+  </Target>
+  <Target Name="libNfe:Clean">
+    <MSBuild Projects="..\..\libNfe\Package\d2007Uni\libNfe.dproj" Targets="Clean" />
+  </Target>
+  <Target Name="libNfe:Make">
+    <MSBuild Projects="..\..\libNfe\Package\d2007Uni\libNfe.dproj" Targets="Make" />
+  </Target>
+  <Target Name="Build">
+    <CallTarget Targets="PainelNFe;libNfe" />
+  </Target>
+  <Target Name="Clean">
+    <CallTarget Targets="PainelNFe:Clean;libNfe:Clean" />
+  </Target>
+  <Target Name="Make">
+    <CallTarget Targets="PainelNFe:Make;libNfe:Make" />
+  </Target>
+  <Import Condition="Exists('$(MSBuildBinPath)\Borland.Group.Targets')" Project="$(MSBuildBinPath)\Borland.Group.Targets" />
+</Project>

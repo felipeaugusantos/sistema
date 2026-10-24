@@ -1,0 +1,96 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{1BC0AF53-DE37-42F4-986E-8A21A89210D3}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="TestesUnitariosStClientes\AutcomTestesStClientes.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="TestesUnitariosDifalFcp\AutcomTestesDifalFcpClientes.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="TestesUnitariosIcmsClientes\AutcomTestesIcmsClientes.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="TestesUnitariosIpiRegrasClientes\AutcomTestesIpiRegrasClientes.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="TestesUnitariosStCustoAqClientes\AutcomTestesStCustoAqClientes.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="TestesUnitariosPrecoCustoClientes\AutcomTestesPrecoCustoClientes.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="AutcomTestesStClientes">
+        <MSBuild Projects="TestesUnitariosStClientes\AutcomTestesStClientes.dproj"/>
+    </Target>
+    <Target Name="AutcomTestesStClientes:Clean">
+        <MSBuild Projects="TestesUnitariosStClientes\AutcomTestesStClientes.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AutcomTestesStClientes:Make">
+        <MSBuild Projects="TestesUnitariosStClientes\AutcomTestesStClientes.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="AutcomTestesDifalFcpClientes">
+        <MSBuild Projects="TestesUnitariosDifalFcp\AutcomTestesDifalFcpClientes.dproj"/>
+    </Target>
+    <Target Name="AutcomTestesDifalFcpClientes:Clean">
+        <MSBuild Projects="TestesUnitariosDifalFcp\AutcomTestesDifalFcpClientes.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AutcomTestesDifalFcpClientes:Make">
+        <MSBuild Projects="TestesUnitariosDifalFcp\AutcomTestesDifalFcpClientes.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="AutcomTestesIcmsClientes">
+        <MSBuild Projects="TestesUnitariosIcmsClientes\AutcomTestesIcmsClientes.dproj"/>
+    </Target>
+    <Target Name="AutcomTestesIcmsClientes:Clean">
+        <MSBuild Projects="TestesUnitariosIcmsClientes\AutcomTestesIcmsClientes.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AutcomTestesIcmsClientes:Make">
+        <MSBuild Projects="TestesUnitariosIcmsClientes\AutcomTestesIcmsClientes.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="AutcomTestesIpiRegrasClientes">
+        <MSBuild Projects="TestesUnitariosIpiRegrasClientes\AutcomTestesIpiRegrasClientes.dproj"/>
+    </Target>
+    <Target Name="AutcomTestesIpiRegrasClientes:Clean">
+        <MSBuild Projects="TestesUnitariosIpiRegrasClientes\AutcomTestesIpiRegrasClientes.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AutcomTestesIpiRegrasClientes:Make">
+        <MSBuild Projects="TestesUnitariosIpiRegrasClientes\AutcomTestesIpiRegrasClientes.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="AutcomTestesStCustoAqClientes">
+        <MSBuild Projects="TestesUnitariosStCustoAqClientes\AutcomTestesStCustoAqClientes.dproj"/>
+    </Target>
+    <Target Name="AutcomTestesStCustoAqClientes:Clean">
+        <MSBuild Projects="TestesUnitariosStCustoAqClientes\AutcomTestesStCustoAqClientes.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AutcomTestesStCustoAqClientes:Make">
+        <MSBuild Projects="TestesUnitariosStCustoAqClientes\AutcomTestesStCustoAqClientes.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="AutcomTestesPrecoCustoClientes">
+        <MSBuild Projects="TestesUnitariosPrecoCustoClientes\AutcomTestesPrecoCustoClientes.dproj"/>
+    </Target>
+    <Target Name="AutcomTestesPrecoCustoClientes:Clean">
+        <MSBuild Projects="TestesUnitariosPrecoCustoClientes\AutcomTestesPrecoCustoClientes.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="AutcomTestesPrecoCustoClientes:Make">
+        <MSBuild Projects="TestesUnitariosPrecoCustoClientes\AutcomTestesPrecoCustoClientes.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="AutcomTestesStClientes;AutcomTestesDifalFcpClientes;AutcomTestesIcmsClientes;AutcomTestesIpiRegrasClientes;AutcomTestesStCustoAqClientes;AutcomTestesPrecoCustoClientes"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="AutcomTestesStClientes:Clean;AutcomTestesDifalFcpClientes:Clean;AutcomTestesIcmsClientes:Clean;AutcomTestesIpiRegrasClientes:Clean;AutcomTestesStCustoAqClientes:Clean;AutcomTestesPrecoCustoClientes:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="AutcomTestesStClientes:Make;AutcomTestesDifalFcpClientes:Make;AutcomTestesIcmsClientes:Make;AutcomTestesIpiRegrasClientes:Make;AutcomTestesStCustoAqClientes:Make;AutcomTestesPrecoCustoClientes:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

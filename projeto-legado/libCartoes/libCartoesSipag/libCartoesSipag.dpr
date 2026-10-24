@@ -1,0 +1,96 @@
+library libCartoesSipag;
+
+{ Important note about DLL memory management: ShareMem must be the
+  first unit in your library's USES clause AND your project's (select
+  Project-View Source) USES clause if your DLL exports any procedures or
+  functions that pass strings as parameters or function results. This
+  applies to all strings passed to and from your DLL--even those that
+  are nested in records and classes. ShareMem is the interface unit to
+  the BORLNDMM.DLL shared memory manager, which must be deployed along
+  with your DLL. To avoid using BORLNDMM.DLL, pass string information
+  using PChar or ShortString parameters. }
+
+uses
+  System.ShareMem,
+  madExcept,
+  madLinkDisAsm,
+  madListHardware,
+  madListProcesses,
+  madListModules,
+  System.SysUtils,
+  System.Classes,
+  WinAPi.Windows,
+  dxCore,
+  Vcl.Themes,
+  Vcl.Styles,
+  MidasLib,
+  untSipagExports in 'genericos\untSipagExports.pas',
+  untTLibCartoesFuncoes in '..\libCentralizado\genericos\untTLibCartoesFuncoes.pas',
+  untGenericProcedureFormGravando in '..\libCentralizado\views\untGenericProcedureFormGravando.pas',
+  untLibCartoesGravando in '..\libCentralizado\views\untLibCartoesGravando.pas' {frmGravando},
+  untLibCartoesGravandoOld in '..\libCentralizado\views\untLibCartoesGravandoOld.pas' {frmGravandoOld},
+  untLibCartoesPai in '..\libCentralizado\views\untLibCartoesPai.pas' {frmPai},
+  untLibCartoesPaiSimples in '..\libCentralizado\views\untLibCartoesPaiSimples.pas' {frmPaiSimples},
+  untILibCartoesWrapper in '..\libCentralizado\interfaces\untILibCartoesWrapper.pas',
+  untTSipagFuncoes in 'genericos\untTSipagFuncoes.pas',
+  untSipag in 'importacao\Arquivos\untSipag.pas',
+  untSipagPgto in 'importacao\Arquivos\untSipagPgto.pas',
+  untSipagPgtoV2 in 'importacao\Arquivos\untSipagPgtoV2.pas',
+  untTSipagImportacaoCartao in 'genericos\untTSipagImportacaoCartao.pas',
+  untISipagIntegracaoLibCartoes in 'genericos\interfaces\untISipagIntegracaoLibCartoes.pas',
+  untILibCartoesFactory in '..\libCentralizado\factorys\untILibCartoesFactory.pas',
+  untLibCartoesHorarioSistema in '..\libCentralizado\genericos\untLibCartoesHorarioSistema.pas',
+  untLibCartoesDigData in '..\libCentralizado\views\untLibCartoesDigData.pas' {frmLibCartoesDigData},
+  untLibCartoesConstantes in '..\libCentralizado\genericos\untLibCartoesConstantes.pas',
+  untLibCartoesInterfacesTipos in '..\libCentralizado\interfaces\untLibCartoesInterfacesTipos.pas',
+  untLibCartoesTelasAbertas in '..\libCentralizado\classes\untLibCartoesTelasAbertas.pas',
+  untSipagTipos in 'genericos\untSipagTipos.pas',
+  untConciliacaoSipag in 'conciliacao\untConciliacaoSipag.pas',
+  untConciliacaoSipagFiserv in 'conciliacao\untConciliacaoSipagFiserv.pas',
+  untConciliacaoSipagV2 in 'conciliacao\untConciliacaoSipagV2.pas',
+  untSipagConciliacaoCartoes in 'conciliacao\untSipagConciliacaoCartoes.pas',
+  untTSipagBaixaCartoes in 'conciliacao\untTSipagBaixaCartoes.pas',
+  untSipagBaixaCartoes in 'conciliacao\views\untSipagBaixaCartoes.pas' {frmSipagBaixaCartoes},
+  untTLockLibCartoes in '..\libCentralizado\classes\untTLockLibCartoes.pas',
+  untSipagDigPeriodo in 'conciliacao\views\untSipagDigPeriodo.pas' {frmSipagDigPeriodo},
+  untSipagFiltroInconsistencias in 'conciliacao\views\untSipagFiltroInconsistencias.pas',
+  untLibCartoesLogCtp in '..\libCentralizado\genericos\untLibCartoesLogCtp.pas',
+  untLibCartoesLogMca in '..\libCentralizado\genericos\untLibCartoesLogMca.pas',
+  untTLibCartoesCadPag in '..\libCentralizado\genericos\untTLibCartoesCadPag.pas',
+  untTLibCartoesMovBan in '..\libCentralizado\genericos\untTLibCartoesMovBan.pas',
+  untTLibCartoesMovCar in '..\libCentralizado\genericos\untTLibCartoesMovCar.pas',
+  untLogBan in '..\libCentralizado\classes\untLogBan.pas',
+  untTBanMca in '..\libCentralizado\classes\untTBanMca.pas',
+  untTLibCartoesConfiguracaoGrids in '..\libCentralizado\genericos\untTLibCartoesConfiguracaoGrids.pas',
+  untcxGridDBColumnHelper in '..\libCentralizado\genericos\untcxGridDBColumnHelper.pas',
+  untLibCartoesConfiguracaoGrids in '..\libCentralizado\views\untLibCartoesConfiguracaoGrids.pas' {frmConfiguracaoGrids},
+  untLibCartoesFrameCentroCustoEditFocus in '..\libCentralizado\views\untLibCartoesFrameCentroCustoEditFocus.pas' {fraCentroCustoEditFocus: TFrame},
+  untLibCartoesFramePlanoDeContasMaskEdit in '..\libCentralizado\views\untLibCartoesFramePlanoDeContasMaskEdit.pas' {fraPlanoDeContasMskEdit: TFrame},
+  untLibCartoesDigValor in '..\libCentralizado\views\untLibCartoesDigValor.pas' {frmDigValor},
+  untLibCartoesBaixaCtcAnaSin in '..\libCentralizado\views\untLibCartoesBaixaCtcAnaSin.pas' {frmLibCartoesBaixaCtcAnaSin},
+  untSQLBind_QueryDLL in '..\libCentralizado\classes\SQLBind\untSQLBind_QueryDLL.pas' {frmSQLBind_QueryDLL},
+  untSQLBindDLL in '..\libCentralizado\classes\SQLBind\untSQLBindDLL.pas',
+  untLibCartoesMensagem in '..\libCentralizado\views\untLibCartoesMensagem.pas' {frmMensagem},
+  Faturamento.Classes.CNPJ in '..\libCentralizado\genericos\Faturamento.Classes.CNPJ.pas',
+  untTBatchSQL.Helper in '..\libCentralizado\genericos\BatchSQL\untTBatchSQL.Helper.pas',
+  untTBatchSQL in '..\libCentralizado\genericos\BatchSQL\untTBatchSQL.pas';
+
+{$SetPEFlags IMAGE_FILE_REMOVABLE_RUN_FROM_SWAP}
+{$SetPEFlags IMAGE_FILE_NET_RUN_FROM_SWAP}
+{$R *.res}
+{$R ..\libCentralizado\VCLStyles.res}
+{$R ..\libCentralizado\icones.res}
+
+exports
+  dxInitialize,
+  dxFinalize,
+  InicializaObjetoLibCartoes,
+  VerificaEstruturaTabelas,
+  pAtualizaObjetoTelasAbertas,
+  SetStyleAutcom,
+  ImportarCartoesArquivo,
+
+  ConciliacaoCartoesArquivo;
+
+begin
+end.

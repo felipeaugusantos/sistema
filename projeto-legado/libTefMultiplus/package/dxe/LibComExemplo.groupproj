@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{2BBB9664-DCD3-49B8-999B-8BD2D45BDD12}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="libTEFMultiplus.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\fontes\exemplo\Multiplus.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="libTEFMultiplus">
+        <MSBuild Projects="libTEFMultiplus.dproj"/>
+    </Target>
+    <Target Name="libTEFMultiplus:Clean">
+        <MSBuild Projects="libTEFMultiplus.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="libTEFMultiplus:Make">
+        <MSBuild Projects="libTEFMultiplus.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Multiplus">
+        <MSBuild Projects="..\..\fontes\exemplo\Multiplus.dproj"/>
+    </Target>
+    <Target Name="Multiplus:Clean">
+        <MSBuild Projects="..\..\fontes\exemplo\Multiplus.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Multiplus:Make">
+        <MSBuild Projects="..\..\fontes\exemplo\Multiplus.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="libTEFMultiplus;Multiplus"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="libTEFMultiplus:Clean;Multiplus:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="libTEFMultiplus:Make;Multiplus:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

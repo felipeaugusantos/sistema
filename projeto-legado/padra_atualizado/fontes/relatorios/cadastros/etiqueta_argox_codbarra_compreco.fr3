@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TfrxReport Version="4.3.61" DotMatrixReport="False" IniFile="\Software\Fast Reports" PreviewOptions.Buttons="4095" PreviewOptions.Zoom="1" PrintOptions.Printer="Padrão" PrintOptions.PrintOnSheet="0" ReportOptions.CreateDate="39533,4064505324" ReportOptions.Description.Text="" ReportOptions.LastChange="39826,4243737269" ScriptLanguage="PascalScript" ScriptText.Text="begin&#13;&#10;&#13;&#10;end." StoreInDFM="False" PropData="044C65667403980103546F70024808446174617365747301010C3000000020446174615365743D226672784442496D704574692220446174615365744E616D653D226672784442496D70457469220000095661726961626C65730100055374796C650100">
+  <TfrxDataPage Name="Data" Height="1000" Left="0" Top="0" Width="1000"/>
+  <TfrxReportPage Name="CodBarraComPreco" PaperWidth="102" PaperHeight="27" PaperSize="256" LeftMargin="0" RightMargin="0" TopMargin="0" BottomMargin="0" ColumnWidth="0" ColumnPositions.Text="" HGuides.Text="" VGuides.Text="">
+    <TfrxMasterData Name="MasterData1" Height="83,1496063" Left="0" Top="18,89765" Width="385,51206" Columns="3" ColumnWidth="128,503937007874" ColumnGap="0" DataSet="frxDBImpEti" DataSetName="frxDBImpEti" RowCount="0">
+      <TfrxMemoView Name="Memo1" Left="23,67192333" Top="23,77427334" Width="100,48825" Height="38,23098333" DataSet="frxUserDataSet1" DataSetName="frxUserDataSet1" DisplayFormat.DecimalSeparator="," Font.Charset="0" Font.Color="0" Font.Height="-11" Font.Name="Courier New" Font.Style="1" ParentFont="False" Text="[frxDBImpEti.&#34;DESITE&#34;]"/>
+      <TfrxMemoView Name="Memo2" Left="23,67192333" Top="66,88713667" Width="100,48825" Height="26,89764999" DataSet="frxUserDataSet1" DataSetName="frxUserDataSet1" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="R$ #,##0.00" DisplayFormat.Kind="fkNumeric" Font.Charset="1" Font.Color="0" Font.Height="-19" Font.Name="Arial" Font.Style="1" HAlign="haRight" ParentFont="False" Text="[frxDBImpEti.&#34;VALITE&#34;]"/>
+    </TfrxMasterData>
+  </TfrxReportPage>
+</TfrxReport>

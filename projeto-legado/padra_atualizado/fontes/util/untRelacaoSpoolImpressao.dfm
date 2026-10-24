@@ -1,0 +1,553 @@
+﻿inherited frmRelacaoSpoolImpressao: TfrmRelacaoSpoolImpressao
+  Width = 1024
+  Height = 665
+  Caption = 'Gerenciador Spooler de Impress'#227'o Citel'
+  Position = poMainFormCenter
+  WindowState = wsMaximized
+  ExplicitWidth = 1024
+  ExplicitHeight = 665
+  PixelsPerInch = 96
+  TextHeight = 14
+  inherited pnlBotoes: TPanel
+    Top = 594
+    Width = 1018
+    Height = 26
+    TabOrder = 1
+    ExplicitTop = 594
+    ExplicitWidth = 1018
+    ExplicitHeight = 26
+    inherited FlwBotoes: TFlowPanel
+      Width = 937
+      Height = 22
+      ExplicitWidth = 937
+      ExplicitHeight = 22
+      object btnRemover: TBitBtnLocked
+        Left = 0
+        Top = 0
+        Width = 190
+        Height = 22
+        Caption = '[DELETE] Remover documento'
+        Glyph.Data = {
+          36030000424D3603000000000000360000002800000010000000100000000100
+          18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FF00006E00006EFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF00006E0000
+          6EFF00FFFF00FFFF00FFFF00FFFF00FF00006E001DE80010DC00006EFF00FFFF
+          00FFFF00FFFF00FF00006E0004E20008E700006EFF00FFFF00FFFF00FFFF00FF
+          00006E001AE2001FEB0010D900006EFF00FFFF00FF00006E0005DF0009EB0003
+          DB00006EFF00FFFF00FFFF00FFFF00FFFF00FF00006E001ADF0020EB0013DC00
+          006E00006E0005E2000BEB0004DA00006EFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FF00006E001BDF0022EB0012E60008EA0009EB0004DF00006EFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF00006E001BE300
+          16EB0011EB000ADF00006EFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FF00006E0021E7001EEB001AEB0017DF00006EFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF00006E062DE30430EB00
+          20E2001EE20027EB0019DF00006EFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FF00006E0C35E40E3CEB052BDC00006E00006E001FDC002AEB001CDF0000
+          6EFF00FFFF00FFFF00FFFF00FFFF00FF00006E1442E41645EB092ED900006EFF
+          00FFFF00FF00006E0020D9012CEB001FE200006EFF00FFFF00FFFF00FFFF00FF
+          00006E1C4BE71037DB00006EFF00FFFF00FFFF00FFFF00FF00006E0022DC0027
+          E400006EFF00FFFF00FFFF00FFFF00FFFF00FF00006E00006EFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FF00006E00006EFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF}
+        TabOrder = 0
+        Visible = False
+        OnClick = btnRemoverClick
+      end
+      object btnRefresh: TBitBtnLocked
+        Left = 190
+        Top = 0
+        Width = 190
+        Height = 22
+        Caption = '[F5] Atualizar documentos'
+        Glyph.Data = {
+          36030000424D3603000000000000360000002800000010000000100000000100
+          18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
+          FF00FFFF00FFFF00FF033B8A033D90013D95023B91033A89033A89FF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF0357D30147B20051D0035CE007
+          63E3035CE0004ED30042B7023A8F023A8FFF00FFFF00FFFF00FFFF00FFFF00FF
+          0650BA0357D32781F278B4F7CAE2FCE9F4FFDCEDFF9CC7FA3F8FF20155DD0140
+          A404367DFF00FFFF00FFFF00FF075DD70762E155A0F7F3F8FEFFFFFFE9F3FCC6
+          DEFAD9E9FCFFFFFFFFFFFF99C5F8055DE70040A302398BFF00FFFF00FF075DD7
+          529EF7FEFEFFE2EFFC0F65EB0558E70959E50250E20454E16FA6F0DEEBFC9CC9
+          F80355DE02398BFF00FF0455C9207DF0E1EFFEFFFFFF116BF25198F4C2DCFBDA
+          EAFCC4DCFA478BEE014EE16FA7F0FFFFFF3E8FF20043B7033E96085FDA56A1FA
+          FFFFFF9ECBFB1573F7EDF4FE5199F4186EEE5297F2EAF3FE357FED0556E3DEEB
+          FC9FCBFA0050D4033E960F6BE68BC1FCFFFFFF2987FCB6D8FE72B0FB1774F40F
+          6AF20C65EF6EAAF4B0D0FA0455E5A0C5F6DEEFFF0560E202409C1B76EDA4CFFC
+          FFFFFF2988FFCEE6FF4D9DFC1877FA60A6FA116CF31872F24690F2085DEA88BA
+          F4EBF6FF0C68E60141A1207AEBA5CFFEFFFFFF3F97FF95C7FFA4D0FF1C7DFCFF
+          FFFFB5D7FC378AF70F6AF00C65EEC6DEFBCEE5FE0763E203419E146FE79ACAFC
+          FFFFFFB2D8FF2F8CFFCEE6FFD8EBFFFFFFFFFFFFFFFFFFFF64A7FA2C82F4E2EF
+          FE81BAF80258D8033E96FF00FF237BEBEDF6FFFAFCFF5DA9FF1F81FF1F81FFFF
+          FFFFF0F7FF84BDFE2782FAF0F8FFF2F8FE3089F4024FC0FF00FFFF00FF237BEB
+          BFDEFFF3F8FFFAFCFFB0D5FF3E96FFB6D9FF308CFF6AB0FEFAFCFFFFFFFF5DA6
+          F70860DE024FC0FF00FFFF00FFFF00FF4997F3C7E3FFF7FBFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFE0EFFE5CA5F80E6BE70552C2FF00FFFF00FFFF00FFFF00FF
+          FF00FF2D82EB91C5FBCCE6FFD9EDFFDCEDFEC4E0FE86BFFC348BF40A65E10A65
+          E1FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF247BEB4696F34A
+          98F42F87F0116CE6075FDCFF00FFFF00FFFF00FFFF00FFFF00FF}
+        TabOrder = 1
+        OnClick = btnRefreshClick
+      end
+    end
+    inherited btnSair: TBitBtnLocked
+      Left = 939
+      Top = 2
+      Align = alRight
+      ExplicitLeft = 939
+      ExplicitTop = 2
+    end
+  end
+  inherited pnlStatus: TPanel
+    Top = 620
+    Width = 1018
+    TabOrder = 2
+    ExplicitTop = 620
+    ExplicitWidth = 1018
+    inherited pnlNomeForm: TPanel
+      Left = 847
+      ExplicitLeft = 847
+    end
+    inherited pnlInfo: TPanel
+      Width = 847
+      ExplicitWidth = 847
+    end
+  end
+  object cxgSpoImp: TcxGrid [2]
+    AlignWithMargins = True
+    Left = 3
+    Top = 60
+    Width = 1012
+    Height = 531
+    Align = alClient
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = 14
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 0
+    LookAndFeel.ScrollbarMode = sbmClassic
+    ExplicitTop = 51
+    ExplicitHeight = 540
+    object cxgSpoImpView: TcxGridDBTableView
+      OnKeyDown = cxgSpoImpViewKeyDown
+      Navigator.Buttons.CustomButtons = <>
+      FilterBox.CustomizeDialog = False
+      DataController.DataSource = dtsSpoImp
+      DataController.Summary.DefaultGroupSummaryItems = <>
+      DataController.Summary.FooterSummaryItems = <
+        item
+          Format = 'Total: #,##0 documentos'
+          Kind = skCount
+          Column = cxgSpoImpViewDescricao
+        end>
+      DataController.Summary.SummaryGroups = <>
+      FilterRow.Visible = True
+      OptionsData.Deleting = False
+      OptionsData.DeletingConfirmation = False
+      OptionsData.Editing = False
+      OptionsData.Inserting = False
+      OptionsSelection.CellSelect = False
+      OptionsView.NoDataToDisplayInfoText = '<N'#227'o h'#225' documentos para exibir>'
+      OptionsView.Footer = True
+      OptionsView.GridLines = glVertical
+      OptionsView.GroupByBox = False
+      Styles.ContentEven = cxStyle1
+      object cxgSpoImpViewStatus: TcxGridDBColumn
+        DataBinding.FieldName = 'Status'
+        PropertiesClassName = 'TcxImageComboBoxProperties'
+        Properties.Images = imgIcones
+        Properties.Items = <
+          item
+            Description = 'Aguardando impress'#227'o'
+            ImageIndex = 0
+            Value = 'Aguardando impress'#227'o'
+          end
+          item
+            Description = 'Impress'#227'o conclu'#237'da'
+            ImageIndex = 1
+            Value = 'Impress'#227'o conclu'#237'da'
+          end
+          item
+            Description = 'Falha de impress'#227'o'
+            ImageIndex = 2
+            Value = 'Falha de impress'#227'o'
+          end>
+        Properties.ShowDescriptions = False
+        Options.Editing = False
+        Options.Moving = False
+        Options.Sorting = False
+        Width = 36
+      end
+      object cxgSpoImpViewEmp: TcxGridDBColumn
+        DataBinding.FieldName = 'Emp.'
+        HeaderAlignmentHorz = taCenter
+        Options.Editing = False
+        Options.Moving = False
+        Options.Sorting = False
+        Width = 50
+      end
+      object cxgSpoImpViewOpe: TcxGridDBColumn
+        DataBinding.FieldName = 'Ope.'
+        HeaderAlignmentHorz = taCenter
+        Options.Editing = False
+        Options.Moving = False
+        Options.Sorting = False
+        Width = 50
+      end
+      object cxgSpoImpViewDescricao: TcxGridDBColumn
+        DataBinding.FieldName = 'Descri'#231#227'o'
+        Options.Editing = False
+        Options.Moving = False
+        Options.Sorting = False
+        Width = 339
+      end
+      object cxgSpoImpViewPontoimpressao: TcxGridDBColumn
+        DataBinding.FieldName = 'Ponto impress'#227'o'
+        Options.Editing = False
+        Options.Moving = False
+        Options.Sorting = False
+        Width = 199
+      end
+      object cxgSpoImpViewImpressora: TcxGridDBColumn
+        DataBinding.FieldName = 'Impressora'
+        Options.Editing = False
+        Options.Moving = False
+        Options.Sorting = False
+        Width = 199
+      end
+      object cxgSpoImpViewEnviado: TcxGridDBColumn
+        DataBinding.FieldName = 'Enviado'
+        HeaderAlignmentHorz = taCenter
+        Options.Editing = False
+        Options.Moving = False
+        Options.Sorting = False
+        Width = 120
+      end
+      object cxgSpoImpViewImpresso: TcxGridDBColumn
+        DataBinding.FieldName = 'Impresso'
+        HeaderAlignmentHorz = taCenter
+        Options.Editing = False
+        Options.Moving = False
+        Options.Sorting = False
+        Width = 120
+      end
+      object cxgSpoImpViewConteudo: TcxGridDBColumn
+        DataBinding.FieldName = 'Arquivo'
+        HeaderAlignmentHorz = taCenter
+        Options.Editing = False
+        Options.Moving = False
+        Options.Sorting = False
+        Width = 274
+      end
+      object cxgSpoImpViewTamanho: TcxGridDBColumn
+        DataBinding.FieldName = 'Tamanho'
+        HeaderAlignmentHorz = taCenter
+        Options.Editing = False
+        Options.Moving = False
+        Options.Sorting = False
+        Width = 80
+      end
+      object cxgSpoImpViewAUTOINCREM: TcxGridDBColumn
+        DataBinding.FieldName = 'AUTOINCREM'
+        Visible = False
+        Options.Editing = False
+        Options.Moving = False
+        Options.Sorting = False
+      end
+    end
+    object cxgSpoImpLevel: TcxGridLevel
+      GridView = cxgSpoImpView
+    end
+  end
+  object Panel1: TPanel [3]
+    Left = 0
+    Top = 0
+    Width = 1018
+    Height = 57
+    Align = alTop
+    BevelOuter = bvNone
+    TabOrder = 3
+    object Label1: TLabel
+      Left = 592
+      Top = 33
+      Width = 194
+      Height = 14
+      Caption = 'Documentos dos '#250'ltimos                   dias'
+    end
+    object RadioGroup1: TGroupBox
+      AlignWithMargins = True
+      Left = 3
+      Top = 3
+      Width = 542
+      Height = 51
+      Align = alLeft
+      Caption = 'Exibir documentos com status:'
+      TabOrder = 0
+      ExplicitHeight = 43
+      object cklStatus: TcxCheckListBox
+        AlignWithMargins = True
+        Left = 5
+        Top = 19
+        Width = 532
+        Height = 27
+        Align = alClient
+        Columns = 3
+        Images = imgIcones
+        Items = <
+          item
+            ImageIndex = 0
+            State = cbsChecked
+            Text = 'Aguardando impress'#227'o'
+          end
+          item
+            ImageIndex = 1
+            Text = 'Impress'#227'o conclu'#237'da'
+          end
+          item
+            ImageIndex = 2
+            State = cbsChecked
+            Text = 'Falha de impress'#227'o'
+          end>
+        TabOrder = 0
+        OnClickCheck = cklStatusClickCheck
+        ExplicitLeft = 1
+        ExplicitTop = 18
+        ExplicitWidth = 386
+        ExplicitHeight = 25
+      end
+    end
+    object edtDias: TcxSpinEdit
+      Left = 713
+      Top = 27
+      Properties.MaxValue = 10.000000000000000000
+      Properties.MinValue = 1.000000000000000000
+      Properties.OnChange = cxSpinEdit1PropertiesChange
+      TabOrder = 1
+      Value = 3
+      OnClick = cxSpinEdit1PropertiesChange
+      Width = 49
+    end
+    object chkRefresh: TCheckBox
+      Left = 846
+      Top = 30
+      Width = 155
+      Height = 17
+      Caption = 'Atualizar autom'#225'ticamente'
+      Checked = True
+      State = cbChecked
+      TabOrder = 2
+    end
+  end
+  inherited mnuAuxiliar: TPopupMenu
+    Left = 464
+    Top = 448
+  end
+  inherited ApplicationEvents: TApplicationEvents
+    Left = 432
+    Top = 448
+  end
+  object qrySpoImp: TUniQuery
+    Constraints = <>
+    AfterScroll = qrySpoImpAfterScroll
+    Left = 488
+    Top = 128
+    object qrySpoImpStatus: TStringField
+      FieldName = 'Status'
+      ReadOnly = True
+      Required = True
+      Size = 18
+    end
+    object qrySpoImpEmp: TStringField
+      Alignment = taCenter
+      FieldName = 'Emp.'
+      FixedChar = True
+      Size = 3
+    end
+    object qrySpoImpOpe: TStringField
+      Alignment = taCenter
+      FieldName = 'Ope.'
+      FixedChar = True
+      Size = 3
+    end
+    object qrySpoImpDescrição: TStringField
+      FieldName = 'Descri'#231#227'o'
+      Size = 255
+    end
+    object qrySpoImpEnviado: TDateTimeField
+      Alignment = taCenter
+      FieldName = 'Enviado'
+    end
+    object qrySpoImpImpresso: TDateTimeField
+      Alignment = taCenter
+      FieldName = 'Impresso'
+    end
+    object qrySpoImpPontoimpressão: TStringField
+      FieldName = 'Ponto impress'#227'o'
+      Size = 50
+    end
+    object qrySpoImpImpressora: TStringField
+      FieldName = 'Impressora'
+      Size = 50
+    end
+    object qrySpoImpArquivo: TStringField
+      Alignment = taCenter
+      FieldName = 'Arquivo'
+      Size = 255
+    end
+    object qrySpoImpTamanho: TStringField
+      Alignment = taCenter
+      FieldName = 'Tamanho'
+      ReadOnly = True
+      Size = 17
+    end
+    object qrySpoImpAUTOINCREM: TStringField
+      FieldName = 'AUTOINCREM'
+      Required = True
+    end
+  end
+  object dtsSpoImp: TDataSource
+    DataSet = qrySpoImp
+    Left = 488
+    Top = 80
+  end
+  object imgIcones: TcxImageList
+    SourceDPI = 96
+    FormatVersion = 1
+    DesignInfo = 22544528
+    ImageInfo = <
+      item
+        Image.Data = {
+          36040000424D3604000000000000360000002800000010000000100000000100
+          2000000000000004000000000000000000000000000000000000000000000000
+          000000000000000000030000000C000000120000001400000014000000150000
+          0015000000140000000D00000003000000000000000000000000000000000000
+          00000000000000000009896256C2BD8A78FFBE8A78FFBD8A78FFBD8978FFBD89
+          78FFBE8978FF876356C30000000B000000000000000000000000000000030000
+          000E0000001500000021C08D7CFFF6EEE9FFF5EDE9FFF5EDE9FFF5ECE8FFF4EC
+          E8FFF5ECE7FFBF8D7BFF00000026000000180000000F000000040000000C7B50
+          42C5A76E5BFF9F6755FFC2917FFFF7F0ECFFE2B47DFFE2B37AFFE1B077FFE0AE
+          72FFF6EEEAFFC2907FFF845545FF895847FF613E32C70000000E00000011BB7E
+          6BFFECD9CCFFE3CEBEFFC59483FFF9F2F0FFE4B984FFE3B781FFE3B47CFFE0B1
+          76FFF7F0EDFFC59483FFE0CBBCFFEBD8CBFFB67763FF0000001400000010BE85
+          71FFF1E5DAFFECDBD0FF7A4835FF7A4835FF7A4835FF7A4835FF7A4835FF7A48
+          35FF7A4835FF7A4835FFEBDBCFFFF1E2D8FFB97C69FF000000130000000EC28B
+          78FFF5EEE7FFF2E7DDFFF2E7DEFFF3E7DEFFF2E5DEFFF3E5DEFFF2E7DDFFF2E7
+          DDFFF2E7DEFFF2E7DDFFF2E5DEFFF5EDE6FFBC826EFF000000120000000CC793
+          7FFFFAF4F1FFCDBEB8FF6F5448FF614337FF614035FF5F3F34FF5E3F33FF5D3D
+          32FF5D3D34FF6A4C44FFCABCB6FFF9F5F1FFC18875FF000000100000000ACC99
+          86FFFDFAFAFF7D6054FF745043FF744F43FF744E43FF734E43FF734E42FF724D
+          42FF724C41FF724C40FF73584DFFFDFAFAFFC58F7CFF0000000E00000008CF9F
+          8DFFFFFFFFFF7A5A4CFF8E695AFFF9F4F1FFF0E6E0FFF0E5DFFFEFE5DEFFEFE5
+          DEFFF6EFEBFF866253FF704F43FFFFFFFFFFCA9683FF0000000B00000005BE95
+          84E9F5ECE8FF866656FF977262FFFAF6F4FFF2E8E3FFF1E8E1FFF1E7E2FFF1E7
+          E1FFF8F2EEFF8E6A5BFF7A5B4CFFF5EAE6FFBA8E7DEA00000008000000023429
+          2545A78375CC947262FFA07B6AFFFCF9F8FFF3EBE6FFF4EAE5FFF2EAE5FFF3EA
+          E3FFF9F5F3FF977263FF876658FFA68072CE3428234800000003000000000000
+          0001000000030000000AC89B89FFFDFBFAFFF5EDE8FFF4EDE8FFF5EDE7FFF5EC
+          E7FFFBF7F6FFC59685FF00000011000000040000000200000000000000000000
+          00000000000000000005CA9E8DFFFEFCFCFFF7F0ECFFF6EFEBFFF7EFEBFFF5EF
+          EAFFFCFAF8FFC89A89FF00000009000000000000000000000000000000000000
+          00000000000000000003CDA291FFFEFEFDFFFEFDFDFFFEFDFCFFFEFCFCFFFEFC
+          FBFFFDFBFAFFCB9F8DFF00000007000000000000000000000000000000000000
+          000000000000000000019A796DBFCFA493FFCEA493FFCEA493FFCEA492FFCDA3
+          91FFCDA391FF98786BC100000004000000000000000000000000}
+      end
+      item
+        Image.Data = {
+          36040000424D3604000000000000360000002800000010000000100000000100
+          2000000000000004000000000000000000000000000000000000000000000000
+          00000000000000000002000000070000000C0000001000000012000000110000
+          000E000000080000000200000000000000000000000000000000000000000000
+          000100000004000101120D2A1D79184E36C6216B4BFF216B4BFF216C4BFF1A53
+          3AD20F2F21840001011500000005000000010000000000000000000000000000
+          0005050F0A351C5B40DC24805CFF29AC7EFF2CC592FF2DC894FF2DC693FF2AAE
+          80FF258560FF1A563DD405110C3D00000007000000010000000000000003040E
+          0A31206548ED299D74FF2FC896FF2EC996FF56D4ACFF68DAB5FF3BCD9DFF30C9
+          96FF32CA99FF2BA479FF227050F805110C3D00000005000000000000000A1A57
+          3DD02EA57CFF33CA99FF2EC896FF4CD2A8FF20835CFF00673BFF45BE96FF31CB
+          99FF31CB98FF34CC9CFF31AD83FF1B5C41D300010113000000020B23185E2E8A
+          66FF3BCD9EFF30CA97FF4BD3A9FF349571FF87AF9DFFB1CFC1FF238A60FF45D3
+          A8FF36CF9FFF33CD9BFF3ED0A3FF319470FF0F32237F00000007184D37B63DB3
+          8CFF39CD9FFF4BD5A9FF43A382FF699782FFF8F1EEFFF9F3EEFF357F5DFF56C4
+          A1FF43D5A8FF3ED3A4FF3CD1A4FF41BC95FF1B5C43CD0000000B1C6446DF4BCA
+          A4FF44D2A8FF4FB392FF4E826AFFF0E9E6FFC0C3B5FFEFE3DDFFCEDDD4FF1B75
+          4FFF60DCB8FF48D8ACFF47D6AAFF51D4ACFF247A58F80000000E217050F266D9
+          B8FF46D3A8FF0B6741FFD2D2CBFF6A8F77FF116B43FF73967EFFF1E8E3FF72A2
+          8BFF46A685FF5EDFBAFF4CD9AFFF6BE2C2FF278460FF020604191E684ADC78D9
+          BEFF52DAB1FF3DBA92FF096941FF2F9C76FF57DEB8FF2D9973FF73967EFFF0EA
+          E7FF4F886CFF5ABB9AFF5BDEB9FF7FE2C7FF27835FF80000000C19523BAB77C8
+          B0FF62E0BCFF56DDB7FF59DFBAFF5CE1BDFF5EE2BEFF5FE4C1FF288C67FF698E
+          76FFE6E1DCFF176B47FF5FD8B4FF83D5BDFF1E674CC60000000909201747439C
+          7BFF95ECD6FF5ADFBAFF5EE2BDFF61E4BFFF64E6C1FF67E6C5FF67E8C7FF39A1
+          7EFF1F6D4AFF288B64FF98EFD9FF4DAC8CFF1036286D00000004000000041C5F
+          46B578C6ADFF9AEED9FF65E5C0FF64E7C3FF69E7C6FF6BE8C8FF6CE9C9FF6BEA
+          C9FF5ED6B6FF97EDD7FF86D3BBFF237759D20102010C0000000100000001030A
+          0718247B5BDA70C1A8FFB5F2E3FF98F0DAFF85EDD4FF75EBCEFF88EFD6FF9CF2
+          DDFFBAF4E7FF78CDB3FF2A906DEA0615102E0000000200000000000000000000
+          0001030A07171E694FB844AB87FF85D2BBFFA8E6D6FFC5F4EBFFABE9D8FF89D8
+          C1FF4BB692FF237F60CB05130E27000000030000000000000000000000000000
+          000000000001000000030A241B411B60489D258464CF2C9D77EE258867CF1F71
+          56B00E3226560000000600000002000000000000000000000000}
+      end
+      item
+        Image.Data = {
+          36040000424D3604000000000000360000002800000010000000100000000100
+          2000000000000004000000000000000000000000000000000000000000000000
+          00000000000000000001000000070000000D0000001100000012000000110000
+          000D000000070000000100000000000000000000000000000000000000000000
+          0001000000040000000D09053B6915097EC2190CA4EF1D0CB2FF180BA3EF1408
+          7EC209043A6A0000000E00000004000000010000000000000000000000010000
+          000503020F27170E7CBC201AC3FF1D2CE3FF1B34F4FF1B35FBFF1A31F4FF1B27
+          E3FF1C16C1FF150A7ABD02010F29000000050000000100000000000000040504
+          1A352319ABEB242EDCFF223FFBFF203DFCFF1F3CFBFF1F3AFBFF1E3AFBFF1D3A
+          FAFF1D36F8FF1E27DAFF1E12A7EC0302112B000000040000000001000210231A
+          9BD72B38E3FF2A47FDFF2744FDFF2642FCFF2542FBFF2441FBFF2341FCFF2240
+          FBFF213EFBFF213BFBFF212DE1FF190F7EBB0000000D00000001120F476C3332
+          D1FF2F4CFEFF2E4DFDFF2E4BFDFF2C49FCFF2C48FCFF2A48FDFF2A47FDFF2946
+          FCFF2543FCFF2542FBFF2441FBFF2928CBFF0E0940690000000525218DBD3949
+          EBFF3552FDFF3553FFFF3350FFFF324FFEFF304DFEFF2F4CFEFF2E4BFDFF2D4A
+          FDFF2D48FCFF2C48FCFF2B45FDFF2D3BE7FF1F1887BF0000000A362FBCED3C55
+          FAFF3C57FFFF3958FFFF3755FEFF3755FEFF3653FEFF3553FFFF3451FFFF3350
+          FFFF324FFFFF304DFEFF2F4CFEFF2F48F7FF2C25B2EB0000000B3F3BD1FF4561
+          FEFF415EFFFF405EFFFF3E5CFFFF3D5AFFFF3C5AFFFF3A57FFFF3A57FFFF3956
+          FEFF3855FFFF3653FEFF3552FDFF3753FEFF342FC3FA0000000B3E3DC2EC526C
+          FAFF4664FFFF4663FFFF4561FFFF4361FFFF415EFFFF415EFFFF405DFFFF3E5B
+          FFFF3D5AFFFF3C59FFFF3A57FFFF435EFAFF3630BAEA0000000A333499BA5A6D
+          F1FF4D6AFFFF4C68FFFF4B67FFFF4A66FFFF4965FFFF4764FFFF4563FFFF4561
+          FFFF4360FFFF425FFFFF405EFFFF5060EFFF2E2B93BC000000071B1B4E62555C
+          E5FF5F7BFFFF506DFFFF4F6DFFFF4E6AFFFF4E68FFFF4C69FFFF4B68FFFF4A68
+          FFFF4A66FFFF4866FFFF5571FFFF4E52E0FF1817496200000003010103094042
+          B3D06474F1FF6480FFFF5472FFFF526FFFFF526EFFFF526EFFFF516EFFFF4F6D
+          FFFF4F6BFFFF5D79FFFF5D6DF0FF323294B50000000700000001000000010C0C
+          202A4C51CEEA6372F0FF708BFEFF607DFFFF5976FFFF5572FFFF5873FFFF5D7A
+          FFFF6B85FEFF606DEEFF474AC9E9070715200000000200000000000000000000
+          00010707131B3B3D9CB25D64E9FF6C80F6FF758CFCFF7791FFFF738CFCFF6B7E
+          F6FF5960E7FF383A9AB30707131C000000020000000000000000000000000000
+          000000000001000000031A1B44503335889B4548B5CC5559E1F94447B4CC3235
+          879B191A43510000000400000001000000000000000000000000}
+      end>
+  end
+  object cxStyleRepository1: TcxStyleRepository
+    Left = 144
+    Top = 400
+    PixelsPerInch = 96
+    object cxStyle1: TcxStyle
+      AssignedValues = [svColor]
+      Color = clMoneyGreen
+    end
+  end
+  object tmrRefresh: TTimer
+    Interval = 2000
+    OnTimer = tmrRefreshTimer
+    Left = 440
+    Top = 200
+  end
+end

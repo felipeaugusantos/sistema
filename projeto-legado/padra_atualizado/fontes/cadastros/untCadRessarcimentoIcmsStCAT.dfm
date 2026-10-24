@@ -1,0 +1,684 @@
+inherited frmCadRessarcimentoIcmsStCAT: TfrmCadRessarcimentoIcmsStCAT
+  Left = 452
+  Top = 215
+  Width = 1024
+  Height = 768
+  Caption = 'Ressarcimento de ICMS e ST atrav'#233's de CAT'
+  Position = poDesigned
+  WindowState = wsMaximized
+  ExplicitTop = -49
+  ExplicitWidth = 1024
+  ExplicitHeight = 768
+  PixelsPerInch = 96
+  TextHeight = 14
+  inherited pnlBotoes: TPanel
+    Top = 697
+    Width = 1018
+    Height = 26
+    ExplicitTop = 697
+    ExplicitWidth = 1018
+    ExplicitHeight = 26
+    inherited FlwBotoes: TFlowPanel
+      Width = 937
+      Height = 22
+      ExplicitWidth = 937
+      ExplicitHeight = 22
+      object btnIncluir: TBitBtnLocked
+        Left = 0
+        Top = 0
+        Width = 104
+        Height = 22
+        Caption = '&Incluir'
+        Glyph.Data = {
+          36030000424D3603000000000000360000002800000010000000100000000100
+          18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
+          96675E9F6F609F6F609F6F609F6F609F6F609F6F609F6F609F6F609F6F609F6F
+          609F6F609F6F60FF00FFFF00FFFF00FF99695FF6E0BFF4DDB8F3DAB4F3D7ADF2
+          D5A7F0D3A3F0D09EEECC99EECA93EDC990EDC68C9F6F60FF00FFFF00FFFF00FF
+          9D6C60F6E3C6F6E1C1F4DDBBF3DCB4008100F2D5AAF0D3A4F0CF9FEFCC99EFCB
+          95EEC9909F6F60FF00FFFF00FFFF00FFA16E60F7E6CEF6E5C7F4E1C100810000
+          8100008100F3D5ABF0D3A5EFD19FEFCE9AEFCB969F6F60FF00FFFF00FFFF00FF
+          A67262F8EAD4F7E7CE008100307A2A5F924B00810050883CF2D5ABF0D3A5F0D0
+          A0EFCF9C9F6F60FF00FFFF00FFFF00FFAB7663FAEEDAFAEBD5008100EFE2C2F6
+          E2C2A7B883008100008100EDD4A9F0D4A6F0D1A19F6F60FF00FFFF00FFFF00FF
+          B07864FAF0E2FAEEDCF8EBD5F8E9D0F7E6CAF6E3C5E6D8B4008100008100F2D7
+          ADF2D4A79F6F60FF00FFFF00FFFF00FFB57D64FCF3E7FBF0E3FAEFDDFAEDD8F7
+          E9D1F8E6CBF6E3C5F6E1C0F4DEBAF4DAB5F3D7AD9F6F60FF00FFFF00FFFF00FF
+          BB8065FCF7EDD58127D58127D58127D58127D58127D58127D58127D58127D581
+          27F3DAB69F6F60FF00FFFF00FFFF00FFC08366FCF8F3FCF7EFFCF4EAFBF2E5FB
+          EFDEF8EDD9F8EBD4F8E7CEF7E3C7F6E1C2F4DEBB9F6F60FF00FFFF00FFFF00FF
+          C48767FEFBF8FEFAF3FEF7EFFCF4EAFBF2E6FAEFE0F8EDDAF8EAD4F7E9CFF7E5
+          C9F6E2C49F6F60FF00FFFF00FFFF00FFC98967FEFCFBD58127D58127D58127D5
+          8127D58127D58127D58127D58127D58127F7E5CA9F6F60FF00FFFF00FFFF00FF
+          CC8B68FFFFFFFFFEFCFEFCFAFEFBF4FEF8F0FCF6EDFCF4E7FAF2E2FAEFDCF8ED
+          D7F8EAD19F6F60FF00FFFF00FFFF00FFCF8E68FFFFFFFFFFFFFFFFFCFFFCFAFE
+          FBF6FEF8F0FCF7EEFBF4E9FBF2E3FBEFDDF8EDD89F6F60FF00FFFF00FFFF00FF
+          CF8E68CF8E68CF8E68CF8E68CF8E68CF8E68CF8E68CF8E68CF8E68CF8E68CF8E
+          68CF8E68CF8E68FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF}
+        TabOrder = 0
+        OnClick = btnIncluirClick
+      end
+      object btnGravar: TBitBtnLocked
+        Left = 104
+        Top = 0
+        Width = 104
+        Height = 22
+        Caption = '&Gravar'
+        Glyph.Data = {
+          36030000424D3603000000000000360000002800000010000000100000000100
+          18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
+          FF00FFFF00FFFF00FF313131313131313131313131FF00FFFF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF313131746B6D7A767674
+          7575828282313131313131313131FF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FF313131726E726A66697D797A2929293838384242422828286868683131
+          31313131313131FF00FFFF00FFFF00FF3131316F6C6F7470746D6A6D7D797B6C
+          6D6D4C4C4C1F1F1F000000000000090909757274777277424141FF00FF313131
+          CCCACEC9C4C9999398696669E5E2E5D8D9D9ACACAC8E8E8E525252232323201F
+          203D483D3C563C424141313131929193D7D5D9D7D5D8F2F4F68082846D6C6DA4
+          A3A4D8D8D8E9EBEBE3EAEAD4D9D9ADACAF6F836F388239424141313131EFEEF2
+          E5E5E9F7F6F6CFACACC4A6A99296986A6B6C5152536D6364A78384C4ADAFD3D0
+          D1E6E3E5D8D8D8424141313131FCFCFCFEFFFFCA9895B43837934041826263BF
+          ACABD0D0D1B588887D12119C3C3D766D6E6E6869626060FF00FF313131FFFFFF
+          FFFFFF9F3536BC4242A355557F2A28AC6C6BFFFFFFD1A4A47B14149F35362D2C
+          2C2D2C2CFF00FFFF00FF3F3F3F313131CACECF9F3536BD4241AB53539A545389
+          5354CAC5C2CC92928217179F3536FF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          3131319F3536B84442B64F4FC16968BC6363B85959BD5E5DBF58589F3536FF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF9F3536B5635FE9D5D4EEDEDDEF
+          DDDCEEDAD9F2E6E5C47B799F3536FF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FF9F3536C47E7AF3FBF8C5C2C1C5C2C1C5C2C1E7EBEBC47B799F3536FF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF9F3536C17A78F3F3F3DDD8D7DD
+          D8D7DDD8D7E3E6E5C47B799F3536FF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FF9F3536C47B79F3F3F3C5C2C1C5C2C1C5C2C1E3E6E5C47B799F3536FF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFB1706ECCC6C6CCC6C6CC
+          C6C6CCC6C6CCC6C6B1706EFF00FFFF00FFFF00FFFF00FFFF00FF}
+        TabOrder = 1
+        OnClick = btnGravarClick
+      end
+      object btnExcluir: TBitBtnLocked
+        Left = 208
+        Top = 0
+        Width = 104
+        Height = 22
+        Caption = '&Excluir'
+        Glyph.Data = {
+          36030000424D3603000000000000360000002800000010000000100000000100
+          18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FF00006E00006EFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF00006E0000
+          6EFF00FFFF00FFFF00FFFF00FFFF00FF00006E001DE80010DC00006EFF00FFFF
+          00FFFF00FFFF00FF00006E0004E20008E700006EFF00FFFF00FFFF00FFFF00FF
+          00006E001AE2001FEB0010D900006EFF00FFFF00FF00006E0005DF0009EB0003
+          DB00006EFF00FFFF00FFFF00FFFF00FFFF00FF00006E001ADF0020EB0013DC00
+          006E00006E0005E2000BEB0004DA00006EFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FF00006E001BDF0022EB0012E60008EA0009EB0004DF00006EFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF00006E001BE300
+          16EB0011EB000ADF00006EFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FF00006E0021E7001EEB001AEB0017DF00006EFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF00006E062DE30430EB00
+          20E2001EE20027EB0019DF00006EFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FF00006E0C35E40E3CEB052BDC00006E00006E001FDC002AEB001CDF0000
+          6EFF00FFFF00FFFF00FFFF00FFFF00FF00006E1442E41645EB092ED900006EFF
+          00FFFF00FF00006E0020D9012CEB001FE200006EFF00FFFF00FFFF00FFFF00FF
+          00006E1C4BE71037DB00006EFF00FFFF00FFFF00FFFF00FF00006E0022DC0027
+          E400006EFF00FFFF00FFFF00FFFF00FFFF00FF00006E00006EFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FF00006E00006EFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF}
+        TabOrder = 2
+        OnClick = btnExcluirClick
+      end
+      object btnCancela: TBitBtnLocked
+        Left = 312
+        Top = 0
+        Width = 104
+        Height = 22
+        Caption = '&Cancelar'
+        Glyph.Data = {
+          36030000424D3603000000000000360000002800000010000000100000000100
+          18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF015603015603
+          015603015603FF00FF0000820000820000820000820000820000820000820000
+          820000820000820000820156032DC6511DB236015603FF00FF000082011EF305
+          27FB1337FB3052FC5F7DFEA1B4FFF2F6FFFFFFFFFFFFFF0000820156033FD96D
+          30C956015603FF00FF0000820120FB0528FC1438FC3154FE607FFFA5B7FFF6FA
+          FFFFFFFFFFFFFF000082015603015603015603015603FF00FF00008200008200
+          0082000082000082000082000082000082000082000082000082FF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF015603015603FF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          01560341E07428AC47015603015603FF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FF035A05015603FF00FFFF00FFFF00FF0156032DC45035CE5D188F2C015603FF
+          00FFFF00FFFF00FFFF00FFFF00FF045F09188E2B015603FF00FFFF00FF015603
+          0E8F1C19AB3122B53E035E07FF00FFFF00FFFF00FFFF00FFFF00FF05630A2DB7
+          50015603FF00FFFF00FFFF00FF01560301560303650711A32216A42904600702
+          5804015704045F080E78192FBC55015603FF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FF0156030263050A98150FA01F0D891A108E1F1CA6342ABD4A015603FF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF01560301560305840C08
+          8E110D971A0D971A015603FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FF015603015603015603015603FF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF}
+        TabOrder = 3
+        OnClick = btnCancelaClick
+      end
+      object btnPesquisa: TBitBtnLocked
+        Left = 416
+        Top = 0
+        Width = 104
+        Height = 22
+        Caption = '&Pesquisar'
+        Glyph.Data = {
+          36030000424D3603000000000000360000002800000010000000100000000100
+          18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
+          A46769A46769A46769A46769A46769A46769A46769A46769A46769A46769A467
+          69A46769A46769FF00FFFF00FFFF00FF485360FEE9C7F4DAB5F3D5AAF2D0A0EF
+          CB96EFC68BEDC182EBC17FEBC180EBC180F2C782A46769FF00FFFF00FF4380B7
+          1F6FC2656B86F3DABCF2D5B1F0D0A7EECB9EEDC793EDC28BE9BD81E9BD7FE9BD
+          7FEFC481A46769FF00FFFF00FFFF00FF32A3FF1672D76B6A80F2DABCF2D5B2EF
+          D0A9EECB9EEDC796EBC28CE9BD82E9BD7FEFC481A46769FF00FFFF00FFFF00FF
+          A0675B34A1FF1572D45E6782F3DABBF2D5B1F0D0A6EECB9EEDC795EBC28AEABF
+          81EFC480A46769FF00FFFF00FFFF00FFA7756BFFFBF033A6FF4078AD8E675EAC
+          7F7597645EAC7D6FCAA083EDC695EBC28AEFC583A46769FF00FFFF00FFFF00FF
+          A7756BFFFFFCFAF0E6AD8A88B78F84D8BAA5EED5B6D7B298B58877CBA083EBC7
+          93F2C98CA46769FF00FFFF00FFFF00FFBC8268FFFFFFFEF7F2AF847FDAC0B4F7
+          E3CFF6E0C5FFFFF4D7B198AC7D6FEECC9EF3CE97A46769FF00FFFF00FFFF00FF
+          BC8268FFFFFFFFFEFC976560F6E9E0F7EADAF6E3CFFFFFEBEFD4B797645EF0D0
+          A6F6D3A0A46769FF00FFFF00FFFF00FFD1926DFFFFFFFFFFFFB08884DECAC4FA
+          EFE5F8EAD9FFFFD4D9B8A5AC7F74F4D8B1EBCFA4A46769FF00FFFF00FFFF00FF
+          D1926DFFFFFFFFFFFFD5BFBCBA9793DECAC4F6E9DEDAC0B4B78F84B28C7BDECE
+          B4B6AA93A46769FF00FFFF00FFFF00FFDA9D75FFFFFFFFFFFFFFFFFFD5BFBCB0
+          8884976560AF867FCAA79DA56B5FA56B5FA56B5FA46769FF00FFFF00FFFF00FF
+          DA9D75FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFBFFFEF7DAC1BAA56B5FE19E
+          55E68F31B56D4DFF00FFFF00FFFF00FFE7AB79FFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFDCC7C5A56B5FF8B55CBF7A5CFF00FFFF00FFFF00FFFF00FF
+          E7AB79FBF4F0FBF4EFFAF3EFFAF3EFF8F2EFF7F2EFF7F2EFD8C2C0A56B5FC183
+          6CFF00FFFF00FFFF00FFFF00FFFF00FFE7AB79D1926DD1926DD1926DD1926DD1
+          926DD1926DD1926DD1926DA56B5FFF00FFFF00FFFF00FFFF00FF}
+        TabOrder = 4
+        OnClick = btnPesquisaClick
+      end
+      object btnConsultarProduto: TBitBtnLocked
+        Left = 520
+        Top = 0
+        Width = 137
+        Height = 22
+        Caption = 'Consultar Produto'
+        Glyph.Data = {
+          36030000424D3603000000000000360000002800000010000000100000000100
+          18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
+          A46769A46769A46769A46769A46769A46769A46769A46769A46769A46769A467
+          69A46769A46769FF00FFFF00FFFF00FF485360FEE9C7F4DAB5F3D5AAF2D0A0EF
+          CB96EFC68BEDC182EBC17FEBC180EBC180F2C782A46769FF00FFFF00FF4380B7
+          1F6FC2656B86F3DABCF2D5B1F0D0A7EECB9EEDC793EDC28BE9BD81E9BD7FE9BD
+          7FEFC481A46769FF00FFFF00FFFF00FF32A3FF1672D76B6A80F2DABCF2D5B2EF
+          D0A9EECB9EEDC796EBC28CE9BD82E9BD7FEFC481A46769FF00FFFF00FFFF00FF
+          A0675B34A1FF1572D45E6782F3DABBF2D5B1F0D0A6EECB9EEDC795EBC28AEABF
+          81EFC480A46769FF00FFFF00FFFF00FFA7756BFFFBF033A6FF4078AD8E675EAC
+          7F7597645EAC7D6FCAA083EDC695EBC28AEFC583A46769FF00FFFF00FFFF00FF
+          A7756BFFFFFCFAF0E6AD8A88B78F84D8BAA5EED5B6D7B298B58877CBA083EBC7
+          93F2C98CA46769FF00FFFF00FFFF00FFBC8268FFFFFFFEF7F2AF847FDAC0B4F7
+          E3CFF6E0C5FFFFF4D7B198AC7D6FEECC9EF3CE97A46769FF00FFFF00FFFF00FF
+          BC8268FFFFFFFFFEFC976560F6E9E0F7EADAF6E3CFFFFFEBEFD4B797645EF0D0
+          A6F6D3A0A46769FF00FFFF00FFFF00FFD1926DFFFFFFFFFFFFB08884DECAC4FA
+          EFE5F8EAD9FFFFD4D9B8A5AC7F74F4D8B1EBCFA4A46769FF00FFFF00FFFF00FF
+          D1926DFFFFFFFFFFFFD5BFBCBA9793DECAC4F6E9DEDAC0B4B78F84B28C7BDECE
+          B4B6AA93A46769FF00FFFF00FFFF00FFDA9D75FFFFFFFFFFFFFFFFFFD5BFBCB0
+          8884976560AF867FCAA79DA56B5FA56B5FA56B5FA46769FF00FFFF00FFFF00FF
+          DA9D75FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFBFFFEF7DAC1BAA56B5FE19E
+          55E68F31B56D4DFF00FFFF00FFFF00FFE7AB79FFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFDCC7C5A56B5FF8B55CBF7A5CFF00FFFF00FFFF00FFFF00FF
+          E7AB79FBF4F0FBF4EFFAF3EFFAF3EFF8F2EFF7F2EFF7F2EFD8C2C0A56B5FC183
+          6CFF00FFFF00FFFF00FFFF00FFFF00FFE7AB79D1926DD1926DD1926DD1926DD1
+          926DD1926DD1926DD1926DA56B5FFF00FFFF00FFFF00FFFF00FF}
+        TabOrder = 5
+        OnClick = btnConsultarProdutoClick
+      end
+      object btnIncluirTodasAbreviacoes: TBitBtnLocked
+        Left = 657
+        Top = 0
+        Width = 182
+        Height = 22
+        Caption = 'Incluir Todas as Abrevia'#231#245'es'
+        Glyph.Data = {
+          36040000424D3604000000000000360000002800000010000000100000000100
+          2000000000000004000000000000000000000000000000000000000000000000
+          0000000000000000000000000002000000070000000B0000000B0000000C0000
+          000C0000000C0000000C0000000C0000000B0000000700000002000000000000
+          000000000000000000000000000695847EBE9E6D5DFF9E6C5DFF9D6C5CFF9D6B
+          5BFF9C6B5BFF9C6B5BFF9C6A5AFF9B6959FF704B41BE00000007000000000000
+          0001000000050000000A0000000ECFB7B0FFF9F2EFFFF7EEE9FFCCAB9FFFF7EE
+          EAFFF7EEE9FFCCAB9FFFF7EEE9FFF7EEE9FF9D6C5CFF0000000A000000000000
+          00051209043384431EDF0B040134EFE8E6FFF9F2F0FFF7EEEBFFCDACA1FFF7EE
+          EAFFF7EEEAFFCCACA0FFF8EEEAFFF9F2EFFF9F7061FF0000000A000000020201
+          0013794220CBE3B774FF5B270FC9EFEFEFFFE8DAD5FFCEAEA2FFCEAEA2FFCDAD
+          A2FFCDADA1FFCEADA2FFCDADA2FFD9BFB6FFA37464FF000000090000000A4D2C
+          168BCE9961FFFDDE96FFB98352FFB69788FFF6F6F6FFF8F2EEFFCFAFA4FFF8EF
+          EBFFF8EFEBFFCEAFA3FFF8F0EBFFFAF4F1FFA67969FF0000000822140B46B67F
+          54FBFCEDC5FFFEE3A1FFFBEBC1FFA26843FFD7CBC4FFFAF8F8FFCFB1A5FFF7F0
+          ECFFF8F0EDFFCFB0A5FFF8F0ECFFF9F3F1FFAA7E6FFF00000007935C35DCAD6C
+          3EFFAD6C3FFFF6D99CFFB17245FFAD6C3EFFB7835DFFEFEAE7FFD0B2A7FFD0B2
+          A7FFCFB2A6FFD0B1A6FFD0B2A7FFDBC4BAFFAE8274FF00000007000000080000
+          0014AC7346FAF7DFAAFFA4683FFFDED9D6FFF4F4F4FFFAFAFAFFF5F5F5FFF7F7
+          F7FFFAF8F7FFD2B7ACFFF8F0EDFFFAF5F2FFB28879FF00000006000000000000
+          00088A603DCBE6C99EFFBF9062FFC4A894FFF6F6F6FFF4F4F4FFB57D4EFFAD86
+          6DFFECE9E7FFF6F2F1FFFBF7F4FFFAF4F2FFB68D7FFF00000005000000000000
+          00044F382578D2AD85FFF0DAAFFFAB754BFFC6A995FFE0DAD5FFB98457FFD8B4
+          82FFA67450FFDFD5CEFFF7F5F5FFDCC7C1FFA4948FC000000003000000000000
+          00010403020F9C734ED7DFC19CFFF6E5BEFFC69A6FFFB17C50FFCB9F70FFFFED
+          B7FFF1D9A4FFAB7A4EF83D26166F000000080000000200000001000000000000
+          000000000002140F0B249B7752D4D7B68FFFEAD6B3FFF9EDCFFFFFF7DBFFFFF0
+          BCFFFEF0BFFFFCF1D0FFC09265FF000000070000000000000000000000000000
+          000000000000000000020504030D52402D74937250C5BE9369FAC3976BFFFFF3
+          CBFFF5E8C9FFC59F79F64A39286A000000040000000000000000000000000000
+          000000000000000000000000000100000002000000040000000BC59B6FFFE9D5
+          B5FFA88661D91E18113000000004000000010000000000000000000000000000
+          0000000000000000000000000000000000000000000000000004C59B6FFF7B60
+          45A40705040F0000000200000000000000000000000000000000}
+        TabOrder = 6
+        OnClick = btnIncluirTodasAbreviacoesClick
+      end
+    end
+    inherited btnSair: TBitBtnLocked
+      Left = 939
+      Top = 2
+      Align = alRight
+      ExplicitLeft = 939
+      ExplicitTop = 2
+    end
+  end
+  inherited pnlStatus: TPanel
+    Top = 723
+    Width = 1018
+    ExplicitTop = 723
+    ExplicitWidth = 1018
+    inherited pnlNomeForm: TPanel
+      Left = 847
+      ExplicitLeft = 847
+    end
+    inherited pnlInfo: TPanel
+      Width = 847
+      ExplicitWidth = 847
+    end
+  end
+  object pnlFundo: TPanel [2]
+    Left = 0
+    Top = 0
+    Width = 1018
+    Height = 697
+    Align = alClient
+    BevelOuter = bvNone
+    Color = 16770261
+    ParentBackground = False
+    TabOrder = 2
+    object lblCopiarDescontos: TLabel
+      Left = 0
+      Top = 683
+      Width = 1018
+      Height = 14
+      Align = alBottom
+      Alignment = taCenter
+      Caption = '[ F3 ] Copiar descontos para os outros registros'
+      Color = clWhite
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = 14
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      ParentColor = False
+      ParentFont = False
+      Transparent = False
+      Layout = tlCenter
+      ExplicitWidth = 232
+    end
+    object pnlHeader: TPanel
+      Tag = 99
+      Left = 0
+      Top = 0
+      Width = 1018
+      Height = 35
+      Align = alTop
+      Color = 16770261
+      Enabled = False
+      ParentBackground = False
+      TabOrder = 0
+      object Label1: TLabel
+        Left = 11
+        Top = 12
+        Width = 98
+        Height = 14
+        Alignment = taRightJustify
+        Caption = 'Abrevia'#231#227'o Fiscal:'
+        Font.Charset = ANSI_CHARSET
+        Font.Color = clBlack
+        Font.Height = 14
+        Font.Name = 'Arial'
+        Font.Pitch = fpVariable
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object edtCodAbf: TEditFocus
+        Tag = 99
+        Left = 111
+        Top = 7
+        Width = 70
+        Height = 22
+        Alignment = taLeftJustify
+        CharCase = ecUpperCase
+        Ctl3D = True
+        ImeName = 'Portugu'#234's (Brasil ABNT)'
+        MaxLength = 3
+        ParentCtl3D = False
+        TabOrder = 0
+        OnKeyPress = edtCodAbfKeyPress
+        NormalColor = clWindow
+        FocusColor = clInfoBk
+        RequeridoColor = clRed
+        Requerido = False
+        CompZeros = True
+        TamCampo = 3
+        TipoTexto = ttAlfanumerico
+      end
+      object edtDescri: TEditFocus
+        Tag = 99
+        Left = 183
+        Top = 7
+        Width = 620
+        Height = 22
+        TabStop = False
+        Alignment = taLeftJustify
+        CharCase = ecUpperCase
+        Color = 16768952
+        Ctl3D = True
+        ImeName = 'Portugu'#234's (Brasil ABNT)'
+        MaxLength = 100
+        ParentCtl3D = False
+        ReadOnly = True
+        TabOrder = 1
+        NormalColor = 16768952
+        FocusColor = 16768952
+        RequeridoColor = clRed
+        Requerido = False
+        CompZeros = False
+        TamCampo = 100
+        TipoTexto = ttAlfanumerico
+      end
+    end
+    object cxgAbrev: TcxGrid
+      Left = 0
+      Top = 35
+      Width = 1018
+      Height = 648
+      Align = alClient
+      Font.Charset = ANSI_CHARSET
+      Font.Color = clBlack
+      Font.Height = 14
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 1
+      LookAndFeel.Kind = lfOffice11
+      LookAndFeel.ScrollbarMode = sbmClassic
+      object cxgAbrevTableView: TcxGridDBBandedTableView
+        Navigator.Buttons.CustomButtons = <>
+        DataController.Summary.DefaultGroupSummaryItems = <>
+        DataController.Summary.FooterSummaryItems = <>
+        DataController.Summary.SummaryGroups = <>
+        FilterRow.ApplyChanges = fracImmediately
+        OptionsData.Deleting = False
+        OptionsData.DeletingConfirmation = False
+        OptionsData.Inserting = False
+        OptionsSelection.InvertSelect = False
+        OptionsView.GroupByBox = False
+        Bands = <
+          item
+            Width = 70
+          end
+          item
+            Caption = 'ICMS'
+            Styles.Content = cxsIcms
+            Width = 108
+          end
+          item
+            Caption = 'SUBST. TRIBUT'#193'RIA'
+            Styles.Content = cxsST
+            Width = 157
+          end
+          item
+            Caption = 'RESSARCIMENTO CAT'
+            Styles.Content = cxsRessarcimento
+            Width = 208
+          end
+          item
+            Caption = 'DESCONTO COMERCIAL'
+            Styles.Content = cxsDesconto
+          end>
+        object cxgAbrevDBColUF: TcxGridDBBandedColumn
+          Caption = 'UF'
+          DataBinding.FieldName = 'CAT_ESTADO'
+          HeaderAlignmentHorz = taCenter
+          Options.Editing = False
+          Options.Moving = False
+          SortIndex = 0
+          SortOrder = soAscending
+          Width = 37
+          Position.BandIndex = 0
+          Position.ColIndex = 0
+          Position.RowIndex = 0
+        end
+        object cxgAbrevDBColCodSit: TcxGridDBBandedColumn
+          Caption = 'CST'
+          DataBinding.FieldName = 'CAT_CODSIT'
+          HeaderAlignmentHorz = taCenter
+          Options.Editing = False
+          Options.Moving = False
+          Width = 26
+          Position.BandIndex = 0
+          Position.ColIndex = 1
+          Position.RowIndex = 0
+        end
+        object cxgAbrevDBColBasIcm: TcxGridDBBandedColumn
+          Caption = '% BASE'
+          DataBinding.FieldName = 'CAT_BASICM'
+          HeaderAlignmentHorz = taCenter
+          Options.Editing = False
+          Options.Moving = False
+          Width = 47
+          Position.BandIndex = 1
+          Position.ColIndex = 0
+          Position.RowIndex = 0
+        end
+        object cxgAbrevDBColAlqIcm: TcxGridDBBandedColumn
+          Caption = '% AL'#205'Q.'
+          DataBinding.FieldName = 'CAT_ALQICM'
+          HeaderAlignmentHorz = taCenter
+          Options.Editing = False
+          Options.Moving = False
+          Width = 45
+          Position.BandIndex = 1
+          Position.ColIndex = 1
+          Position.RowIndex = 0
+        end
+        object cxgAbrevDBColBasRet: TcxGridDBBandedColumn
+          Caption = '%  BASE'
+          DataBinding.FieldName = 'CAT_BASRET'
+          HeaderAlignmentHorz = taCenter
+          Options.Editing = False
+          Options.Moving = False
+          Width = 54
+          Position.BandIndex = 2
+          Position.ColIndex = 0
+          Position.RowIndex = 0
+        end
+        object cxgAbrevDBColAlqRet: TcxGridDBBandedColumn
+          Caption = '% ALQ. INT.'
+          DataBinding.FieldName = 'CAT_ALQRET'
+          HeaderAlignmentHorz = taCenter
+          Options.Editing = False
+          Options.Moving = False
+          Width = 65
+          Position.BandIndex = 2
+          Position.ColIndex = 1
+          Position.RowIndex = 0
+        end
+        object cxgAbrevDBColIVA_ST: TcxGridDBBandedColumn
+          Caption = 'IVA'
+          DataBinding.FieldName = 'CAT_IVA_ST'
+          HeaderAlignmentHorz = taCenter
+          Options.Editing = False
+          Options.Moving = False
+          Width = 46
+          Position.BandIndex = 2
+          Position.ColIndex = 2
+          Position.RowIndex = 0
+        end
+        object cxgAbrevDBColResIcm: TcxGridDBBandedColumn
+          Caption = '% RESS.ICMS'
+          DataBinding.FieldName = 'CAT_RESICM'
+          HeaderAlignmentHorz = taCenter
+          Options.Editing = False
+          Options.Moving = False
+          Width = 75
+          Position.BandIndex = 3
+          Position.ColIndex = 0
+          Position.RowIndex = 0
+        end
+        object cxgAbrevDBColRes_St: TcxGridDBBandedColumn
+          Caption = '% RESS.ST'
+          DataBinding.FieldName = 'CAT_RES_ST'
+          HeaderAlignmentHorz = taCenter
+          Options.Editing = False
+          Options.Moving = False
+          Width = 64
+          Position.BandIndex = 3
+          Position.ColIndex = 1
+          Position.RowIndex = 0
+        end
+        object cxgAbrevDBColResTot: TcxGridDBBandedColumn
+          Caption = '% RESS.TOT'
+          DataBinding.FieldName = 'CAT_RESTOT'
+          HeaderAlignmentHorz = taCenter
+          Options.Editing = False
+          Options.Moving = False
+          Width = 69
+          Position.BandIndex = 3
+          Position.ColIndex = 2
+          Position.RowIndex = 0
+        end
+        object cxgAbrevDBColDescT1: TcxGridDBBandedColumn
+          Caption = '% DESC.T1'
+          DataBinding.FieldName = 'CAT_DESCT1'
+          HeaderAlignmentHorz = taCenter
+          Options.Moving = False
+          Width = 61
+          Position.BandIndex = 4
+          Position.ColIndex = 0
+          Position.RowIndex = 0
+        end
+        object cxgAbrevDBColDescT2: TcxGridDBBandedColumn
+          Caption = '% DESC.T2'
+          DataBinding.FieldName = 'CAT_DESCT2'
+          HeaderAlignmentHorz = taCenter
+          Options.Moving = False
+          Width = 61
+          Position.BandIndex = 4
+          Position.ColIndex = 1
+          Position.RowIndex = 0
+        end
+        object cxgAbrevDBColDescT3: TcxGridDBBandedColumn
+          Caption = '% DESC.T3'
+          DataBinding.FieldName = 'CAT_DESCT3'
+          HeaderAlignmentHorz = taCenter
+          Options.Moving = False
+          Width = 61
+          Position.BandIndex = 4
+          Position.ColIndex = 2
+          Position.RowIndex = 0
+        end
+        object cxgAbrevDBColDescT4: TcxGridDBBandedColumn
+          Caption = '% DESC.T4'
+          DataBinding.FieldName = 'CAT_DESCT4'
+          HeaderAlignmentHorz = taCenter
+          Options.Moving = False
+          Width = 61
+          Position.BandIndex = 4
+          Position.ColIndex = 3
+          Position.RowIndex = 0
+        end
+        object cxgAbrevDBColDescT5: TcxGridDBBandedColumn
+          Caption = '% DESC.T5'
+          DataBinding.FieldName = 'CAT_DESCT5'
+          HeaderAlignmentHorz = taCenter
+          Options.Moving = False
+          Width = 61
+          Position.BandIndex = 4
+          Position.ColIndex = 4
+          Position.RowIndex = 0
+        end
+        object cxgAbrevDBColDescT6: TcxGridDBBandedColumn
+          Caption = '% DESC.T6'
+          DataBinding.FieldName = 'CAT_DESCT6'
+          HeaderAlignmentHorz = taCenter
+          Options.Moving = False
+          Width = 61
+          Position.BandIndex = 4
+          Position.ColIndex = 5
+          Position.RowIndex = 0
+        end
+        object cxgAbrevDBColDescT7: TcxGridDBBandedColumn
+          Caption = '% DESC.T7'
+          DataBinding.FieldName = 'CAT_DESCT7'
+          HeaderAlignmentHorz = taCenter
+          Options.Moving = False
+          Width = 61
+          Position.BandIndex = 4
+          Position.ColIndex = 6
+          Position.RowIndex = 0
+        end
+      end
+      object cxgAbrevLevel: TcxGridLevel
+        GridView = cxgAbrevTableView
+      end
+    end
+  end
+  inherited mnuAuxiliar: TPopupMenu
+    Left = 480
+    Top = 96
+  end
+  inherited ApplicationEvents: TApplicationEvents
+    Left = 448
+    Top = 96
+  end
+  inherited frxCSVExportTestabilidade: TfrxCSVExportTestabilidade
+    Left = 512
+    Top = 96
+  end
+  object cxStyle: TcxStyleRepository
+    Left = 416
+    Top = 96
+    PixelsPerInch = 96
+    object cxsIcms: TcxStyle
+      AssignedValues = [svColor]
+      Color = clMoneyGreen
+    end
+    object cxsST: TcxStyle
+      AssignedValues = [svColor]
+      Color = 10944511
+    end
+    object cxsRessarcimento: TcxStyle
+      AssignedValues = [svColor]
+      Color = 16427478
+    end
+    object cxsDesconto: TcxStyle
+      AssignedValues = [svColor]
+      Color = 13434828
+    end
+  end
+end

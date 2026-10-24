@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TfrxReport Version="4.3.61" DotMatrixReport="False" IniFile="\Software\Fast Reports" PreviewOptions.Buttons="4095" PreviewOptions.Zoom="1" PrintOptions.Printer="Padrão" PrintOptions.PrintOnSheet="0" ReportOptions.CreateDate="39533,3843413426" ReportOptions.Description.Text="" ReportOptions.LastChange="40045,5725522569" ScriptLanguage="PascalScript" ScriptText.Text="begin&#13;&#10;&#13;&#10;end." StoreInDFM="False" PropData="044C65667403D80103546F7003700108446174617365747301010C3000000020446174615365743D226672784442496D704574692220446174615365744E616D653D226672784442496D70457469220000095661726961626C65730100055374796C650100">
+  <TfrxDataPage Name="Data" Height="1000" Left="0" Top="0" Width="1000"/>
+  <TfrxReportPage Name="Avulsa" PaperWidth="79" PaperHeight="50" PaperSize="256" LeftMargin="0" RightMargin="0" TopMargin="0" BottomMargin="0" ColumnWidth="35,3333333333333" ColumnPositions.Text="" HGuides.Text="" VGuides.Text="">
+    <TfrxMasterData Name="MasterData1" Height="170,07876213" Left="0" Top="18,89765" Width="298,58287" ColumnWidth="133,417322834646" ColumnGap="0" DataSet="frxDBImpEti" DataSetName="frxDBImpEti" RowCount="0">
+      <TfrxMemoView Name="Memo3" Left="12,33859" Top="23,14440333" Width="270,23630102" Height="15,11810535" DataSet="frxDBImpEti" DataSetName="frxDBImpEti" DisplayFormat.DecimalSeparator="," Font.Charset="0" Font.Color="0" Font.Height="-13" Font.Name="Courier New" Font.Style="1" ParentFont="False" Text="[frxDBImpEti.&#34;CODITE&#34;]"/>
+      <TfrxMemoView Name="Memo1" Left="14,33859" Top="46,35436" Width="266,43568333" Height="15,11811268" DataField="DESITE" DataSet="frxDBImpEti" DataSetName="frxDBImpEti" DisplayFormat.DecimalSeparator="," Font.Charset="0" Font.Color="0" Font.Height="-13" Font.Name="Courier New" Font.Style="1" ParentFont="False" WordWrap="False" Text="[frxDBImpEti.&#34;DESITE&#34;]"/>
+      <TfrxMemoView Name="Memo2" Left="15,11812" Top="67,82158333" Width="81,25980102" Height="18,89763535" DataField="SIGUNI" DataSet="frxDBImpEti" DataSetName="frxDBImpEti" DisplayFormat.DecimalSeparator="," Font.Charset="0" Font.Color="0" Font.Height="-13" Font.Name="Courier New" Font.Style="1" ParentFont="False" Text="[frxDBImpEti.&#34;SIGUNI&#34;]"/>
+      <TfrxBarCodeView Name="BarCode1" Left="185,19686016" Top="96,95547333" Width="95" Height="52,91342" BarType="bcCodeEAN13" DataField="CODBAR" DataSet="frxDBImpEti" DataSetName="frxDBImpEti" Rotation="0" Text="12345678" WideBarRatio="2" Zoom="1"/>
+    </TfrxMasterData>
+  </TfrxReportPage>
+</TfrxReport>

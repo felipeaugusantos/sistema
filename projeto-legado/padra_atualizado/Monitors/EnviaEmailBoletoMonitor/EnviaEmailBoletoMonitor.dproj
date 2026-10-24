@@ -1,0 +1,222 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{90657DC8-8A8C-42A8-95EE-A72D5CE9455A}</ProjectGuid>
+        <MainSource>EnviaEmailBoletoMonitor.dpr</MainSource>
+        <Base>True</Base>
+        <Config Condition="'$(Config)'==''">Debug</Config>
+        <TargetedPlatforms>1</TargetedPlatforms>
+        <AppType>Application</AppType>
+        <FrameworkType>VCL</FrameworkType>
+        <ProjectVersion>18.1</ProjectVersion>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+        <Base_Win32>true</Base_Win32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Base)'=='true') or '$(Base_Win64)'!=''">
+        <Base_Win64>true</Base_Win64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_1)'!=''">
+        <Cfg_1>true</Cfg_1>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win32)'!=''">
+        <Cfg_1_Win32>true</Cfg_1_Win32>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_2)'!=''">
+        <Cfg_2>true</Cfg_2>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win32)'!=''">
+        <Cfg_2_Win32>true</Cfg_2_Win32>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base)'!=''">
+        <DCC_Namespace>Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;System;Xml;Data;Datasnap;Web;Soap;Winapi;System.Win;$(DCC_Namespace)</DCC_Namespace>
+        <VerInfo_Locale>1046</VerInfo_Locale>
+        <DCC_ImageBase>00400000</DCC_ImageBase>
+        <SanitizedProjectName>EnviaEmailBoletoMonitor</SanitizedProjectName>
+        <DCC_F>false</DCC_F>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=;CFBundleName=</VerInfo_Keys>
+        <DCC_S>false</DCC_S>
+        <DCC_N>false</DCC_N>
+        <DCC_E>false</DCC_E>
+        <DCC_K>false</DCC_K>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <DCC_Namespace>Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+        <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win64)'!=''">
+        <Manifest_File>$(BDS)\bin\default_app.manifest</Manifest_File>
+        <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1)'!=''">
+        <DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+        <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+        <DCC_DebugInformation>0</DCC_DebugInformation>
+        <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+        <AppEnableHighDPI>true</AppEnableHighDPI>
+        <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2)'!=''">
+        <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+        <DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>
+        <DCC_Optimize>false</DCC_Optimize>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
+        <DCC_ExeOutput>..\..\</DCC_ExeOutput>
+        <DCC_DcuOutput>temp</DCC_DcuOutput>
+        <Debugger_RunParams>001 E:\Embarcadero\Users\jairo.simoes\Documents\Autpas\379.48.02.30\padra_atualizado</Debugger_RunParams>
+        <DCC_MapFile>3</DCC_MapFile>
+        <DCC_Define>madExcept;$(DCC_Define)</DCC_Define>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <AppEnableHighDPI>true</AppEnableHighDPI>
+        <AppEnableRuntimeThemes>true</AppEnableRuntimeThemes>
+    </PropertyGroup>
+    <ItemGroup>
+        <DelphiCompile Include="$(MainSource)">
+            <MainSource>MainSource</MainSource>
+        </DelphiCompile>
+        <DCCReference Include="..\..\fontes\genericos\untModulo.pas">
+            <Form>frmModulo</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\fontes\genericos\untModuloReplicacao.pas">
+            <Form>frmModuloReplicacao</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\fontes\genericos\untListaLogErros.pas"/>
+        <DCCReference Include="..\..\fontes\genericos\untMensagem.pas">
+            <Form>frmMensagem</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\fontes\genericos\untConstantes.pas"/>
+        <DCCReference Include="..\Shared\untFuncoesSimples.pas"/>
+        <DCCReference Include="..\Shared\untFuncoes.pas"/>
+        <DCCReference Include="..\Shared\untCfgRel.pas"/>
+        <DCCReference Include="..\..\fontes\genericos\untGravaINNODBStatus.pas"/>
+        <DCCReference Include="untEnviaEmailBoleto.pas"/>
+        <DCCReference Include="..\..\fontes\genericos\untWaitWindow.pas">
+            <Form>frmWaitWindow</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\fontes\genericos\untGravando.pas">
+            <Form>frmGravando</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\fontes\genericos\untGenericProcedureFormGravando.pas"/>
+        <DCCReference Include="..\..\fontes\genericos\untLogAut.pas"/>
+        <DCCReference Include="..\..\fontes\genericos\untSeqTmp.pas"/>
+        <DCCReference Include="..\..\fontes\util\testabilidade\untTestabilidade.pas"/>
+        <DCCReference Include="..\..\fontes\email\controller\untTEnvioEmailAutController.pas"/>
+        <DCCReference Include="..\..\fontes\email\model\untTEnvioEmailAutRepository.pas"/>
+        <DCCReference Include="..\..\fontes\CamadaPersistencia\untObjectManager.pas"/>
+        <DCCReference Include="..\..\fontes\CamadaPersistencia\untFieldFiltros.pas"/>
+        <DCCReference Include="..\..\fontes\email\model\untTVWDuplicatas.pas"/>
+        <DCCReference Include="..\..\fontes\financeiro\contasareceber\untTCadRec.pas"/>
+        <DCCReference Include="..\..\fontes\cadastros\untTCadCli.pas"/>
+        <DCCReference Include="..\..\fontes\financeiro\contasareceber\untTCadRecRepository.pas"/>
+        <DCCReference Include="..\..\fontes\CamadaPersistencia\untDelRepository.pas"/>
+        <DCCReference Include="..\..\fontes\CamadaPersistencia\untUtilRepository.pas"/>
+        <DCCReference Include="..\..\fontes\genericos\untDisparaEmailAut.pas"/>
+        <DCCReference Include="..\..\fontes\genericos\untThreadEnviaEmail.pas"/>
+        <DCCReference Include="..\..\fontes\email\model\untTEmaEnv.pas"/>
+        <DCCReference Include="..\..\fontes\email\model\untTEmaEnvRepository.pas"/>
+        <DCCReference Include="..\..\fontes\direitosdeacesso\untTCadOpe.pas"/>
+        <DCCReference Include="..\..\fontes\email\model\untTCadPrv.pas"/>
+        <DCCReference Include="..\..\fontes\email\model\untTCadPrvRepository.pas"/>
+        <DCCReference Include="..\..\fontes\direitosdeacesso\untTCadOpeRepository.pas"/>
+        <DCCReference Include="..\..\fontes\FuncoesCentralizadas\untInterfacedObjectNoCount.pas"/>
+        <DCCReference Include="..\..\fontes\genericos\untICamposUso.pas"/>
+        <DCCReference Include="..\..\fontes\financeiro\contasareceber\untCadRec.pas"/>
+        <DCCReference Include="..\..\fontes\financeiro\contasareceber\untLogCtr.pas"/>
+        <DCCReference Include="..\..\fontes\cadastros\untTCadCliRepository.pas"/>
+        <DCCReference Include="..\..\fontes\genericos\untFuncAutban.pas"/>
+        <DCCReference Include="..\..\fontes\boleto\Genericos\untDesCam.pas">
+            <Form>frmDesCam</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\fontes\boleto\Genericos\untFuncoesBoleto.pas"/>
+        <DCCReference Include="..\..\fontes\boleto\untFuncBancarias.pas"/>
+        <DCCReference Include="..\..\fontes\genericos\untValorPorExtenso.pas"/>
+        <DCCReference Include="..\..\fontes\genericos\untFuncMacro.pas"/>
+        <DCCReference Include="..\..\fontes\boleto\Genericos\untBancos.pas"/>
+        <DCCReference Include="..\..\fontes\boleto\Genericos\untQckBancoPadrao.pas">
+            <Form>frmQckBancoPadrao</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\fontes\boleto\untQckBancos.pas">
+            <Form>frmQckBancos</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\fontes\sms\untDisparaSMSAut.pas"/>
+        <DCCReference Include="..\..\fontes\sms\untThreadEnviaSMS.pas"/>
+        <DCCReference Include="..\..\fontes\sms\untTEnvioSMS.pas"/>
+        <DCCReference Include="..\..\fontes\libNfe\untInterfaces.pas"/>
+        <DCCReference Include="..\Shared\untBoleto.pas"/>
+        <DCCReference Include="..\Shared\untTEnvioEmail.pas"/>
+        <DCCReference Include="..\..\fontes\genericos\untTypesSistema.pas"/>
+        <DCCReference Include="..\..\fontes\genericos\untVersaoProg.pas"/>
+        <DCCReference Include="..\..\fontes\configuracoes\untCfgRepositorio.pas">
+            <Form>frmCfgRepositorio</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\fontes\genericos\untCFGBAN_Class.pas"/>
+        <DCCReference Include="..\..\fontes\genericos\untCFGBAN_Dao.pas"/>
+        <DCCReference Include="..\..\fontes\genericos\untSubjectClass.pas"/>
+        <DCCReference Include="..\..\fontes\genericos\untSubjectIntf.pas"/>
+        <DCCReference Include="..\..\fontes\genericos\untGravandoObs.pas"/>
+        <DCCReference Include="..\..\fontes\genericos\untImagemBase64.pas"/>
+        <BuildConfiguration Include="Debug">
+            <Key>Cfg_2</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Base">
+            <Key>Base</Key>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Release">
+            <Key>Cfg_1</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Delphi.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Delphi.Personality>
+                <Source>
+                    <Source Name="MainSource">EnviaEmailBoletoMonitor.dpr</Source>
+                </Source>
+                <Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k230.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp230.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+                </Excluded_Packages>
+            </Delphi.Personality>
+            <Platforms>
+                <Platform value="Win32">True</Platform>
+                <Platform value="Win64">False</Platform>
+            </Platforms>
+        </BorlandProject>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+    <Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
+    <Import Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj" Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')"/>
+</Project>

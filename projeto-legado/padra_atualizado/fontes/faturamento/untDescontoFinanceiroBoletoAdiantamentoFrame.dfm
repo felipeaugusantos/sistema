@@ -1,0 +1,296 @@
+object fraDescontoFinanceiroBoletoAdiantamentoFrame: TfraDescontoFinanceiroBoletoAdiantamentoFrame
+  Left = 0
+  Top = 0
+  Width = 497
+  Height = 104
+  VertScrollBar.Range = 45
+  Color = 16770261
+  ParentBackground = False
+  ParentColor = False
+  TabOrder = 0
+  object pnlFundo: TPanel
+    Left = 0
+    Top = 0
+    Width = 497
+    Height = 104
+    Align = alClient
+    BevelOuter = bvNone
+    TabOrder = 0
+    object pnlDescontoFinanceiro_BoletoAdiantamento: TPanel
+      Left = 0
+      Top = 0
+      Width = 497
+      Height = 97
+      Align = alTop
+      BevelOuter = bvNone
+      TabOrder = 0
+      object pnlDescontoFinanceiro: TGroupBox
+        AlignWithMargins = True
+        Left = 2
+        Top = 0
+        Width = 260
+        Height = 97
+        Margins.Left = 2
+        Margins.Top = 0
+        Margins.Right = 2
+        Margins.Bottom = 0
+        Align = alLeft
+        Caption = 'Desconto Financeiro:'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 0
+        object Label3: TLabel
+          Left = 58
+          Top = 57
+          Width = 49
+          Height = 13
+          Caption = 'Desconto:'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+        end
+        object ColorLabel4: TColorLabel
+          Left = 147
+          Top = 34
+          Width = 103
+          Height = 14
+          AutoSize = False
+          Caption = '(P)ercentual (V)alor'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+          CorDestaque = clRed
+        end
+        object Label8: TLabel
+          Left = 84
+          Top = 34
+          Width = 24
+          Height = 13
+          Caption = 'Tipo:'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+        end
+        object lblPerDes: TLabel
+          Left = 200
+          Top = 57
+          Width = 11
+          Height = 13
+          Caption = '%'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+        end
+        object shpDesFin: TShape
+          Left = 186
+          Top = 53
+          Width = 8
+          Height = 22
+        end
+        object edtDesFin: TEditFocus
+          Tag = 99
+          Left = 110
+          Top = 53
+          Width = 75
+          Height = 21
+          Alignment = taRightJustify
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          MaxLength = 7
+          ParentFont = False
+          TabOrder = 1
+          NormalColor = clWindow
+          FocusColor = clInfoBk
+          RequeridoColor = clRed
+          Requerido = False
+          CompZeros = False
+          TamCampo = 0
+          TipoTexto = ttNumerico
+          EditFormat = '#,##0.00'
+        end
+        object edtTipFin: TEditFocus
+          Tag = 99
+          Left = 110
+          Top = 30
+          Width = 33
+          Height = 21
+          Alignment = taCenter
+          CharCase = ecUpperCase
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          MaxLength = 1
+          ParentFont = False
+          TabOrder = 0
+          OnExit = edtTipFinExit
+          NormalColor = clWindow
+          FocusColor = clInfoBk
+          RequeridoColor = clRed
+          Requerido = False
+          CompZeros = False
+          TamCampo = 0
+          TipoTexto = ttAlfabetico
+        end
+      end
+      object pnlBoletoDeAdiantamento: TGroupBox
+        AlignWithMargins = True
+        Left = 266
+        Top = 0
+        Width = 230
+        Height = 97
+        Margins.Left = 2
+        Margins.Top = 0
+        Margins.Right = 2
+        Margins.Bottom = 0
+        Align = alLeft
+        Caption = 'Boleto de Adiantamento:'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 1
+        object Label7: TLabel
+          Left = 61
+          Top = 48
+          Width = 76
+          Height = 13
+          Caption = 'Valor do Boleto:'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+        end
+        object Label10: TLabel
+          Left = 11
+          Top = 71
+          Width = 126
+          Height = 13
+          Caption = 'Valor restante a ser pago:'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+        end
+        object edtBolAdt: TEditFocus
+          Tag = 99
+          Left = 139
+          Top = 44
+          Width = 84
+          Height = 21
+          Alignment = taRightJustify
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          MaxLength = 7
+          ParentFont = False
+          ParentShowHint = False
+          ShowHint = True
+          TabOrder = 1
+          NormalColor = clWindow
+          FocusColor = clInfoBk
+          RequeridoColor = clRed
+          Requerido = False
+          CompZeros = False
+          TamCampo = 0
+          TipoTexto = ttNumerico
+          EditFormat = '#,##0.00'
+        end
+        object edtValRes: TEditFocus
+          Tag = 99
+          Left = 139
+          Top = 67
+          Width = 84
+          Height = 21
+          TabStop = False
+          Alignment = taRightJustify
+          Color = 16768952
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          MaxLength = 7
+          ParentFont = False
+          ReadOnly = True
+          TabOrder = 2
+          NormalColor = 16768952
+          FocusColor = clInfoBk
+          RequeridoColor = clRed
+          Requerido = False
+          CompZeros = False
+          TamCampo = 0
+          TipoTexto = ttNumerico
+          EditFormat = '#,##0.00'
+        end
+        object chkBolVen: TCheckBox
+          Tag = 99
+          Left = 8
+          Top = 13
+          Width = 213
+          Height = 29
+          Caption = 
+            'Emitir boletos para todos vencimentos da condi'#231#227'o de pagamento i' +
+            'nformada?'
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -11
+          Font.Name = 'Tahoma'
+          Font.Style = []
+          ParentFont = False
+          TabOrder = 0
+          WordWrap = True
+          OnClick = chkBolVenClick
+        end
+      end
+    end
+  end
+  object HintControler: TcxHintStyleController
+    Global = False
+    HintStyleClassName = 'TcxHintStyle'
+    HintStyle.Animate = cxhaFadeIn
+    HintStyle.CallOutPosition = cxbpBottomLeft
+    HintStyle.CaptionFont.Charset = DEFAULT_CHARSET
+    HintStyle.CaptionFont.Color = clWindowText
+    HintStyle.CaptionFont.Height = -13
+    HintStyle.CaptionFont.Name = 'MS Sans Serif'
+    HintStyle.CaptionFont.Style = [fsBold]
+    HintStyle.Font.Charset = DEFAULT_CHARSET
+    HintStyle.Font.Color = clWindowText
+    HintStyle.Font.Height = -13
+    HintStyle.Font.Name = 'Courier New'
+    HintStyle.Font.Style = [fsBold]
+    HintStyle.IconType = cxhiCurrentApplication
+    HintStyle.Rounded = True
+    Left = 460
+    Top = 56
+  end
+end

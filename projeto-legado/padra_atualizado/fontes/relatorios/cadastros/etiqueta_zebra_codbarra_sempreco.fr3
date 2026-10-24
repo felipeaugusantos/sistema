@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TfrxReport Version="4.3.61" DotMatrixReport="False" IniFile="\Software\Fast Reports" PreviewOptions.Buttons="4095" PreviewOptions.Zoom="1" PrintOptions.Printer="Padrão" PrintOptions.PrintOnSheet="0" ReportOptions.CreateDate="39533,4001370602" ReportOptions.Description.Text="" ReportOptions.LastChange="39826,4922506134" ScriptLanguage="PascalScript" ScriptText.Text="begin&#13;&#10;&#13;&#10;end." PropData="044C65667403B00103546F7003B00008446174617365747301010C3000000020446174615365743D226672784442496D704574692220446174615365744E616D653D226672784442496D70457469220000095661726961626C65730100055374796C650100">
+  <TfrxDataPage Name="Data" Height="1000" Left="0" Top="0" Width="1000"/>
+  <TfrxReportPage Name="CodBarraSemPreco" PaperWidth="102" PaperHeight="23" PaperSize="256" LeftMargin="0" RightMargin="0" TopMargin="0" BottomMargin="0" ColumnWidth="0" ColumnPositions.Text="" HGuides.Text="" VGuides.Text="">
+    <TfrxMasterData Name="MasterData1" Height="75,59055118" Left="0" Top="18,89765" Width="385,51206" Columns="3" ColumnWidth="128,503937007874" ColumnGap="0" DataSet="frxDBImpEti" DataSetName="frxDBImpEti" RowCount="0">
+      <TfrxBarCodeView Name="BarCode1" Left="13,10760666" Top="38,5511811" Width="95" Height="37,03937008" BarType="bcCodeEAN13" DataField="CODBAR" DataSet="frxDBImpEti" DataSetName="frxDBImpEti" Rotation="0" Text="12345678" WideBarRatio="2" Zoom="1"/>
+      <TfrxMemoView Name="rllDesIte" Left="8,44093999" Top="1,13385827" Width="105,82158334" Height="38,89239333" DataField="DESITE" DataSet="frxDBImpEti" DataSetName="frxDBImpEti" DisplayFormat.DecimalSeparator="," Font.Charset="0" Font.Color="0" Font.Height="-9" Font.Name="Courier New" Font.Style="1" ParentFont="False" Text="[frxDBImpEti.&#34;DESITE&#34;]"/>
+    </TfrxMasterData>
+  </TfrxReportPage>
+</TfrxReport>

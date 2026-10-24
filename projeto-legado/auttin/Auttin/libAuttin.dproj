@@ -1,0 +1,1229 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{86E83A73-A66B-48C0-B837-52125B93092A}</ProjectGuid>
+        <ProjectVersion>18.1</ProjectVersion>
+        <FrameworkType>VCL</FrameworkType>
+        <MainSource>libAuttin.dpr</MainSource>
+        <Base>True</Base>
+        <Config Condition="'$(Config)'==''">Debug</Config>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <TargetedPlatforms>1</TargetedPlatforms>
+        <AppType>Library</AppType>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='OSX32' and '$(Base)'=='true') or '$(Base_OSX32)'!=''">
+        <Base_OSX32>true</Base_OSX32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+        <Base_Win32>true</Base_Win32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Base)'=='true') or '$(Base_Win64)'!=''">
+        <Base_Win64>true</Base_Win64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_1)'!=''">
+        <Cfg_1>true</Cfg_1>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win32)'!=''">
+        <Cfg_1_Win32>true</Cfg_1_Win32>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_2)'!=''">
+        <Cfg_2>true</Cfg_2>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base)'!=''">
+        <GenDll>true</GenDll>
+        <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
+        <SanitizedProjectName>libAuttin</SanitizedProjectName>
+        <DCC_DcuOutput>.\$(Platform)\$(Config)</DCC_DcuOutput>
+        <DCC_ExeOutput>.\$(Platform)\$(Config)</DCC_ExeOutput>
+        <DCC_E>false</DCC_E>
+        <DCC_N>false</DCC_N>
+        <DCC_S>false</DCC_S>
+        <DCC_F>false</DCC_F>
+        <DCC_K>false</DCC_K>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_OSX32)'!=''">
+        <DCC_UsePackage>DBXSqliteDriver;tethering;RESTBackendComponents;bindengine;CloudService;FireDACMySQLDriver;bindcompdbx;IndyIPServer;IndySystem;fmxFireDAC;FMXTee;soaprtl;DbxCommonDriver;xmlrtl;soapmidas;fmxobj;rtl;DbxClientDriver;IndyIPClient;FireDACODBCDriver;aurelius;RESTComponents;DBXInterBaseDriver;bindcompfmx;inetdb;FmxTeeUI;FireDACIBDriver;fmx;fmxdae;dbexpress;IndyCore;dsnap;FireDACCommon;soapserver;DBXMySQLDriver;FireDACCommonDriver;inet;IndyIPCommon;FireDAC;FireDACSqliteDriver;FireDACPgDriver;ibmonitor;FireDACASADriver;ibxpress;ibxbindings;CustomIPTransport;bindcomp;dbxcds;dsnapxml;dbrtl;inetdbxpress;IndyProtocols;fmxase;$(DCC_UsePackage)</DCC_UsePackage>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <DCC_UsePackage>DBXSqliteDriver;dxCoreRS23;vclactnband;dxPSdxLCLnkRS23;vclFireDAC;dxPSLnksRS23;frxe23;tethering;cxDataRS23;dxPSdxOCLnkRS23;dxTabbedMDIRS23;FireDACADSDriver;dxSkinBlackRS23;dxSkinLondonLiquidSkyRS23;fsTee23;UniClientDataSet;dxSpreadSheetCoreRS23;dxDBXServerModeRS23;dxHttpIndyRequestRS23;dxSpreadSheetCoreConditionalFormattingDialogsRS23;cxSchedulerRS23;dxPScxGridLnkRS23;BCEditor.Delphi.Seattle;vcltouch;vcldb;Intraweb;svn;dxWizardControlRS23;dxSkinMcSkinRS23;dxPScxCommonRS23;frxcs23;dxSkinOffice2007BlueRS23;dxBarRS23;cxSchedulerRibbonStyleEventEditorRS23;dxSkinOffice2013WhiteRS23;crcontrols230;dxPSTeeChartRS23;cxLibraryRS23;dxSkinVisualStudio2013LightRS23;vclib;cxPivotGridChartRS23;dxSkinSummer2008RS23;dxPSdxDBOCLnkRS23;dxGDIPlusRS23;fsDB23;dxSkinDarkSideRS23;dxSkinSevenRS23;dxSkinFoggyRS23;vclx;dxSkinOffice2010SilverRS23;dxdborRS23;AdvMenusPkgDX10;RESTBackendComponents;dxLayoutControlRS23;dxPSPrVwRibbonRS23;VCLRESTComponents;dxSkinDevExpressStyleRS23;dxSkinWhiteprintRS23;vclie;bindengine;CloudService;FireDACMySQLDriver;dxSkinOffice2013DarkGrayRS23;dxPScxPCProdRS23;fsADO23;bindcompdbx;IndyIPServer;dxSkinPumpkinRS23;IndySystem;dsnapcon;cxTreeListdxBarPopupMenuRS23;FireDACMSAccDriver;fmxFireDAC;vclimg;dxSkinLilianRS23;dxRichEditDocumentModelRS23;dxRichEditCoreRS23;dxSpreadSheetConditionalFormattingDialogsRS23;frxADO23;dxBarDBNavRS23;dxFlowChartRS23;dxSkinOffice2016ColorfulRS23;fs23;FMXTee;soaprtl;DbxCommonDriver;unidac230;dxSpreadSheetRS23;dxSkinOffice2007PinkRS23;dxPSdxSpreadSheetLnkRS23;xmlrtl;soapmidas;dxSkinTheAsphaltWorldRS23;fmxobj;dxSkinHighContrastRS23;dxSkinSevenClassicRS23;rtl;DbxClientDriver;dxSkinDevExpressDarkStyleRS23;dxNavBarRS23;dxSkinMetropolisDarkRS23;dxRichEditControlCoreRS23;dxRichEditControlRS23;dxOfficeCoreRS23;appanalytics;cxPivotGridRS23;dxPScxVGridLnkRS23;IndyIPClient;dxRibbonRS23;dxPScxTLLnkRS23;frxDB23;dxSkinOffice2007SilverRS23;dxSpreadSheetInplaceRichEditRS23;bindcompvcl;dxMapControlRS23;TeeUI;dxSpreadSheetCoreDialogsRS23;VclSmp;dxPScxSchedulerLnkRS23;cxTreeListRS23;FireDACODBCDriver;aurelius;dxRibbonCustomizationFormRS23;dxPSRichEditControlLnkRS23;dxBarExtDBItemsRS23;dxSpreadSheetReportDesignerRS23;dxSkiniMaginaryRS23;dxSpellCheckerRS23;frx23;dxSkinCoffeeRS23;RESTComponents;DBXInterBaseDriver;dxADOServerModeRS23;CitelValidation;dxmdsRS23;svnui;dxSkinLiquidSkyRS23;dxPSDBTeeChartRS23;dxdbtrRS23;dxSkinSpringTimeRS23;dxPSCoreRS23;dxSkinXmas2008BlueRS23;bindcompfmx;dxSkinSilverRS23;dxSkinValentineRS23;inetdb;dac230;dxPSdxMapControlLnkRS23;FmxTeeUI;dxBarExtItemsRS23;FireDACIBDriver;fmx;fmxdae;dxServerModeRS23;frxDBX23;dxPsPrVwAdvRS23;dxSkinOffice2010BlackRS23;cxPageControlRS23;dxSkinStardustRS23;cxSchedulerGridRS23;frxCSVExporterTestabilidade;dbexpress;IndyCore;dxSkinSharpPlusRS23;dsnap;FireDACCommon;dxSkinOffice2010BlueRS23;dxSkinVS2010RS23;dxSkinMetropolisRS23;cxVerticalGridRS23;soapserver;dxSkinCaramelRS23;dxTileControlRS23;frxTee23;CompFocus;cxGridRS23;UniDataSetProvider;DBXMySQLDriver;unidacfmx230;FireDACCommonDriver;inet;IndyIPCommon;dxSkinDarkRoomRS23;dxDockingRS23;vcl;dxSkinOffice2007GreenRS23;dxPScxExtCommonRS23;dxSkinsCoreRS23;dxThemeRS23;dxSkinVisualStudio2013BlueRS23;madExcept_;dacfmx230;dxSkinMoneyTwinsRS23;dxPSdxFCLnkRS23;madBasic_;dxtrmdRS23;TeeDB;FireDAC;cxSchedulerTreeBrowserRS23;dacvcl230;dxFireDACServerModeRS23;dxSkinBlueRS23;FireDACSqliteDriver;FireDACPgDriver;ibmonitor;FireDACASADriver;cxEditorsRS23;dxSkinGlassOceansRS23;dxGaugeControlRS23;ibxpress;Tee;dxSkinSharpRS23;cxPivotGridOLAPRS23;ibxbindings;dxPSdxPDFViewerLnkRS23;vclwinx;RLibWinDX10;madDisAsm_;dxSkinBlueprintRS23;dxSkinOffice2007BlackRS23;CustomIPTransport;vcldsnap;dxSkinOffice2013LightGrayRS23;bindcomp;dxPSdxGaugeControlLnkRS23;fsIBX23;unidacvcl230;dxRichEditInplaceRS23;dxPScxPivotGridLnkRS23;dxorgcRS23;dxPSdxDBTVLnkRS23;vclribbon;dbxcds;vquery230;dxPDFViewerRS23;adortl;frxIBX23;dxComnRS23;dsnapxml;dbrtl;inetdbxpress;IndyProtocols;cxExportRS23;dxSkinOffice2016DarkRS23;dxFlowChartAdvancedCustomizeFormRS23;dxSkinVisualStudio2013DarkRS23;fmxase;$(DCC_UsePackage)</DCC_UsePackage>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <DCC_Namespace>Winapi;System.Win;Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win64)'!=''">
+        <DCC_UsePackage>DBXSqliteDriver;dxCoreRS23;vclactnband;dxPSdxLCLnkRS23;vclFireDAC;dxPSLnksRS23;tethering;cxDataRS23;dxPSdxOCLnkRS23;dxTabbedMDIRS23;FireDACADSDriver;dxSkinBlackRS23;dxSkinLondonLiquidSkyRS23;dxSpreadSheetCoreRS23;dxDBXServerModeRS23;dxHttpIndyRequestRS23;dxSpreadSheetCoreConditionalFormattingDialogsRS23;cxSchedulerRS23;dxPScxGridLnkRS23;BCEditor.Delphi.Seattle;vcltouch;vcldb;Intraweb;dxWizardControlRS23;dxSkinMcSkinRS23;dxPScxCommonRS23;dxSkinOffice2007BlueRS23;dxBarRS23;cxSchedulerRibbonStyleEventEditorRS23;dxSkinOffice2013WhiteRS23;dxPSTeeChartRS23;cxLibraryRS23;dxSkinVisualStudio2013LightRS23;vclib;cxPivotGridChartRS23;dxSkinSummer2008RS23;dxPSdxDBOCLnkRS23;dxGDIPlusRS23;dxSkinDarkSideRS23;dxSkinSevenRS23;dxSkinFoggyRS23;vclx;dxSkinOffice2010SilverRS23;dxdborRS23;RESTBackendComponents;dxLayoutControlRS23;dxPSPrVwRibbonRS23;VCLRESTComponents;dxSkinDevExpressStyleRS23;dxSkinWhiteprintRS23;vclie;bindengine;CloudService;FireDACMySQLDriver;dxSkinOffice2013DarkGrayRS23;dxPScxPCProdRS23;bindcompdbx;IndyIPServer;dxSkinPumpkinRS23;IndySystem;dsnapcon;cxTreeListdxBarPopupMenuRS23;FireDACMSAccDriver;fmxFireDAC;vclimg;dxSkinLilianRS23;dxRichEditDocumentModelRS23;dxRichEditCoreRS23;dxSpreadSheetConditionalFormattingDialogsRS23;dxBarDBNavRS23;dxFlowChartRS23;dxSkinOffice2016ColorfulRS23;FMXTee;soaprtl;DbxCommonDriver;dxSpreadSheetRS23;dxSkinOffice2007PinkRS23;dxPSdxSpreadSheetLnkRS23;xmlrtl;soapmidas;dxSkinTheAsphaltWorldRS23;fmxobj;dxSkinHighContrastRS23;dxSkinSevenClassicRS23;rtl;DbxClientDriver;dxSkinDevExpressDarkStyleRS23;dxNavBarRS23;dxSkinMetropolisDarkRS23;dxRichEditControlCoreRS23;dxRichEditControlRS23;dxOfficeCoreRS23;appanalytics;cxPivotGridRS23;dxPScxVGridLnkRS23;IndyIPClient;dxRibbonRS23;dxPScxTLLnkRS23;dxSkinOffice2007SilverRS23;dxSpreadSheetInplaceRichEditRS23;bindcompvcl;dxMapControlRS23;TeeUI;dxSpreadSheetCoreDialogsRS23;VclSmp;dxPScxSchedulerLnkRS23;cxTreeListRS23;FireDACODBCDriver;aurelius;dxRibbonCustomizationFormRS23;dxPSRichEditControlLnkRS23;dxBarExtDBItemsRS23;dxSpreadSheetReportDesignerRS23;dxSkiniMaginaryRS23;dxSpellCheckerRS23;dxSkinCoffeeRS23;RESTComponents;DBXInterBaseDriver;dxADOServerModeRS23;dxmdsRS23;dxSkinLiquidSkyRS23;dxPSDBTeeChartRS23;dxdbtrRS23;dxSkinSpringTimeRS23;dxPSCoreRS23;dxSkinXmas2008BlueRS23;bindcompfmx;dxSkinSilverRS23;dxSkinValentineRS23;inetdb;dxPSdxMapControlLnkRS23;FmxTeeUI;dxBarExtItemsRS23;FireDACIBDriver;fmx;fmxdae;dxServerModeRS23;dxPsPrVwAdvRS23;dxSkinOffice2010BlackRS23;cxPageControlRS23;dxSkinStardustRS23;cxSchedulerGridRS23;frxCSVExporterTestabilidade;dbexpress;IndyCore;dxSkinSharpPlusRS23;dsnap;FireDACCommon;dxSkinOffice2010BlueRS23;dxSkinVS2010RS23;dxSkinMetropolisRS23;cxVerticalGridRS23;soapserver;dxSkinCaramelRS23;dxTileControlRS23;CompFocus;cxGridRS23;DBXMySQLDriver;FireDACCommonDriver;inet;IndyIPCommon;dxSkinDarkRoomRS23;dxDockingRS23;vcl;dxSkinOffice2007GreenRS23;dxPScxExtCommonRS23;dxSkinsCoreRS23;dxThemeRS23;dxSkinVisualStudio2013BlueRS23;dxSkinMoneyTwinsRS23;dxPSdxFCLnkRS23;dxtrmdRS23;TeeDB;FireDAC;cxSchedulerTreeBrowserRS23;dxFireDACServerModeRS23;dxSkinBlueRS23;FireDACSqliteDriver;FireDACPgDriver;ibmonitor;FireDACASADriver;cxEditorsRS23;dxSkinGlassOceansRS23;dxGaugeControlRS23;ibxpress;Tee;dxSkinSharpRS23;cxPivotGridOLAPRS23;ibxbindings;dxPSdxPDFViewerLnkRS23;vclwinx;dxSkinBlueprintRS23;dxSkinOffice2007BlackRS23;CustomIPTransport;vcldsnap;dxSkinOffice2013LightGrayRS23;bindcomp;dxPSdxGaugeControlLnkRS23;dxRichEditInplaceRS23;dxPScxPivotGridLnkRS23;dxorgcRS23;dxPSdxDBTVLnkRS23;vclribbon;dbxcds;dxPDFViewerRS23;adortl;dxComnRS23;dsnapxml;dbrtl;inetdbxpress;IndyProtocols;cxExportRS23;dxSkinOffice2016DarkRS23;dxFlowChartAdvancedCustomizeFormRS23;dxSkinVisualStudio2013DarkRS23;fmxase;$(DCC_UsePackage)</DCC_UsePackage>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1)'!=''">
+        <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+        <DCC_DebugDCUs>true</DCC_DebugDCUs>
+        <DCC_Optimize>false</DCC_Optimize>
+        <DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>
+        <DCC_DebugInfoInExe>true</DCC_DebugInfoInExe>
+        <DCC_RemoteDebug>true</DCC_RemoteDebug>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+        <Debugger_HostApplication>..\..\padra_atualizado\Autcom.exe</Debugger_HostApplication>
+        <DCC_ExeOutput>..\..\padra_atualizado\auttin\</DCC_ExeOutput>
+        <DCC_DcuOutput>temp\</DCC_DcuOutput>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <DCC_Define>RELEASE;UNIDAC;madExcept;$(DCC_Define)</DCC_Define>
+        <Manifest_File>None</Manifest_File>
+        <DCC_MapFile>3</DCC_MapFile>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <DCC_RemoteDebug>false</DCC_RemoteDebug>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2)'!=''">
+        <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+        <DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+        <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+        <DCC_DebugInformation>0</DCC_DebugInformation>
+    </PropertyGroup>
+    <ItemGroup>
+        <DelphiCompile Include="$(MainSource)">
+            <MainSource>MainSource</MainSource>
+        </DelphiCompile>
+        <DCCReference Include="..\untConfiguracoes.pas">
+            <Form>frmConfiguracoes</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\Genericos\untPaiSimples.pas">
+            <Form>frmPaiSimples</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untTypesSistema.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untFrameDirectoryEditFocus.pas">
+            <Form>fraDirectoryEditFocus</Form>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\Genericos\untConstantes.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\libFuncoes\untClassPanelCx.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\iTintas\untITintasDeMaquina.pas"/>
+        <DCCReference Include="..\..\LibTintas\libTintasComum\Interfaces\untIConfTinta.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\util\untIFastPrint.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\util\EditorEtiquetas\untIOrdenacao.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untICamposUso.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\configuracoes\untIConfiguracao.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\FuncoesCentralizadas\untInterfacedObjectNoCount.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\libFuncoes\untIFuncoesCXGrid.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untMensagemTabela.pas">
+            <Form>frmMensagemTabela</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\Genericos\untMensagem.pas">
+            <Form>frmMensagem</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\LibTintas\libTintasComum\Tipos\untGTinForTipos.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\Interfaces\untICfgSis.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untGravando.pas">
+            <Form>frmGravando</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untGenericProcedureFormGravando.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\Imports\CAPICOM_TLB.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untSenhaEmpresa.pas">
+            <Form>frmSenhaEmpresa</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\cadastros\untICadastros.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\cadastros\untLegendasItem.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untHelperCitel.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untConsultasTinta.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\libFuncoes\untConsultaCxGridNova.pas">
+            <Form>frmConsultaCxGridNova</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\libFuncoes\untConfiguraConsulta.pas">
+            <Form>,
+  untConfiguraConsultaOperadores in &apos;..\..\padra_atualizado\fontes\libFuncoes\untConfiguraConsultaOperadores.pas&apos;,
+  untPesquisa in &apos;..\..\padra_atualizado\fontes\libFuncoes\untPesquisa.pas&apos;,
+  untFuncoesCXGrid in &apos;..\..\padra_atualizado\fontes\libFuncoes\untFuncoesCXGrid.pas&apos;,
+  untModuloReplicacaoLibFuncoes in &apos;..\..\padra_atualizado\fontes\libFuncoes\untModuloReplicacaoLibFuncoes.pas&apos; {frmModuloReplicacaoLibFuncoes</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\libFuncoes\untConfiguraConsultaOperadores.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\libFuncoes\untPesquisa.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\libFuncoes\untFuncoesCXGrid.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\libFuncoes\untFuncoesCitelGrid.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\libFuncoes\untIFuncoesCitelGrid.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\libFuncoes\untModuloReplicacaoLibFuncoes.pas">
+            <Form>frmModuloReplicacaoLibFuncoes</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\libFuncoes\untConfiguraConsultaEdicao.pas">
+            <Form>frmConfiguraConsultaEdicao</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untModulo.pas">
+            <Form>frmModulo</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untListaLogErros.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untModuloLegenda.pas">
+            <Form>frmModuloLegenda</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untWaitWindow.pas">
+            <Form>frmWaitWindow</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untMensagemSonora.pas">
+            <Form>frmMensagemSonora</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untGetMenu.pas">
+            <Form>frmGetMenu</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\configuracoes\untTConfiguracao.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untFuncoesConsulta.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untGravaINNODBStatus.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untLogSQL.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\util\testabilidade\untTestabilidade.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untSeqCom.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untModuloReplicacao.pas">
+            <Form>frmModuloReplicacao</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\iTintas\untILibTintaDllRelacao.pas"/>
+        <DCCReference Include="..\..\LibTintas\libTintasComum\Interfaces\untIConsultaTinta.pas"/>
+        <DCCReference Include="..\..\LibTintas\libTintasComum\Interfaces\untIConsulta.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\iTintas\untITransferencias.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\iTintas\untIFatOrdProTintaMaquina.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\iTintas\untIConfEmb.pas"/>
+        <DCCReference Include="..\..\LibTintas\libTintasComum\Interfaces\untILibTintaFactory.pas"/>
+        <DCCReference Include="..\..\LibTintas\libTintasComum\Interfaces\untILibTinta.pas"/>
+        <DCCReference Include="..\..\LibTintas\libTintasComum\Tipos\untTipoTinta.pas"/>
+        <DCCReference Include="..\..\LibTintas\libTintasComum\Interfaces\untITintadeMaquinaWrapper.pas"/>
+        <DCCReference Include="..\..\LibTintas\libTintasComum\Interfaces\untIConfiguradorConsulta.pas"/>
+        <DCCReference Include="..\..\LibTintas\libTintasComum\Interfaces\untIConsultaComp.pas"/>
+        <DCCReference Include="..\..\LibTintas\libTintasComum\Interfaces\untIConsultaCompTintaNovaConfigurador.pas"/>
+        <DCCReference Include="..\..\LibTintas\libTintasComum\Interfaces\untIDataSet.pas"/>
+        <DCCReference Include="..\..\LibTintas\libTintasComum\Interfaces\untIDicionario.pas"/>
+        <DCCReference Include="..\..\LibTintas\libTintasComum\Interfaces\untIAuttinMenuItem.pas"/>
+        <DCCReference Include="..\..\LibTintas\libTintasComum\Interfaces\untIAuttinWrapper.pas"/>
+        <DCCReference Include="..\..\LibTintas\libTintasComum\Interfaces\untIGravandoExecucaoNome.pas"/>
+        <DCCReference Include="..\..\LibTintas\libTintasComum\Interfaces\untIGravandoExecucao.pas"/>
+        <DCCReference Include="..\..\LibTintas\libTintasComum\Interfaces\untIGravando.pas"/>
+        <DCCReference Include="..\..\LibTintas\libTintasComum\Interfaces\untStatusGravando.pas"/>
+        <DCCReference Include="..\..\LibTintas\libTintasComum\Interfaces\untIConfiguradorTinta.pas"/>
+        <DCCReference Include="..\..\LibTintas\libTintasComum\Interfaces\untICadLibTintas.pas"/>
+        <DCCReference Include="..\..\LibTintas\libTintasComum\Interfaces\untILibTintaControleVisual.pas"/>
+        <DCCReference Include="..\..\LibTintas\libTintasComum\Interfaces\untILibTintaControleVisualPropriedade.pas"/>
+        <DCCReference Include="..\..\LibTintas\libTintasComum\Interfaces\untISaldosColorantes.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\crm\untIFuncoesCRM.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\crm\untTypesCRM.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\iTintas\untIExecutaSQLReplicacaoTinta.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\Interfaces\untIFatDefineLotesPedidoWMS.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untIliberacao.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untMsgLiberacao.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\Interfaces\untIFuncoesSaldos.pas"/>
+        <DCCReference Include="untFuncoesDllAutTin.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untModuloSPR.pas">
+            <Form>frmModuloSPR</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untModuloCons.pas">
+            <Form>frmModuloCons</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\untModuloTinta.pas">
+            <Form>frmModuloTinta</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untIFuncIns.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untFuncInsFactory.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untFuncoesSimples.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\PlaySound\untPlaySound.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untParCalculaPrecoCusto.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\cadastros\untFormulaCustoProduto.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untFuncoesPrecoCusto.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\Packages\Shared\Functions\source\Shared.Functions.Interfaces.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\Packages\Shared\Functions\source\Shared.Functions.Types.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\Core\Core.Funcoes.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\Core\Shared.Core.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\Packages\Shared\Functions\source\Shared.Functions.Tipos.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\Packages\Shared\Functions\source\Shared.Functions.Configuracoes.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\Packages\Shared\Functions\source\Shared.Functions.Core.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\Packages\Faturamento\Precos\tipos\source\Faturamento.Precos.Tipos.PrecoCusto.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\Packages\Faturamento\Precos\interfaces\source\Faturamento.Precos.Interfaces.PrecoCusto.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\Controller\Bpl\Faturamento\Precos\Generic\Controller.Faturamento.Precos.Generic.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\Controller\Bpl\Faturamento\Interfaces\Controller.Faturamento.Interfaces.Precos.Generic.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\Controller\Bpl\Faturamento\Interfaces\Controller.Faturamento.Interfaces.Precos.PrecoCusto.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\Controller\Bpl\Faturamento\Precos\PrecoCusto\Controller.Faturamento.Precos.PrecoCusto.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\faturamento\untFatCalcularPrecosService.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\faturamento\untFatCalcularServicePath.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\Packages\Faturamento\Precos\interfaces\source\Faturamento.Precos.Interfaces.Servicos.Disponiveis.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\Packages\Faturamento\Precos\interfaces\source\Faturamento.Precos.Interfaces.Servicos.Disponiveis.PrecoCusto.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\faturamento\Controller.Faturamento.Interfaces.Cache.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\Controller\Bpl\Faturamento\Impostos\Interfaces\Controller.Faturamento.Interfaces.Impostos.Parametros.Comum.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\Packages\Faturamento\Impostos\interfaces\source\Faturamento.Impostos.Interfaces.Model.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\Packages\Shared\Functions\source\Shared.Functions.DataSet.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untDigEmail.pas">
+            <Form>frmDigEmail</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\faturamento\untIFatReservaSaldo.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\faturamento\untIFatEntregaFutura.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\Packages\Shared\Functions\source\Shared.Functions.Funcoes.Faturamento.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\Packages\Shared\Functions\source\Shared.Functions.Constantes.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\Core\Faturamento.Connections.Functions.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\Shared.Functions.Conexao.UniDac.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\Core\Conexao\Faturamento.Interfaces.Conexao.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untDicionarioResultadoQuerySimples.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untFuncoesDicionarios.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\Packages\Shared\Functions\source\Shared.Functions.Utils.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\Packages\Shared\Functions\source\Shared.Functions.SQL.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\Packages\Shared\Functions\source\Shared.Functions.Funcoes.Faturamento.Precos.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\Controller\Bpl\Faturamento\Margem\Interfaces\Controller.Faturamento.Interfaces.Margem.Generic.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\Controller\Bpl\Faturamento\Margem\Interfaces\Controller.Faturamento.Interfaces.Margem.MargemBruta.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\Controller\Bpl\Faturamento\Margem\Interfaces\Controller.Faturamento.Interfaces.Margem.MargemVenda.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\Packages\Faturamento\Margem\interfaces\source\Faturamento.Margem.Interfaces.MargemBruta.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\Packages\Faturamento\Margem\interfaces\source\Faturamento.Margem.Interfaces.MargemVenda.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\Controller\Bpl\Faturamento\Margem\Generic\Controller.Faturamento.Margem.Generic.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\Controller\Bpl\Faturamento\Margem\MargemBruta\Controller.Faturamento.Margem.MargemBruta.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\Controller\Bpl\Faturamento\Margem\MargemVenda\Controller.Faturamento.Margem.MargemVenda.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\faturamento\untFatCalcularMargemService.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\Packages\Faturamento\Margem\interfaces\source\Faturamento.Margem.Interfaces.Servicos.Disponiveis.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\Packages\Faturamento\Margem\interfaces\source\Faturamento.Margem.Interfaces.Servicos.Disponiveis.MargemBruta.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\Packages\Faturamento\Margem\interfaces\source\Faturamento.Margem.Interfaces.Servicos.Disponiveis.MargemVenda.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\Packages\Faturamento\Margem\tipos\source\Faturamento.Margem.Tipos.MargemVenda.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\Packages\Faturamento\Margem\tipos\source\Faturamento.Margem.Tipos.MargemBruta.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\movimentacaoitens\OrdemProducaoIndustrial\OrdemProducaoIndustrial.Funcoes.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\editorRelatorios\untMsgErroSQL.pas">
+            <Form>frmMsgErroSQL</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untPaiEdit.pas">
+            <Form>frmPaiEdit</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untDigParcelas.pas">
+            <Form>frmDigParcelas</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\cadastros\untCadConfRelatorios.pas">
+            <Form>frmCadConfRelatorios</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untPaiCad.pas">
+            <Form>frmPaiCad</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\cadastros\untSelFilImpressao.pas">
+            <Form>frmSelFilImpressao</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\cadastros\untCfgRel.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untWord.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untWordBRO.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untWordOfc.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untMenuFilas.pas">
+            <Form>frmMenuFilas</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untMenuTipImp.pas">
+            <Form>frmMenuTipImp</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untSpoolImpressao.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untSpoolPrintDialog.pas">
+            <Form>SpoolPrintDialog</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untWorkStationInfo.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\relatorios\financeiro\etiquetas\untInfAdicEtiqItens.pas">
+            <Form>frmInfAdicEtiqItens</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untPaiConfirma.pas">
+            <Form>frmPaiConfirma</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untCalculoPrecoMedio.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untCalculoPrecoVenda.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untTMemoriaCalculoPrecoVendaMargem.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\relatorios\financeiro\etiquetas\untCnfEtiqueta.pas">
+            <Form>frmCnfEtiqueta</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\relatorios_dll\geral\untFuncoesRel.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\relatorios\financeiro\contasareceber\untCtrSelClienteImp.pas">
+            <Form>frmCtrSelClienteImp</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untDigQuantidade.pas">
+            <Form>frmDigQuantidade</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\financeiro\gerais\untDtaEstorno.pas">
+            <Form>frmDtaEstorno</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\faturamento\untCadNegBussiness.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\movimentacaoitens\PedidoDeCompra\untSaldoPedidoCompra.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\email\controller\untTEnvioEmail.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\email\model\untTEmaEnv.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\email\model\untTEmaEnvRepository.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\CamadaPersistencia\untObjectManager.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\CamadaPersistencia\untFieldFiltros.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untDisparaEmailAut.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untThreadEnviaEmail.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\email\controller\untTDupEma.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\financeiro\contasareceber\untLogCtr.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\CamadaPersistencia\untUtilRepository.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untVersaoProg.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\direitosdeacesso\untTCadOpe.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\direitosdeacesso\untTCadOpeRepository.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\email\model\untTCadPrv.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\email\model\untTCadPrvRepository.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untImagemBase64.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\email\view\untEnvioEmail.pas">
+            <Form>frmEnvioEmail</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\email\view\untEditorHtml.pas">
+            <Form>frmEditorHtml</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\email\view\untConsultaContatosEmail.pas">
+            <Form>frmConsultaContatosEmail</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\email\view\untCadContatosEmail.pas">
+            <Form>frmCadContatosEmail</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untFuncoesGenerica.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\email\view\untListaEmail.pas">
+            <Form>frmListaEmail</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untExcel.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untGeraExcel.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untExcelBRO.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untExcelOfc.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\VirtualUI\VirtualUI_SDK.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\util\EditorEtiquetas\untFuncoesEditorFast.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\relatorios_dll\geral\TypesRel.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untLogForm.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\faturamento\untTSituacaoPedidoVenda.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untUtilMonitor.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untLegenda.pas">
+            <Form>frmLegenda</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\crm\untAtualizaOcorrenciasCRM.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\cadastros\untMsgInterna.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\faturamento\untValidaSituacaoFinanceiraPedido.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\faturamento\untTFatReservaSaldo.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untSeqTmp.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\faturamento\untTFatEntregaFutura.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untCFGBAN_Class.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untCFGBAN_Dao.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untSubjectClass.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untSubjectIntf.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untGravandoObs.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untFilasImpressaoNFCe.pas">
+            <Form>frmFilasImpressaoNFCe</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\faturamento\untIcmsSTParteVenda.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\libNfe\untConstantesNFe.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\faturamento\untPesqCliVend.pas">
+            <Form>frmPesqCliVend</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\cadastros\untPreAlt_Trigger.pas">
+            <Form>,
+  untCfgRepositorio in &apos;..\..\padra_atualizado\fontes\configuracoes\untCfgRepositorio.pas&apos; {frmCfgRepositorio</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\configuracoes\untCfgRepositorio.pas">
+            <Form>frmCfgRepositorio</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untConsultas.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\faturamento\Promocao\Promocao.Regra.Preco.Sugestao.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\financeiro\contasareceber\untConsultaFiltrosCtaReceber.pas">
+            <Form>frmConsultaFiltrosCtaReceber</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\cadastros\untCadPro.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untFuncoesImagem.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\libFuncoes\untLoadConsultaSQL.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\libFuncoes\untConfiguraSQLConsulta.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\libFuncoes\untConfiguraSQLConsultaEdicao.pas">
+            <Form>frmConfiguraSQLConsultaEdicao</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\editorRelatorios\untAjudaVariaveis.pas">
+            <Form>frmAjudaVariaveis</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\libFuncoes\untPedeDadosCampoSQL.pas">
+            <Form>frmPedeDadosCampoSQL</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\cadastros\UntCategoriaCadLead.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untPesqItem.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\cadastros\Produto.TSQLProdutos.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\financeiro\gerais\api.yapay\api\Yapay.Api.Resources.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\cadastros\untFormulaCustoProdutoEdicao.pas">
+            <Form>frmFormulaCustoProdutoEdicao</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\configuracoes\untCfgFormulasPrecoCusto.pas">
+            <Form>frmFormulaCalcPCusto</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\libFuncoes\untFuncoesGen.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untFuncoesGenCompartilhada.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untTSQLTrace.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untZClient.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\relatorios\interfaces\untIFuncoes.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\cadastros\untICamGer.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\relatorios\faturamento\untIValorRecebido.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\cadastros\untIControlePagtoFunc.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untIMetAno.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\util\EditorEtiquetas\untIFuncoesEditorFast.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\cadastros\untIIteBar.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\faturamento\untIMadeireira.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\faturamento\untIFinanceira.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untIFuncMacro.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\util\EditorEtiquetas\untIDocumentos.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\cadastros\untICadLote.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untIFiltrosRelatorio.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\movimentacaoitens\PedidoDeCompra\untIMesesGiro.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untIZClient.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untPai.pas">
+            <Form>frmPai</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untCfgAtb.pas">
+            <Form>frmCfgAtb</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untModuloCfgAtb.pas">
+            <Form>frmModuloCfgAtb</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untAutcomDllTinta.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\cadastros\untCadIte.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\cadastros\untCadLote.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\cadastros\untConDet.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\Estoque\Estoque.Lote.TSQLSaldoLote.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\util\operacoesrefitens\untHistoricoBalanco.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\util\operacoesrefitens\untBalancoEstoqueAjuste.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\Util_DLL\OpeRefProd\untControleContagemBalancoEstoque.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untControlaNotSaldoMin.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\relatorios_dll\geral\untFuncoesRel2.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untFuncoesRelatorios.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\movimentacaoitens\PedidoDeCompra\untMesesGiro.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\movimentacaoitens\PedidoDeCompra\untSelecionaMeses.pas">
+            <Form>frmSelecionaMeses</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untTMatrizSaldosColorantes.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\iTintas\untIIdentificadorTinta.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\iTintas\untIDadosTinta.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\iTintas\untIDadosTintasComponentes.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\Interfaces\untICalculadorFatVendas.pas"/>
+        <DCCReference Include="..\..\LibTintas\libTintasComum\Interfaces\untITintaDeMaquina.pas"/>
+        <DCCReference Include="..\..\LibTintas\libTintasComum\Interfaces\untITintaDeMaquinaComponente.pas"/>
+        <DCCReference Include="..\..\LibTintas\libTintasComum\Genericos\untTintaDeMaquinaComponenteTipo.pas"/>
+        <DCCReference Include="..\..\LibTintas\libTintasComum\Genericos\untConsultaCadastro.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untFuncoesTintaDeMaquinaBpl.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untLiberacaoFactory.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untValorPorExtenso.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untTipoFreteAtc.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untPesqAux.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untTFuncMacro.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\cadastros\untCamGer.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\relatorios\faturamento\untRelValorRecebido.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\libNfe\untInterfaces.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untFuncMacro.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untPaiQck.pas">
+            <Form>frmPaiQck</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\cadastros\untControlePagtoFunc.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\util\untFastPrintEditor.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\relatorios\faturamento\untExtratoComissaoProfissional.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untTMetAno.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\cadastros\untCadRcxx.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\resumodecaixa\untTCadRcxx.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\cadastros\untIteBar.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\util\EditorEtiquetas\untTFuncoesEditorFast.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\util\EditorEtiquetas\untOrdenacao.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\faturamento\untTMadeireira.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\faturamento\untFinanceira.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\relatorios_dll\geral\untFuncoesEtiquetas.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\cadastros\Gs1Cnp\interfaces\Produto.GS1CNP.Interfaces.Cadastro.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\cadastros\Gs1Cnp\shared\Produto.GS1CNP.Shared.Types.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\cadastros\Gs1Cnp\controller\Produto.GS1CNP.Controller.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\cadastros\Gs1Cnp\interfaces\Produto.GS1CNP.Interfaces.Controller.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\cadastros\Gs1Cnp\factory\Produto.GS1CNP.Consulta.Factory.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\cadastros\Gs1Cnp\interfaces\Produto.GS1CNP.Interfaces.Consulta.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\cadastros\Gs1Cnp\view\Produto.GS1CNP.Consulta.View.pas">
+            <Form>ProdutoGS1CNPConsultaView</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\cadastros\Gs1Cnp\interfaces\Produto.GS1CNP.Interfaces.Service.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\cadastros\Gs1Cnp\service\Produto.GS1CNP.Service.Consulta.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\cadastros\Gs1Cnp\tipos\Produto.GS1CNP.Tipos.Consulta.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\cadastros\Gs1Cnp\interfaces\Produto.GS1CNP.Interfaces.JSONParse.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\cadastros\Gs1Cnp\shared\Produto.GS1CNP.Shared.JSONParse.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\cadastros\Gs1Cnp\interfaces\Produto.GS1CNP.Interfaces.Http.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\cadastros\Gs1Cnp\http\Produto.GS1CNP.Http.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\cadastros\Gs1Cnp\auth\Produto.GS1CNP.Auth.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\cadastros\Gs1Cnp\shared\Produto.GS1CNP.Shared.Exception.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\cadastros\Gs1Cnp\shared\Produto.GS1CNP.Shared.Constants.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\cadastros\Gs1Cnp\factory\Produto.GS1CNP.Cadastro.Factory.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\cadastros\Gs1Cnp\tipos\Produto.GS1CNP.Tipos.Cadastro.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\cadastros\Gs1Cnp\service\Produto.GS1CNP.Service.Cadastro.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\cadastros\Gs1Cnp\shared\Produto.GS1CNP.Shared.Functions.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\cadastros\Gs1Cnp\factory\Produto.GS1CNP.Parametros.Factory.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\cadastros\Gs1Cnp\interfaces\Produto.GS1CNP.Interfaces.Parametros.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\cadastros\Gs1Cnp\tipos\Produto.GS1CNP.Tipos.Atualiza.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\cadastros\Gs1Cnp\factory\Produto.GS1CNP.Atualiza.Factory.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\cadastros\Gs1Cnp\interfaces\Produto.GS1CNP.Interfaces.Atualiza.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\cadastros\Gs1Cnp\service\Produto.GS1CNP.Service.Atualiza.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\cadastros\untCadEmbalagens.pas">
+            <Form>frmCadEmbalagens</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\cadastros\Gs1Cnp\view\Produto.GS1CNP.Inconsistencia.View.pas">
+            <Form>ProdutoGS1CNPInconsistenciaView</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\cadastros\Gs1Cnp\model\Produto.GS1CNP.Model.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\faturamento\untMadeireira.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untFiltrosRelatorio.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\financeiro\gerais\untReciboCtp.pas"/>
+        <DCCReference Include="..\Genericos\untAuttinWrapper.pas"/>
+        <DCCReference Include="..\Genericos\untGravandoFactory.pas"/>
+        <DCCReference Include="..\Genericos\untGenericGravando.pas">
+            <Form>frmGenericGravando</Form>
+        </DCCReference>
+        <DCCReference Include="..\Genericos\untAbstractGravando.pas">
+            <Form>frmAbstractGravando</Form>
+        </DCCReference>
+        <DCCReference Include="..\Genericos\untAbstractGravandoExecucao.pas"/>
+        <DCCReference Include="..\Genericos\untGravandoExecucaoWrapper.pas"/>
+        <DCCReference Include="..\Genericos\untCadLibTintas.pas">
+            <Form>frmCadLibTintas</Form>
+        </DCCReference>
+        <DCCReference Include="..\Genericos\untAbstractLibTintaControleFactory.pas"/>
+        <DCCReference Include="..\Interfaces\untILibTintaControleFactory.pas"/>
+        <DCCReference Include="..\Genericos\untLibTintaControleFactory.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untUniQueryDataSetWrapper.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untDataSetIDataSetWrapper.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untParamDataSetWrapper.pas"/>
+        <DCCReference Include="..\Genericos\untCfgTin.pas">
+            <Form>frmCfgTin</Form>
+        </DCCReference>
+        <DCCReference Include="..\Genericos\untGerenciadorPropriedadesCx.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untFieldDataSetFieldWrapper.pas"/>
+        <DCCReference Include="..\Genericos\untGerenciadorMenuAuttinDlls.pas"/>
+        <DCCReference Include="..\untConfConsulta.pas">
+            <Form>frmConfConsulta</Form>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\Genericos\untLabelLibTintaControleFactory.pas"/>
+        <DCCReference Include="..\Genericos\untPanelLibTintaControleFactory.pas"/>
+        <DCCReference Include="..\Genericos\untSpeedButtonLibTintaControleFactory.pas"/>
+        <DCCReference Include="..\Genericos\untLibTintaControleVisualEventosFactory.pas"/>
+        <DCCReference Include="..\Genericos\untControlILibTintaControleVisualWrapper.pas"/>
+        <DCCReference Include="..\Genericos\untDBEditFocusLibTintaControleFactory.pas"/>
+        <DCCReference Include="..\Genericos\untEditFocusLibTintaControleFactory.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untComponentFactory.pas"/>
+        <DCCReference Include="..\Genericos\untDBCheckBoxLibTintaControleFactory.pas"/>
+        <DCCReference Include="..\Genericos\untGroupBoxLibTintaControleFactory.pas"/>
+        <DCCReference Include="..\Genericos\untLibTintaControleVisualImplementacaoFactory.pas"/>
+        <DCCReference Include="..\Genericos\untEditLibTintaControleFactory.pas"/>
+        <DCCReference Include="..\Glasurit\untGlasuritDinamica.pas"/>
+        <DCCReference Include="..\Glasurit\untGlasurit.pas"/>
+        <DCCReference Include="..\Glasurit\untConfiguracoesGlasurit.pas">
+            <Form>frmConfiguracoesGlasurit</Form>
+        </DCCReference>
+        <DCCReference Include="..\Glasurit\untCadGlaNovasFormulas.pas">
+            <Form>frmCadGlaNovasFormulas</Form>
+        </DCCReference>
+        <DCCReference Include="..\Glasurit\untCadGlaGeraArquivo.pas">
+            <Form>frmCadGlaGeraArquivo</Form>
+        </DCCReference>
+        <DCCReference Include="..\Glasurit\untCadGlaBases.pas">
+            <Form>frmCadGlaBases</Form>
+        </DCCReference>
+        <DCCReference Include="untFuncTinta.pas"/>
+        <DCCReference Include="..\untTintadeMaquina.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untDesbloqueiodaCopia.pas">
+            <Form>frmDesbloqueiodaCopia</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untFuncoes.pas">
+            <Form>frmDesbloqueiodaCopia</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\configuracoes\untCfgCfopCst.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\boleto\Genericos\untBancos.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untFuncAutban.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\boleto\Genericos\untDesCam.pas">
+            <Form>frmDesCam</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\boleto\Genericos\untFuncoesBoleto.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\boleto\untFuncBancarias.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\boleto\untTBoletoCarne.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\boleto\untQckBancos.pas">
+            <Form>frmQckBancos</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\boleto\untTBoletoLayImp.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untDigDuplicata.pas">
+            <Form>frmDigDuplicata</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untDuplicatas.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untDigData.pas">
+            <Form>frmDigData</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\fechamentosmensais\untFecGiroEstoque.pas">
+            <Form>frmFecGiroEstoque</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\Genericos\untBaseFechamento.pas">
+            <Form>frmBaseFechamento</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\movimentacaoitens\untGiroProdutos.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\fechamentosmensais\untBloqueioProdutos.pas">
+            <Form>frmBloqueioProdutos</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untDigValor.pas">
+            <Form>frmDigValor</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\util\untRelacaoLocks.pas">
+            <Form>frmRelacaoLocks</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\faturamento\untFatMostraCreditos.pas">
+            <Form>frmFatMostraCreditos</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untPaiOrdena.pas">
+            <Form>frmPaiOrdena</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untObservacao.pas">
+            <Form>frmObservacao</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\relatorios\faturamento\untRelFatVendasClienteF9.pas">
+            <Form>frmRelFatVendasClienteF9</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\relatorios\faturamento\untRelFatVendasCliente.pas">
+            <Form>frmRelFatVendasCliente</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untPaiRelatorio.pas">
+            <Form>frmPaiRelatorio</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untFrameCentroCustoEditFocus.pas">
+            <Form>fraCentroCustoEditFocus</Form>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\relatorios\faturamento\untRelFatVendasItensF9.pas">
+            <Form>frmRelFatVendasItensF9</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\relatorios\faturamento\untRelFatVendasPorLinha.pas">
+            <Form>frmRelFatVendasPorLinha</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\relatorios\faturamento\untOpcSoVenda.pas">
+            <Form>frmOpcSoVenda</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\financeiro\gerais\untValidacaoCredito.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untDigDtaNovo.pas">
+            <Form>frmDigDtaNovo</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\sms\untDisparaSMSAut.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\sms\untThreadEnviaSMS.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\sms\untTEnvioSMS.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\whatsapp\untQualiZapEnqueueMessageToSend.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\faturamento\untRestApi.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\whatsapp\untQualiZapRestApi.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\whatsapp\untQualiZapUploadFile.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\boleto\untTCuttly.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\financeiro\contasareceber\EmailContasReceber.Classes.pas"/>
+        <DCCReference Include="..\Glasurit\untGlasuritSQLServer.pas"/>
+        <DCCReference Include="..\untInkLayoutReader.pas"/>
+        <DCCReference Include="..\..\LibTintas\libTintasComum\Genericos\untValidarBaseItemAmarracao.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untLiberacaoCliente.pas">
+            <Form>frmLiberacaoCliente</Form>
+        </DCCReference>
+        <DCCReference Include="..\Salcomix\untCadSalBases.pas">
+            <Form>frmCadSalBases</Form>
+        </DCCReference>
+        <DCCReference Include="..\Salcomix\untCadSalNovasFormulas.pas">
+            <Form>frmCadSalNovasFormulas</Form>
+        </DCCReference>
+        <DCCReference Include="..\Salcomix\untSalcomix.pas"/>
+        <DCCReference Include="..\Salcomix\untConfiguracoesSalcomix.pas">
+            <Form>frmConfiguracoesSalcomix</Form>
+        </DCCReference>
+        <DCCReference Include="..\Salcomix\untCadSalGeraArquivo.pas">
+            <Form>frmCadSalGeraArquivo</Form>
+        </DCCReference>
+        <DCCReference Include="..\Salcomix\untSalcomixDinamica.pas"/>
+        <DCCReference Include="..\Salcomix\untSalcomixSQLServer.pas"/>
+        <DCCReference Include="untMenuGenericGlasurit.pas"/>
+        <DCCReference Include="untMenuGenericSalcomix.pas"/>
+        <DCCReference Include="..\untPaiGeraArq.pas">
+            <Form>frmPaiGeraArq</Form>
+        </DCCReference>
+        <DCCReference Include="untCreateMenuDireitoAcesso.pas"/>
+        <DCCReference Include="untNfmGenericDlls.pas"/>
+        <DCCReference Include="..\Genericos\untDBMemoFocusLibTintaControleFactory.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\PontoEntrada\PontoEntrada.FormEvent.Classes.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\PontoEntrada\PontoEntrada.Script.Interfaces.pas">
+            <Form>$R *.res</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\PontoEntrada\PontoEntrada.FormEvent.Configurar.pas">
+            <Form>$R *.res</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\PontoEntrada\PontoEntrada.Script.Classes.pas">
+            <Form>$R *.res</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\PontoEntrada\PontoEntrada.Script.Editor.pas"/>
+        <DCCReference Include="..\..\LibTintas\libTintasComum\Genericos\untADOFactory.pas"/>
+        <DCCReference Include="..\..\LibTintas\libTintasComum\Genericos\untADOTxtFactory.pas"/>
+        <DCCReference Include="..\..\LibTintas\libTintasComum\Interfaces\untIDefinicaoTxt.pas"/>
+        <DCCReference Include="..\..\LibTintas\libTintasComum\Genericos\untDefinicaoTxtCampoTipo.pas"/>
+        <DCCReference Include="..\..\LibTintas\libTintasComum\Genericos\untDefinicaoTxtFormato.pas"/>
+        <DCCReference Include="..\..\LibTintas\libTintasComum\Genericos\untDefinicaoTxtCharacterSet.pas"/>
+        <DCCReference Include="..\..\LibTintas\libTintasComum\Genericos\untDefinicaoTxtCurrencyNegFormat.pas"/>
+        <DCCReference Include="..\..\LibTintas\libTintasComum\Genericos\untDefinicaoTxtCurrencyPosFormat.pas"/>
+        <DCCReference Include="..\..\LibTintas\libTintasComum\Interfaces\untIDefinicaoTxtCampo.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\whatsapp\untFilaEContatoEnvio.pas">
+            <Form>frmFilaEContatoEnvio</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\padra_atualizado\fontes\whatsapp\untQualiZapGetClientOpenChats.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\util\untMinioStorageAPICitel.pas"/>
+        <DCCReference Include="..\..\libIntegracaoPixCitel\fontes\genericos\untTiposPix.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\financeiro\pix\untIIntegracaoPixCitel.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\financeiro\pix\untTIntegracaoPixCitel.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\sms\untMkmServiceRestApi.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\sms\untMkmServiceSms.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\genericos\untConexaoThread.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\boleto\untTBoleto1Via_Comprovante.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\Genericos\untMensagemExplicativa.pas">
+            <Form>frmMensagemExplicativa</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\libIntegracaoPixCitel\fontes\requisicoes\untTFuncoesAuxiliaresPix.pas"/>
+        <DCCReference Include="..\..\padra_atualizado\fontes\util\operacoesrefitens\untBancoEstoqueManutencao.pas"/>
+        <BuildConfiguration Include="Release">
+            <Key>Cfg_2</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Base">
+            <Key>Base</Key>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Debug">
+            <Key>Cfg_1</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Delphi.Personality.12</Borland.Personality>
+        <Borland.ProjectType>Application</Borland.ProjectType>
+        <BorlandProject>
+            <Delphi.Personality>
+                <Source>
+                    <Source Name="MainSource">libAuttin.dpr</Source>
+                </Source>
+                <Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k230.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp230.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+                </Excluded_Packages>
+            </Delphi.Personality>
+            <Deployment Version="2">
+                <DeployFile LocalName="$(BDS)\Redist\osx32\libcgunwind.1.0.dylib" Class="DependencyModule">
+                    <Platform Name="OSX32">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\Redist\iossimulator\libcgunwind.1.0.dylib" Class="DependencyModule">
+                    <Platform Name="iOSSimulator">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="$(BDS)\Redist\iossimulator\libPCRE.dylib" Class="DependencyModule">
+                    <Platform Name="iOSSimulator">
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\padra_atualizado\auttin\libAuttin.dll" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>libAuttin.dll</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployClass Name="DependencyModule">
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                        <Extensions>.dll;.bpl</Extensions>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectOSXResource">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\Resources</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidClassesDexFile">
+                    <Platform Name="Android">
+                        <RemoteDir>classes</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AdditionalDebugSymbols">
+                    <Platform Name="Win32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch768">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon144">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidLibnativeMipsFile">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\mips</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Required="true" Name="ProjectOutput">
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="DependencyFramework">
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>1</Operation>
+                        <Extensions>.framework</Extensions>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch640">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch1024">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSDeviceDebug">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).app.dSYM\Contents\Resources\DWARF</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <RemoteDir>..\$(PROJECTNAME).app.dSYM\Contents\Resources\DWARF</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidLibnativeX86File">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\x86</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch320">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSInfoPList">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidLibnativeArmeabiFile">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="DebugSymbols">
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch1536">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage470">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-normal</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon96">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage640">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-large</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch640x1136">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSEntitlements">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>../</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <RemoteDir>../</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon72">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-hdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidGDBServer">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectOSXInfoPList">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectOSXEntitlements">
+                    <Platform Name="OSX32">
+                        <RemoteDir>../</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch2048">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidSplashStyles">
+                    <Platform Name="Android">
+                        <RemoteDir>res\values</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage426">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-small</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidSplashImageDef">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSResource">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectAndroidManifest">
+                    <Platform Name="Android">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_DefaultAppIcon">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="File">
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\Resources\StartUp\</RemoteDir>
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="Android">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidServiceOutput">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Required="true" Name="DependencyPackage">
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                        <Extensions>.bpl</Extensions>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon48">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-mdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage960">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xlarge</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon36">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-ldpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSDeviceResourceRules">
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <ProjectRoot Platform="iOSDevice64" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="iOSDevice32" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="Win32" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="Android" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="iOSSimulator" Name="$(PROJECTNAME).app"/>
+            </Deployment>
+            <Platforms>
+                <Platform value="OSX32">False</Platform>
+                <Platform value="Win32">True</Platform>
+                <Platform value="Win64">False</Platform>
+            </Platforms>
+        </BorlandProject>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+    <Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
+    <Import Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj" Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')"/>
+    <Import Project="$(MSBuildProjectName).deployproj" Condition="Exists('$(MSBuildProjectName).deployproj')"/>
+</Project>

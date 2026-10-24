@@ -1,0 +1,452 @@
+unit TestFaturamento.Precos.Servicos.Classe.PrecoCusto;
+
+interface
+
+uses
+  TestFramework, Shared.Functions.Types,
+  Shared.Functions.Core,
+  Shared.Functions.Configuracoes,
+  untFuncoes,
+  Faturamento.Precos.Servicos.Classe.PrecoCusto,
+  Faturamento.Precos.Interfaces.Servicos.Classe.PrecoCusto,
+  Faturamento.Precos.Interfaces.PrecoCusto,
+  untTestConfiguracoes,
+  Faturamento.Precos.Tipos.PrecoCusto,
+  untTestMyCampoTabela;
+
+type
+
+  TestTServicosClassePrecoCusto = class(TTestCase)
+  strict private
+    Function ParametrosPrecoCusto                 : IParametrosServicoPrecoCusto;
+    Function ParametrosPrecoCustoMarkup           : IParametrosServicoPrecoCustoMargemMarkup;
+    function ParametrosCalculoPrecoCustoRealVenda : IParametrosCalculoPrecoCustoRealVenda;
+    function ParametrosCalculoCustoReal           : IParametrosCalculoCustoReal;
+
+  public
+    procedure SetUp; override;
+    procedure TearDown; override;
+  published
+    procedure TestCalculaPrecoCusto_01_DescontosAdicionais;
+    procedure TestCalculaPrecoCusto_02_DescontosAdicionais;
+    procedure TestCalculaPrecoCusto_03_DescontosAdicionais;
+    procedure TestCalculaPrecoCusto_04_DescontosAdicionais;
+
+    procedure TestCalculaPrecoCusto_01_AcrescimosAdicionais;
+    procedure TestCalculaPrecoCusto_02_AcrescimosAdicionais;
+    procedure TestCalculaPrecoCusto_03_AcrescimosAdicionais;
+
+    procedure TestCalculaPrecoCustoConversorDeMoeda_01_DescontosAdicionais;
+    procedure TestCalculaPrecoCustoConversorDeMoeda_02_DescontosAdicionais;
+    procedure TestCalculaPrecoCustoConversorDeMoeda_03_DescontosAdicionais;
+    procedure TestCalculaPrecoCustoConversorDeMoeda_04_DescontosAdicionais;
+
+    procedure TestCalculaPrecoCustoConversorDeMoeda_01_AcrescimosAdicionais;
+    procedure TestCalculaPrecoCustoConversorDeMoeda_02_AcrescimosAdicionais;
+    procedure TestCalculaPrecoCustoConversorDeMoeda_03_AcrescimosAdicionais;
+
+    procedure TestCalculaPrecoCustoMarkup_1;
+    procedure TestCalculaPrecoCustoMarkup_5;
+    procedure TestCalculaPrecoCustoMarkup_3;
+
+    procedure TestCalculoPrecoCustoRealVenda;
+
+    procedure TestCalculaCustoReal;
+
+  end;
+
+implementation
+
+function TestTServicosClassePrecoCusto.ParametrosCalculoCustoReal: IParametrosCalculoCustoReal;
+begin
+  Result :=
+    TParametrosCalculoCustoReal.New
+      .PrecoDeCusto(49.46)
+      .IcmsDeSaida(5.0)
+      .ImpostosFederais(2.0)
+      .DespesasOperacionais(1.5)
+      .OutrosValores(7.35);
+end;
+
+function TestTServicosClassePrecoCusto.ParametrosCalculoPrecoCustoRealVenda: IParametrosCalculoPrecoCustoRealVenda;
+begin
+  Result :=
+    TParametrosCalculoPrecoCustoRealVenda.New
+      .PrecoDeVenda(54.37)
+      .PrecoDeCusto(49.46)
+      .OutrosValores(0)
+      .IcmsDeSaida(5.0)
+      .ImpostosFederais(2.0)
+      .DespesasOperacionais(1.5)
+      .AliquotaDoDifal(3.45)
+      .AliquotaDoFcp(1.75)
+      .TaxaDeJuros(10);
+end;
+
+function TestTServicosClassePrecoCusto.ParametrosPrecoCusto: IParametrosServicoPrecoCusto;
+begin
+  Result :=
+    TParametrosServicoPrecoCusto.New
+      .PrecoDeCompra(50)
+      .Desconto01(0.5)
+      .Desconto02(1)
+      .Desconto03(1.5)
+      .Desconto04(2)
+      .Desconto05(2.5)
+      .Desconto06(3)
+      .Desconto07(0)
+      .IcmsDeEntrada(7)
+      .ImpostoFederal(1)
+      .IpiDeEntrada(2)
+      .PercentualFreteDeEntrada(3)
+      .ValorDoFrete(4)
+      .AcrescimoFinal(1)
+      .SubstituicaoTributaria(2)
+      .DescontosAdicionais(3)
+      .TipoMoeda(moeDolar);
+end;
+
+function TestTServicosClassePrecoCusto.ParametrosPrecoCustoMarkup: IParametrosServicoPrecoCustoMargemMarkup;
+begin
+  Result :=
+    TParametrosServicoPrecoCustoMargemMarkup.New
+      .PrecoDeVenda(49.53)
+      .Margem(25)
+      .DecUni(4);
+end;
+
+procedure TestTServicosClassePrecoCusto.SetUp;
+begin
+  TMyCampoTabelaDefault.IniciarCamposDefault;
+//  TConfiguracoesDefault.IniciarCanfiguracoesDefault;
+
+  objConfiguracoes.fAtualizaValorConfiguracao(CFG_QUANTIDADE_CASAS_DECIMAIS_VALOR_UNITARIO, '3');
+end;
+
+procedure TestTServicosClassePrecoCusto.TearDown;
+begin
+end;
+
+
+procedure TestTServicosClassePrecoCusto.TestCalculaCustoReal;
+Var
+  ReturnValue : Double;
+begin
+  ReturnValue :=
+    TFaturamentoPrecosServicosClassePrecoCusto.New
+      .CalculaCustoReal(ParametrosCalculoCustoReal)
+        .ResultadoCalculoPrecoCusto.ValorCalculadoPrecoCusto;
+
+  CheckTrue(objCore.fFormataFloat(ReturnValue,4)  = objCore.fStrToFloat('62,0874'));
+end;
+
+procedure TestTServicosClassePrecoCusto.TestCalculaPrecoCustoConversorDeMoeda_01_AcrescimosAdicionais;
+Var
+  ReturnValue : Double;
+begin
+  objConfiguracoes.fAtualizaValorConfiguracao(CFG_FORMULA_PARA_CALCULO_PRECO_CUSTO, '1');
+  objConfiguracoes.fAtualizaValorConfiguracao(CFG_OPERACAO_COMPOSICAO_PRECO_PRODUTO, '+');
+
+  ReturnValue :=
+    TFaturamentoPrecosServicosClassePrecoCusto.New
+      .CalculaPrecoCustoConversorMoeda(ParametrosPrecoCusto)
+        .ResultadoCalculoPrecoCusto
+          .ValorCalculadoPrecoCusto;
+
+
+  CheckTrue(ReturnValue = objCore.fStrToFloat('55,002'));
+end;
+
+procedure TestTServicosClassePrecoCusto.TestCalculaPrecoCustoConversorDeMoeda_01_DescontosAdicionais;
+Var
+  ReturnValue : Double;
+begin
+  objConfiguracoes.fAtualizaValorConfiguracao(CFG_FORMULA_PARA_CALCULO_PRECO_CUSTO, '1');
+  objConfiguracoes.fAtualizaValorConfiguracao(CFG_OPERACAO_COMPOSICAO_PRECO_PRODUTO, '-');
+
+  ReturnValue :=
+    TFaturamentoPrecosServicosClassePrecoCusto.New
+      .CalculaPrecoCustoConversorMoeda(ParametrosPrecoCusto)
+        .ResultadoCalculoPrecoCusto
+          .ValorCalculadoPrecoCusto;
+
+
+  CheckTrue(ReturnValue = objCore.fStrToFloat('51,798'));
+end;
+
+procedure TestTServicosClassePrecoCusto.TestCalculaPrecoCustoConversorDeMoeda_02_AcrescimosAdicionais;
+Var
+  ReturnValue : Double;
+begin
+  objConfiguracoes.fAtualizaValorConfiguracao(CFG_FORMULA_PARA_CALCULO_PRECO_CUSTO, '2');
+  objConfiguracoes.fAtualizaValorConfiguracao(CFG_OPERACAO_COMPOSICAO_PRECO_PRODUTO, '+');
+
+  ReturnValue :=
+    TFaturamentoPrecosServicosClassePrecoCusto.New
+      .CalculaPrecoCustoConversorMoeda(ParametrosPrecoCusto)
+        .ResultadoCalculoPrecoCusto
+          .ValorCalculadoPrecoCusto;
+
+
+  CheckTrue(ReturnValue = objCore.fStrToFloat('55,146'));
+
+end;
+
+procedure TestTServicosClassePrecoCusto.TestCalculaPrecoCustoConversorDeMoeda_02_DescontosAdicionais;
+Var
+  ReturnValue : Double;
+begin
+  objConfiguracoes.fAtualizaValorConfiguracao(CFG_FORMULA_PARA_CALCULO_PRECO_CUSTO, '2');
+  objConfiguracoes.fAtualizaValorConfiguracao(CFG_OPERACAO_COMPOSICAO_PRECO_PRODUTO, '-');
+
+  ReturnValue :=
+    TFaturamentoPrecosServicosClassePrecoCusto.New
+      .CalculaPrecoCustoConversorMoeda(ParametrosPrecoCusto)
+        .ResultadoCalculoPrecoCusto
+          .ValorCalculadoPrecoCusto;
+
+
+  CheckTrue(ReturnValue = objCore.fStrToFloat('51,934'));
+
+end;
+
+procedure TestTServicosClassePrecoCusto.TestCalculaPrecoCustoConversorDeMoeda_03_AcrescimosAdicionais;
+Var
+  ReturnValue : Double;
+begin
+  objConfiguracoes.fAtualizaValorConfiguracao(CFG_FORMULA_PARA_CALCULO_PRECO_CUSTO, '3');
+  objConfiguracoes.fAtualizaValorConfiguracao(CFG_OPERACAO_COMPOSICAO_PRECO_PRODUTO, '+');
+
+  ReturnValue :=
+    TFaturamentoPrecosServicosClassePrecoCusto.New
+      .CalculaPrecoCustoConversorMoeda(ParametrosPrecoCusto)
+        .ResultadoCalculoPrecoCusto
+          .ValorCalculadoPrecoCusto;
+
+
+  CheckTrue(ReturnValue = objCore.fStrToFloat('55,115'));
+
+end;
+
+procedure TestTServicosClassePrecoCusto.TestCalculaPrecoCustoConversorDeMoeda_03_DescontosAdicionais;
+Var
+  ReturnValue : Double;
+begin
+  objConfiguracoes.fAtualizaValorConfiguracao(CFG_FORMULA_PARA_CALCULO_PRECO_CUSTO, '3');
+  objConfiguracoes.fAtualizaValorConfiguracao(CFG_OPERACAO_COMPOSICAO_PRECO_PRODUTO, '-');
+
+  ReturnValue :=
+    TFaturamentoPrecosServicosClassePrecoCusto.New
+      .CalculaPrecoCustoConversorMoeda(ParametrosPrecoCusto)
+        .ResultadoCalculoPrecoCusto
+          .ValorCalculadoPrecoCusto;
+
+
+  CheckTrue(ReturnValue = objCore.fStrToFloat('51,905'));
+
+end;
+
+procedure TestTServicosClassePrecoCusto.TestCalculaPrecoCustoConversorDeMoeda_04_DescontosAdicionais;
+Var
+  ReturnValue : Double;
+begin
+  objConfiguracoes.fAtualizaValorConfiguracao(CFG_FORMULA_PARA_CALCULO_PRECO_CUSTO, '4');
+  objConfiguracoes.fAtualizaValorConfiguracao(CFG_OPERACAO_COMPOSICAO_PRECO_PRODUTO, '-');
+  objConfiguracoes.fAtualizaValorConfiguracao(CFG_DESCONTOS_ADICIONAIS_DESCRICAO_COMPOSICAO_PRECO_DO_PRODUTO, '-');
+  objConfiguracoes.fAtualizaValorConfiguracao(CFG_VALOR_FRETE_DESCRICAO_COMPOSICAO_PRECO_DO_PRODUTO, '-');
+
+  ReturnValue :=
+    TFaturamentoPrecosServicosClassePrecoCusto.New
+      .CalculaPrecoCustoConversorMoeda(ParametrosPrecoCusto)
+        .ResultadoCalculoPrecoCusto
+          .ValorCalculadoPrecoCusto;
+
+  CheckTrue(objCore.fFormataFloat(ReturnValue,4)  = objCore.fStrToFloat('53,461'));
+
+
+end;
+
+procedure TestTServicosClassePrecoCusto.TestCalculaPrecoCusto_01_AcrescimosAdicionais;
+Var
+  ReturnValue : Double;
+begin
+  objConfiguracoes.fAtualizaValorConfiguracao(CFG_FORMULA_PARA_CALCULO_PRECO_CUSTO, '1');
+  objConfiguracoes.fAtualizaValorConfiguracao(CFG_OPERACAO_COMPOSICAO_PRECO_PRODUTO, '+');
+
+  ReturnValue :=
+    TFaturamentoPrecosServicosClassePrecoCusto.New
+      .CalculaPrecoCusto(ParametrosPrecoCusto)
+        .ResultadoCalculoPrecoCusto
+          .ValorCalculadoPrecoCusto;
+
+
+  CheckTrue(ReturnValue = objCore.fStrToFloat('50,377'));
+
+end;
+
+procedure TestTServicosClassePrecoCusto.TestCalculaPrecoCusto_01_DescontosAdicionais;
+Var
+  ReturnValue : Double;
+begin
+  objConfiguracoes.fAtualizaValorConfiguracao(CFG_FORMULA_PARA_CALCULO_PRECO_CUSTO, '1');
+  objConfiguracoes.fAtualizaValorConfiguracao(CFG_OPERACAO_COMPOSICAO_PRECO_PRODUTO, '-');
+
+  ReturnValue :=
+    TFaturamentoPrecosServicosClassePrecoCusto.New
+      .CalculaPrecoCusto(ParametrosPrecoCusto)
+        .ResultadoCalculoPrecoCusto
+          .ValorCalculadoPrecoCusto;
+
+
+  CheckTrue(ReturnValue = objCore.fStrToFloat('47,442'));
+
+
+end;
+
+procedure TestTServicosClassePrecoCusto.TestCalculaPrecoCusto_02_AcrescimosAdicionais;
+Var
+  ReturnValue : Double;
+begin
+  objConfiguracoes.fAtualizaValorConfiguracao(CFG_FORMULA_PARA_CALCULO_PRECO_CUSTO, '2');
+  objConfiguracoes.fAtualizaValorConfiguracao(CFG_OPERACAO_COMPOSICAO_PRECO_PRODUTO, '+');
+
+  ReturnValue :=
+    TFaturamentoPrecosServicosClassePrecoCusto.New
+      .CalculaPrecoCusto(ParametrosPrecoCusto)
+        .ResultadoCalculoPrecoCusto
+          .ValorCalculadoPrecoCusto;
+
+
+  CheckTrue(ReturnValue = objCore.fStrToFloat('50,507'));
+end;
+
+procedure TestTServicosClassePrecoCusto.TestCalculaPrecoCusto_02_DescontosAdicionais;
+Var
+  ReturnValue : Double;
+begin
+  objConfiguracoes.fAtualizaValorConfiguracao(CFG_FORMULA_PARA_CALCULO_PRECO_CUSTO, '2');
+  objConfiguracoes.fAtualizaValorConfiguracao(CFG_OPERACAO_COMPOSICAO_PRECO_PRODUTO, '-');
+
+  ReturnValue :=
+    TFaturamentoPrecosServicosClassePrecoCusto.New
+      .CalculaPrecoCusto(ParametrosPrecoCusto)
+        .ResultadoCalculoPrecoCusto
+          .ValorCalculadoPrecoCusto;
+
+
+  CheckTrue(ReturnValue = objCore.fStrToFloat('47,565'));
+
+
+end;
+
+procedure TestTServicosClassePrecoCusto.TestCalculaPrecoCusto_03_AcrescimosAdicionais;
+Var
+  ReturnValue : Double;
+begin
+  objConfiguracoes.fAtualizaValorConfiguracao(CFG_FORMULA_PARA_CALCULO_PRECO_CUSTO, '3');
+  objConfiguracoes.fAtualizaValorConfiguracao(CFG_OPERACAO_COMPOSICAO_PRECO_PRODUTO, '+');
+
+  ReturnValue :=
+    TFaturamentoPrecosServicosClassePrecoCusto.New
+      .CalculaPrecoCusto(ParametrosPrecoCusto)
+        .ResultadoCalculoPrecoCusto
+          .ValorCalculadoPrecoCusto;
+
+
+  CheckTrue(ReturnValue = objCore.fStrToFloat('50,479'));
+end;
+
+procedure TestTServicosClassePrecoCusto.TestCalculaPrecoCusto_03_DescontosAdicionais;
+Var
+  ReturnValue : Double;
+begin
+  objConfiguracoes.fAtualizaValorConfiguracao(CFG_FORMULA_PARA_CALCULO_PRECO_CUSTO, '3');
+  objConfiguracoes.fAtualizaValorConfiguracao(CFG_OPERACAO_COMPOSICAO_PRECO_PRODUTO, '-');
+
+  ReturnValue :=
+    TFaturamentoPrecosServicosClassePrecoCusto.New
+      .CalculaPrecoCusto(ParametrosPrecoCusto)
+        .ResultadoCalculoPrecoCusto
+          .ValorCalculadoPrecoCusto;
+
+
+  CheckTrue(ReturnValue = objCore.fStrToFloat('47,539'));
+end;
+
+
+
+procedure TestTServicosClassePrecoCusto.TestCalculaPrecoCusto_04_DescontosAdicionais;
+Var
+  ReturnValue : Double;
+begin
+  objConfiguracoes.fAtualizaValorConfiguracao(CFG_FORMULA_PARA_CALCULO_PRECO_CUSTO, '4');
+  objConfiguracoes.fAtualizaValorConfiguracao(CFG_OPERACAO_COMPOSICAO_PRECO_PRODUTO, '-');
+  objConfiguracoes.fAtualizaValorConfiguracao(CFG_DESCONTOS_ADICIONAIS_DESCRICAO_COMPOSICAO_PRECO_DO_PRODUTO, '-');
+  objConfiguracoes.fAtualizaValorConfiguracao(CFG_VALOR_FRETE_DESCRICAO_COMPOSICAO_PRECO_DO_PRODUTO, '-');
+
+  ReturnValue :=
+    TFaturamentoPrecosServicosClassePrecoCusto.New
+      .CalculaPrecoCusto(ParametrosPrecoCusto)
+        .ResultadoCalculoPrecoCusto
+          .ValorCalculadoPrecoCusto;
+
+
+  CheckTrue(objCore.fFormataFloat(ReturnValue,3) = objCore.fFormataFloat(48.964,3));
+end;
+
+procedure TestTServicosClassePrecoCusto.TestCalculoPrecoCustoRealVenda;
+Var
+  ReturnValue : Double;
+begin
+  ReturnValue :=
+    TFaturamentoPrecosServicosClassePrecoCusto.New
+      .CalculaPrecoCustoRealVenda(ParametrosCalculoPrecoCustoRealVenda)
+        .ResultadoCalculoPrecoCusto.ValorCalculadoPrecoCusto;
+
+  CheckTrue(objCore.fFormataFloat(ReturnValue,2) = objCore.fStrToFloat('61,85'));
+end;
+
+procedure TestTServicosClassePrecoCusto.TestCalculaPrecoCustoMarkup_1;
+Var
+  ReturnValue : Double;
+begin
+  objConfiguracoes.fAtualizaValorConfiguracao(CFG_CONFIGURACAO_PARA_MARGEM_MARKUP, '1');
+
+  ReturnValue :=
+    TFaturamentoPrecosServicosClassePrecoCusto.New
+      .CalculaPrecoCusto(ParametrosPrecoCustoMarkup).ResultadoCalculoPrecoCusto.ValorCalculadoPrecoCusto;
+
+  CheckTrue(ReturnValue = objCore.fFormataFloat(37.1475, 4));
+end;
+
+procedure TestTServicosClassePrecoCusto.TestCalculaPrecoCustoMarkup_3;
+Var
+  ReturnValue : Double;
+begin
+  objConfiguracoes.fAtualizaValorConfiguracao(CFG_CONFIGURACAO_PARA_MARGEM_MARKUP, '3');
+
+  ReturnValue :=
+    TFaturamentoPrecosServicosClassePrecoCusto.New
+      .CalculaPrecoCusto(ParametrosPrecoCustoMarkup).ResultadoCalculoPrecoCusto.ValorCalculadoPrecoCusto;
+
+  CheckTrue(ReturnValue = objCore.fFormataFloat(39.6240, 4));
+end;
+
+procedure TestTServicosClassePrecoCusto.TestCalculaPrecoCustoMarkup_5;
+Var
+  ReturnValue : Double;
+begin
+  objConfiguracoes.fAtualizaValorConfiguracao(CFG_CONFIGURACAO_PARA_MARGEM_MARKUP, '5');
+
+  ReturnValue :=
+    TFaturamentoPrecosServicosClassePrecoCusto.New
+      .CalculaPrecoCusto(ParametrosPrecoCustoMarkup).ResultadoCalculoPrecoCusto.ValorCalculadoPrecoCusto;
+
+  CheckTrue(ReturnValue = objCore.fFormataFloat(37.1475, 4));
+
+end;
+
+initialization
+  RegisterTest(TestTServicosClassePrecoCusto.Suite);
+end.
+

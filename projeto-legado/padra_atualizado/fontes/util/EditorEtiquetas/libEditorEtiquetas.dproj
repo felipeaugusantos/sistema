@@ -1,0 +1,1057 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{1abe4371-339b-458a-bc28-43ecfb699742}</ProjectGuid>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+        <DCC_DependencyCheckOutputName>..\..\..\libEditorEtiquetas.dll</DCC_DependencyCheckOutputName>
+        <MainSource>libEditorEtiquetas.dpr</MainSource>
+        <FrameworkType>VCL</FrameworkType>
+        <ProjectVersion>18.1</ProjectVersion>
+        <Base>True</Base>
+        <Config Condition="'$(Config)'==''">Release</Config>
+        <Platform Condition="'$(Platform)'==''">Win32</Platform>
+        <TargetedPlatforms>1</TargetedPlatforms>
+        <AppType>Library</AppType>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+        <Base_Win32>true</Base_Win32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win64' and '$(Base)'=='true') or '$(Base_Win64)'!=''">
+        <Base_Win64>true</Base_Win64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_1)'!=''">
+        <Cfg_1>true</Cfg_1>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_1)'=='true') or '$(Cfg_1_Win32)'!=''">
+        <Cfg_1_Win32>true</Cfg_1_Win32>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_2)'!=''">
+        <Cfg_2>true</Cfg_2>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Cfg_2)'=='true') or '$(Cfg_2_Win32)'!=''">
+        <Cfg_2_Win32>true</Cfg_2_Win32>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base)'!=''">
+        <SanitizedProjectName>libEditorEtiquetas</SanitizedProjectName>
+        <DCC_Namespace>System;Xml;Data;Datasnap;Web;Soap;Winapi;Vcl;Vcl.Imaging;System.Win;Vcl.Touch;Vcl.Samples;Vcl.Shell;$(DCC_Namespace)</DCC_Namespace>
+        <VerInfo_Build>2</VerInfo_Build>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Release>2</VerInfo_Release>
+        <VerInfo_MajorVer>379</VerInfo_MajorVer>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=379.48.2.2;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=379.48.2.2;Comments=</VerInfo_Keys>
+        <GenDll>true</GenDll>
+        <VerInfo_MinorVer>48</VerInfo_MinorVer>
+        <VerInfo_Locale>1046</VerInfo_Locale>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <DCC_Namespace>Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <Icon_MainIcon>libEditorEtiquetas_Icon.ico</Icon_MainIcon>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <Debugger_HostApplication>..\..\..\autcom.exe</Debugger_HostApplication>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win64)'!=''">
+        <Icon_MainIcon>libEditorEtiquetas_Icon.ico</Icon_MainIcon>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1)'!=''">
+        <Version>7.0</Version>
+        <DCC_DebugInformation>0</DCC_DebugInformation>
+        <DCC_LocalDebugSymbols>False</DCC_LocalDebugSymbols>
+        <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+        <DCC_Define>RELEASE;UNIDAC;$(DCC_Define)</DCC_Define>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_Win32)'!=''">
+        <VerInfo_MajorVer>999</VerInfo_MajorVer>
+        <VerInfo_Release>999</VerInfo_Release>
+        <VerInfo_MinorVer>999</VerInfo_MinorVer>
+        <VerInfo_DLL>true</VerInfo_DLL>
+        <DCC_ExeOutput>..\..\..\</DCC_ExeOutput>
+        <DCC_DcuOutput>temp\</DCC_DcuOutput>
+        <DCC_LocalDebugSymbols>true</DCC_LocalDebugSymbols>
+        <DCC_DebugInformation>1</DCC_DebugInformation>
+        <DCC_MapFile>3</DCC_MapFile>
+        <VerInfo_Build>999</VerInfo_Build>
+        <Manifest_File>None</Manifest_File>
+        <DCC_Define>madExcept;$(DCC_Define)</DCC_Define>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <VerInfo_Keys>CompanyName=Citel Software;FileDescription=Biblioteca de Editor do Fast Reports;FileVersion=999.999.999.999;InternalName=libEditorEtiquetas;LegalCopyright=Citel Software;LegalTrademarks=;OriginalFilename=libEditorEtiquetas;ProductName=Autcom;ProductVersion=999.999.999.999;Comments=</VerInfo_Keys>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2)'!=''">
+        <Version>7.0</Version>
+        <DCC_Define>DEBUG;madExcept;UNIDAC;$(DCC_Define)</DCC_Define>
+        <DCC_MapFile>3</DCC_MapFile>
+        <DCC_ExeOutput>..\..\..\</DCC_ExeOutput>
+        <DCC_DcuOutput>temp\</DCC_DcuOutput>
+        <DCC_ObjOutput>temp\</DCC_ObjOutput>
+        <DCC_HppOutput>temp\</DCC_HppOutput>
+        <DCC_Optimize>False</DCC_Optimize>
+        <DCC_GenerateStackFrames>True</DCC_GenerateStackFrames>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Win32)'!=''">
+        <Manifest_File>None</Manifest_File>
+        <VerInfo_Release>0</VerInfo_Release>
+        <VerInfo_Build>0</VerInfo_Build>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=</VerInfo_Keys>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+        <VerInfo_MinorVer>0</VerInfo_MinorVer>
+        <VerInfo_MajorVer>1</VerInfo_MajorVer>
+    </PropertyGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Delphi.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Delphi.Personality>
+                <Parameters>
+                    <Parameters Name="UseLauncher">False</Parameters>
+                    <Parameters Name="LoadAllSymbols">True</Parameters>
+                    <Parameters Name="LoadUnspecifiedSymbols">False</Parameters>
+                    <Parameters Name="HostApplication">..\..\..\autcom.exe</Parameters>
+                </Parameters>
+                <VersionInfo>
+                    <VersionInfo Name="IncludeVerInfo">True</VersionInfo>
+                    <VersionInfo Name="AutoIncBuild">False</VersionInfo>
+                    <VersionInfo Name="MajorVer">379</VersionInfo>
+                    <VersionInfo Name="MinorVer">48</VersionInfo>
+                    <VersionInfo Name="Release">2</VersionInfo>
+                    <VersionInfo Name="Build">2</VersionInfo>
+                    <VersionInfo Name="Debug">False</VersionInfo>
+                    <VersionInfo Name="PreRelease">False</VersionInfo>
+                    <VersionInfo Name="Special">False</VersionInfo>
+                    <VersionInfo Name="Private">False</VersionInfo>
+                    <VersionInfo Name="DLL">False</VersionInfo>
+                    <VersionInfo Name="Locale">1046</VersionInfo>
+                    <VersionInfo Name="CodePage">1252</VersionInfo>
+                </VersionInfo>
+                <VersionInfoKeys>
+                    <VersionInfoKeys Name="CompanyName"/>
+                    <VersionInfoKeys Name="FileDescription"/>
+                    <VersionInfoKeys Name="FileVersion">379.48.2.2</VersionInfoKeys>
+                    <VersionInfoKeys Name="InternalName"/>
+                    <VersionInfoKeys Name="LegalCopyright"/>
+                    <VersionInfoKeys Name="LegalTrademarks"/>
+                    <VersionInfoKeys Name="OriginalFilename"/>
+                    <VersionInfoKeys Name="ProductName"/>
+                    <VersionInfoKeys Name="ProductVersion">379.48.2.2</VersionInfoKeys>
+                    <VersionInfoKeys Name="Comments"/>
+                </VersionInfoKeys>
+                <Source>
+                    <Source Name="MainSource">libEditorEtiquetas.dpr</Source>
+                </Source>
+                <Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k200.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp200.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+                </Excluded_Packages>
+            </Delphi.Personality>
+            <Platforms>
+                <Platform value="OSX32">False</Platform>
+                <Platform value="Win32">True</Platform>
+                <Platform value="Win64">False</Platform>
+            </Platforms>
+            <Deployment Version="2">
+                <DeployFile LocalName="..\..\..\libEditorEtiquetas.dll" Configuration="Release" Class="ProjectOutput">
+                    <Platform Name="Win32">
+                        <RemoteName>libEditorEtiquetas.dll</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployClass Name="DependencyModule">
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                        <Extensions>.dll;.bpl</Extensions>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectOSXResource">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\Resources</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidClassesDexFile">
+                    <Platform Name="Android">
+                        <RemoteDir>classes</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon144">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AdditionalDebugSymbols">
+                    <Platform Name="Win32">
+                        <RemoteDir>Contents\MacOS</RemoteDir>
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidLibnativeMipsFile">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\mips</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch768">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Required="true" Name="ProjectOutput">
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="DependencyFramework">
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                        <Extensions>.framework</Extensions>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch640">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidLibnativeX86File">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\x86</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSDeviceDebug">
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).app.dSYM\Contents\Resources\DWARF</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <RemoteDir>..\$(PROJECTNAME).app.dSYM\Contents\Resources\DWARF</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch1024">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch320">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSInfoPList"/>
+                <DeployClass Name="AndroidLibnativeArmeabiFile">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="DebugSymbols">
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch1536">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage470">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-normal</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon96">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage640">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-large</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch640x1136">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSEntitlements"/>
+                <DeployClass Name="AndroidGDBServer">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon72">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-hdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectOSXInfoPList"/>
+                <DeployClass Name="ProjectOSXEntitlements"/>
+                <DeployClass Name="iPad_Launch2048">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidSplashStyles">
+                    <Platform Name="Android">
+                        <RemoteDir>res\values</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage426">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-small</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidSplashImageDef">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSResource">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectAndroidManifest">
+                    <Platform Name="Android">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_DefaultAppIcon">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="File">
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="Android">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidServiceOutput">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Required="true" Name="DependencyPackage">
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                        <Extensions>.bpl</Extensions>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon48">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-mdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage960">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xlarge</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon36">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-ldpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSDeviceResourceRules"/>
+                <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="iOSDevice64" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="iOSDevice32" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="Win32" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="Android" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="iOSSimulator" Name="$(PROJECTNAME).app"/>
+            </Deployment>
+        </BorlandProject>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+    <Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets"/>
+    <ItemGroup>
+        <DelphiCompile Include="$(MainSource)">
+            <MainSource>MainSource</MainSource>
+        </DelphiCompile>
+        <DCCReference Include="..\..\..\VirtualUI\VirtualUI_AutoRun.pas"/>
+        <DCCReference Include="..\..\..\VirtualUI\VirtualUI_SDK.pas"/>
+        <DCCReference Include="untSelecionaLayout.pas">
+            <Form>frmSelecionaLayout</Form>
+        </DCCReference>
+        <DCCReference Include="untComponentMovel.pas"/>
+        <DCCReference Include="untDigExpressao.pas">
+            <Form>frmDigExpressao</Form>
+        </DCCReference>
+        <DCCReference Include="untModuloFr3.pas">
+            <Form>frmModuloFr3</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="untReguaEditor.pas"/>
+        <DCCReference Include="..\..\genericos\untConstantes.pas"/>
+        <DCCReference Include="..\..\genericos\untPai.pas">
+            <Form>frmPai</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\genericos\untVersaoProg.pas"/>
+        <DCCReference Include="..\..\genericos\untPaiEdit.pas">
+            <Form>frmPaiEdit</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\genericos\untPaiRelatorio.pas">
+            <Form>frmPaiRelatorio</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios_dll\geral\untModulo.pas">
+            <Form>frmModulo</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="untImprimeEtiquetas.pas"/>
+        <DCCReference Include="..\..\genericos\untModuloCfgAtb.pas">
+            <Form>frmModuloCfgAtb</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\Genericos\untPaiSimples.pas">
+            <Form>frmPaiSimples</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\genericos\untPaiCad.pas">
+            <Form>frmPaiCad</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\genericos\untWaitWindow.pas">
+            <Form>frmWaitWindow</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\genericos\untMensagemSonora.pas">
+            <Form>frmMensagemSonora</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\genericos\untGetMenu.pas">
+            <Form>frmGetMenu</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\genericos\untPaiConfirma.pas">
+            <Form>frmPaiConfirma</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\libFuncoes\untClassPanelCx.pas"/>
+        <DCCReference Include="..\..\libFuncoes\untConfiguraConsultaOperadores.pas"/>
+        <DCCReference Include="..\..\genericos\untPaiOrdena.pas">
+            <Form>frmPaiOrdena</Form>
+        </DCCReference>
+        <DCCReference Include="untPedeFonteLinhaMatricial.pas">
+            <Form>frmPedeFonteLinhaMatricial</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\genericos\untGravando.pas">
+            <Form>frmGravando</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\genericos\untGenericProcedureFormGravando.pas"/>
+        <DCCReference Include="untMenuDocumentos.pas">
+            <Form>frmMenuDocumentos</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\genericos\untTypesSistema.pas"/>
+        <DCCReference Include="..\..\iTintas\untITintasDeMaquina.pas"/>
+        <DCCReference Include="..\..\cadastros\untICamGer.pas"/>
+        <DCCReference Include="..\..\cadastros\untIControlePagtoFunc.pas"/>
+        <DCCReference Include="..\..\relatorios\faturamento\untIValorRecebido.pas"/>
+        <DCCReference Include="..\..\iTintas\untIConfTinta.pas"/>
+        <DCCReference Include="..\untIFastPrint.pas"/>
+        <DCCReference Include="..\..\genericos\untIMetAno.pas"/>
+        <DCCReference Include="..\..\FuncoesCentralizadas\untInterfacedObjectNoCount.pas"/>
+        <DCCReference Include="..\..\relatorios_dll\geral\TypesRel.pas"/>
+        <DCCReference Include="..\..\cadastros\untIIteBar.pas"/>
+        <DCCReference Include="untIOrdenacao.pas"/>
+        <DCCReference Include="untEditorFast.pas"/>
+        <DCCReference Include="untPedeOrdenacao.pas">
+            <Form>frmPedeOrdenacao</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\..\faturamento\untIMadeireira.pas"/>
+        <DCCReference Include="untEditorFastImpressao.pas"/>
+        <DCCReference Include="..\..\faturamento\untIFinanceira.pas"/>
+        <DCCReference Include="untGridDocumentos.pas">
+            <Form>frmGridDocumentos</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="untEditorEtiquetasPrinc.pas">
+            <Form>frmEditorEtiquetasPrinc</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="untDocMIFF.pas"/>
+        <DCCReference Include="untDocPDOR.pas"/>
+        <DCCReference Include="untLeDocumento.pas"/>
+        <DCCReference Include="untDocumentos.pas"/>
+        <DCCReference Include="..\..\genericos\untIFiltrosRelatorio.pas"/>
+        <DCCReference Include="..\..\genericos\untGeraExcel.pas"/>
+        <DCCReference Include="..\..\genericos\untExcel.pas"/>
+        <DCCReference Include="..\..\genericos\untExcelBRO.pas"/>
+        <DCCReference Include="..\..\genericos\untExcelOfc.pas"/>
+        <DCCReference Include="..\..\configuracoes\untIConfiguracao.pas"/>
+        <DCCReference Include="untDocRomaneios.pas"/>
+        <DCCReference Include="untPedeMIFF.pas">
+            <Form>frmPedeMIFF</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\..\..\LibTintas\libTintasComum\Tipos\untGTinForTipos.pas"/>
+        <DCCReference Include="..\..\..\..\LibTintas\libTintasComum\Tipos\untTipoTinta.pas"/>
+        <DCCReference Include="..\..\genericos\untFuncoesSimples.pas"/>
+        <DCCReference Include="..\..\cadastros\untICadLote.pas"/>
+        <DCCReference Include="..\..\genericos\untConsultaComp.pas">
+            <Form>frmConsultaComp</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\..\genericos\untParCalculaPrecoCusto.pas"/>
+        <DCCReference Include="..\..\genericos\untDigEmail.pas">
+            <Form>frmDigEmail</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\..\genericos\untSenhaEmpresa.pas">
+            <Form>frmSenhaEmpresa</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\..\genericos\untConsultas.pas"/>
+        <DCCReference Include="..\..\cadastros\untLegendasItem.pas"/>
+        <DCCReference Include="..\..\financeiro\contasareceber\untConsultaFiltrosCtaReceber.pas">
+            <Form>frmConsultaFiltrosCtaReceber</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\..\genericos\untFuncoesConsulta.pas"/>
+        <DCCReference Include="..\..\genericos\untDigParcelas.pas">
+            <Form>frmDigParcelas</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\..\genericos\untMensagem.pas">
+            <Form>frmMensagem</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\..\genericos\untMenuFilas.pas">
+            <Form>frmMenuFilas</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\financeiro\etiquetas\untInfAdicEtiqItens.pas">
+            <Form>frmInfAdicEtiqItens</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\..\genericos\untCalculoPrecoMedio.pas"/>
+        <DCCReference Include="..\..\genericos\untMenuTipImp.pas">
+            <Form>frmMenuTipImp</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\..\configuracoes\untTConfiguracao.pas"/>
+        <DCCReference Include="..\..\relatorios\financeiro\etiquetas\untCnfEtiqueta.pas">
+            <Form>frmCnfEtiqueta</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\financeiro\contasareceber\untCtrSelClienteImp.pas">
+            <Form>frmCtrSelClienteImp</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\..\genericos\untDigQuantidade.pas">
+            <Form>frmDigQuantidade</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="untFuncoesEditorFast.pas"/>
+        <DCCReference Include="..\..\genericos\untFuncoesGenerica.pas"/>
+        <DCCReference Include="..\..\relatorios_dll\geral\untFuncoesRel.pas"/>
+        <DCCReference Include="..\..\faturamento\untMadeireira.pas"/>
+        <DCCReference Include="..\..\genericos\untIZClient.pas"/>
+        <DCCReference Include="..\..\faturamento\untFinanceira.pas"/>
+        <DCCReference Include="..\..\relatorios\financeiro\etiquetas\untEtiquetasItemCPF.pas">
+            <Form>frmEtiquetasItemCPF</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\..\genericos\untICamposUso.pas"/>
+        <DCCReference Include="..\..\genericos\untFuncMacro.pas"/>
+        <DCCReference Include="..\..\genericos\untIFuncMacro.pas"/>
+        <DCCReference Include="..\..\genericos\untConsulta.pas">
+            <Form>frmConsulta</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\..\cadastros\untCfgRel.pas"/>
+        <DCCReference Include="..\..\Cadastros\untCadConfRelatorios.pas">
+            <Form>frmCadConfRelatorios</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\..\genericos\untCfgAtb.pas">
+            <Form>frmCfgAtb</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\interfaces\untIFuncoes.pas"/>
+        <DCCReference Include="..\..\financeiro\gerais\untDtaEstorno.pas">
+            <Form>frmDtaEstorno</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\..\genericos\untGravaINNODBStatus.pas"/>
+        <DCCReference Include="..\..\movimentacaoitens\PedidoDeCompra\untIMesesGiro.pas"/>
+        <DCCReference Include="untDocGarantias.pas"/>
+        <DCCReference Include="..\..\cadastros\untSelFilImpressao.pas">
+            <Form>frmSelFilImpressao</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\..\genericos\untConsultasTinta.pas"/>
+        <DCCReference Include="..\..\genericos\untPesqItem.pas"/>
+        <DCCReference Include="..\..\libFuncoes\untFuncoesGen.pas"/>
+        <DCCReference Include="..\..\libFuncoes\untConsultasTablet.pas">
+            <Form>frmConsultaTablet</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\libFuncoes\untConsultaCxGridNova.pas">
+            <Form>frmConsultaCxGridNova</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\libFuncoes\untConfiguraConsulta.pas"/>
+        <DCCReference Include="..\..\libFuncoes\untPesquisa.pas"/>
+        <DCCReference Include="..\..\libFuncoes\untFuncoesCXGrid.pas"/>
+        <DCCReference Include="..\..\libFuncoes\untConfiguraConsultaEdicao.pas">
+            <Form>frmConfiguraConsultaEdicao</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\genericos\untITSQLTrace.pas"/>
+        <DCCReference Include="..\..\genericos\untLogSQL.pas"/>
+        <DCCReference Include="..\..\genericos\untTSQLTrace.pas"/>
+        <DCCReference Include="..\..\genericos\untSQLTraceOpcoes.pas">
+            <Form>frmSQLTraceOpcoes</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\configuracoes\untCfgRepositorio.pas">
+            <Form>frmCfgRepositorio</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\configuracoes\untCfgPontosImpressao.pas">
+            <Form>frmCfgPontosImpressao</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\..\configuracoes\untCfgModCartaCob.pas">
+            <Form>frmCfgModCartaCob</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\..\configuracoes\untCfgPais.pas">
+            <Form>frmCfgPais</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\..\configuracoes\untCfgModCartaDes.pas">
+            <Form>frmCfgModCartaDes</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\..\configuracoes\untCfgCamposClientesCRM.pas">
+            <Form>frmCfgCamposClientesCRM</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\configuracoes\untCfgCamposFornecedoresCRM.pas">
+            <Form>frmCfgCamposFornecedoresCRM</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\configuracoes\untCfgModCartaPro.pas">
+            <Form>frmCfgModCartaPro</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\configuracoes\untCfgModCartaAnu.pas">
+            <Form>frmCfgModCartaAnu</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\configuracoes\untCfgItensOrdenaPadrao.pas">
+            <Form>frmCfgItensOrdenaPadrao</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\genericos\untSeqCom.pas"/>
+        <DCCReference Include="..\..\Interfaces\untICfgSis.pas"/>
+        <DCCReference Include="..\..\genericos\untPaiSQLTrace.pas">
+            <Form>frmPaiSQLTrace</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\testabilidade\untTestabilidade.pas"/>
+        <DCCReference Include="..\..\libFuncoes\untIFuncoesCXGrid.pas"/>
+        <DCCReference Include="..\..\cadastros\untTCadAti.pas"/>
+        <DCCReference Include="..\..\configuracoes\untCfgCliAti.pas">
+            <Form>frmCfgCliAti</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\..\configuracoes\untTCliAti.pas"/>
+        <DCCReference Include="..\..\configuracoes\untTCliAtiRepository.pas"/>
+        <DCCReference Include="..\..\CamadaPersistencia\untFieldFiltros.pas"/>
+        <DCCReference Include="..\..\CamadaPersistencia\untObjectManager.pas"/>
+        <DCCReference Include="..\..\CamadaPersistencia\untUtilRepository.pas"/>
+        <DCCReference Include="untDocOrdemServico.pas"/>
+        <DCCReference Include="..\..\cadastros\untCadPro.pas"/>
+        <DCCReference Include="..\..\faturamento\untCadNegBussiness.pas"/>
+        <DCCReference Include="..\..\genericos\untHelperCitel.pas"/>
+        <DCCReference Include="..\..\genericos\untLogForm.pas">
+            <Form>untCfgCadProvedorEmail in &apos;..\..\email\view\untCfgCadProvedorEmail.pas&apos; {frmCfgCadProvedorEmail</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\email\view\untCfgCadProvedorEmail.pas">
+            <Form>frmCfgCadProvedorEmail</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\email\controller\untTCadPrvController.pas"/>
+        <DCCReference Include="..\..\email\model\untTCadPrvRepository.pas"/>
+        <DCCReference Include="..\..\email\model\untTCadPrv.pas"/>
+        <DCCReference Include="..\..\email\controller\untTEnvioEmail.pas"/>
+        <DCCReference Include="..\..\email\view\untEnvioEmail.pas">
+            <Form>frmEnvioEmail</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\email\view\untEditorHtml.pas">
+            <Form>frmEditorHtml</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\email\model\untTEmaEnv.pas">
+            <Form>,
+  untTEmaEnvRepository in &apos;..\..\email\model\untTEmaEnvRepository.pas&apos;,
+  untTCadOpeRepository in &apos;..\..\direitosdeacesso\untTCadOpeRepository.pas&apos;,
+  untTCadOpe in &apos;..\..\direitosdeacesso\untTCadOpe.pas&apos;,
+  untLeDocumentoReqMaterialConsumo in &apos;untLeDocumentoReqMaterialConsumo.pas&apos;,
+  untDespacho in &apos;untDespacho.pas&apos;,
+  untICadastros in &apos;..\..\cadastros\untICadastros.pas&apos;,
+  untModuloReplicacao in &apos;..\..\genericos\untModuloReplicacao.pas&apos; {frmModuloReplicacao</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\email\model\untTEmaEnvRepository.pas">
+            <Form>$SetPEFlags IMAGE_FILE_REMOVABLE_RUN_FROM_SWAP</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\direitosdeacesso\untTCadOpeRepository.pas"/>
+        <DCCReference Include="..\..\direitosdeacesso\untTCadOpe.pas">
+            <Form>$SetPEFlags IMAGE_FILE_REMOVABLE_RUN_FROM_SWAP</Form>
+        </DCCReference>
+        <DCCReference Include="untLeDocumentoReqMaterialConsumo.pas"/>
+        <DCCReference Include="untDespacho.pas"/>
+        <DCCReference Include="..\..\cadastros\untICadastros.pas"/>
+        <DCCReference Include="..\..\genericos\untModuloReplicacao.pas">
+            <Form>frmModuloReplicacao</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\faturamento\untFatComboVenda.pas"/>
+        <DCCReference Include="..\..\faturamento\untFatMostraComboProdAtivacao.pas">
+            <Form>frmFatMostraComboProdAtivacao</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\faturamento\untFatMostraComboProdVenda.pas">
+            <Form>frmFatMostraComboProdVenda</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\faturamento\untObsBanner.pas">
+            <Form>frmObsBanner</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\cadastros\untGerMat.pas"/>
+        <DCCReference Include="..\..\email\view\untCadContatosEmail.pas">
+            <Form>frmCadContatosEmail</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\email\view\untConsultaContatosEmail.pas">
+            <Form>frmConsultaContatosEmail</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\libFuncoes\untModuloReplicacaoLibFuncoes.pas">
+            <Form>frmModuloReplicacaoLibFuncoes</Form>
+            <FormType>dfm</FormType>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\configuracoes\untCfgEmailAutenticacao.pas">
+            <Form>frmCfgEmailAutenticacao</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\configuracoes\untCfgEmailAutSaida.pas">
+            <Form>frmCfgEmailAutSaida</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\configuracoes\untCfgModeloEmail.pas">
+            <Form>frmCfgModeloEmail</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\genericos\untDisparaEmailAut.pas"/>
+        <DCCReference Include="..\..\genericos\untThreadEnviaEmail.pas"/>
+        <DCCReference Include="untDocIT.pas"/>
+        <DCCReference Include="..\..\genericos\untMensagemTabela.pas">
+            <Form>frmMensagemTabela</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="..\..\cadastros\untFormulaCustoProduto.pas"/>
+        <DCCReference Include="..\..\cadastros\untFormulaCustoProdutoEdicao.pas">
+            <Form>frmFormulaCustoProdutoEdicao</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\configuracoes\untCfgFormulasPrecoCusto.pas">
+            <Form>frmFormulaCalcPCusto</Form>
+        </DCCReference>
+        <DCCReference Include="untDocPA.pas"/>
+        <DCCReference Include="untDocOrdemProducao.pas"/>
+        <DCCReference Include="..\..\genericos\untImagemBase64.pas"/>
+        <DCCReference Include="..\..\genericos\untFuncoesImagem.pas"/>
+        <DCCReference Include="untImpEtiquetaCaixas.pas">
+            <Form>frmImpEtiquetaCaixas</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\sms\untCfgModeloSMS.pas">
+            <Form>frmCfgModeloSMS</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\sms\untCfgSMS.pas">
+            <Form>frmCfgSMS</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\configuracoes\untCfgFpfAti.pas">
+            <Form>frmCfgFpfAti</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\configuracoes\untCfgOcoFid.pas">
+            <Form>frmCfgOcoFid</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\faturamento\untTSituacaoPedidoVenda.pas"/>
+        <DCCReference Include="..\..\genericos\untModuloLegenda.pas">
+            <Form>frmModuloLegenda</Form>
+            <DesignClass>TDataModule</DesignClass>
+        </DCCReference>
+        <DCCReference Include="..\..\genericos\untLegenda.pas">
+            <Form>frmLegenda</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\genericos\untDisparaEmailAutEnt.pas"/>
+        <DCCReference Include="..\..\configuracoes\untCfgEmailAutEntrada.pas">
+            <Form>frmCfgEmailAutEntrada</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\..\Imports\CAPICOM_TLB.pas"/>
+        <DCCReference Include="..\..\movimentacaoitens\PedidoDeCompra\untSaldoPedidoCompra.pas"/>
+        <DCCReference Include="..\..\genericos\untDigDataHora.pas">
+            <Form>frmDigDataHora</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\relatorios\crm\untQckOcorrenciasCRM.pas">
+            <Form>frmQckOcorrenciasCRM</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\CRM\untFuncoesCRM.pas"/>
+        <DCCReference Include="..\..\CRM\untDivergenciasDevAD.pas"/>
+        <DCCReference Include="..\..\CRM\untAtualizaOcorrenciasCRM.pas"/>
+        <DCCReference Include="..\..\cadastros\untMsgInterna.pas"/>
+        <DCCReference Include="..\..\CRM\untTypesCRM.pas"/>
+        <DCCReference Include="untDocROTin.pas"/>
+        <DCCReference Include="..\..\crm\untIFuncoesCRM.pas"/>
+        <DCCReference Include="..\..\faturamento\untValidaSituacaoFinanceiraPedido.pas"/>
+        <DCCReference Include="..\..\faturamento\untIFatReservaSaldo.pas"/>
+        <DCCReference Include="..\..\faturamento\untTFatReservaSaldo.pas"/>
+        <DCCReference Include="..\..\genericos\untUtilMonitor.pas"/>
+        <DCCReference Include="..\..\faturamento\untIFatEntregaFutura.pas"/>
+        <DCCReference Include="..\..\faturamento\untTFatEntregaFutura.pas"/>
+        <DCCReference Include="..\..\configuracoes\untConfiguraEtiquetasFuncoes.pas"/>
+        <DCCReference Include="..\..\configuracoes\untConfiguraEtiquetas.pas">
+            <Form>frmConfiguraEtiquetas</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\genericos\untObservacao.pas">
+            <Form>frmObservacao</Form>
+        </DCCReference>
+        <DCCReference Include="untDocCPDP.pas"/>
+        <DCCReference Include="..\..\genericos\untSeqTmp.pas"/>
+        <DCCReference Include="..\..\..\Packages\Shared\Functions\source\Shared.Functions.Funcoes.Faturamento.pas"/>
+        <DCCReference Include="..\..\..\Packages\Shared\Functions\source\Shared.Functions.FloatUtils.pas"/>
+        <DCCReference Include="..\..\..\Packages\Shared\Functions\source\Shared.Functions.Constantes.pas"/>
+        <DCCReference Include="..\..\genericos\untCFGBAN_Class.pas"/>
+        <DCCReference Include="..\..\genericos\untCFGBAN_Dao.pas"/>
+        <DCCReference Include="..\..\genericos\untGravandoObs.pas"/>
+        <DCCReference Include="..\..\genericos\untSubjectClass.pas"/>
+        <DCCReference Include="..\..\genericos\untSubjectIntf.pas"/>
+        <DCCReference Include="..\..\email\view\untListaEmail.pas">
+            <Form>frmListaEmail</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\genericos\untFilasImpressaoNFCe.pas">
+            <Form>frmFilasImpressaoNFCe</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\editorRelatorios\untMsgErroSQL.pas">
+            <Form>frmMsgErroSQL</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\libFuncoes\untConfiguraSQLConsulta.pas"/>
+        <DCCReference Include="..\..\libFuncoes\untConfiguraSQLConsultaEdicao.pas">
+            <Form>frmConfiguraSQLConsultaEdicao</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\libFuncoes\untPedeDadosCampoSQL.pas">
+            <Form>frmPedeDadosCampoSQL</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\libFuncoes\untLoadConsultaSQL.pas"/>
+        <DCCReference Include="..\..\genericos\untZClient.pas"/>
+        <DCCReference Include="..\..\genericos\untFrameDirectoryEditFocus.pas">
+            <Form>fraDirectoryEditFocus</Form>
+            <DesignClass>TFrame</DesignClass>
+        </DCCReference>
+        <DCCReference Include="untDocOrdProTintasAutomotiva.pas"/>
+        <DCCReference Include="untDocOrdProTintasImobiliaria.pas"/>
+        <DCCReference Include="untRetDadosTinta.pas"/>
+        <DCCReference Include="..\..\genericos\Shared.Functions.Conexao.UniDac.pas"/>
+        <DCCReference Include="..\..\..\Packages\Shared\Functions\source\Shared.Functions.DataSet.pas"/>
+        <DCCReference Include="..\..\genericos\untFuncoesDicionarios.pas"/>
+        <DCCReference Include="..\..\genericos\untDicionarioResultadoQuerySimples.pas"/>
+        <DCCReference Include="..\..\Core\Core.Funcoes.pas"/>
+        <DCCReference Include="..\..\Core\Faturamento.Connections.Functions.pas"/>
+        <DCCReference Include="..\..\Core\Conexao\Faturamento.Interfaces.Conexao.pas"/>
+        <DCCReference Include="..\..\..\Packages\Shared\Functions\source\Shared.Functions.Interfaces.pas"/>
+        <DCCReference Include="..\..\..\Packages\Shared\Functions\source\Shared.Functions.Tipos.pas"/>
+        <DCCReference Include="..\..\..\Packages\Shared\Functions\source\Shared.Functions.Types.pas"/>
+        <DCCReference Include="..\..\..\Packages\Shared\Functions\source\Shared.Functions.Utils.pas">
+            <Form>$SetPEFlags IMAGE_FILE_REMOVABLE_RUN_FROM_SWAP</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\configuracoes\untCfgClientesEmail.pas">
+            <Form>frmCfgClientesEmail</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\genericos\untConfiguracoes.pas"/>
+        <DCCReference Include="..\..\..\Packages\Shared\Functions\source\Shared.Functions.Configuracoes.pas"/>
+        <DCCReference Include="..\..\genericos\untFloatUtils.pas"/>
+        <DCCReference Include="..\..\genericos\untConstantesUtils.pas"/>
+        <DCCReference Include="..\..\libNfe\untConstantesNFe.pas"/>
+        <DCCReference Include="..\..\financeiro\gerais\api.yapay\api\Yapay.Api.Resources.pas"/>
+        <DCCReference Include="..\..\cadastros\untCategoriaCadLead.pas"/>
+        <DCCReference Include="..\..\faturamento\Promocao\Promocao.Regra.Preco.Sugestao.pas"/>
+        <DCCReference Include="..\..\Controller\Bpl\Faturamento\Precos\PrecoCusto\Controller.Faturamento.Precos.PrecoCusto.pas"/>
+        <DCCReference Include="..\..\Controller\Bpl\Faturamento\Precos\Interfaces\Controller.Faturamento.Interfaces.Precos.PrecoCusto.pas"/>
+        <DCCReference Include="..\..\..\Packages\Faturamento\Precos\interfaces\source\Faturamento.Precos.Interfaces.PrecoCusto.pas"/>
+        <DCCReference Include="..\..\faturamento\untFatCalcularPrecosService.pas"/>
+        <DCCReference Include="..\..\..\Packages\Faturamento\Precos\interfaces\source\Faturamento.Precos.Interfaces.Servicos.Disponiveis.pas"/>
+        <DCCReference Include="..\..\..\Packages\Faturamento\Precos\interfaces\source\Faturamento.Precos.Interfaces.Servicos.Disponiveis.PrecoCusto.pas"/>
+        <DCCReference Include="..\..\..\Packages\Faturamento\Precos\tipos\source\Faturamento.Precos.Tipos.PrecoCusto.pas"/>
+        <DCCReference Include="..\..\genericos\untFuncoesGenCompartilhada.pas"/>
+        <DCCReference Include="..\..\..\Packages\Shared\Functions\source\Shared.Functions.SQL.pas"/>
+        <DCCReference Include="..\..\..\Packages\Shared\Functions\source\Shared.Functions.Funcoes.Faturamento.Precos.pas"/>
+        <DCCReference Include="..\..\Controller\Bpl\Faturamento\Precos\Generic\Controller.Faturamento.Precos.Generic.pas"/>
+        <DCCReference Include="..\..\Controller\Bpl\Faturamento\Precos\Interfaces\Controller.Faturamento.Interfaces.Precos.Generic.pas"/>
+        <DCCReference Include="..\..\..\Packages\Faturamento\Margem\interfaces\source\Faturamento.Margem.Interfaces.MargemBruta.pas"/>
+        <DCCReference Include="..\..\..\Packages\Faturamento\Margem\interfaces\source\Faturamento.Margem.Interfaces.Servicos.Disponiveis.pas"/>
+        <DCCReference Include="..\..\..\Packages\Faturamento\Margem\interfaces\source\Faturamento.Margem.Interfaces.Servicos.Disponiveis.MargemBruta.pas"/>
+        <DCCReference Include="..\..\..\Packages\Faturamento\Margem\tipos\source\Faturamento.Margem.Tipos.MargemBruta.pas"/>
+        <DCCReference Include="..\..\faturamento\untFatCalcularMargemService.pas"/>
+        <DCCReference Include="..\..\Controller\Bpl\Faturamento\Margem\Interfaces\Controller.Faturamento.Interfaces.Margem.Generic.pas"/>
+        <DCCReference Include="..\..\Controller\Bpl\Faturamento\Margem\MargemBruta\Controller.Faturamento.Margem.MargemBruta.pas"/>
+        <DCCReference Include="..\..\Controller\Bpl\Faturamento\Margem\Interfaces\Controller.Faturamento.Interfaces.Margem.MargemBruta.pas"/>
+        <DCCReference Include="..\..\Controller\Bpl\Faturamento\Margem\Generic\Controller.Faturamento.Margem.Generic.pas"/>
+        <DCCReference Include="..\..\Controller\Bpl\Faturamento\Margem\Interfaces\Controller.Faturamento.Interfaces.Margem.MargemVenda.pas"/>
+        <DCCReference Include="..\..\..\Packages\Faturamento\Margem\interfaces\source\Faturamento.Margem.Interfaces.MargemVenda.pas"/>
+        <DCCReference Include="..\..\..\Packages\Faturamento\Margem\interfaces\source\Faturamento.Margem.Interfaces.Servicos.Disponiveis.MargemVenda.pas"/>
+        <DCCReference Include="..\..\Controller\Bpl\Faturamento\Margem\MargemVenda\Controller.Faturamento.Margem.MargemVenda.pas"/>
+        <DCCReference Include="..\..\genericos\untFuncoesPrecoCusto.pas"/>
+        <DCCReference Include="..\..\faturamento\untIcmsSTParteVenda.pas"/>
+        <DCCReference Include="..\..\faturamento\untFatCalcularServicePath.pas"/>
+        <DCCReference Include="..\..\movimentacaoitens\OrdemProducaoIndustrial\OrdemProducaoIndustrial.Funcoes.pas"/>
+        <DCCReference Include="..\..\cadastros\Produto.TProdutos.pas"/>
+        <DCCReference Include="..\..\cadastros\Produto.TSQLProdutos.pas"/>
+        <DCCReference Include="..\..\faturamento\untPesqCliVend.pas">
+            <Form>frmPesqCliVend</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\editorRelatorios\untAjudaVariaveis.pas">
+            <Form>frmAjudaVariaveis</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <BuildConfiguration Include="Debug">
+            <Key>Cfg_2</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Base">
+            <Key>Base</Key>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Release">
+            <Key>Cfg_1</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+    </ItemGroup>
+    <Import Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj" Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')"/>
+    <Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
+    <Import Project="$(MSBuildProjectName).deployproj" Condition="Exists('$(MSBuildProjectName).deployproj')"/>
+</Project>

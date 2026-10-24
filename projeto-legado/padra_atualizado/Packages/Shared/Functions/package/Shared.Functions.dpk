@@ -1,0 +1,52 @@
+package Shared.Functions;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$IMPLICITBUILD ON}
+{$SetPEFlags $0400} // -> If Image is on removable media, copy and run from the swap file.
+{$SetPEFlags $0800} // -> If Image is on Net, copy and run from the swap file.
+
+requires
+  rtl;
+
+contains
+  Shared.Functions.Configuracoes in '..\source\Shared.Functions.Configuracoes.pas',
+  Shared.Functions.Constantes in '..\source\Shared.Functions.Constantes.pas',
+  Shared.Functions.Faturamento.Impostos.Regras in '..\source\Shared.Functions.Faturamento.Impostos.Regras.pas',
+  Shared.Functions.Faturamento.Impostos.Regras.ZerarImpostos in '..\source\Shared.Functions.Faturamento.Impostos.Regras.ZerarImpostos.pas',
+  Shared.Functions.Types in '..\source\Shared.Functions.Types.pas',
+  Shared.Functions.Funcoes.Faturamento in '..\source\Shared.Functions.Funcoes.Faturamento.pas',
+  Shared.Functions.DataSet in '..\source\Shared.Functions.DataSet.pas',
+  Shared.Functions.Core in '..\source\Shared.Functions.Core.pas',
+  Shared.Functions.Utils in '..\source\Shared.Functions.Utils.pas',
+  Shared.Functions.Interfaces in '..\source\Shared.Functions.Interfaces.pas',
+  Shared.Functions.Tipos in '..\source\Shared.Functions.Tipos.pas',
+  Shared.Functions.SQL in '..\source\Shared.Functions.SQL.pas',
+  Shared.Functions.Funcoes.Faturamento.Precos in '..\source\Shared.Functions.Funcoes.Faturamento.Precos.pas',
+  Shared.Functions.FormulaPrecoCusto in '..\source\Shared.Functions.FormulaPrecoCusto.pas',
+  Shared.Functions.Faturamento.TintaDeMaquina in '..\source\Shared.Functions.Faturamento.TintaDeMaquina.pas';
+
+end.

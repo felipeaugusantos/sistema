@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TfrxReport Version="4.3.61" DotMatrixReport="False" IniFile="\Software\Fast Reports" PreviewOptions.Buttons="4095" PreviewOptions.Zoom="1" PrintOptions.Printer="Padrão" PrintOptions.PrintOnSheet="0" ReportOptions.CreateDate="39533,4115890625" ReportOptions.Description.Text="" ReportOptions.LastChange="40326,6847945602" ScriptLanguage="PascalScript" ScriptText.Text="begin&#13;&#10;&#13;&#10;end." PropData="044C65667403180103546F7003B80008446174617365747301010C3000000020446174615365743D226672784442496D704574692220446174615365744E616D653D226672784442496D70457469220000095661726961626C65730100055374796C650100">
+  <TfrxDataPage Name="Data" Height="1000" Left="0" Top="0" Width="1000"/>
+  <TfrxReportPage Name="Gondola" PaperWidth="100" PaperHeight="40" PaperSize="256" LeftMargin="0" RightMargin="0" TopMargin="0" BottomMargin="0" ColumnWidth="0" ColumnPositions.Text="" HGuides.Text="" VGuides.Text="">
+    <TfrxMasterData Name="MasterData1" Height="132,28345236" Left="0" Top="18,89765" Width="377,953" Columns="2" ColumnWidth="188,976377952756" ColumnGap="0" DataSet="frxDBImpEti" DataSetName="frxDBImpEti" RowCount="0">
+      <TfrxMemoView Name="Memo1" Left="12,03543307" Top="13,27953" Width="173,85828236" Height="50,75201" DataSetName="frxDBImpEti" DisplayFormat.DecimalSeparator="," Font.Charset="0" Font.Color="0" Font.Height="-15" Font.Name="Courier New" Font.Style="1" ParentFont="False" WordBreak="True" Text="[frxDBImpEti.&#34;DESITE&#34;]"/>
+      <TfrxBarCodeView Name="BarCode1" Left="11,0906" Top="84,01577" Width="129" Height="43,39765" BarType="bcCode39" DataField="CODBAR" DataSetName="frxDBImpEti" Rotation="0" Text="12345678" WideBarRatio="2" Zoom="1"/>
+      <TfrxMemoView Name="Memo4" Left="12,1141" Top="66,83859" Width="173,85838" Height="11,33859" DataSetName="frxDBImpEti" DisplayFormat.DecimalSeparator="," Font.Charset="1" Font.Color="-16777208" Font.Height="-9" Font.Name="Courier New" Font.Style="0" ParentFont="False" Text="BITE AUTO PEÃ‡AS: [frxDBImpEti.&#34;CODFAB&#34;]"/>
+      <TfrxMemoView Name="Memo2" Left="143,62214" Top="100,26778" Width="37,79528047" Height="11,33859" DataSetName="frxDBImpEti" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="dd/mm/yy" DisplayFormat.Kind="fkDateTime" Font.Charset="1" Font.Color="-16777208" Font.Height="-7" Font.Name="Courier New" Font.Style="0" ParentFont="False" Text="[Date]"/>
+    </TfrxMasterData>
+  </TfrxReportPage>
+</TfrxReport>

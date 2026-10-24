@@ -1,0 +1,383 @@
+SET sql_log_bin = OFF;
+
+#-------------------------------------------------------------------------------------------------------------------------------------
+# TABELA DE CONSULTA DE PRECO TINTA DE MAQUINA (REQUISICAO)
+#-------------------------------------------------------------------------------------------------------------------------------------
+
+CREATE TABLE TINPRE_REQ (
+  TPR_REQ_ID BIGINT(20) NOT NULL AUTO_INCREMENT,
+  TPR_CODEMP CHAR(3) DEFAULT NULL,
+  TPR_IDEPRO CHAR(3) DEFAULT NULL,
+  TPR_MD5TIN VARCHAR(255) DEFAULT NULL,
+  TPR_CODCLI VARCHAR(8) DEFAULT NULL,
+  TPR_DTHREQ DATETIME DEFAULT NULL,
+  TPR_DTHINI DATETIME DEFAULT NULL,
+  TPR_DTHRES DATETIME DEFAULT NULL,
+  TPR_CACHE_ CHAR(1) DEFAULT NULL,
+  TPR_MSGERR VARCHAR(255) DEFAULT NULL,
+  TPR_EMBPRO VARCHAR(30) DEFAULT NULL,
+  TPR_MODVEN CHAR(1) DEFAULT NULL,  
+  PRIMARY KEY (TPR_REQ_ID),
+  KEY IDX_TINPRE_REQ_01 (TPR_CODEMP),
+  KEY IDX_TINPRE_REQ_02 (TPR_IDEPRO),
+  KEY IDX_TINPRE_REQ_03 (TPR_MD5TIN),
+  KEY IDX_TINPRE_REQ_04 (TPR_CODCLI),
+  KEY IDX_TINPRE_REQ_05 (TPR_DTHREQ),
+  KEY IDX_TINPRE_REQ_06 (TPR_DTHRES),
+  CONSTRAINT FK_TINPRE_REQ_01 FOREIGN KEY (TPR_CODEMP) REFERENCES CADEMP (EMP_CODEMP) ON DELETE NO ACTION ON UPDATE CASCADE,
+  CONSTRAINT FK_TINPRE_REQ_02 FOREIGN KEY (TPR_CODCLI) REFERENCES CADCLI (CLI_CODCLI) ON DELETE NO ACTION ON UPDATE CASCADE
+) ENGINE=INNODB DEFAULT CHARSET=latin1;
+
+#-------------------------------------------------------------------------------------------------------------------------------------
+# CAMPOS NOVOS PARA DILUIDAS
+#-------------------------------------------------------------------------------------------------------------------------------------
+
+ALTER TABLE TINPRE_REQ ADD COLUMN TPR_EMBPRO VARCHAR(30) DEFAULT NULL;
+ALTER TABLE TINPRE_REQ ADD COLUMN TPR_MODVEN CHAR(1) DEFAULT NULL;
+
+#-------------------------------------------------------------------------------------------------------------------------------------
+# TABELA DE CONSULTA DE PRECO TINTA DE MAQUINA (RESPOSTA)
+#-------------------------------------------------------------------------------------------------------------------------------------
+
+CREATE TABLE TINPRE_RES (
+  TPR_RES_ID BIGINT(20) NOT NULL AUTO_INCREMENT,
+  TPR_REQ_ID BIGINT(20) DEFAULT NULL,
+  TPR_CODEMP CHAR(3) DEFAULT NULL,
+  TPR_IDEPRO CHAR(3) DEFAULT NULL,
+  TPR_MD5TIN VARCHAR(255) DEFAULT NULL,
+  TPR_EMBPRO VARCHAR(30) DEFAULT NULL,
+  TPR_MODVEN CHAR(1) DEFAULT NULL,
+  TPR_CODCLI VARCHAR(8) DEFAULT NULL,
+  TPR_CODITE VARCHAR(5) DEFAULT NULL,
+  TPR_DESCRI VARCHAR(101) DEFAULT NULL,
+  TPR_REFERE VARCHAR(30) DEFAULT NULL,
+  TPR_UNIDAD CHAR(2) DEFAULT NULL,
+  TPR_TABPRE CHAR(1) DEFAULT NULL,
+  TPR_PREVEN DECIMAL(12,4) DEFAULT NULL,
+  TPR_SALDIS DECIMAL(12,4) DEFAULT NULL,
+  TPR_PREVE1 DECIMAL(12,4) DEFAULT NULL,
+  TPR_PREVE2 DECIMAL(12,4) DEFAULT NULL,
+  TPR_PREVE3 DECIMAL(12,4) DEFAULT NULL,
+  TPR_PREVE4 DECIMAL(12,4) DEFAULT NULL,
+  TPR_PREVE5 DECIMAL(12,4) DEFAULT NULL,
+  TPR_PREVE6 DECIMAL(12,4) DEFAULT NULL,
+  TPR_PREVE7 DECIMAL(12,4) DEFAULT NULL,
+  TPR_PRECUS DECIMAL(12,4) DEFAULT NULL,
+  TPR_PRECU2 DECIMAL(12,4) DEFAULT NULL,
+  TPR_OUTVAL DECIMAL(12,4) DEFAULT NULL,
+  TPR_ICMSAI DECIMAL(12,4) DEFAULT NULL,
+  TPR_IMPFED DECIMAL(12,4) DEFAULT NULL,
+  TPR_DESOPE DECIMAL(12,4) DEFAULT NULL,
+  TPR_PREMED DECIMAL(12,4) DEFAULT NULL,
+  TPR_IMPULT DECIMAL(12,4) DEFAULT NULL,
+  TPR_PREULT DECIMAL(12,4) DEFAULT NULL,
+  TPR_ITETIN VARCHAR(200) DEFAULT NULL,
+  TPR_PRCTIN DECIMAL(12,4) DEFAULT NULL,
+  TPR_PRVTIN DECIMAL(12,4) DEFAULT NULL,
+  TPR_DESCOR VARCHAR(15) DEFAULT NULL,
+  TPR_TIPEMB CHAR(2) DEFAULT NULL,
+  TPR_QTDEMB DECIMAL(12,4) DEFAULT NULL,
+  TPR_PREEMB DECIMAL(12,4) DEFAULT NULL,
+  TPR_TIPPRE CHAR(1) DEFAULT NULL,
+  TPR_FATTIN DECIMAL(12,4) DEFAULT NULL,
+  TPR_ITEEMB VARCHAR(5) DEFAULT NULL,
+  TPR_MONTAD VARCHAR(15) DEFAULT NULL,
+  TPR_A_N_O_ VARCHAR(10) DEFAULT NULL,
+  TPR_LAZQUA INT(11) DEFAULT NULL,
+  TPR_VOLPRO DECIMAL(12,4) DEFAULT NULL,
+  TPR_LINLIN VARCHAR(20) DEFAULT NULL,
+  TPR_CATALI VARCHAR(20) DEFAULT NULL,
+  TPR_CODDIL VARCHAR(20) DEFAULT NULL,
+  TPR_PORDIL DECIMAL(8,4) DEFAULT NULL,
+  TPR_DILCON CHAR(1) DEFAULT NULL,
+  TPR_PORCAT DECIMAL(8,4) DEFAULT NULL,
+  TPR_OBSCOL VARCHAR(100) DEFAULT NULL,
+  TPR_TIPFOR INT(1) DEFAULT NULL,
+  TPR_TINAUT INT(11) DEFAULT NULL,
+  TPR_FORM01 VARCHAR(20) DEFAULT NULL,
+  TPR_FORM02 VARCHAR(20) DEFAULT NULL,
+  TPR_FORM03 VARCHAR(20) DEFAULT NULL,
+  TPR_FORM04 VARCHAR(20) DEFAULT NULL,
+  TPR_FORM05 VARCHAR(20) DEFAULT NULL,
+  TPR_FORM06 VARCHAR(20) DEFAULT NULL,
+  TPR_FORM07 VARCHAR(20) DEFAULT NULL,
+  TPR_FORM08 VARCHAR(20) DEFAULT NULL,
+  TPR_FORM09 VARCHAR(20) DEFAULT NULL,
+  TPR_FORM10 VARCHAR(20) DEFAULT NULL,
+  TPR_FORM11 VARCHAR(20) DEFAULT NULL,
+  TPR_FORM12 VARCHAR(20) DEFAULT NULL,
+  TPR_FORM13 VARCHAR(20) DEFAULT NULL,
+  TPR_FORM14 VARCHAR(20) DEFAULT NULL,
+  TPR_FORM15 VARCHAR(20) DEFAULT NULL,
+  TPR_FORM16 VARCHAR(20) DEFAULT NULL,
+  TPR_FORM17 VARCHAR(20) DEFAULT NULL,
+  TPR_FORM18 VARCHAR(20) DEFAULT NULL,
+  TPR_FORM19 VARCHAR(20) DEFAULT NULL,
+  TPR_FORM20 VARCHAR(20) DEFAULT NULL,
+  TPR_ITEC01 VARCHAR(5) DEFAULT NULL,
+  TPR_ITEC02 VARCHAR(5) DEFAULT NULL,
+  TPR_ITEC03 VARCHAR(5) DEFAULT NULL,
+  TPR_ITEC04 VARCHAR(5) DEFAULT NULL,
+  TPR_ITEC05 VARCHAR(5) DEFAULT NULL,
+  TPR_ITEC06 VARCHAR(5) DEFAULT NULL,
+  TPR_ITEC07 VARCHAR(5) DEFAULT NULL,
+  TPR_ITEC08 VARCHAR(5) DEFAULT NULL,
+  TPR_ITEC09 VARCHAR(5) DEFAULT NULL,
+  TPR_ITEC10 VARCHAR(5) DEFAULT NULL,
+  TPR_ITEC11 VARCHAR(5) DEFAULT NULL,
+  TPR_ITEC12 VARCHAR(5) DEFAULT NULL,
+  TPR_ITEC13 VARCHAR(5) DEFAULT NULL,
+  TPR_ITEC14 VARCHAR(5) DEFAULT NULL,
+  TPR_ITEC15 VARCHAR(5) DEFAULT NULL,
+  TPR_ITEC16 VARCHAR(5) DEFAULT NULL,
+  TPR_ITEC17 VARCHAR(5) DEFAULT NULL,
+  TPR_ITEC18 VARCHAR(5) DEFAULT NULL,
+  TPR_ITEC19 VARCHAR(5) DEFAULT NULL,
+  TPR_ITEC20 VARCHAR(5) DEFAULT NULL,
+  TPR_QTDB01 DECIMAL(12,4) DEFAULT NULL,
+  TPR_QTDB02 DECIMAL(12,4) DEFAULT NULL,
+  TPR_QTDB03 DECIMAL(12,4) DEFAULT NULL,
+  TPR_QTDB04 DECIMAL(12,4) DEFAULT NULL,
+  TPR_QTDB05 DECIMAL(12,4) DEFAULT NULL,
+  TPR_QTDB06 DECIMAL(12,4) DEFAULT NULL,
+  TPR_QTDB07 DECIMAL(12,4) DEFAULT NULL,
+  TPR_QTDB08 DECIMAL(12,4) DEFAULT NULL,
+  TPR_QTDB09 DECIMAL(12,4) DEFAULT NULL,
+  TPR_QTDB10 DECIMAL(12,4) DEFAULT NULL,
+  TPR_QTDB11 DECIMAL(12,4) DEFAULT NULL,
+  TPR_QTDB12 DECIMAL(12,4) DEFAULT NULL,
+  TPR_QTDB13 DECIMAL(12,4) DEFAULT NULL,
+  TPR_QTDB14 DECIMAL(12,4) DEFAULT NULL,
+  TPR_QTDB15 DECIMAL(12,4) DEFAULT NULL,
+  TPR_QTDB16 DECIMAL(12,4) DEFAULT NULL,
+  TPR_QTDB17 DECIMAL(12,4) DEFAULT NULL,
+  TPR_QTDB18 DECIMAL(12,4) DEFAULT NULL,
+  TPR_QTDB19 DECIMAL(12,4) DEFAULT NULL,
+  TPR_QTDB20 DECIMAL(12,4) DEFAULT NULL,
+  TPR_MODDIL CHAR(3) DEFAULT NULL,
+  TPR_TEXBAS VARCHAR(10) DEFAULT NULL,
+  TPR_TIPCOR VARCHAR(20) DEFAULT NULL,
+  TPR_ITECOB VARCHAR(5) DEFAULT NULL,
+  TPR_UNIVER VARCHAR(20) DEFAULT NULL,
+  TPR_FATACE DECIMAL(12,2) DEFAULT NULL,
+  TPR_CATAL_ VARCHAR(255) DEFAULT NULL,
+  PRIMARY KEY (TPR_RES_ID),
+  KEY IDX_TINPRE_RES_01 (TPR_REQ_ID),
+  KEY IDX_TINPRE_RES_02 (TPR_CODEMP),
+  KEY IDX_TINPRE_RES_03 (TPR_IDEPRO),
+  KEY IDX_TINPRE_RES_04 (TPR_MD5TIN),
+  KEY IDX_TINPRE_RES_05 (TPR_CODCLI),
+  KEY FK_TINPRE_RES_04 (TPR_CODITE),
+  CONSTRAINT FK_TINPRE_RES_01 FOREIGN KEY (TPR_REQ_ID) REFERENCES TINPRE_REQ (TPR_REQ_ID) ON DELETE CASCADE ON UPDATE CASCADE,
+  CONSTRAINT FK_TINPRE_RES_02 FOREIGN KEY (TPR_CODEMP) REFERENCES CADEMP (EMP_CODEMP) ON DELETE NO ACTION ON UPDATE CASCADE,
+  CONSTRAINT FK_TINPRE_RES_03 FOREIGN KEY (TPR_CODCLI) REFERENCES CADCLI (CLI_CODCLI) ON DELETE NO ACTION ON UPDATE CASCADE,
+  CONSTRAINT FK_TINPRE_RES_04 FOREIGN KEY (TPR_CODITE) REFERENCES CADITE (ITE_CODITE) ON DELETE NO ACTION ON UPDATE CASCADE
+) ENGINE=INNODB DEFAULT CHARSET=latin1;
+
+#-------------------------------------------------------------------------------------------------------------------------------------
+# COLUNAS NOVAS PARA AUTOMOTIVAS
+#-------------------------------------------------------------------------------------------------------------------------------------
+
+ALTER TABLE TINPRE_RES ADD COLUMN TPR_EMBPRO VARCHAR(30) AFTER TPR_MD5TIN;
+ALTER TABLE TINPRE_RES ADD COLUMN TPR_MODVEN VARCHAR(30) AFTER TPR_EMBPRO;
+
+#-------------------------------------------------------------------------------------------------------------------------------------
+# ADICIONA TABELAS PARA NAO REPLICAR (TABNRE)
+#-------------------------------------------------------------------------------------------------------------------------------------
+
+REPLACE INTO TABNRE (NOMTAB) VALUES ('TINPRE_REQ');
+REPLACE INTO TABNRE (NOMTAB) VALUES ('TINPRE_RES');
+
+#-------------------------------------------------------------------------------------------------------------------------------------
+# FUNCAO PARA CONSULTA DE PRECO DE TINTA IMOBILIARIA (REQUISICAO)
+#-------------------------------------------------------------------------------------------------------------------------------------
+DELIMITER $$
+
+DROP FUNCTION IF EXISTS fConsultarPrecoTintaRequest$$
+
+CREATE DEFINER=dbacitel@localhost FUNCTION fConsultarPrecoTintaRequest(strCodEmp CHAR(3), strIdePro CHAR(3), strMD5Key VARCHAR(255), strCodCli VARCHAR(8)) RETURNS BIGINT(20)
+    DETERMINISTIC
+BEGIN
+   INSERT INTO TINPRE_REQ (TPR_CODEMP, TPR_IDEPRO, TPR_MD5TIN, TPR_CODCLI, TPR_DTHREQ) VALUES (strCodEmp, strIdePro, strMD5Key, strCodCli, NOW());   
+   RETURN (SELECT LAST_INSERT_ID());     
+END$$
+
+DELIMITER ;
+
+#-------------------------------------------------------------------------------------------------------------------------------------
+# FUNCAO PARA CONSULTA DE PRECO DE TINTA AUTOMOTIVA (REQUISICAO)
+#-------------------------------------------------------------------------------------------------------------------------------------
+
+DELIMITER $$
+
+DROP FUNCTION IF EXISTS fConsultarPrecoTintaRequestAutomotiva$$
+
+CREATE DEFINER=dbacitel@localhost FUNCTION fConsultarPrecoTintaRequestAutomotiva(strCodEmp CHAR(3), strIdePro CHAR(3), strMD5Key VARCHAR(255), 
+	strEmbPro VARCHAR(30), strModVen CHAR(1), strCodCli VARCHAR(8)) RETURNS bigint(20)
+    DETERMINISTIC
+BEGIN
+   INSERT INTO TINPRE_REQ (TPR_CODEMP, TPR_IDEPRO, TPR_MD5TIN, TPR_CODCLI, TPR_EMBPRO, TPR_MODVEN, TPR_DTHREQ) VALUES (strCodEmp, strIdePro, strMD5Key, strCodCli, strEmbPro, strModVen, NOW());   
+   RETURN (SELECT LAST_INSERT_ID());     
+END$$
+
+DELIMITER ;
+
+#-------------------------------------------------------------------------------------------------------------------------------------
+# FUNCAO PARA CONSULTA DE PRECO DE TINTA (RESPOSTA)
+#-------------------------------------------------------------------------------------------------------------------------------------
+
+DELIMITER $$
+
+DROP FUNCTION IF EXISTS fConsultarPrecoTintaResponse$$
+
+CREATE DEFINER=dbacitel@localhost FUNCTION fConsultarPrecoTintaResponse(intReq_ID BIGINT) RETURNS TEXT CHARSET latin1
+    DETERMINISTIC
+BEGIN
+    DECLARE strError VARCHAR(255);
+    
+    SET strError := (SELECT TPR_MSGERR FROM TINPRE_REQ WHERE TPR_REQ_ID = intReq_ID);
+    
+    IF IFNULL(strError, '') <> '' THEN
+       RETURN CONCAT('{"ERROR":"',REPLACE(strError, '"', '\\"'),'"}');
+    END IF;
+    
+    RETURN 
+	(SELECT 
+	  CONCAT('{', CHAR(13),
+		 '   "RES_ID":' , TPR_RES_ID, ', ', CHAR(13),
+		 '   "REQ_ID":' , TPR_REQ_ID, ', ', CHAR(13),
+		 '   "CODEMP":"', TPR_CODEMP, '",', CHAR(13),
+		 '   "IDEPRO":"', TPR_IDEPRO, '",', CHAR(13),
+		 '   "MD5TIN":"', TPR_MD5TIN, '",', CHAR(13),
+		 '   "EMBPRO":"', TPR_EMBPRO, '",', CHAR(13),
+		 '   "MODVEN":"', TPR_MODVEN, '",', CHAR(13),
+		 '   "CODCLI":"', TPR_CODCLI, '",', CHAR(13),
+		 '   "CODITE":"', TPR_CODITE, '",', CHAR(13),
+		 '   "DESCRI":"', TPR_DESCRI, '",', CHAR(13),
+		 '   "REFERE":"', TPR_REFERE, '",', CHAR(13),
+		 '   "UNIDAD":"', TPR_UNIDAD, '",', CHAR(13),
+		 '   "TABPRE":"', TPR_TABPRE, '",', CHAR(13),
+		 '   "PREVEN":' , TPR_PREVEN, ', ', CHAR(13),
+		 '   "SALDIS":' , TPR_SALDIS, ', ', CHAR(13),
+		 '   "PREVE1":' , TPR_PREVE1, ', ', CHAR(13),
+		 '   "PREVE2":' , TPR_PREVE2, ', ', CHAR(13),
+		 '   "PREVE3":' , TPR_PREVE3, ', ', CHAR(13),
+		 '   "PREVE4":' , TPR_PREVE4, ', ', CHAR(13),
+		 '   "PREVE5":' , TPR_PREVE5, ', ', CHAR(13),
+		 '   "PREVE6":' , TPR_PREVE6, ', ', CHAR(13),
+		 '   "PREVE7":' , TPR_PREVE7, ', ', CHAR(13),
+		 '   "PRECUS":' , TPR_PRECUS, ', ', CHAR(13),
+		 '   "PRECU2":' , TPR_PRECU2, ', ', CHAR(13),
+		 '   "OUTVAL":' , TPR_OUTVAL, ', ', CHAR(13),
+		 '   "ICMSAI":' , TPR_ICMSAI, ', ', CHAR(13),
+		 '   "IMPFED":' , TPR_IMPFED, ', ', CHAR(13),
+		 '   "DESOPE":' , TPR_DESOPE, ', ', CHAR(13),
+		 '   "PREMED":' , TPR_PREMED, ', ', CHAR(13),
+		 '   "IMPULT":' , TPR_IMPULT, ', ', CHAR(13),
+		 '   "PREULT":' , TPR_PREULT, ', ', CHAR(13),
+		 '   "ITETIN":"', TPR_ITETIN, '",', CHAR(13),
+		 '   "PRCTIN":' , TPR_PRCTIN, ', ', CHAR(13),
+		 '   "PRVTIN":' , TPR_PRVTIN, ', ', CHAR(13),
+		 '   "DESCOR":"', TPR_DESCOR, '",', CHAR(13),
+		 '   "TIPEMB":"', TPR_TIPEMB, '",', CHAR(13),
+		 '   "QTDEMB":' , TPR_QTDEMB, ', ', CHAR(13),
+		 '   "PREEMB":' , TPR_PREEMB, ', ', CHAR(13),
+		 '   "TIPPRE":"', TPR_TIPPRE, '",', CHAR(13),
+		 '   "FATTIN":' , TPR_FATTIN, ', ', CHAR(13),
+		 '   "ITEEMB":"', TPR_ITEEMB, '",', CHAR(13),
+		 '   "MONTAD":"', TPR_MONTAD, '",', CHAR(13),
+		 '   "A_N_O_":"', TPR_A_N_O_, '",', CHAR(13),
+		 '   "LAZQUA":' , TPR_LAZQUA, ', ', CHAR(13),
+		 '   "VOLPRO":' , TPR_VOLPRO, ', ', CHAR(13),
+		 '   "LINLIN":"', TPR_LINLIN, '",', CHAR(13),
+		 '   "CATALI":"', TPR_CATALI, '",', CHAR(13),
+		 '   "CODDIL":"', TPR_CODDIL, '",', CHAR(13),
+		 '   "PORDIL":' , TPR_PORDIL, ', ', CHAR(13),
+		 '   "DILCON":"', TPR_DILCON, '",', CHAR(13),
+		 '   "PORCAT":' , TPR_PORCAT, ', ', CHAR(13),
+		 '   "OBSCOL":"', TPR_OBSCOL, '",', CHAR(13),
+		 '   "TIPFOR":' , TPR_TIPFOR, ', ', CHAR(13),
+		 '   "TINAUT":' , TPR_TINAUT, ', ', CHAR(13),
+		 '   "FORM01":"', TPR_FORM01, '",', CHAR(13),
+		 '   "FORM02":"', TPR_FORM02, '",', CHAR(13),
+		 '   "FORM03":"', TPR_FORM03, '",', CHAR(13),
+		 '   "FORM04":"', TPR_FORM04, '",', CHAR(13),
+		 '   "FORM05":"', TPR_FORM05, '",', CHAR(13),
+		 '   "FORM06":"', TPR_FORM06, '",', CHAR(13),
+		 '   "FORM07":"', TPR_FORM07, '",', CHAR(13),
+		 '   "FORM08":"', TPR_FORM08, '",', CHAR(13),
+		 '   "FORM09":"', TPR_FORM09, '",', CHAR(13),
+		 '   "FORM10":"', TPR_FORM10, '",', CHAR(13),
+		 '   "FORM11":"', TPR_FORM11, '",', CHAR(13),
+		 '   "FORM12":"', TPR_FORM12, '",', CHAR(13),
+		 '   "FORM13":"', TPR_FORM13, '",', CHAR(13),
+		 '   "FORM14":"', TPR_FORM14, '",', CHAR(13),
+		 '   "FORM15":"', TPR_FORM15, '",', CHAR(13),
+		 '   "FORM16":"', TPR_FORM16, '",', CHAR(13),
+		 '   "FORM17":"', TPR_FORM17, '",', CHAR(13),
+		 '   "FORM18":"', TPR_FORM18, '",', CHAR(13),
+		 '   "FORM19":"', TPR_FORM19, '",', CHAR(13),
+		 '   "FORM20":"', TPR_FORM20, '",', CHAR(13),
+		 '   "ITEC01":"', TPR_ITEC01, '",', CHAR(13),
+		 '   "ITEC02":"', TPR_ITEC02, '",', CHAR(13),
+		 '   "ITEC03":"', TPR_ITEC03, '",', CHAR(13),
+		 '   "ITEC04":"', TPR_ITEC04, '",', CHAR(13),
+		 '   "ITEC05":"', TPR_ITEC05, '",', CHAR(13),
+		 '   "ITEC06":"', TPR_ITEC06, '",', CHAR(13),
+		 '   "ITEC07":"', TPR_ITEC07, '",', CHAR(13),
+		 '   "ITEC08":"', TPR_ITEC08, '",', CHAR(13),
+		 '   "ITEC09":"', TPR_ITEC09, '",', CHAR(13),
+		 '   "ITEC10":"', TPR_ITEC10, '",', CHAR(13),
+		 '   "ITEC11":"', TPR_ITEC10, '",', CHAR(13),
+		 '   "ITEC12":"', TPR_ITEC12, '",', CHAR(13),
+		 '   "ITEC13":"', TPR_ITEC13, '",', CHAR(13),
+		 '   "ITEC14":"', TPR_ITEC14, '",', CHAR(13),
+		 '   "ITEC15":"', TPR_ITEC15, '",', CHAR(13),
+		 '   "ITEC16":"', TPR_ITEC16, '",', CHAR(13),
+		 '   "ITEC17":"', TPR_ITEC17, '",', CHAR(13),
+		 '   "ITEC18":"', TPR_ITEC18, '",', CHAR(13),
+		 '   "ITEC19":"', TPR_ITEC19, '",', CHAR(13),
+		 '   "ITEC20":"', TPR_ITEC20, '",', CHAR(13),
+		 '   "QTDB01":' , TPR_QTDB01, ', ', CHAR(13),
+		 '   "QTDB02":' , TPR_QTDB02, ', ', CHAR(13),
+		 '   "QTDB03":' , TPR_QTDB03, ', ', CHAR(13),
+		 '   "QTDB04":' , TPR_QTDB04, ', ', CHAR(13),
+		 '   "QTDB05":' , TPR_QTDB05, ', ', CHAR(13),
+		 '   "QTDB06":' , TPR_QTDB06, ', ', CHAR(13),
+		 '   "QTDB07":' , TPR_QTDB06, ', ', CHAR(13),
+		 '   "QTDB08":' , TPR_QTDB08, ', ', CHAR(13),
+		 '   "QTDB09":' , TPR_QTDB09, ', ', CHAR(13),
+		 '   "QTDB10":' , TPR_QTDB10, ', ', CHAR(13),
+		 '   "QTDB11":' , TPR_QTDB11, ', ', CHAR(13),
+		 '   "QTDB12":' , TPR_QTDB12, ', ', CHAR(13),
+		 '   "QTDB13":' , TPR_QTDB13, ', ', CHAR(13),
+		 '   "QTDB14":' , TPR_QTDB14, ', ', CHAR(13),
+		 '   "QTDB15":' , TPR_QTDB15, ', ', CHAR(13),
+		 '   "QTDB16":' , TPR_QTDB16, ', ', CHAR(13),
+		 '   "QTDB17":' , TPR_QTDB17, ', ', CHAR(13),
+		 '   "QTDB18":' , TPR_QTDB18, ', ', CHAR(13),
+		 '   "QTDB19":' , TPR_QTDB19, ', ', CHAR(13),
+		 '   "QTDB20":' , TPR_QTDB20, ', ', CHAR(13),
+		 '   "MODDIL":"', TPR_MODDIL, '",', CHAR(13),
+		 '   "TEXBAS":"', TPR_TEXBAS, '",', CHAR(13),
+		 '   "TIPCOR":"', TPR_MODDIL, '",', CHAR(13),
+		 '   "ITECOB":"', TPR_ITECOB, '",', CHAR(13),
+		 '   "UNIVER":"', TPR_UNIVER, '",', CHAR(13),
+		 '   "FATACE":' , TPR_FATACE, ', ', CHAR(13),
+		 '   "CATAL_":"', TPR_CATAL_, '" ', CHAR(13),
+		 '}') AS 'Response'
+	FROM 
+	  TINPRE_RES
+	WHERE 
+	  TPR_REQ_ID = intReq_ID  
+	LIMIT 1);
+
+END$$
+
+DELIMITER ;
+
+#-------------------------------------------------------------------------------------------------------------------------------------
+# FINAL DO SCRIPT
+#-------------------------------------------------------------------------------------------------------------------------------------
+
+SET sql_log_bin = ON;

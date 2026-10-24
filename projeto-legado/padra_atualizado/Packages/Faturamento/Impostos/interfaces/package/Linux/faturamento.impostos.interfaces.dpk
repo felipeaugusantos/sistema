@@ -1,0 +1,79 @@
+package faturamento.impostos.interfaces;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS OFF}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION ON}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO OFF}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES OFF}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE RELEASE}
+{$ENDIF IMPLICITBUILDING}
+{$IMPLICITBUILD ON}
+
+requires
+  rtl,
+  Shared.Functions;
+
+contains
+  Faturamento.Impostos.Interfaces.Ipi in '..\..\source\Faturamento.Impostos.Interfaces.Ipi.pas',
+  Faturamento.Impostos.Interfaces.STCustoAquisicao in '..\..\source\Faturamento.Impostos.Interfaces.STCustoAquisicao.pas',
+  Faturamento.Impostos.Interfaces.Icms in '..\..\source\Faturamento.Impostos.Interfaces.Icms.pas',
+  Faturamento.Impostos.Interfaces.ST in '..\..\source\Faturamento.Impostos.Interfaces.ST.pas',
+  Faturamento.Impostos.Interfaces.Difal in '..\..\source\Faturamento.Impostos.Interfaces.Difal.pas',
+  Faturamento.Impostos.Interfaces.FCP in '..\..\source\Faturamento.Impostos.Interfaces.FCP.pas',
+  Faturamento.Impostos.Interfaces.IcmsEfetivo in '..\..\source\Faturamento.Impostos.Interfaces.IcmsEfetivo.pas',
+  Faturamento.Impostos.Interfaces.IcmsOrgaoPublico in '..\..\source\Faturamento.Impostos.Interfaces.IcmsOrgaoPublico.pas',
+  Faturamento.Impostos.Interfaces.Model in '..\..\source\Faturamento.Impostos.Interfaces.Model.pas',
+  Faturamento.Impostos.Interfaces.ClassificacaoItem.TransferenciaEstoqueEmpresa in '..\..\source\Faturamento.Impostos.Interfaces.ClassificacaoItem.TransferenciaEstoqueEmpresa.pas',
+  Faturamento.Impostos.Interfaces.ZerarImpostos in '..\..\source\Faturamento.Impostos.Interfaces.ZerarImpostos.pas',
+  Faturamento.Impostos.Interfaces.ZerarImpostos.Icms in '..\..\source\Faturamento.Impostos.Interfaces.ZerarImpostos.Icms.pas',
+  Faturamento.Impostos.Interfaces.ZerarImpostos.Types in '..\..\source\Faturamento.Impostos.Interfaces.ZerarImpostos.Types.pas',
+  Faturamento.Impostos.Interfaces.ClassificacoesTransferencias in '..\..\source\Faturamento.Impostos.Interfaces.ClassificacoesTransferencias.pas',
+  Faturamento.Impostos.Interfaces.DadosFiscais.ClassificacaoItem in '..\..\source\Faturamento.Impostos.Interfaces.DadosFiscais.ClassificacaoItem.pas',
+  Faturamento.Impostos.Interfaces.DadosFiscais.Aliquota in '..\..\source\Faturamento.Impostos.Interfaces.DadosFiscais.Aliquota.pas',
+  Faturamento.Impostos.Interfaces.Servicos.Disponiveis in '..\..\source\Faturamento.Impostos.Interfaces.Servicos.Disponiveis.pas',
+  Faturamento.Impostos.Interfaces.Servicos.Disponiveis.ipi in '..\..\source\Faturamento.Impostos.Interfaces.Servicos.Disponiveis.ipi.pas',
+  Faturamento.Impostos.Interfaces.Servicos.Classe.Ipi in '..\..\source\Faturamento.Impostos.Interfaces.Servicos.Classe.Ipi.pas',
+  Faturamento.Impostos.Interfaces.Servicos.Disponiveis.IcmsSt in '..\..\source\Faturamento.Impostos.Interfaces.Servicos.Disponiveis.IcmsSt.pas',
+  Faturamento.Impostos.Interfaces.Servicos.Classe.IcmsSt in '..\..\source\Faturamento.Impostos.Interfaces.Servicos.Classe.IcmsSt.pas',
+  Faturamento.Impostos.Interfaces.Tributacao in '..\..\source\Faturamento.Impostos.Interfaces.Tributacao.pas',
+  Faturamento.Impostos.Interfaces.IcmsSt in '..\..\source\Faturamento.Impostos.Interfaces.IcmsSt.pas',
+  Faturamento.Impostos.Interfaces.Iva in '..\..\source\Faturamento.Impostos.Interfaces.Iva.pas',
+  Faturamento.Impostos.Interfaces.ST_Simulada in '..\..\source\Faturamento.Impostos.Interfaces.ST_Simulada.pas',
+  Faturamento.Impostos.Interfaces.ZerarImpostos.ST in '..\..\source\Faturamento.Impostos.Interfaces.ZerarImpostos.ST.pas',
+  Faturamento.Impostos.Interfaces.Tributacao.DepoisDoCalculo in '..\..\source\Faturamento.Impostos.Interfaces.Tributacao.DepoisDoCalculo.pas',
+  Faturamento.Impostos.Interfaces.Servicos.Classe.Icms in '..\..\source\Faturamento.Impostos.Interfaces.Servicos.Classe.Icms.pas',
+  Faturamento.Impostos.Interfaces.Servicos.Classe.St in '..\..\source\Faturamento.Impostos.Interfaces.Servicos.Classe.St.pas',
+  Faturamento.Impostos.Interfaces.Servicos.Classe.IcmsOrgaoPublico in '..\..\source\Faturamento.Impostos.Interfaces.Servicos.Classe.IcmsOrgaoPublico.pas',
+  Faturamento.Impostos.Interfaces.AliquotasDeRetencao in '..\..\source\Faturamento.Impostos.Interfaces.AliquotasDeRetencao.pas',
+  Faturamento.Impostos.Interfaces.Servicos.Classe.StCustoAquisicao in '..\..\source\Faturamento.Impostos.Interfaces.Servicos.Classe.StCustoAquisicao.pas',
+  Faturamento.Impostos.Interfaces.Servicos.Disponiveis.IcmsEfetivo in '..\..\source\Faturamento.Impostos.Interfaces.Servicos.Disponiveis.IcmsEfetivo.pas',
+  Faturamento.Impostos.Interfaces.Servicos.Classe.IcmsEfetivo in '..\..\source\Faturamento.Impostos.Interfaces.Servicos.Classe.IcmsEfetivo.pas',
+  Faturamento.Impostos.Interfaces.FcpDifal in '..\..\source\Faturamento.Impostos.Interfaces.FcpDifal.pas',
+  Faturamento.Impostos.Interfaces.Servicos.Disponiveis.FcpDifal in '..\..\source\Faturamento.Impostos.Interfaces.Servicos.Disponiveis.FcpDifal.pas',
+  Faturamento.Impostos.Interfaces.Servicos.Classe.FcpDifal in '..\..\source\Faturamento.Impostos.Interfaces.Servicos.Classe.FcpDifal.pas',
+  Faturamento.Impostos.Interfaces.Servicos.Classe.Fcp in '..\..\source\Faturamento.Impostos.Interfaces.Servicos.Classe.Fcp.pas',
+  Faturamento.Impostos.Interfaces.ZerarImpostos.Fcp in '..\..\source\Faturamento.Impostos.Interfaces.ZerarImpostos.Fcp.pas',
+  Faturamento.Impostos.Interfaces.Servicos.Classe.Devolucao.DifalFcp in '..\..\source\Faturamento.Impostos.Interfaces.Servicos.Classe.Devolucao.DifalFcp.pas',
+  Faturamento.Impostos.Interfaces.Servicos.Classe.Difal in '..\..\source\Faturamento.Impostos.Interfaces.Servicos.Classe.Difal.pas',
+  Faturamento.Impostos.Interfaces.Servicos.Classe.DifalFcp in '..\..\source\Faturamento.Impostos.Interfaces.Servicos.Classe.DifalFcp.pas',
+  Faturamento.Impostos.Interfaces.ZerarImpostos.Difal in '..\..\source\Faturamento.Impostos.Interfaces.ZerarImpostos.Difal.pas';
+
+end.

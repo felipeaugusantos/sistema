@@ -1,0 +1,752 @@
+inherited frmImportacaoAbreviacaoIcms: TfrmImportacaoAbreviacaoIcms
+  Width = 1366
+  Height = 768
+  Caption = 'MANUTEN'#199#195'O COLETIVA'
+  WindowState = wsMaximized
+  OnDestroy = FormDestroy
+  OnResize = FormResize
+  ExplicitWidth = 1366
+  ExplicitHeight = 768
+  PixelsPerInch = 96
+  TextHeight = 14
+  inherited pnlBotoes: TPanel
+    Top = 695
+    Width = 1360
+    ExplicitTop = 695
+    ExplicitWidth = 1360
+    inherited FlwBotoes: TFlowPanel
+      Width = 1356
+      ExplicitWidth = 1356
+      object btnExportar: TBitBtnLocked
+        Left = 0
+        Top = 0
+        Width = 77
+        Height = 22
+        Anchors = [akRight, akBottom]
+        Caption = 'Exportar'
+        Glyph.Data = {
+          36040000424D3604000000000000360000002800000010000000100000000100
+          2000000000000004000000000000000000000000000000000000000000000000
+          000000000002000000090000000E0000000F0000000F00000010000000100000
+          0010000000100000000F0000000A000000020000000000000000000000000000
+          0000000000081E5943C0287657FF277355FF267052FF256D50FF256C4EFF246A
+          4BFF226749FF226547FF174733C10000000A0000000000000000000000000000
+          000000000009389C79FF61E1BFFF47D3ADFF44D0A9FF42CEA5FF40CCA2FF3ECA
+          9FFF3CC79CFF38C599FF267052FF0000000A0000000000000000000000000000
+          00000000000430856AC140B28DFF3FAE8AFF3DAB87FF3CA884FF3BA581FF39A2
+          7FFF389E7BFF369B79FF266D54C1000000040000000000000000000000000000
+          000000000000000000010000000200000002000000030B20176D0A1B136F0000
+          0004000000030000000200000002000000000000000000000000000000000000
+          000000000000000000000000000000000003040C092E21664AF41C583FF6030A
+          072F000000030000000000000000000000000000000000000000000000000000
+          00000000000000000000000000010001010C1B4F39CA2FB084FF2CAB7EFF143F
+          2BCD0001010D0000000100000000000000000000000000000000000000000000
+          000000000000000000010000000512352788329C78FF35CA99FF35C999FF298E
+          6AFF0E291D8B0000000600000001000000000000000000000000000000000000
+          00000000000000000003091A1343328968FD42CEA2FF38CC9DFF37CB9CFF3CCB
+          9DFF256F53FD07140E4700000003000000000000000000000000000000000000
+          00000000000102060413297156E24FCCA5FF41D1A4FF3ECFA2FF3CCEA1FF3DCE
+          A0FF3FC198FF1D553DE302050417000000010000000000000000000000000000
+          0000000000031F5641AA65C4A7FF8BE9CFFF86E7CEFF74E4C5FF73E4C5FF66DF
+          BDFF6CDFBEFF5DB69AFF153E2DAE000000040000000000000000000000000000
+          0000000000033FA280FF3FA07FFF3E9F7FFFB8F5E6FF8CEDD6FF8CEDD5FF9BEF
+          DBFF389071FF388F71FF378E6FFF000000040000000000000000000000000000
+          000000000001000000030000000741A585FFC9F9EFFF9EF4E1FF9EF3E0FFADF5
+          E6FF3B9878FF0000000900000004000000010000000000000000000000000000
+          000000000000000000000000000344AC89FFDEFCF7FFDEFCF7FFDEFCF7FFDEFC
+          F7FF3F9E7EFF0000000400000000000000000000000000000000000000000000
+          0000000000000000000000000002308569BF41B48EFF41B48EFF41B48EFF41B4
+          8EFF2E8166B90000000200000000000000000000000000000000000000000000
+          0000000000000000000000000000000000010000000200000002000000020000
+          0002000000020000000000000000000000000000000000000000}
+        TabOrder = 0
+        OnClick = btnExportarClick
+      end
+      object btnImportar: TBitBtnLocked
+        Left = 77
+        Top = 0
+        Width = 77
+        Height = 22
+        Anchors = [akRight, akBottom]
+        Caption = 'Importar'
+        Glyph.Data = {
+          36040000424D3604000000000000360000002800000010000000100000000100
+          2000000000000004000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000090101
+          010E010101100101011001010110010101100101011001010111010101110101
+          011101010111010101100101010B0000000300000000000000001D4783CA2860
+          AFFF2962B1FF2961B1FF2860B0FF285FB0FF275EAFFF275EAEFF275CAEFF275C
+          AEFF275BADFF265AADFF2659ABFF214C94E304091129000000022965AFFF3671
+          B7FF5C9FD8FF75C1EFFF4BAAE8FF49A7E8FF46A5E7FF44A3E6FF41A3E6FF40A1
+          E5FF3D9FE4FF3B9FE5FF3A9EE5FF2E7AC7FF132C528B000000082F6FB8FF4E89
+          C4FF4A8FCDFF9FDAF7FF67BDEFFF59B3ECFF56B2ECFF52B0EBFF91C9F0FFA1CE
+          EBFF9DC9E6FF9BC8E6FF9DCBEAFF83BBE7FF214D8DD50101010D3376BDFF70AB
+          D6FF428DCCFFA2D6F2FF97D7F7FF6AC1F2FF67BEF1FF64BDEFFFAAD5EFFF2B7F
+          5FFF046635FF046633FF2C7E61FFA3CFECFF306DBBFF060C162F367BC2FF92CA
+          E9FF54A3DAFF83BFE5FFC4EFFDFF7BCCF5FF78CBF5FF76C9F4FFB1D9EEFF067B
+          45FF2FD19DFF23CD94FF057A44FFA9D4EBFF4690CFFF153052813982C5FFB1E4
+          F6FF78CBF0FF5AA7DCFFD3F5FEFFE8F9FDFFE2F2F7FFDDF0F4FFD4E7ECFF077D
+          48FF36D6A5FF27D199FF067C47FFC1DBE7FFB9D6E8FF7692B4E13C88CAFFC9F6
+          FFFF9AE7FEFF66BFEBFF50A4DBFFA3CCE6FF05723FFF05713EFF05703DFF087F
+          4AFF3EDBACFF2DD49FFF077D48FF046C39FF046C39FF046B38FF3B8ECEFFCEF8
+          FFFFA9EDFFFF9FEAFFFF95E5FDFFC5EDFAFF469B7FFF6BB498FF4DDCB1FF34D9
+          A9FF36D9A9FF34D9A9FF30D6A3FF40D7A8FF63AA8EFF04391CB53E93D0FFD1F9
+          FFFFB1F1FFFFADEFFFFFA9EEFFFFC2F1FEFFCEECEEFF2D966CFF8BD1BAFF58E3
+          BEFF5CE6C0FF5BE5BEFF51DFB7FF7DCCB2FF0E633BE40006031A4097D3FFD4FA
+          FFFFB8F4FFFFB5F2FEFFB3F3FFFFBBEEFBFF98C4E3FF7AB3C0FF359C71FF9DE5
+          D2FF6EEDCBFF6DECC9FF91E2CAFF2E895EFD021A0E4700000003429CD6FFE2FC
+          FEFFE2FCFEFFE1FCFEFFD4F5FBFF4793C6EC080E121E0303030C0B472F8964B4
+          94FF96EDD7FF8BEAD2FF5CA98AFF053A228A00000005000000013276A0BF439F
+          D8FF439ED8FF439ED8FF439CD7FF16344759000000020000000000020107136F
+          4AC791CCB6FF8BC9B2FF0A6039CB000101090000000100000000000000020000
+          0003000000030000000400000003000000020000000000000000000000010313
+          0D252D956CF321875AF501100A27000000010000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          00010A35245D052F1D6000000002000000000000000000000000}
+        TabOrder = 1
+        OnClick = btnImportarClick
+      end
+      object btnGravar: TBitBtnLocked
+        Left = 154
+        Top = 0
+        Width = 77
+        Height = 22
+        Anchors = [akRight, akBottom]
+        Caption = 'Gravar'
+        Glyph.Data = {
+          36040000424D3604000000000000360000002800000010000000100000000100
+          2000000000000004000000000000000000000000000000000000000000040000
+          00130000001E0000002000000020000000200000002100000021000000210000
+          002200000022000000220000002300000021000000160000000500000012281E
+          16CB37291EFF463A31FFBD8150FFBC7E4DFFB97949FFB67646FFB37141FFB06D
+          3DFFAD6839FFAB6535FF42362EFF3D3026FF241A13CE00000015000000193B2C
+          21FF685C54FF483C34FFE8C28BFFE7C088FFE6BD85FFE5BB81FFE4B87CFFE3B5
+          79FFE2B276FFE2B273FF443931FF51433AFF34261DFF0000001E000000183E2F
+          24FF6C6057FF4A3F37FFD9B27DFFD8B07BFFD7AE77FFD7AB74FFD6A970FFD5A6
+          6DFFD4A56AFFD4A268FF473B33FF5B4F47FF37291EFF0000001D000000164031
+          26FF6F645CFF4C4038FFFFFFFFFFF7F1EBFFF7F0EBFFF7F0EBFFF7EFEBFFF6EF
+          EAFFF6EFEAFFF6EFE9FF463B34FF5D5249FF3A2C21FF0000001B000000144434
+          29FF73675FFF4F443CFFFFFFFFFFF8F2EDFFF8F1EDFFF7F1EDFFF7F0EDFFF8F1
+          EBFFF7F0EBFFF7F0ECFF4A4037FF5F534BFF3D2E23FF00000019000000124637
+          2CFF776B63FF50453DFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFFFFF4E433BFF61544CFF403126FF0000001700000010493A
+          2FFF796E66FF50453DFF61564EFF60564EFF60554DFF5F544CFF5E544CFF5E53
+          4BFF5D524AFF5C5249FF5B5149FF61554DFF433429FF000000150000000E4C3D
+          32FF7C706AFF674E44FF654B42FF634A41FF61473FFF5F473EFF5C443CFF5B43
+          3AFF594139FF584038FF573F37FF63574FFF46362DFF000000130000000D4E3F
+          35FF80746DFF6B5248FFF4ECE6FFE9DACEFFE9D8CDFFE9D8CCFFE9D8CBFFE8D7
+          CAFFF3EAE2FFF3E9E2FF5A4139FF645850FF483A2FFF000000110000000B5142
+          36FF827770FF70564DFFF9F5F2FFF4EAE4FFF1E6DEFFEBDCD2FFE9D9CCFF4E41
+          3DFF60534CFFF3EAE3FF5D453CFF655951FF4C3D32FF0000000F000000095344
+          39FF857A73FF755A50FFFAF6F3FFF5EDE7FFF4EDE6FFF4ECE6FFEFE2DAFF493D
+          38FF5A4D46FFF4EBE4FF60483FFF655A52FF4F3F34FF0000000D000000075545
+          3AFF887D76FF795E54FFFAF6F4FFF5EEE9FFF5EDE7FFF4EDE7FFF4ECE6FF473A
+          36FF483D36FFE9D9CDFF644C43FF675A52FF514137FF0000000B000000065748
+          3DFF898079FF7C6157FFFAF7F4FFFAF6F4FFFAF6F4FFFAF6F3FFFAF6F3FFFAF5
+          F2FFF5EEE9FFF4ECE6FF695046FF82776FFF534439FF00000009000000034235
+          2EC058493DFF7F645AFF998178FF967F75FF937A72FF8E786DFF8B7269FF866E
+          64FF82695FFF7D645BFF6E544AFF56453BFF3F332BC200000005000000000000
+          0002000000030000000400000004000000040000000400000005000000050000
+          0005000000050000000500000006000000060000000400000001}
+        TabOrder = 2
+        OnClick = btnGravarClick
+      end
+      object btnModeloArquivoImportar: TBitBtnLocked
+        Left = 231
+        Top = 0
+        Width = 22
+        Height = 22
+        Hint = 'Layout do arquivo de importa'#231#227'o'
+        Align = alLeft
+        Glyph.Data = {
+          36040000424D3604000000000000360000002800000010000000100000000100
+          2000000000000004000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000010000000800000010000000100000
+          0008000000010000000000000000000000000000000000000000000000000000
+          000000000000000000000000000000000006301D125F8A4C2DED854526ED2814
+          0B60000000070000000000000000000000000000000000000000000000000000
+          00000000000000000000000000000000000D9F6A49EAD8A471FFD3985FFF8345
+          27EA0000000E0000000000000000000000000000000000000000000000000000
+          00000000000000000000000000000000000CAC7F5EECF5D9AEFFDEB285FF8D50
+          30EC0000000D0000000000000000000000000000000000000000000000000000
+          00000000000000000000000000000000000532271F50A28368D29E7D61D22F23
+          1A51000000050000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000010000000600000011000000140000
+          000A000000020000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000670503AA999532EFF4528
+          187A000000070000000100000000000000000000000000000000000000000000
+          000000000000000000000000000000000000000000079F795AD7E5BF92FFAF72
+          4AF724150D490000000800000002000000000000000000000000000000000000
+          0000000000000000000100000004000000060000000868534089D6AD86FFF1D0
+          9FFFB4774BFF693D24AE0D080520000000020000000000000000000000000000
+          000000000000000000034C301E7A7B4526D0522F1A8F0A09071A9A6745E0ECD2
+          AAFFF6D39CFFD8A470FF75452ABD000000060000000000000000000000000000
+          00000000000000000005B6855FF7E8D4B2FFAF7A53FF2D1C1154745C489EC59B
+          76FFF8E7BCFFF3CC95FFA0623BF7000000070000000000000000000000000000
+          000000000000000000039C7D5EC9EFDDBFFFCAA682FF7E5E45B2917C61B4C197
+          70FFF9ECC4FFE8CCA4FF845435C7000000050000000000000000000000000000
+          000000000000000000012B241D38CFAF8CF7E8D2B3FFCBA888FFBF9674FFF0E1
+          C5FFDDBF9EFFAF7D58F01F140D34000000010000000000000000000000000000
+          0000000000000000000000000001231E182D877158A5C3A07DEED9BA96FFBA99
+          77E570533B9A17100A2500000002000000000000000000000000000000000000
+          0000000000000000000000000000000000010000000100000002000000030000
+          0002000000020000000100000000000000000000000000000000}
+        ParentShowHint = False
+        ShowHint = True
+        TabOrder = 3
+        OnClick = btnModeloArquivoImportarClick
+      end
+    end
+    inherited btnSair: TBitBtnLocked
+      Left = 1280
+      Top = 2
+      ExplicitLeft = 1280
+      ExplicitTop = 2
+    end
+  end
+  inherited pnlStatus: TPanel
+    Top = 723
+    Width = 1360
+    ExplicitTop = 723
+    ExplicitWidth = 1360
+    inherited pnlNomeForm: TPanel
+      Left = 1189
+      ExplicitLeft = 1189
+    end
+    inherited pnlInfo: TPanel
+      Width = 1189
+      ExplicitWidth = 1189
+    end
+  end
+  object pnlFiltros: TPanel [2]
+    Left = 0
+    Top = 0
+    Width = 1360
+    Height = 200
+    Align = alTop
+    BevelOuter = bvNone
+    TabOrder = 2
+    object pnlAbreviacoes: TPanel
+      Left = 0
+      Top = 0
+      Width = 1360
+      Height = 50
+      Align = alTop
+      BevelOuter = bvNone
+      TabOrder = 0
+      object Label10: TLabel
+        Left = 11
+        Top = 19
+        Width = 59
+        Height = 14
+        Alignment = taRightJustify
+        Caption = 'Abrevia'#231#227'o:'
+      end
+      object edtAbreviacaoCodigo: TEditFocus
+        Tag = 99
+        Left = 76
+        Top = 16
+        Width = 63
+        Height = 22
+        Alignment = taLeftJustify
+        CharCase = ecUpperCase
+        Ctl3D = True
+        ImeName = 'Portugu'#234's (Brasil ABNT)'
+        MaxLength = 7
+        ParentCtl3D = False
+        TabOrder = 0
+        OnExit = edtAbreviacaoCodigoExit
+        OnKeyPress = edtAbreviacaoCodigoKeyPress
+        NormalColor = clWindow
+        FocusColor = clInfoBk
+        RequeridoColor = clRed
+        Requerido = False
+        CompZeros = True
+        TamCampo = 3
+        TipoTexto = ttAlfanumerico
+      end
+      object edtAbreviacaoDescricao: TEditFocus
+        Left = 140
+        Top = 16
+        Width = 240
+        Height = 22
+        TabStop = False
+        Alignment = taLeftJustify
+        Color = 16768952
+        Enabled = False
+        ImeName = 'Portugu'#234's (Brasil ABNT)'
+        ReadOnly = True
+        TabOrder = 1
+        NormalColor = 16768952
+        FocusColor = clInfoBk
+        RequeridoColor = clRed
+        Requerido = False
+        CompZeros = False
+        TamCampo = 0
+        TipoTexto = ttAlfanumerico
+      end
+      object btnCarregar: TBitBtnLocked
+        Left = 392
+        Top = 16
+        Width = 81
+        Height = 22
+        Caption = 'Carregar'
+        Glyph.Data = {
+          36040000424D3604000000000000360000002800000010000000100000000100
+          2000000000000004000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          00000000000000000000000000030000000B00000013000000190000001A0000
+          00140000000B0000000300000000000000000000000000000000000000000000
+          000000000000000000060402011C4827118B7C431ED2A65927FFA55927FF7E44
+          1ED442230F7B0100000F0000000E000000070000000000000000000000000000
+          000000000005120A05348A4F26DDC58A53FFDCB37CFFEFD298FFEFD198FFB676
+          43FF2E1A0C62100904398F5127E10E05013A0000000600000000000000000000
+          0002040201198D552BDCD1A169FFF1D6A5FFCE9E6EFFC08656FFBD8251FF613A
+          1DA6000000227D4B26CBE2B97BFF5F290FCF0101001900000003000000000000
+          00074C2F1B82C99765FFECD2A3FFB98154FB5238238A120C07300F0A06270201
+          01194C2F1B88CE9D66FFF6DC9BFFBA8657FF3F1C0C910000000D000000000000
+          000A8C5B36D0E3C598FFCB9D75FF573B258C0000000C00000003000000062014
+          0C43BD875AFBF8E5BCFFF8DFA5FFF7E4BAFFA16540FC1C0E074C000000080000
+          0014B37A4BFAF5E6BDFFBC8356FF0D0704300000000C00000003000000079666
+          3FD5B87D4DFFBB8153FFF2D9A1FFB87D4DFFB87C4DFF9C6941DE845331D3A263
+          3BFFBB8557FFF6E7BFFFBF8B5EFFA06238FF87522FDC00000006000000020000
+          000B0D08042FA1653CFFF4DEAEFFB68155FA000000180000000A1F170F34C79D
+          75FBFBF5DCFFFCF3CCFFFAF4DAFFB3855FFB21150C4100000004000000020000
+          0009492C1886BA8B5EFFE7CEA7FF926B48CB0000000900000000000000045540
+          2D77DDC1A2FFFDF7D9FFD4B598FF5037227F0202010C0D08041F110A05274B2D
+          1986A1683EFAF3E4C3FFD8B692FF533F2C780000000400000000000000000000
+          00058F6F50BCEFE1CDFF886343C20202010D58382091A3693CFFA66F43FFBE94
+          6DFFF4E9D1FFE3CAADFFA47E5BD60504030E0000000100000000000000000000
+          0001130F0B1DAB8863DA18130E242C1E1248B78B63FDF8F3E2FFF9F3E4FFEDDE
+          C7FFDCC1A1FFA3815ED215110C22000000020000000000000000000000000000
+          000000000001000000010101000342301E629A7B5CC2C6A078F9C6A078F9997B
+          5DC3564634710504030A00000001000000000000000000000000000000000000
+          0000000000000000000000000000000000010000000200000002000000020000
+          0002000000010000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000}
+        TabOrder = 2
+        OnClick = btnCarregarClick
+      end
+    end
+    object clsFilterPerfil: TcxCheckListBox
+      Left = 0
+      Top = 50
+      Width = 1360
+      Height = 150
+      Align = alClient
+      Columns = 2
+      IntegralHeight = True
+      Items = <>
+      ParentFont = False
+      Style.BorderColor = clInactiveBorder
+      Style.BorderStyle = cbsNone
+      Style.Color = 16770261
+      Style.Font.Charset = ANSI_CHARSET
+      Style.Font.Color = clBlack
+      Style.Font.Height = -11
+      Style.Font.Name = 'Consolas'
+      Style.Font.Pitch = fpVariable
+      Style.Font.Style = []
+      Style.IsFontAssigned = True
+      TabOrder = 1
+      OnClick = clsFilterPerfilClick
+      OnEditValueChanged = clsFilterPerfilEditValueChanged
+    end
+  end
+  object pnlGridResultado: TPanel [3]
+    Left = 0
+    Top = 200
+    Width = 1360
+    Height = 495
+    Align = alClient
+    BevelOuter = bvNone
+    TabOrder = 3
+  end
+  object dtsDados: TDataSource
+    Left = 784
+    Top = 16
+  end
+  object frxHelp: TfrxReport
+    Version = '5.6.11'
+    DotMatrixReport = False
+    IniFile = '\Software\Fast Reports'
+    PreviewOptions.Buttons = [pbPrint, pbLoad, pbSave, pbExport, pbZoom, pbFind, pbOutline, pbPageSetup, pbTools, pbEdit, pbNavigator, pbExportQuick]
+    PreviewOptions.Maximized = False
+    PreviewOptions.Zoom = 1.000000000000000000
+    PrintOptions.Printer = 'Default'
+    PrintOptions.PrintOnSheet = 0
+    ReportOptions.CreateDate = 45272.483450208330000000
+    ReportOptions.LastChange = 45274.335520474540000000
+    ScriptLanguage = 'PascalScript'
+    ScriptText.Strings = (
+      'begin'
+      ''
+      'end.')
+    Left = 960
+    Top = 56
+    Datasets = <>
+    Variables = <>
+    Style = <>
+    object Data: TfrxDataPage
+      Height = 1000.000000000000000000
+      Width = 1000.000000000000000000
+    end
+    object Page1: TfrxReportPage
+      PaperWidth = 200.000000000000000000
+      PaperHeight = 130.000000000000000000
+      PaperSize = 256
+      LeftMargin = 10.000000000000000000
+      RightMargin = 10.000000000000000000
+      TopMargin = 10.000000000000000000
+      BottomMargin = 10.000000000000000000
+      object ReportSummary1: TfrxReportSummary
+        FillType = ftBrush
+        Height = 461.102660000000000000
+        Top = 18.897650000000000000
+        Width = 680.315400000000000000
+        object Memo1: TfrxMemoView
+          Left = 18.897637800000000000
+          Top = 26.456692910000000000
+          Width = 83.149660000000000000
+          Height = 283.464750000000000000
+          LineSpacing = 3.000000000000000000
+          Memo.UTF8W = (
+            'COLUNA A:'
+            'COLUNA B:'
+            'COLUNA C:'
+            'COLUNA D:'
+            'COLUNA E:'
+            'COLUNA F:'
+            'COLUNA G:'
+            'COLUNA H:'
+            'COLUNA I:'
+            'COLUNA J:'
+            'COLUNA K:'
+            'COLUNA L:'
+            'COLUNA M:'
+            'COLUNA N:'
+            'COLUNA O:'
+            'COLUNA P:'
+            'COLUNA Q:')
+        end
+        object Rich1: TfrxRichView
+          Align = baWidth
+          Width = 680.315400000000000000
+          Height = 18.897650000000000000
+          GapX = 2.000000000000000000
+          GapY = 1.000000000000000000
+          RichEdit = {
+            7B5C727466315C616E73695C616E7369637067313235325C64656666305C6E6F
+            7569636F6D7061745C6465666C616E67313034367B5C666F6E7474626C7B5C66
+            305C666E696C5C66636861727365743020417269616C3B7D7D0D0A7B5C2A5C67
+            656E657261746F722052696368656432302031302E302E32303334387D5C7669
+            65776B696E64345C756331200D0A5C706172645C71635C667332342043414D50
+            4F53204120534552454D20494D504F525441444F533A5C7061720D0A7D0D0A00}
+        end
+        object Memo2: TfrxMemoView
+          Align = baLeft
+          Left = 102.047297800000000000
+          Top = 26.456685590000000000
+          Width = 306.141930000000000000
+          Height = 283.464750000000000000
+          LineSpacing = 3.000000000000000000
+          Memo.UTF8W = (
+            'ABREVIA'#199#195'O'
+            'PERFIL'
+            'UF'
+            'CST'
+            '% BASE ICMS'
+            '% ALIQUOTA ICMS'
+            '% BASE ST'
+            '% ALIQ INTERNA ST'
+            '% ALIQ REDUZIDA ST'
+            'IVA ST'
+            '% ALIQ EFETIVA ORIGEM'
+            '% ALIQ INTERNA ESTADO DESTINO'
+            '% BASE DESTINO'
+            '% FCP'
+            'MENSAGEM 01'
+            'MENSAGEM 02'
+            'C'#211'DIGO BENEF'#205'CIO FISCAL')
+        end
+        object Memo3: TfrxMemoView
+          Left = 18.897637800000000000
+          Top = 370.393940000000000000
+          Width = 873.071430000000000000
+          Height = 18.897650000000000000
+          Memo.UTF8W = (
+            
+              'Obs: Os campos quando em branco na planilha n'#227'o ser'#227'o atualizado' +
+              's.')
+        end
+        object Memo16: TfrxMemoView
+          Left = 18.897637800000000000
+          Top = 321.260050000000000000
+          Width = 680.314960630000000000
+          Height = 37.795300000000000000
+          Memo.UTF8W = (
+            
+              #201' poss'#237'vel realizar a importa'#231#227'o por arquivo do tipo CSV. Segue ' +
+              'a mesma ordem dos campos em Excel e a mesma l'#243'gica de importa'#231#227'o' +
+              ', por'#233'm os campos s'#227'o separados por ";". ')
+        end
+      end
+    end
+  end
+  object frxRelatorioJ: TfrxReport
+    Version = '5.6.11'
+    DotMatrixReport = False
+    IniFile = '\Software\Fast Reports'
+    PreviewOptions.Buttons = [pbPrint, pbLoad, pbSave, pbExport, pbZoom, pbFind, pbOutline, pbPageSetup, pbTools, pbEdit, pbNavigator, pbExportQuick]
+    PreviewOptions.Zoom = 1.000000000000000000
+    PreviewOptions.ZoomMode = zmWholePage
+    PrintOptions.Printer = 'Padr'#227'o'
+    PrintOptions.PrintOnSheet = 0
+    ReportOptions.CreateDate = 39343.483190925900000000
+    ReportOptions.LastChange = 43013.611328888890000000
+    ScriptLanguage = 'PascalScript'
+    ScriptText.Strings = (
+      'procedure rllPaginaOnBeforePrint(Sender: TfrxComponent);'
+      'begin'
+      
+        '  rllPagina.Text := '#39'P'#193'GINA: '#39' + rllPagina.Text;                ' +
+        '                                                '
+      'end;'
+      ''
+      'procedure rllTotalImpressoOnBeforePrint(Sender: TfrxComponent);'
+      'begin'
+      
+        '  rllTotalImpresso.Text := '#39'REGISTROS IMPRESSOS: '#39' + rllTotalImp' +
+        'resso.Text;                                                     ' +
+        '               '
+      'end;'
+      ''
+      'Begin'
+      'end.')
+    Left = 738
+    Top = 292
+    Datasets = <
+      item
+        DataSet = frxRelatorio
+        DataSetName = 'frxRelatorio'
+      end>
+    Variables = <>
+    Style = <>
+    object Data: TfrxDataPage
+      Height = 1000.000000000000000000
+      Width = 1000.000000000000000000
+    end
+    object qckPagina: TfrxReportPage
+      PaperWidth = 359.000000000000000000
+      PaperHeight = 350.000000000000000000
+      PaperSize = 256
+      LeftMargin = 10.000000000000000000
+      RightMargin = 10.000000000000000000
+      TopMargin = 10.000000000000000000
+      BottomMargin = 10.000000000000000000
+      ColumnWidth = 2.500000000000000000
+      object rlbRodape: TfrxPageFooter
+        FillType = ftBrush
+        Height = 29.338590000000000000
+        Top = 272.126160000000000000
+        Width = 1281.260670000000000000
+        object rllNomeForm: TfrxMemoView
+          Left = 5.820470000000000000
+          Top = 1.000000000000000000
+          Width = 306.141734720000000000
+          Height = 20.779530000000000000
+          Frame.Typ = [ftTop]
+          Memo.UTF8W = (
+            'frmCadPrevisaoMensal')
+        end
+        object rllTotalImpresso: TfrxMemoView
+          Left = 309.921460000000000000
+          Top = 1.000000000000000000
+          Width = 962.192270000000000000
+          Height = 20.779530000000000000
+          OnBeforePrint = 'rllTotalImpressoOnBeforePrint'
+          DisplayFormat.DecimalSeparator = ','
+          Frame.Typ = [ftTop]
+          HAlign = haRight
+          Memo.UTF8W = (
+            '[COUNT(rlbDetalhes)]')
+        end
+      end
+      object rlbCabecalho: TfrxPageHeader
+        FillType = ftBrush
+        Height = 58.582542910000000000
+        Top = 18.897650000000000000
+        Width = 1281.260670000000000000
+        object rllNomeEmpresa: TfrxMemoView
+          Align = baCenter
+          Left = 167.433520000000000000
+          Top = 3.779530000000001000
+          Width = 946.393630000000000000
+          Height = 17.000000000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          HAlign = haCenter
+          Memo.UTF8W = (
+            '[NOMEMP]')
+          ParentFont = False
+        end
+        object rllNomeRelatorio: TfrxMemoView
+          Align = baCenter
+          Left = 258.633520000000000000
+          Top = 20.779530000000000000
+          Width = 763.993630000000000000
+          Height = 17.000000000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clBlack
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          HAlign = haCenter
+          Memo.UTF8W = (
+            'Relat'#243'rio de Inconsist'#234'ncias - Manuten'#231#227'o Coletiva')
+          ParentFont = False
+        end
+        object rllPagina: TfrxMemoView
+          Left = 1161.848670000000000000
+          Top = 20.779530000000000000
+          Width = 115.200000000000000000
+          Height = 17.000000000000000000
+          OnBeforePrint = 'rllPaginaOnBeforePrint'
+          HAlign = haRight
+          Memo.UTF8W = (
+            '[Page]')
+        end
+        object Time: TfrxMemoView
+          Left = 1200.248670000000000000
+          Top = 37.779530000000000000
+          Width = 76.800000000000000000
+          Height = 17.000000000000000000
+          HAlign = haRight
+          Memo.UTF8W = (
+            '[Time]')
+        end
+        object Date: TfrxMemoView
+          Left = 1065.848670000000000000
+          Top = 37.779530000000000000
+          Width = 124.800000000000000000
+          Height = 17.000000000000000000
+          HAlign = haRight
+          Memo.UTF8W = (
+            '[Date]')
+        end
+      end
+      object rlbDetalhes: TfrxMasterData
+        FillType = ftBrush
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -11
+        Font.Name = 'Arial'
+        Font.Style = []
+        Height = 20.779530000000000000
+        ParentFont = False
+        Top = 188.976500000000000000
+        Width = 1281.260670000000000000
+        DataSet = frxRelatorio
+        DataSetName = 'frxRelatorio'
+        RowCount = 0
+        object mmoZebra: TfrxMemoView
+          Align = baClient
+          Width = 1281.260670000000000000
+          Height = 20.779530000000000000
+          DisplayFormat.DecimalSeparator = ','
+          Highlight.Font.Charset = DEFAULT_CHARSET
+          Highlight.Font.Color = clRed
+          Highlight.Font.Height = -9
+          Highlight.Font.Name = 'Arial'
+          Highlight.Font.Style = []
+          Highlight.Condition = '<Line> Mod 2 = 0'
+          Highlight.FillType = ftBrush
+        end
+        object frxRelatoriofrxRelatorio: TfrxMemoView
+          Width = 113.385900000000000000
+          Height = 15.118120000000000000
+          DataSet = frmPaiRelatorio.frxRelatorio
+          DataSetName = 'frxRelatorio'
+          Memo.UTF8W = (
+            '[frxRelatorio."Linha"]')
+        end
+        object Memo2: TfrxMemoView
+          Left = 117.165430000000000000
+          Width = 117.165430000000000000
+          Height = 15.118120000000000000
+          DataSet = frmPaiRelatorio.frxRelatorio
+          DataSetName = 'frxRelatorio'
+          Memo.UTF8W = (
+            '[frxRelatorio."Coluna"]')
+        end
+        object Memo6: TfrxMemoView
+          Left = 238.110390000000000000
+          Width = 1031.811690000000000000
+          Height = 15.118120000000000000
+          DataSet = frmPaiRelatorio.frxRelatorio
+          DataSetName = 'frxRelatorio'
+          Memo.UTF8W = (
+            '[frxRelatorio."Mensagem"]')
+        end
+      end
+      object rlbTitulo: TfrxHeader
+        FillType = ftBrush
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clBlack
+        Font.Height = -11
+        Font.Name = 'Arial'
+        Font.Style = [fsBold]
+        Height = 24.559060000000000000
+        ParentFont = False
+        Top = 139.842610000000000000
+        Width = 1281.260670000000000000
+        ReprintOnNewPage = True
+        object Shape1: TfrxShapeView
+          Align = baClient
+          Width = 1281.260670000000000000
+          Height = 24.559060000000000000
+          Fill.BackColor = clSilver
+        end
+        object Memo10: TfrxMemoView
+          Top = 3.779530000000000000
+          Width = 113.385900000000000000
+          Height = 15.118120000000000000
+          Memo.UTF8W = (
+            'Linha')
+        end
+        object Memo1: TfrxMemoView
+          Left = 117.165430000000000000
+          Top = 3.779530000000000000
+          Width = 117.165430000000000000
+          Height = 15.118120000000000000
+          Memo.UTF8W = (
+            'Coluna')
+        end
+        object Memo3: TfrxMemoView
+          Left = 238.110390000000000000
+          Top = 3.779530000000000000
+          Width = 306.141930000000000000
+          Height = 15.118120000000000000
+          Memo.UTF8W = (
+            'Mensagem')
+        end
+      end
+    end
+  end
+  object frxRelatorio: TfrxDBDataset
+    Description = 'Dados do relat'#243'rio'
+    UserName = 'frxRelatorio'
+    CloseDataSource = False
+    BCDToCurrency = False
+    Left = 1168
+    Top = 240
+  end
+end

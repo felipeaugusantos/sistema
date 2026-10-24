@@ -1,0 +1,976 @@
+inherited frmCadAbreviacaoIPI: TfrmCadAbreviacaoIPI
+  Width = 792
+  Height = 613
+  Caption = 'Abrevia'#231#227'o de IPI'
+  Position = poScreenCenter
+  OnClose = FormClose
+  ExplicitWidth = 792
+  ExplicitHeight = 613
+  PixelsPerInch = 96
+  TextHeight = 14
+  inherited pnlBotoes: TPanel
+    Top = 543
+    Width = 786
+    Height = 25
+    TabOrder = 4
+    ExplicitTop = 543
+    ExplicitWidth = 786
+    ExplicitHeight = 25
+    DesignSize = (
+      786
+      25)
+    inherited FlwBotoes: TFlowPanel
+      Width = 782
+      Height = 21
+      ExplicitTop = 2
+      ExplicitWidth = 782
+      ExplicitHeight = 21
+      object btnIncluir: TBitBtnLocked
+        Left = 0
+        Top = 0
+        Width = 85
+        Height = 20
+        Caption = '&Incluir'
+        Glyph.Data = {
+          36030000424D3603000000000000360000002800000010000000100000000100
+          18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
+          96675E9F6F609F6F609F6F609F6F609F6F609F6F609F6F609F6F609F6F609F6F
+          609F6F609F6F60FF00FFFF00FFFF00FF99695FF6E0BFF4DDB8F3DAB4F3D7ADF2
+          D5A7F0D3A3F0D09EEECC99EECA93EDC990EDC68C9F6F60FF00FFFF00FFFF00FF
+          9D6C60F6E3C6F6E1C1F4DDBBF3DCB4008100F2D5AAF0D3A4F0CF9FEFCC99EFCB
+          95EEC9909F6F60FF00FFFF00FFFF00FFA16E60F7E6CEF6E5C7F4E1C100810000
+          8100008100F3D5ABF0D3A5EFD19FEFCE9AEFCB969F6F60FF00FFFF00FFFF00FF
+          A67262F8EAD4F7E7CE008100307A2A5F924B00810050883CF2D5ABF0D3A5F0D0
+          A0EFCF9C9F6F60FF00FFFF00FFFF00FFAB7663FAEEDAFAEBD5008100EFE2C2F6
+          E2C2A7B883008100008100EDD4A9F0D4A6F0D1A19F6F60FF00FFFF00FFFF00FF
+          B07864FAF0E2FAEEDCF8EBD5F8E9D0F7E6CAF6E3C5E6D8B4008100008100F2D7
+          ADF2D4A79F6F60FF00FFFF00FFFF00FFB57D64FCF3E7FBF0E3FAEFDDFAEDD8F7
+          E9D1F8E6CBF6E3C5F6E1C0F4DEBAF4DAB5F3D7AD9F6F60FF00FFFF00FFFF00FF
+          BB8065FCF7EDD58127D58127D58127D58127D58127D58127D58127D58127D581
+          27F3DAB69F6F60FF00FFFF00FFFF00FFC08366FCF8F3FCF7EFFCF4EAFBF2E5FB
+          EFDEF8EDD9F8EBD4F8E7CEF7E3C7F6E1C2F4DEBB9F6F60FF00FFFF00FFFF00FF
+          C48767FEFBF8FEFAF3FEF7EFFCF4EAFBF2E6FAEFE0F8EDDAF8EAD4F7E9CFF7E5
+          C9F6E2C49F6F60FF00FFFF00FFFF00FFC98967FEFCFBD58127D58127D58127D5
+          8127D58127D58127D58127D58127D58127F7E5CA9F6F60FF00FFFF00FFFF00FF
+          CC8B68FFFFFFFFFEFCFEFCFAFEFBF4FEF8F0FCF6EDFCF4E7FAF2E2FAEFDCF8ED
+          D7F8EAD19F6F60FF00FFFF00FFFF00FFCF8E68FFFFFFFFFFFFFFFFFCFFFCFAFE
+          FBF6FEF8F0FCF7EEFBF4E9FBF2E3FBEFDDF8EDD89F6F60FF00FFFF00FFFF00FF
+          CF8E68CF8E68CF8E68CF8E68CF8E68CF8E68CF8E68CF8E68CF8E68CF8E68CF8E
+          68CF8E68CF8E68FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF}
+        TabOrder = 0
+        OnClick = btnIncluirClick
+      end
+      object btnGravar: TBitBtnLocked
+        Left = 85
+        Top = 0
+        Width = 85
+        Height = 20
+        Caption = '&Gravar'
+        Enabled = False
+        Glyph.Data = {
+          36030000424D3603000000000000360000002800000010000000100000000100
+          18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
+          FF00FFFF00FFFF00FF313131313131313131313131FF00FFFF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF313131746B6D7A767674
+          7575828282313131313131313131FF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FF313131726E726A66697D797A2929293838384242422828286868683131
+          31313131313131FF00FFFF00FFFF00FF3131316F6C6F7470746D6A6D7D797B6C
+          6D6D4C4C4C1F1F1F000000000000090909757274777277424141FF00FF313131
+          CCCACEC9C4C9999398696669E5E2E5D8D9D9ACACAC8E8E8E525252232323201F
+          203D483D3C563C424141313131929193D7D5D9D7D5D8F2F4F68082846D6C6DA4
+          A3A4D8D8D8E9EBEBE3EAEAD4D9D9ADACAF6F836F388239424141313131EFEEF2
+          E5E5E9F7F6F6CFACACC4A6A99296986A6B6C5152536D6364A78384C4ADAFD3D0
+          D1E6E3E5D8D8D8424141313131FCFCFCFEFFFFCA9895B43837934041826263BF
+          ACABD0D0D1B588887D12119C3C3D766D6E6E6869626060FF00FF313131FFFFFF
+          FFFFFF9F3536BC4242A355557F2A28AC6C6BFFFFFFD1A4A47B14149F35362D2C
+          2C2D2C2CFF00FFFF00FF3F3F3F313131CACECF9F3536BD4241AB53539A545389
+          5354CAC5C2CC92928217179F3536FF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          3131319F3536B84442B64F4FC16968BC6363B85959BD5E5DBF58589F3536FF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF9F3536B5635FE9D5D4EEDEDDEF
+          DDDCEEDAD9F2E6E5C47B799F3536FF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FF9F3536C47E7AF3FBF8C5C2C1C5C2C1C5C2C1E7EBEBC47B799F3536FF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF9F3536C17A78F3F3F3DDD8D7DD
+          D8D7DDD8D7E3E6E5C47B799F3536FF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FF9F3536C47B79F3F3F3C5C2C1C5C2C1C5C2C1E3E6E5C47B799F3536FF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFB1706ECCC6C6CCC6C6CC
+          C6C6CCC6C6CCC6C6B1706EFF00FFFF00FFFF00FFFF00FFFF00FF}
+        TabOrder = 1
+        OnClick = btnGravarClick
+      end
+      object btnExcluir: TBitBtnLocked
+        Left = 170
+        Top = 0
+        Width = 85
+        Height = 20
+        Caption = '&Excluir'
+        Glyph.Data = {
+          36030000424D3603000000000000360000002800000010000000100000000100
+          18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FF00006E00006EFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF00006E0000
+          6EFF00FFFF00FFFF00FFFF00FFFF00FF00006E001DE80010DC00006EFF00FFFF
+          00FFFF00FFFF00FF00006E0004E20008E700006EFF00FFFF00FFFF00FFFF00FF
+          00006E001AE2001FEB0010D900006EFF00FFFF00FF00006E0005DF0009EB0003
+          DB00006EFF00FFFF00FFFF00FFFF00FFFF00FF00006E001ADF0020EB0013DC00
+          006E00006E0005E2000BEB0004DA00006EFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FF00006E001BDF0022EB0012E60008EA0009EB0004DF00006EFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF00006E001BE300
+          16EB0011EB000ADF00006EFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FF00006E0021E7001EEB001AEB0017DF00006EFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF00006E062DE30430EB00
+          20E2001EE20027EB0019DF00006EFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FF00006E0C35E40E3CEB052BDC00006E00006E001FDC002AEB001CDF0000
+          6EFF00FFFF00FFFF00FFFF00FFFF00FF00006E1442E41645EB092ED900006EFF
+          00FFFF00FF00006E0020D9012CEB001FE200006EFF00FFFF00FFFF00FFFF00FF
+          00006E1C4BE71037DB00006EFF00FFFF00FFFF00FFFF00FF00006E0022DC0027
+          E400006EFF00FFFF00FFFF00FFFF00FFFF00FF00006E00006EFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FF00006E00006EFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF}
+        TabOrder = 2
+        OnClick = btnExcluirClick
+      end
+      object btnCancela: TBitBtnLocked
+        Left = 255
+        Top = 0
+        Width = 85
+        Height = 20
+        Caption = '&Cancelar'
+        Enabled = False
+        Glyph.Data = {
+          36030000424D3603000000000000360000002800000010000000100000000100
+          18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF015603015603
+          015603015603FF00FF0000820000820000820000820000820000820000820000
+          820000820000820000820156032DC6511DB236015603FF00FF000082011EF305
+          27FB1337FB3052FC5F7DFEA1B4FFF2F6FFFFFFFFFFFFFF0000820156033FD96D
+          30C956015603FF00FF0000820120FB0528FC1438FC3154FE607FFFA5B7FFF6FA
+          FFFFFFFFFFFFFF000082015603015603015603015603FF00FF00008200008200
+          0082000082000082000082000082000082000082000082000082FF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF015603015603FF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          01560341E07428AC47015603015603FF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FF035A05015603FF00FFFF00FFFF00FF0156032DC45035CE5D188F2C015603FF
+          00FFFF00FFFF00FFFF00FFFF00FF045F09188E2B015603FF00FFFF00FF015603
+          0E8F1C19AB3122B53E035E07FF00FFFF00FFFF00FFFF00FFFF00FF05630A2DB7
+          50015603FF00FFFF00FFFF00FF01560301560303650711A32216A42904600702
+          5804015704045F080E78192FBC55015603FF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FF0156030263050A98150FA01F0D891A108E1F1CA6342ABD4A015603FF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF01560301560305840C08
+          8E110D971A0D971A015603FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FF015603015603015603015603FF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF}
+        TabOrder = 3
+        OnClick = btnCancelaClick
+      end
+      object btnPesquisa: TBitBtnLocked
+        Left = 340
+        Top = 0
+        Width = 85
+        Height = 20
+        Caption = '&Pesquisar'
+        Glyph.Data = {
+          36030000424D3603000000000000360000002800000010000000100000000100
+          18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
+          A46769A46769A46769A46769A46769A46769A46769A46769A46769A46769A467
+          69A46769A46769FF00FFFF00FFFF00FF485360FEE9C7F4DAB5F3D5AAF2D0A0EF
+          CB96EFC68BEDC182EBC17FEBC180EBC180F2C782A46769FF00FFFF00FF4380B7
+          1F6FC2656B86F3DABCF2D5B1F0D0A7EECB9EEDC793EDC28BE9BD81E9BD7FE9BD
+          7FEFC481A46769FF00FFFF00FFFF00FF32A3FF1672D76B6A80F2DABCF2D5B2EF
+          D0A9EECB9EEDC796EBC28CE9BD82E9BD7FEFC481A46769FF00FFFF00FFFF00FF
+          A0675B34A1FF1572D45E6782F3DABBF2D5B1F0D0A6EECB9EEDC795EBC28AEABF
+          81EFC480A46769FF00FFFF00FFFF00FFA7756BFFFBF033A6FF4078AD8E675EAC
+          7F7597645EAC7D6FCAA083EDC695EBC28AEFC583A46769FF00FFFF00FFFF00FF
+          A7756BFFFFFCFAF0E6AD8A88B78F84D8BAA5EED5B6D7B298B58877CBA083EBC7
+          93F2C98CA46769FF00FFFF00FFFF00FFBC8268FFFFFFFEF7F2AF847FDAC0B4F7
+          E3CFF6E0C5FFFFF4D7B198AC7D6FEECC9EF3CE97A46769FF00FFFF00FFFF00FF
+          BC8268FFFFFFFFFEFC976560F6E9E0F7EADAF6E3CFFFFFEBEFD4B797645EF0D0
+          A6F6D3A0A46769FF00FFFF00FFFF00FFD1926DFFFFFFFFFFFFB08884DECAC4FA
+          EFE5F8EAD9FFFFD4D9B8A5AC7F74F4D8B1EBCFA4A46769FF00FFFF00FFFF00FF
+          D1926DFFFFFFFFFFFFD5BFBCBA9793DECAC4F6E9DEDAC0B4B78F84B28C7BDECE
+          B4B6AA93A46769FF00FFFF00FFFF00FFDA9D75FFFFFFFFFFFFFFFFFFD5BFBCB0
+          8884976560AF867FCAA79DA56B5FA56B5FA56B5FA46769FF00FFFF00FFFF00FF
+          DA9D75FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFBFFFEF7DAC1BAA56B5FE19E
+          55E68F31B56D4DFF00FFFF00FFFF00FFE7AB79FFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFDCC7C5A56B5FF8B55CBF7A5CFF00FFFF00FFFF00FFFF00FF
+          E7AB79FBF4F0FBF4EFFAF3EFFAF3EFF8F2EFF7F2EFF7F2EFD8C2C0A56B5FC183
+          6CFF00FFFF00FFFF00FFFF00FFFF00FFE7AB79D1926DD1926DD1926DD1926DD1
+          926DD1926DD1926DD1926DA56B5FFF00FFFF00FFFF00FFFF00FF}
+        TabOrder = 4
+        OnClick = btnPesquisaClick
+      end
+    end
+    inherited btnSair: TBitBtnLocked
+      Left = 707
+      Top = 2
+      Height = 20
+      ExplicitLeft = 707
+      ExplicitTop = 2
+      ExplicitHeight = 20
+    end
+  end
+  object pnlGeral: TPanel [2]
+    Left = 0
+    Top = 0
+    Width = 786
+    Height = 43
+    Align = alTop
+    Color = 16770261
+    ParentBackground = False
+    TabOrder = 0
+    object Label1: TLabel
+      Left = 16
+      Top = 16
+      Width = 36
+      Height = 14
+      Caption = 'C'#243'digo:'
+    end
+    object Label2: TLabel
+      Left = 152
+      Top = 16
+      Width = 52
+      Height = 14
+      Caption = 'Descri'#231#227'o:'
+    end
+    object edtCodApc: TEditFocus
+      Tag = 99
+      Left = 58
+      Top = 8
+      Width = 79
+      Height = 22
+      Alignment = taLeftJustify
+      MaxLength = 3
+      TabOrder = 0
+      NormalColor = clWindow
+      FocusColor = clInfoBk
+      RequeridoColor = clRed
+      Requerido = False
+      CompZeros = True
+      TamCampo = 3
+      TipoTexto = ttNumerico
+    end
+    object edtDescri: TEditFocus
+      Tag = 99
+      Left = 207
+      Top = 8
+      Width = 527
+      Height = 22
+      Alignment = taLeftJustify
+      CharCase = ecUpperCase
+      MaxLength = 50
+      TabOrder = 1
+      NormalColor = clWindow
+      FocusColor = clInfoBk
+      RequeridoColor = clRed
+      Requerido = False
+      CompZeros = False
+      TamCampo = 0
+      TipoTexto = ttAlfanumerico
+    end
+  end
+  object dbgSaida: TDBGridCitel [3]
+    Left = 0
+    Top = 174
+    Width = 786
+    Height = 112
+    Align = alTop
+    DataSource = dtsSaida
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit]
+    ReadOnly = True
+    TabOrder = 5
+    TitleFont.Charset = ANSI_CHARSET
+    TitleFont.Color = clBlack
+    TitleFont.Height = 14
+    TitleFont.Name = 'Arial'
+    TitleFont.Pitch = fpVariable
+    TitleFont.Style = []
+    OnKeyDown = dbgSaidaKeyDown
+    CorZebra = clMoneyGreen
+    Zebra = False
+    DestacarMouse = False
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'APC_CSTSAI'
+        Title.Caption = 'CST'
+        Width = 40
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'APC_ENQIPI'
+        Title.Caption = 'C'#243'd. Enq. IPI'
+        Width = 68
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'APC_BASSAI'
+        Title.Alignment = taRightJustify
+        Title.Caption = '% Base'
+        Width = 80
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'APC_ALQSAI'
+        Title.Alignment = taRightJustify
+        Title.Caption = 'Al'#237'quota'
+        Width = 80
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'APC_CFOSAI'
+        Title.Caption = 'CFOPs'
+        Width = 462
+        Visible = True
+      end>
+  end
+  object dbgEntrada: TDBGridCitel [4]
+    Left = 0
+    Top = 415
+    Width = 786
+    Height = 128
+    Align = alClient
+    DataSource = dtsEntrada
+    Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgTabs, dgRowSelect, dgConfirmDelete, dgCancelOnExit]
+    ReadOnly = True
+    TabOrder = 3
+    TitleFont.Charset = ANSI_CHARSET
+    TitleFont.Color = clBlack
+    TitleFont.Height = 14
+    TitleFont.Name = 'Arial'
+    TitleFont.Pitch = fpVariable
+    TitleFont.Style = []
+    OnKeyDown = dbgEntradaKeyDown
+    CorZebra = clMoneyGreen
+    Zebra = False
+    DestacarMouse = False
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'APC_CSTENT'
+        Title.Caption = 'CST'
+        Width = 40
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'APC_ENQIPI'
+        Title.Caption = 'C'#243'd. Enq. IPI'
+        Width = 69
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'APC_BASENT'
+        Title.Alignment = taRightJustify
+        Title.Caption = '% Base'
+        Width = 80
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'APC_ALQENT'
+        Title.Alignment = taRightJustify
+        Title.Caption = 'Al'#237'quota'
+        Width = 80
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'APC_CFOENT'
+        Title.Caption = 'CFOPs'
+        Width = 464
+        Visible = True
+      end>
+  end
+  object pnlSaida: TPanel [5]
+    Left = 0
+    Top = 43
+    Width = 786
+    Height = 131
+    Align = alTop
+    Color = 16770261
+    ParentBackground = False
+    TabOrder = 1
+    object gpbSaida: TGroupBox
+      Tag = 99
+      Left = 1
+      Top = 1
+      Width = 784
+      Height = 129
+      Align = alClient
+      Caption = 'Dados para Sa'#237'da'
+      TabOrder = 0
+      object Label3: TLabel
+        Left = 27
+        Top = 28
+        Width = 22
+        Height = 14
+        Alignment = taRightJustify
+        Caption = 'CST:'
+      end
+      object Label4: TLabel
+        Left = 8
+        Top = 56
+        Width = 41
+        Height = 14
+        Alignment = taRightJustify
+        Caption = '% Base:'
+      end
+      object Label5: TLabel
+        Left = 192
+        Top = 56
+        Width = 42
+        Height = 14
+        Caption = 'Al'#237'quota:'
+      end
+      object Label6: TLabel
+        Left = 19
+        Top = 84
+        Width = 30
+        Height = 14
+        Alignment = taRightJustify
+        Caption = 'CFOP:'
+      end
+      object lblDigita: TLabel
+        Left = 163
+        Top = 24
+        Width = 127
+        Height = 14
+        Alignment = taRightJustify
+        Caption = 'C'#243'digo Enquadramento IPI:'
+      end
+      object edtCstSaida: TEditFocus
+        Tag = 99
+        Left = 56
+        Top = 20
+        Width = 42
+        Height = 22
+        Alignment = taLeftJustify
+        MaxLength = 2
+        TabOrder = 0
+        OnKeyPress = edtCstSaidaKeyPress
+        NormalColor = clWindow
+        FocusColor = clInfoBk
+        RequeridoColor = clRed
+        Requerido = False
+        CompZeros = True
+        TamCampo = 2
+        TipoTexto = ttNumerico
+      end
+      object edtBaseSaida: TEditFocus
+        Tag = 99
+        Left = 56
+        Top = 48
+        Width = 121
+        Height = 22
+        Alignment = taRightJustify
+        TabOrder = 2
+        NormalColor = clWindow
+        FocusColor = clInfoBk
+        RequeridoColor = clRed
+        Requerido = False
+        CompZeros = False
+        TamCampo = 0
+        TipoTexto = ttNumerico
+        EditFormat = '#,##0.00'
+      end
+      object edtAliqSaida: TEditFocus
+        Tag = 99
+        Left = 240
+        Top = 48
+        Width = 121
+        Height = 22
+        Alignment = taRightJustify
+        TabOrder = 3
+        NormalColor = clWindow
+        FocusColor = clInfoBk
+        RequeridoColor = clRed
+        Requerido = False
+        CompZeros = False
+        TamCampo = 0
+        TipoTexto = ttNumerico
+        EditFormat = '#,##0.00'
+      end
+      object mskCfopSaida: TMaskEditFocus
+        Tag = 99
+        Left = 57
+        Top = 76
+        Width = 714
+        Height = 22
+        EditMask = 
+          '9999-9999-9999-9999-9999-9999-9999-9999-9999-9999-9999-9999-9999' +
+          '-9999-9999-9999-9999-9999-9999-9999-9999-9999-9999-9999-9999-999' +
+          '9-9999-9999-9999-9999-9999-9999-9999-9999-9999-9999-9999-9999-99' +
+          '99-9999-9999-9999-9999-9999-9999-9999-9999-9999-9999-9999-9999-9' +
+          '999-9999-9999-9999-9999-9999-9999-9999-9999-9999-9999-9999;1;_'
+        MaxLength = 314
+        TabOrder = 4
+        Text = 
+          '    -    -    -    -    -    -    -    -    -    -    -    -    ' +
+          '-    -    -    -    -    -    -    -    -    -    -    -    -   ' +
+          ' -    -    -    -    -    -    -    -    -    -    -    -    -  ' +
+          '  -    -    -    -    -    -    -    -    -    -    -    -    - ' +
+          '   -    -    -    -    -    -    -    -    -    -    -    '
+        NormalColor = clWindow
+        FocusColor = clInfoBk
+        RequeridoColor = clRed
+        Requerido = False
+        ValidaData = False
+      end
+      object btnConfirmaSaida: TBitBtnLocked
+        Left = 57
+        Top = 104
+        Width = 108
+        Height = 22
+        Caption = 'Co&nfirma'
+        Glyph.Data = {
+          36030000424D3603000000000000360000002800000010000000100000000100
+          18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
+          96675E9F6F609F6F609F6F609F6F609F6F609F6F609F6F609F6F609F6F609F6F
+          609F6F609F6F60FF00FFFF00FFFF00FF99695FF6E0BFF4DDB8F3DAB4F3D7ADF2
+          D5A7F0D3A3F0D09EEECC99EECA93EDC990EDC68C9F6F60FF00FFFF00FFFF00FF
+          9D6C60F6E3C6F6E1C1F4DDBBF3DCB4008100F2D5AAF0D3A4F0CF9FEFCC99EFCB
+          95EEC9909F6F60FF00FFFF00FFFF00FFA16E60F7E6CEF6E5C7F4E1C100810000
+          8100008100F3D5ABF0D3A5EFD19FEFCE9AEFCB969F6F60FF00FFFF00FFFF00FF
+          A67262F8EAD4F7E7CE008100307A2A5F924B00810050883CF2D5ABF0D3A5F0D0
+          A0EFCF9C9F6F60FF00FFFF00FFFF00FFAB7663FAEEDAFAEBD5008100EFE2C2F6
+          E2C2A7B883008100008100EDD4A9F0D4A6F0D1A19F6F60FF00FFFF00FFFF00FF
+          B07864FAF0E2FAEEDCF8EBD5F8E9D0F7E6CAF6E3C5E6D8B4008100008100F2D7
+          ADF2D4A79F6F60FF00FFFF00FFFF00FFB57D64FCF3E7FBF0E3FAEFDDFAEDD8F7
+          E9D1F8E6CBF6E3C5F6E1C0F4DEBAF4DAB5F3D7AD9F6F60FF00FFFF00FFFF00FF
+          BB8065FCF7EDD58127D58127D58127D58127D58127D58127D58127D58127D581
+          27F3DAB69F6F60FF00FFFF00FFFF00FFC08366FCF8F3FCF7EFFCF4EAFBF2E5FB
+          EFDEF8EDD9F8EBD4F8E7CEF7E3C7F6E1C2F4DEBB9F6F60FF00FFFF00FFFF00FF
+          C48767FEFBF8FEFAF3FEF7EFFCF4EAFBF2E6FAEFE0F8EDDAF8EAD4F7E9CFF7E5
+          C9F6E2C49F6F60FF00FFFF00FFFF00FFC98967FEFCFBD58127D58127D58127D5
+          8127D58127D58127D58127D58127D58127F7E5CA9F6F60FF00FFFF00FFFF00FF
+          CC8B68FFFFFFFFFEFCFEFCFAFEFBF4FEF8F0FCF6EDFCF4E7FAF2E2FAEFDCF8ED
+          D7F8EAD19F6F60FF00FFFF00FFFF00FFCF8E68FFFFFFFFFFFFFFFFFCFFFCFAFE
+          FBF6FEF8F0FCF7EEFBF4E9FBF2E3FBEFDDF8EDD89F6F60FF00FFFF00FFFF00FF
+          CF8E68CF8E68CF8E68CF8E68CF8E68CF8E68CF8E68CF8E68CF8E68CF8E68CF8E
+          68CF8E68CF8E68FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF}
+        TabOrder = 5
+        OnClick = btnConfirmaSaidaClick
+      end
+      object btnCancelaSaida: TBitBtnLocked
+        Left = 166
+        Top = 104
+        Width = 108
+        Height = 22
+        Caption = 'C&ancelar'
+        Glyph.Data = {
+          36030000424D3603000000000000360000002800000010000000100000000100
+          18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF015603015603
+          015603015603FF00FF0000820000820000820000820000820000820000820000
+          820000820000820000820156032DC6511DB236015603FF00FF000082011EF305
+          27FB1337FB3052FC5F7DFEA1B4FFF2F6FFFFFFFFFFFFFF0000820156033FD96D
+          30C956015603FF00FF0000820120FB0528FC1438FC3154FE607FFFA5B7FFF6FA
+          FFFFFFFFFFFFFF000082015603015603015603015603FF00FF00008200008200
+          0082000082000082000082000082000082000082000082000082FF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF015603015603FF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          01560341E07428AC47015603015603FF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FF035A05015603FF00FFFF00FFFF00FF0156032DC45035CE5D188F2C015603FF
+          00FFFF00FFFF00FFFF00FFFF00FF045F09188E2B015603FF00FFFF00FF015603
+          0E8F1C19AB3122B53E035E07FF00FFFF00FFFF00FFFF00FFFF00FF05630A2DB7
+          50015603FF00FFFF00FFFF00FF01560301560303650711A32216A42904600702
+          5804015704045F080E78192FBC55015603FF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FF0156030263050A98150FA01F0D891A108E1F1CA6342ABD4A015603FF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF01560301560305840C08
+          8E110D971A0D971A015603FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FF015603015603015603015603FF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF}
+        TabOrder = 6
+        OnClick = btnCancelaSaidaClick
+      end
+      object edtEnqIpiSai: TEditFocus
+        Tag = 99
+        Left = 296
+        Top = 20
+        Width = 65
+        Height = 22
+        Alignment = taLeftJustify
+        CharCase = ecUpperCase
+        ImeName = 'Portugu'#234's (Brasil ABNT)'
+        MaxLength = 10
+        TabOrder = 1
+        OnKeyPress = edtEnqIpiSaiKeyPress
+        NormalColor = clWindow
+        FocusColor = clInfoBk
+        RequeridoColor = clRed
+        Requerido = False
+        CompZeros = True
+        TamCampo = 3
+        TipoTexto = ttAlfanumerico
+      end
+      object edtDesEnqIpiSai: TEditFocus
+        Left = 362
+        Top = 20
+        Width = 371
+        Height = 22
+        TabStop = False
+        Alignment = taLeftJustify
+        Color = 16768952
+        ImeName = 'Portugu'#234's (Brasil ABNT)'
+        ReadOnly = True
+        TabOrder = 7
+        NormalColor = 16768952
+        FocusColor = clInfoBk
+        RequeridoColor = clRed
+        Requerido = False
+        CompZeros = False
+        TamCampo = 0
+        TipoTexto = ttAlfanumerico
+      end
+    end
+  end
+  object pnlEntrada: TPanel [6]
+    Left = 0
+    Top = 286
+    Width = 786
+    Height = 129
+    Align = alTop
+    Color = 16770261
+    ParentBackground = False
+    TabOrder = 2
+    object gpbEntrada: TGroupBox
+      Tag = 99
+      Left = 1
+      Top = 1
+      Width = 784
+      Height = 127
+      Align = alClient
+      Caption = 'Dados para Entrada'
+      TabOrder = 0
+      object Label7: TLabel
+        Left = 27
+        Top = 27
+        Width = 22
+        Height = 14
+        Caption = 'CST:'
+      end
+      object Label8: TLabel
+        Left = 8
+        Top = 54
+        Width = 41
+        Height = 14
+        Caption = '% Base:'
+      end
+      object Label9: TLabel
+        Left = 192
+        Top = 54
+        Width = 42
+        Height = 14
+        Caption = 'Al'#237'quota:'
+      end
+      object Label10: TLabel
+        Left = 19
+        Top = 81
+        Width = 30
+        Height = 14
+        Caption = 'CFOP:'
+      end
+      object Label11: TLabel
+        Left = 163
+        Top = 27
+        Width = 127
+        Height = 14
+        Alignment = taRightJustify
+        Caption = 'C'#243'digo Enquadramento IPI:'
+      end
+      object edtCstEntrada: TEditFocus
+        Tag = 99
+        Left = 56
+        Top = 19
+        Width = 41
+        Height = 22
+        Alignment = taLeftJustify
+        MaxLength = 2
+        TabOrder = 0
+        OnKeyPress = edtCstEntradaKeyPress
+        NormalColor = clWindow
+        FocusColor = clInfoBk
+        RequeridoColor = clRed
+        Requerido = False
+        CompZeros = True
+        TamCampo = 2
+        TipoTexto = ttNumerico
+      end
+      object edtBaseEntrada: TEditFocus
+        Tag = 99
+        Left = 56
+        Top = 46
+        Width = 120
+        Height = 22
+        Alignment = taRightJustify
+        TabOrder = 2
+        NormalColor = clWindow
+        FocusColor = clInfoBk
+        RequeridoColor = clRed
+        Requerido = False
+        CompZeros = False
+        TamCampo = 0
+        TipoTexto = ttNumerico
+        EditFormat = '#,##0.00'
+      end
+      object edtAliqEntrada: TEditFocus
+        Tag = 99
+        Left = 240
+        Top = 46
+        Width = 121
+        Height = 22
+        Alignment = taRightJustify
+        TabOrder = 3
+        NormalColor = clWindow
+        FocusColor = clInfoBk
+        RequeridoColor = clRed
+        Requerido = False
+        CompZeros = False
+        TamCampo = 0
+        TipoTexto = ttNumerico
+        EditFormat = '#,##0.00'
+      end
+      object mskCfopEntrada: TMaskEditFocus
+        Tag = 99
+        Left = 57
+        Top = 73
+        Width = 714
+        Height = 22
+        EditMask = 
+          '9999-9999-9999-9999-9999-9999-9999-9999-9999-9999-9999-9999-9999' +
+          '-9999-9999-9999-9999-9999-9999-9999-9999-9999-9999-9999-9999-999' +
+          '9-9999-9999-9999-9999-9999-9999-9999-9999-9999-9999-9999-9999-99' +
+          '99-9999-9999-9999-9999-9999-9999-9999-9999-9999-9999-9999-9999-9' +
+          '999-9999-9999-9999-9999-9999-9999-9999-9999-9999-9999-9999;1;_'
+        MaxLength = 314
+        TabOrder = 4
+        Text = 
+          '    -    -    -    -    -    -    -    -    -    -    -    -    ' +
+          '-    -    -    -    -    -    -    -    -    -    -    -    -   ' +
+          ' -    -    -    -    -    -    -    -    -    -    -    -    -  ' +
+          '  -    -    -    -    -    -    -    -    -    -    -    -    - ' +
+          '   -    -    -    -    -    -    -    -    -    -    -    '
+        NormalColor = clWindow
+        FocusColor = clInfoBk
+        RequeridoColor = clRed
+        Requerido = False
+        ValidaData = False
+      end
+      object btnConfirmaEntrada: TBitBtnLocked
+        Left = 56
+        Top = 101
+        Width = 108
+        Height = 22
+        Caption = 'Confirma'
+        Glyph.Data = {
+          36030000424D3603000000000000360000002800000010000000100000000100
+          18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
+          96675E9F6F609F6F609F6F609F6F609F6F609F6F609F6F609F6F609F6F609F6F
+          609F6F609F6F60FF00FFFF00FFFF00FF99695FF6E0BFF4DDB8F3DAB4F3D7ADF2
+          D5A7F0D3A3F0D09EEECC99EECA93EDC990EDC68C9F6F60FF00FFFF00FFFF00FF
+          9D6C60F6E3C6F6E1C1F4DDBBF3DCB4008100F2D5AAF0D3A4F0CF9FEFCC99EFCB
+          95EEC9909F6F60FF00FFFF00FFFF00FFA16E60F7E6CEF6E5C7F4E1C100810000
+          8100008100F3D5ABF0D3A5EFD19FEFCE9AEFCB969F6F60FF00FFFF00FFFF00FF
+          A67262F8EAD4F7E7CE008100307A2A5F924B00810050883CF2D5ABF0D3A5F0D0
+          A0EFCF9C9F6F60FF00FFFF00FFFF00FFAB7663FAEEDAFAEBD5008100EFE2C2F6
+          E2C2A7B883008100008100EDD4A9F0D4A6F0D1A19F6F60FF00FFFF00FFFF00FF
+          B07864FAF0E2FAEEDCF8EBD5F8E9D0F7E6CAF6E3C5E6D8B4008100008100F2D7
+          ADF2D4A79F6F60FF00FFFF00FFFF00FFB57D64FCF3E7FBF0E3FAEFDDFAEDD8F7
+          E9D1F8E6CBF6E3C5F6E1C0F4DEBAF4DAB5F3D7AD9F6F60FF00FFFF00FFFF00FF
+          BB8065FCF7EDD58127D58127D58127D58127D58127D58127D58127D58127D581
+          27F3DAB69F6F60FF00FFFF00FFFF00FFC08366FCF8F3FCF7EFFCF4EAFBF2E5FB
+          EFDEF8EDD9F8EBD4F8E7CEF7E3C7F6E1C2F4DEBB9F6F60FF00FFFF00FFFF00FF
+          C48767FEFBF8FEFAF3FEF7EFFCF4EAFBF2E6FAEFE0F8EDDAF8EAD4F7E9CFF7E5
+          C9F6E2C49F6F60FF00FFFF00FFFF00FFC98967FEFCFBD58127D58127D58127D5
+          8127D58127D58127D58127D58127D58127F7E5CA9F6F60FF00FFFF00FFFF00FF
+          CC8B68FFFFFFFFFEFCFEFCFAFEFBF4FEF8F0FCF6EDFCF4E7FAF2E2FAEFDCF8ED
+          D7F8EAD19F6F60FF00FFFF00FFFF00FFCF8E68FFFFFFFFFFFFFFFFFCFFFCFAFE
+          FBF6FEF8F0FCF7EEFBF4E9FBF2E3FBEFDDF8EDD89F6F60FF00FFFF00FFFF00FF
+          CF8E68CF8E68CF8E68CF8E68CF8E68CF8E68CF8E68CF8E68CF8E68CF8E68CF8E
+          68CF8E68CF8E68FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF}
+        TabOrder = 5
+        OnClick = btnConfirmaEntradaClick
+      end
+      object btnCancelaEntrada: TBitBtnLocked
+        Left = 165
+        Top = 101
+        Width = 108
+        Height = 22
+        Caption = 'Cancelar'
+        Glyph.Data = {
+          36030000424D3603000000000000360000002800000010000000100000000100
+          18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF015603015603
+          015603015603FF00FF0000820000820000820000820000820000820000820000
+          820000820000820000820156032DC6511DB236015603FF00FF000082011EF305
+          27FB1337FB3052FC5F7DFEA1B4FFF2F6FFFFFFFFFFFFFF0000820156033FD96D
+          30C956015603FF00FF0000820120FB0528FC1438FC3154FE607FFFA5B7FFF6FA
+          FFFFFFFFFFFFFF000082015603015603015603015603FF00FF00008200008200
+          0082000082000082000082000082000082000082000082000082FF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF015603015603FF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          01560341E07428AC47015603015603FF00FFFF00FFFF00FFFF00FFFF00FFFF00
+          FF035A05015603FF00FFFF00FFFF00FF0156032DC45035CE5D188F2C015603FF
+          00FFFF00FFFF00FFFF00FFFF00FF045F09188E2B015603FF00FFFF00FF015603
+          0E8F1C19AB3122B53E035E07FF00FFFF00FFFF00FFFF00FFFF00FF05630A2DB7
+          50015603FF00FFFF00FFFF00FF01560301560303650711A32216A42904600702
+          5804015704045F080E78192FBC55015603FF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FF0156030263050A98150FA01F0D891A108E1F1CA6342ABD4A015603FF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF01560301560305840C08
+          8E110D971A0D971A015603FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+          FF00FFFF00FFFF00FFFF00FF015603015603015603015603FF00FFFF00FFFF00
+          FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF}
+        TabOrder = 6
+        OnClick = btnCancelaEntradaClick
+      end
+      object edtEnqIpiEnt: TEditFocus
+        Tag = 99
+        Left = 296
+        Top = 19
+        Width = 65
+        Height = 22
+        Alignment = taLeftJustify
+        CharCase = ecUpperCase
+        ImeName = 'Portugu'#234's (Brasil ABNT)'
+        MaxLength = 10
+        TabOrder = 1
+        OnKeyPress = edtEnqIpiEntKeyPress
+        NormalColor = clWindow
+        FocusColor = clInfoBk
+        RequeridoColor = clRed
+        Requerido = False
+        CompZeros = True
+        TamCampo = 3
+        TipoTexto = ttAlfanumerico
+      end
+      object edtDesEnqIpiEnt: TEditFocus
+        Left = 362
+        Top = 19
+        Width = 371
+        Height = 22
+        TabStop = False
+        Alignment = taLeftJustify
+        Color = 16768952
+        ImeName = 'Portugu'#234's (Brasil ABNT)'
+        ReadOnly = True
+        TabOrder = 7
+        NormalColor = 16768952
+        FocusColor = clInfoBk
+        RequeridoColor = clRed
+        Requerido = False
+        CompZeros = False
+        TamCampo = 0
+        TipoTexto = ttAlfanumerico
+      end
+    end
+  end
+  inherited pnlStatus: TPanel
+    Top = 568
+    Width = 786
+    TabOrder = 6
+    ExplicitTop = 568
+    ExplicitWidth = 786
+    inherited pnlNomeForm: TPanel
+      Left = 615
+      ExplicitLeft = 615
+    end
+    inherited pnlInfo: TPanel
+      Width = 615
+      ExplicitWidth = 615
+    end
+  end
+  object dtsSaida: TDataSource
+    DataSet = cdsSaida
+    Left = 464
+    Top = 168
+  end
+  object cdsSaida: TUniClientDataSet
+    Aggregates = <>
+    Params = <>
+    AfterScroll = cdsSaidaAfterScroll
+    Left = 504
+    Top = 168
+    object cdsSaidaAPC_CSTSAI: TStringField
+      FieldName = 'APC_CSTSAI'
+      Size = 2
+    end
+    object cdsSaidaAPC_ENQIPI: TStringField
+      FieldName = 'APC_ENQIPI'
+      Size = 3
+    end
+    object cdsSaidaAPC_BASSAI: TFloatField
+      FieldName = 'APC_BASSAI'
+      DisplayFormat = '#,##0.00'
+    end
+    object cdsSaidaAPC_ALQSAI: TFloatField
+      FieldName = 'APC_ALQSAI'
+      DisplayFormat = '#,##0.00'
+    end
+    object cdsSaidaAPC_CFOSAI: TStringField
+      DisplayWidth = 314
+      FieldName = 'APC_CFOSAI'
+      Size = 314
+    end
+    object cdsSaidaAUTOINCREM: TStringField
+      FieldName = 'AUTOINCREM'
+    end
+  end
+  object dtsEntrada: TDataSource
+    DataSet = cdsEntrada
+    Left = 472
+    Top = 392
+  end
+  object cdsEntrada: TUniClientDataSet
+    Aggregates = <>
+    Params = <>
+    AfterScroll = cdsEntradaAfterScroll
+    Left = 512
+    Top = 392
+    object cdsEntradaAPC_CSTENT: TStringField
+      FieldName = 'APC_CSTENT'
+      Size = 2
+    end
+    object cdsEntradaAPC_ENQIPI: TStringField
+      FieldName = 'APC_ENQIPI'
+      Size = 3
+    end
+    object cdsEntradaAPC_BASENT: TFloatField
+      FieldName = 'APC_BASENT'
+      DisplayFormat = '#,##0.00'
+    end
+    object cdsEntradaAPC_ALQENT: TFloatField
+      FieldName = 'APC_ALQENT'
+      DisplayFormat = '#,##0.00'
+    end
+    object cdsEntradaAPC_CFOENT: TStringField
+      FieldName = 'APC_CFOENT'
+      Size = 314
+    end
+    object cdsEntradaAUTOINCREM: TStringField
+      FieldName = 'AUTOINCREM'
+    end
+  end
+end

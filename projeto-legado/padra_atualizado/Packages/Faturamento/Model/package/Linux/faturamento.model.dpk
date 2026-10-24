@@ -1,0 +1,43 @@
+package faturamento.model;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$IMPLICITBUILD ON}
+
+requires
+  rtl,
+  faturamento.impostos.interfaces,
+  faturamento.impostos.tipos,
+  Shared.Functions;
+
+contains
+  Faturamento.Model.Cliente in '..\..\source\Faturamento.Model.Cliente.pas',
+  Faturamento.Model.Produto in '..\..\source\Faturamento.Model.Produto.pas',
+  Faturamento.Model.Empresa in '..\..\source\Faturamento.Model.Empresa.pas',
+  Faturamento.Model.Fornecedor in '..\..\source\Faturamento.Model.Fornecedor.pas',
+  Faturamento.Model.AbreviacaoIcms in '..\..\source\Faturamento.Model.AbreviacaoIcms.pas';
+
+end.

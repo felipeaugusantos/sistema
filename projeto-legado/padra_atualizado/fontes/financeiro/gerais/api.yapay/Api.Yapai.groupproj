@@ -1,0 +1,48 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{1059870C-48E7-4B28-B40B-7F5E57FEF4B8}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="api.rest\Yapay.Api.Rest.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="demo\Yapay.Api.Demo.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="Yapay_Api_Rest">
+        <MSBuild Projects="api.rest\Yapay.Api.Rest.dproj"/>
+    </Target>
+    <Target Name="Yapay_Api_Rest:Clean">
+        <MSBuild Projects="api.rest\Yapay.Api.Rest.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Yapay_Api_Rest:Make">
+        <MSBuild Projects="api.rest\Yapay.Api.Rest.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Yapay_Api_Demo">
+        <MSBuild Projects="demo\Yapay.Api.Demo.dproj"/>
+    </Target>
+    <Target Name="Yapay_Api_Demo:Clean">
+        <MSBuild Projects="demo\Yapay.Api.Demo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="Yapay_Api_Demo:Make">
+        <MSBuild Projects="demo\Yapay.Api.Demo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="Yapay_Api_Rest;Yapay_Api_Demo"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="Yapay_Api_Rest:Clean;Yapay_Api_Demo:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="Yapay_Api_Rest:Make;Yapay_Api_Demo:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

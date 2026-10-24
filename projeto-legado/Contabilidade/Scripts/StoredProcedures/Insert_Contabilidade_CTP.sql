@@ -1,0 +1,93 @@
+DELIMITER $$
+
+DROP PROCEDURE IF EXISTS `Insert_Contabilidade_CTP` $$
+
+CREATE PROCEDURE `Insert_Contabilidade_CTP` () 
+BEGIN
+  INSERT CONLOG (
+    LOG_TIPLAN,
+    LOG_EMPLAN,
+    LOG_TABELA,
+    LOG_PROCES,
+    LOG_INCDOC,
+    LOG_MODLAN,
+    LOG_STATUS
+  ) 
+  SELECT DISTINCT 
+    "CTP",
+    CTP.CTP_CODEMP,
+    "CADPAG",
+    0,
+    CTP.AUTOINCREM,
+    1,
+    NULL 
+  FROM
+    CADPAG CTP 
+    LEFT JOIN CFGSIS 
+      ON SIS_CODEMP = CTP.CTP_CODEMP 
+      AND SIS_VALCFG = 'CFG_EXUCCP' 
+  WHERE CTP.CTP_DTAPAG = CURRENT_DATE 
+    AND (
+      IF(
+        IFNULL(SIS_VALCFG, "S") = "S",
+        TRUE,
+        CTP.CTP_USOCON = "N"
+      )
+    ) 
+  UNION
+  ALL 
+  SELECT DISTINCT 
+    "CTP",
+    CTP.CTP_CODEMP,
+    "CADPAG",
+    0,
+    CTP.AUTOINCREM,
+    2,
+    NULL 
+  FROM
+    DEL_CADPAG CTP 
+    LEFT JOIN CFGSIS 
+      ON SIS_CODEMP = CTP.CTP_CODEMP 
+      AND SIS_VALCFG = 'CFG_EXUCCP' 
+  WHERE CTP.DTADEL = CURRENT_DATE 
+    AND (
+      IF(
+        IFNULL(SIS_VALCFG, "S") = "S",
+        TRUE,
+        CTP.CTP_USOCON = "N"
+      )
+    ) 
+  UNION
+  ALL 
+  SELECT 
+    "CTP",
+    CTP.CTP_CODEMP,
+    "CADPAG",
+    0,
+    CTP.AUTOINCREM,
+    2,
+    NULL 
+  FROM
+    LOGCTP LCP 
+    JOIN CADPAG CTP 
+      ON CTP.CTP_NUMDUP = LCP.CTP_NUMDUP 
+      AND CTP.CTP_CODEMP = LCP.CTP_CODEMP 
+      AND CTP.CTP_CODFOR = LCP.CTP_CODFOR 
+      AND CTP.CTP_PARCEL = LCP.CTP_PARCEL 
+      AND CTP.CTP_SEQBAI = LCP.CTP_SEQBAI 
+      AND IFNULL(CTP.CTP_SERIE_, "") = IFNULL(LCP.CTP_SERIE_, "") 
+    LEFT JOIN CFGSIS 
+      ON SIS_CODEMP = CTP.CTP_CODEMP 
+      AND SIS_VALCFG = 'CFG_EXUCCP' 
+  WHERE LCP.CTP_DESCRI LIKE '%ESTORNO%' 
+    AND LCP.CTP_DTALOG = CURRENT_DATE 
+	AND (
+      IF(
+        IFNULL(SIS_VALCFG, "S") = "S",
+        TRUE,
+        CTP.CTP_USOCON = "N"
+      )
+    );
+END $$
+
+DELIMITER ;

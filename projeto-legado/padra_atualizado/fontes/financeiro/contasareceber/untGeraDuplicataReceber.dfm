@@ -1,0 +1,702 @@
+inherited frmGeraDuplicataReceber: TfrmGeraDuplicataReceber
+  Left = 150
+  Top = 89
+  Width = 577
+  Height = 371
+  BorderIcons = [biSystemMenu]
+  Caption = 'Gera'#231#227'o de Duplicata '#224' Receber'
+  Position = poMainFormCenter
+  OnDestroy = FormDestroy
+  ExplicitWidth = 577
+  ExplicitHeight = 371
+  PixelsPerInch = 96
+  TextHeight = 14
+  inherited pnlBotoes: TPanel
+    Top = 283
+    Width = 571
+    TabOrder = 4
+    ExplicitTop = 241
+    ExplicitWidth = 571
+    DesignSize = (
+      571
+      0)
+    inherited FlwBotoes: TFlowPanel
+      Width = 567
+      ExplicitWidth = 567
+    end
+    inherited btnSair: TBitBtnLocked
+      Left = 619
+      ExplicitLeft = 619
+    end
+  end
+  inherited pnlStatus: TPanel
+    Top = 326
+    Width = 571
+    TabOrder = 3
+    ExplicitTop = 284
+    ExplicitWidth = 571
+    inherited pnlNomeForm: TPanel
+      Left = 424
+      Width = 147
+      ExplicitLeft = 424
+      ExplicitWidth = 147
+    end
+    inherited pnlInfo: TPanel
+      Width = 424
+      ExplicitWidth = 424
+    end
+  end
+  inherited pgcDados: TPageControl
+    Top = 115
+    Width = 0
+    Height = 0
+    Align = alNone
+    TabOrder = 2
+    Visible = False
+    ExplicitTop = 115
+    ExplicitWidth = 0
+    ExplicitHeight = 0
+    inherited tbsGeral: TTabSheet
+      ExplicitLeft = 4
+      ExplicitTop = 28
+      ExplicitWidth = 761
+      ExplicitHeight = 428
+    end
+  end
+  object pnlCabecalho: TPanel [3]
+    Left = 0
+    Top = 0
+    Width = 571
+    Height = 283
+    Align = alClient
+    BevelInner = bvRaised
+    BevelOuter = bvLowered
+    Color = 16770261
+    ParentBackground = False
+    TabOrder = 0
+    ExplicitHeight = 241
+    DesignSize = (
+      571
+      283)
+    object Label1: TLabel
+      Left = 87
+      Top = 77
+      Width = 35
+      Height = 14
+      Alignment = taRightJustify
+      Caption = 'Cliente:'
+    end
+    object Label3: TLabel
+      Left = 233
+      Top = 168
+      Width = 6
+      Height = 14
+      Alignment = taRightJustify
+      Caption = #224
+    end
+    object Label4: TLabel
+      Left = 78
+      Top = 99
+      Width = 44
+      Height = 14
+      Alignment = taRightJustify
+      Caption = 'Portador:'
+    end
+    object lblPeriodo: TLabel
+      Left = 83
+      Top = 168
+      Width = 39
+      Height = 14
+      Alignment = taRightJustify
+      Caption = 'Per'#237'odo:'
+    end
+    object Label2: TLabel
+      Left = 51
+      Top = 122
+      Width = 71
+      Height = 14
+      Alignment = taRightJustify
+      Caption = 'Portador (AG):'
+    end
+    object lblCndPag: TLabel
+      Left = 34
+      Top = 145
+      Width = 87
+      Height = 14
+      Caption = 'Cond. Pagamento:'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Height = 14
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      ParentFont = False
+    end
+    object Label5: TLabel
+      Left = 8
+      Top = 191
+      Width = 115
+      Height = 14
+      Caption = 'Ordenar impress'#227'o por:'
+    end
+    object edtCodCli: TEditFocus
+      Tag = 99
+      Left = 125
+      Top = 71
+      Width = 72
+      Height = 22
+      Alignment = taLeftJustify
+      ImeName = 'Portugu'#234's (Brasil ABNT)'
+      TabOrder = 1
+      OnKeyPress = edtCodCliKeyPress
+      NormalColor = clWindow
+      FocusColor = clInfoBk
+      RequeridoColor = clRed
+      Requerido = False
+      CompZeros = True
+      TamCampo = 8
+      TipoTexto = ttNumerico
+    end
+    object edtNomCli: TEditFocus
+      Left = 198
+      Top = 71
+      Width = 361
+      Height = 22
+      TabStop = False
+      Alignment = taLeftJustify
+      Color = 16768952
+      Enabled = False
+      ImeName = 'Portugu'#234's (Brasil ABNT)'
+      ReadOnly = True
+      TabOrder = 11
+      NormalColor = 16768952
+      FocusColor = clInfoBk
+      RequeridoColor = clRed
+      Requerido = False
+      CompZeros = False
+      TamCampo = 0
+      TipoTexto = ttAlfanumerico
+    end
+    object edtCodPor: TEditFocus
+      Tag = 99
+      Left = 125
+      Top = 94
+      Width = 72
+      Height = 22
+      Alignment = taLeftJustify
+      MaxLength = 5
+      TabOrder = 2
+      OnKeyPress = edtCodPorKeyPress
+      NormalColor = clWindow
+      FocusColor = clInfoBk
+      RequeridoColor = clRed
+      Requerido = False
+      CompZeros = True
+      TamCampo = 5
+      TipoTexto = ttNumerico
+    end
+    object edtNomPor: TEditFocus
+      Left = 198
+      Top = 94
+      Width = 361
+      Height = 22
+      TabStop = False
+      Alignment = taLeftJustify
+      Color = 16768952
+      Enabled = False
+      ReadOnly = True
+      TabOrder = 12
+      NormalColor = 16768952
+      FocusColor = clInfoBk
+      RequeridoColor = clRed
+      Requerido = False
+      CompZeros = False
+      TamCampo = 0
+      TipoTexto = ttAlfanumerico
+    end
+    object rdbDtaCad: TRadioButton
+      Left = 355
+      Top = 167
+      Width = 70
+      Height = 17
+      Caption = 'Cadastro'
+      Checked = True
+      TabOrder = 7
+      TabStop = True
+    end
+    object rdbDtaVen: TRadioButton
+      Left = 431
+      Top = 167
+      Width = 80
+      Height = 17
+      Caption = 'Vencimento'
+      TabOrder = 8
+    end
+    object edtNomPorAgr: TEditFocus
+      Left = 198
+      Top = 117
+      Width = 361
+      Height = 22
+      TabStop = False
+      Alignment = taLeftJustify
+      Color = 16768952
+      Enabled = False
+      ReadOnly = True
+      TabOrder = 13
+      NormalColor = 16768952
+      FocusColor = clInfoBk
+      RequeridoColor = clRed
+      Requerido = False
+      CompZeros = False
+      TamCampo = 0
+      TipoTexto = ttAlfanumerico
+    end
+    object edtPorAgr: TEditFocus
+      Tag = 99
+      Left = 125
+      Top = 117
+      Width = 72
+      Height = 22
+      Alignment = taLeftJustify
+      MaxLength = 5
+      TabOrder = 3
+      OnKeyPress = edtPorAgrKeyPress
+      NormalColor = clWindow
+      FocusColor = clInfoBk
+      RequeridoColor = clRed
+      Requerido = False
+      CompZeros = True
+      TamCampo = 5
+      TipoTexto = ttNumerico
+    end
+    object edtCodCnd: TEditFocus
+      Tag = 99
+      Left = 125
+      Top = 140
+      Width = 72
+      Height = 22
+      Alignment = taLeftJustify
+      CharCase = ecUpperCase
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Height = 14
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      ImeName = 'Portugu'#234's (Brasil ABNT)'
+      MaxLength = 3
+      ParentFont = False
+      TabOrder = 4
+      OnExit = edtCodCndExit
+      OnKeyPress = edtCodCndKeyPress
+      NormalColor = clWindow
+      FocusColor = clInfoBk
+      RequeridoColor = clRed
+      Requerido = False
+      CompZeros = True
+      TamCampo = 3
+      TipoTexto = ttAlfanumerico
+    end
+    object edtDesCnd: TEditFocus
+      Left = 198
+      Top = 140
+      Width = 361
+      Height = 22
+      TabStop = False
+      Alignment = taLeftJustify
+      Color = 16768952
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Height = 14
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      ImeName = 'Portugu'#234's (Brasil ABNT)'
+      ParentFont = False
+      ReadOnly = True
+      TabOrder = 14
+      NormalColor = 16768952
+      FocusColor = clInfoBk
+      RequeridoColor = clRed
+      Requerido = False
+      CompZeros = False
+      TamCampo = 0
+      TipoTexto = ttAlfanumerico
+    end
+    object mskDtaIni: TcxDateEdit
+      Tag = 99
+      Left = 125
+      Top = 163
+      Properties.ButtonGlyph.SourceDPI = 96
+      Properties.ButtonGlyph.Data = {
+        424D360400000000000036000000280000001000000010000000010020000000
+        000000000000C40E0000C40E00000000000000000000000000020000000A0000
+        0010000000110000001100000011000000120000001200000012000000120000
+        00120000001300000013000000120000000C000000030000000A81594CC2B47C
+        69FFB37B69FFB37B68FFB37A68FFB37A68FFB27A68FFB37968FFB27968FFB279
+        67FFB27867FFB17867FFB17866FF7F5649C30000000B0000000EB77F6EFFFBF8
+        F5FFF8EEE9FFF8EEE8FFF7EFE8FFF7EEE8FFF7EEE8FFF7EDE7FFF7EDE6FFF6ED
+        E6FFF6ECE6FFF6ECE6FFF6ECE5FFB47B69FF000000110000000EB98472FFFBF8
+        F6FFF8F0EAFFBE9788FFECDDD5FFBD9586FFECDCD4FFBC9383FFECDCD4FFBA92
+        83FFEBDAD3FFB99181FFF7EDE7FFB77F6EFF000000110000000EBC8978FFFCFA
+        F8FFF9F1EDFFF8F0ECFFF8F0EBFFF9F0EBFFF9F0EAFFF8EFEAFFF8EFEAFFEBDD
+        D5FFECDCD5FFEBDCD4FFF8EEE9FFB98472FF000000100000000DC08E7DFFFCFA
+        F9FFFAF3EFFF7477C9FF3C3FB7FF343AB1FF2F35ABFF6566B9FFF9F1ECFFBE97
+        86FFEDDED6FFBD9585FFF8F1EBFFBC8977FF000000100000000CC39482FFFCFA
+        FAFFFBF5F2FF484EC3FF464BC2FF4549C0FF3E44BBFF3035ACFFFAF2EEFFEDDF
+        D9FFEDDFD8FFEDDFD8FFF9F2EEFFC08E7CFF0000000F0000000BC79887FFFDFB
+        FAFFFBF7F4FF4A52C7FF4950C4FFFBF5F2FF454AC1FF373CB3FFFAF5F1FFC19B
+        8BFFEEE0DBFFC09889FFFAF4F0FFC49381FF0000000E0000000BC99D8CFFFDFC
+        FCFFFCF8F6FF4F56C8FF4C53C7FF4A51C6FF494FC3FF3F45B9FFFBF6F3FFEEE2
+        DCFFEEE2DCFFEEE2DCFFFAF6F2FFC69886FF0000000D0000000ACDA190FFFEFC
+        FCFFFCF9F8FF7D82D6FF5058CAFF4E54C7FF4B53C6FF7478CEFFFCF7F6FFC49F
+        91FFEFE3DFFFC39D8FFFFBF7F5FFC99D8BFF0000000D00000009CFA594FFFEFC
+        FCFFFDFAF9FFFDF9F9FFFDFAF8FFFDF9F8FFFDFAF8FFFCF9F7FFFCF9F7FFFCF9
+        F7FFFDF8F7FFFCF9F7FFFCF9F7FFCCA290FF0000000C000000084B53C3FF8D9E
+        ECFF687CE3FF6678E2FF6476E1FF6172E0FF5F70DFFF5D6CDEFF5B69DCFF5966
+        DBFF5664DAFF5462D9FF616DDCFF3337AAFF0000000B000000084C55C4FF93A4
+        EEFF6C80E6FF6A7EE4FF687BE4FF6678E2FF6375E1FF6172E0FF5E6FDEFF5C6C
+        DDFF5A69DCFF5766DAFF6472DDFF3538ABFF0000000A000000074D56C6FF96A7
+        EFFF95A6EFFF93A4EDFF90A2EDFF8F9FEDFF8B9BEBFF8898EAFF8595EAFF8291
+        E7FF7F8DE7FF7D89E5FF7987E5FF3539ACFF00000009000000043A4093C14D55
+        C5FF4B53C3FF4A51C1FF484FBFFF464DBEFF444BBBFF4249B9FF4046B7FF3E44
+        B4FF3C41B3FF3A3EB0FF393CAEFF282B80C20000000600000001000000040000
+        0006000000060000000600000007000000070000000700000007000000070000
+        00070000000800000008000000070000000500000001}
+      Properties.ClearKey = 46
+      Properties.DateButtons = []
+      Properties.MinDate = 2.000000000000000000
+      Properties.ValidateOnEnter = False
+      Properties.ValidationOptions = []
+      StyleFocused.Color = clInfoBk
+      TabOrder = 5
+      Width = 103
+    end
+    object mskDtaFin: TcxDateEdit
+      Tag = 99
+      Left = 243
+      Top = 163
+      Properties.ButtonGlyph.SourceDPI = 96
+      Properties.ButtonGlyph.Data = {
+        424D360400000000000036000000280000001000000010000000010020000000
+        000000000000C40E0000C40E00000000000000000000000000020000000A0000
+        0010000000110000001100000011000000120000001200000012000000120000
+        00120000001300000013000000120000000C000000030000000A81594CC2B47C
+        69FFB37B69FFB37B68FFB37A68FFB37A68FFB27A68FFB37968FFB27968FFB279
+        67FFB27867FFB17867FFB17866FF7F5649C30000000B0000000EB77F6EFFFBF8
+        F5FFF8EEE9FFF8EEE8FFF7EFE8FFF7EEE8FFF7EEE8FFF7EDE7FFF7EDE6FFF6ED
+        E6FFF6ECE6FFF6ECE6FFF6ECE5FFB47B69FF000000110000000EB98472FFFBF8
+        F6FFF8F0EAFFBE9788FFECDDD5FFBD9586FFECDCD4FFBC9383FFECDCD4FFBA92
+        83FFEBDAD3FFB99181FFF7EDE7FFB77F6EFF000000110000000EBC8978FFFCFA
+        F8FFF9F1EDFFF8F0ECFFF8F0EBFFF9F0EBFFF9F0EAFFF8EFEAFFF8EFEAFFEBDD
+        D5FFECDCD5FFEBDCD4FFF8EEE9FFB98472FF000000100000000DC08E7DFFFCFA
+        F9FFFAF3EFFF7477C9FF3C3FB7FF343AB1FF2F35ABFF6566B9FFF9F1ECFFBE97
+        86FFEDDED6FFBD9585FFF8F1EBFFBC8977FF000000100000000CC39482FFFCFA
+        FAFFFBF5F2FF484EC3FF464BC2FF4549C0FF3E44BBFF3035ACFFFAF2EEFFEDDF
+        D9FFEDDFD8FFEDDFD8FFF9F2EEFFC08E7CFF0000000F0000000BC79887FFFDFB
+        FAFFFBF7F4FF4A52C7FF4950C4FFFBF5F2FF454AC1FF373CB3FFFAF5F1FFC19B
+        8BFFEEE0DBFFC09889FFFAF4F0FFC49381FF0000000E0000000BC99D8CFFFDFC
+        FCFFFCF8F6FF4F56C8FF4C53C7FF4A51C6FF494FC3FF3F45B9FFFBF6F3FFEEE2
+        DCFFEEE2DCFFEEE2DCFFFAF6F2FFC69886FF0000000D0000000ACDA190FFFEFC
+        FCFFFCF9F8FF7D82D6FF5058CAFF4E54C7FF4B53C6FF7478CEFFFCF7F6FFC49F
+        91FFEFE3DFFFC39D8FFFFBF7F5FFC99D8BFF0000000D00000009CFA594FFFEFC
+        FCFFFDFAF9FFFDF9F9FFFDFAF8FFFDF9F8FFFDFAF8FFFCF9F7FFFCF9F7FFFCF9
+        F7FFFDF8F7FFFCF9F7FFFCF9F7FFCCA290FF0000000C000000084B53C3FF8D9E
+        ECFF687CE3FF6678E2FF6476E1FF6172E0FF5F70DFFF5D6CDEFF5B69DCFF5966
+        DBFF5664DAFF5462D9FF616DDCFF3337AAFF0000000B000000084C55C4FF93A4
+        EEFF6C80E6FF6A7EE4FF687BE4FF6678E2FF6375E1FF6172E0FF5E6FDEFF5C6C
+        DDFF5A69DCFF5766DAFF6472DDFF3538ABFF0000000A000000074D56C6FF96A7
+        EFFF95A6EFFF93A4EDFF90A2EDFF8F9FEDFF8B9BEBFF8898EAFF8595EAFF8291
+        E7FF7F8DE7FF7D89E5FF7987E5FF3539ACFF00000009000000043A4093C14D55
+        C5FF4B53C3FF4A51C1FF484FBFFF464DBEFF444BBBFF4249B9FF4046B7FF3E44
+        B4FF3C41B3FF3A3EB0FF393CAEFF282B80C20000000600000001000000040000
+        0006000000060000000600000007000000070000000700000007000000070000
+        00070000000800000008000000070000000500000001}
+      Properties.ClearKey = 46
+      Properties.DateButtons = []
+      Properties.MinDate = 2.000000000000000000
+      Properties.ValidateOnEnter = False
+      Properties.ValidationOptions = []
+      StyleFocused.Color = clInfoBk
+      TabOrder = 6
+      Width = 103
+    end
+    object chkAgrupaCred: TcxCheckBox
+      Left = 323
+      Top = 193
+      Anchors = [akTop, akRight]
+      Caption = 'Agrupar cr'#233'ditos independente do portador'
+      Properties.MultiLine = True
+      TabOrder = 10
+      Width = 233
+    end
+    object cbxImpAG: TComboBoxFocus
+      Left = 125
+      Top = 188
+      Width = 103
+      Height = 22
+      Style = csDropDownList
+      ItemIndex = 0
+      TabOrder = 9
+      Text = 'N'#250'mero AG'
+      Items.Strings = (
+        'N'#250'mero AG'
+        'Nome do Cliente')
+      NormalColor = clWindow
+      FocusColor = clInfoBk
+      RequeridoColor = clRed
+      Requerido = False
+    end
+    object rdgOpcoes: TRadioGroup
+      Left = 7
+      Top = 214
+      Width = 550
+      Height = 58
+      Caption = 'Op'#231#245'es de impress'#227'o e gera'#231#227'o:'
+      Columns = 2
+      ItemIndex = 0
+      Items.Strings = (
+        'Imprimir'
+        'Gerar PDF'
+        'Enviar por e-mail'
+        'Imprimir e enviar por e-mail')
+      TabOrder = 15
+    end
+    object GbpEmpresa: TGroupBox
+      Left = 118
+      Top = 8
+      Width = 446
+      Height = 58
+      Caption = 'Empresa:'
+      TabOrder = 0
+      object rdbOrigem: TRadioButton
+        Left = 13
+        Top = 13
+        Width = 101
+        Height = 17
+        Caption = 'Origem (Pedido)'
+        TabOrder = 0
+      end
+      object rdbFatu: TRadioButton
+        Left = 128
+        Top = 13
+        Width = 146
+        Height = 17
+        Caption = 'Faturamento (Documento)'
+        Checked = True
+        TabOrder = 1
+        TabStop = True
+      end
+      object edtNomEmp: TEditFocus
+        Left = 80
+        Top = 30
+        Width = 361
+        Height = 22
+        TabStop = False
+        Alignment = taLeftJustify
+        Color = 16768952
+        ImeName = 'Portugu'#234's (Brasil ABNT)'
+        ReadOnly = True
+        TabOrder = 2
+        NormalColor = 16768952
+        FocusColor = clInfoBk
+        RequeridoColor = clRed
+        Requerido = False
+        CompZeros = False
+        TamCampo = 0
+        TipoTexto = ttAlfanumerico
+      end
+      object edtCodEmp: TEditFocus
+        Tag = 99
+        Left = 7
+        Top = 30
+        Width = 72
+        Height = 22
+        Alignment = taLeftJustify
+        ImeName = 'Portugu'#234's (Brasil ABNT)'
+        MaxLength = 3
+        TabOrder = 3
+        OnKeyPress = edtCodEmpKeyPress
+        NormalColor = clWindow
+        FocusColor = clInfoBk
+        RequeridoColor = clRed
+        Requerido = False
+        CompZeros = True
+        TamCampo = 3
+        TipoTexto = ttNumerico
+      end
+    end
+  end
+  object pnlBotoesBaixa: TPanel [4]
+    Left = 0
+    Top = 300
+    Width = 571
+    Height = 26
+    Align = alBottom
+    BevelInner = bvLowered
+    Color = 16770261
+    ParentBackground = False
+    TabOrder = 1
+    ExplicitTop = 258
+    object btnConfirma: TBitBtnLocked
+      Left = 2
+      Top = 2
+      Width = 112
+      Height = 22
+      Align = alLeft
+      Caption = '[ F10 ] Confirma'
+      Glyph.Data = {
+        DE010000424DDE01000000000000760000002800000024000000120000000100
+        0400000000006801000000000000000000001000000000000000000000000000
+        80000080000000808000800000008000800080800000C0C0C000808080000000
+        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00333333333333
+        3333333333333333333333330000333333333333333333333333F33333333333
+        00003333344333333333333333388F3333333333000033334224333333333333
+        338338F3333333330000333422224333333333333833338F3333333300003342
+        222224333333333383333338F3333333000034222A22224333333338F338F333
+        8F33333300003222A3A2224333333338F3838F338F33333300003A2A333A2224
+        33333338F83338F338F33333000033A33333A222433333338333338F338F3333
+        0000333333333A222433333333333338F338F33300003333333333A222433333
+        333333338F338F33000033333333333A222433333333333338F338F300003333
+        33333333A222433333333333338F338F00003333333333333A22433333333333
+        3338F38F000033333333333333A223333333333333338F830000333333333333
+        333A333333333333333338330000333333333333333333333333333333333333
+        0000}
+      NumGlyphs = 2
+      TabOrder = 0
+      OnClick = btnConfirmaClick
+    end
+    object btnSairAgrup: TBitBtnLocked
+      Left = 458
+      Top = 2
+      Width = 111
+      Height = 22
+      Align = alRight
+      Caption = '[ Esc ] Sair'
+      Glyph.Data = {
+        36030000424D3603000000000000360000002800000010000000100000000100
+        18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
+        FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+        FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+        00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF015603015603
+        015603015603FF00FF0000820000820000820000820000820000820000820000
+        820000820000820000820156032DC6511DB236015603FF00FF000082011EF305
+        27FB1337FB3052FC5F7DFEA1B4FFF2F6FFFFFFFFFFFFFF0000820156033FD96D
+        30C956015603FF00FF0000820120FB0528FC1438FC3154FE607FFFA5B7FFF6FA
+        FFFFFFFFFFFFFF000082015603015603015603015603FF00FF00008200008200
+        0082000082000082000082000082000082000082000082000082FF00FFFF00FF
+        FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+        FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF015603015603FF00FFFF00FFFF
+        00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+        01560341E07428AC47015603015603FF00FFFF00FFFF00FFFF00FFFF00FFFF00
+        FF035A05015603FF00FFFF00FFFF00FF0156032DC45035CE5D188F2C015603FF
+        00FFFF00FFFF00FFFF00FFFF00FF045F09188E2B015603FF00FFFF00FF015603
+        0E8F1C19AB3122B53E035E07FF00FFFF00FFFF00FFFF00FFFF00FF05630A2DB7
+        50015603FF00FFFF00FFFF00FF01560301560303650711A32216A42904600702
+        5804015704045F080E78192FBC55015603FF00FFFF00FFFF00FFFF00FFFF00FF
+        FF00FF0156030263050A98150FA01F0D891A108E1F1CA6342ABD4A015603FF00
+        FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF01560301560305840C08
+        8E110D971A0D971A015603FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+        FF00FFFF00FFFF00FFFF00FF015603015603015603015603FF00FFFF00FFFF00
+        FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+        00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF}
+      TabOrder = 3
+      OnClick = btnSairAgrupClick
+    end
+    object btnConfigurar: TBitBtnLocked
+      Left = 114
+      Top = 2
+      Width = 96
+      Height = 22
+      Align = alLeft
+      Caption = '&Configurar'
+      Glyph.Data = {
+        36030000424D3603000000000000360000002800000010000000100000000100
+        18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
+        FF00FFFF00FFFF00FFFF00FFFF00FF108ABA1895C1066897FF00FFFF00FFFF00
+        FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF188CBA138FBD066A990982B213
+        99CA1E9DC90B72A00A6D9A2B96BD2692BCFF00FFFF00FFFF00FFFF00FFFF00FF
+        FF00FF1D8FBA21A5D10999CE078ABC0EB7EB2FCBF61F90BB41B0D34CB4D4288E
+        B6FF00FFFF00FFFF00FFFF00FF1073A01880AB35A1C96BD0EA37AFD423B8E60F
+        CBFF23D0FF44C7ED5AB6D59CD8E677C0D80D72A1FF00FFFF00FFFF00FF45A7CB
+        2F9CC539ACD77DE7FF74EAFF40DDFF15CFFF0DCCFF38D9FF5EE1FF63E5FF28BC
+        E91C9DCE188EC0FF00FFFF00FF0878AF1190CB35B2E367D5F479EAFF56C6E141
+        A5BD369EBA17B7E502C4FF01C1FE03C2FE03BAF205A0D8FF00FFFF00FF0D75A5
+        1698D428A9E052CBF378B7C67F7E7E7F7E7E7F7E7E7F7E7E2DAACC00C5FF09C6
+        FE0FC5FA0487BCFF00FFFF00FF0F79AA1598D51CA0DA40C1F07F7E7EE2DAD99E
+        9F9F978B8BD8A4A17F7E7E3FD1F884EBFFA1EAFB2683ABFF00FFFF00FF0973A5
+        0F86BF1597D32EB5EA7F7E7EE2D9D79D9E9E978B8BD1A1A07F7E7E62DCFA97E6
+        F770BCD72F8FB4FF00FFFF00FFFF00FF056695108BC620AAE57F7E7EE2D9D79D
+        9E9E978B8BD3A3A07F7E7E4AD8FC4DBBDE015E8EFF00FFFF00FFFF00FFFF00FF
+        FF00FF086FA00576AC7F7E7EE6DDD99D9E9E978B8BD7A5A37F7E7E0F82B0117A
+        A7FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF7F7E7EDDDAD999
+        9A9A968A8ACCA3A37F7E7EFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+        FF00FFFF00FFFF00FF7F7E7E9E9E9E898989817E7E9689897F7E7EFF00FFFF00
+        FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF7F7E7ED8D7D7B6
+        B7B78F8C8C9F8F8F7F7E7EFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+        FF00FFFF00FFFF00FF7F7E7EDDDCDCE3E2E2AAAAAA8C87877F7E7EFF00FFFF00
+        FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF7F7E7E7F
+        7E7E7F7E7E7F7E7EFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF}
+      TabOrder = 1
+      OnClick = btnConfigurarClick
+    end
+    object btnRegraAgrup: TBitBtnLocked
+      Left = 210
+      Top = 2
+      Width = 95
+      Height = 22
+      Align = alLeft
+      Caption = '&Regras'
+      Glyph.Data = {
+        76010000424D7601000000000000760000002800000020000000100000000100
+        04000000000000010000120B0000120B00001000000000000000000000000000
+        800000800000008080008000000080008000808000007F7F7F00BFBFBF000000
+        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00333333333333
+        3333333333FFFFF3333333333F797F3333333333F737373FF333333BFB999BFB
+        33333337737773773F3333BFBF797FBFB33333733337333373F33BFBFBFBFBFB
+        FB3337F33333F33337F33FBFBFB9BFBFBF3337333337F333373FFBFBFBF97BFB
+        FBF37F333337FF33337FBFBFBFB99FBFBFB37F3333377FF3337FFBFBFBFB99FB
+        FBF37F33333377FF337FBFBF77BF799FBFB37F333FF3377F337FFBFB99FB799B
+        FBF373F377F3377F33733FBF997F799FBF3337F377FFF77337F33BFBF99999FB
+        FB33373F37777733373333BFBF999FBFB3333373FF77733F7333333BFBFBFBFB
+        3333333773FFFF77333333333FBFBF3333333333377777333333}
+      NumGlyphs = 2
+      TabOrder = 2
+      OnClick = btnRegraAgrupClick
+    end
+  end
+  object pgbProgresso: TcxProgressBar [5]
+    Left = 0
+    Top = 283
+    Align = alBottom
+    AutoSize = False
+    ParentColor = False
+    ParentFont = False
+    Properties.BarStyle = cxbsGradient
+    Properties.EndColor = clBlue
+    Style.BorderStyle = ebsUltraFlat
+    Style.Color = clWhite
+    Style.Font.Charset = DEFAULT_CHARSET
+    Style.Font.Color = clWindowText
+    Style.Font.Height = -4
+    Style.Font.Name = 'MS Sans Serif'
+    Style.Font.Pitch = fpVariable
+    Style.Font.Style = [fsBold]
+    Style.Shadow = True
+    Style.IsFontAssigned = True
+    TabOrder = 5
+    ExplicitTop = 241
+    Height = 17
+    Width = 571
+  end
+  inherited mnuAuxiliar: TPopupMenu
+    Left = 552
+  end
+  inherited ApplicationEvents: TApplicationEvents
+    Left = 520
+  end
+  inherited frxCSVExportTestabilidade: TfrxCSVExportTestabilidade
+    Left = 248
+    Top = 8
+  end
+end

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TfrxReport Version="4.3.61" DotMatrixReport="True" IniFile="\Software\Fast Reports" PreviewOptions.Buttons="4095" PreviewOptions.Zoom="1" PreviewOptions.ZoomMode="zmWholePage" PrintOptions.Printer="Padrão" PrintOptions.PrintOnSheet="0" PrintOptions.ShowDialog="False" ReportOptions.CreateDate="39343,4831909259" ReportOptions.Description.Text="" ReportOptions.LastChange="40143,4335281018" ScriptLanguage="PascalScript" ScriptText.Text="begin&#13;&#10;end." PropData="044C65667403980203546F7003B80008446174617365747301010C2F00000020446174615365743D2266727852656C61746F72696F2220446174615365744E616D653D2266727852656C4D7367220000095661726961626C65730100055374796C650100">
+  <TfrxDataPage Name="Data" Height="1000" Left="0" Top="0" Width="1000"/>
+  <TfrxReportPage Name="qckPagina" PaperWidth="210" PaperHeight="296,9" PaperSize="256" LeftMargin="10" RightMargin="10" TopMargin="10" BottomMargin="10" ColumnWidth="2,5" ColumnPositions.Text="" HGuides.Text="" VGuides.Text="">
+    <TfrxPageHeader Name="rlbCabecalho" Height="102" Left="0" Top="18,89765" Width="718,1107" Stretched="True">
+      <TfrxShapeView Name="Shape1" Left="3,77952756" Top="83,14966" Width="710,5511811" Height="18,89765" Color="12632256"/>
+      <TfrxMemoView Name="frxUserRelstrTitRel" Left="3,77952755905512" Top="17" Width="240" Height="17" DisplayFormat.DecimalSeparator="," Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="1" ParentFont="False" Text="LISTAGEM DE COMPROMISSOS"/>
+      <TfrxMemoView Name="" Left="3,77952755905512" Top="51" Width="701,10235" Height="17" DisplayFormat.DecimalSeparator="," Text="[CODOPE]"/>
+      <TfrxMemoView Name="Memo4" Left="3,77952755905512" Top="34" Width="406,45034" Height="17" DisplayFormat.DecimalSeparator="," Text="[PERIOD]"/>
+      <TfrxMemoView Name="Memo2" Left="9,6" Top="85" Width="75,36376" Height="17" DisplayFormat.DecimalSeparator="," Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="1" ParentFont="False" Text="DATA"/>
+      <TfrxMemoView Name="Memo1" Left="90,78423" Top="85" Width="604,8" Height="17" DisplayFormat.DecimalSeparator="," Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="1" ParentFont="False" Text="COMPROMISSOS"/>
+      <TfrxMemoView Name="rllPagina" Left="503,28188" Top="17" Width="211,2" Height="17" OnBeforePrint="rllPaginaOnBeforePrint" DisplayFormat.DecimalSeparator="," HAlign="haRight" Text="PAGINA: [Page]"/>
+      <TfrxMemoView Name="Time" Left="637,68188" Top="34" Width="76,8" Height="17" HAlign="haRight" Text="[Time]"/>
+      <TfrxMemoView Name="Date" Left="503,28188" Top="34" Width="124,8" Height="17" HAlign="haRight" Text="[Date]"/>
+    </TfrxPageHeader>
+    <TfrxPageFooter Name="PageFooter1" Height="26,44094" Left="0" Top="291,02381" Width="718,1107">
+      <TfrxMemoView Name="Memo5" Left="9,6" Top="9,44094000000001" Width="163,2" Height="17" DataSet="frxRelatorio" DataSetName="frxRelMsg" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="dd/mm/yyyy" Text="frmAgeCom"/>
+      <TfrxMemoView Name="Memo6" Left="172,8" Top="9,44094000000001" Width="537,90235" Height="17" DataSet="frxRelatorio" DataSetName="frxRelMsg" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="dd/mm/yyyy" HAlign="haRight" Text="REGISTROS IMPRESSOS: [COUNT(MasterData1)]"/>
+      <TfrxLineView Name="Line2" Left="3,77953" Top="3,77952999999997" Width="710,55164" Height="0" Frame.Typ="4"/>
+    </TfrxPageFooter>
+    <TfrxMasterData Name="MasterData1" Height="18,88188" Left="0" Top="181,41744" Width="718,1107" Child="Child1" ColumnWidth="0" ColumnGap="0" DataSet="frxRelatorio" DataSetName="frxRelMsg" RowCount="0" Stretched="True">
+      <TfrxMemoView Name="Memo3" Left="9,6" Top="1" Width="75,36376" Height="17" DataSet="frxRelatorio" DataSetName="frxRelMsg" DisplayFormat.DecimalSeparator="," DisplayFormat.FormatStr="dd/mm/yyyy" Text="[frxRelMsg.&#34;AGE_DTACOM&#34;]"/>
+      <TfrxMemoView Name="rllCompromissos" Left="90,78423" Top="1" Width="604,8" Height="17" StretchMode="smMaxHeight" DataSet="frxRelatorio" DataSetName="frxRelMsg" DisplayFormat.DecimalSeparator="," Text="[(fRetCompromissos)]"/>
+    </TfrxMasterData>
+    <TfrxChild Name="Child1" Height="7,55906" Left="0" Top="222,99227" Width="718,1107">
+      <TfrxLineView Name="Line1" Left="3,77952756" Top="0" Width="710,5511811" Height="0" Frame.Typ="4"/>
+    </TfrxChild>
+  </TfrxReportPage>
+</TfrxReport>

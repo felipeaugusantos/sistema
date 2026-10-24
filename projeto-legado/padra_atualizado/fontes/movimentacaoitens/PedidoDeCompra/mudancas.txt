@@ -1,0 +1,5 @@
+untConsulta.pas
+-> procedure pDefCampos: colocado virtual
+
+Nova unit:
+untConsultaCds: colocar no padrão depois

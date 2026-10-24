@@ -1,0 +1,7 @@
+Regra:
+  Aprovada: transações com parcelamento ímpar (1, 3, 5, 7, 9, 11);
+  Reprovada: transações com parcelamento par (2, 4, 6, 8, 10, 12).
+  
+  
+Gerador de Número de Cartão de Crédito - 4Devs
+https://www.4devs.com.br/gerador_de_numero_cartao_credito

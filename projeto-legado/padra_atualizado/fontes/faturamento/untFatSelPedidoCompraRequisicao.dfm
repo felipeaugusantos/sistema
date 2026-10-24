@@ -1,0 +1,522 @@
+inherited frmFatSelPedidoCompraRequisicao: TfrmFatSelPedidoCompraRequisicao
+  Width = 995
+  Height = 656
+  Caption = 'Pedidos de Compra para Requisi'#231#227'o'
+  ExplicitWidth = 995
+  ExplicitHeight = 656
+  PixelsPerInch = 96
+  TextHeight = 14
+  object Splitter1: TSplitter [0]
+    Left = 0
+    Top = 161
+    Width = 989
+    Height = 4
+    Cursor = crVSplit
+    Align = alTop
+    Color = clYellow
+    ParentColor = False
+    ExplicitLeft = -316
+    ExplicitTop = 425
+    ExplicitWidth = 1305
+  end
+  inherited pnlBotoes: TPanel
+    Top = 585
+    Width = 989
+    ExplicitTop = 585
+    ExplicitWidth = 989
+    inherited FlwBotoes: TFlowPanel
+      Width = 985
+      ExplicitWidth = 985
+      inherited btnConfirma: TBitBtnLocked
+        ModalResult = 0
+      end
+    end
+    inherited btnSair: TBitBtnLocked
+      Left = 906
+      ExplicitLeft = 906
+    end
+  end
+  inherited pnlStatus: TPanel
+    Top = 611
+    Width = 989
+    ExplicitTop = 611
+    ExplicitWidth = 989
+    inherited pnlNomeForm: TPanel
+      Left = 818
+      ExplicitLeft = 818
+    end
+    inherited pnlInfo: TPanel
+      Width = 818
+      ExplicitWidth = 818
+    end
+  end
+  object pnlCabecalho: TPanel [3]
+    Left = 0
+    Top = 0
+    Width = 989
+    Height = 57
+    Align = alTop
+    BevelOuter = bvNone
+    TabOrder = 2
+    DesignSize = (
+      989
+      57)
+    object lblProduto: TLabel
+      Left = 8
+      Top = 8
+      Width = 37
+      Height = 14
+      Caption = 'Produto'
+    end
+    object lblQtd: TLabel
+      Left = 467
+      Top = 8
+      Width = 55
+      Height = 14
+      Caption = 'Quantidade'
+    end
+    object edtDesIte: TEditFocus
+      Left = 8
+      Top = 23
+      Width = 454
+      Height = 22
+      TabStop = False
+      Alignment = taLeftJustify
+      Color = 16768952
+      ReadOnly = True
+      TabOrder = 3
+      NormalColor = 16768952
+      FocusColor = clInfoBk
+      RequeridoColor = clRed
+      Requerido = False
+      CompZeros = False
+      TamCampo = 0
+      TipoTexto = ttAlfanumerico
+    end
+    object edtQtd: TEditFocus
+      Tag = 99
+      Left = 467
+      Top = 23
+      Width = 70
+      Height = 22
+      Alignment = taLeftJustify
+      Color = clWhite
+      TabOrder = 0
+      NormalColor = clWhite
+      FocusColor = clWhite
+      RequeridoColor = clRed
+      Requerido = False
+      CompZeros = False
+      TamCampo = 0
+      TipoTexto = ttNumerico
+    end
+    object btnConsultar: TBitBtnLocked
+      Left = 895
+      Top = 23
+      Width = 77
+      Height = 22
+      Anchors = [akRight, akBottom]
+      Caption = 'C&onsultar'
+      Glyph.Data = {
+        36040000424D3604000000000000360000002800000010000000100000000100
+        2000000000000004000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        000000000000000000020000000E0B14308329448DFB1D2F58A5000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000020000000E0D1937883C6DB2FF5BB1F9FF325196F4000000000000
+        00000000000100000004000000090000000D0000000F0000000F0000000C0000
+        00070000000E0F1D3C864A7CBCFF73C4FFFF467CC3FF17254485000000000000
+        0002000000081C130F465A3B31BC7C5043F87F5244FF7B4E42FA57382FC11E14
+        1059112142875686C2FF88D0FFFF5186C7FF142343880000000F000000010302
+        02104A332C91946B5DFDC6ACA1FFE4D1C6FFEDDDD2FFE2D0C5FFC0A599FF855C
+        50FF6E6B7EFF98D4F8FF5B8ECBFF152545840000000D00000002000000076046
+        3DA6B39288FFE9DAD0FFDAC0A1FFCBA87AFFC49B66FFCCAA7EFFDCC2A5FFE5D2
+        C6FF9A766AFF736A77FF162747850000000E00000002000000002A201D4AAE88
+        7CFFEFE6DFFFCDA67CFFCDA26BFFE3C28CFFEDD5A2FFE7CD9EFFD3B182FFD0AE
+        88FFE7D5CAFF885F53FF25181464000000070000000000000000755B53ACDFCE
+        C9FFDDC1A8FFC99865FFE8BE83FFE9C388FFEDCA97FFEFD3A7FFF2D9B0FFD5B1
+        87FFDBBEA6FFC5ACA2FF5A3D33C10000000C0000000000000000A9877CE9F8F4
+        F2FFC79873FFDEAB77FFEFCDABFFF0D0B1FFEDC9A1FFECC69AFFEFCFA9FFE9C9
+        A4FFC89B77FFE6D6CEFF7C5448F10000000F0000000000000000C09C90FFFDFD
+        FCFFBE875FFFEDCFB9FFF5DFD2FFF2D6C1FFF1CFB4FFEDC6A4FFECC19BFFEFC8
+        A6FFC08B67FFF1E6DFFF8B6154FF0000000F0000000000000000AF9186E6F9F5
+        F4FFC69474FFE8CDC3FFF9E8E4FFF6DED2FFF3D4C2FFF0CBB2FFEBB78EFFE5B7
+        92FFC59172FFEBDFD9FF866055EE0000000D0000000000000000876F68B0E7D9
+        D4FFE2C6B7FFC89072FFFAEFF2FFF9E7E4FFF6DDD3FFF1C8B2FFEBAF88FFC98E
+        6CFFDCBBAAFFD3C0B7FF6B4F46BC00000009000000000000000026201E36CCAF
+        A7FAFBF8F7FFCF9F88FFC78E72FFE9CDC6FFEDC7B5FFDD9F79FFC88865FFCE9D
+        84FFF5EFEBFFB39387FF2A201D52000000040000000000000000000000036454
+        4F84D9C2BAFFFDFBFAFFE2C6B8FFCB977EFFC08163FFCB977DFFE0C4B4FFFAF6
+        F5FFC9B0A7FF6B564EA700000009000000010000000000000000000000000202
+        020762534D81CEB2A9FAEADDD8FFF9F5F4FFFFFFFFFFF9F5F4FFE9DCD7FFC8AC
+        A2FC62504B900404031000000002000000000000000000000000000000000000
+        000000000003241F1D3486726BADB69B91E6CCADA1FFB99C92E988736CB22822
+        1F3E000000060000000100000000000000000000000000000000}
+      TabOrder = 2
+      OnClick = btnConsultarClick
+    end
+    object chkPedidosAtendemQtd: TCheckBox
+      Left = 543
+      Top = 26
+      Width = 346
+      Height = 17
+      Caption = 'Trazer apenas pedidos que atendem toda a quantidade solicitada'
+      TabOrder = 1
+    end
+  end
+  object cxgPedidosCompra: TcxGridCitel [4]
+    Left = 0
+    Top = 165
+    Width = 989
+    Height = 379
+    Align = alClient
+    TabOrder = 3
+    LookAndFeel.ScrollbarMode = sbmClassic
+    object cxvPedidosCompra: TcxGridDBTableViewCitel
+      Navigator.Buttons.CustomButtons = <>
+      OnCustomDrawCell = cxvPedidosCompraCustomDrawCell
+      DataController.DataSource = dtsPedidos
+      DataController.Filter.Options = [fcoCaseInsensitive]
+      DataController.Summary.DefaultGroupSummaryItems = <>
+      DataController.Summary.FooterSummaryItems = <>
+      DataController.Summary.SummaryGroups = <>
+      FilterRow.InfoText = 'Clique aqui para definir um filtro'
+      FilterRow.Visible = True
+      FilterRow.ApplyChanges = fracDelayed
+      OptionsData.Deleting = False
+      OptionsSelection.CellSelect = False
+      OptionsView.NoDataToDisplayInfoText = 'Sem dados para exibir'
+      OptionsView.GroupByBox = False
+      Zebra = False
+      Destaque = False
+      CorZebra = clMoneyGreen
+      object cxvPedidosCompraNUMPED: TcxGridDBColumn
+        Caption = 'N'#250'mero'
+        DataBinding.FieldName = 'PCG_NUMPED'
+        HeaderAlignmentHorz = taCenter
+        Options.Editing = False
+        Width = 76
+      end
+      object cxvPedidosCompraCODEMP: TcxGridDBColumn
+        Caption = 'Empresa'
+        DataBinding.FieldName = 'PCG_CODEMP'
+        HeaderAlignmentHorz = taCenter
+        Options.Editing = False
+      end
+      object cxvPedidosCompraDTAPED: TcxGridDBColumn
+        Caption = 'Data'
+        DataBinding.FieldName = 'PCG_DTAPED'
+        HeaderAlignmentHorz = taCenter
+        Options.Editing = False
+        Width = 60
+      end
+      object cxvPedidosCompraCODFOR: TcxGridDBColumn
+        Caption = 'C'#243'd. Fornecedor'
+        DataBinding.FieldName = 'FOR_CODFOR'
+        HeaderAlignmentHorz = taCenter
+        Options.Editing = False
+        Width = 109
+      end
+      object cxvPedidosCompraNOMFOR: TcxGridDBColumn
+        Caption = 'Nome Fornecedor'
+        DataBinding.FieldName = 'FOR_NOMFOR'
+        HeaderAlignmentHorz = taCenter
+        Options.Editing = False
+        Width = 287
+      end
+      object cxvPedidosCompraDTAENT: TcxGridDBColumn
+        Caption = 'Entrega'
+        DataBinding.FieldName = 'PCG_DTAENT'
+        HeaderAlignmentHorz = taCenter
+        Options.Editing = False
+        Width = 67
+      end
+      object cxvPedidosCompraQTDPED: TcxGridDBColumn
+        Caption = 'Quantidade no pedido'
+        DataBinding.FieldName = 'QTDPED'
+        HeaderAlignmentHorz = taCenter
+        Options.Editing = False
+        Width = 111
+      end
+      object cxvPedidosCompraVINCUL: TcxGridDBColumn
+        DataBinding.FieldName = 'VINCUL'
+        Visible = False
+      end
+      object cxvPedidosCompraQTDVIN: TcxGridDBColumn
+        Caption = 'Quantidade vinculada'
+        DataBinding.FieldName = 'QTDVIN'
+        Options.Editing = False
+        Width = 116
+      end
+    end
+    object cxlPedidosCompra: TcxGridLevel
+      GridView = cxvPedidosCompra
+    end
+  end
+  object pnlRodape: TPanel [5]
+    Left = 0
+    Top = 544
+    Width = 989
+    Height = 41
+    Align = alBottom
+    TabOrder = 4
+    DesignSize = (
+      989
+      41)
+    object lblQtdRestante: TLabel
+      Left = 9
+      Top = 2
+      Width = 175
+      Height = 14
+      Caption = 'Quantidade restante a ser vinculada'
+    end
+    object shpLegendaExisteVinculo: TShape
+      Left = 752
+      Top = 20
+      Width = 13
+      Height = 14
+      Brush.Color = 4227327
+    end
+    object lblPedidoVinculado: TLabel
+      Left = 771
+      Top = 20
+      Width = 92
+      Height = 14
+      Caption = 'Pedido com vinculo'
+    end
+    object edtQtdRestVinc: TEditFocus
+      Left = 8
+      Top = 16
+      Width = 193
+      Height = 22
+      TabStop = False
+      Alignment = taRightJustify
+      Color = 16768952
+      ReadOnly = True
+      TabOrder = 0
+      NormalColor = 16768952
+      FocusColor = clInfoBk
+      RequeridoColor = clRed
+      Requerido = False
+      CompZeros = False
+      TamCampo = 0
+      TipoTexto = ttAlfanumerico
+    end
+    object btnVincular: TBitBtnLocked
+      Left = 212
+      Top = 16
+      Width = 100
+      Height = 22
+      Anchors = [akRight, akBottom]
+      Caption = '[F3] - &Vincular'
+      Glyph.Data = {
+        36040000424D3604000000000000360000002800000010000000100000000100
+        2000000000000004000000000000000000000000000000000000000000000000
+        0000000000000000000000000002000000070000000B0000000B0000000C0000
+        000C0000000C0000000C0000000C0000000B0000000700000002000000000000
+        000000000000000000000000000695847EBE9E6D5DFF9E6C5DFF9D6C5CFF9D6B
+        5BFF9C6B5BFF9C6B5BFF9C6A5AFF9B6959FF704B41BE00000007000000000000
+        0001000000050000000A0000000ECFB7B0FFF9F2EFFFF7EEE9FFCCAB9FFFF7EE
+        EAFFF7EEE9FFCCAB9FFFF7EEE9FFF7EEE9FF9D6C5CFF0000000A000000000000
+        00051209043384431EDF0B040134EFE8E6FFF9F2F0FFF7EEEBFFCDACA1FFF7EE
+        EAFFF7EEEAFFCCACA0FFF8EEEAFFF9F2EFFF9F7061FF0000000A000000020201
+        0013794220CBE3B774FF5B270FC9EFEFEFFFE8DAD5FFCEAEA2FFCEAEA2FFCDAD
+        A2FFCDADA1FFCEADA2FFCDADA2FFD9BFB6FFA37464FF000000090000000A4D2C
+        168BCE9961FFFDDE96FFB98352FFB69788FFF6F6F6FFF8F2EEFFCFAFA4FFF8EF
+        EBFFF8EFEBFFCEAFA3FFF8F0EBFFFAF4F1FFA67969FF0000000822140B46B67F
+        54FBFCEDC5FFFEE3A1FFFBEBC1FFA26843FFD7CBC4FFFAF8F8FFCFB1A5FFF7F0
+        ECFFF8F0EDFFCFB0A5FFF8F0ECFFF9F3F1FFAA7E6FFF00000007935C35DCAD6C
+        3EFFAD6C3FFFF6D99CFFB17245FFAD6C3EFFB7835DFFEFEAE7FFD0B2A7FFD0B2
+        A7FFCFB2A6FFD0B1A6FFD0B2A7FFDBC4BAFFAE8274FF00000007000000080000
+        0014AC7346FAF7DFAAFFA4683FFFDED9D6FFF4F4F4FFFAFAFAFFF5F5F5FFF7F7
+        F7FFFAF8F7FFD2B7ACFFF8F0EDFFFAF5F2FFB28879FF00000006000000000000
+        00088A603DCBE6C99EFFBF9062FFC4A894FFF6F6F6FFF4F4F4FFB57D4EFFAD86
+        6DFFECE9E7FFF6F2F1FFFBF7F4FFFAF4F2FFB68D7FFF00000005000000000000
+        00044F382578D2AD85FFF0DAAFFFAB754BFFC6A995FFE0DAD5FFB98457FFD8B4
+        82FFA67450FFDFD5CEFFF7F5F5FFDCC7C1FFA4948FC000000003000000000000
+        00010403020F9C734ED7DFC19CFFF6E5BEFFC69A6FFFB17C50FFCB9F70FFFFED
+        B7FFF1D9A4FFAB7A4EF83D26166F000000080000000200000001000000000000
+        000000000002140F0B249B7752D4D7B68FFFEAD6B3FFF9EDCFFFFFF7DBFFFFF0
+        BCFFFEF0BFFFFCF1D0FFC09265FF000000070000000000000000000000000000
+        000000000000000000020504030D52402D74937250C5BE9369FAC3976BFFFFF3
+        CBFFF5E8C9FFC59F79F64A39286A000000040000000000000000000000000000
+        000000000000000000000000000100000002000000040000000BC59B6FFFE9D5
+        B5FFA88661D91E18113000000004000000010000000000000000000000000000
+        0000000000000000000000000000000000000000000000000004C59B6FFF7B60
+        45A40705040F0000000200000000000000000000000000000000}
+      TabOrder = 1
+      OnClick = btnVincularClick
+    end
+    object btnReiniciarVinculosItem: TBitBtnLocked
+      Left = 313
+      Top = 16
+      Width = 100
+      Height = 22
+      Anchors = [akRight, akBottom]
+      Caption = '[F4] - &Reiniciar'
+      Glyph.Data = {
+        36040000424D3604000000000000360000002800000010000000100000000100
+        2000000000000004000000000000000000000000000000000000000000000000
+        00000000000100000002000000080000000C0000000F0000000F0000000D0000
+        0007000000040000000700000007000000020000000000000000000000000000
+        0001000000050204031C102F2291184A34D31E5C41FF1E5B40FF184732D2112F
+        227D0000000E14382995072C1B95000000090000000100000000000000010000
+        00080A1C145722674CE723966DFF23B481FF24CA92FF39CF9DFF37886AFF0C21
+        185D06100C392A7B5CFB146744FB020C08370000000400000000000000060D25
+        1C652E8867FF28B586FF3BDAA8FF59E0B7FF6FE5C2FF5FC6A6FF1F533FBF0000
+        00161E523DBF27B786FF1EB07DFF0C3E28BF0000000C00000001040A08223080
+        62F62BBA8BFF42DDADFF65CEADFF53AB8EFF3A8B6EFF2F7D60FA07120D360E24
+        1B5D2F9671FF28D59EFF28D59EFF1D805AFF051B125C00000005194434903CAC
+        88FF2DDAA5FF5ECFAEFF45987CF914362A750409072002050415010302162B73
+        57E12ACC98FF29D8A1FF2AD7A0FF26C592FF145438E00001010F2A7258D438C7
+        9BFF30DDA9FF5CB699FF194133810000000700000001000000061941328460B8
+        9CFF83ECCFFF2BDAA5FF34DBA8FF88EDD0FF479D7FFF0B2A1C77358C6DF250DF
+        B6FF61E8C2FF3F9475FF040A081E00000002000000000205040F36896CF4378F
+        70FF419A7BFF30DCA8FF38D7A7FF358A6BFF34886AFF317E61EF3B997AFA98ED
+        D8FF8DF1D8FF398E6DFF040B0820000000010000000000000002000000070205
+        04193F9675FF43E2B3FF4DDAB1FF1D6749F20000000F0000000734856AD398E1
+        CFFF9AF4DEFF57A98BFF11382681000000060000000100000001000000051237
+        287659B092FF8BF1D7FF6ECEB2FF1E6047D400000006000000002359478A81CF
+        BAFFB4F9EAFF82D3BCFF3A8767FB0E352383030C0823030C08230E3222753D8E
+        6EF984DFC7FFAAF6E5FF6FB8A0FF1642328C0000000300000000050D0A1855B2
+        95F5A5E5D5FFBCFAEDFF94E5D0FF56A386FF2D7B59FF2D7B59FF54A386FF85D4
+        BDFFB5F8EAFF9ADAC9FF419477F5030A0719000000010000000000000002173A
+        2F5669C6AAFFAAE7D9FFCBFDF3FFC1FBEFFFBAF9ECFFB8F9EBFFBEFBEEFFC7FC
+        F2FFA6E5D5FF5CB096FF12302657000000020000000000000000000000000000
+        0002122E264453AB90E38AD7C2FFB2EADDFFCEF9F1FFCEF9F1FFB1EADCFF87D4
+        BFFF50A78CE40F29204400000002000000000000000000000000000000000000
+        0000000000010409070F255D4C813A9076C849B896FC49B795FC399075C8255B
+        4A82030907100000000100000000000000000000000000000000000000000000
+        0000000000000000000000000001000000020000000200000002000000020000
+        0001000000000000000000000000000000000000000000000000}
+      TabOrder = 2
+      OnClick = btnReiniciarVinculosItemClick
+    end
+    object btnExcluirVinculo: TBitBtnLocked
+      Left = 414
+      Top = 16
+      Width = 139
+      Height = 22
+      Anchors = [akRight, akBottom]
+      Caption = '[DEL] - &Excluir v'#237'nculo'
+      Glyph.Data = {
+        36040000424D3604000000000000360000002800000010000000100000000100
+        2000000000000004000000000000000000000000000000000000000000030000
+        000B000000120000001300000013000000140000001400000014000000140000
+        0014000000140000001500000015000000140000000D000000030000000B1C11
+        6CC3261796FF271696FF261695FF261594FF251594FF251594FF241394FF2412
+        93FF241292FF231292FF231192FF231191FF190C68C50000000C0000000F2B1C
+        9BFF384AD3FF2637CEFF3042D2FF4254D9FF3646D4FF2437CCFF2434CCFF3444
+        D3FF3C4ED6FF2A3ACEFF202FC9FF1E2CC9FF251595FF000000120000000F3121
+        A0FF4356D7FF374BD5FF3F4BCBFF2827ABFF363CBEFF3E4FD6FF3D4ED5FF353A
+        BEFF2827ABFF3B45C9FF2F41D0FF2332CCFF291A99FF000000120000000E3529
+        A5FF4E62DBFF444FCCFF605DBDFFEDEDF8FF8B89CEFF383CBCFF383CBBFF8B89
+        CEFFEDEDF8FF5F5DBDFF3D47C9FF293ACEFF2D1F9EFF000000110000000D392F
+        ABFF596FDFFF2722A5FFECE7ECFFF5EBE4FFF8F2EEFF9491D1FF9491D1FFF8F1
+        EDFFF3E9E2FFECE6EBFF2721A5FF2F42D1FF3326A3FF0000000F0000000C4036
+        B1FF657AE2FF3135B7FF8070ADFFEBDBD3FFF4EAE4FFF7F2EDFFF8F1EDFFF4E9
+        E2FFEADAD1FF7F6FACFF2E31B6FF3549D5FF372CA9FF0000000E0000000B453D
+        B6FF6E83E5FF485EDCFF393BB7FF8A7FB9FFF6ECE7FFF5ECE6FFF4EBE5FFF6EB
+        E5FF897DB8FF3739B6FF4054D9FF3D51D7FF3C33AFFF0000000D0000000A4A44
+        BCFF788FE8FF6077E3FF4B4BBBFF9189C7FFF7EFE9FFF6EEE9FFF6EFE8FFF7ED
+        E8FF9087C5FF4949BAFF596FDFFF4359DAFF423AB4FF0000000C00000009504C
+        C2FF92A7EEFF5655BCFF8F89CAFFFBF6F4FFF7F1ECFFEDE1D9FFEDE0D9FFF7F0
+        EAFFFAF5F2FF8F89CAFF5453BCFF6278E2FF4943B9FF0000000B000000086B6A
+        D0FFADC1F4FF2A1E9BFFE5DADEFFF6EEEBFFEDDFDAFF816EA9FF816EA9FFEDDF
+        D8FFF4ECE7FFE5D9DCFF2A1D9BFF8B9EEBFF6563C9FF0000000A000000077577
+        D6FFB1C6F5FF6E77D1FF5747A1FFCCB6BCFF7A68A8FF4E4CB7FF4F4EB8FF7A68
+        A8FFCBB5BCFF5746A1FF6B75D0FF8EA1ECFF706ED0FF0000000900000006797B
+        DAFFB5CAF6FF93A7EEFF7079D2FF2E229BFF5453BBFF93A7EEFF93A7EEFF5555
+        BCFF2E219BFF6F77D1FF91A4EDFF90A3EDFF7475D4FF00000008000000057D80
+        DEFFB9CDF6FFB9CDF6FFB9CCF6FFB9CCF6FFB9CDF6FFB8CCF6FFB8CCF6FFB7CC
+        F6FFB7CBF6FFB6CBF6FFB5C9F6FFB5C9F6FF787AD8FF00000006000000036062
+        A6C08184E1FF8183E0FF8083E0FF7F83DFFF7F83DFFF7F82DFFF7E81DFFF7E81
+        DEFF7D81DEFF7D80DEFF7D7FDEFF7C7FDDFF5C5EA3C100000004000000000000
+        0002000000030000000400000004000000040000000400000004000000040000
+        0004000000040000000400000005000000050000000300000001}
+      TabOrder = 3
+      OnClick = btnExcluirVinculoClick
+    end
+  end
+  object cxgItensAvulso: TcxGridCitel [6]
+    Left = 0
+    Top = 57
+    Width = 989
+    Height = 104
+    Align = alTop
+    TabOrder = 5
+    LookAndFeel.ScrollbarMode = sbmClassic
+    object cxvItensAvulso: TcxGridDBTableViewCitel
+      Navigator.Buttons.CustomButtons = <>
+      DataController.Filter.Options = [fcoCaseInsensitive]
+      DataController.Summary.DefaultGroupSummaryItems = <>
+      DataController.Summary.FooterSummaryItems = <>
+      DataController.Summary.SummaryGroups = <
+        item
+          Links = <
+            item
+              Column = cxvItensAvulsoCODITE
+            end
+            item
+            end
+            item
+              Column = cxvItensAvulsoQTDITE
+            end
+            item
+              Column = cxvItensAvulsoAVULSA
+            end>
+          SummaryItems = <>
+        end>
+      FilterRow.InfoText = 'Clique aqui para definir um filtro'
+      FilterRow.ApplyChanges = fracDelayed
+      OptionsData.Editing = False
+      OptionsData.Inserting = False
+      OptionsView.NoDataToDisplayInfoText = 'Sem dados para exibir'
+      OptionsView.GroupByBox = False
+      Zebra = False
+      Destaque = False
+      CorZebra = clMoneyGreen
+      object cxvItensAvulsoCODITE: TcxGridDBColumn
+        Caption = 'C'#243'digo'
+        DataBinding.FieldName = 'ITE_CODITE'
+        Width = 65
+      end
+      object cxvItensAvulsoDESITE: TcxGridDBColumn
+        Caption = 'Descri'#231#227'o'
+        DataBinding.FieldName = 'DESITE'
+        OnGetDisplayText = cxvItensAvulsoDESITEGetDisplayText
+        Width = 250
+      end
+      object cxvItensAvulsoQTDITE: TcxGridDBColumn
+        Caption = 'Quantidade'
+        DataBinding.FieldName = 'QTDITE'
+        Width = 70
+      end
+      object cxvItensAvulsoAVULSA: TcxGridDBColumn
+        Caption = 'Avulso'
+        DataBinding.FieldName = 'AVULSA'
+        OnGetDisplayText = cxvItensAvulsoAVULSAGetDisplayText
+        Width = 50
+      end
+    end
+    object cxlItensAvulso: TcxGridLevel
+      GridView = cxvItensAvulso
+    end
+  end
+  inherited mnuAuxiliar: TPopupMenu
+    Left = 16
+    Top = 72
+  end
+  inherited ApplicationEvents: TApplicationEvents
+    Left = 16
+    Top = 120
+  end
+  inherited frxCSVExportTestabilidade: TfrxCSVExportTestabilidade
+    Left = 80
+    Top = 96
+  end
+  object dtsPedidos: TDataSource
+    Left = 648
+    Top = 448
+  end
+end

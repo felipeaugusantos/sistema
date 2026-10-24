@@ -1,0 +1,276 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{E1B55D24-1437-455C-A361-C8EDAF778FB3}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="libCentralizado\libCartoesAutcom.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="libCartoesRedeCard\libCartoesRedeCard.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="libCartoesSipag\libCartoesSipag.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="libCartoesMercadoLivre\libCartoesMercadoLivre.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="libCartoesPagSeguro\libCartoesPagSeguro.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="libCartoesYapay\libCartoesYapay.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="libCartoesShopee\libCartoesShopee.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="libCartoesMobbuy\libCartoesMobbuy.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="libCartoesSafrapay\libCartoesSafrapay.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="libCartoesCielo\libCartoesCielo.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="libCartoesStone\libCartoesStone.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="libCartoesMagazineLuiza\libCartoesMagazineLuiza.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="libCartoesSicredi\libCartoesSicredi.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="libCartoesGetnet\libCartoesGetnet.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="LibCartoesFiservBin\LibCartoesFiservBin.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="libCartoesEquals\libCartoesEquals.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="libCartoesPagarMe\libCartoesPagarMe.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="LibCartoesBanrisul\LibCartoesBanrisul.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="libCartoesB2W\libCartoesB2W.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="libCartoesGranito\libCartoesGranito.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="libCartoesAmazon\libCartoesAmazon.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="libCartoesAutcom">
+        <MSBuild Projects="libCentralizado\libCartoesAutcom.dproj"/>
+    </Target>
+    <Target Name="libCartoesAutcom:Clean">
+        <MSBuild Projects="libCentralizado\libCartoesAutcom.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="libCartoesAutcom:Make">
+        <MSBuild Projects="libCentralizado\libCartoesAutcom.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="libCartoesRedeCard">
+        <MSBuild Projects="libCartoesRedeCard\libCartoesRedeCard.dproj"/>
+    </Target>
+    <Target Name="libCartoesRedeCard:Clean">
+        <MSBuild Projects="libCartoesRedeCard\libCartoesRedeCard.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="libCartoesRedeCard:Make">
+        <MSBuild Projects="libCartoesRedeCard\libCartoesRedeCard.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="libCartoesSipag">
+        <MSBuild Projects="libCartoesSipag\libCartoesSipag.dproj"/>
+    </Target>
+    <Target Name="libCartoesSipag:Clean">
+        <MSBuild Projects="libCartoesSipag\libCartoesSipag.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="libCartoesSipag:Make">
+        <MSBuild Projects="libCartoesSipag\libCartoesSipag.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="libCartoesMercadoLivre">
+        <MSBuild Projects="libCartoesMercadoLivre\libCartoesMercadoLivre.dproj"/>
+    </Target>
+    <Target Name="libCartoesMercadoLivre:Clean">
+        <MSBuild Projects="libCartoesMercadoLivre\libCartoesMercadoLivre.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="libCartoesMercadoLivre:Make">
+        <MSBuild Projects="libCartoesMercadoLivre\libCartoesMercadoLivre.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="libCartoesPagSeguro">
+        <MSBuild Projects="libCartoesPagSeguro\libCartoesPagSeguro.dproj"/>
+    </Target>
+    <Target Name="libCartoesPagSeguro:Clean">
+        <MSBuild Projects="libCartoesPagSeguro\libCartoesPagSeguro.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="libCartoesPagSeguro:Make">
+        <MSBuild Projects="libCartoesPagSeguro\libCartoesPagSeguro.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="libCartoesYapay">
+        <MSBuild Projects="libCartoesYapay\libCartoesYapay.dproj"/>
+    </Target>
+    <Target Name="libCartoesYapay:Clean">
+        <MSBuild Projects="libCartoesYapay\libCartoesYapay.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="libCartoesYapay:Make">
+        <MSBuild Projects="libCartoesYapay\libCartoesYapay.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="libCartoesShopee">
+        <MSBuild Projects="libCartoesShopee\libCartoesShopee.dproj"/>
+    </Target>
+    <Target Name="libCartoesShopee:Clean">
+        <MSBuild Projects="libCartoesShopee\libCartoesShopee.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="libCartoesShopee:Make">
+        <MSBuild Projects="libCartoesShopee\libCartoesShopee.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="libCartoesMobbuy">
+        <MSBuild Projects="libCartoesMobbuy\libCartoesMobbuy.dproj"/>
+    </Target>
+    <Target Name="libCartoesMobbuy:Clean">
+        <MSBuild Projects="libCartoesMobbuy\libCartoesMobbuy.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="libCartoesMobbuy:Make">
+        <MSBuild Projects="libCartoesMobbuy\libCartoesMobbuy.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="libCartoesSafrapay">
+        <MSBuild Projects="libCartoesSafrapay\libCartoesSafrapay.dproj"/>
+    </Target>
+    <Target Name="libCartoesSafrapay:Clean">
+        <MSBuild Projects="libCartoesSafrapay\libCartoesSafrapay.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="libCartoesSafrapay:Make">
+        <MSBuild Projects="libCartoesSafrapay\libCartoesSafrapay.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="libCartoesCielo">
+        <MSBuild Projects="libCartoesCielo\libCartoesCielo.dproj"/>
+    </Target>
+    <Target Name="libCartoesCielo:Clean">
+        <MSBuild Projects="libCartoesCielo\libCartoesCielo.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="libCartoesCielo:Make">
+        <MSBuild Projects="libCartoesCielo\libCartoesCielo.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="libCartoesStone">
+        <MSBuild Projects="libCartoesStone\libCartoesStone.dproj"/>
+    </Target>
+    <Target Name="libCartoesStone:Clean">
+        <MSBuild Projects="libCartoesStone\libCartoesStone.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="libCartoesStone:Make">
+        <MSBuild Projects="libCartoesStone\libCartoesStone.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="libCartoesMagazineLuiza">
+        <MSBuild Projects="libCartoesMagazineLuiza\libCartoesMagazineLuiza.dproj"/>
+    </Target>
+    <Target Name="libCartoesMagazineLuiza:Clean">
+        <MSBuild Projects="libCartoesMagazineLuiza\libCartoesMagazineLuiza.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="libCartoesMagazineLuiza:Make">
+        <MSBuild Projects="libCartoesMagazineLuiza\libCartoesMagazineLuiza.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="libCartoesSicredi">
+        <MSBuild Projects="libCartoesSicredi\libCartoesSicredi.dproj"/>
+    </Target>
+    <Target Name="libCartoesSicredi:Clean">
+        <MSBuild Projects="libCartoesSicredi\libCartoesSicredi.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="libCartoesSicredi:Make">
+        <MSBuild Projects="libCartoesSicredi\libCartoesSicredi.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="libCartoesGetnet">
+        <MSBuild Projects="libCartoesGetnet\libCartoesGetnet.dproj"/>
+    </Target>
+    <Target Name="libCartoesGetnet:Clean">
+        <MSBuild Projects="libCartoesGetnet\libCartoesGetnet.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="libCartoesGetnet:Make">
+        <MSBuild Projects="libCartoesGetnet\libCartoesGetnet.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="LibCartoesFiservBin">
+        <MSBuild Projects="LibCartoesFiservBin\LibCartoesFiservBin.dproj"/>
+    </Target>
+    <Target Name="LibCartoesFiservBin:Clean">
+        <MSBuild Projects="LibCartoesFiservBin\LibCartoesFiservBin.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="LibCartoesFiservBin:Make">
+        <MSBuild Projects="LibCartoesFiservBin\LibCartoesFiservBin.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="libCartoesEquals">
+        <MSBuild Projects="libCartoesEquals\libCartoesEquals.dproj"/>
+    </Target>
+    <Target Name="libCartoesEquals:Clean">
+        <MSBuild Projects="libCartoesEquals\libCartoesEquals.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="libCartoesEquals:Make">
+        <MSBuild Projects="libCartoesEquals\libCartoesEquals.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="libCartoesPagarMe">
+        <MSBuild Projects="libCartoesPagarMe\libCartoesPagarMe.dproj"/>
+    </Target>
+    <Target Name="libCartoesPagarMe:Clean">
+        <MSBuild Projects="libCartoesPagarMe\libCartoesPagarMe.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="libCartoesPagarMe:Make">
+        <MSBuild Projects="libCartoesPagarMe\libCartoesPagarMe.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="LibCartoesBanrisul">
+        <MSBuild Projects="LibCartoesBanrisul\LibCartoesBanrisul.dproj"/>
+    </Target>
+    <Target Name="LibCartoesBanrisul:Clean">
+        <MSBuild Projects="LibCartoesBanrisul\LibCartoesBanrisul.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="LibCartoesBanrisul:Make">
+        <MSBuild Projects="LibCartoesBanrisul\LibCartoesBanrisul.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="libCartoesB2W">
+        <MSBuild Projects="libCartoesB2W\libCartoesB2W.dproj"/>
+    </Target>
+    <Target Name="libCartoesB2W:Clean">
+        <MSBuild Projects="libCartoesB2W\libCartoesB2W.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="libCartoesB2W:Make">
+        <MSBuild Projects="libCartoesB2W\libCartoesB2W.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="libCartoesGranito">
+        <MSBuild Projects="libCartoesGranito\libCartoesGranito.dproj"/>
+    </Target>
+    <Target Name="libCartoesGranito:Clean">
+        <MSBuild Projects="libCartoesGranito\libCartoesGranito.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="libCartoesGranito:Make">
+        <MSBuild Projects="libCartoesGranito\libCartoesGranito.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="libCartoesAmazon">
+        <MSBuild Projects="libCartoesAmazon\libCartoesAmazon.dproj"/>
+    </Target>
+    <Target Name="libCartoesAmazon:Clean">
+        <MSBuild Projects="libCartoesAmazon\libCartoesAmazon.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="libCartoesAmazon:Make">
+        <MSBuild Projects="libCartoesAmazon\libCartoesAmazon.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="libCartoesAutcom;libCartoesRedeCard;libCartoesSipag;libCartoesMercadoLivre;libCartoesPagSeguro;libCartoesYapay;libCartoesShopee;libCartoesMobbuy;libCartoesSafrapay;libCartoesCielo;libCartoesStone;libCartoesMagazineLuiza;libCartoesSicredi;libCartoesGetnet;LibCartoesFiservBin;libCartoesEquals;libCartoesPagarMe;LibCartoesBanrisul;libCartoesB2W;libCartoesGranito;libCartoesAmazon"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="libCartoesAutcom:Clean;libCartoesRedeCard:Clean;libCartoesSipag:Clean;libCartoesMercadoLivre:Clean;libCartoesPagSeguro:Clean;libCartoesYapay:Clean;libCartoesShopee:Clean;libCartoesMobbuy:Clean;libCartoesSafrapay:Clean;libCartoesCielo:Clean;libCartoesStone:Clean;libCartoesMagazineLuiza:Clean;libCartoesSicredi:Clean;libCartoesGetnet:Clean;LibCartoesFiservBin:Clean;libCartoesEquals:Clean;libCartoesPagarMe:Clean;LibCartoesBanrisul:Clean;libCartoesB2W:Clean;libCartoesGranito:Clean;libCartoesAmazon:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="libCartoesAutcom:Make;libCartoesRedeCard:Make;libCartoesSipag:Make;libCartoesMercadoLivre:Make;libCartoesPagSeguro:Make;libCartoesYapay:Make;libCartoesShopee:Make;libCartoesMobbuy:Make;libCartoesSafrapay:Make;libCartoesCielo:Make;libCartoesStone:Make;libCartoesMagazineLuiza:Make;libCartoesSicredi:Make;libCartoesGetnet:Make;LibCartoesFiservBin:Make;libCartoesEquals:Make;libCartoesPagarMe:Make;LibCartoesBanrisul:Make;libCartoesB2W:Make;libCartoesGranito:Make;libCartoesAmazon:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<inherited ParentReport="frmPaiQck.fr3" ReportOptions.CreateDate="39475,5860465393" ReportOptions.LastChange="39475,6862486227" ScriptText.Text="procedure rllPaginaOnBeforePrint(Sender: TfrxComponent);&#13;&#10;begin&#13;&#10;  rllPagina.Text := 'PAGINA: ' + rllPagina.Text;                                                                &#13;&#10;end;&#13;&#10;&#13;&#10;procedure rllTotalImpressoOnBeforePrint(Sender: TfrxComponent);&#13;&#10;begin&#13;&#10;  rllTotalImpresso.Text := 'REGISTROS IMPRESSOS: ' + rllTotalImpresso.Text;                                                                    &#13;&#10;end;&#13;&#10;&#13;&#10;begin&#13;&#10;&#13;&#10;end.&#13;&#10;" PropData="044C65667403C00003546F70027808446174617365747301010C4000000020446174615365743D2266726D50616952656C61746F72696F2E667278436F6D616E646F732220446174615365744E616D653D22667278436F6D616E646F732200010C3600000020446174615365743D2266726D50616952656C61746F72696F2E66727847656E2220446174615365744E616D653D2266727847656E2200010C4200000020446174615365743D2266726D50616952656C61746F72696F2E66727852656C61746F72696F2220446174615365744E616D653D2266727852656C61746F72696F220000095661726961626C65730100055374796C650100">
+  <inherited Name="Data"/>
+  <inherited Name="qckPagina">
+    <inherited Name="rlbDetalhes" Top="187">
+      <TfrxDMPMemoView Name="DMPMemo7" Left="652,8" Top="0" Width="96" Height="17" DataField="VLRCON" DataSet="frmPaiRelatorio.frxRelatorio" DataSetName="frxRelatorio" DisplayFormat.DecimalSeparator="," HAlign="haRight" WordWrap="False" Text="[frxRelatorio.&#34;VLRCON&#34;]"/>
+      <TfrxDMPMemoView Name="DMPMemo2" Left="76,8" Top="0" Width="19,2" Height="17" DataField="ESPDOC" DataSet="frmPaiRelatorio.frxRelatorio" DataSetName="frxRelatorio" DisplayFormat.DecimalSeparator="," WordWrap="False" Text="[frxRelatorio.&#34;ESPDOC&#34;]"/>
+      <TfrxDMPMemoView Name="DMPMemo3" Left="115,2" Top="0" Width="28,8" Height="17" DataField="CODEMP" DataSet="frmPaiRelatorio.frxRelatorio" DataSetName="frxRelatorio" DisplayFormat.DecimalSeparator="," WordWrap="False" Text="[frxRelatorio.&#34;CODEMP&#34;]"/>
+      <TfrxDMPMemoView Name="DMPMemo4" Left="153,6" Top="0" Width="76,8" Height="17" DataField="CODCLI" DataSet="frmPaiRelatorio.frxRelatorio" DataSetName="frxRelatorio" DisplayFormat.DecimalSeparator="," WordWrap="False" Text="[frxRelatorio.&#34;CODCLI&#34;]"/>
+      <TfrxDMPMemoView Name="DMPMemo5" Left="240" Top="0" Width="288" Height="17" DataField="NOMCLI" DataSet="frmPaiRelatorio.frxRelatorio" DataSetName="frxRelatorio" DisplayFormat.DecimalSeparator="," Text="[frxRelatorio.&#34;NOMCLI&#34;]"/>
+      <TfrxDMPMemoView Name="DMPMemo6" Left="547,2" Top="0" Width="96" Height="17" DataField="DTAENT" DataSet="frmPaiRelatorio.frxRelatorio" DataSetName="frxRelatorio" DisplayFormat.DecimalSeparator="," WordWrap="False" Text="[frxRelatorio.&#34;DTAENT&#34;]"/>
+      <TfrxDMPMemoView Name="DMPMemo14" Left="9,6" Top="0" Width="57,6" Height="17" DataField="NUMDOC" DataSet="frmPaiRelatorio.frxRelatorio" DataSetName="frxRelatorio" DisplayFormat.DecimalSeparator="," WordWrap="False" Text="[frxRelatorio.&#34;NUMDOC&#34;]"/>
+    </inherited>
+    <inherited Name="rlbRodape" Top="289">
+      <inherited Name="rllNomeForm"/>
+      <inherited Name="rllTotalImpresso"/>
+      <inherited Name="DMPMemo1" WordWrap="False"/>
+    </inherited>
+    <inherited Name="rlbTitulo" Height="34">
+      <TfrxDMPMemoView Name="DMPMemo10" Left="652,8" Top="0" Width="96" Height="17" DataSet="frmPaiRelatorio.frxRelatorio" DataSetName="frxRelatorio" DisplayFormat.DecimalSeparator="," Frame.Typ="8" HAlign="haRight" WordWrap="False" Text="VALOR"/>
+      <TfrxDMPMemoView Name="DMPMemo11" Left="9,6" Top="0" Width="57,6" Height="17" DataSet="frmPaiRelatorio.frxRelatorio" DataSetName="frxRelatorio" DisplayFormat.DecimalSeparator="," Frame.Typ="8" WordWrap="False" Text="DOCUM."/>
+      <TfrxDMPMemoView Name="DMPMemo12" Left="76,8" Top="0" Width="28,8" Height="17" DataSet="frmPaiRelatorio.frxRelatorio" DataSetName="frxRelatorio" DisplayFormat.DecimalSeparator="," Frame.Typ="8" WordWrap="False" Text="ESP"/>
+      <TfrxDMPMemoView Name="DMPMemo13" Left="115,2" Top="0" Width="28,8" Height="17" DataSet="frmPaiRelatorio.frxRelatorio" DataSetName="frxRelatorio" DisplayFormat.DecimalSeparator="," Frame.Typ="8" WordWrap="False" Text="EMP"/>
+      <TfrxDMPMemoView Name="DMPMemo15" Left="153,6" Top="0" Width="374,4" Height="17" DataSet="frmPaiRelatorio.frxRelatorio" DataSetName="frxRelatorio" DisplayFormat.DecimalSeparator="," Frame.Typ="8" WordWrap="False" Text="CLIENTE / FORNECEDOR"/>
+      <TfrxDMPMemoView Name="DMPMemo16" Left="537,6" Top="0" Width="105,6" Height="17" DataSet="frmPaiRelatorio.frxRelatorio" DataSetName="frxRelatorio" DisplayFormat.DecimalSeparator="," Frame.Typ="8" WordWrap="False" Text="DTA.ENTRADA"/>
+    </inherited>
+    <inherited Name="rlbCabecalho">
+      <inherited Name="rllNomeEmpresa"/>
+      <inherited Name="rllNomeRelatorio"/>
+      <inherited Name="rllPagina"/>
+      <inherited Name="Time"/>
+      <inherited Name="Date"/>
+      <TfrxDMPCommand Name="DMPCommand1" Left="9,6" Top="0" Width="739,2" Height="17" Command="#27#64#18#27#80"/>
+    </inherited>
+    <TfrxFooter Name="Footer1" Height="34" Left="0" Top="221" Width="748,800000012278">
+      <TfrxDMPMemoView Name="DMPMemo8" Left="652,8" Top="17" Width="96" Height="17" DisplayFormat.DecimalSeparator="," Frame.Typ="4" HAlign="haRight" WordWrap="False" Text="[TOTALG]"/>
+      <TfrxDMPMemoView Name="DMPMemo9" Left="9,6" Top="17" Width="633,6" Height="17" DisplayFormat.DecimalSeparator="," Frame.Typ="4" HAlign="haRight" WordWrap="False" Text="TOTAL GERAL:"/>
+    </TfrxFooter>
+  </inherited>
+</inherited>

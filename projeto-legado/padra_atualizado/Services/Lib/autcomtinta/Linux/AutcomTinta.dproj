@@ -1,0 +1,1132 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{5DF12681-FFDD-4603-A356-47D0564DCEEC}</ProjectGuid>
+        <MainSource>AutcomTinta.dpr</MainSource>
+        <Base>True</Base>
+        <Config Condition="'$(Config)'==''">Debug</Config>
+        <TargetedPlatforms>128</TargetedPlatforms>
+        <AppType>Library</AppType>
+        <FrameworkType>VCL</FrameworkType>
+        <ProjectVersion>18.8</ProjectVersion>
+        <Platform Condition="'$(Platform)'==''">Linux64</Platform>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Base' or '$(Base)'!=''">
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Android64' and '$(Base)'=='true') or '$(Base_Android64)'!=''">
+        <Base_Android64>true</Base_Android64>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Win32' and '$(Base)'=='true') or '$(Base_Win32)'!=''">
+        <Base_Win32>true</Base_Win32>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Release' or '$(Cfg_1)'!=''">
+        <Cfg_1>true</Cfg_1>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Linux64' and '$(Cfg_1)'=='true') or '$(Cfg_1_Linux64)'!=''">
+        <Cfg_1_Linux64>true</Cfg_1_Linux64>
+        <CfgParent>Cfg_1</CfgParent>
+        <Cfg_1>true</Cfg_1>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Config)'=='Debug' or '$(Cfg_2)'!=''">
+        <Cfg_2>true</Cfg_2>
+        <CfgParent>Base</CfgParent>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Android64' and '$(Cfg_2)'=='true') or '$(Cfg_2_Android64)'!=''">
+        <Cfg_2_Android64>true</Cfg_2_Android64>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='iOSDevice64' and '$(Cfg_2)'=='true') or '$(Cfg_2_iOSDevice64)'!=''">
+        <Cfg_2_iOSDevice64>true</Cfg_2_iOSDevice64>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='Linux64' and '$(Cfg_2)'=='true') or '$(Cfg_2_Linux64)'!=''">
+        <Cfg_2_Linux64>true</Cfg_2_Linux64>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="('$(Platform)'=='OSX64' and '$(Cfg_2)'=='true') or '$(Cfg_2_OSX64)'!=''">
+        <Cfg_2_OSX64>true</Cfg_2_OSX64>
+        <CfgParent>Cfg_2</CfgParent>
+        <Cfg_2>true</Cfg_2>
+        <Base>true</Base>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base)'!=''">
+        <DCC_E>false</DCC_E>
+        <DCC_F>false</DCC_F>
+        <DCC_K>false</DCC_K>
+        <DCC_N>false</DCC_N>
+        <DCC_S>false</DCC_S>
+        <DCC_ImageBase>00400000</DCC_ImageBase>
+        <GenDll>true</GenDll>
+        <SanitizedProjectName>AutcomTinta</SanitizedProjectName>
+        <DCC_Namespace>Vcl;Vcl.Imaging;Vcl.Touch;Vcl.Samples;Vcl.Shell;System;Xml;Data;Datasnap;Web;Soap;Winapi;System.Win;$(DCC_Namespace)</DCC_Namespace>
+        <VerInfo_Locale>1046</VerInfo_Locale>
+        <VerInfo_Keys>CompanyName=;FileDescription=;FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=;ProductVersion=1.0.0.0;Comments=;CFBundleName=</VerInfo_Keys>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Android64)'!=''">
+        <EnabledSysJars>android-support-v4.dex.jar;cloud-messaging.dex.jar;com-google-android-gms.play-services-ads-base.17.2.0.dex.jar;com-google-android-gms.play-services-ads-identifier.16.0.0.dex.jar;com-google-android-gms.play-services-ads-lite.17.2.0.dex.jar;com-google-android-gms.play-services-ads.17.2.0.dex.jar;com-google-android-gms.play-services-analytics-impl.16.0.8.dex.jar;com-google-android-gms.play-services-analytics.16.0.8.dex.jar;com-google-android-gms.play-services-base.16.0.1.dex.jar;com-google-android-gms.play-services-basement.16.2.0.dex.jar;com-google-android-gms.play-services-gass.17.2.0.dex.jar;com-google-android-gms.play-services-identity.16.0.0.dex.jar;com-google-android-gms.play-services-maps.16.1.0.dex.jar;com-google-android-gms.play-services-measurement-base.16.4.0.dex.jar;com-google-android-gms.play-services-measurement-sdk-api.16.4.0.dex.jar;com-google-android-gms.play-services-stats.16.0.1.dex.jar;com-google-android-gms.play-services-tagmanager-v4-impl.16.0.8.dex.jar;com-google-android-gms.play-services-tasks.16.0.1.dex.jar;com-google-android-gms.play-services-wallet.16.0.1.dex.jar;com-google-firebase.firebase-analytics.16.4.0.dex.jar;com-google-firebase.firebase-common.16.1.0.dex.jar;com-google-firebase.firebase-iid-interop.16.0.1.dex.jar;com-google-firebase.firebase-iid.17.1.1.dex.jar;com-google-firebase.firebase-measurement-connector.17.0.1.dex.jar;com-google-firebase.firebase-messaging.17.5.0.dex.jar;fmx.dex.jar;google-play-billing.dex.jar;google-play-licensing.dex.jar</EnabledSysJars>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Base_Win32)'!=''">
+        <DCC_Namespace>Data.Win;Datasnap.Win;Web.Win;Soap.Win;Xml.Win;Bde;$(DCC_Namespace)</DCC_Namespace>
+        <BT_BuildType>Debug</BT_BuildType>
+        <VerInfo_IncludeVerInfo>true</VerInfo_IncludeVerInfo>
+        <VerInfo_Keys>CompanyName=;FileDescription=$(MSBuildProjectName);FileVersion=1.0.0.0;InternalName=;LegalCopyright=;LegalTrademarks=;OriginalFilename=;ProductName=$(MSBuildProjectName);ProductVersion=1.0.0.0;Comments=;ProgramID=com.embarcadero.$(MSBuildProjectName)</VerInfo_Keys>
+        <VerInfo_Locale>1033</VerInfo_Locale>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1)'!=''">
+        <DCC_Define>RELEASE;$(DCC_Define)</DCC_Define>
+        <DCC_DebugInformation>0</DCC_DebugInformation>
+        <DCC_LocalDebugSymbols>false</DCC_LocalDebugSymbols>
+        <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_1_Linux64)'!=''">
+        <DCC_UnitSearchPath>..\..\..\source\api\components\dmvc\sources;..\..\..\source\api\components\dmvc\lib\swagdoc\Source;..\..\source\api\components\dmvc\lib\loggerpro;..\..\source\api\components\dmvc\lib\dmustache;$(DELPHI)\Lib\Release;$(BDSLIB)\$(Platform)\release;$(BDS)\redist\$(Platform);$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+        <Debugger_Launcher>/usr/bin/xterm -e &quot;%debuggee%&quot;</Debugger_Launcher>
+        <Manifest_File>..\..\..\Faturamento.Services.API\Target\Linux\(None)</Manifest_File>
+        <DCC_Define>AUTCOMTINTA;$(DCC_Define)</DCC_Define>
+        <DCC_ExeOutput>..\..\..\bin\auttin</DCC_ExeOutput>
+        <DCC_DcuOutput>..\..\..\tmp</DCC_DcuOutput>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2)'!=''">
+        <DCC_Define>DEBUG;$(DCC_Define)</DCC_Define>
+        <DCC_Optimize>false</DCC_Optimize>
+        <DCC_GenerateStackFrames>true</DCC_GenerateStackFrames>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Android64)'!=''">
+        <BT_BuildType>Debug</BT_BuildType>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_iOSDevice64)'!=''">
+        <BT_BuildType>Debug</BT_BuildType>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_Linux64)'!=''">
+        <Debugger_Launcher>/usr/bin/xterm -e &quot;%debuggee%&quot;</Debugger_Launcher>
+        <DCC_UnitSearchPath>..\..\..\source\api\components\dmvc\sources;..\..\..\source\api\components\dmvc\lib\swagdoc\Source;..\..\source\api\components\dmvc\lib\loggerpro;..\..\source\api\components\dmvc\lib\dmustache;$(DELPHI)\Lib\Debug;$(BDSLIB)\$(Platform)\debug;$(BDS)\redist\$(Platform);$(DCC_UnitSearchPath)</DCC_UnitSearchPath>
+        <Manifest_File>..\..\..\Faturamento.Services.API\Target\Linux\(None)</Manifest_File>
+        <DCC_Define>AUTCOMTINTA;$(DCC_Define)</DCC_Define>
+        <DCC_ExeOutput>..\..\..\bin\auttin</DCC_ExeOutput>
+        <DCC_DcuOutput>..\..\..\tmp</DCC_DcuOutput>
+    </PropertyGroup>
+    <PropertyGroup Condition="'$(Cfg_2_OSX64)'!=''">
+        <BT_BuildType>Debug</BT_BuildType>
+    </PropertyGroup>
+    <ItemGroup>
+        <DelphiCompile Include="$(MainSource)">
+            <MainSource>MainSource</MainSource>
+        </DelphiCompile>
+        <DCCReference Include="..\..\..\Core\Services.Core.Cache.pas"/>
+        <DCCReference Include="..\..\..\Core\Services.Core.Connection.Interfaces.pas"/>
+        <DCCReference Include="..\..\..\Core\Services.Core.Connection.Manager.pas"/>
+        <DCCReference Include="..\..\..\Core\Services.Core.Connection.UniDac.pas"/>
+        <DCCReference Include="..\..\..\Core\Services.Core.Settings.pas"/>
+        <DCCReference Include="..\..\..\Core\Services.Core.Task.Lock.pas"/>
+        <DCCReference Include="..\..\..\Core\Services.Core.Task.Monitor.pas"/>
+        <DCCReference Include="..\..\..\Core\Services.Core.Types.pas"/>
+        <DCCReference Include="..\..\..\Core\Services.Core.Utils.pas"/>
+        <DCCReference Include="..\..\..\Core\Services.Core.Rest.pas"/>
+        <DCCReference Include="..\..\..\Core\Services.Core.Converter.Attribute.pas"/>
+        <DCCReference Include="..\..\..\Core\Services.Core.JsonCitel.Helpers.pas"/>
+        <DCCReference Include="..\..\..\Core\Services.Core.JsonCitel.Serializer.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\Faturamento\Controller.Faturamento.Interfaces.Cache.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\Controller\Bpl\Faturamento\Impostos\Interfaces\Controller.Faturamento.Interfaces.Impostos.Parametros.Comum.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\Controller\Bpl\Faturamento\Margem\Interfaces\Controller.Faturamento.Interfaces.Margem.Generic.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\Controller\Bpl\Faturamento\Margem\Interfaces\Controller.Faturamento.Interfaces.Margem.MargemBruta.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\Controller\Bpl\Faturamento\Margem\Interfaces\Controller.Faturamento.Interfaces.Margem.MargemVenda.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\Controller\Bpl\Faturamento\Precos\Interfaces\Controller.Faturamento.Interfaces.Precos.PrecoCusto.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\Controller\Bpl\Faturamento\Margem\Generic\Controller.Faturamento.Margem.Generic.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\Controller\Bpl\Faturamento\Margem\MargemBruta\Controller.Faturamento.Margem.MargemBruta.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\Controller\Bpl\Faturamento\Margem\MargemVenda\Controller.Faturamento.Margem.MargemVenda.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\Controller\Bpl\Faturamento\Precos\PrecoCusto\Controller.Faturamento.Precos.PrecoCusto.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\Core\Core.Funcoes.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\Estoque\Estoque.Lote.TSQLSaldoLote.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\Core\Faturamento.Connections.Functions.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\Core\Conexao\Faturamento.Interfaces.Conexao.pas"/>
+        <DCCReference Include="..\..\..\..\Packages\Faturamento\Precos\interfaces\source\Faturamento.Precos.Interfaces.PrecoCusto.pas"/>
+        <DCCReference Include="..\..\..\..\Packages\Faturamento\Precos\interfaces\source\Faturamento.Precos.Interfaces.Servicos.Disponiveis.pas"/>
+        <DCCReference Include="..\..\..\..\Packages\Faturamento\Precos\interfaces\source\Faturamento.Precos.Interfaces.Servicos.Disponiveis.PrecoCusto.pas"/>
+        <DCCReference Include="..\..\..\..\Packages\Faturamento\Precos\tipos\source\Faturamento.Precos.Tipos.PrecoCusto.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\movimentacaoitens\OrdemProducaoIndustrial\OrdemProducaoIndustrial.Funcoes.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\faturamento\Promocao\Promocao.Regra.Preco.Sugestao.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\cadastros\Produto.TProdutos.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\cadastros\Produto.TSQLProdutos.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\Core\Shared.Core.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\Shared.Functions.Conexao.UniDac.pas"/>
+        <DCCReference Include="..\..\..\..\Packages\Shared\Functions\source\Shared.Functions.Configuracoes.pas"/>
+        <DCCReference Include="..\..\..\..\Packages\Shared\Functions\source\Shared.Functions.Types.pas"/>
+        <DCCReference Include="..\..\..\..\..\autcomtinta\Genericos\untAbstractAutcomTinta.pas"/>
+        <DCCReference Include="..\..\..\..\..\autcomtinta\Genericos\untAbstractAutcomTintaAutomotiva.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untAutcomDllTinta.pas"/>
+        <DCCReference Include="..\..\..\..\..\autcomtinta\Genericos\untAutcomTintaFactory.pas"/>
+        <DCCReference Include="..\..\..\..\..\autcomtinta\Genericos\untAutcomTintaWrapper.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\util\operacoesrefitens\untBalancoEstoqueAjuste.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\cadastros\untCadIte.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\cadastros\untCadLote.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\faturamento\untCadNegBussiness.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\cadastros\untCadPro.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untCalculoPrecoVenda.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untClientDataSetFactory.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\cadastros\untConDet.pas"/>
+        <DCCReference Include="..\..\..\..\..\autcomtinta\untConfEmb.pas"/>
+        <DCCReference Include="..\..\..\..\..\autcomtinta\untConfTinta.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\Genericos\untConstantes.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untControlaNotSaldoMin.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\Util_DLL\OpeRefProd\untControleContagemBalancoEstoque.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untDDLFactory.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untDataSetIDataSetWrapper.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untDicionarioResultadoQuerySimples.pas"/>
+        <DCCReference Include="..\..\..\..\..\autcomtinta\Genericos\untDicionarioWrapper.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\faturamento\untFatCalcularMargemService.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\faturamento\untFatCalcularPrecosService.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\faturamento\untFatCalcularServicePath.pas"/>
+        <DCCReference Include="..\..\..\..\..\autcomtinta\Genericos\untFatFormulacaoFactory.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untFieldDataSetFieldWrapper.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\CamadaPersistencia\untFieldFiltros.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\faturamento\untFinanceira.pas"/>
+        <DCCReference Include="..\..\..\..\..\autcomtinta\untFormulasTinta.pas"/>
+        <DCCReference Include="..\..\..\..\..\autcomtinta\untFuncEspecificas.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untFuncTinta.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untFuncoesDicionarios.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untFuncoesGenerica.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untFuncoesTintaDeMaquinaBpl.pas"/>
+        <DCCReference Include="..\..\..\..\..\LibTintas\libTintasComum\Tipos\untGTinForTipos.pas"/>
+        <DCCReference Include="..\..\..\..\..\autcomtinta\Genericos\untGenericFatFormulacao.pas"/>
+        <DCCReference Include="..\..\..\..\..\autcomtinta\Genericos\untGenericFormulaAutomotiva.pas"/>
+        <DCCReference Include="..\..\..\..\..\LibTintas\libTintasComum\Genericos\untGenericTintaDeMaquina.pas"/>
+        <DCCReference Include="..\..\..\..\..\LibTintas\libTintasComum\Genericos\untGenericTintaDeMaquinaComponente.pas"/>
+        <DCCReference Include="..\..\..\..\..\autcomtinta\untGlasuritConsulta.pas"/>
+        <DCCReference Include="..\..\..\..\..\autcomtinta\untGlasuritDinamica.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untHelperCitel.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\util\operacoesrefitens\untHistoricoBalanco.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\iTintas\untIAutcomTinta.pas"/>
+        <DCCReference Include="..\..\..\..\..\LibTintas\libTintasComum\Interfaces\untIAutcomTintaWrapper.pas"/>
+        <DCCReference Include="..\..\..\..\..\LibTintas\libTintasComum\Interfaces\untIAuttinMenuItem.pas"/>
+        <DCCReference Include="..\..\..\..\..\LibTintas\libTintasComum\Interfaces\untIAuttinWrapper.pas"/>
+        <DCCReference Include="..\..\..\..\..\LibTintas\libTintasComum\Interfaces\untICadLibTintas.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\cadastros\untICadLote.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\cadastros\untICadastros.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\Interfaces\untICalculadorFatVendas.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\Interfaces\untICalculadorFatVendasTAB.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\cadastros\untICamGer.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untICamposUso.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\Interfaces\untICfgSis.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\iTintas\untIConfEmb.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\iTintas\untIConfTinta.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\configuracoes\untIConfiguracao.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\configuracoes\untCfgRepositorio.pas"/>
+        <DCCReference Include="..\..\..\..\..\LibTintas\libTintasComum\Interfaces\untIConfiguradorConsulta.pas"/>
+        <DCCReference Include="..\..\..\..\..\LibTintas\libTintasComum\Interfaces\untIConfiguradorTinta.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\iTintas\untIConsulta.pas"/>
+        <DCCReference Include="..\..\..\..\..\LibTintas\libTintasComum\Interfaces\untIConsultaComp.pas"/>
+        <DCCReference Include="..\..\..\..\..\LibTintas\libTintasComum\Interfaces\untIConsultaCompTintaNovaConfigurador.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\iTintas\untIConsultaTinta.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\iTintas\untIDadosTinta.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\iTintas\untIDadosTintasComponentes.pas"/>
+        <DCCReference Include="..\..\..\..\..\LibTintas\libTintasComum\Interfaces\untIDataSet.pas"/>
+        <DCCReference Include="..\..\..\..\..\LibTintas\libTintasComum\Interfaces\untIDicionario.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\util\EditorEtiquetas\untIDocumentos.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\iTintas\untIExecutaSQLReplicacaoTinta.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\Interfaces\untIFatDefineLotesPedidoWMS.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\faturamento\untIFatEntregaFutura.pas"/>
+        <DCCReference Include="..\..\..\..\..\autcomtinta\Genericos\untIFatFormulacao.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\iTintas\untIFatOrdProTintaMaquina.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\faturamento\untIFatReservaSaldo.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\faturamento\untIFinanceira.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\iTintas\untIFormulaAutomotiva.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\iTintas\untIFormulaImobiliaria.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untIFuncMacro.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\crm\untIFuncoesCRM.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\Interfaces\untIFuncoesSaldos.pas"/>
+        <DCCReference Include="..\..\..\..\..\LibTintas\libTintasComum\Interfaces\untIGravando.pas"/>
+        <DCCReference Include="..\..\..\..\..\LibTintas\libTintasComum\Interfaces\untIGravandoExecucao.pas"/>
+        <DCCReference Include="..\..\..\..\..\LibTintas\libTintasComum\Interfaces\untIGravandoExecucaoNome.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\iTintas\untIIdentificadorTinta.pas"/>
+        <DCCReference Include="..\..\..\..\..\LibTintas\libTintasComum\Interfaces\untILibTinta.pas"/>
+        <DCCReference Include="..\..\..\..\..\LibTintas\libTintasComum\Interfaces\untILibTintaControleVisual.pas"/>
+        <DCCReference Include="..\..\..\..\..\LibTintas\libTintasComum\Interfaces\untILibTintaControleVisualPropriedade.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\iTintas\untILibTintaDllRelacao.pas"/>
+        <DCCReference Include="..\..\..\..\..\LibTintas\libTintasComum\Interfaces\untILibTintaFactory.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untILiberacao.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untIMetAno.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\util\EditorEtiquetas\untIOrdenacao.pas"/>
+        <DCCReference Include="..\..\..\..\..\autcomtinta\Genericos\untIReformuladorAutomotiva.pas"/>
+        <DCCReference Include="..\..\..\..\..\LibTintas\libTintasComum\Interfaces\untISaldosColorantes.pas"/>
+        <DCCReference Include="..\..\..\..\..\LibTintas\libTintasComum\Interfaces\untITintaDeMaquina.pas"/>
+        <DCCReference Include="..\..\..\..\..\LibTintas\libTintasComum\Interfaces\untITintaDeMaquinaComponente.pas"/>
+        <DCCReference Include="..\..\..\..\..\LibTintas\libTintasComum\Interfaces\untITintaDeMaquinaComponenteComparer.pas"/>
+        <DCCReference Include="..\..\..\..\..\LibTintas\libTintasComum\Interfaces\untITintadeMaquinaWrapper.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\iTintas\untITintasDeMaquina.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\iTintas\untITransferencias.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untIZClient.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untImpostosFatConexao.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\FuncoesCentralizadas\untInterfacedObjectNoCount.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\libNfe\untInterfaces.pas"/>
+        <DCCReference Include="..\..\..\..\..\autcomtinta\Genericos\untLibTintaDllRelacao.pas"/>
+        <DCCReference Include="..\..\..\..\..\autcomtinta\LibTinta\untLibTintaDllWrapper.pas"/>
+        <DCCReference Include="..\..\..\..\..\autcomtinta\Factorys\untLibTintaFactory.pas"/>
+        <DCCReference Include="..\..\..\..\..\autcomtinta\Genericos\untLibTintaFactoryWrapper.pas"/>
+        <DCCReference Include="..\..\..\..\..\autcomtinta\untLibTintas.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untLiberacaoFactory.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untListaLogErros.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\faturamento\untMadeireira.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untMatrizSaldosColorantesFactory.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\cadastros\untMsgInterna.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untMsgLiberacao.pas"/>
+        <DCCReference Include="..\..\..\..\..\autcomtinta\untParCalculaPrecoCusto.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untParamDataSetWrapper.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\faturamento\untProdAcabado.pas"/>
+        <DCCReference Include="..\..\..\..\..\autcomtinta\untProdutosAcabados.pas"/>
+        <DCCReference Include="..\..\..\..\..\autcomtinta\Genericos\untRecalculadorTintadeMaquina.pas"/>
+        <DCCReference Include="..\..\..\..\..\autcomtinta\untSalcomixConsulta.pas"/>
+        <DCCReference Include="..\..\..\..\..\autcomtinta\untSalcomixDinamica.pas"/>
+        <DCCReference Include="..\..\..\..\..\autcomtinta\untSalcomixSQLServer.pas"/>
+        <DCCReference Include="..\..\..\..\..\autcomtinta\Salcomix\untSalcomixSqlServerFactory.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\movimentacaoitens\PedidoDeCompra\untSaldoPedidoCompra.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untSeqCom.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untSeqTmp.pas"/>
+        <DCCReference Include="..\..\..\..\..\LibTintas\libTintasComum\Interfaces\untStatusGravando.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untSubjectClass.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untSubjectIntf.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\configuracoes\untTConfiguracao.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\faturamento\untTFatEntregaFutura.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\faturamento\untTFatReservaSaldo.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untTMatrizSaldosColorantes.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untTMemoriaCalculoPrecoVendaMargem.pas"/>
+        <DCCReference Include="..\..\..\..\..\LibTintas\libTintasComum\Genericos\untTintaDeMaquinaComponenteComparerBaseAutomotiva.pas"/>
+        <DCCReference Include="..\..\..\..\..\LibTintas\libTintasComum\Genericos\untTintaDeMaquinaComponenteComparerEmbalagemAutomotiva.pas"/>
+        <DCCReference Include="..\..\..\..\..\LibTintas\libTintasComum\Genericos\untTintaDeMaquinaComponenteTipo.pas"/>
+        <DCCReference Include="..\..\..\..\..\autcomtinta\untTintaMaquina.pas"/>
+        <DCCReference Include="..\..\..\..\..\autcomtinta\untTintadeMaquina.pas"/>
+        <DCCReference Include="..\..\..\..\..\autcomtinta\Genericos\untTintadeMaquinaFactory.pas"/>
+        <DCCReference Include="..\..\..\..\..\autcomtinta\Genericos\untTintadeMaquinaWrapper.pas"/>
+        <DCCReference Include="..\..\..\..\..\autcomtinta\untTintasdeMaquina.pas"/>
+        <DCCReference Include="..\..\..\..\..\LibTintas\libTintasComum\Tipos\untTipoCadastro.pas"/>
+        <DCCReference Include="..\..\..\..\..\LibTintas\libTintasComum\Tipos\untTipoTinta.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\crm\untTypesCRM.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untTypesSistema.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untUniQueryDataSetWrapper.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\faturamento\untValidaSituacaoFinanceiraPedido.pas"/>
+        <DCCReference Include="..\..\..\..\..\LibTintas\libTintasComum\Genericos\untValidarBaseItemAmarracao.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untValorPorExtenso.pas"/>
+        <DCCReference Include="..\..\..\..\..\autcomtinta\Genericos\untVerificadorTintaExistente.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untZClient.pas">
+            <Form>$R *.res</Form>
+        </DCCReference>
+        <DCCReference Include="..\..\..\..\fontes\financeiro\gerais\api.yapay\api\Yapay.Api.Resources.pas"/>
+        <DCCReference Include="..\..\..\..\fontes\genericos\untConfiguracoes.pas"/>
+        <BuildConfiguration Include="Debug">
+            <Key>Cfg_2</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Base">
+            <Key>Base</Key>
+        </BuildConfiguration>
+        <BuildConfiguration Include="Release">
+            <Key>Cfg_1</Key>
+            <CfgParent>Base</CfgParent>
+        </BuildConfiguration>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Delphi.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Delphi.Personality>
+                <Source>
+                    <Source Name="MainSource">AutcomTinta.dpr</Source>
+                </Source>
+                <Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dcloffice2k260.bpl">Microsoft Office 2000 Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="$(BDSBIN)\dclofficexp260.bpl">Microsoft Office XP Sample Automation Server Wrapper Components</Excluded_Packages>
+                    <Excluded_Packages Name="C:\Users\Public\Documents\Embarcadero\Studio\20.0\Bpl\LockBox3FMXDD260.bpl">TurboPack LockBox 3 FMX designtime package</Excluded_Packages>
+                </Excluded_Packages>
+            </Delphi.Personality>
+            <Platforms>
+                <Platform value="Android64">False</Platform>
+                <Platform value="iOSDevice64">False</Platform>
+                <Platform value="Linux64">True</Platform>
+                <Platform value="OSX64">False</Platform>
+                <Platform value="Win32">False</Platform>
+                <Platform value="Win64">False</Platform>
+            </Platforms>
+            <Deployment Version="3">
+                <DeployFile LocalName="..\..\..\bin\auttin\libAutcomTinta.so" Configuration="Release" Class="ProjectOutput">
+                    <Platform Name="Linux64">
+                        <RemoteName>libAutcomTinta.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployFile LocalName="..\..\..\bin\auttin\libAutcomTinta.so" Configuration="Debug" Class="ProjectOutput">
+                    <Platform Name="Linux64">
+                        <RemoteName>libAutcomTinta.so</RemoteName>
+                        <Overwrite>true</Overwrite>
+                    </Platform>
+                </DeployFile>
+                <DeployClass Name="AdditionalDebugSymbols">
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidClassesDexFile">
+                    <Platform Name="Android">
+                        <RemoteDir>classes</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>classes</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidFileProvider">
+                    <Platform Name="Android">
+                        <RemoteDir>res\xml</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\xml</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidGDBServer">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidLibnativeArmeabiFile">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>library\lib\armeabi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidLibnativeArmeabiv7aFile">
+                    <Platform Name="Android64">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidLibnativeMipsFile">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\mips</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>library\lib\mips</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidServiceOutput">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>library\lib\arm64-v8a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidServiceOutput_Android32">
+                    <Platform Name="Android64">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidSplashImageDef">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidSplashStyles">
+                    <Platform Name="Android">
+                        <RemoteDir>res\values</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\values</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="AndroidSplashStylesV21">
+                    <Platform Name="Android">
+                        <RemoteDir>res\values-v21</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\values-v21</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_Colors">
+                    <Platform Name="Android">
+                        <RemoteDir>res\values</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\values</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_DefaultAppIcon">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon144">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-xxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon36">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-ldpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-ldpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon48">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-mdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-mdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon72">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-hdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-hdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_LauncherIcon96">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-xhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_NotificationIcon24">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-mdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-mdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_NotificationIcon36">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-hdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-hdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_NotificationIcon48">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-xhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_NotificationIcon72">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-xxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_NotificationIcon96">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xxxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-xxxhdpi</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage426">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-small</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-small</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage470">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-normal</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-normal</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage640">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-large</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-large</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_SplashImage960">
+                    <Platform Name="Android">
+                        <RemoteDir>res\drawable-xlarge</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\drawable-xlarge</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="Android_Strings">
+                    <Platform Name="Android">
+                        <RemoteDir>res\values</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>res\values</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="DebugSymbols">
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="DependencyFramework">
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                        <Extensions>.framework</Extensions>
+                    </Platform>
+                    <Platform Name="OSX64">
+                        <Operation>1</Operation>
+                        <Extensions>.framework</Extensions>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="DependencyModule">
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="OSX64">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                        <Extensions>.dll;.bpl</Extensions>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Required="true" Name="DependencyPackage">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="OSX64">
+                        <Operation>1</Operation>
+                        <Extensions>.dylib</Extensions>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                        <Extensions>.bpl</Extensions>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="File">
+                    <Platform Name="Android">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="OSX64">
+                        <Operation>0</Operation>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch1024x768">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch1536x2048">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch1668">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch1668x2388">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch2048x1536">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch2048x2732">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch2224">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch2388x1668">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch2732x2048">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPad_Launch768x1024">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch1125">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch1136x640">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch1242">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch1242x2688">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch1334">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch1792">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch2208">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch2436">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch2688x1242">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch320">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch640">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch640x1136">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch750">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="iPhone_Launch828">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectAndroidManifest">
+                    <Platform Name="Android">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSDeviceDebug">
+                    <Platform Name="iOSDevice32">
+                        <RemoteDir>..\$(PROJECTNAME).app.dSYM\Contents\Resources\DWARF</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <RemoteDir>..\$(PROJECTNAME).app.dSYM\Contents\Resources\DWARF</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectiOSDeviceResourceRules"/>
+                <DeployClass Name="ProjectiOSEntitlements"/>
+                <DeployClass Name="ProjectiOSInfoPList"/>
+                <DeployClass Name="ProjectiOSResource">
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectOSXDebug"/>
+                <DeployClass Name="ProjectOSXEntitlements"/>
+                <DeployClass Name="ProjectOSXInfoPList"/>
+                <DeployClass Name="ProjectOSXResource">
+                    <Platform Name="OSX32">
+                        <RemoteDir>Contents\Resources</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX64">
+                        <RemoteDir>Contents\Resources</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Required="true" Name="ProjectOutput">
+                    <Platform Name="Android">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Android64">
+                        <RemoteDir>library\lib\arm64-v8a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSDevice64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="iOSSimulator">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Linux64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="OSX64">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win32">
+                        <Operation>0</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectOutput_Android32">
+                    <Platform Name="Android64">
+                        <RemoteDir>library\lib\armeabi-v7a</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="ProjectUWPManifest">
+                    <Platform Name="Win32">
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win64">
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="UWP_DelphiLogo150">
+                    <Platform Name="Win32">
+                        <RemoteDir>Assets</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win64">
+                        <RemoteDir>Assets</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <DeployClass Name="UWP_DelphiLogo44">
+                    <Platform Name="Win32">
+                        <RemoteDir>Assets</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                    <Platform Name="Win64">
+                        <RemoteDir>Assets</RemoteDir>
+                        <Operation>1</Operation>
+                    </Platform>
+                </DeployClass>
+                <ProjectRoot Platform="iOSDevice64" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="Win64" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="iOSDevice32" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="Linux64" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="Win32" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="OSX32" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="Android" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="OSX64" Name="$(PROJECTNAME)"/>
+                <ProjectRoot Platform="iOSSimulator" Name="$(PROJECTNAME).app"/>
+                <ProjectRoot Platform="Android64" Name="$(PROJECTNAME)"/>
+            </Deployment>
+        </BorlandProject>
+        <ProjectFileVersion>12</ProjectFileVersion>
+    </ProjectExtensions>
+    <Import Project="$(BDS)\Bin\CodeGear.Delphi.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Delphi.Targets')"/>
+    <Import Project="$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj" Condition="Exists('$(APPDATA)\Embarcadero\$(BDSAPPDATABASEDIR)\$(PRODUCTVERSION)\UserTools.proj')"/>
+    <Import Project="$(MSBuildProjectName).deployproj" Condition="Exists('$(MSBuildProjectName).deployproj')"/>
+</Project>

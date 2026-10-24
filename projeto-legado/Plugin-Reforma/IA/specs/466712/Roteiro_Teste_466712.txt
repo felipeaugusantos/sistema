@@ -1,0 +1,461 @@
+Gerado roteiro de teste pela IA, qualquer coisa falar comigo
+ROTEIRO DE TESTE UNICO - REQ. 466712 - REFORMA TRIBUTARIA (PLUGIN libReformaPrecos.dll)
+Cobre: sub-abas do cadastro (REFTRI), Desconto PIS/COFINS + REFPRE (REFTRI-01),
+       Convert "Ativar Precos Reforma Tributaria" por grupo de preco, Reverter, filtro de itens
+       e aba 4 (REFTRI-02) e consulta da conversao na aba 2 (REFTRI-03).
+Versoes: 150.100 (principal), 150.45, 150, 74.111 e 72. Contrato da DLL: 12.
+Data do roteiro: 07/10/2026
+Documentacao: plgReforma\IA\specs\466712 (spec.md, plan.md, tasks.md, testes.md, tabelas.sql).
+
+Ordem sugerida: secoes 0 e 1 -> 2 a 4 com CFG_REFCIS = N -> 5 (aba 4, operador 998)
+-> 6 (Convert, liga a REFCIS) -> 7 com CFG_REFCIS = S -> 8 (Reverter) -> 9 a 11
+-> repetir nas outras versoes (secao 12).
+
+=====================================================================================
+0. PREPARACAO (FAZER EM CADA VERSAO)
+=====================================================================================
+[ ] 0.1 Compilar no IDE o autcom.exe e a libReformaPrecos.dll da versao (contrato 12).
+        Copiar os DOIS juntos para <versao>\padra_atualizado. Exe e DLL de contratos
+        diferentes sao recusados (o plugin some e aparece o aviso de versao).
+[ ] 0.2 Base de teste propria (nunca base de cliente). Antes do Convert, guardar backup de:
+        ITEGER, PREPRO (150.x), CADITE, CADEMP, CFGSIS, REFPRE, ABFRTE, REGPRO/PROALT (150.x)
+        ou REGPRE/PREALT (72/74.111). O Convert altera precos de TODOS os itens do grupo.
+[ ] 0.3 Separar a amostra de produtos (usar a mesma em todas as secoes):
+        (a) com linha na REFPRE (desconto 6,97, despesas operacionais e margem diferentes
+            do cadastro)
+        (b) sem linha na REFPRE
+        (c) com IMPFED e SUBFED > 0
+        (d) em dolar (PREDOL = S, CFG_COTDOR ligada)
+        (e) com fator de preco (CFG_FATPRE / PROFAT)
+        (f) dois itens do mesmo grupo de precos (ITE_CODGPR)
+        (g) com preco 0 em alguma tabela ativa
+        (h) 150.x: com TARE (Usa TARE = S, CFG_REDTAR = S)
+        (i) 74.111: Suframa com FRMCUS = 4
+        (j) um item inativo (ITE_ITEATI = N)
+        mais um codigo livre para inclusao.
+[ ] 0.4 Dois operadores: o 998 e um operador comum, os dois com acesso PREPRO, PROTABPR,
+        EDTCUS e frmCadProdutos (os sem acesso estao na secao 10).
+[ ] 0.5 Para repetir o Convert do zero: usar o Reverter (secao 8) ou restaurar o backup do
+        0.2, apagar ITEREO, ITEREF, REFCON e REFDIV e voltar CFG_REFCIS = N e
+        CADEMP.EMP_REFCON = N nas empresas.
+[ ] 0.6 Observacao: hoje o sistema trabalha sempre com custo unico.
+[ ] 0.7 Observacao sobre o que grava:
+        - CFG_REFCIS = N: o lado Atual da sub-aba 2 grava no produto (igual a sub-aba 1);
+          o lado Novo da sub-aba 2 e a sub-aba 3 gravam na REFPRE. A sub-aba 4 (998) so
+          mostra, nao grava.
+        - CFG_REFCIS = S: as sub-abas 3 e 4 nao aparecem e a sub-aba 2 so consulta a
+          conversao (ITEREO/ITEREF). Nada das abas e gravado.
+
+=====================================================================================
+1. CARGA DO PLUGIN E ESTRUTURA DO BANCO
+=====================================================================================
+[ ] 1.1 Sem a DLL na pasta do exe: entrar no autcom e abrir o cadastro de produtos.
+        Esperado: sobe normal, nada e criado no banco, cadastro so com a formacao de precos
+        de sempre (sem sub-abas), sem mensagem; menu "Ativar Precos Reforma Tributaria"
+        invisivel.
+[ ] 1.2 DLL de outro contrato (ex.: DLL antiga) com o exe novo, e o contrario.
+        Esperado: aviso de versoes diferentes do contrato uma unica vez na sessao; cadastro
+        como sem o plugin; menu do Convert invisivel.
+[ ] 1.3 Com a DLL correta: aparecem "1 - Formacao de Custo Atual", "2 - Comparativo de
+        Custos (2026/2027)" e "3 - Formacao de Custo Futura" (a 3 so com CFG_REFCIS = N).
+        A "4 - Calculo Convert" so com o operador 998 e CFG_REFCIS = N (secao 5).
+[ ] 1.4 Fechar e abrir o cadastro 10 vezes. Esperado: nao duplica sub-abas, nao trava,
+        sem aviso de vazamento de memoria ao fechar o sistema.
+[ ] 1.5 Estrutura na subida (base sem as tabelas): entrar no autcom e fazer login.
+        Esperado: existem IMPTRI (com a linha 9/1/0), REFPRE, ITEREO, ITEREF, REFCON e
+        REFDIV, e a coluna CADEMP.EMP_REFCON (char(1), default N):
+          SHOW TABLES LIKE 'REF%';  SHOW TABLES LIKE 'ITERE%';  SHOW TABLES LIKE 'IMPTRI';
+          SHOW COLUMNS FROM CADEMP LIKE 'EMP_REFCON';
+          SHOW COLUMNS FROM REFCON LIKE 'CON_FILITE';
+[ ] 1.6 REFPRE com 23 colunas: DPISCO, DESOPE e MARBRn/PREVEn/COMTBn de 1 a 7
+        (SHOW CREATE TABLE REFPRE). Chave unica (ITE_CODEMP, ITE_CODITE).
+[ ] 1.7 ITEREO/ITEREF: colunas ITE_* com o mesmo tipo do ITEGER da base; coluna que o
+        ITEGER nao tem nao aparece. Chave unica (REF_CHAVE, ITE_CODEMP, ITE_CODITE).
+[ ] 1.8 Apagar uma coluna numa base de teste (ex.: ALTER TABLE REFDIV DROP COLUMN
+        DIV_ENCONT) e entrar de novo no autcom. Esperado: a coluna volta.
+[ ] 1.9 Entrar de novo sem nada faltando. Esperado: nenhum DDL (sem linha nova na LOGREP
+        para essas tabelas).
+
+=====================================================================================
+2. CADASTRO - POSICAO DOS PRECOS E SUB-ABA 1 (CFG_REFCIS = N, REGRESSAO)
+=====================================================================================
+Regra: os precos ficam na aba Geral so se couberem inteiros sem barra de rolagem; senao
+vao para a aba "2 - Tabelas de Preco". Com o plugin, as sub-abas vao juntas.
+Repetir 2.1 a 2.6 SEM e COM a DLL:
+[ ] 2.1 EPCPGG = N, MARPAD = N, HPRTFR = N
+[ ] 2.2 EPCPGG = S (painel de promocao na aba Geral)
+[ ] 2.3 EPCPGG = S e MARIDE = S
+[ ] 2.4 MARPAD = S (ou HPRTFR = S) - painel "Margem Padrao"
+[ ] 2.5 EPCPGG = S e MARPAD = S juntos
+[ ] 2.6 COTDOR = N com REFCIS = N (bug antigo da aba 1 encolhendo, corrigido no exe;
+        principalmente 74.111 e 72).
+        Esperado em todas: sem barra de rolagem vertical quando na aba Geral; senao aba
+        "2 - Tabelas de Preco" com as sub-abas; "Margem Padrao" so na sub-aba 1; a aba 1
+        mostra todos os campos de preco (nao encolhe).
+[ ] 2.7 Monitor 1366x768 (tela maximizada): repetir 2.1 e 2.2. Nunca na aba Geral com rolagem.
+[ ] 2.8 Monitor 1920x1080: repetir 2.1. Com poucas linhas, precos na aba Geral.
+[ ] 2.9 Sub-aba 1: alterar custo, margem, preco e comissao nas 7 tabelas; Gravar; reabrir.
+        Esperado: valores iguais ao digitado, como antes da alteracao.
+[ ] 2.10 Atalhos: Ctrl+1, Ctrl+2, Ctrl+3 (e Ctrl+4 com o 998) abrem a sub-aba; Ctrl+PgDn e
+        Ctrl+PgUp avancam e voltam pulando as sub-abas ocultas.
+
+=====================================================================================
+3. SUB-ABA 2 - LADO ATUAL (CFG_REFCIS = N)
+=====================================================================================
+Regra: o lado "Atual" usa as validacoes da sub-aba 1; o que muda em um lado aparece no outro.
+[ ] 3.1 Alterar o custo no Atual: sub-aba 1 com o mesmo custo e precos recalculados.
+[ ] 3.2 Alterar margem e preco de uma tabela no Atual: mesmo valor na sub-aba 1.
+[ ] 3.3 Alterar na sub-aba 1 e abrir a sub-aba 2: Atual atualizado.
+[ ] 3.4 Passar com Tab por todos os campos do Atual sem digitar e Gravar: nada muda.
+[ ] 3.5 Valor invalido (margem fora do permitido, preco negativo): mesma mensagem da
+        sub-aba 1, campo volta ao valor anterior.
+[ ] 3.6 EFEIMP = 2: alterar SUBFED no Atual -> recusado, valor volta.
+[ ] 3.7 PROFAT = S: alterar preco de tabela controlada pelo fator -> "Preco da tabela N
+        controlado pelo fator de preco", valor volta.
+[ ] 3.8 PCMPRO = 1 e = 2: preco de venda igual ao da sub-aba 1.
+[ ] 3.9 SUFRAM = S, FRMCUS = 4, empresa em estado da Zona Franca: custo igual ao da
+        sub-aba 1. Repetir com SUFRAM = N.
+[ ] 3.10 150.x, item (h) TARE na tabela 2: margem, preco e custo de venda iguais entre
+        sub-aba 1 e Atual. Tabela sem TARE nao muda.
+[ ] 3.11 Lado Novo nao mostra o campo "Impostos Federais".
+[ ] 3.12 Gravar com o foco num campo do Atual ainda editando: grava o valor digitado.
+
+=====================================================================================
+4. DESCONTO PIS/COFINS E REFPRE (CFG_REFCIS = N)
+=====================================================================================
+4.A Layout e calculo (sub-aba 2, lado Novo)
+[ ] 4.1 "Desconto PIS/COFINS 2027(-):" com % abaixo do Preco Compra; "Preco Liquido com
+        Desconto:" logo abaixo, somente leitura; linhas abaixo deslocadas sem sobrepor.
+[ ] 4.2 Tab: Preco Compra -> Desconto PIS/COFINS -> proximo campo.
+[ ] 4.3 PRECOM 1000,00 e desconto 6,97 -> Preco Liquido 930,30; custo, margem e precos
+        do Novo recalculados a partir do liquido. Desconto 0 -> liquido = PRECOM.
+        Desconto 99,99 -> calcula sem erro.
+[ ] 4.4 Desconto negativo, 100 ou maior -> "O Desconto de PIS/COFINS deve ser maior ou
+        igual a Zero e menor que 100!" e volta o valor anterior. Campo vazio = 0.
+
+4.B Campos editaveis (os que a REFPRE guarda e o Preco de Venda com Impostos)
+[ ] 4.5 Sub-aba 2, Novo: so Desconto PIS/COFINS, Despesas Operacionais, Margem 1,
+        Comissao 1, Preco de Venda 1 e Preco de Venda com Impostos (preco pago pelo
+        cliente) aceitam digitacao. Preco Compra, descontos 01-06, ICMS/IPI/frete, ST,
+        Outros Valores, ICMS Saida e Suframa desabilitados; o Tab passa por cima.
+[ ] 4.6 Sub-aba 3 (150.x grid): nos grids de custo so a linha Despesas Operacionais abre
+        editor; no grid de precos, Margem, Comissao, Preco de Venda e Pr. Venda c/ Impostos
+        das tabelas 1 a 7. Fator Tabela nao abre editor.
+[ ] 4.7 Sub-aba 3 (72/74.111 campos): so Despesas Operacionais e Margem/Comissao/Preco de
+        Venda/Pr. Venda com Impostos das tabelas 1 a 7. Preco de Compra e custos travados.
+[ ] 4.8 Produto em consulta: tudo desabilitado.
+[ ] 4.9 Digitar o Preco de Venda com Impostos (sub-abas 2 e 3): preco de venda e margem
+        recalculam na hora. Gravar e reabrir: a REFPRE tem o preco e a margem; o preco
+        com impostos volta igual (diferenca so de arredondamento).
+
+4.C Sincronismo (sub-aba 1 / Atual -> Novo -> sub-aba 3)
+[ ] 4.10 Mudar o Preco Compra do Atual e sair: Preco Compra, liquido e custo do Novo mudam.
+[ ] 4.11 Na sub-aba 1 mudar campo travado (preco de compra, desconto 01, ICMS saida) e ir
+        para as sub-abas 2 e 3: ja com o valor novo.
+[ ] 4.12 Digitar desconto/despesas/margem/preco/comissao no Novo e depois mudar o custo
+        na sub-aba 1: o digitado fica.
+[ ] 4.13 CFG_VENMAR = 1, custo mudou: Margem 1 do Novo fica, Preco 1 recalcula.
+        CFG_VENMAR = 2: Preco 1 fica, Margem 1 recalcula.
+[ ] 4.14 Despesas Operacionais do Atual mudou: a do Novo nao muda.
+
+4.D Gravacao na REFPRE
+[ ] 4.15 Item (b) sem REFPRE: abrir -> desconto 0, valores iguais aos do produto. Mudar so
+        a sub-aba 1 e gravar -> continua sem linha na REFPRE.
+[ ] 4.16 Alterar desconto, despesas, margem/preco/comissao das tabelas e gravar:
+          SELECT * FROM REFPRE WHERE ITE_CODEMP = '<emp>' AND ITE_CODITE = '<item>';
+        Esperado: uma linha com os valores da tela. Reabrir: tela igual.
+[ ] 4.17 Alterar de novo e gravar: continua UMA linha, com os valores novos.
+[ ] 4.18 Item com REFPRE: mudar o custo so na sub-aba 1 (sem abrir 2 e 3) e gravar: a
+        REFPRE e regravada com PREVE ou MARBR recalculado conforme o VENMAR.
+[ ] 4.19 Incluir produto novo, preencher o desconto e gravar: linha na REFPRE com o codigo
+        gerado. Incluir e Cancelar: nada gravado.
+[ ] 4.20 Inclusao por heranca de produto com precos: Novo (aba 2) e aba 3 preenchidos com os
+        mesmos valores; digitar no Novo e mudar o custo na aba 1 -> o digitado fica.
+[ ] 4.21 Gravar com o foco num campo da sub-aba 3 ainda editando: grava sem erro.
+[ ] 4.22 Trocar de produto varias vezes: sub-abas mostram o produto atual.
+
+4.E Replicacao da REFPRE
+[ ] 4.23 Grupo de precos (item f): gravar o Novo de um -> o outro recebe a mesma linha na
+        REFPRE nas empresas do grupo.
+[ ] 4.24 Sem CFG_INFMAT: empresas que usam o preco da matriz recebem a mesma linha.
+[ ] 4.25 Com CFG_INFMAT: preco e comissao copiados; despesa da empresa quando INFOPE <> 2;
+        margem recalculada pelo custo da empresa.
+[ ] 4.26 Inclusao com valores no Novo: todas as outras empresas recebem a linha.
+[ ] 4.27 Responsavel pelo fornecedor (INFMAT, logada responsavel): empresa fora do grupo com
+        linha na REFPRE recebe so o desconto; sem linha, nada e criado.
+[ ] 4.28 Falha ao gravar a REFPRE de outra empresa: gravacao do produto inteira desfeita,
+        com mensagem.
+
+=====================================================================================
+5. SUB-ABA 4 "CALCULO CONVERT" (OPERADOR 998, CFG_REFCIS = N)
+=====================================================================================
+Objetivo: mostrar, antes de converter, o que o Convert gravaria para o produto em tela.
+[ ] 5.1 Logado com o 998: aparece "4 - Calculo Convert"; Ctrl+4 entra nela. Com outro
+        operador a aba nao aparece e os atalhos a pulam.
+[ ] 5.2 Produto gravado: mesmos campos da sub-aba 3, todos somente leitura, com os radios
+        "Opcao de recalculo" (padrao pela CFG_VENMAR) e "Origem dos Impostos" (Tabela
+        Estatica). Trocar um radio recalcula na hora.
+[ ] 5.3 Mudar a sub-aba 3 (desconto, despesa, margem, comissao) e voltar a sub-aba 4: ela
+        recalcula. Com a sub-aba 4 na tela, a mudanca aparece direto.
+[ ] 5.4 Recalcular Preco de Venda: usa a margem da sub-aba 3 quando ela estara na REFPRE
+        (linha gravada ou alteracao pendente); item (b) sem REFPRE e sem edicao usa a
+        margem da sub-aba 1.
+[ ] 5.5 Recalcular Margem: parte do preco da sub-aba 1 (ITEGER) sem CBS/IBS/IS.
+[ ] 5.6 Produto em inclusao (nao gravado), empresa que recebe preco da matriz, item sem
+        PREPRO (150.x) ou sem aliquota pela abreviacao: campos zerados e o motivo em
+        vermelho ao lado dos radios.
+[ ] 5.7 Depois de converter o item (6.D, filtro do 998), abrir a sub-aba 1: os valores batem
+        com o que a sub-aba 4 mostrava.
+
+=====================================================================================
+6. CONVERT "ATIVAR PRECOS REFORMA TRIBUTARIA" (LIGA A CFG_REFCIS)
+=====================================================================================
+Antes: backup do 0.2. Base com CFG_REFCIS = N em todas as empresas do teste.
+
+6.A Menu (Util, entre o separador e "Operacoes Referentes a Produtos")
+[ ] 6.1 Operador 998, data do sistema antes de 26/12/2026, empresa que gerencia preco:
+        menu visivel.
+[ ] 6.2 Operador comum, data do sistema 25/12/2026 ou antes: menu invisivel (tambem na
+        pesquisa de menu).
+[ ] 6.3 Operador comum com a data do sistema 26/12/2026 ou depois: menu visivel.
+[ ] 6.4 Empresa logada com EMP_PREMAT = S: menu invisivel.
+[ ] 6.5 Usuario sem direito em frmCadProdutos: mensagem de acesso, tela nao abre.
+[ ] 6.6 EMPRESAS_NESTE_SERVIDOR existe sem a empresa logada: "A empresa nao faz parte
+        deste servidor." e a tela nao abre.
+[ ] 6.7 Cadastro de Produtos aberto: mensagem para fecha-lo, tela nao abre.
+
+6.B Tela e grid de grupos
+[ ] 6.8 Opcao de recalculo: padrao "Recalcular Preco de Venda" com CFG_VENMAR = 1, senao
+        "Recalcular Margem". Origem dos Impostos = Tabela Estatica. Somente Itens Ativos = Sim.
+[ ] 6.9 Grid: uma linha por grupo de preco, coluna "Empresas do Preco" igual a do
+        Monitoramento de Empresas que Usam Preco da Matriz. Grupo da logada primeiro e
+        destacado, os demais por codigo. Grupo igual a outro aparece uma vez; grupo contido
+        em outro some (ex.: CFG_REPPRC = 2, 002 enxerga 002_003 dentro de 001_002_003).
+[ ] 6.10 Ao abrir a tela, o foco ja esta na linha do grupo da empresa logada (ou na 1a
+        linha, se ela nao estiver no grid).
+[ ] 6.11 Expandir o grupo: lista as empresas com Origem (Matriz do grupo / Preco da matriz),
+        bolinha Convertida e Situacao.
+[ ] 6.12 Marcar pelo checkbox "Sel." e pelos botoes "Marcar Todos" / "Desmarcar Todos"
+        (rodape do grid): so marca grupos que podem converter.
+[ ] 6.13 Grupo bloqueado aparece em vermelho, o clique mostra o motivo e a coluna Observacao
+        repete. Testar cada motivo:
+        - loja no preco de duas empresas (grupos que se cruzam) -> configuracao inconsistente
+        - empresa com EMP_PREMAT = S fora de qualquer grupo
+        - empresa fora de EMPRESAS_NESTE_SERVIDOR
+        - grupo ja convertido ("Grupo ja convertido.")
+        - CFG_REFCIS ligada sem conversao ("Reforma ja ativa nesta empresa, sem conversao.")
+[ ] 6.14 Confirma sem nada marcado: mensagem pedindo para marcar. Cancela fecha sem gravar.
+[ ] 6.15 Confirma: UMA confirmacao "Iniciar conversao?"; responder Nao -> nada gravado.
+[ ] 6.16 Operador 998: aparece o campo "Somente os itens" ao lado dos radios. Operador comum
+        nao ve o campo.
+
+6.C Validacoes antes de comecar (nada pode ser alterado)
+[ ] 6.17 Apagar a REFCON a mao e Confirma: mensagem de tabelas nao preparadas ("Saia e
+        entre de novo no autcom..."); nada alterado.
+[ ] 6.18 Empresa do grupo sem a linha CFG_REFCIS na CFGSIS: "Configuracao CFG_REFCIS nao
+        encontrada..." com a lista; nada alterado.
+[ ] 6.19 150.x: item ativo sem PREPRO em tabela ativa: conversao nao comeca, lista os itens
+        ("...sem preco (PREPRO) nas tabelas ativas") e "Nenhum preco foi alterado: a
+        conversao voltou ao inicio."; grupo volta a "Nao convertida".
+[ ] 6.20 Origem = Abreviacao do Item com um item sem NCM/abreviacao valida: para antes de
+        calcular, lista item e mensagem da procedure; nenhuma ITEREF nova.
+[ ] 6.21 Duas estacoes clicam Confirma no mesmo grupo: a segunda recebe "A ativacao dos
+        precos ja esta em execucao em outra estacao."
+
+6.D Execucao (primeiro com o filtro do 998, depois 1 grupo inteiro, depois 2 grupos)
+[ ] 6.22 Filtro do 998: digitar '90401', '90402', '90403' (ou 3 itens da amostra) e
+        Confirma -> "Iniciar conversao de 3 item(ns)?". ITEREF so com esses itens (logada e
+        lojas); REFCON.CON_FILITE com os codigos; conferencia sem CONTAGEM; CFG_REFCIS e
+        EMP_REFCON ligados normalmente.
+[ ] 6.23 Progresso com os titulos "Preparando itens", "Aplicando precos" e "Conferindo",
+        com o codigo da empresa no titulo. Tela nao congela (lote de 100 itens).
+[ ] 6.24 Um grupo: mensagem final "Conversao concluida."; grupo convertido.
+[ ] 6.25 Dois grupos marcados, sendo um de outra empresa: converte o da logada primeiro;
+        troca de empresa sem pedir senha; no fim volta para a empresa original (conferir na
+        barra de status). Lista "Resultado da conversao por grupo:" com uma linha por grupo.
+[ ] 6.26 Forcar falha num grupo: os outros continuam, a lista mostra a falha e a empresa
+        original volta.
+[ ] 6.27 Registrar tempo das fases e quantidade de itens (tabela da secao 13).
+
+6.E Calculo (abrir cada item da amostra na sub-aba 1 depois e conferir)
+[ ] 6.28 PRECOM: item (a) = RoundTo(PRECOM_antes x (1 - 0,0697), -DECUNI); item (b) igual.
+[ ] 6.29 DESOPE: (a) o da REFPRE; (b) o do cadastro. Comissao: da REFPRE quando houver,
+        senao do ITEGER.
+[ ] 6.30 Federais: IMPFED = SUBFED = ALQFED = ALQENT = 0 na logada e nas lojas do grupo;
+        150.x tambem na PREPRO.
+[ ] 6.31 Custo: o que a sub-aba 1 calcula com os mesmos campos.
+[ ] 6.32 "Recalcular Preco de Venda": item (a) com a MARGEM da REFPRE (tabela por tabela);
+        item (b) com a margem de antes (ITEGER); preco de venda recalculado com o custo novo.
+[ ] 6.33 "Recalcular Margem" (base restaurada): PREVEn = RoundTo(PREVEn_antes / (1 + (1 -
+        ICMSAI/100) x (CBS+IBS+IS)/100), -4), sempre com o preco do ITEGER (o preco da
+        REFPRE nao entra); margem recalculada com o custo novo.
+[ ] 6.34 Abreviacao do Item: ITEREF.ITE_CBS/IBS/IS = o que a procedure devolve por item.
+        Tabela Estatica: as da IMPTRI. IMPTRI vazia: segue com aliquota nula.
+[ ] 6.35 Item (e) fator: tabela com fator = tabela 1 x fator, em qualquer opcao.
+[ ] 6.36 Item (f) grupo de precos: todos com os valores do item de maior codigo; sem
+        divergencia GRUPO.
+[ ] 6.37 Item (g) preco 0 e tabelas inativas: seguem a mesma regra da opcao, sem erro.
+[ ] 6.38 Item (j) inativo: com Somente Ativos = Sim fica fora da ITEREF e nao gera CONTAGEM;
+        com Nao (base restaurada) entra.
+[ ] 6.39 Loja com CFG_INFMAT = S e INFOPE <> 2: DESOPE proprio, preco = o da matriz, margem
+        recalculada pela configuracao da loja.
+[ ] 6.40 Responsavel pelo fornecedor (R): recebe o custo novo; preco, IMPFED e DESOPE
+        proprios; margem recalculada; CFG_REFCIS da R nao muda.
+[ ] 6.41 ITE_PEFAVE: NAO deve mudar em relacao ao backup.
+
+6.F Gravacao, historico e banco
+[ ] 6.42 ITEREO = valores de antes (comparar com o backup) para L, F e R.
+[ ] 6.43 ITEREF = valores do produto depois; REF_APLICADO = S em todas as linhas.
+[ ] 6.44 150.x: PREPRO = ITEGER nos itens convertidos; PRO_CUSTAR (TARE) igual ao que o
+        cadastro calcularia; REGPRO "REFORMA TRIBUTARIA - CONVERT" (um por execucao) e
+        PROALT com antes/depois so da logada.
+[ ] 6.45 72/74.111: PREALT com antes/depois; PREPRO igual ao ITEGER (a base tem triggers
+        ITEGER->PREPRO: conferir que a PREPRO foi atualizada uma vez, sem duplicar).
+        ATENCAO: este caminho ainda nao foi testado em base real.
+[ ] 6.46 CADITE: ITE_DTAALT, ITE_HULALT e ITE_CODOPE atualizados nos itens da logada.
+[ ] 6.47 ABFRTE (abreviacoes da reforma): todas as linhas, entrada e saida, com
+        RTE_CBSALQ = IMPTRI.CBS e RTE_IBSUFA = IMPTRI.IBS; IS, diferimento e reducao iguais
+        ao backup.
+[ ] 6.48 LOGREP: comandos presentes, com os valores (sem parametro sem valor), um LOG_IDTRAN
+        por lote. Replay numa 2a base gera o mesmo resultado.
+
+6.G Conferencia e ativacao
+[ ] 6.49 Sem divergencia: CFG_REFCIS = S na logada e nas lojas do grupo; CADEMP.EMP_REFCON
+        = S nessas empresas; REFCON = C; bolinha verde; grupo nao pode ser marcado de novo.
+[ ] 6.50 Alertas (nao bloqueiam), no grid de divergencias: margem negativa, preco zerado,
+        DPISCO fora da faixa, SEM_PREPRO (150.x) / SEM_LINHA (72/74.111) para item de loja
+        com ITEGER e sem linha na conversao.
+[ ] 6.51 Forcar divergencia: depois da aplicacao alterar ITE_PREVE1 de um item por SQL e
+        clicar Conferir. Esperado: REFCON = D, REFDIV VALOR, nenhuma CFG_REFCIS muda.
+[ ] 6.52 Incluir um produto depois da conversao e clicar Conferir: divergencia CONTAGEM.
+[ ] 6.53 Sair e entrar no autcom numa LOJA (outra base que recebeu a replicacao): a
+        CFG_REFCIS da loja liga sozinha pelo EMP_REFCON = S.
+
+6.H Falhas e retomada
+[ ] 6.54 Matar o autcom na preparacao: reabrir a tela -> "Conversao em andamento: marque para
+        continuar."; os radios e o filtro mostram o gravado, desabilitados; Continuar
+        prepara so o que falta; resultado igual ao de uma execucao continua.
+[ ] 6.55 Falha na preparacao (ou na aplicacao sem lote aplicado): "Nenhum preco foi alterado:
+        a conversao voltou ao inicio."; REFCON/ITEREF/ITEREO/REFDIV da chave apagadas.
+[ ] 6.56 Travar uma linha do ITEGER em outra sessao ate o timeout na aplicacao: lotes
+        anteriores aplicados, lote atual desfeito, mensagem; Continuar conclui sem duplicar.
+[ ] 6.57 Alterar o preco de um item em outra estacao entre a preparacao e a aplicacao:
+        "Produtos alterados durante a conversao..." com a lista; REFDIV ALTERADO; Continuar
+        recalcula e conclui.
+[ ] 6.58 Excluir um item entre preparacao e aplicacao: ativa normal; REFDIV EXCLUIDO.
+[ ] 6.59 Transacao aberta no autcom: "Ha uma transacao aberta no autcom. Feche as outras
+        telas e tente de novo."
+[ ] 6.60 Empresa R de uma matriz ja convertida, convertendo outra matriz: sem erro de chave
+        duplicada.
+
+=====================================================================================
+7. CONSULTA DA CONVERSAO NO CADASTRO (CFG_REFCIS = S)
+=====================================================================================
+Sair e entrar no autcom depois do Convert (a CFG_REFCIS so vale depois de reentrar).
+[ ] 7.1 Cadastro mostra so as sub-abas 1 e 2. As sub-abas 3 e 4 nao aparecem (nem com o 998).
+[ ] 7.2 Ctrl+3 nao faz nada; Ctrl+PgUp/PgDn alternam so entre 1 e 2.
+[ ] 7.3 Titulos da sub-aba 2: "Antes da Conversao" e "Apos Conversao".
+[ ] 7.4 Nenhum campo da sub-aba 2 aceita edicao, em consulta, inclusao ou alteracao.
+[ ] 7.5 Antes = ITEREO da empresa logada (mesma chave da ultima conversao aplicada), campo
+        a campo:
+          SELECT * FROM ITEREO WHERE ITE_CODEMP='<emp>' AND ITE_CODITE='<item>';
+[ ] 7.6 Apos = ITEREF (REF_APLICADO = S, maior REF_ID), campo a campo, inclusive CBS/IBS/IS.
+[ ] 7.7 Calculados do Antes (Pr. Compra Liquido, Custo Real, Custo Venda) iguais aos que a
+        sub-aba 1 mostrava antes da conversao. Pr. Venda com Impostos do Apos = preco da
+        ITEREF mais CBS/IBS/IS da ITEREF.
+[ ] 7.8 Margem Ideal nao aparece no Antes (mesmo com PCMPRO = 1 e MARIDE ligada). Desconto
+        PIS/COFINS e Preco Liquido ocultos.
+[ ] 7.9 Abrir numa loja (F): mostra a linha da propria loja.
+[ ] 7.10 Produto incluido depois da conversao (sem linha): os dois grupos em branco, sem
+        mensagem nem erro.
+[ ] 7.11 Navegar entre produtos sem abrir a sub-aba 2: nenhum SELECT na ITEREO/ITEREF
+        (monitor SQL). Com a sub-aba 2 aberta, trocar de produto atualiza na hora.
+[ ] 7.12 Alterar o produto na sub-aba 1 e voltar a sub-aba 2: ela nao muda.
+[ ] 7.13 Gravar o produto: nada gravado na ITEREF nem na REFPRE.
+[ ] 7.14 Empresa com CFG_REFCIS = S sem conversao (ligada por fora): sub-aba 2 em branco,
+        sem erro.
+
+=====================================================================================
+8. REVERTER A CONVERSAO
+=====================================================================================
+[ ] 8.1 Botao "Reverter" habilitado so no grupo com conversao aplicada (em andamento,
+        concluida ou divergente). Confirma com "Reverter a conversao do grupo X?".
+[ ] 8.2 Reverter o grupo do 6.22: ITEGER e PREPRO (todas as tabelas) iguais a ITEREO na
+        logada e nas lojas; ALQFED/ALQENT de antes; historico com o local "REFORMA
+        TRIBUTARIA - REVERSAO" (PROALT no 150.x, PREALT no 72/74.111); CADITE atualizado.
+[ ] 8.3 Ao fim: ITEREO, ITEREF, REFDIV e REFCON SEM linhas da chave; CFG_REFCIS = N e
+        CADEMP.EMP_REFCON = R nas empresas do grupo; grupo "Revertida" e pode ser marcado.
+[ ] 8.4 Antes de reverter, alterar o preco de um item no cadastro. Reverter: a lista mostra o
+        item e pergunta "Reverter tambem esses itens?". Nao -> ele fica como esta e os
+        outros voltam. Repetir (base restaurada) respondendo Sim -> todos voltam.
+[ ] 8.5 Derrubar a conexao no meio da reversao e Reverter de novo: continua dos lotes que
+        faltam; no fim desativa.
+[ ] 8.6 ABFRTE: continua com os valores da IMPTRI (nao volta).
+[ ] 8.7 LOJA (outra base) depois da replicacao: sair e entrar no autcom -> CFG_REFCIS = N na
+        empresa com EMP_REFCON = R; empresa com EMP_REFCON = N e CFG_REFCIS = S continua S.
+[ ] 8.8 Depois de reverter (e reentrar), o cadastro volta a simular: sub-abas 2 e 3
+        editaveis (secao 4) e a 4 para o 998.
+[ ] 8.9 Converter de novo o grupo revertido: nova conversao normal.
+
+=====================================================================================
+9. FALHA DO PLUGIN EM USO
+=====================================================================================
+[ ] 9.1 Em todo o roteiro: nenhuma mensagem de SQL ou de tabela inexistente no cadastro.
+[ ] 9.2 Se aparecer "As abas 2 e 3 de precos pararam de funcionar e foram desativadas nesta
+        tela...", anotar o texto e o passo (e defeito). Esperado nesse caso: sub-abas do
+        plugin somem e o cadastro segue pela sub-aba 1.
+[ ] 9.3 Se a DLL falhar ao montar as abas: mensagem "Nao foi possivel montar as abas de
+        precos do plugin. ... O cadastro segue como sem o plugin." e o cadastro fica igual
+        ao de sem a DLL (150.x: sem o cabecalho de sub-abas; precos no lugar de sempre).
+
+=====================================================================================
+10. ACESSOS
+=====================================================================================
+[ ] 10.1 Usuario sem PREPRO: precos nao aparecem; sem erro, com e sem DLL.
+[ ] 10.2 Usuario sem PROTABPR com precos na aba "2 - Tabelas de Preco": aba nao aparece.
+[ ] 10.3 Usuario sem EDTCUS: custo bloqueado na sub-aba 1.
+[ ] 10.4 Usuario sem frmCadProdutos: Convert nao abre (ver 6.5).
+
+=====================================================================================
+11. VOLTA DO TESTE
+=====================================================================================
+[ ] 11.1 Usar o Reverter (secao 8) ou restaurar o backup do 0.2, e conferir que CFG_REFCIS
+        = N e EMP_REFCON = N (ou R depois do Reverter) nas empresas.
+
+=====================================================================================
+12. OUTRAS VERSOES
+=====================================================================================
+Cada versao com o seu exe e a sua DLL compilados juntos (0.1).
+[ ] 12.1 150.45 e 150: roteiro completo (mesmo comportamento do 150.100; sub-abas 3 e 4 em
+        grid).
+[ ] 12.2 74.111 e 72: roteiro completo. Diferencas:
+        - sub-abas 3 e 4 em campos soltos (4.7), Tab nao para em CBS/IBS/IS;
+        - historico em PREALT, sem REGPRO/PROALT (6.44 nao se aplica, 6.45 sim);
+        - alerta SEM_LINHA em vez de SEM_PREPRO;
+        - 72: troca de empresa do Convert (6.25) testar com atencao;
+        - 2.6 (COTDOR = N com REFCIS = N) obrigatorio nas duas.
+
+=====================================================================================
+LIMITACOES CONHECIDAS (NAO SAO DEFEITO)
+=====================================================================================
+- Enter nos campos das sub-abas 2 e 3 nao executa o comportamento de Enter dos campos.
+- Valor reprovado na sub-aba 2 ou 3 mostra a mensagem, mas o Gravar continua.
+- Travas BLOPRE, CALICM e bloqueio de custo da sub-aba 1 nao valem no lado Atual da sub-aba 2.
+- A altura das sub-abas 2 e 3 nao entra na decisao da posicao dos precos (so a sub-aba 1).
+- A REFPRE do produto de origem nao e herdada na inclusao por heranca.
+- O Convert nao valida o acesso do operador (OPE_EMPLOG) as empresas dos grupos.
+- A trava de variacao de preco (CFG_PCPRVE) da efetivacao nao vale no Convert.
+- O Reverter nao volta a ABFRTE (ela nao tem empresa e vale para todos os grupos).
+- A CFG_REFCIS so vale nas estacoes depois de sair e entrar no autcom.
+- O menu do Convert e decidido no login: quem ja estava logado quando a data chega a
+  26/12/2026 precisa sair e entrar para ver o menu.
+
+=====================================================================================
+13. REGISTRO DE RESULTADOS
+=====================================================================================
+Versao  | Data | Secoes OK | Itens | Tempo P / A / C | Defeitos (secao.item + texto)
+150.100 |      |           |       |                 |
+150.45  |      |           |       |                 |
+150     |      |           |       |                 |
+74.111  |      |           |       |                 |
+72      |      |           |       |                 |

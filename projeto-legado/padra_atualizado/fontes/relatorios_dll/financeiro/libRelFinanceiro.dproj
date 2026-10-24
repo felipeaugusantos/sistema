@@ -1,0 +1,358 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectGuid>{1739b7cb-a8e2-4575-a8b1-c5602595eb9d}</ProjectGuid>
+    <MainSource>libRelFinanceiro.dpr</MainSource>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <DCC_DCCCompiler>DCC32</DCC_DCCCompiler>
+    <DCC_DependencyCheckOutputName>..\..\..\libRelFinanceiro.dll</DCC_DependencyCheckOutputName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Version>7.0</Version>
+    <DCC_DebugInformation>False</DCC_DebugInformation>
+    <DCC_LocalDebugSymbols>False</DCC_LocalDebugSymbols>
+    <DCC_SymbolReferenceInfo>0</DCC_SymbolReferenceInfo>
+    <DCC_Warnings>False</DCC_Warnings>
+    <DCC_ExeOutput>..\..\..\</DCC_ExeOutput>
+    <DCC_DcuOutput>temp\</DCC_DcuOutput>
+    <DCC_ObjOutput>temp\</DCC_ObjOutput>
+    <DCC_HppOutput>temp\</DCC_HppOutput>
+    <DCC_Define>RELEASE</DCC_Define>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <Version>7.0</Version>
+    <DCC_Warnings>False</DCC_Warnings>
+    <DCC_ExeOutput>..\..\..\</DCC_ExeOutput>
+    <DCC_DcuOutput>temp\</DCC_DcuOutput>
+    <DCC_ObjOutput>temp\</DCC_ObjOutput>
+    <DCC_HppOutput>temp\</DCC_HppOutput>
+    <DCC_Define>DEBUG</DCC_Define>
+  </PropertyGroup>
+  <ProjectExtensions>
+    <Borland.Personality>Delphi.Personality</Borland.Personality>
+    <Borland.ProjectType>VCLApplication</Borland.ProjectType>
+    <BorlandProject>
+<BorlandProject xmlns=""> <Delphi.Personality>   <Parameters>
+      <Parameters Name="HostApplication">C:\autpas\dev\padra_atualizado\autcom.exe</Parameters>
+      <Parameters Name="UseLauncher">False</Parameters>
+      <Parameters Name="LoadAllSymbols">True</Parameters>
+      <Parameters Name="LoadUnspecifiedSymbols">False</Parameters>
+    </Parameters>
+    <Language>
+      <Language Name="RootDir">C:\Arquivos de programas\Borland\Delphi7\Bin\</Language>
+    </Language>
+    <VersionInfo>
+      <VersionInfo Name="IncludeVerInfo">True</VersionInfo>
+      <VersionInfo Name="AutoIncBuild">False</VersionInfo>
+      <VersionInfo Name="MajorVer">1</VersionInfo>
+      <VersionInfo Name="MinorVer">8</VersionInfo>
+      <VersionInfo Name="Release">26</VersionInfo>
+      <VersionInfo Name="Build">0</VersionInfo>
+      <VersionInfo Name="Debug">False</VersionInfo>
+      <VersionInfo Name="PreRelease">False</VersionInfo>
+      <VersionInfo Name="Special">False</VersionInfo>
+      <VersionInfo Name="Private">False</VersionInfo>
+      <VersionInfo Name="DLL">False</VersionInfo>
+      <VersionInfo Name="Locale">1046</VersionInfo>
+      <VersionInfo Name="CodePage">1252</VersionInfo>
+    </VersionInfo>
+    <VersionInfoKeys>
+      <VersionInfoKeys Name="CompanyName"></VersionInfoKeys>
+      <VersionInfoKeys Name="FileDescription"></VersionInfoKeys>
+      <VersionInfoKeys Name="FileVersion">1.8.26.0</VersionInfoKeys>
+      <VersionInfoKeys Name="InternalName"></VersionInfoKeys>
+      <VersionInfoKeys Name="LegalCopyright"></VersionInfoKeys>
+      <VersionInfoKeys Name="LegalTrademarks"></VersionInfoKeys>
+      <VersionInfoKeys Name="OriginalFilename"></VersionInfoKeys>
+      <VersionInfoKeys Name="ProductName"></VersionInfoKeys>
+      <VersionInfoKeys Name="ProductVersion">1.8.26.0</VersionInfoKeys>
+      <VersionInfoKeys Name="Comments"></VersionInfoKeys>
+    </VersionInfoKeys>
+    <Source>
+      <Source Name="MainSource">libRelFinanceiro.dpr</Source>
+    </Source>
+  </Delphi.Personality> </BorlandProject></BorlandProject>
+  </ProjectExtensions>
+  <ItemGroup />
+  <ItemGroup>
+    <DelphiCompile Include="libRelFinanceiro.dpr">
+      <MainSource>MainSource</MainSource>
+    </DelphiCompile>
+    <DCCReference Include="..\..\cadastros\untCadConfRelatorios.pas">
+      <Form>frmCadConfRelatorios</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\cadastros\untModuloCadAbf.pas">
+      <Form>frmModuloCadAbf</Form>
+      <DesignClass>TDataModule</DesignClass>
+    </DCCReference>
+    <DCCReference Include="..\..\cadastros\untModuloCadAti.pas">
+      <Form>frmModuloCadAti</Form>
+      <DesignClass>TDataModule</DesignClass>
+    </DCCReference>
+    <DCCReference Include="..\..\cadastros\untModuloCadCar.pas">
+      <Form>frmModuloCadCar</Form>
+      <DesignClass>TDataModule</DesignClass>
+    </DCCReference>
+    <DCCReference Include="..\..\cadastros\untModuloCadCid.pas">
+      <Form>frmModuloCadCid</Form>
+      <DesignClass>TDataModule</DesignClass>
+    </DCCReference>
+    <DCCReference Include="..\..\cadastros\untModuloCadCnd.pas">
+      <Form>frmModuloCadCnd</Form>
+      <DesignClass>TDataModule</DesignClass>
+    </DCCReference>
+    <DCCReference Include="..\..\cadastros\untModuloCadCta.pas">
+      <Form>frmModuloCadCta</Form>
+      <DesignClass>TDataModule</DesignClass>
+    </DCCReference>
+    <DCCReference Include="..\..\cadastros\untModuloCadEmp.pas">
+      <Form>frmModuloCadEmp</Form>
+      <DesignClass>TDataModule</DesignClass>
+    </DCCReference>
+    <DCCReference Include="..\..\cadastros\untModuloCadEve.pas">
+      <Form>frmModuloCadEve</Form>
+      <DesignClass>TDataModule</DesignClass>
+    </DCCReference>
+    <DCCReference Include="..\..\cadastros\untModuloCadFor.pas">
+      <Form>frmModuloCadFor</Form>
+      <DesignClass>TDataModule</DesignClass>
+    </DCCReference>
+    <DCCReference Include="..\..\cadastros\untModuloCadGru.pas">
+      <Form>frmModuloCadGru</Form>
+      <DesignClass>TDataModule</DesignClass>
+    </DCCReference>
+    <DCCReference Include="..\..\cadastros\untModuloCadIte.pas">
+      <Form>frmModuloCadIte</Form>
+      <DesignClass>TDataModule</DesignClass>
+    </DCCReference>
+    <DCCReference Include="..\..\cadastros\untModuloCadMar.pas">
+      <Form>frmModuloCadMar</Form>
+      <DesignClass>TDataModule</DesignClass>
+    </DCCReference>
+    <DCCReference Include="..\..\Cadastros\untModuloCadOpe.pas">
+      <Form>frmModuloCadOpe</Form>
+      <DesignClass>TDataModule</DesignClass>
+    </DCCReference>
+    <DCCReference Include="..\..\cadastros\untModuloCadPor.pas">
+      <Form>frmModuloCadPor</Form>
+      <DesignClass>TDataModule</DesignClass>
+    </DCCReference>
+    <DCCReference Include="..\..\cadastros\untModuloCadSfz.pas">
+      <Form>frmModuloCadSfz</Form>
+      <DesignClass>TDataModule</DesignClass>
+    </DCCReference>
+    <DCCReference Include="..\..\cadastros\untModuloCadTra.pas">
+      <Form>frmModuloCadTra</Form>
+      <DesignClass>TDataModule</DesignClass>
+    </DCCReference>
+    <DCCReference Include="..\..\cadastros\untModuloCadUni.pas">
+      <Form>frmModuloCadUni</Form>
+      <DesignClass>TDataModule</DesignClass>
+    </DCCReference>
+    <DCCReference Include="..\..\cadastros\untModuloCfgRel.pas">
+      <Form>frmModuloCfgRel</Form>
+      <DesignClass>TDataModule</DesignClass>
+    </DCCReference>
+    <DCCReference Include="..\..\financeiro\contasareceber\untQckDocBaixados.pas">
+      <Form>frmQckDocBaixados</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\genericos\untCfgAtb.pas">
+      <Form>frmCfgAtb</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\genericos\untConstantes.pas" />
+    <DCCReference Include="..\..\genericos\untConsulta.pas">
+      <Form>frmConsulta</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\genericos\untConsultaComp.pas">
+      <Form>frmConsultaComp</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\genericos\untConsultas.pas" />
+    <DCCReference Include="..\..\genericos\untFuncoesConsulta.pas" />
+    <DCCReference Include="..\..\genericos\untFuncoesSimples.pas" />
+    <DCCReference Include="..\..\genericos\untMensagem.pas">
+      <Form>frmMensagem</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\genericos\untMenuFilas.pas">
+      <Form>frmMenuFilas</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\genericos\untMenuTipImp.pas">
+      <Form>frmMenuTipImp</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\Genericos\untModulo.pas">
+      <Form>frmModulo</Form>
+      <DesignClass>TDataModule</DesignClass>
+    </DCCReference>
+    <DCCReference Include="..\..\genericos\untModuloCfgAtb.pas">
+      <Form>frmModuloCfgAtb</Form>
+      <DesignClass>TDataModule</DesignClass>
+    </DCCReference>
+    <DCCReference Include="..\..\genericos\untModuloCons.pas">
+      <Form>frmModuloCons</Form>
+      <DesignClass>TDataModule</DesignClass>
+    </DCCReference>
+    <DCCReference Include="..\..\Genericos\untModuloSPR.pas">
+      <Form>frmModuloSPR</Form>
+      <DesignClass>TDataModule</DesignClass>
+    </DCCReference>
+    <DCCReference Include="..\..\Genericos\untPai.pas">
+      <Form>frmPai</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\Genericos\untPaiCad.pas">
+      <Form>frmPaiCad</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\Genericos\untPaiQck.pas">
+      <Form>frmPaiQck</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\Genericos\untPaiRelatorio.pas">
+      <Form>frmPaiRelatorio</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\Genericos\untPaiSimples.pas">
+      <Form>frmPaiSimples</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\genericos\untPesqAux.pas" />
+    <DCCReference Include="..\..\genericos\untSenhaEmpresa.pas">
+      <Form>frmSenhaEmpresa</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\Relatorios\Financeiro\ContasaPagar\untQckCtpAnalDebitos.pas">
+      <Form>frmQckCtpAnalDebitos</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\Relatorios\Financeiro\ContasaPagar\untQckCtpContaCorrente.pas">
+      <Form>frmQckCtpContaCorrente</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\Relatorios\Financeiro\ContasaPagar\untQckCtpEncQuitados.pas">
+      <Form>frmQckCtpEncQuitados</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\Relatorios\Financeiro\ContasaPagar\untQckCtpIncDiarias.pas">
+      <Form>frmQckCtpIncDiarias</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\Relatorios\Financeiro\ContasaPagar\untQckCtpPosContabil.pas">
+      <Form>frmQckCtpPosContabil</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\Relatorios\Financeiro\ContasaPagar\untQckCtpTitAbertoMes.pas">
+      <Form>frmQckCtpTitAbertoMes</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\relatorios\financeiro\contasapagar\untQckCtpTitContas.pas">
+      <Form>frmQckCtpTitContas</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\Relatorios\Financeiro\ContasaPagar\untQckCtpTitContasSint.pas">
+      <Form>frmQckCtpTitContasSint</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\relatorios\financeiro\contasapagar\untRelCtpAgrup.pas">
+      <Form>frmRelCtpAgrup</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\Relatorios\Financeiro\ContasaPagar\untRelCtpAnaDebitos.pas">
+      <Form>frmRelCtpAnaDebitos</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\Relatorios\Financeiro\ContasaPagar\untRelCtpContaCorrente.pas">
+      <Form>frmRelCtpContaCorrente</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\Relatorios\Financeiro\ContasaPagar\untRelCtpEncQuitados.pas">
+      <Form>frmRelCtpEncQuitados</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\Relatorios\Financeiro\ContasaPagar\untRelCtpIncDiarias.pas">
+      <Form>frmRelCtpIncDiarias</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\relatorios\financeiro\contasapagar\untRelCtpIncDiariasMes.pas">
+      <Form>frmRelCtpIncDiariasMes</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\Relatorios\Financeiro\ContasaPagar\untRelCtpPosContabil.pas">
+      <Form>frmRelCtpPosContabil</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\Relatorios\Financeiro\ContasaPagar\untRelCtpTitAbertoMes.pas">
+      <Form>frmRelCtpTitAbertoMes</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\Relatorios\Financeiro\ContasaPagar\untRelCtpTitContas.pas">
+      <Form>frmRelCtpTitContas</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\Relatorios\Financeiro\ContasaReceber\untCartaAnuencia.pas">
+      <Form>frmCartaAnuencia</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\relatorios\financeiro\contasareceber\untDtaEmissao.pas">
+      <Form>frmDtaEmi</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\relatorios\financeiro\contasareceber\untQckCartaAnuencia.pas">
+      <Form>frmQckCartaAnuencia</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\relatorios\financeiro\contasareceber\untQckCtrAberto.pas">
+      <Form>frmQckCtrAberto</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\Relatorios\Financeiro\ContasaReceber\untQckCtrAnalCreditos.pas">
+      <Form>frmQckCtrAnalCreditos</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\Relatorios\Financeiro\ContasaReceber\untQckCtrCartaCob.pas">
+      <Form>frmQckCtrCartaCob</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\Relatorios\Financeiro\ContasaReceber\untQckCtrCartoes.pas">
+      <Form>frmQckCtrCartoes</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\Relatorios\Financeiro\ContasaReceber\untQckCtrComVendedor.pas">
+      <Form>frmQckCtrComVendedor</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\Relatorios\Financeiro\ContasaReceber\untQckCtrIncDiarias.pas">
+      <Form>frmQckCtrIncDiarias</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\relatorios\financeiro\contasareceber\untQckCtrQuitTodos.pas">
+      <Form>frmQckCtrQuitTodos</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\relatorios\financeiro\contasareceber\untQckCtrTitReceb.pas">
+      <Form>frmQckCtrTitReceb</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\Relatorios\Financeiro\ContasaReceber\untQckDupAgr.pas">
+      <Form>frmQckDupAgr</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\Relatorios\Financeiro\ContasaReceber\untQckPosContabil.pas">
+      <Form>frmQckPosContabil</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\relatorios\financeiro\contasareceber\untQckTitDeletados.pas">
+      <Form>frmQckTitDeletados</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\Relatorios\Financeiro\ContasaReceber\untRelCtrAnaCreditos.pas">
+      <Form>frmRelCtrAnaCreditos</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\Relatorios\Financeiro\ContasaReceber\untRelCtrCartaCob.pas">
+      <Form>frmRelCartaCob</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\Relatorios\Financeiro\ContasaReceber\untRelCtrCartoes.pas">
+      <Form>frmRelCtrCartoes</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\Relatorios\Financeiro\ContasaReceber\untRelCtrComVendedor.pas">
+      <Form>frmRelCtrComVendedor</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\Relatorios\Financeiro\ContasaReceber\untRelCtrIncDiarias.pas">
+      <Form>frmRelCtrIncDiarias</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\relatorios\financeiro\contasareceber\untRelCtrLogDesagrup.pas">
+      <Form>frmRelCtrLogDesagrup</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\Relatorios\Financeiro\ContasaReceber\untRelCtrReceber.pas">
+      <Form>frmRelCtrReceber</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\relatorios\financeiro\contasareceber\untRelCtrReimpressaoBusca.pas">
+      <Form>frmRelCtrReimpressaoBusca</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\Relatorios\Financeiro\ContasaReceber\untRelCtrReimpressaoDocs.pas">
+      <Form>frmRelCtrReimpressaoDocs</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\relatorios\financeiro\contasareceber\untRelCtrReimpressaoDocsList.pas">
+      <Form>frmRelCtrReimpressaoDocsList</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\relatorios\financeiro\contasareceber\untRelCtrTitReceb.pas">
+      <Form>frmRelCtrTitReceb</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\relatorios\financeiro\contasareceber\untRelCtrTitRecPortador.pas">
+      <Form>frmRelCtrTitRecPortador</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\Relatorios\Financeiro\ContasaReceber\untRelDupAgr.pas">
+      <Form>frmRelDupAgr</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\Relatorios\Financeiro\ContasaReceber\untRelPosContabil.pas">
+      <Form>frmRelPosContabil</Form>
+    </DCCReference>
+    <DCCReference Include="..\..\relatorios\financeiro\contasareceber\untRelTitDeletados.pas">
+      <Form>frmRelTitDeletados</Form>
+    </DCCReference>
+    <DCCReference Include="..\geral\untFuncoesRel.pas" />
+    <DCCReference Include="untRelFinanceiro.pas" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Borland.Delphi.Targets" />
+</Project>

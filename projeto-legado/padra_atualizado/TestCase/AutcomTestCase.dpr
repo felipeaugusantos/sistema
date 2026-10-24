@@ -1,0 +1,92 @@
+program AutcomTestCase;
+
+uses
+  Vcl.Forms,
+  untPrincipal in 'untPrincipal.pas' {Principal},
+  untConexao in 'Conexao\untConexao.pas',
+  untModulo in 'Conexao\untModulo.pas' {frmModulo: TDataModule},
+  untConsulta in 'Genericos\untConsulta.pas',
+  untFuncoes in 'Genericos\untFuncoes.pas',
+  untCasosTestesLog in 'Genericos\untCasosTestesLog.pas',
+  untConfiguracoes in 'Genericos\untConfiguracoes.pas',
+  untCasosTestesLogImpl in 'Tipos\untCasosTestesLogImpl.pas',
+  untConstantesUtils in 'Genericos\untConstantesUtils.pas',
+  untTransferenciaEstoqueEmpresaDadosDB in 'Genericos\untTransferenciaEstoqueEmpresaDadosDB.pas',
+  untAbstractConsulta in 'Abstract\untAbstractConsulta.pas',
+  untAbstractGerarTeste in 'Abstract\untAbstractGerarTeste.pas',
+  untIGerarTeste in 'Interfaces\untIGerarTeste.pas',
+  untIConsulta in 'Interfaces\untIConsulta.pas',
+  untICfgSis in 'Interfaces\untICfgSis.pas',
+  untICasosTestesLog in 'Interfaces\untICasosTestesLog.pas',
+  untClasseCfop in 'ClassesImpostos\untClasseCfop.pas',
+  untGerarTesteUnitario in 'untGerarTesteUnitario.pas',
+  untFatRegrasImpostos in 'untFatRegrasImpostos.pas',
+  Faturamento.Impostos.Calculos.TesteUnitarioLog in 'Faturamento.Impostos.Calculos.TesteUnitarioLog.pas',
+  untParametrosComparacaoCfop in 'ClassesImpostos\ParametrosComparacao\Entrada\untParametrosComparacaoCfop.pas',
+  untParametrosComparacaoDifal in 'ClassesImpostos\ParametrosComparacao\Entrada\untParametrosComparacaoDifal.pas',
+  untParametrosResultadoDifal in 'ClassesImpostos\ParametrosComparacao\Saida\untParametrosResultadoDifal.pas',
+  untFatCalcularImpostos in 'untFatCalcularImpostos.pas',
+  untFloatUtils in 'Genericos\untFloatUtils.pas',
+  untClasseIcmsSt in 'ClassesImpostos\untClasseIcmsSt.pas',
+  Interfaces.Processar.Dados.Icms in 'Interfaces\Interfaces.Processar.Dados.Icms.pas',
+  Tipos.Processar.Dados.Icms in 'Tipos\Tipos.Processar.Dados.Icms.pas',
+  Processar.Dados.Icms in 'ClassesImpostos\Processar.Dados.Icms.pas',
+  untParametrosResultadoIcms in 'ClassesImpostos\ParametrosComparacao\Saida\untParametrosResultadoIcms.pas',
+  untParametrosComparacaoIcms in 'ClassesImpostos\ParametrosComparacao\Entrada\untParametrosComparacaoIcms.pas',
+  untParametrosResultadoFcp in 'ClassesImpostos\ParametrosComparacao\Saida\untParametrosResultadoFcp.pas',
+  untParametrosComparacaoFcp in 'ClassesImpostos\ParametrosComparacao\Entrada\untParametrosComparacaoFcp.pas',
+  untClasseFCP in 'ClassesImpostos\untClasseFCP.pas',
+  untParametrosComparacaoST in 'ClassesImpostos\ParametrosComparacao\Entrada\untParametrosComparacaoST.pas',
+  untParametrosResultadoST in 'ClassesImpostos\ParametrosComparacao\Saida\untParametrosResultadoST.pas',
+  untClasseIPI in 'ClassesImpostos\untClasseIPI.pas',
+  untParametrosResultadoIpi in 'ClassesImpostos\ParametrosComparacao\Saida\untParametrosResultadoIpi.pas',
+  untParametrosComparacaoIpi in 'ClassesImpostos\ParametrosComparacao\Entrada\untParametrosComparacaoIpi.pas',
+  untClasseIcmsOrgaoPublico in 'ClassesImpostos\untClasseIcmsOrgaoPublico.pas',
+  untParametrosResultadoIcmsOrgaoPublico in 'ClassesImpostos\ParametrosComparacao\Saida\untParametrosResultadoIcmsOrgaoPublico.pas',
+  untParametrosComparacaoIcmsOrgaoPublico in 'ClassesImpostos\ParametrosComparacao\Entrada\untParametrosComparacaoIcmsOrgaoPublico.pas',
+  untClasseIcmsEfetivo in 'ClassesImpostos\untClasseIcmsEfetivo.pas',
+  untParametrosComparacaoIcmsEfetivo in 'ClassesImpostos\ParametrosComparacao\Entrada\untParametrosComparacaoIcmsEfetivo.pas',
+  untParametrosResultadoIcmsEfetivo in 'ClassesImpostos\ParametrosComparacao\Saida\untParametrosResultadoIcmsEfetivo.pas',
+  untClasseSTCustoAquisicao in 'ClassesImpostos\untClasseSTCustoAquisicao.pas',
+  untParametrosComparacaoStCustoAquisicao in 'ClassesImpostos\ParametrosComparacao\Entrada\untParametrosComparacaoStCustoAquisicao.pas',
+  untParametrosResultadoStCustoAquisicao in 'ClassesImpostos\ParametrosComparacao\Saida\untParametrosResultadoStCustoAquisicao.pas',
+  untFatCalcularImpostosService in '..\fontes\faturamento\untFatCalcularImpostosService.pas',
+  Faturamento.Connections.Functions in '..\fontes\Core\Faturamento.Connections.Functions.pas',
+  Faturamento.Interfaces.Conexao in '..\fontes\Core\Conexao\Faturamento.Interfaces.Conexao.pas',
+  Shared.Functions.Conexao.UniDac in '..\fontes\genericos\Shared.Functions.Conexao.UniDac.pas',
+  untDicionarioResultadoQuerySimples in '..\fontes\genericos\untDicionarioResultadoQuerySimples.pas',
+  untFuncoesDicionarios in '..\fontes\genericos\untFuncoesDicionarios.pas',
+  untImpostosFatConexao in '..\fontes\genericos\untImpostosFatConexao.pas',
+  Shared.Core in '..\fontes\Core\Shared.Core.pas',
+  Core.Funcoes in '..\fontes\Core\Core.Funcoes.pas',
+  untTypes in 'Tipos\untTypes.pas',
+  untFuncoesGenCompartilhada in '..\fontes\genericos\untFuncoesGenCompartilhada.pas',
+  untClassePrecoCusto in 'ClassesPrecos\PrecoCusto\untClassePrecoCusto.pas',
+  untFatCalcularPrecosService in '..\fontes\faturamento\untFatCalcularPrecosService.pas',
+  untFatCalcularMargemService in '..\fontes\faturamento\untFatCalcularMargemService.pas',
+  untParametrosComparacaoPrecoCusto in 'ClassesPrecos\PrecoCusto\ParametrosComparacao\Entrada\untParametrosComparacaoPrecoCusto.pas',
+  untClasseMargemVenda in 'ClassesMargem\MargemVenda\untClasseMargemVenda.pas',
+  untParametrosComparacaoMargemVenda in 'ClassesMargem\MargemVenda\ParametrosComparacao\Entrada\untParametrosComparacaoMargemVenda.pas',
+  untFormulaPrecoCusto in '..\fontes\genericos\untFormulaPrecoCusto.pas',
+  untFuncoesPrecoCusto in '..\fontes\genericos\untFuncoesPrecoCusto.pas',
+  untZClient in 'Genericos\untZClient.pas',
+  untTintaDeMaquinaBpl in '..\fontes\genericos\untTintaDeMaquinaBpl.pas',
+  untIZClient in '..\fontes\genericos\untIZClient.pas',
+  untFuncoesTintaDeMaquinaBpl in '..\fontes\genericos\untFuncoesTintaDeMaquinaBpl.pas',
+  untTipoTinta in '..\..\LibTintas\libTintasComum\Tipos\untTipoTinta.pas',
+  untFatCalcularServicePath in '..\fontes\faturamento\untFatCalcularServicePath.pas',
+  Shared.Functions.Faturamento.TintaDeMaquina in '..\Packages\Shared\Functions\source\Shared.Functions.Faturamento.TintaDeMaquina.pas',
+  untISetarParametros in 'Genericos\untISetarParametros.pas';
+
+//
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskBar := True;
+  Application.CreateForm(TPrincipal, Principal);
+  Application.CreateForm(TfrmModulo, frmModulo);
+  Application.Run;
+
+end.

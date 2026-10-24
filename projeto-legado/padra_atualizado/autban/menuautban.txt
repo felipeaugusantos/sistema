@@ -1,0 +1,249 @@
+Contas a Receber > mnuCtaReceber
+	001 - Brasil [400p6d] > mnuBrasil
+		Configuração > frmConfigBrasil
+		Geração de Duplicatas > frmGerDupBrasil
+		Relatório de Duplicatas para Remessa > frmRelDupRemBrasil
+		Cancelamento de Duplicatas para Remessa > frmEstBrasil
+		Exporta Arquivo Remessa > frmExpArqRemBrasil
+		Cancelamento de Duplicatas enviadas para banco > frmEstEnvBrasil
+		Pega Arquivo de Retorno > frmArqRetBrasil
+		Relatorio Arquivo Retorno > frmRelArqRetBrasil
+		Baixa Automática de Duplicatas > frmBaiAutDupBrasil
+	001 - Brasil [400p7d] > mnuBrasil7d
+		Configuração > frmConfigBrasil7d
+		Geração de Duplicatas > frmGerDupBrasil7d
+		Relatório de Duplicatas para Remessa > frmRelDupRemBrasil7d
+		Cancelamento de Duplicatas para Remessa > frmEstBrasil7d
+		Exporta Arquivo Remessa > frmExpArqRemBrasil7d
+		Cancelamento de Duplicatas enviadas para banco > frmEstEnvBrasil7d
+		Pega Arquivo de Retorno > frmArqRetBrasil7d
+		Relatorio Arquivo Retorno > frmRelArqRetBrasil7d
+		Baixa Automática de Duplicatas > frmBaiAutDupBrasil7d
+	021 - Banestes [400p] > mnuBanestes
+		Configuração > frmConfigBanestes
+		Geração de Duplicatas > frmGerDupBanestes
+		Relatório de Duplicatas para Remessa > frmRelDupRemBanestes
+		Cancelamento de Duplicatas para Remessa > frmEstBanestes
+		Exporta Arquivo Remessa > frmExpArqRemBanestes
+		Cancelamento de Duplicatas enviadas para banco > frmEstEnvBanestes
+		Pega Arquivo de Retorno > frmArqRetBanestes
+		Relatorio Arquivo Retorno > frmRelArqRetBanestes
+		Baixa Automática de Duplicatas > frmBaiAutDupBanestes
+	041 - Banrisul [400p] > mnuBanrisul
+		Configuração > frmConfigBanrisul
+		Geração de Duplicatas > frmGerDupBanrisul
+		Relatório de Duplicatas para Remessa > frmRelDupRemBanrisul
+		Cancelamento de Duplicatas para Remessa > frmEstBanrisul
+		Exporta Arquivo Remessa > frmExpArqRemBanrisul
+		Cancelamento de Duplicatas enviadas para banco > frmEstEnvBanrisul
+		Pega Arquivo de Retorno > frmArqRetBanrisul
+		Relatorio Arquivo Retorno > frmRelArqRetBanrisul
+		Baixa Automática de Duplicatas > frmBaiAutDupBanrisul
+	104 - Cx.Federal [240p] > mnuCxFederal
+		Configuração > frmConfigCxFederal
+		Geração de Duplicatas > frmGerDupCxFed
+		Relatório de Duplicatas para Remessa > frmRelDupRemCxFed
+		Cancelamento de Duplicatas para Remessa > frmEstCxFed
+		Exporta Arquivo Remessa > frmExpArqRemCxFed
+		Cancelamento de Duplicatas enviadas para banco > frmEstEnvCxFed
+		Pega Arquivo de Retorno > frmArqRetCxFed
+		Relatorio Arquivo Retorno > frmRelArqRetCxFed
+		Baixa Automática de Duplicatas > frmBaiAutDupCxFed
+	104 - Cx Federal [400p] > mnuCxFederal400p
+		Configuração > frmConfigCxFederal400p
+		Geração de Duplicata > frmGerDupCxFed400p
+		Relatório de Duplicatas para Remessa > frmRelDupRemCxFed400p
+		Cancelamento de Duplicatas para Remessa > frmEstCxFed400p
+		Exporta Arquivo Remessa > frmExpArqRemCxFed400p
+		Cancelamento de Duplicatas enviadas para banco > frmEstEnvCxFed400p
+		Pega Arquivo de Retorno > frmArqRetCxFed400p
+		Relatorio Arquivo Retorno > frmRelArqRetCxFed400p
+		Baixa Automática de Duplicatas > frmBaiAutDupCxFed400p
+	237 - Bradesco [400p] > mnuBradesco
+		Configuração > frmConfigBradesco
+		Geração de Duplicatas > frmGerDupBradesco
+		Relatório de Duplicatas para Remessa > frmRelDupRemBradesco
+		Cancelamento de Duplicatas para Remessa > frmEstBradesco
+		Exporta Arquivo Remessa > frmExpArqRemBradesco
+		Cancelamento de Duplicatas enviadas para banco > frmEstEnvBradesco
+		Pega Arquivo de Retorno > frmArqRetBradesco
+		Relatorio Arquivo Retorno > frmRelArqRetBradesco
+		Baixa Automática de Duplicatas > frmBaiAutDupBradesco
+	341 - Itau [400p] > mnuItau
+		Configuração > frmConfigItau
+		Geração de Duplicatas > frmGerDupItau
+		Relatório de Duplicatas para Remessa > frmRelDupRemItau
+		Cancelamento de Duplicatas para Remessa > frmEstItau
+		Exporta Arquivo Remessa > frmExpArqRemItau
+		Cancelamento de Duplicatas enviadas para banco > frmEstEnvItau
+		Pega Arquivo de Retorno > frmArqRetItau
+		Relatorio Arquivo Retorno > frmRelArqRetItau
+		Baixa Automática de Duplicatas > frmBaiAutDupItau
+	033 - Santander [400p] > mnuSantanderBan
+		Configuração > frmConfigSantanderBan
+		Geração de Duplicatas > frmGerDupSantanderBan
+		Relatório de Duplicatas para Remessa > frmRelDupRemSantanderBan
+		Cancelamento de Duplicatas para Remessa > frmEstSantanderBan
+		Exporta Arquivo Remessa > frmExpArqRemSantanderBan
+		Cancelamento de Duplicatas enviadas para banco > frmEstEnvSantanderBan
+		Pega Arquivo de Retorno > frmArqRetSantanderBan
+		Relatorio Arquivo Retorno > frmRelArqRetSantanderBan
+		Baixa Automática de Duplicatas > frmBaiAutDupSantanderBan
+	389 - Banco Mercantil [400p] > mnuMercantil
+		Configuração > frmConfigMercantil
+		Geração de Duplicatas > frmGerDupMerc
+		Relatório de Duplicatas para Remessa > frmRelDupRemMerc
+		Cancelamento de Duplicatas para Remessa > frmEstMerc
+		Exporta Arquivo Remessa > frmExpArqRemMerc
+		Cancelamento de Duplicatas enviadas para banco > frmEstEnvMerc
+		Pega Arquivo de Retorno > frmArqRetMerc
+		Relatorio Arquivo Retorno > frmRelArqRetMerc
+		Baixa Automática de Duplicatas > frmBaiAutDupMerc
+	399 - HSBC [400p] > mnuHsbc
+		Configuração > frmConfigHsbc
+		Geração de Duplicatas > frmGerDupHsbc
+		Relatório de Duplicatas para Remessa > frmRelDupRemHsbc
+		Cancelamento de Duplicatas para Remessa > frmEstHsbc
+		Exporta Arquivo Remessa > frmExpArqRemHsbc
+		Cancelamento de Duplicatas enviadas para banco > frmEstEnvHsbc
+		Pega Arquivo de Retorno > frmArqRetHsbc
+		Relatorio Arquivo Retorno > frmRelArqRetHsbc
+		Baixa Automática de Duplicatas > frmBaiAutDupHsbc
+	748 - Sicredi [400p] > mnuSicredi
+		Configuração > frmConfigSicredi
+		Geração de Duplicatas > frmGerDupSicredi
+		Relatório de Duplicatas para Remessa > frmRelDupRemSicredi
+		Cancelamento de Duplicatas para Remessa > frmEstSicredi
+		Exporta Arquivo Remessa > frmExpArqRemSicredi
+		Cancelamento de Duplicatas enviadas para banco > frmEstEnvSicredi
+		Pega Arquivo de Retorno > frmArqRetSicredi
+		Relatorio Arquivo Retorno > frmRelArqRetSicredi
+		Baixa Automática de Duplicatas > frmBaiAutDupSicredi
+	756 - Bancoob [400p] > mnuBancoob
+		Configuração > frmConfigBancoob
+		Geração de Duplicatas > frmGerDupBancoob
+		Relatório de Duplicatas para Remessa > frmRelDupRemBancoob
+		Cancelamento de Duplicatas para Remessa > frmEstBancoob
+		Exporta Arquivo Remessa > frmExpArqRemBancoob
+		Cancelamento de Duplicatas enviadas para banco > frmEstEnvBancoob
+		Pega Arquivo de Retorno > frmArqRetBancoob
+		Relatorio Arquivo Retorno > frmRelArqRetBancoob
+		Baixa Automática de Duplicatas > frmBaiAutDupBancoob
+	756 - Bancoob [240p] > mnuBancoob240
+		Configuração > frmConfigBancoob240
+		Geração de Duplicatas > frmGerDupBancoob240
+		Relatório de Duplicatas para Remessa > frmRelDupRemBancoob240
+		Cancelamento de Duplicatas para Remessa > frmEstBancoob240
+		Exporta Arquivo Remessa > frmExpArqRemBancoob240
+		Cancelamento de Duplicatas enviadas para banco > frmEstEnvBancoob240
+		Pega Arquivo de Retorno > frmArqRetBancoob240
+		Relatorio Arquivo Retorno > frmRelArqRetBancoob240
+		Baixa Automática de Duplicatas > frmBaiAutDupBancoob240
+	637 - Sofisa [400p] > mnuSofisa
+		Configuração > frmConfigSofisa
+		Geração de Duplicatas > frmGerDupSofisa
+		Relatório de Duplicatas para Remessa > frmRelDupRemSofisa
+		Cancelamento de Duplicatas para Remessa > frmEstSofisa
+		Exporta Arquivo Remessa > frmExpArqRemSofisa
+		Cancelamento de Duplicatas enviadas para banco > frmEstEnvSofisa
+		Pega Arquivo de Retorno > frmArqRetSofisa
+		Relatório Arquivo Retorno > frmRelArqRetSofisa
+		Baixa Automática de Duplicatas > frmBaiAutDupSofisa
+	Serasa > mnuSerasa
+		Gerar arquivo serasa > frmGeraArqSerasa
+		Processa Arquivo de Retorno > frmProcArqSerasa
+		Gerar Arquivo de Conciliação > frmGeraArqSerasaCon
+	Serasa - PEFIN(Banco do Brasil 7 Dígitos) > mnuSerasaPEFIN
+		Gerar Arquivo Serasa PEFIN > frmGeraArqSerasaPEFIN
+		Processar Arquivo Retorno Serasa - PEFIN > frmProcArqSerasaPEFIN
+	085 - CECRED > mnuCecred
+		Configuração > frmConfigCecred
+		Geração de Duplicatas > frmGerDupCecred
+		Relatório de Duplicatas para Remessa > frmRelDupRemCecred
+		Cancelamento de Duplicatas para Remessa > frmEstCecred
+		Exporta Arquivo Remessa > frmExpArqRemCecred
+		Cancelamento de Duplicatas enviadas para banco > frmEstEnvCecred
+		Pega Arquivo de Retorno > frmArqRetCecred
+		Relatório Arquivo Retorno > frmRelArqRetCecred
+		Baixa Automática de Duplicatas > frmBaiAutDupCecred
+	003 - Banco da Amazônia > mnuAmazonia
+		Configuração > frmConfigBancoAmazonia
+		Geração de Duplicatas > frmGerDupBancoAmazonia
+		Relatório de Duplicatas para Remessa > frmRelDupRemBancoAmazonia
+		Cancelamento de Duplicatas para Remessa > frmEstBancoAmazonia
+		Exporta Arquivo Remessa > frmExpArqRemBancoAmazonia
+		Cancelamento de Duplicatas enviadas para banco > frmEstEnvBancoAmazonia
+		Pega Arquivo de Retorno > frmArqRetBancoAmazonia
+		Relatorio Arquivo Retorno > frmRelArqRetBancoAmazonia
+		Baixa Automática de Duplicatas > frmBaiAutDupBancoAmazonia
+	633 - Banco Rendimento > mnuRendimento
+		Configuração > frmConfigRendimento
+		Geração de Duplicatas > frmGerDupBancoRendimento
+		Relatório de Duplicatas para Remessa > frmRelDupRemBancoRendimento
+		Cancelamento de Duplicatas para Remessa > frmEstBancoRendimento
+		Exporta Arquivo Remessa > frmExpArqRemRendimento
+		Cancelamento de Duplicatas enviadas para banco > frmEstEnvBancoRendimento
+		Pega Arquivo de Retorno > frmArqRetBancoRendimento
+		Relatorio Arquivo Retorno > frmRelArqRetBancoRendimento
+		Baixa Automática de Duplicatas > frmBaiAutDupBancoRendimento
+	090 - Unicred [240p] > mnuUnicred
+		Configuração > frmConfigUnicred
+		Geração de Duplicatas > frmGerDupUnicred
+		Relatório de Duplicatas para Remessa > frmRelDupRemUnicred
+		Cancelamento de Duplicatas para Remessa > frmEstUnicred
+		Exporta Arquivo Remessa > frmExpArqRemUnicred
+		Cancelamento de Duplicatas enviadas para banco > frmEstEnvUnicred
+		Pega Arquivo de Retorno > frmArqRetUnicred
+		Relatorio Arquivo Retorno > frmRelArqRetUnicred
+		Baixa Automática de Duplicatas > frmBaiAutDupUnicred
+	090 - Unicred [400p] > mnuUnicred400
+		Configuração > frmConfigUnicred400
+		Geração de Duplicatas > frmGerDupUnicred400
+		Relatório de Duplicatas para Remessa > frmRelDupRemUnicred400
+		Cancelamento de Duplicatas para Remessa > frmEstUnicred400
+		Exporta Arquivo Remessa > frmExpArqRemUnicred400
+		Cancelamento de Duplicatas enviadas para banco > frmEstEnvUnicred400
+		Pega Arquivo de Retorno > frmArqRetUnicred400
+		Relatorio Arquivo Retorno > frmRelArqRetUnicred400
+		Baixa Automática de Duplicatas > frmBaiAutDupUnicred400
+	246 - ABC Brasil > mnuABCBrasil
+		Configuração > frmConfigABCBrasil
+		Geração de Duplicatas > frmGerDupABCBrasil
+		Relatório de Duplicatas para Remessa > frmRelDupRemABCBrasil
+		Cancelamento de Duplicatas para Remessa > frmEstABCBrasil
+		Exporta Arquivo Remessa > frmExpArqRemABCBrasil
+		Cancelamento de Duplicatas enviadas para banco > frmEstEnvABCBrasil
+		Pega Arquivo de Retorno > frmArqRetABCBrasil
+		Relatorio Arquivo Retorno > frmRelArqRetABCBrasil
+		Baixa Automática de Duplicatas > frmBaiAutDupABCBrasil
+Contas a Pagar > mnuCtaPagar
+	341 - Itau > mnuCtaItau
+		Configuração > frmConfigItauCta
+		Geração de Duplicatas > frmGerDupItauCta
+		Relatório de Duplicatas para Remessa > frmRelDupRemItauCta
+		Cancelamento de Duplicatas para Remessa > frmEstItauCta
+		Exporta Arquivo Remessa > frmExpArqRemItauCta
+		Cancelamento de Duplicatas enviadas para o Banco > frmEstEnvItauCta
+		Pega Arquivo de Retorno > frmArqRetItauCta
+		Relatorio Arquivo Retorno > frmRelArqRetItauCta
+		Baixa Automática de Duplicatas > frmBaiAutDupItauCta
+	033 - Santander > mnuCtaSantander
+		Configuração > frmConfigSantanderCta
+		Geração de Duplicatas > frmGerDupSantanderCta
+		Relatório de Duplicatas para Remessa > frmRelDupRemSantanderCta
+		Cancelamento de Duplicatas para Remessa > frmEstSantanderCta
+		Expota Arquivo Remessa > frmExpArqRemSantanderCta
+		Cancelamento de Duplicatas Enviadas para o Banco > frmEstEnvSantanderCta 
+		Pega Arquivo Retorno > frmArqRetSantanderCta
+		Relatório Arquivo Retorno > frmRelArqRetSantanderCta
+		Baixa Automática de Duplicatas > frmBaiAutDupSantanderCta
+	237 - Bradesco > mnuCtaBradesco
+		Configuração > frmConfigBradescoCta
+		Geração de Duplicatas > frmGerDupBradescoCta
+		Relatório de Duplicatas para Remessa > frmRelDupRemBradescoCta
+		Cancelamento de Duplicatas para Remessa > frmEstBradescoCta
+		Exporta Arquivo Remessa > frmExpArqRemBradescoCta
+		Cancelamento de Duplicatas Enviadas para o Banco > frmEstEnvBradescoCta
+		Pega Arquivo Retorno > frmArqRetBradescoCta
+		Relatório Arquivo Retorno > frmRelArqRetBradescoCta
+		Baixa Automática de Duplicatas > frmBaiAutDupBradescoCta

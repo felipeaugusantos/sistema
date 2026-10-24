@@ -1,0 +1,72 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <PropertyGroup>
+        <ProjectGuid>{0fc41e48-2a99-4e2b-a328-211169b058fa}</ProjectGuid>
+    </PropertyGroup>
+    <ItemGroup>
+        <Projects Include="PainelNFe.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\libNfe\Package\dxe4\libNfe.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\PackagesNfeStatus\dXE\NFeStatus.dproj">
+            <Dependencies/>
+        </Projects>
+        <Projects Include="..\..\PackagesNfeImpressao\dXE\NFeImpressao.dproj">
+            <Dependencies/>
+        </Projects>
+    </ItemGroup>
+    <ProjectExtensions>
+        <Borland.Personality>Default.Personality.12</Borland.Personality>
+        <Borland.ProjectType/>
+        <BorlandProject>
+            <Default.Personality/>
+        </BorlandProject>
+    </ProjectExtensions>
+    <Target Name="PainelNFe">
+        <MSBuild Projects="PainelNFe.dproj"/>
+    </Target>
+    <Target Name="PainelNFe:Clean">
+        <MSBuild Projects="PainelNFe.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="PainelNFe:Make">
+        <MSBuild Projects="PainelNFe.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="libNfe">
+        <MSBuild Projects="..\..\libNfe\Package\dxe4\libNfe.dproj"/>
+    </Target>
+    <Target Name="libNfe:Clean">
+        <MSBuild Projects="..\..\libNfe\Package\dxe4\libNfe.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="libNfe:Make">
+        <MSBuild Projects="..\..\libNfe\Package\dxe4\libNfe.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="NFeStatus">
+        <MSBuild Projects="..\..\PackagesNfeStatus\dXE\NFeStatus.dproj"/>
+    </Target>
+    <Target Name="NFeStatus:Clean">
+        <MSBuild Projects="..\..\PackagesNfeStatus\dXE\NFeStatus.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="NFeStatus:Make">
+        <MSBuild Projects="..\..\PackagesNfeStatus\dXE\NFeStatus.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="NFeImpressao">
+        <MSBuild Projects="..\..\PackagesNfeImpressao\dXE\NFeImpressao.dproj"/>
+    </Target>
+    <Target Name="NFeImpressao:Clean">
+        <MSBuild Projects="..\..\PackagesNfeImpressao\dXE\NFeImpressao.dproj" Targets="Clean"/>
+    </Target>
+    <Target Name="NFeImpressao:Make">
+        <MSBuild Projects="..\..\PackagesNfeImpressao\dXE\NFeImpressao.dproj" Targets="Make"/>
+    </Target>
+    <Target Name="Build">
+        <CallTarget Targets="PainelNFe;libNfe;NFeStatus;NFeImpressao"/>
+    </Target>
+    <Target Name="Clean">
+        <CallTarget Targets="PainelNFe:Clean;libNfe:Clean;NFeStatus:Clean;NFeImpressao:Clean"/>
+    </Target>
+    <Target Name="Make">
+        <CallTarget Targets="PainelNFe:Make;libNfe:Make;NFeStatus:Make;NFeImpressao:Make"/>
+    </Target>
+    <Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+</Project>

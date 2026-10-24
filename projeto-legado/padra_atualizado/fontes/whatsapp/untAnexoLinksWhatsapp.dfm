@@ -1,0 +1,498 @@
+object frmAnexoLinksWhatsapp: TfrmAnexoLinksWhatsapp
+  Left = 0
+  Top = 0
+  Caption = 'frmAnexoLinksWhatsapp'
+  ClientHeight = 299
+  ClientWidth = 635
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object frxPdfLinksWhatsapp: TfrxReport
+    Version = '5.6.11'
+    DotMatrixReport = False
+    IniFile = '\Software\Fast Reports'
+    PreviewOptions.Buttons = [pbPrint, pbLoad, pbSave, pbExport, pbZoom, pbFind, pbOutline, pbPageSetup, pbTools, pbEdit, pbNavigator, pbExportQuick]
+    PreviewOptions.Zoom = 1.000000000000000000
+    PrintOptions.Printer = 'Default'
+    PrintOptions.PrintOnSheet = 0
+    ReportOptions.CreateDate = 46000.449822963000000000
+    ReportOptions.LastChange = 46002.655983935180000000
+    ScriptLanguage = 'PascalScript'
+    ScriptText.Strings = (
+      'begin'
+      ''
+      'end.')
+    Left = 152
+    Top = 72
+    Datasets = <>
+    Variables = <>
+    Style = <>
+    object Data: TfrxDataPage
+      Height = 1000.000000000000000000
+      Width = 1000.000000000000000000
+    end
+    object Page1: TfrxReportPage
+      PaperWidth = 210.000000000000000000
+      PaperHeight = 297.000000000000000000
+      PaperSize = 9
+      object PageHeader1: TfrxPageHeader
+        FillType = ftBrush
+        Height = 343.937125040000000000
+        Top = 18.897650000000000000
+        Width = 793.701300000000000000
+        Child = frxPdfLinksWhatsapp.Child1
+        object Shape3: TfrxShapeView
+          Width = 793.701300000000000000
+          Height = 268.346630000000000000
+          Fill.BackColor = 2564110
+        end
+        object Shape5: TfrxShapeView
+          Left = 58.582677165354300000
+          Top = 38.795300000000000000
+          Width = 188.976377950000000000
+          Height = 188.976500000000000000
+          Fill.BackColor = clWhite
+          Shape = skRoundRectangle
+        end
+        object Shape6: TfrxShapeView
+          Left = 272.126160000000000000
+          Top = 38.929141180000000000
+          Width = 445.984540000000000000
+          Height = 188.976365750000000000
+          Fill.BackColor = clWhite
+          Shape = skRoundRectangle
+        end
+        object Picture1: TfrxPictureView
+          Left = 72.590600000000000000
+          Top = 52.354360000000000000
+          Width = 162.519638660000000000
+          Height = 162.519721650000000000
+          Center = True
+          HightQuality = False
+          Transparent = False
+          TransparentColor = clWhite
+        end
+        object Memo3: TfrxMemoView
+          Left = 385.071120000000000000
+          Top = 108.267780000000000000
+          Width = 302.362400000000000000
+          Height = 34.015770000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = 2302755
+          Font.Height = -24
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Memo.UTF8W = (
+            'Documentos dispon'#237'veis!')
+          ParentFont = False
+        end
+        object Picture2: TfrxPictureView
+          Left = 298.141930000000000000
+          Top = 94.488250000000000000
+          Width = 83.149660000000000000
+          Height = 79.370130000000000000
+          Center = True
+          Picture.Data = {
+            0A54504E474F626A65637489504E470D0A1A0A0000000D494844520000004000
+            0000400806000000AA6971DE00000CF34944415478DAD55B0F905655153FDFEE
+            6AA5A929423699A159E04C3058608D88FC15C10543531B314125298D9CC4C9CC
+            9430CD320B2333272D83448D5098C44513C10D1CC4D49C224C0D111893C4FFFF
+            4DD8DD7EBF7DE77CEFBCBBF77DDFF7965DA03773E6BBDFBBF7DD77CFEF9E7BCE
+            B9E79E57922EBE1A574EF67FEB4025476D7ABF2DB897A1A62173DBFBE16F775F
+            A5AE6258075D724CB7E05E5B2D8CF83628D7EBF3ADA4EE06A3D300D8A014001B
+            F436070681F818A837A80FE820D05EA07DB4FD6BA0D7412F819E00AD036DC2B3
+            EFB8BEEBF5752DDD0544610082190F07F8419447808E010D01F505BDAFC6AE5B
+            409B41AB40F78096A3CF8DFA3E93AC2E07A210006E666C40AD2AE60350FE0A68
+            02E8A392AE715EDB94B9B69C6EADAF86603CEF82EE065D0FBA1FEFD9A6525542
+            B9C54F44B7031011772AAA5665FC1265BC2C0DA0ADCAD46E0541DEA654AFCF1A
+            907F07CDC03BFFE8C6D05AAB8ED92E008259AFD799F810CA5780BE6683D18197
+            74E07611880DA0672459E3AF80DE5090A80BB864A827A8237AEB7FBB5AB4CF06
+            07EE4AD0748CE1115D7E3611352B5A9522B1E74A353ED42EA62A7AE351FE15E8
+            23CA788B32DEA08FBD09FA136809E801D07A05ADC3208341F5047D0E34163446
+            0111F78E3A0582A07C1FF40395101B572E08011FE5C92708B9008488E9CBAE04
+            5DA4E516BD6F16E069D0CF410BF0DC667D99ADFB3AA5D8D5DE970D50C5FAFDB8
+            370E742E6898F66F7AA4A4EFA4347C49DF559F0782E74367FD10DCDE1DE52750
+            6E88021079680FDC9EAF83325137E69F03CD04DD8CB6EF0666B15552074754F4
+            CAEF08AE8C0FA16D09C670147F043A22E88F12B701743CDAAD2133A1A445F8E0
+            B25B2189A21E8A7B6B3B001079685FDCBE137494A4CACD067A232502ED5E5649
+            A9D341B6860C57BB220E9529BA56AD9B0AFAA9247AC2A48120D09F188F762BBD
+            24B8BE6C4C94AABB55A278D1E466D64466AD28FA7BE2F6BDA023DDCC9B133305
+            6DEE708CD7ECF9D5024660754419FB148AF3408382F150B91E83368F1AC3C19A
+            E7EF224A8B3E47F0A8AC5774004052F10E1FB297AD53C4DBD7909FA5AEF6D272
+            2C1067F266D0493A2E5149D8081A8036AF3AC64D41FE0EE5D3033EFE0A1A538A
+            BCCCC468166E9F1F3CF437D058553C7CE9B6EEF6D5239EA799BEEB245192EF81
+            76077D1BF77F1C617E36CAE7057C6C9044076C2AE5304F74174856D33FA50FFD
+            27B6D6BAFB0AAC927983BF45F90CD065F83FD3AD77538834979706CC3F0F1A81
+            FAC7C9471900ED946B988EC9C3A00F2B007C680BE868D43F19D3B63BEA8AE828
+            3A64F442E7F9C9D2F14D9744699A9F4270B8F91A8DFA878C8F92334736AB37A1
+            7CA6A42E291F9EA06EE84E633E06824E5A6B64E6CF42F93701F35C2A8DA8BFCF
+            F3610018F3C350BE5F524787EBFC1AD44DDF1598CF01A1CEC6AAE33B11E5DB25
+            BBF962BB9350BF30E4C300309B4F1776B424F69E66E25FA081A87BDD3CBB9DCD
+            7C0E10C6D428DC6E9244299AD34429A6C9BEC933CFCB00B0D91F8A7BCDFA50AB
+            3E381175B75572357721E6E9292E05ED1D307F01EA6799D5B2E78D0F0F00C5E6
+            8B929A9587409F1717CBDB0599B7B11F26C9D235C56D5EE2E5A89F51C9649B15
+            60B86AADA46E26913B0D0D6F55DBDBB20B33CFB137830E0E98BF16F5E7E9F873
+            630706C039F8F9A5A46B7F3DA81F1ABF1D5BFB3BD2FEE7306F3A8B5BE8651C6B
+            C03C376693CC67900A710303809B04EEC1FF2B490C6F361A7E33263A9170D80E
+            778494194A2B95B6ED5344995F2C896FD026E9E62C7709971445869C0ED0C67C
+            881EDF0A137F7B38B0BD25BDDFED2044021A64F44E9D34CF7C33E8388D2CEF86
+            DFADF83D1CF7F641B9D96F943C00C74A128535E6B9BFEF8B466F78F177CE0697
+            C8E5A039BA21EA560B91E3F83036718A74DCDC8C42FD2BCE327072FF015A88FF
+            E77889F600D057A6CF6CDAFF2E34181F6E2B75A6597F8B243BB1C724D982BEE4
+            C4B24B41C809C9311C3735609EFECA30D43FE798A79BCCA54D4BC6A8F2883C09
+            A01F7D9AA4EBFF876870B1B39BC63C0F3518E73BCAB565CC6F0CEADFEA6A1082
+            9880317515CA1706CCFF5B995FE7986F50E6476977CF82FA9852273F1E8047F0
+            FB59492DC0996830270200950E6DED40C9AE3B82F205C986B1B60B841CE6BF23
+            494C92EFB620CCCB9288FD633A5E0BCA30E4F524684FED92670C7DF5A0A57DA2
+            3C000C241C24A9FD279A7FB6B5AD033210F693C4EC0C90ACD9B90DF51355C4DA
+            B60784205668CC9B99F69B9BB725894DAC7033EF83AA8F4BE21B986E3B02750F
+            7BBE0C8017F0BBBFA411D7411677F7CACD89F8812A098706205C8FFA73AB391E
+            0566DF983A15B76F9534CE68C156EE50EF0AFCFBB278E33F8337FD9D648F44DD
+            F2180044F203FA9F1DF767B4D48B4AC4FB626CAE5992B3010F42467F148D1645
+            983F4E12735727D910FB97517F4BB8B30BE21AAB2539673000183D5E1C03E01D
+            4922A606403F8D9664D64A6470D41BDC7CEC2B6924988C5B68AA100891FE79B8
+            4AF3BC87643737D3507F5D6C7353058071B8DF54780954192463F64B14403FC8
+            AFA2FE86D8F6B30AF32661D431F7817A04E05E8AFA2BF2C0753A807FE9DCF593
+            F478ADECDC85006C92E47CCE9460B461051018355E24D90C108A294F6DFE502D
+            901261FE13BABC0E0C96D74F50FFAD4A92E500A089A6123C446A50828FE2F733
+            4E54CE4083B931AFA9020893707BAE6415155FC2F0F93D79204498A74EA182ED
+            1330FF6BD49F5D4DC13A00D80FCDE05E5A45BFE530D43D133383F4EC264AEADC
+            5C8906DFAD0680BB8C39869E674BD654F1A0F458D4AF8A29ACC0BAD073A34E19
+            1830CF38C5C9DA5F4513EB80E4DA5FEDA4BAA2233403BF9749EA0A2F4683E3AB
+            C501729C15EBCB7B6AD43134416B62A655D2632BEA92E19275B2782A65E79152
+            85793F8E29941AC7D32ADC1F1CDBDA1380B1FA725B2BCFAAB8BC592D0E188050
+            E940857A66988AA0B5B32C315E0B25F1263DF39CC1D1BA29ABEA6607639883F2
+            6427D5E6A3443743BDF0BB06D4CB8130048D1EA8251A94B361F1A17503E19F9C
+            61D43FDF983DE161E79382B68C4EF1F0624B01E66DFD538FD102303FC9F4DAA9
+            A8FB7D8C1F0B885834D8109B85461754D2031540306B7007E8846056FFA2B3FA
+            9A3E173BB6DAA8D2B2A1D6AD7630FB16DCB5C9E43EE0D3A87B3A54801E8069F8
+            B9D621C664877E1A58A8291C1E59D7049221EA910108CCFE1A89763351FE5EC0
+            FC169DF9B545E20CC1FAFF05CA5F9774FD2FC3FD51797C1800BD55ECE87599E6
+            343B5E735034A2D9999040CD3E48B2D6C16CB43950BCC7DC215A8C07ABF90E11
+            E64DFC1915A6F8F772935976CA2422CD2537583A3313244773B271274160A88D
+            B6BD6F0082F71928057455EF2DCA7CE08F5C2C49EE9031CF244C4AF2E65C0970
+            A2C604C7656E601CE429A85B5034EC15717038DBCD927A9C3E2F81EF3919ED6E
+            2FC27C64F639EBDC011EE000B063BD5C292E059DD0FF1EE93A600AEBA05A4C62
+            0D20F45780F797ECB1FB54D4DF58EBBEA1C2EC53874D93D4F77F4B92848975B1
+            505808800D9221A4A592DD805C85BA8B8ACE4ECE20074BB2C3B37CC00B71FFEA
+            C69C63AB02E052F32F576932007E86BAF31B83C8761E00BC6CCDFA74123B1EE7
+            B1F2922E02C1A2D01D5CEE82EBDEC6CB28159DA64F4AD6F53D1CF52F56935C9F
+            20611DF6469971C21EAE4386CA8F565B5A380C1E1934B7BB4F79DFBC20F33E44
+            4E2FF204C92E2B3B0DAE3AD6BC14190B43F94E69268729AA859522AFC04FF061
+            F7A2CC5B1688E509793F631EEA4E77EFA9D8772649CA9855E6CCA1F08E0A5367
+            C6A98B5A587403106A0E9E064E96E50731FD65BA7474B78F6CD24C31BFEB2B02
+            4039CB4A9273B6B191978CD7E5E043D1DD992667B36B21F11B40538271BD2889
+            84AE6D2C7046512D5192C906345D038397311E3FB92989CAEEC844C98F4B7232
+            3538180FFD7D86C89B8B2ECF5A52657BAA245880D1A7CAD2F65ED294A4D09481
+            90486E7041C6CD5B144913A98906C5BE876403260CBA9C88364B3B63A56A4D96
+            6668899199D1D231599A7B7D7E34311F6DDF73B356FEF0290F8C20B294972CCD
+            D417264B0F978EC9D20CB630DCBDBA33CCE702108220E959FBD592043B62E9F2
+            F41AAF012DC2732F0411DAFA0AEF6ACF49F2CBA73139841DAAEF1AE340F1E9F2
+            0F4A92C3B4A1A81759130001083ED8C193611E53F5D4419949B3AF3A5E9524C2
+            C4AD303F80DA582188591EB03A34D43574C599EA76A8360B3F986853A099A5BE
+            B5713BB3563BFBC90CFD798AE559928A7AEC93192A27C6169872C3236CFFC90C
+            97155DE2DE9278710C87EFE79EF59FCCD8D2A019FE465392E959E893994E0310
+            8020360BFA62AE4FE61734BABEC20F9F8A5CE107573646C60F78323C5F2760C7
+            7D34950384FF3A54340C7D3688DF13715B5AE9B339BBEF9D94D81766941E7EDD
+            C1F8E22255B03BE7B3B918085AB635692E2D63FBFC6892D682B69AA2DD50A07B
+            7EC5C1FC44EEEC9AD0E77ADBAE4B22515DEE7415062004C23B2B924DA822E307
+            2B311A649FCEEEADA030739B369CE9EBB420D413EB34F6E025AD4B9DAC2E03C0
+            03E198B699E2D5D97DC2FFC7C7D3D59891EC67F3FE3DA12EF0F75BA5935E6467
+            AFFF0179EEDDF4C34997310000000049454E44AE426082}
+          Stretched = False
+          HightQuality = False
+          Transparent = False
+          TransparentColor = clWhite
+        end
+        object Memo10: TfrxMemoView
+          Left = 58.582677165354300000
+          Top = 298.582870000000000000
+          Width = 192.756030000000000000
+          Height = 26.456710000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = 2302755
+          Font.Height = -21
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Memo.UTF8W = (
+            'Seus arquivos')
+          ParentFont = False
+        end
+        object Memo11: TfrxMemoView
+          Left = 385.071120000000000000
+          Top = 141.622140000000000000
+          Width = 302.362400000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = 7895160
+          Font.Height = -13
+          Font.Name = 'Arial'
+          Font.Style = []
+          Memo.UTF8W = (
+            'Organizamos tudo aqui para facilitar o seu acesso')
+          ParentFont = False
+        end
+      end
+      object Child1: TfrxChild
+        FillType = ftBrush
+        Height = 147.401670000000000000
+        Top = 385.512060000000000000
+        Width = 793.701300000000000000
+        Stretched = True
+        object Shape2: TfrxShapeView
+          Left = 58.582677170000000000
+          Top = 7.559060000000000000
+          Width = 215.433075750000000000
+          Height = 117.165364090000000000
+          Frame.Color = 14671839
+          Shape = skRoundRectangle
+        end
+        object Memo4: TfrxMemoView
+          Left = 76.370130000000000000
+          Top = 21.322834650000000000
+          Width = 185.196970000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = 2302755
+          Font.Height = -19
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Memo.UTF8W = (
+            'Nota Fiscal')
+          ParentFont = False
+        end
+        object Memo7: TfrxMemoView
+          Left = 77.370068980000000000
+          Top = 80.031498500000000000
+          Width = 94.488250000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = 7895160
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Style = []
+          Memo.UTF8W = (
+            'Acessar')
+          ParentFont = False
+        end
+        object Memo12: TfrxMemoView
+          Left = 76.370130000000000000
+          Top = 42.866141730000000000
+          Width = 185.196970000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = 2302755
+          Font.Height = -19
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Memo.UTF8W = (
+            '000000000001A-NF')
+          ParentFont = False
+        end
+        object Shape1: TfrxShapeView
+          Left = 289.023810000000000000
+          Top = 7.559060000000000000
+          Width = 215.433075750000000000
+          Height = 117.165364090000000000
+          Frame.Color = 14671839
+          Shape = skRoundRectangle
+        end
+        object Memo5: TfrxMemoView
+          Left = 306.921460000000000000
+          Top = 21.322834650000000000
+          Width = 185.196970000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = 2302755
+          Font.Height = -19
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Memo.UTF8W = (
+            'Nota Fiscal')
+          ParentFont = False
+        end
+        object Memo6: TfrxMemoView
+          Left = 307.921398980000000000
+          Top = 80.031498500000000000
+          Width = 94.488250000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = 7895160
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Style = []
+          Memo.UTF8W = (
+            'Acessar')
+          ParentFont = False
+        end
+        object Memo8: TfrxMemoView
+          Left = 306.921460000000000000
+          Top = 42.866141730000000000
+          Width = 185.196970000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = 2302755
+          Font.Height = -19
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Memo.UTF8W = (
+            '000000000001A-NF')
+          ParentFont = False
+        end
+        object Shape4: TfrxShapeView
+          Left = 519.575140000000000000
+          Top = 7.559060000000000000
+          Width = 215.433075750000000000
+          Height = 117.165364090000000000
+          Frame.Color = 14671839
+          Shape = skRoundRectangle
+        end
+        object Memo9: TfrxMemoView
+          Left = 537.472790000000000000
+          Top = 21.322834650000000000
+          Width = 185.196970000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = 2302755
+          Font.Height = -19
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Memo.UTF8W = (
+            'Nota Fiscal')
+          ParentFont = False
+        end
+        object Memo13: TfrxMemoView
+          Left = 538.472728980000000000
+          Top = 80.031498500000000000
+          Width = 94.488250000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = 7895160
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Style = []
+          Memo.UTF8W = (
+            'Acessar')
+          ParentFont = False
+        end
+        object Memo14: TfrxMemoView
+          Left = 537.472790000000000000
+          Top = 42.866141730000000000
+          Width = 185.196970000000000000
+          Height = 18.897650000000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = 2302755
+          Font.Height = -19
+          Font.Name = 'Arial'
+          Font.Style = [fsBold]
+          Memo.UTF8W = (
+            '000000000001A-NF')
+          ParentFont = False
+        end
+      end
+      object PageFooter1: TfrxPageFooter
+        FillType = ftBrush
+        Height = 71.811070000000000000
+        Top = 593.386210000000000000
+        Width = 793.701300000000000000
+        object Date: TfrxMemoView
+          Left = 637.401980000000000000
+          Top = 13.118112680000000000
+          Width = 102.047310000000000000
+          Height = 18.897637800000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = 2302755
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Style = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            '[Date]')
+          ParentFont = False
+        end
+        object Time: TfrxMemoView
+          Left = 637.401980000000000000
+          Top = 38.818902520000000000
+          Width = 102.047310000000000000
+          Height = 18.897637800000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = 2302755
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Style = []
+          HAlign = haRight
+          Memo.UTF8W = (
+            '[Time]')
+          ParentFont = False
+        end
+        object Memo1: TfrxMemoView
+          Left = 58.582677165354300000
+          Top = 16.897650000000000000
+          Width = 532.913730000000000000
+          Height = 18.897637800000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = 2302755
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Style = []
+          Memo.UTF8W = (
+            '[NOMEMP]')
+          ParentFont = False
+        end
+        object Memo2: TfrxMemoView
+          Left = 58.582677165354300000
+          Top = 38.795300000000000000
+          Width = 532.913730000000000000
+          Height = 18.897637800000000000
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = 2302755
+          Font.Height = -16
+          Font.Name = 'Arial'
+          Font.Style = []
+          Memo.UTF8W = (
+            '[C_G_C_]')
+          ParentFont = False
+        end
+        object Line1: TfrxLineView
+          Left = 58.582677170000000000
+          Top = 3.779530000000000000
+          Width = 676.535870000000000000
+          Color = 2302755
+          Frame.Typ = [ftTop]
+        end
+      end
+    end
+  end
+  object frxPDFExport1: TfrxPDFExport
+    FileName = 'C:\Users\breno.papera\Desktop\arquivoWpp.pdf'
+    UseFileCache = True
+    ShowProgress = True
+    OverwritePrompt = False
+    CreationTime = 46000.614071145840000000
+    DataOnly = False
+    PrintOptimized = False
+    Outline = False
+    Background = False
+    HTMLTags = True
+    Quality = 95
+    Transparency = False
+    Author = 'FastReport'
+    Subject = 'FastReport PDF export'
+    ProtectionFlags = [ePrint, eModify, eCopy, eAnnot]
+    HideToolbar = False
+    HideMenubar = False
+    HideWindowUI = False
+    FitWindow = False
+    CenterWindow = False
+    PrintScaling = False
+    PdfA = False
+    Left = 248
+    Top = 64
+  end
+end

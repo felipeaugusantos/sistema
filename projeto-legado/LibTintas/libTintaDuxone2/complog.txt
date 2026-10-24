@@ -1,0 +1,4 @@
+Compiler Speed Pack 6.2 - Compiler patches applied.
+Embarcadero Delphi for Win32 compiler version 30.0
+Copyright (c) 1983,2015 Embarcadero Technologies, Inc.
+Fatal: F1026 File not found: 'libTintaDuxone2.dpr'

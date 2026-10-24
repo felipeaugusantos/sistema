@@ -1,0 +1,1060 @@
+inherited frmConfigurarEventosFormulario: TfrmConfigurarEventosFormulario
+  Left = 0
+  Top = 0
+  Width = 1000
+  Height = 600
+  Caption = 'Pontos de Entrada (Formul'#225'rios)'
+  Font.Charset = DEFAULT_CHARSET
+  Font.Height = -11
+  Position = poMainFormCenter
+  WindowState = wsMaximized
+  OnResize = FormResize
+  ExplicitWidth = 1000
+  ExplicitHeight = 600
+  PixelsPerInch = 96
+  TextHeight = 14
+  inherited pnlBotoes: TPanel
+    Top = 555
+    Width = 994
+    ExplicitTop = 555
+    ExplicitWidth = 994
+    inherited FlwBotoes: TFlowPanel
+      Width = 990
+      ExplicitWidth = 990
+    end
+  end
+  inherited pnlStatus: TPanel
+    Top = 555
+    Width = 994
+    ExplicitTop = 555
+    ExplicitWidth = 994
+    inherited pnlNomeForm: TPanel
+      Left = 823
+      ExplicitLeft = 823
+    end
+    inherited pnlInfo: TPanel
+      Width = 823
+      ExplicitWidth = 823
+    end
+  end
+  inherited pgcDados: TPageControl
+    Width = 0
+    Height = 220
+    Align = alNone
+    Visible = False
+    ExplicitWidth = 0
+    ExplicitHeight = 220
+    inherited tbsGeral: TTabSheet
+      ExplicitLeft = 4
+      ExplicitTop = 28
+      ExplicitWidth = 761
+      ExplicitHeight = 188
+    end
+  end
+  object Panel1: TPanel [3]
+    AlignWithMargins = True
+    Left = 3
+    Top = 3
+    Width = 988
+    Height = 30
+    Align = alTop
+    BevelOuter = bvLowered
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBlack
+    Font.Height = -13
+    Font.Name = 'Arial'
+    Font.Pitch = fpVariable
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 3
+    object Label1: TLabel
+      AlignWithMargins = True
+      Left = 4
+      Top = 4
+      Width = 126
+      Height = 16
+      Align = alLeft
+      Caption = 'Tipo de Formul'#225'rio:'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Style = [fsBold]
+      ParentFont = False
+      Layout = tlCenter
+    end
+    object lblFormName: TLabel
+      AlignWithMargins = True
+      Left = 136
+      Top = 4
+      Width = 12
+      Height = 16
+      Align = alLeft
+      Caption = '...'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      ParentFont = False
+      Layout = tlCenter
+    end
+  end
+  object pnlActions: TPanel [4]
+    AlignWithMargins = True
+    Left = 356
+    Top = 39
+    Width = 635
+    Height = 513
+    Align = alClient
+    BevelInner = bvLowered
+    Color = clWhite
+    ParentBackground = False
+    TabOrder = 4
+    object lblEntryPoint: TLabel
+      AlignWithMargins = True
+      Left = 5
+      Top = 5
+      Width = 625
+      Height = 16
+      Align = alTop
+      Alignment = taCenter
+      Caption = '...'
+      Color = clWhite
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Style = [fsBold]
+      ParentColor = False
+      ParentFont = False
+      WordWrap = True
+      ExplicitWidth = 12
+    end
+    object pnlBotoesActions: TToolBar
+      AlignWithMargins = True
+      Left = 5
+      Top = 249
+      Width = 625
+      Height = 25
+      Align = alBottom
+      ButtonHeight = 23
+      ButtonWidth = 25
+      Color = clWhite
+      GradientEndColor = 16770261
+      GradientStartColor = 16770261
+      Images = imgToolBar
+      GradientDirection = gdHorizontal
+      ParentColor = False
+      TabOrder = 0
+      Transparent = True
+      object btnAddAction: TToolButton
+        Left = 0
+        Top = 0
+        Hint = 'Adicionar'
+        ImageIndex = 0
+        ParentShowHint = False
+        ShowHint = True
+        OnClick = btnAddActionClick
+      end
+      object btnDelAction: TToolButton
+        Left = 25
+        Top = 0
+        Hint = 'Excluir'
+        ImageIndex = 1
+        ParentShowHint = False
+        ShowHint = True
+        OnClick = btnDelActionClick
+      end
+      object btnMoveUp: TToolButton
+        Left = 50
+        Top = 0
+        Hint = 'Mover para cima'
+        Caption = 'btnMoveUp'
+        ImageIndex = 3
+        OnClick = btnMoveUpClick
+      end
+      object btnMoveDown: TToolButton
+        Left = 75
+        Top = 0
+        Hint = 'Mover para baixo'
+        Caption = 'btnMoveDown'
+        ImageIndex = 4
+        OnClick = btnMoveDownClick
+      end
+    end
+    object cxgActions: TcxGridCitel
+      AlignWithMargins = True
+      Left = 5
+      Top = 24
+      Width = 625
+      Height = 219
+      Align = alClient
+      BevelInner = bvNone
+      BevelOuter = bvNone
+      TabOrder = 1
+      LookAndFeel.ScrollbarMode = sbmClassic
+      object cxgActionsView: TcxGridDBTableViewCitel
+        Navigator.Buttons.CustomButtons = <>
+        OnCellClick = cxgActionsViewCellClick
+        OnCellDblClick = cxgActionsViewCellDblClick
+        DataController.DataSource = dtsActions
+        DataController.Filter.Options = [fcoCaseInsensitive]
+        DataController.Options = [dcoAssignGroupingValues, dcoAssignMasterDetailKeys, dcoSaveExpanding, dcoImmediatePost]
+        DataController.Summary.DefaultGroupSummaryItems = <>
+        DataController.Summary.FooterSummaryItems = <>
+        DataController.Summary.SummaryGroups = <>
+        FilterRow.InfoText = 'Clique aqui para definir um filtro'
+        FilterRow.ApplyChanges = fracDelayed
+        OptionsData.Deleting = False
+        OptionsData.DeletingConfirmation = False
+        OptionsData.Inserting = False
+        OptionsView.NoDataToDisplayInfoText = 'Sem dados para exibir'
+        OptionsView.ColumnAutoWidth = True
+        OptionsView.GroupByBox = False
+        Zebra = True
+        Destaque = False
+        CorZebra = clMoneyGreen
+        object cxgActionsViewId: TcxGridDBColumn
+          DataBinding.FieldName = 'Id'
+          Visible = False
+          Options.Editing = False
+        end
+        object cxgActionsViewExecuteIndex: TcxGridDBColumn
+          DataBinding.FieldName = 'ExecuteIndex'
+          HeaderAlignmentHorz = taCenter
+          Options.Editing = False
+          Options.Filtering = False
+          Options.Focusing = False
+          Options.AutoWidthSizable = False
+          Options.Grouping = False
+          Options.Moving = False
+          Options.Sorting = False
+          Width = 43
+        end
+        object cxgActionsViewDescription: TcxGridDBColumn
+          DataBinding.FieldName = 'Description'
+          Options.Editing = False
+          Options.Filtering = False
+          Options.Focusing = False
+          Options.Grouping = False
+          Options.Moving = False
+          Options.Sorting = False
+          Width = 487
+        end
+        object cxgActionsViewEdit: TcxGridDBColumn
+          DataBinding.FieldName = 'Edit'
+          PropertiesClassName = 'TcxImageComboBoxProperties'
+          Properties.Images = imgToolBar
+          Properties.Items = <
+            item
+              ImageIndex = 2
+            end>
+          Properties.ShowDescriptions = False
+          HeaderAlignmentHorz = taCenter
+          Options.Editing = False
+          Options.Filtering = False
+          Options.AutoWidthSizable = False
+          Options.Moving = False
+          Options.Sorting = False
+          Width = 50
+        end
+        object cxgActionsViewEnabled: TcxGridDBColumn
+          DataBinding.FieldName = 'Enabled'
+          PropertiesClassName = 'TcxCheckBoxProperties'
+          Properties.OnChange = cxgActionsViewEnabledPropertiesChange
+          HeaderAlignmentHorz = taCenter
+          Options.Filtering = False
+          Options.AutoWidthSizable = False
+          Options.Moving = False
+          Options.Sorting = False
+          Width = 50
+        end
+      end
+      object cxgActionsLevel: TcxGridLevel
+        GridView = cxgActionsView
+      end
+    end
+    object memScript: TfsSyntaxMemo
+      AlignWithMargins = True
+      Left = 5
+      Top = 280
+      Width = 625
+      Height = 228
+      Cursor = crIBeam
+      Align = alBottom
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clBlack
+      Font.Height = -13
+      Font.Name = 'Courier New'
+      Font.Pitch = fpVariable
+      Font.Style = []
+      ParentColor = False
+      ParentFont = False
+      TabOrder = 2
+      TabStop = True
+      BlockColor = clHighlight
+      BlockFontColor = clHighlightText
+      CommentAttr.Charset = DEFAULT_CHARSET
+      CommentAttr.Color = clNavy
+      CommentAttr.Height = -13
+      CommentAttr.Name = 'Courier New'
+      CommentAttr.Style = [fsItalic]
+      KeywordAttr.Charset = DEFAULT_CHARSET
+      KeywordAttr.Color = clWindowText
+      KeywordAttr.Height = -13
+      KeywordAttr.Name = 'Courier New'
+      KeywordAttr.Style = [fsBold]
+      StringAttr.Charset = DEFAULT_CHARSET
+      StringAttr.Color = clNavy
+      StringAttr.Height = -13
+      StringAttr.Name = 'Courier New'
+      StringAttr.Style = []
+      TextAttr.Charset = DEFAULT_CHARSET
+      TextAttr.Color = clWindowText
+      TextAttr.Height = -13
+      TextAttr.Name = 'Courier New'
+      TextAttr.Style = []
+      Lines.Strings = (
+        'begin'
+        ''
+        'end.')
+      ReadOnly = True
+      SyntaxType = stPascal
+      ShowFooter = True
+      ShowGutter = True
+      ExplicitLeft = 2
+      ExplicitTop = 283
+      ExplicitWidth = 638
+    end
+  end
+  object pgcEntryPoints: TPageControl [5]
+    Left = 0
+    Top = 36
+    Width = 353
+    Height = 519
+    ActivePage = tbsEntrySelected
+    Align = alLeft
+    TabOrder = 5
+    object tbsEntrySelected: TTabSheet
+      Caption = 'Pontos de Entrada Utilizados'
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
+      object Panel2: TPanel
+        AlignWithMargins = True
+        Left = 3
+        Top = 3
+        Width = 340
+        Height = 484
+        Align = alLeft
+        BevelInner = bvLowered
+        Color = clWhite
+        ParentBackground = False
+        TabOrder = 0
+        object CodeTB: TToolBar
+          AlignWithMargins = True
+          Left = 5
+          Top = 454
+          Width = 330
+          Height = 25
+          Align = alBottom
+          ButtonHeight = 23
+          ButtonWidth = 25
+          Color = clWhite
+          GradientEndColor = 16770261
+          GradientStartColor = 16770261
+          Images = imgToolBar
+          GradientDirection = gdHorizontal
+          ParentColor = False
+          TabOrder = 0
+          Transparent = True
+          object btnDelEntry: TToolButton
+            Left = 0
+            Top = 0
+            Hint = 'Excluir'
+            ImageIndex = 1
+            ParentShowHint = False
+            ShowHint = True
+            OnClick = btnDelEntryClick
+          end
+        end
+        object trvEntrySelected: TTreeView
+          AlignWithMargins = True
+          Left = 5
+          Top = 33
+          Width = 330
+          Height = 415
+          Align = alClient
+          BorderStyle = bsNone
+          Images = imgTreeIcons
+          Indent = 19
+          ReadOnly = True
+          TabOrder = 1
+          OnClick = trvEntrySelectedClick
+        end
+        object Panel3: TPanel
+          AlignWithMargins = True
+          Left = 5
+          Top = 5
+          Width = 330
+          Height = 25
+          Margins.Bottom = 0
+          Align = alTop
+          BevelOuter = bvNone
+          ParentColor = True
+          TabOrder = 2
+          StyleElements = []
+          object pnlPesquisar: TPanel
+            AlignWithMargins = True
+            Left = 3
+            Top = 5
+            Width = 246
+            Height = 20
+            Margins.Top = 5
+            Margins.Right = 0
+            Margins.Bottom = 0
+            Align = alLeft
+            BevelOuter = bvNone
+            Ctl3D = True
+            ParentBackground = False
+            ParentCtl3D = False
+            TabOrder = 0
+            StyleElements = [seFont, seBorder]
+            object Shape1: TShape
+              Left = 0
+              Top = 0
+              Width = 246
+              Height = 20
+              Align = alClient
+              ExplicitLeft = 32
+              ExplicitTop = 8
+              ExplicitWidth = 65
+              ExplicitHeight = 65
+            end
+            object Image1: TImage
+              AlignWithMargins = True
+              Left = 2
+              Top = 3
+              Width = 19
+              Height = 15
+              Margins.Left = 2
+              Margins.Top = 2
+              Margins.Right = 2
+              Margins.Bottom = 2
+              Picture.Data = {
+                0B546478504E47496D61676589504E470D0A1A0A0000000D4948445200000010
+                0000001008060000001FF3FF61000000097048597300000EC200000EC2011528
+                4A8000000012744558745469746C650046696E643B5365617263683BAD078F62
+                0000016A49444154785EA591CD4A02611486BD8A46A789F1278568DFD65DB408
+                341A1DB5C69F748CB983C84D942EEC565A0981E6FC383FB60964EA0A0A6951B6
+                19086C33703A332048F6CDC617DE8FB3799F73CE774200B096FD67A16DD14CC7
+                1B660FFD1EAB1B9E7BD19A990EAD6A159014CD56B26941EA7C0C471D1BB23736
+                24C43144AB06B015BD1504F03B27450B326D1BA65F3FB090571F5E4D802D8F80
+                A98C0E8800EC64ED4A8F7EE0AF5E3FE6906A18C008EA3D11106F584EF1F60548
+                CA759E8139D1666440DD740A5D32806BDB0850C880E89961ED4816BC7DCEFF5D
+                2151D7812E05ACE09D8AAD99AEF761D3D9D22762BD7FF9049B25052225B51D78
+                46B632BAC07341ACAA43F67A0219342B6818D6BC30448AAA4BF3324F02F862CA
+                CADE96A0F79953CDA105348E4D17D52E861180531414974208014056981F4A18
+                86302F4398935D8A937912800CE18612951F009597813AEE7F1300C1DAC83D34
+                A97CDFD9E00677CB8075BC3EE0171A811CE8F7E0E9CD0000000049454E44AE42
+                6082}
+            end
+            object edtFilterEntrySelected: TEdit
+              AlignWithMargins = True
+              Left = 23
+              Top = 3
+              Width = 218
+              Height = 15
+              Margins.Bottom = 0
+              BevelInner = bvNone
+              BevelOuter = bvNone
+              BorderStyle = bsNone
+              Color = clWhite
+              Ctl3D = False
+              Font.Charset = ANSI_CHARSET
+              Font.Color = clBlack
+              Font.Height = 14
+              Font.Name = 'Arial'
+              Font.Pitch = fpVariable
+              Font.Style = []
+              ParentCtl3D = False
+              ParentFont = False
+              TabOrder = 0
+              StyleElements = []
+              OnChange = edtFilterEntrySelectedChange
+            end
+          end
+        end
+      end
+    end
+    object tbsEntryAvailable: TTabSheet
+      Caption = 'Pontos de Entrada Dispon'#237'veis'
+      ImageIndex = 1
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitWidth = 0
+      ExplicitHeight = 0
+      object Panel4: TPanel
+        AlignWithMargins = True
+        Left = 3
+        Top = 3
+        Width = 340
+        Height = 484
+        Align = alLeft
+        BevelInner = bvLowered
+        Color = clWhite
+        ParentBackground = False
+        TabOrder = 0
+        object Label2: TLabel
+          Left = 2
+          Top = 468
+          Width = 336
+          Height = 14
+          Align = alBottom
+          Alignment = taCenter
+          Caption = 'Duplo clique para utilizar o ponto de entrada selecionado'
+          ExplicitWidth = 272
+        end
+        object trvEntryAvailable: TTreeView
+          AlignWithMargins = True
+          Left = 5
+          Top = 33
+          Width = 330
+          Height = 432
+          Align = alClient
+          BorderStyle = bsNone
+          Images = imgTreeIcons
+          Indent = 19
+          ReadOnly = True
+          TabOrder = 0
+          OnDblClick = trvEntryAvailableDblClick
+        end
+        object Panel5: TPanel
+          AlignWithMargins = True
+          Left = 5
+          Top = 5
+          Width = 330
+          Height = 25
+          Margins.Bottom = 0
+          Align = alTop
+          BevelOuter = bvNone
+          ParentColor = True
+          TabOrder = 1
+          StyleElements = []
+          object Panel6: TPanel
+            AlignWithMargins = True
+            Left = 3
+            Top = 5
+            Width = 246
+            Height = 20
+            Margins.Top = 5
+            Margins.Right = 0
+            Margins.Bottom = 0
+            Align = alLeft
+            BevelOuter = bvNone
+            Ctl3D = True
+            ParentBackground = False
+            ParentCtl3D = False
+            TabOrder = 0
+            StyleElements = [seFont, seBorder]
+            object Shape2: TShape
+              Left = 0
+              Top = 0
+              Width = 246
+              Height = 20
+              Align = alClient
+              ExplicitLeft = 32
+              ExplicitTop = 8
+              ExplicitWidth = 65
+              ExplicitHeight = 65
+            end
+            object Image2: TImage
+              AlignWithMargins = True
+              Left = 2
+              Top = 3
+              Width = 19
+              Height = 15
+              Margins.Left = 2
+              Margins.Top = 2
+              Margins.Right = 2
+              Margins.Bottom = 2
+              Picture.Data = {
+                0B546478504E47496D61676589504E470D0A1A0A0000000D4948445200000010
+                0000001008060000001FF3FF61000000097048597300000EC200000EC2011528
+                4A8000000012744558745469746C650046696E643B5365617263683BAD078F62
+                0000016A49444154785EA591CD4A02611486BD8A46A789F1278568DFD65DB408
+                341A1DB5C69F748CB983C84D942EEC565A0981E6FC383FB60964EA0A0A6951B6
+                19086C33703A332048F6CDC617DE8FB3799F73CE774200B096FD67A16DD14CC7
+                1B660FFD1EAB1B9E7BD19A990EAD6A159014CD56B26941EA7C0C471D1BB23736
+                24C43144AB06B015BD1504F03B27450B326D1BA65F3FB090571F5E4D802D8F80
+                A98C0E8800EC64ED4A8F7EE0AF5E3FE6906A18C008EA3D11106F584EF1F60548
+                CA759E8139D1666440DD740A5D32806BDB0850C880E89961ED4816BC7DCEFF5D
+                2151D7812E05ACE09D8AAD99AEF761D3D9D22762BD7FF9049B25052225B51D78
+                46B632BAC07341ACAA43F67A0219342B6818D6BC30448AAA4BF3324F02F862CA
+                CADE96A0F79953CDA105348E4D17D52E861180531414974208014056981F4A18
+                86302F4398935D8A937912800CE18612951F009597813AEE7F1300C1DAC83D34
+                A97CDFD9E00677CB8075BC3EE0171A811CE8F7E0E9CD0000000049454E44AE42
+                6082}
+            end
+            object edtFilterEntryAvailable: TEdit
+              AlignWithMargins = True
+              Left = 23
+              Top = 3
+              Width = 218
+              Height = 15
+              Margins.Bottom = 0
+              BevelInner = bvNone
+              BevelOuter = bvNone
+              BorderStyle = bsNone
+              Color = clWhite
+              Ctl3D = False
+              Font.Charset = ANSI_CHARSET
+              Font.Color = clBlack
+              Font.Height = 14
+              Font.Name = 'Arial'
+              Font.Pitch = fpVariable
+              Font.Style = []
+              ParentCtl3D = False
+              ParentFont = False
+              TabOrder = 0
+              StyleElements = []
+              OnChange = edtFilterEntrySelectedChange
+            end
+          end
+        end
+      end
+    end
+  end
+  object imgTreeIcons: TcxImageList
+    SourceDPI = 96
+    FormatVersion = 1
+    DesignInfo = 10485944
+    ImageInfo = <
+      item
+        Image.Data = {
+          36040000424D3604000000000000360000002800000010000000100000000100
+          2000000000000004000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000090000
+          000E000000100000001000000010000000100000001000000011000000110000
+          001100000011000000100000000B00000003000000000000000019427ACA245A
+          A5FF255CA7FF255BA7FF245AA6FF2459A6FF2358A5FF2358A4FF2356A4FF2256
+          A4FF2255A3FF2154A3FF2153A1FF1C468AE303080F2900000002255DA5FF316B
+          AEFF6DA6D5FF86CAF0FF46A6E4FF44A3E4FF41A1E3FF3FA0E2FF3C9EE2FF3B9C
+          E1FF389BE0FF369AE0FF3498DFFF2C77C1FF10284D8B000000082B68AEFF4984
+          BEFF4B8BC5FFB2E3F8FF68BBECFF55B0E8FF52AEE8FF4EACE7FF4CA9E6FF49A8
+          E5FF47A6E4FF44A4E4FF41A2E3FF3A92D6FF1C4885D50000000D2F6FB4FF6CA7
+          D2FF3F87C4FFAED9F0FF9AD8F5FF66BDEEFF63BBEDFF60B9EBFF5DB6EBFF5BB5
+          EAFF57B2EAFF55B0E9FF51AEE7FF4FABE7FF2D69B1FF040B142F3276B9FF8FC7
+          E6FF509FD4FF86BCE0FFC5EFFCFF78CAF2FF74C8F1FF72C5F0FF6FC4F0FF6DC2
+          EFFF69C0EEFF66BDEEFF63BBEDFF60B9EBFF448BC9FF122D4D81357CBCFFAFE3
+          F5FF75C8EDFF59A2D4FFDDF7FDFFDFF8FEFFDDF7FEFFDBF7FEFFD8F5FEFFD4F4
+          FDFFD0F2FDFFCCEFFCFFC7EDFBFFC1EBFBFF9ACBE9FF215187CB3882C1FFC7F5
+          FEFF97E5FCFF64BAE5FF4D9FD3FF4D9DD2FF4B9BD1FF4A99CFFF4998CFFF4896
+          CEFF4694CCFF4592CBFF3073B7FF3072B6FF2F71B5FF2A65A4EA3A88C5FFCDF7
+          FEFFA6ECFEFF9CE8FDFF93E4FBFF8EE1FBFF89DFFBFF86DEFAFF81DAFAFF7ED8
+          F9FF7BD7F9FF79D6F9FF2A6BB0FF000000140000000A000000073D8EC8FFD0F8
+          FEFFAEF0FEFFAAEEFEFFA6EDFEFFA5EBFDFFBBF2FDFFD4F9FEFFD5F9FEFFD3F8
+          FEFFD1F8FEFFCEF7FDFF3680BFFF0000000800000000000000003F92CBFFD3F9
+          FEFFB6F3FEFFB3F1FDFFB0F1FEFFB8EDFAFF4895CBFF3B8CC6FF3B8AC6FF3A89
+          C5FF3A88C5FF3A87C3FF2A6391C20000000500000000000000004197CEFFE2FC
+          FEFFE2FCFEFFE1FCFEFFD4F3FAFF458FBFEC040A0E1B00000006000000060000
+          000600000006000000060000000400000001000000000000000031739ABF429A
+          D0FF4299D0FF4299D0FF4297CFFF153244590000000200000000000000000000
+          0000000000000000000000000000000000000000000000000000000000020000
+          0003000000030000000400000003000000020000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000}
+      end
+      item
+        Image.Data = {
+          36040000424D3604000000000000360000002800000010000000100000000100
+          2000000000000004000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000008D69
+          5DC3B78576FFB48173FFB27E6EFFAF7A6AFFAE7868FFAE7766FFAD7463FFAC72
+          60FFAB705EFFAA6E5CFFAA6E5CFFAA6E5CFF835547C40000000000000000BB8D
+          7FFFFBF4F1FFF7F0EDFFEFE8E6FFEAE3E0FFEFE8E4FFF4ECE9FFF4ECE8FFF2E9
+          E6FFF2E9E6FFF4EBE7FFF7EEEAFFF9F0ECFFAA6E5CFF0000000000000000BE91
+          84FFFBF4F2FFF6EFECFFA7938CFF6F4F45FFA7938CFFF2EAE6FFF0E8E5FFECE5
+          E1FFECE4E1FFEFE7E3FFF6EDE9FFF9F0ECFFAA6E5CFF0000000000000000C096
+          89FFFBF5F3FFF8F1EFFF735347FFF8F1EFFF76564BFFF5EDEAFF755447FF7554
+          47FF755447FF755447FFF7EEEAFFF9F0ECFFAB705EFF0000000000000000C39A
+          8DFFFBF5F4FFF9F3F1FFB29E96FF7B5B4FFFB29D95FFF8F1EEFFFAF2EFFFFAF2
+          EFFFFAF1EEFFF9F1EDFFF9F1EDFFF9F0ECFFAC7261FF0000000000000000C59E
+          92FFFCF6F5FFF8F3F1FFF0EAE9FFEBE6E4FFF0E9E8FFF6EFECFFF5EEEBFFF3EC
+          E9FFF3EBE8FFF5EDE9FFF7EFECFFF9F1EDFFAE7564FF0000000000000000C7A2
+          97FFFCF6F5FFF7F1F0FFA8958EFF6F5045FFA8948DFFF3ECEAFFF1EAE8FFEDE7
+          E5FFEDE7E4FFF0E9E6FFF7EFEBFFFAF1EEFFB07867FF0000000000000000CAA6
+          9BFFFCF7F6FFF9F4F2FF735347FF704F43FF76564BFFF6F0EEFF755447FF7554
+          47FF755447FF755447FFF8F0EDFFFAF2EFFFB27C6BFF0000000000000000CCAA
+          9FFFFCF7F6FFFBF6F5FFB4A199FF7B5B4FFFB4A099FFFAF5F3FFFBF5F3FFFBF5
+          F3FFFBF4F2FFFBF4F1FFFAF3F0FFFAF2F0FFB47F70FF0000000000000000CDAD
+          A3FFFCF7F6FFFCF7F6FFFCF7F6FFFCF7F6FFFCF6F5FFFCF6F5FFFBF6F4FFFBF5
+          F3FFFBF5F3FFFBF4F2FFFBF4F1FFFAF3F0FFB68374FF0000000000000000C990
+          5BFFC9905BFFC9905BFFC9905BFFC9905BFFC9905BFFC9905BFFC9905BFFC990
+          5BFFC9905BFFC9905BFFC9905BFFC9905BFFC9905BFF0000000000000000C990
+          5BFFE4BA83FFE4BA83FFE4BA83FFE4BA83FFE4BA83FFE4BA83FFE4BA83FFE4BA
+          83FFE4BA83FFE4BA83FFE4BA83FFE4BA83FFC9905BFF0000000000000000C990
+          5BFFE5BD87FFE5BD87FFE5BD87FFE5BD87FFE5BD87FFE5BD87FFE5BD87FFE5BD
+          87FFE5BD87FFE5BD87FFE5BD87FFE5BD87FFC9905BFF0000000000000000C08F
+          65F1C9905BFFC9905BFFC9905BFFC9905BFFC9905BFFC9905BFFC9905BFFC990
+          5BFFC9905BFFC9905BFFC9905BFFC9905BFFBC895FF100000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000}
+      end
+      item
+        Image.Data = {
+          36040000424D3604000000000000360000002800000010000000100000000100
+          2000000000000004000000000000000000000000000000000000FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF009999
+          9900999999009999990099999900999999009999990099999900999999009999
+          99009999990099999900999999009999990099999900FFFFFF00FFFFFF009999
+          9900666666006666660066666600666666006666660066666600666666006666
+          66006666660066666600666666006666660099999900FFFFFF00FFFFFF006666
+          6600E8DFDF00E8DFDF00E8DFDF00E8DFDF00E8DFDF00E8DFDF00E8DFDF00E8DF
+          DF00E8DFDF00E8DFDF00E8DFDF00E8DFDF0066666600FFFFFF00FFFFFF006666
+          6600E8DFDF00FFFFFF00FFFFFF00FFFFFF00FAFBFB00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00E8DFDF0066666600FFFFFF00FFFFFF006666
+          6600E8DFDF00FFFFFF006666660066666600FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00E8DFDF0066666600FFFFFF00FFFFFF006666
+          6600E8DFDF00FFFFFF0066666600FFFFFF00FFFFFF00818181002D2D2D002D2D
+          2D00FFFFFF00FFFFFF00FFFFFF00E8DFDF0066666600FFFFFF00FFFFFF006666
+          6600E8DFDF00FFFFFF0066666600FFFFFF00FFFFFF002D2D2D0033CCFF000066
+          99002D2D2D00FFFFFF00FFFFFF00E8DFDF0066666600FFFFFF00FFFFFF006666
+          6600E8DFDF00FFFFFF0066666600FFFFFF00FFFFFF002D2D2D0000F2FF0033CC
+          FF00006699002D2D2D00FFFFFF00E8DFDF0066666600FFFFFF00FFFFFF006666
+          6600E8DFDF00FFFFFF0066666600FFFFFF00FFFFFF00FFFFFF002D2D2D0000F2
+          FF0033CCFF00006699002D2D2D00E8DFDF0066666600FFFFFF00FFFFFF006666
+          6600E8DFDF00FFFFFF006666660066666600FFFFFF00FFFFFF00FFFFFF002D2D
+          2D0000F2FF0033CCFF0000240900FFFFFF0066666600FFFFFF00FFFFFF006666
+          6600E8DFDF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF002D2D2D0000F2FF00004499002D2D2D0099999900FFFFFF00FFFFFF006666
+          6600E8DFDF00E8DFDF00E8DFDF00E8DFDF00E8DFDF00E8DFDF00E8DFDF00E8DF
+          DF00FFFFFF002D2D2D0000C0FF002D2D2D0000007A00FFFFFF00FFFFFF009999
+          9900666666006666660066666600666666006666660066666600666666006666
+          660066666600999999002D2D2D001E1EE20000007A00FFFFFF00FFFFFF009999
+          9900999999009999990099999900999999009999990099999900999999009999
+          990099999900999999000000180000007A0099999900FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00}
+        MaskColor = clWhite
+      end
+      item
+        Image.Data = {
+          36040000424D3604000000000000360000002800000010000000100000000100
+          2000000000000004000000000000000000000000000000000000FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00C0C0C0006666
+          6600666666006666660066666600666666006666660066666600666666006666
+          66006666660066666600666666006666660080808000FFFFFF0080808000FFFF
+          FF00808080008080800080808000808080008080800080808000808080008080
+          80008080800080808000808080008080800066666600FFFFFF0080808000FFFF
+          FF00C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0
+          C000C0C0C000C0C0C000C0C0C0008080800066666600FFFFFF0080808000FFFF
+          FF00C0C0C000C0C0C0006666660066666600C0C0C000C0C0C00066666600C0C0
+          C00066666600C0C0C000C0C0C0008080800066666600FFFFFF0080808000FFFF
+          FF00C0C0C00066666600C0C0C000C0C0C00066666600C0C0C00066666600C0C0
+          C00066666600C0C0C000C0C0C0008080800066666600FFFFFF0080808000FFFF
+          FF00C0C0C00066666600C0C0C000C0C0C00066666600C0C0C000666666006666
+          6600C0C0C000C0C0C000C0C0C0008080800066666600FFFFFF0080808000FFFF
+          FF00C0C0C00066666600C0C0C000C0C0C00066666600C0C0C00066666600C0C0
+          C00066666600C0C0C000C0C0C0008080800066666600FFFFFF0080808000FFFF
+          FF00C0C0C000C0C0C0006666660066666600C0C0C000C0C0C00066666600C0C0
+          C00066666600C0C0C000C0C0C0008080800066666600FFFFFF0080808000FFFF
+          FF00C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0C000C0C0
+          C000C0C0C000C0C0C000C0C0C0008080800066666600FFFFFF0080808000FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF008080800066666600FFFFFF00C0C0C0008080
+          8000808080008080800080808000808080008080800080808000808080008080
+          800080808000808080008080800080808000C0C0C000FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00}
+        MaskColor = clWhite
+      end
+      item
+        Image.Data = {
+          36040000424D3604000000000000360000002800000010000000100000000100
+          2000000000000004000000000000000000000000000000000000FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00D8C9B60099330000BEA5
+          9700FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00DBCAB600D79A5A00993300009933
+          0000BDA99C00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00D79A5A00D89B5B00993300009933
+          000099330000BAA69A00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00D89B5B00D89B5B00D89B5B00993300009933
+          00009933000099330000B8AA9F00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00D89B5B00D89B5B00E9B47C00FCD6AF00B563
+          3500993300009933000099330000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00D89B5B00EAB78200FBD8B200FED1A300FBD8
+          B200AF5728009933000099330000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00E7B37C00F1C39100FECF9D00FFCD9900FED0
+          9F00FBD8B200A94E1E0099330000FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00EADBCA00E5B27B00F4C08B00FFCD9900FFCD
+          9900FED0A100F2C99D00B05A2900FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00EADBC900E4B07900F6C49000FFCD
+          9900F3C28E00E3B07900D9CEBC00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00E7D5C100E3AF7800EEBD
+          8A00E3B07900D5D1C400FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00E0D3C200E5B2
+          7D00D4D4CC00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+          FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00}
+        MaskColor = clWhite
+      end>
+  end
+  object cdsActions: TUniClientDataSet
+    Aggregates = <>
+    Params = <>
+    BeforePost = cdsActionsBeforePost
+    AfterScroll = cdsActionsAfterScroll
+    Left = 546
+    Top = 231
+    object cdsActionsId: TStringField
+      FieldName = 'Id'
+    end
+    object cdsActionsExecuteIndex: TIntegerField
+      Alignment = taCenter
+      DisplayLabel = 'Seq.'
+      FieldName = 'ExecuteIndex'
+    end
+    object cdsActionsDescription: TStringField
+      DisplayLabel = 'Descri'#231#227'o'
+      FieldName = 'Description'
+      Size = 255
+    end
+    object cdsActionsEdit: TStringField
+      DisplayLabel = 'Editar'
+      FieldName = 'Edit'
+      Size = 1
+    end
+    object cdsActionsEnabled: TBooleanField
+      DisplayLabel = 'Ativo'
+      FieldName = 'Enabled'
+    end
+  end
+  object dtsActions: TDataSource
+    DataSet = cdsActions
+    Left = 546
+    Top = 279
+  end
+  object imgToolBar: TcxImageList
+    SourceDPI = 96
+    FormatVersion = 1
+    DesignInfo = 28311728
+    ImageInfo = <
+      item
+        Image.Data = {
+          36040000424D3604000000000000360000002800000010000000100000000100
+          2000000000000004000000000000000000000000000000000000000000000000
+          0000000000020000000A170D0738542D1894814626D193502AEA924F2AE87F45
+          25D0522C17931209053000000009000000010000000000000000000000000000
+          00030201011159311B97A96239FAC58957FFD6A36DFFDDAF75FFDDAF74FFD6A4
+          6BFFC58956FFA46137F53C2112730000000F0000000300000000000000020201
+          0110744226B9BC7C4DFFDDAE77FFDEB076FFE2B782FFE3BB87FFE3BC86FFE1B7
+          82FFDEAF74FFDBAB72FFBD7E4EFF6F3E24B50000001000000002000000085C36
+          2095BE8053FFE0B37CFFDFB076FFDEB177FFB78254FFAA7144FFAB7245FFBC88
+          59FFDFB279FFDFB277FFDEB077FFC08253FF55321D920000000A190F0932B070
+          47FADFB27DFFDFB27AFFE0B37BFFE0B57DFFA56B3FFFF5EFEAFFF8F3EEFFAB72
+          45FFE2B67EFFE0B47CFFE0B47BFFDEB079FFB3734AFB130B072F613C2795CD9B
+          6FFFE2B780FFE5BD89FFE7C291FFE8C393FFA56B3FFFF1E6DEFFF9F5F1FFAA71
+          44FFE8C494FFE8C393FFE5BF8CFFE1B77FFFD09C6EFF5434218B935E3DD2DCB3
+          83FFE3B781FFBA8659FFA97043FFAB7245FFAC7346FFF5EDE6FFFAF6F3FFAD75
+          47FFB0784AFFB17A4BFFC29162FFE4B983FFDEB17EFF8E5B3BD0B0744CF2E3BF
+          8FFFE4BB84FFA56B3FFFF3EBE6FFFAF6F3FFF6EFE8FFF7F0EAFFFBF7F5FFFAF7
+          F4FFFAF7F3FFFAF6F2FFAB7245FFE5BD87FFE5BE8BFFAB714CEEAE764FECE9C9
+          A0FFE5BE89FFA56B3FFFE0D2CAFFE1D3CCFFE3D5CFFFF2EAE4FFF8F3EFFFEADF
+          D9FFE6DAD4FFE9DED9FFAA7144FFE7C08CFFEACA9DFFAE764FEE9A6A49D0E9CD
+          ACFFEAC796FFB78456FFA56B3FFFA56B3FFFA56B3FFFF1EAE5FFFAF6F3FFA56B
+          3FFFA56B3FFFA56B3FFFB78457FFEACA99FFEBD1ADFF996A49D46E4E3697DDBB
+          9DFFEED3A9FFEECFA2FFEED2A5FFF0D6A9FFA56B3FFFF0EAE7FFFDFCFBFFA56B
+          3FFFF1D6AAFFF0D5A8FFEED2A5FFEFD4A7FFE0C2A2FF6246318F1C140E2BC794
+          6CFCF5E8CCFFEFD6ABFFF1D8AEFFF2DAB0FFA56B3FFFDECFC9FFDFD1CBFFA56B
+          3FFFF3DCB2FFF1DBB0FFF1D8ADFFF7EACDFFC69470FA1A120D2E000000036F52
+          3C92D7B08CFFF8EFD3FFF3E0B9FFF3DFB7FFB98A5FFFA56B3FFFA56B3FFFBA8A
+          5FFFF4E1B9FFF4E2BDFFFAF1D5FFD9B390FF664B368C00000006000000010202
+          0107906C4EB8D9B38FFFF7EDD3FFF8EED0FFF7EBC9FFF6E8C4FFF6E8C5FFF7EC
+          CAFFF8EED0FFF4E8CDFFD7AF8BFF88664AB30202010B00000001000000000000
+          00010202010770543F8FCFA078FCE2C4A2FFEBD7B8FFF4E9CDFFF4EACEFFECD8
+          B9FFE3C5A3FFC59973F24C392A67000000060000000100000000000000000000
+          000000000001000000022019122C6C543E89A47E5FCCC59770F1C19570EEA47E
+          60CD6C543F8B16110D2200000003000000010000000000000000}
+      end
+      item
+        Image.Data = {
+          36040000424D3604000000000000360000002800000010000000100000000100
+          2000000000000004000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000020000000A00000010000000090000000200000000000000000000
+          00020000000A000000120000000C000000030000000000000000000000000000
+          00020000000F0F0742921D0F7EEF0603347A0000000E00000002000000020000
+          000F0804347C1D0F7EF00F084194000000120000000200000000000000000000
+          0008120B47923233AFFF3648CCFF1D1EA5FF0603357A0000000F0000000F0703
+          357C1F20A5FF3747CCFF2D2FAEFF120B46950000000B00000000000000000000
+          000C281C8DF1596CD8FF3B51D3FF3A4FD2FF1E22A6FF0602347D0502357E2022
+          A6FF3A50D3FF3A50D3FF4C5FD4FF291D8CF10000001000000000000000000000
+          0006130F3C734D4FBAFF667EE0FF415AD6FF415AD7FF1F24A7FF2529A8FF415A
+          D7FF415AD7FF5B72DEFF484AB8FF130F3C790000000900000000000000000000
+          00010000000A16123F73585CC1FF758DE6FF4A64DBFF4A65DBFF4A65DBFF4A64
+          DBFF6983E3FF5356C0FF16123F780000000C0000000200000000000000000000
+          0000000000010000000A191643755D63C7FF6783E5FF5774E2FF5774E2FF5774
+          E2FF565CC6FF1916437A0000000D000000020000000000000000000000000000
+          00000000000100000009100E3D734A50BEFF7492EBFF6383E7FF6483E7FF6383
+          E7FF3840B6FF0B0839780000000C000000020000000000000000000000000000
+          0001000000071413416E555CC5FF85A1EFFF7897EDFF9CB6F4FF9DB7F5FF7997
+          EEFF7796EDFF414ABCFF0E0C3C730000000A0000000100000000000000000000
+          00041818456B636CCFFF93AFF3FF83A1F1FFA6BFF7FF676DCAFF7E87DDFFAFC7
+          F8FF83A3F2FF83A1F1FF5058C4FF121040710000000600000000000000000000
+          00065759C3EFAFC6F6FF8EADF4FFABC4F8FF6F76D0FF1817456F24244F70868E
+          E1FFB5CCF9FF8DACF4FFA1B8F4FF5758C3EF0000000900000000000000000000
+          000331326B8695A0EAFFC0D3F9FF7880D7FF1C1C496B00000006000000072527
+          526C8B93E6FFC1D3F9FF949EE9FF303168870000000500000000000000000000
+          00010000000431336B825E62CBEC1F204D680000000500000001000000010000
+          00052728536B5E62CBEC31326883000000070000000100000000000000000000
+          0000000000000000000200000004000000020000000100000000000000000000
+          0001000000030000000500000004000000010000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000000}
+      end
+      item
+        Image.Data = {
+          36040000424D3604000000000000360000002800000010000000100000000100
+          2000000000000004000000000000000000000000000000000000000000000000
+          00000000000000000000000000000000001F421C11FF30140DEC190A06B30304
+          075F0000001B0000000500000000000000000000000000000000000000000000
+          00000000000000000000000000000000001E663C2BE7B9C7D2FF7889A2FF2441
+          82FF051033AF0000002100000005000000000000000000000000000000000000
+          0002000000090000000E0000000F0000002041261BAE879AB2FFC8E3F5FF1F66
+          B6FF2B6BA8FF051236AD0000001F000000040000000000000000000000000000
+          00088C6657C0C38C7AFFC38C79FFCBA395FFA89894FF488BC3FFDEFEFDFF51B4
+          E3FF1F68B7FF3173AEFF061538AA0000001C0000000400000000000000000000
+          000CC5917EFFFDFBFAFFFCF8F6FFFAF7F5FFECEAE9FF7CA3BFFF479FD2FFDEFE
+          FDFF59BFE9FF216BB9FF367BB3FF07173AA70000001A00000004000000000000
+          000CC79481FFFEFBFAFFF9F0EAFFF8F0EAFFF7F0EBFFE8E4E1FF7EA4BFFF4BA5
+          D5FFDEFEFDFF61CAEFFF246FBCFF3B83B9FF081A3DA300000018000000000000
+          000BC99786FFFEFCFBFFF9F2EDFFF9F2EDFFF9F0EBFFF8F2EDFFEBE7E5FF82A7
+          C2FF4EAAD7FFDEFEFDFF68D4F4FF2875BEFF3F8BBEFF091B3F9E000000000000
+          000ACB9C8BFFFEFDFCFFFAF3EFFFFAF4EEFFFAF3EEFFFAF1ECFFF8F2EEFFEDE9
+          E7FF85ABC7FF51AEDAFFDEFEFDFF6EDDF8FF2C7BC2FF18448BFF000000000000
+          0009CFA08DFFFEFEFDFFFBF5F1FFFBF5F0FFFBF4F0FFFAF3EFFFFAF3EFFFF8F4
+          EFFFEFECE9FF89AECAFF54B1DCFFDEFEFDFF4FA6D4FF102C4E93000000000000
+          0009D0A393FFFEFEFDFFFAF5F3FFFBF6F2FFFBF5F1FFFBF5F0FFFBF5F0FFFAF4
+          EFFFFAF6F1FFF3EFEDFF83A0B8FF357FBCFF173A598F0000000C000000000000
+          0008D3A897FFFEFEFEFFFBF6F4FFFBF6F4FFFCF6F3FFFCF6F3FFFCF4F2FFFBF5
+          F1FFFBF5F0FFFAF6F3FFE2CCC4FF000000160000000600000001000000000000
+          0007D3AB9AFFFFFEFEFFFCF8F6FFFCF7F5FFFCF7F5FFFBF6F4FFFBF6F4FFFCF6
+          F3FFFCF6F2FFFBF6F1FFD1A494FF0000000C0000000000000000000000000000
+          0006D8AE9DFFFFFFFEFFFDF9F7FFFDF9F7FFFCF8F7FFFCF8F6FFFCF7F5FFFBF7
+          F5FFFBF7F4FFFCF7F3FFD3A897FF0000000B0000000000000000000000000000
+          0006D8B0A0FFFFFFFFFFFDFAF9FFFDFAF8FFFDFAF8FFFDF9F7FFFCF8F7FFFBF8
+          F6FFFBF7F6FFFCF7F5FFD4AC9BFF0000000A0000000000000000000000000000
+          0005D9B3A3FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFFFFFEFEFFFEFEFEFFFFFE
+          FEFFFEFEFEFFFEFEFEFFD7AE9EFF000000090000000000000000000000000000
+          0003A3867AC0DBB5A5FFDAB5A4FFDAB5A4FFDAB4A4FFD9B3A3FFD9B3A3FFD9B3
+          A2FFD9B2A2FFD8B2A2FFA08377C2000000060000000000000000}
+      end
+      item
+        Image.Data = {
+          36040000424D3604000000000000360000002800000010000000100000000100
+          2000000000000004000000000000000000000000000000000000000000000000
+          00000000000000000000000000020000000A0000000F00000010000000100000
+          000F0000000A0000000200000000000000000000000000000000000000000000
+          00000000000000000000000000097E5237C1A8663FFFA7633DFFA6623BFFA560
+          3AFF754429C10000000900000000000000000000000000000000000000000000
+          000000000000000000000000000CB57852FFE6C69AFFE2BE8EFFE2BE8EFFE2BE
+          8DFFA6613CFF0000000D00000000000000000000000000000000000000000000
+          000000000000000000000000000CB67B55FFE6C79DFFDAAD73FFD9AD73FFE3C0
+          8FFFA8653EFF0000000D00000000000000000000000000000000000000000000
+          0002000000080000000B00000013B87F59FFE7C79DFFDBAF77FFDBAE77FFE4C1
+          91FFA96842FF000000150000000C0000000A0000000300000000000000000000
+          0007B77D56FFB67B54FFB47953FFB37751FFE5C495FFDCB279FFDCB17AFFE4C2
+          95FFAB6B46FFAA6A44FFAA6842FFA86640FF0000000800000000000000000000
+          00057E573DB5E7D3C4FFEACEA8FFE6C69AFFE5C598FFDDB37DFFDDB37DFFE5C4
+          97FFE5C597FFE7C79CFFDDC5B7FF673923B60000000600000000000000000000
+          0002140E0A24B78869F2F2E5D2FFE6C799FFE7C997FFEACF9FFFEACF9EFFE7C9
+          97FFE3C18FFFEFDFCBFF9D6549F3100906260000000200000000000000000000
+          0000000000034E372871D7B7A0FFF5E9CDFFEEDAABFFEDD7A8FFEDD7A8FFEED7
+          A8FFF4E5C4FFC7A08CFF41261872000000040000000000000000000000000000
+          0000000000010000000590684BC7EEE0D3FFF3E5BFFFF1DFB2FFF1DFB2FFF2E2
+          B7FFE8D8CBFF7B4C30C700000006000000010000000000000000000000000000
+          000000000000000000011D15102DC4997AFAFBF4E4FFF5E8C0FFF4E6BBFFF9F2
+          E0FFB07D5FFA19100A2F00000001000000000000000000000000000000000000
+          00000000000000000000000000025F453383DFC5B1FFFBF2D7FFFAF2D4FFD3B6
+          A2FF533523830000000300000000000000000000000000000000000000000000
+          000000000000000000000000000005030309A37C5CD8F4EBDFFFF1E6DAFF9362
+          45D80403020A0000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000012E231A3FCFAB8EFDC09679FD291C
+          1340000000010000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000174584298674731950000
+          0001000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000000000000000000001000000010000
+          0000000000000000000000000000000000000000000000000000}
+      end
+      item
+        Image.Data = {
+          36040000424D3604000000000000360000002800000010000000100000000100
+          2000000000000004000000000000000000000000000000000000000000000000
+          00000000000000000000000000000000000000000003000000090000000A0000
+          0003000000000000000000000000000000000000000000000000000000000000
+          0000000000000000000000000000000000010000000D552C19A64E2916A40000
+          000D000000010000000000000000000000000000000000000000000000000000
+          00000000000000000000000000000000000623130B54A77053FD9E6443FD2011
+          0A54000000060000000000000000000000000000000000000000000000000000
+          000000000000000000000000000204020117814A2EDEDFBF9BFFD4AC7EFF7942
+          26DF030201180000000200000000000000000000000000000000000000000000
+          00000000000000000001000000094D2D1C90C69D7FFFDFB987FFDFB785FFBA87
+          5FFF472617910000000A00000001000000000000000000000000000000000000
+          00000000000000000004180F0A3AA87252FBE5C89FFFDCB27AFFDCB17BFFE0BC
+          8EFF9C6140FB160C073B00000004000000000000000000000000000000000000
+          0000000000010000000C7E4E32CCDDBFA0FFDFB783FFDDB37DFFDDB37DFFDFB6
+          82FFD2AB80FF714027CD0000000D000000020000000000000000000000000000
+          000000000006452C1E78C69D7FFFE4C394FFDEB680FFDFB680FFDEB67FFFDEB5
+          7FFFE3BF8FFFB8855FFF3E241679000000070000000000000000000000000000
+          0002120C0828AA7758F3E9CEAAFFE4C290FFE5C794FFE8CA98FFE8CA99FFE6C5
+          93FFE3C18DFFE2C193FF996141F31009062A0000000300000000000000000000
+          0006795339B6E0C7ADFFF9F1E0FFFAF2E2FFFAF2E2FFEBD3A3FFECD2A3FFF1DD
+          B7FFF0DDB7FFF9F1E0FFDBBEA6FF6B4028B80000000700000000000000000000
+          0006C1906AFFC18E68FFC08C66FFBE8A64FFFBF5E5FFEFDAACFFEFD9ACFFF3E2
+          BEFFB9805AFFB77E58FFB77C55FFB57A54FF0000000800000000000000000000
+          000200000006000000070000000DC08D68FFFBF7E9FFF2E1B4FFF2E1B4FFF5E9
+          C5FFB27753FF0000001000000009000000070000000200000000000000000000
+          0000000000000000000000000007C3926CFFFCF8EBFFF5E8BCFFF5E7BCFFF8EE
+          CCFFB47C56FF0000000800000000000000000000000000000000000000000000
+          0000000000000000000000000005C59570FFFDFAEDFFFDFAEDFFFDFAEDFFFDFA
+          EDFFB67F5AFF0000000600000000000000000000000000000000000000000000
+          000000000000000000000000000393755CBACDA37EFFCBA17DFFCAA07BFFC99D
+          79FF8C6A50BB0000000400000000000000000000000000000000000000000000
+          0000000000000000000000000001000000020000000400000004000000040000
+          0004000000030000000100000000000000000000000000000000}
+      end>
+  end
+  object tmrFilterTreeView: TTimer
+    Enabled = False
+    Interval = 300
+    OnTimer = tmrFilterTreeViewTimer
+    Left = 59
+    Top = 79
+  end
+end

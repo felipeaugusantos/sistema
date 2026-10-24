@@ -1,0 +1,13 @@
+Para alterar a skin da VCL no novo layout do autcom:
+
+01 - Abra o Bitmap Style Designer (C:\Program Files (x86)\Embarcadero\Studio\17.0\bin\BitmapStyleDesigner.exe)
+02 - Selecione o arquivo 'SapphireKamri.vsf' que fica neste diretório.
+03 - Faça as modificações necessárias e salve o arquivo.
+04 - Abra o XNResourceEditor.exe que fica neste diretório.
+05 - Dentro dele abra o arquivo 'VCLStyles.res' que fica na mesma pasta do autcom.exe.
+06 - Remova o recurso que estiver adicionado nele.
+07 - Vá em 'Resource - Import user resource' e selecione o arquivo 'SapphireKamri.vsf' modificado anteriormente.
+08 - Modifique o nome da pasta 'VSF' para 'VCLSTYLE' (apertando F2).
+09 - Salve o arquivo.
+10 - Procure todos os arquivos 'VCLStyles.res' existentes nas diferentes pastas do projeto do autcom e substitua pelo arquivo modificado.
+11 - Compile novamente o autcom e / ou as libs que tbm utilizam a nova skin (autban, auttin e etc).

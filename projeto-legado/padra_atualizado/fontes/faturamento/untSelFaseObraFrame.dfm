@@ -1,0 +1,72 @@
+object fraSelFaseObraFrame: TfraSelFaseObraFrame
+  Left = 0
+  Top = 0
+  Width = 526
+  Height = 31
+  VertScrollBar.Range = 45
+  VertScrollBar.Visible = False
+  Color = 16770261
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  ParentBackground = False
+  ParentColor = False
+  ParentFont = False
+  TabOrder = 0
+  object pnlFundo: TPanel
+    Left = 0
+    Top = 0
+    Width = 526
+    Height = 45
+    Align = alClient
+    BevelOuter = bvNone
+    Color = 16770261
+    ParentBackground = False
+    TabOrder = 0
+    ExplicitWidth = 509
+    ExplicitHeight = 44
+    object Label1: TLabel
+      Left = 18
+      Top = 10
+      Width = 88
+      Height = 13
+      Caption = 'C'#243'digo Fase obra:'
+    end
+    object edtCodFas: TEditFocus
+      Tag = 99
+      Left = 108
+      Top = 5
+      Width = 67
+      Height = 21
+      Alignment = taLeftJustify
+      TabOrder = 0
+      OnKeyPress = edtCodFasKeyPress
+      NormalColor = clWindow
+      FocusColor = clInfoBk
+      RequeridoColor = clRed
+      Requerido = False
+      CompZeros = True
+      TamCampo = 5
+      TipoTexto = ttNumerico
+    end
+    object edtDescri: TEditFocus
+      Left = 176
+      Top = 5
+      Width = 309
+      Height = 21
+      Alignment = taLeftJustify
+      Color = 16768952
+      Enabled = False
+      TabOrder = 1
+      NormalColor = 16768952
+      FocusColor = clInfoBk
+      RequeridoColor = clRed
+      Requerido = False
+      CompZeros = False
+      TamCampo = 0
+      TipoTexto = ttAlfanumerico
+    end
+  end
+end

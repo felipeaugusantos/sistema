@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TfrxReport Version="4.3.61" DotMatrixReport="True" IniFile="\Software\Fast Reports" PreviewOptions.Buttons="4095" PreviewOptions.Zoom="1" PrintOptions.Printer="Default" PrintOptions.PrintOnSheet="0" ReportOptions.CreateDate="39584,5893026042" ReportOptions.Description.Text="" ReportOptions.LastChange="39587,6204238889" ScriptLanguage="PascalScript" ScriptText.Text="begin&#13;&#10;&#13;&#10;end." PropData="044C65667403F00003546F7002780844617461736574730100095661726961626C65730100055374796C650100">
+  <TfrxDataPage Name="Data" Height="1000" Left="0" Top="0" Width="1000"/>
+  <TfrxDMPPage Name="frxPagina1" PaperWidth="200,659870407167" PaperHeight="296,862308276426" PaperSize="256" LeftMargin="2,54" RightMargin="2,54" TopMargin="4,49791666666667" BottomMargin="4,49791666666667" ColumnWidth="0" ColumnPositions.Text="" HGuides.Text="" VGuides.Text="" FontStyle="0">
+    <TfrxDMPMemoView Name="rllTopo" Left="76,8" Top="255" Width="585,6" Height="17" DisplayFormat.DecimalSeparator="," HAlign="haCenter" Text="TERMO DE ABERTURA DE LIVRO"/>
+    <TfrxDMPMemoView Name="rllTexto1" Left="76,8" Top="340" Width="585,6" Height="170" DisplayFormat.DecimalSeparator="," HAlign="haBlock" Text=""/>
+    <TfrxDMPMemoView Name="rllEmpresa" Left="76,8" Top="595" Width="585,6" Height="17" DisplayFormat.DecimalSeparator="," HAlign="haRight" WordWrap="False" Text=""/>
+    <TfrxDMPCommand Name="DMPCommand1" Left="19,2" Top="17" Width="19,2" Height="17" Command="#27#64#18#27#80#27#871#272"/>
+    <TfrxDMPMemoView Name="rllData1" Left="76,8" Top="527" Width="585,6" Height="17" DisplayFormat.DecimalSeparator="," HAlign="haRight" WordWrap="False" Text=""/>
+    <TfrxDMPCommand Name="DMPCommand6" Left="38,4" Top="1054" Width="19,2" Height="17" Command="#27#64#18"/>
+  </TfrxDMPPage>
+  <TfrxDMPPage Name="frxPagina2" PaperWidth="200,659870407167" PaperHeight="296,862308276426" PaperSize="256" LeftMargin="2,53999835958439" RightMargin="2,53999835958439" TopMargin="4,49791376176403" BottomMargin="4,49791376176403" ColumnWidth="0" ColumnPositions.Text="" HGuides.Text="" VGuides.Text="" FontStyle="0">
+    <TfrxDMPMemoView Name="DMPMemo1" Left="76,8" Top="255" Width="585,6" Height="17" DisplayFormat.DecimalSeparator="," HAlign="haCenter" Text="TERMO DE ENCERRAMENTO DE LIVRO"/>
+    <TfrxDMPMemoView Name="rllTexto2" Left="76,8" Top="340" Width="585,6" Height="170" DisplayFormat.DecimalSeparator="," HAlign="haBlock" Text=""/>
+    <TfrxDMPMemoView Name="rllEmpresa1" Left="76,8" Top="595" Width="585,6" Height="17" DisplayFormat.DecimalSeparator="," HAlign="haRight" Text=""/>
+    <TfrxDMPCommand Name="DMPCommand2" Left="19,2" Top="17" Width="19,2" Height="17" Command="#27#64#18#27#80#272"/>
+    <TfrxDMPMemoView Name="rllData2" Left="76,8" Top="527" Width="585,6" Height="17" DisplayFormat.DecimalSeparator="," HAlign="haRight" Text=""/>
+    <TfrxDMPCommand Name="DMPCommand8" Left="48" Top="1037" Width="19,2" Height="17" Command="#27#64#18"/>
+  </TfrxDMPPage>
+</TfrxReport>

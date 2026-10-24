@@ -1,0 +1,532 @@
+inherited frmCadEucNovasFormulas: TfrmCadEucNovasFormulas
+  Left = 258
+  Top = 415
+  Width = 574
+  Height = 251
+  BorderStyle = bsToolWindow
+  Caption = 'Cadastro de Novas F'#243'rmulas - Eucatex'
+  ExplicitWidth = 574
+  ExplicitHeight = 251
+  PixelsPerInch = 96
+  TextHeight = 14
+  inherited pnlBotoes: TPanel
+    Top = 183
+    Width = 568
+    TabOrder = 1
+    ExplicitTop = 183
+    ExplicitWidth = 568
+    inherited btnSair: TBitBtnLocked
+      Left = 491
+      ExplicitLeft = 491
+    end
+  end
+  inherited pgcDados: TPageControl
+    Width = 568
+    Height = 183
+    ExplicitWidth = 568
+    ExplicitHeight = 183
+    inherited tbsGeral: TTabSheet
+      ExplicitLeft = 4
+      ExplicitTop = 28
+      ExplicitWidth = 560
+      ExplicitHeight = 151
+    end
+  end
+  object pnlCentral: TPanel [3]
+    Left = 0
+    Top = 0
+    Width = 568
+    Height = 183
+    Align = alClient
+    Color = 16770261
+    TabOrder = 0
+    object Label2: TLabel
+      Left = 8
+      Top = 68
+      Width = 52
+      Height = 14
+      Alignment = taRightJustify
+      Caption = 'Descri'#231#227'o:'
+    end
+    object Label1: TLabel
+      Left = 20
+      Top = 92
+      Width = 40
+      Height = 14
+      Alignment = taRightJustify
+      Caption = 'Produto:'
+    end
+    object Label3: TLabel
+      Left = 32
+      Top = 116
+      Width = 28
+      Height = 14
+      Alignment = taRightJustify
+      Caption = 'Base:'
+    end
+    object Label4: TLabel
+      Left = 146
+      Top = 116
+      Width = 42
+      Height = 14
+      Alignment = taRightJustify
+      Caption = 'Unidade:'
+    end
+    object Label5: TLabel
+      Left = 291
+      Top = 36
+      Width = 49
+      Height = 14
+      Alignment = taRightJustify
+      Caption = 'Colorante:'
+    end
+    object Label6: TLabel
+      Left = 426
+      Top = 36
+      Width = 58
+      Height = 14
+      Alignment = taRightJustify
+      Caption = 'Quantidade:'
+    end
+    object Label9: TLabel
+      Left = 291
+      Top = 84
+      Width = 49
+      Height = 14
+      Alignment = taRightJustify
+      Caption = 'Colorante:'
+    end
+    object Label8: TLabel
+      Left = 426
+      Top = 60
+      Width = 58
+      Height = 14
+      Alignment = taRightJustify
+      Caption = 'Quantidade:'
+    end
+    object Label7: TLabel
+      Left = 291
+      Top = 60
+      Width = 49
+      Height = 14
+      Alignment = taRightJustify
+      Caption = 'Colorante:'
+    end
+    object Label16: TLabel
+      Left = 426
+      Top = 156
+      Width = 58
+      Height = 14
+      Alignment = taRightJustify
+      Caption = 'Quantidade:'
+    end
+    object Label15: TLabel
+      Left = 291
+      Top = 156
+      Width = 49
+      Height = 14
+      Alignment = taRightJustify
+      Caption = 'Colorante:'
+    end
+    object Label14: TLabel
+      Left = 426
+      Top = 132
+      Width = 58
+      Height = 14
+      Alignment = taRightJustify
+      Caption = 'Quantidade:'
+    end
+    object Label13: TLabel
+      Left = 291
+      Top = 132
+      Width = 49
+      Height = 14
+      Alignment = taRightJustify
+      Caption = 'Colorante:'
+    end
+    object Label12: TLabel
+      Left = 426
+      Top = 108
+      Width = 58
+      Height = 14
+      Alignment = taRightJustify
+      Caption = 'Quantidade:'
+    end
+    object Label11: TLabel
+      Left = 291
+      Top = 108
+      Width = 49
+      Height = 14
+      Alignment = taRightJustify
+      Caption = 'Colorante:'
+    end
+    object Label10: TLabel
+      Left = 426
+      Top = 84
+      Width = 58
+      Height = 14
+      Alignment = taRightJustify
+      Caption = 'Quantidade:'
+    end
+    object Label17: TLabel
+      Left = 24
+      Top = 44
+      Width = 36
+      Height = 14
+      Alignment = taRightJustify
+      Caption = 'C'#243'digo:'
+    end
+    object Label18: TLabel
+      Left = 8
+      Top = 141
+      Width = 73
+      Height = 14
+      Alignment = taRightJustify
+      AutoSize = False
+      Caption = 'Data Cadastro:'
+    end
+    object dbeDescri: TDBEditFocus
+      Tag = 99
+      Left = 64
+      Top = 64
+      Width = 201
+      Height = 22
+      CharCase = ecUpperCase
+      DataField = 'NFM_DESCOR'
+      TabOrder = 0
+      NormalColor = clWindow
+      FocusColor = clInfoBk
+      RequeridoColor = clRed
+      Requerido = False
+      CompZeros = False
+      TipoTexto = ttAlfanumerico
+    end
+    object pnlCabecalho: TPanel
+      Left = 1
+      Top = 1
+      Width = 566
+      Height = 23
+      Align = alTop
+      BevelOuter = bvNone
+      Caption = 'Cadastro de Novas F'#243'rmulas - Eucatex'
+      Color = clNavy
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWhite
+      Font.Height = 16
+      Font.Name = 'Arial'
+      Font.Pitch = fpVariable
+      Font.Style = [fsBold]
+      ParentBackground = False
+      ParentFont = False
+      TabOrder = 16
+    end
+    object dbeProdut: TDBEditFocus
+      Tag = 99
+      Left = 64
+      Top = 88
+      Width = 201
+      Height = 22
+      CharCase = ecUpperCase
+      DataField = 'NFM_PRODUT'
+      TabOrder = 1
+      OnKeyPress = dbeProdutKeyPress
+      NormalColor = clWindow
+      FocusColor = clInfoBk
+      RequeridoColor = clRed
+      Requerido = False
+      CompZeros = False
+      TipoTexto = ttAlfanumerico
+    end
+    object dbeBase: TDBEditFocus
+      Tag = 99
+      Left = 64
+      Top = 112
+      Width = 76
+      Height = 22
+      CharCase = ecUpperCase
+      DataField = 'NFM_DESBAS'
+      TabOrder = 2
+      OnKeyPress = dbeProdutKeyPress
+      NormalColor = clWindow
+      FocusColor = clInfoBk
+      RequeridoColor = clRed
+      Requerido = False
+      CompZeros = False
+      TipoTexto = ttAlfanumerico
+    end
+    object dbeUnidade: TDBEditFocus
+      Tag = 99
+      Left = 192
+      Top = 112
+      Width = 73
+      Height = 22
+      TabStop = False
+      CharCase = ecUpperCase
+      DataField = 'NFM_UNIDAD'
+      Enabled = False
+      TabOrder = 3
+      NormalColor = clWindow
+      FocusColor = clInfoBk
+      RequeridoColor = clRed
+      Requerido = False
+      CompZeros = False
+      TipoTexto = ttAlfanumerico
+    end
+    object dbeForm01: TDBEditFocus
+      Tag = 99
+      Left = 344
+      Top = 32
+      Width = 73
+      Height = 22
+      CharCase = ecUpperCase
+      DataField = 'NFM_FORM01'
+      TabOrder = 4
+      OnKeyPress = dbeForm01KeyPress
+      NormalColor = clWindow
+      FocusColor = clInfoBk
+      RequeridoColor = clRed
+      Requerido = False
+      CompZeros = False
+      TipoTexto = ttAlfanumerico
+    end
+    object dbeQtd01: TDBEditFocus
+      Tag = 99
+      Left = 488
+      Top = 32
+      Width = 73
+      Height = 22
+      CharCase = ecUpperCase
+      DataField = 'NFM_QTDB01'
+      TabOrder = 5
+      NormalColor = clWindow
+      FocusColor = clInfoBk
+      RequeridoColor = clRed
+      Requerido = False
+      CompZeros = False
+      TipoTexto = ttAlfanumerico
+    end
+    object dbeQtd03: TDBEditFocus
+      Tag = 99
+      Left = 488
+      Top = 80
+      Width = 73
+      Height = 22
+      CharCase = ecUpperCase
+      DataField = 'NFM_QTDB03'
+      TabOrder = 9
+      NormalColor = clWindow
+      FocusColor = clInfoBk
+      RequeridoColor = clRed
+      Requerido = False
+      CompZeros = False
+      TipoTexto = ttAlfanumerico
+    end
+    object dbeForm03: TDBEditFocus
+      Tag = 99
+      Left = 344
+      Top = 80
+      Width = 73
+      Height = 22
+      CharCase = ecUpperCase
+      DataField = 'NFM_FORM03'
+      TabOrder = 8
+      OnKeyPress = dbeForm01KeyPress
+      NormalColor = clWindow
+      FocusColor = clInfoBk
+      RequeridoColor = clRed
+      Requerido = False
+      CompZeros = False
+      TipoTexto = ttAlfanumerico
+    end
+    object dbeQtd02: TDBEditFocus
+      Tag = 99
+      Left = 488
+      Top = 56
+      Width = 73
+      Height = 22
+      CharCase = ecUpperCase
+      DataField = 'NFM_QTDB02'
+      TabOrder = 7
+      NormalColor = clWindow
+      FocusColor = clInfoBk
+      RequeridoColor = clRed
+      Requerido = False
+      CompZeros = False
+      TipoTexto = ttAlfanumerico
+    end
+    object dbeForm02: TDBEditFocus
+      Tag = 99
+      Left = 344
+      Top = 56
+      Width = 73
+      Height = 22
+      CharCase = ecUpperCase
+      DataField = 'NFM_FORM02'
+      TabOrder = 6
+      OnKeyPress = dbeForm01KeyPress
+      NormalColor = clWindow
+      FocusColor = clInfoBk
+      RequeridoColor = clRed
+      Requerido = False
+      CompZeros = False
+      TipoTexto = ttAlfanumerico
+    end
+    object dbeQtd06: TDBEditFocus
+      Tag = 99
+      Left = 488
+      Top = 152
+      Width = 73
+      Height = 22
+      CharCase = ecUpperCase
+      DataField = 'NFM_QTDB06'
+      TabOrder = 15
+      NormalColor = clWindow
+      FocusColor = clInfoBk
+      RequeridoColor = clRed
+      Requerido = False
+      CompZeros = False
+      TipoTexto = ttAlfanumerico
+    end
+    object dbeForm06: TDBEditFocus
+      Tag = 99
+      Left = 344
+      Top = 152
+      Width = 73
+      Height = 22
+      CharCase = ecUpperCase
+      DataField = 'NFM_FORM06'
+      TabOrder = 14
+      OnKeyPress = dbeForm01KeyPress
+      NormalColor = clWindow
+      FocusColor = clInfoBk
+      RequeridoColor = clRed
+      Requerido = False
+      CompZeros = False
+      TipoTexto = ttAlfanumerico
+    end
+    object dbeQtd05: TDBEditFocus
+      Tag = 99
+      Left = 488
+      Top = 128
+      Width = 73
+      Height = 22
+      CharCase = ecUpperCase
+      DataField = 'NFM_QTDB05'
+      TabOrder = 13
+      NormalColor = clWindow
+      FocusColor = clInfoBk
+      RequeridoColor = clRed
+      Requerido = False
+      CompZeros = False
+      TipoTexto = ttAlfanumerico
+    end
+    object dbeForm05: TDBEditFocus
+      Tag = 99
+      Left = 344
+      Top = 128
+      Width = 73
+      Height = 22
+      CharCase = ecUpperCase
+      DataField = 'NFM_FORM05'
+      TabOrder = 12
+      OnKeyPress = dbeForm01KeyPress
+      NormalColor = clWindow
+      FocusColor = clInfoBk
+      RequeridoColor = clRed
+      Requerido = False
+      CompZeros = False
+      TipoTexto = ttAlfanumerico
+    end
+    object dbeQtd04: TDBEditFocus
+      Tag = 99
+      Left = 488
+      Top = 104
+      Width = 73
+      Height = 22
+      CharCase = ecUpperCase
+      DataField = 'NFM_QTDB04'
+      TabOrder = 11
+      NormalColor = clWindow
+      FocusColor = clInfoBk
+      RequeridoColor = clRed
+      Requerido = False
+      CompZeros = False
+      TipoTexto = ttAlfanumerico
+    end
+    object dbeForm04: TDBEditFocus
+      Tag = 99
+      Left = 344
+      Top = 104
+      Width = 73
+      Height = 22
+      CharCase = ecUpperCase
+      DataField = 'NFM_FORM04'
+      TabOrder = 10
+      OnKeyPress = dbeForm01KeyPress
+      NormalColor = clWindow
+      FocusColor = clInfoBk
+      RequeridoColor = clRed
+      Requerido = False
+      CompZeros = False
+      TipoTexto = ttAlfanumerico
+    end
+    object dbeCodigo: TDBEditFocus
+      Tag = 99
+      Left = 64
+      Top = 40
+      Width = 76
+      Height = 22
+      TabStop = False
+      CharCase = ecUpperCase
+      DataField = 'NFM_CODNFM'
+      Enabled = False
+      TabOrder = 17
+      NormalColor = clWindow
+      FocusColor = clInfoBk
+      RequeridoColor = clRed
+      Requerido = False
+      CompZeros = False
+      TipoTexto = ttAlfanumerico
+    end
+    object dbeDtaCad: TDBEditFocus
+      Tag = 99
+      Left = 84
+      Top = 136
+      Width = 85
+      Height = 22
+      TabStop = False
+      CharCase = ecUpperCase
+      DataField = 'NFM_DTACAD'
+      Enabled = False
+      TabOrder = 18
+      NormalColor = clWindow
+      FocusColor = clInfoBk
+      RequeridoColor = clRed
+      Requerido = False
+      CompZeros = False
+      TipoTexto = ttAlfanumerico
+    end
+  end
+  inherited pnlStatus: TPanel
+    Top = 211
+    Width = 568
+    TabOrder = 3
+    ExplicitTop = 211
+    ExplicitWidth = 568
+    inherited pnlNomeForm: TPanel
+      Left = 221
+      ExplicitLeft = 221
+    end
+    inherited pnlInfo: TPanel
+      Width = 221
+      ExplicitWidth = 221
+    end
+  end
+  inherited mnuAuxiliar: TPopupMenu
+    Left = 168
+    Top = 16
+  end
+  inherited ApplicationEvents: TApplicationEvents
+    Left = 136
+  end
+end

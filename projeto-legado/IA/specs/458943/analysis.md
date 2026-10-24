@@ -1,0 +1,166 @@
+# ANÁLISE DE ENTREGA — REQ. 458943
+
+**REQUISITO:** EXPOR O ESTORNO DE DUPLICATAS RECEBIDAS COMO ENDPOINT REST, COM O
+DESKTOP E O SERVIÇO EXECUTANDO O MESMO CÓDIGO.
+**ZONA:** LEGADO (`padra_atualizado/fontes/`) + MODERNA (`padra_atualizado/Services/`)
+**DATA:** 04/09/2026
+
+---
+
+## 1. O QUE FOI FEITO
+
+FOI CRIADO O ENDPOINT `POST /contasareceber/cobranca/estorno` NO
+`Financeiro.Services.API`, REPRODUZINDO A REGRA DA TELA `untEstornoReceber`.
+
+A REGRA **NÃO FOI DUPLICADA**. A LÓGICA DE ESTORNO FOI EXTRAÍDA DA TELA PARA CINCO
+CLASSES COMPARTILHADAS, E TANTO A TELA QUANTO O SERVIÇO PASSARAM A CHAMÁ-LAS. O
+`untEstornoReceber.pas` PERDEU 4.696 LINHAS, QUE MIGRARAM PARA AS CLASSES NOVAS.
+
+ESSE É O MESMO PRECEDENTE JÁ ADOTADO NO REQUISITO DA BAIXA
+(`Financeiro.ContasReceber.BaixaDuplicatas`), REGISTRADO NA SEÇÃO 1 DO `spec.md`.
+
+---
+
+## 2. ARQUIVOS
+
+### CRIADOS (23)
+
+**CLASSES COMPARTILHADAS — `padra_atualizado/fontes/financeiro/contasareceber/`**
+
+| ARQUIVO | RESPONSABILIDADE |
+|---------|------------------|
+| `Financeiro.ContasReceber.EstornoTypes.pas` | RECORDS DE ENTRADA E RESULTADO |
+| `Financeiro.ContasReceber.ValidacaoEstorno.pas` | PORTÕES DE RECUSA (RN02, RN11) |
+| `Financeiro.ContasReceber.FiltroEstorno.pas` | MONTAGEM DO SELECT DAS DUPLICATAS |
+| `Financeiro.ContasReceber.DevolucaoPix.pas` | DEVOLUÇÃO OU CRÉDITO DO PIX (RN06, RN07) |
+| `Financeiro.ContasReceber.EstornoDuplicatas.pas` | MOTOR DO ESTORNO |
+
+**SERVIÇO — `padra_atualizado/Services/`**
+
+| ARQUIVO | RESPONSABILIDADE |
+|---------|------------------|
+| `Core/.../Financeiro.Services.Cobranca.Estorno.Types.pas` | DTOs DO CONTRATO REST |
+| `Core/.../Financeiro.Services.Cobranca.Estorno.pas` | SERVICE — ORQUESTRA E TRADUZ |
+| `.../api.controller.cobranca.estorno.pas` | CONTROLLER REST |
+| `.../api.controller.cobranca.estorno.test.pas` | SUÍTE AUTOMATIZADA |
+| `.../Test_Cases/Cobranca/EstornoTest.inc` | REGISTRO DOS 11 CASOS |
+
+**SCRIPTS DE TESTE — `Financeiro.Services.API/Scripts/testes/`**
+
+| ARQUIVO | RESPONSABILIDADE |
+|---------|------------------|
+| `008_INFRA_PROCEDURE_ESTORNO.sql` | PROCEDURE DE ASSERT DE BANCO |
+| `009_INFRA_PROCEDURE_PREPARO_ESTORNO.sql` | PREPARO DOS QUATRO CENÁRIOS DE SUCESSO |
+| `casos/0051` A `casos/0061` | OS 11 CASOS DA SUÍTE |
+
+### ALTERADOS
+
+| ARQUIVO | ALTERAÇÃO |
+|---------|-----------|
+| `untEstornoReceber.pas` | EXTRAÇÃO: **+366 / −4.696** |
+| `untLogMca.pas` | SOBRECARGA DE TRÊS PARÂMETROS PARA USO NO LINUX (**+9 / −0**) |
+| `untCfgRepositorio.pas` | LEITURA DE CONFIGURAÇÃO NO SERVIÇO (**+4 / −0**) |
+| `autcom.dpr` | REGISTRO DAS UNITS NOVAS (**+5 / −0**) |
+| `Financeiro.Services.Workers.pas` | REGISTRO DO SERVICE |
+| `FinanceiroServicesAPI.dpr` / `FinanceiroServicesTEST.dpr` | REGISTRO DAS UNITS |
+
+---
+
+## 3. REGRAS IMPLEMENTADAS
+
+| REGRA | O QUE FAZ |
+|-------|-----------|
+| **RN01** | O ESTORNO ALCANÇA O **LOTE INTEIRO** (`CTR_SEQCON`), NÃO SÓ A LINHA DA CHAVE |
+| **RN02** | SÓ CARTÃO E PIX PUROS. BAIXA MISTA É RECUSADA **INTEIRA** |
+| **RN03** | DIREITO `DIRRCXEST` CONFERIDO SEM PEDIR SENHA |
+| **RN04** | PORTADOR DA BAIXA NÃO VEM NO PAYLOAD — SAI DA PRÓPRIA BAIXA |
+| **RN05** | DATA DO ESTORNO É DERIVADA, NUNCA INFORMADA |
+| **RN06** | DEVOLUÇÃO DE PIX É DECISÃO DERIVADA DA CONFIGURAÇÃO, NUNCA RECUSA |
+| **RN07** | PORTADOR E EVENTO DO CRÉDITO VÊM DE `CFG_PCTRPX` / `CFG_ECTRPX` |
+| **RN08** | MOTIVO DO ESTORNO NÃO É SOLICITADO |
+| **RN09** | TRANSAÇÃO ÚNICA, COM ROLLBACK E RE-RAISE |
+| **RN10** | ORIGEM REGISTRADA NO LOG |
+| **RN11** | IMPEDIMENTOS POR LINHA DO LOTE (CONCILIADO, VINCULADO, PIX ATIVO, PARCIAL POSTERIOR) |
+| **RN12** | NO ENDPOINT A DATA É **SEMPRE A DO DIA**, QUALQUER QUE SEJA `CFG_RDTEMB` |
+
+---
+
+## 4. TESTES AUTOMATIZADOS
+
+**SUÍTE COMPLETA: 61 DE 61 CASOS VERDES.**
+
+ONZE CASOS NOVOS, REGISTRADOS EM `EstornoTest.inc`:
+
+| ID | CASO | HTTP |
+|----|------|------|
+| 51 A 56 | PAYLOAD INCOMPLETO OU INVÁLIDO | 400 |
+| 57 | DUPLICATA INEXISTENTE | 422 |
+| 58 | ESTORNO DE CARTÃO, BAIXA TOTAL | 200 |
+| 59 | ESTORNO DE CARTÃO, BAIXA PARCIAL | 200 |
+| 60 | ESTORNO DE RECEBIMENTO POR PIX | 200 |
+| 61 | ESTORNO COM DUPLICATAS CONJUGADAS | 200 |
+
+O PREPARO DOS QUATRO CASOS DE SUCESSO VIVE NA PROCEDURE `pTesteEstornoPreparar`, E
+NÃO INLINE NA COLUNA `sql_before_exec_test` — MESMO PADRÃO DOS CASOS DE BAIXA. CADA
+CENÁRIO LIMPA A DUPLICATA INTEIRA ANTES DE REPOR, ENTÃO O RESULTADO INDEPENDE DA
+ORDEM DE EXECUÇÃO (VALIDADO EM TRÊS ORDENS DIFERENTES).
+
+### O QUE OS CASOS DE SUCESSO AFIRMAM NO BANCO
+
+- O TÍTULO VOLTOU AO VALOR CHEIO (`CTR_VALDUP`, `CTR_VALORI`, `CTR_VALREC`)
+- AS MARCAS DE BAIXA FORAM APAGADAS (`CTR_SEQCON`, `CTR_SEQBAI`, `CTR_DTABAI`,
+  `CTR_DTAREC`, `CTR_EMPBAI`, `CTR_OPEBAI`, `CTR_PORBAI`)
+- AS MARCAS DE FORMA DE PAGAMENTO ZERARAM (`CTR_CARTAO`, `CTR_RECCAR`, `CTR_RECPIX`,
+  `CTR_TX_PIX`, `CTR_EMPPIX`)
+- O MOVIMENTO DE CARTÃO SAIU DA TABELA ATIVA E, NA PARCIAL, FOI PARA `DEL_MOVCAR`
+- NA PARCIAL, AS DUAS LINHAS VOLTARAM A SER **UMA**, COM O SALDO FUNDIDO
+- NA CONJUGADA, INFORMANDO SÓ UMA PARCELA, A RESPOSTA TRAZ **AS DUAS** (RN01)
+
+---
+
+## 5. VERIFICAÇÃO CONTRA A VERSÃO DO SVN
+
+A EXTRAÇÃO RETIROU 42 SÍMBOLOS DA INTERFACE DO `untEstornoReceber.pas`. FOI FEITA
+VARREDURA EM TODO O `padra_atualizado`, `libCartoes` E `autban`:
+
+- **14 UNITS FAZEM `uses untEstornoReceber`**
+- **NENHUMA DELAS CHAMA QUALQUER UM DOS 42 SÍMBOLOS REMOVIDOS**
+
+OS ARQUIVOS QUE CASARAM POR NOME (`untEstornoPagar`, `untRcxFormasPagamento`,
+`untEstornoCtaReceber`) TÊM MÉTODOS HOMÔNIMOS PRÓPRIOS E NÃO USAM A UNIT.
+
+CONFERIDO TAMBÉM: ENCODING CP1252 PRESERVADO, CRLF MANTIDO, ZERO MOJIBAKE, SALDO DE
+CHAVES `{ }` INALTERADO E CONTAGEM DE `begin`/`end`/`try`/`finally` IDÊNTICA.
+
+O `untBaixaReceber.pas` FOI **REVERTIDO**: TINHA APENAS REALINHAMENTO DE ESPAÇO
+(+45/−45, ZERO DIFERENÇA SEMÂNTICA), QUE NÃO PERTENCE A ESTE REQUISITO.
+
+---
+
+## 6. PENDENTE E EM ABERTO
+
+1. **RETESTE MANUAL PELA TELA.** O `fEstornaMovCar` passou a servir aos dois
+   caminhos; a validação pela tela é manual e não foi executada.
+2. **DIVERGÊNCIAS TELA × API (RN08 E RN12)** precisam ser comunicadas ao suporte: a
+   tela pergunta o motivo e pode retroagir a data conforme `CFG_RDTEMB`; o endpoint
+   não pergunta e usa sempre a data do dia.
+3. **O CASO 60 (PIX) NÃO CONFERE `DEL_MOVPIX` NEM O CRÉDITO GERADO.** Ele prova o
+   estorno do título e a saída da cobrança da tabela ativa. A cobertura do destino
+   da cobrança e do crédito fica como melhoria.
+4. **ACHADO PRÉ-EXISTENTE, REQUISITO À PARTE:** `fApagaDuplicataContasReceber`
+   (SVN LINHA 2802) COLIDE EM `DEL_CADREC.PRIMARY` QUANDO O `AUTOINCREM` É
+   REAPROVEITADO. NÃO É REGRESSÃO DESTA ENTREGA. A CORREÇÃO SERIA `REPLACE` NO LUGAR
+   DE `INSERT`, COMO JÁ SE FAZ NA `DEL_MOVPIX`.
+5. **LATENTE NA SUÍTE DA BAIXA:** A `pProcessoBaixaDuplicatasResponse` TEM A MESMA
+   CONSTRUÇÃO QUE FAZIA A DO ESTORNO DEVOLVER JSON EM BASE64. HOJE ELA ESCAPA PORQUE
+   NO CENÁRIO DELA TODOS OS BLOCOS VOLTAM VAZIOS. COM DADOS, CAI NO MESMO PROBLEMA.
+
+---
+
+## 7. SCRIPTS A APLICAR NO BANCO DE TESTE
+
+ANTES DE RODAR A SUÍTE EM OUTRA BASE:
+
+1. `Scripts/testes/008_INFRA_PROCEDURE_ESTORNO.sql`
+2. `Scripts/testes/009_INFRA_PROCEDURE_PREPARO_ESTORNO.sql`
+3. `Scripts/testes/casos/0051` A `0061`

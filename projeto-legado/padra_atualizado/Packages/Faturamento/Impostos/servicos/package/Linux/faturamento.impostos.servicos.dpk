@@ -1,0 +1,58 @@
+package faturamento.impostos.servicos;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$IMPLICITBUILD ON}
+
+requires
+  rtl,
+  faturamento.impostos.interfaces,
+  faturamento.impostos.calculos,
+  faturamento.impostos.regras,
+  faturamento.model;
+
+contains
+  Faturamento.Impostos.Servicos.Disponiveis in '..\..\source\Faturamento.Impostos.Servicos.Disponiveis.pas',
+  Faturamento.Impostos.Servicos.Disponiveis.Ipi in '..\..\source\Faturamento.Impostos.Servicos.Disponiveis.Ipi.pas',
+  Faturamento.Impostos.Servicos.Classe.Ipi in '..\..\source\Faturamento.Impostos.Servicos.Classe.Ipi.pas',
+  Faturamento.Impostos.Servicos.Disponiveis.IcmsSt in '..\..\source\Faturamento.Impostos.Servicos.Disponiveis.IcmsSt.pas',
+  Faturamento.Impostos.Servicos.Classe.IcmsSt in '..\..\source\Faturamento.Impostos.Servicos.Classe.IcmsSt.pas',
+  Faturamento.Impostos.Servicos.Funcoes in '..\..\source\Faturamento.Impostos.Servicos.Funcoes.pas',
+  Faturamento.Impostos.Servicos.Classe.St in '..\..\source\Faturamento.Impostos.Servicos.Classe.St.pas',
+  Faturamento.Impostos.Servicos.Classe.IcmsOrgaoPublico in '..\..\source\Faturamento.Impostos.Servicos.Classe.IcmsOrgaoPublico.pas',
+  Faturamento.Impostos.Servicos.Classe.Icms in '..\..\source\Faturamento.Impostos.Servicos.Classe.Icms.pas',
+  Faturamento.Impostos.Servicos.Classe.StCustoAquisicao in '..\..\source\Faturamento.Impostos.Servicos.Classe.StCustoAquisicao.pas',
+  Faturamento.Impostos.Servicos.Disponiveis.IcmsEfetivo in '..\..\source\Faturamento.Impostos.Servicos.Disponiveis.IcmsEfetivo.pas',
+  Faturamento.Impostos.Servicos.Classe.IcmsEfetivo in '..\..\source\Faturamento.Impostos.Servicos.Classe.IcmsEfetivo.pas',
+  Faturamento.Impostos.Servicos.Classe.FcpDifal in '..\..\source\Faturamento.Impostos.Servicos.Classe.FcpDifal.pas',
+  Faturamento.Impostos.Servicos.Disponiveis.FcpDifal in '..\..\source\Faturamento.Impostos.Servicos.Disponiveis.FcpDifal.pas',
+  Faturamento.Impostos.Servicos.Classe.DifalFcp in '..\..\source\Faturamento.Impostos.Servicos.Classe.DifalFcp.pas',
+  Faturamento.Impostos.Servicos.Classe.Fcp in '..\..\source\Faturamento.Impostos.Servicos.Classe.Fcp.pas',
+  Faturamento.Impostos.Servicos.Classe.Devolucao.DifalFcp in '..\..\source\Faturamento.Impostos.Servicos.Classe.Devolucao.DifalFcp.pas',
+  Faturamento.Impostos.Servicos.Classe.Difal in '..\..\source\Faturamento.Impostos.Servicos.Classe.Difal.pas';
+
+end.
+

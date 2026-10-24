@@ -1,0 +1,102 @@
+package Principal.View;
+
+{$R *.res}
+{$IFDEF IMPLICITBUILDING This IFDEF should not be used by users}
+{$ALIGN 8}
+{$ASSERTIONS ON}
+{$BOOLEVAL OFF}
+{$DEBUGINFO OFF}
+{$EXTENDEDSYNTAX ON}
+{$IMPORTEDDATA ON}
+{$IOCHECKS ON}
+{$LOCALSYMBOLS ON}
+{$LONGSTRINGS ON}
+{$OPENSTRINGS ON}
+{$OPTIMIZATION OFF}
+{$OVERFLOWCHECKS OFF}
+{$RANGECHECKS OFF}
+{$REFERENCEINFO ON}
+{$SAFEDIVIDE OFF}
+{$STACKFRAMES ON}
+{$TYPEDADDRESS OFF}
+{$VARSTRINGCHECKS ON}
+{$WRITEABLECONST OFF}
+{$MINENUMSIZE 1}
+{$IMAGEBASE $400000}
+{$DEFINE DEBUG}
+{$ENDIF IMPLICITBUILDING}
+{$IMPLICITBUILD ON}
+{$SetPEFlags $0400} // -> If Image is on removable media, copy and run from the swap file.
+{$SetPEFlags $0800} // -> If Image is on Net, copy and run from the swap file.
+
+requires
+  rtl,
+  fmx,
+  bindengine,
+  bindcomp,
+  bindcompfmx,
+  dsnap,
+  FMXTee,
+  Shared.Functions,
+  xmlrtl,
+  FMXTMSFNCCorePkgDXE9,
+  FMXTMSFNCMapsPkgDXE9,
+  IndySystem,
+  IndyProtocols,
+  IndyCore,
+  RESTComponents;
+
+contains
+  Principal.View.Interfaces in '..\interfaces\Principal.View.Interfaces.pas',
+  Principal.View.FMXPrincipal in '..\source\Principal.View.FMXPrincipal.pas' {fmxMenu},
+  Principal.View.FMXSobre in '..\source\Principal.View.FMXSobre.pas' {fmxSobre},
+  Principal.View.FMXQuadroLicencas in '..\source\Principal.View.FMXQuadroLicencas.pas',
+  Principal.View.FMXNotificacao in '..\source\Principal.View.FMXNotificacao.pas' {FMXNotificacao},
+  Principal.View.FMXCRM in '..\source\Principal.View.FMXCRM.pas' {fmxCRM},
+  Principal.View.Frame.FMXGraficoBase in '..\frames\Principal.View.Frame.FMXGraficoBase.pas' {fraGraficoBase: TFrame},
+  Principal.View.Frame.FMXDashProjecaoMargem in '..\frames\Principal.View.Frame.FMXDashProjecaoMargem.pas' {frameProjecaoMargem: TFrame},
+  Principal.View.Frame.FMXDashProjecaoVendas in '..\frames\Principal.View.Frame.FMXDashProjecaoVendas.pas' {frameProjecaoVendas: TFrame},
+  Principal.View.Frame.FMXDashTotalVendedoresCabecalho in '..\frames\Principal.View.Frame.FMXDashTotalVendedoresCabecalho.pas' {frameTotalVendedores: TFrame},
+  Principal.View.Frame.FMXDashTotalVendedoresLinha in '..\frames\Principal.View.Frame.FMXDashTotalVendedoresLinha.pas' {frameTotalVendedoresLinha: TFrame},
+  Principal.View.Frame.FMXDashDiasUteis in '..\frames\Principal.View.Frame.FMXDashDiasUteis.pas' {frameDiasUteis: TFrame},
+  Principal.View.Frame.FMXDashMargemXMetasColuna in '..\frames\Principal.View.Frame.FMXDashMargemXMetasColuna.pas' {frameMargemXMetasColuna: TFrame},
+  Principal.View.Frame.FMXDashFaturamentoXMetasColuna in '..\frames\Principal.View.Frame.FMXDashFaturamentoXMetasColuna.pas' {frameFaturamentoXMetasColuna: TFrame},
+  Principal.View.Frame.FMXDashFaturamentoXMetasCabecalho in '..\frames\Principal.View.Frame.FMXDashFaturamentoXMetasCabecalho.pas' {frameFaturamentoXMetas: TFrame},
+  Principal.View.Frame.FMXDashMargemXMetasCabecalho in '..\frames\Principal.View.Frame.FMXDashMargemXMetasCabecalho.pas' {frameMargemXMetas: TFrame},
+  Principal.View.Frame.FMXDashTipoEmpresa in '..\frames\Principal.View.Frame.FMXDashTipoEmpresa.pas' {frameTipoEmpresa: TFrame},
+  Principal.View.FMXPainelEntregas in '..\source\Principal.View.FMXPainelEntregas.pas' {fmxPainelEntregas},
+  Principal.View.FMXReordenarEntregas in '..\source\Principal.View.FMXReordenarEntregas.pas' {fmxReordenarEntregas},
+  Principal.View.Frame.FMXPainelRotasGridDocumentosLinha in '..\frames\Principal.View.Frame.FMXPainelRotasGridDocumentosLinha.pas' {frameGridDocumentosLinha: TFrame},
+  Principal.View.Frame.FMXPainelRotasGridRomaneiosLinha in '..\frames\Principal.View.Frame.FMXPainelRotasGridRomaneiosLinha.pas' {frameGridRomaneiosLinha: TFrame},
+  TaEntregue.Romaneios.Interfaces in '..\..\..\..\fontes\faturamento\TaEntregue.Romaneios.Interfaces.pas',
+  Principal.View.FMXVisualizarMapa in '..\source\Principal.View.FMXVisualizarMapa.pas' {fmxVisualizarMapaMaplink},
+  Principal.View.FMXVisualizarImagem in '..\source\Principal.View.FMXVisualizarImagem.pas' {fmxVisualizarImagem},
+  Principal.View.Frame.FMXPainelRotasConversasRecentes in '..\frames\Principal.View.Frame.FMXPainelRotasConversasRecentes.pas' {frameConversasRecentes: TFrame},
+  Principal.View.Frame.FMXPainelRotasEnviaMensagem in '..\frames\Principal.View.Frame.FMXPainelRotasEnviaMensagem.pas' {frameMsgEnviada: TFrame},
+  Principal.View.Frame.FMXPainelRotasRecebeMensagem in '..\frames\Principal.View.Frame.FMXPainelRotasRecebeMensagem.pas' {frameMsgRecebida: TFrame},
+  Principal.View.FMXMensagemInstalacaoWebView in '..\source\Principal.View.FMXMensagemInstalacaoWebView.pas' {FMXMensagemInstalacaoWebView},
+  Principal.View.Frame.FMXPainelRotasNotificacao in '..\frames\Principal.View.Frame.FMXPainelRotasNotificacao.pas' {frameNotificacao: TFrame},
+  Principal.View.FMXConsultaContatos in '..\source\Principal.View.FMXConsultaContatos.pas' {FMXConsultaContatos},
+  Principal.View.FMXConsultaOcorrencias in '..\source\Principal.View.FMXConsultaOcorrencias.pas' {FMXConsultaOcorrencias},
+  Principal.View.Frame.FMXPainelRotasOcorrenciasLinha in '..\frames\Principal.View.Frame.FMXPainelRotasOcorrenciasLinha.pas' {frameOcorrencias: TFrame},
+  Principal.View.Frame.FMXPainelRotasGridPendenciasLinha in '..\frames\Principal.View.Frame.FMXPainelRotasGridPendenciasLinha.pas' {framePendencias: TFrame},
+  Principal.View.Frame.FMXPainelRotasGridItemALiberarLinha in '..\frames\Principal.View.Frame.FMXPainelRotasGridItemALiberarLinha.pas' {frameItemALiberar: TFrame},
+  Principal.View.FMXConsultaMotoristas in '..\source\Principal.View.FMXConsultaMotoristas.pas' {FMXConsultaMotoristas},
+  Principal.View.Frame.FMXDashTotalVendas in '..\frames\Principal.View.Frame.FMXDashTotalVendas.pas' {frameTotalVendas: TFrame},
+  Principal.View.Frame.FMXDashPedidosNaoFaturados in '..\frames\Principal.View.Frame.FMXDashPedidosNaoFaturados.pas' {framePedidosNaoFaturados: TFrame},
+  Principal.View.Frame.FMXDashVendasXMetasDiarias in '..\frames\Principal.View.Frame.FMXDashVendasXMetasDiarias.pas' {frameVendasXMetasDiarias: TFrame},
+  Principal.View.Frame.FMXDashTopClientesCabecalho in '..\frames\Principal.View.Frame.FMXDashTopClientesCabecalho.pas' {frameTopClientesCabecalho: TFrame},
+  Principal.View.Frame.FMXDashTopClientesLinha in '..\frames\Principal.View.Frame.FMXDashTopClientesLinha.pas' {frameTopClientesLinha: TFrame},
+  Principal.View.Frame.FMXDashTotalFormaPagamento in '..\frames\Principal.View.Frame.FMXDashTotalFormaPagamento.pas' {frameTotalFormaPagamento: TFrame},
+  Principal.View.Frame.FMXDashConstrucaoMetaCabecalho in '..\frames\Principal.View.Frame.FMXDashConstrucaoMetaCabecalho.pas' {frameConstrucaoMeta: TFrame},
+  Principal.View.Frame.FMXDashConstrucaoMetaLinha in '..\frames\Principal.View.Frame.FMXDashConstrucaoMetaLinha.pas' {frameConstrucaoMetaLinha: TFrame},
+  Principal.View.FMXDashboardOld in '..\source\Principal.View.FMXDashboardOld.pas' {fmxDashboardPrincipalOld},
+  Principal.View.FMXDashboard in '..\source\Principal.View.FMXDashboard.pas' {fmxDashboardPrincipal},
+  Principal.View.FMXConsultaEmpresa in '..\source\Principal.View.FMXConsultaEmpresa.pas' {FMXConsultaEmpresa},
+  untMaplinkTripClasses in '..\..\..\..\fontes\faturamento\untMaplinkTripClasses.pas',
+  Principal.Classes.ImagemMemoria in '..\classes\Principal.Classes.ImagemMemoria.pas',
+  Principal.View.FMXVisualizarMapaGoogle in '..\source\Principal.View.FMXVisualizarMapaGoogle.pas' {fmxVisualizarMapaGoogle};
+
+end.
+
+

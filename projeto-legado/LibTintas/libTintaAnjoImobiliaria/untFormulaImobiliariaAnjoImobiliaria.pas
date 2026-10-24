@@ -1,0 +1,396 @@
+{************************************************************************************}
+{* Classe responsável pelas rotidas especificas de uma formula Anjo Imobiliaria *}
+{******************************************************************************** PH*}
+unit untFormulaImobiliariaAnjoImobiliaria;
+
+interface
+
+uses
+  untAbstractFormulaImobiliaria, untICalculadorFormulaImobiliaria, untIDataSet, untColorante,
+  SysUtils, untITintaDeMaquinaComponente, untStrUtils;
+
+type
+  TFormulaImobiliariaAnjoImobiliaria = class(TAbstractFormulaImobiliaria)
+  protected
+    function GetCalculadorInterno(): ICalculadorFormulaImobiliaria; override;
+    function GetNomeTabelaColorantes(): String; override;
+    function GetTextoInformativoCalculo(): String; override;
+    procedure CarregaPrecosColorantesAdicional(const dataSetColorantes: IDataSet; const colorante: TColorante); override;
+    function GetNomeCampoCustoBase: String; override;
+    function GetNomeCampoVendaBase: String; override;
+    function GetNomeTabelaBase: String; override;
+    function GetNomeCampoBaseCodIte: String; override;
+  public
+    function GetPrefixoQuantidade(const strModo: String): String; override;
+    function GetQuantidadeFormulacao(): Integer; override;
+    function GetPrefixoFormulacao(): String; override;
+    function GetDescricao(const dtsCadTin: IDataSet): String; override;
+    function GetUnidade(const dtsCadTin: IDataSet): String; override;
+    function GetProdutoBaseFormula(const dtsCadTin: IDataSet): String; override;
+    function GetFatorEstoque(): Double; override;
+    function GetIdePro: String; override;
+    function GetItemBaseOriginal(const strIteTin: String): String; override;
+    function GetChaveIteTin(const dtsCadTin: IDataSet): string; override;
+    function GetNomeCampoColDesCol: string; override;
+    procedure CarregarColorantes; override;
+    procedure PreencheAcrescimoMaoObra(const dtsCadTin: IDataSet); Override;
+  end;
+
+implementation
+
+uses
+  untAutcomTintaFactory, untMultiSelectLocalizadorFactory,
+  untAbstractCalculadorFormulaImobiliaria;
+
+{ TFormulaImobiliariaAnjoImobiliaria }
+
+procedure TFormulaImobiliariaAnjoImobiliaria.CarregaPrecosColorantesAdicional(const dataSetColorantes: IDataSet; const colorante: TColorante);
+begin
+  colorante.Embalagem := dataSetColorantes.FieldByName('COL_EMBALA').AsFloat;
+end;
+
+procedure TFormulaImobiliariaAnjoImobiliaria.CarregarColorantes;
+var
+  strSql: String;
+begin
+  strSql :=
+    ' SELECT         ' +
+    '     COL_CODCOL ' +
+    '   , COL_DESCRI ' +
+    '   , COL_EMBALA ' +
+    '   , COL_CODITE ' ;
+
+  if GetNomeCampoColDesCol <> '' then
+    strSql := strSql + ' , '+ GetNomeCampoColDesCol
+  else
+    strSql := strSql + ', "" AS COL_DESCRI ';
+
+  strSql := strSql +
+    '   , IFNULL(ITE_ITEATI, "N") ITE_ITEATI      ' +
+    '   , ITE_CNV_ML ' +
+    '   , ITE_OUTVAL ' +
+    '   , ITE_ICMSAI ' +
+    '   , ITE_IMPFED ' +
+    '   , ITE_DESOPE ' +
+    '   , ITE_PREMED ' +
+    '   , ITE_IMPULT ' +
+    '   , ITE_PREULT ' +
+
+    '   , ITE_PRECOM ' +
+    '   , ITE_DESF01 ' +
+    '   , ITE_DESF02 ' +
+    '   , ITE_DESF03 ' +
+    '   , ITE_DESF04 ' +
+    '   , ITE_DESF05 ' +
+    '   , ITE_DESF06 ';
+
+  If TAutcomTintaFactory.Get.fCfgSis('IMPDIG') = '1' Then
+    strSql := strSql  + '   , I.ITE_IMPDIR  '
+  else
+    strSql := strSql  + '   , G.ITE_IMPDIR  ';
+
+  If (TAutcomTintaFactory.Get.fCfgSis('PREGER') = '0') Then
+  begin
+    strSql := strSql +
+      '   , COL_PRECUS AS ITE_PRECUS ' +
+      '   , COL_PREVEN AS ITE_PREVEN ';
+  end
+
+  Else If (TAutcomTintaFactory.Get.fCfgSis('PREGER') = '1') And BlnCalculaUnitario Then
+  begin
+    strSql := strSql +
+      '   , ITE_PRECUS               ' +
+      '   , ITE_PREVE' + TAutcomTintaFactory.Get.fCfgSis('TABPRE') + ' AS ITE_PREVEN ';
+  end
+  else
+  begin
+    strSql := strSql +
+      '   , ITE_PRECUS               ' +
+      '   , ITE_PREVE' + Self.strTabPre + ' AS ITE_PREVEN ';
+  end;
+
+  strSql := strSql +
+    ' FROM                               ' +
+    '   ' + GetNomeTabelaColorantes + ' C                     ' +
+    '   INNER JOIN ITEGER G              ' +
+    '     ON C.COL_CODITE = G.ITE_CODITE ' +
+    '   INNER JOIN CADITE I              ' +
+    '     ON C.COL_CODITE = I.ITE_CODITE ' +
+    ' WHERE G.ITE_CODEMP = :CODEMP       ';
+
+  GetDataSetColorantes.SQL := strSql;
+
+  If (Not TStrUtils.fEmptyStr(Self.EmpPrd)) And (Self.OprFlj = 'S') Then
+    GetDataSetColorantes.ParamByName('CODEMP').AsString := Self.EmpPrd
+  Else If (Not TStrUtils.fEmptyStr(Self.EmpCd_)) And (Self.Cd_S_N = 'S') Then
+    GetDataSetColorantes.ParamByName('CODEMP').AsString := Self.EmpCd_
+  Else If (Not TStrUtils.fEmptyStr(Self.EmpFat)) And (Self.FatS_N = 'S') Then
+    GetDataSetColorantes.ParamByName('CODEMP').AsString := Self.EmpFat
+  Else
+    GetDataSetColorantes.ParamByName('CODEMP').AsString := TAutcomTintaFactory.Get.GetCodEmp;
+
+  GetDataSetColorantes.Open;
+end;
+
+function TFormulaImobiliariaAnjoImobiliaria.GetCalculadorInterno: ICalculadorFormulaImobiliaria;
+begin
+  Result := TAbstractCalculadorFormulaImobiliaria.Create(Self);
+end;
+
+function TFormulaImobiliariaAnjoImobiliaria.GetChaveIteTin(const dtsCadTin: IDataSet): string;
+begin
+  if Assigned(dtsCadTin.FindField('ANJ_MD5KEY')) then
+    Result := dtsCadTin.FieldByName('ANJ_MD5KEY').AsString
+  else
+  begin
+    Result := dtsCadTin.FieldByName('ANJ_DESCRI').AsString +
+              dtsCadTin.FieldByName('ANJ_CODIGO').AsString +
+              dtsCadTin.FieldByName('ANJ_CODIG2').AsString +
+              dtsCadTin.FieldByName('ANJ_UNIDAD').AsString +
+              dtsCadTin.FieldByName('ANJ_PROKEY').AsString +
+              dtsCadTin.FieldByName('ANJ_SUBKEY').AsString +
+              dtsCadTin.FieldByName('ANJ_BASE__').AsString;
+
+  end;
+end;
+
+function TFormulaImobiliariaAnjoImobiliaria.GetDescricao(const dtsCadTin: IDataSet): String;
+begin
+  Result := dtsCadTin.FieldByName('ANJ_DESCRI').AsString;
+end;
+
+function TFormulaImobiliariaAnjoImobiliaria.GetFatorEstoque: Double;
+begin
+  Result := 1;
+end;
+
+function TFormulaImobiliariaAnjoImobiliaria.GetIdePro: String;
+begin
+  Result := 'ANJ';
+end;
+
+function TFormulaImobiliariaAnjoImobiliaria.GetItemBaseOriginal(const strIteTin: String): String;
+var
+  qryGen: IDataSet;
+begin
+  Result := '';
+  Try
+    Try
+      qryGen     := TAutcomTintaFactory.Get.fGetDataSet;
+      qryGen.SQL := ' SELECT                              ' +
+                    '   B.BAS_CODITE AS CODITE            ' +
+                    ' FROM                                ' +
+                    '   ANJ_CADANJ A                      ' +
+                    '   INNER JOIN ANJ_CADBAS B           ' +
+                    '     ON A.ANJ_BASE__ = B.BAS_BASE__  ' +
+                    '     AND A.ANJ_PROKEY = B.BAS_PROKEY ' +
+                    '     AND A.ANJ_SUBKEY = B.BAS_SUBKEY ' +
+                    '     AND A.ANJ_UNIDAD = B.BAS_UNIDAD ' +
+                    ' WHERE ANJ_MD5KEY = :ITETIN          ' ;
+
+      qryGen.ParamByName('ITETIN').AsString := strIteTin;
+      qryGen.Open;
+
+      if qryGen.IsEmpty then
+      begin
+        qryGen.SQL := ' SELECT                              ' +
+                      '   B.BAS_CODITE AS CODITE            ' +
+                      ' FROM                                ' +
+                      '   ANJ_CADANJ A                      ' +
+                      '   INNER JOIN ANJ_CADBAS B           ' +
+                      '     ON A.ANJ_BASE__ = B.BAS_BASE__  ' +
+                      '     AND A.ANJ_PROKEY = B.BAS_PROKEY ' +
+                      '     AND A.ANJ_SUBKEY = B.BAS_SUBKEY ' +
+                      '     AND A.ANJ_UNIDAD = B.BAS_UNIDAD ' +
+                      ' WHERE CONCAT(                       ' +
+                      '     ANJ_DESCRI                      ' +
+                      '     , " "                           ' +
+                      '     , ANJ_CODIGO                    ' +
+                      '     , " "                           ' +
+                      '     , ANJ_CODIG2                    ' +
+                      '     , " "                           ' +
+                      '     , ANJ_UNIDAD                    ' +
+                      '   ) = :ITETIN                       ' ;
+
+        qryGen.ParamByName('ITETIN').AsString := strIteTin;
+        qryGen.Open;
+      End;
+
+      if qryGen.IsEmpty then
+      begin
+        qryGen.SQL := ' SELECT                                                                   ' +
+                      '   B.BAS_CODITE AS CODITE                                                 ' +
+                      ' FROM                                                                     ' +
+                      '   ANJ_CADANJ A                                                           ' +
+                      '   INNER JOIN ANJ_CADBAS B                                                ' +
+                      '     ON A.ANJ_BASE__ = B.BAS_BASE__                                       ' +
+                      '     AND A.ANJ_PROKEY = B.BAS_PROKEY                                      ' +
+                      '     AND A.ANJ_SUBKEY = B.BAS_SUBKEY                                      ' +
+                      '     AND A.ANJ_UNIDAD = B.BAS_UNIDAD                                      ' +
+                      ' WHERE UPPER(CAST(MD5(CONCAT(                                             ' +
+                      '       CAST(IFNULL(ANJ_DESCRI, "") AS CHAR)                               ' +
+                      '       , CAST(IFNULL(ANJ_CODIGO, "") AS CHAR)                             ' +
+                      '       , CAST(IFNULL(ANJ_CODIG2, "") AS CHAR)                             ' +
+                      '       , CAST(IFNULL(ANJ_UNIDAD, "") AS CHAR)                             ' +
+                      '       , CAST(IFNULL(ANJ_PROKEY, "") AS CHAR)                             ' +
+                      '       , CAST(IFNULL(ANJ_SUBKEY, "") AS CHAR)                             ' +
+                      '       , CAST(IFNULL(ANJ_BASE__, "") AS CHAR)                             ' +
+                      '       , CAST(IFNULL(ANJ_FORM01, "") AS CHAR)                             ' +
+                      '       , REPLACE(CAST(FORMAT(IFNULL(ANJ_QTDB01, 0), 4) AS CHAR), ",", "") ' +
+                      '       , CAST(IFNULL(ANJ_FORM02, "") AS CHAR)                             ' +
+                      '       , REPLACE(CAST(FORMAT(IFNULL(ANJ_QTDB02, 0), 4) AS CHAR), ",", "") ' +
+                      '       , CAST(IFNULL(ANJ_FORM03, "") AS CHAR)                             ' +
+                      '       , REPLACE(CAST(FORMAT(IFNULL(ANJ_QTDB03, 0), 4) AS CHAR), ",", "") ' +
+                      '       , CAST(IFNULL(ANJ_FORM04, "") AS CHAR)                             ' +
+                      '       , REPLACE(CAST(FORMAT(IFNULL(ANJ_QTDB04, 0), 4) AS CHAR), ",", "") ' +
+                      '       , CAST(IFNULL(ANJ_FORM05, "") AS CHAR)                             ' +
+                      '       , REPLACE(CAST(FORMAT(IFNULL(ANJ_QTDB05, 0), 4) AS CHAR), ",", "") ' +
+                      '       , CAST(IFNULL(ANJ_FORM06, "") AS CHAR)                             ' +
+                      '       , REPLACE(CAST(FORMAT(IFNULL(ANJ_QTDB06, 0), 4) AS CHAR), ",", "") ' +
+                      '       , CAST(IFNULL(ANJ_FORM07, "") AS CHAR)                             ' +
+                      '       , REPLACE(CAST(FORMAT(IFNULL(ANJ_QTDB07, 0), 4) AS CHAR), ",", "") ' +
+                      '       , CAST(IFNULL(ANJ_FORM08, "") AS CHAR)                             ' +
+                      '       , REPLACE(CAST(FORMAT(IFNULL(ANJ_QTDB08, 0), 4) AS CHAR), ",", "") ' +
+                      '       , CAST(IFNULL(ANJ_FORM09, "") AS CHAR)                             ' +
+                      '       , REPLACE(CAST(FORMAT(IFNULL(ANJ_QTDB09, 0), 4) AS CHAR), ",", "") ' +
+                      '       , CAST(IFNULL(ANJ_FORM10, "") AS CHAR)                             ' +
+                      '       , REPLACE(CAST(FORMAT(IFNULL(ANJ_QTDB10, 0), 4) AS CHAR), ",", "") ' +
+                      '       , CAST(IFNULL(ANJ_FORM11, "") AS CHAR)                             ' +
+                      '       , REPLACE(CAST(FORMAT(IFNULL(ANJ_QTDB11, 0), 4) AS CHAR), ",", "") ' +
+                      '       , CAST(IFNULL(ANJ_FORM12, "") AS CHAR)                             ' +
+                      '       , REPLACE(CAST(FORMAT(IFNULL(ANJ_QTDB12, 0), 4) AS CHAR), ",", "") ' +
+                      '       , CAST(IFNULL(ANJ_FORM13, "") AS CHAR)                             ' +
+                      '       , REPLACE(CAST(FORMAT(IFNULL(ANJ_QTDB13, 0), 4) AS CHAR), ",", "") ' +
+                      '       , CAST(IFNULL(ANJ_FORM14, "") AS CHAR)                             ' +
+                      '       , REPLACE(CAST(FORMAT(IFNULL(ANJ_QTDB14, 0), 4) AS CHAR), ",", "") ' +
+                      '       , CAST(IFNULL(ANJ_FORM15, "") AS CHAR)                             ' +
+                      '       , REPLACE(CAST(FORMAT(IFNULL(ANJ_QTDB15, 0), 4) AS CHAR), ",", "") ' +
+                      '       , CAST(IFNULL(ANJ_FORM16, "") AS CHAR)                             ' +
+                      '       , REPLACE(CAST(FORMAT(IFNULL(ANJ_QTDB16, 0), 4) AS CHAR), ",", "") ' +
+                      '       , CAST(IFNULL(ANJ_FORM17, "") AS CHAR)                             ' +
+                      '       , REPLACE(CAST(FORMAT(IFNULL(ANJ_QTDB17, 0), 4) AS CHAR), ",", "") ' +
+                      '       , CAST(IFNULL(ANJ_FORM18, "") AS CHAR)                             ' +
+                      '       , REPLACE(CAST(FORMAT(IFNULL(ANJ_QTDB18, 0), 4) AS CHAR), ",", "") ' +
+                      '       , CAST(IFNULL(ANJ_FORM19, "") AS CHAR)                             ' +
+                      '       , REPLACE(CAST(FORMAT(IFNULL(ANJ_QTDB19, 0), 4) AS CHAR), ",", "") ' +
+                      '       , CAST(IFNULL(ANJ_FORM20, "") AS CHAR)                             ' +
+                      '       , REPLACE(CAST(FORMAT(IFNULL(ANJ_QTDB20, 0), 4) AS CHAR), ",", "") ' +
+                      '     )                                                                    ' +
+                      '   ) AS CHAR)) = :ITETIN                                                  ' ;
+
+        qryGen.ParamByName('ITETIN').AsString := strIteTin;
+        qryGen.Open;
+      End;
+
+      If TMultiSelectLocalizadorFactory.GetLocalizador('ANJBAS').Localizar(qryGen, ['ITETIN'], [strIteTin]) Then
+        Result := qryGen.FieldByName('CODITE').AsString;
+    Except
+      on E: Exception do
+      begin
+        raise;
+      end;
+    End;
+  Finally
+  End;
+end;
+
+function TFormulaImobiliariaAnjoImobiliaria.GetNomeCampoBaseCodIte: String;
+begin
+  Result := 'BAS_CODITE';
+end;
+
+function TFormulaImobiliariaAnjoImobiliaria.GetNomeCampoColDesCol: string;
+begin
+  Result := '';
+end;
+
+function TFormulaImobiliariaAnjoImobiliaria.GetNomeCampoCustoBase: String;
+begin
+  Result := 'BAS_PRECUS';
+end;
+
+function TFormulaImobiliariaAnjoImobiliaria.GetNomeCampoVendaBase: String;
+begin
+  Result := 'BAS_PREVEN';
+end;
+
+function TFormulaImobiliariaAnjoImobiliaria.GetNomeTabelaBase: String;
+begin
+  Result := 'ANJ_CADBAS';
+end;
+
+function TFormulaImobiliariaAnjoImobiliaria.GetNomeTabelaColorantes: String;
+begin
+  Result := 'ANJ_CADCOL';
+end;
+
+function TFormulaImobiliariaAnjoImobiliaria.GetPrefixoFormulacao: String;
+begin
+  Result := 'ANJ_FORM';
+end;
+
+function TFormulaImobiliariaAnjoImobiliaria.GetPrefixoQuantidade(const strModo: String): String;
+begin
+  Result := 'ANJ_QTDB';
+end;
+
+function TFormulaImobiliariaAnjoImobiliaria.GetProdutoBaseFormula(const dtsCadTin: IDataSet): String;
+var
+  dtsGen: IDataSet;
+begin
+  Try
+    Try
+      dtsGen := TAutcomTintaFactory.Get.fGetDataSet;
+      dtsGen.SQL :=
+        ' SELECT                     ' +
+        '   BAS_CODITE               ' +
+        ' FROM                       ' +
+        '   ANJ_CADBAS               ' +
+        ' WHERE                      ' +
+        '   BAS_BASE__ = :BASE__ AND ' +
+        '   BAS_PROKEY = :PROKEY AND ' +
+        '   BAS_SUBKEY = :SUBKEY AND ' +
+        '   BAS_UNIDAD = :UNIDAD     ';
+
+      dtsGen.ParamByName('BASE__').AsString := dtsCadTin.FieldByName('ANJ_BASE__').AsString;
+      dtsGen.ParamByName('PROKEY').AsString := dtsCadTin.FieldByName('ANJ_PROKEY').AsString;
+      dtsGen.ParamByName('SUBKEY').AsString := dtsCadTin.FieldByName('ANJ_SUBKEY').AsString;
+      dtsGen.ParamByName('UNIDAD').AsString := dtsCadTin.FieldByName('ANJ_UNIDAD').AsString;
+      dtsGen.Open;
+
+      Result := dtsGen.FieldByName('BAS_CODITE').AsString;
+    Except
+      on E: Exception do
+      begin
+        raise;
+      end;
+    End;
+  Finally
+  End;
+end;
+
+function TFormulaImobiliariaAnjoImobiliaria.GetQuantidadeFormulacao: Integer;
+begin
+  Result := 20;
+end;
+
+function TFormulaImobiliariaAnjoImobiliaria.GetTextoInformativoCalculo: String;
+begin
+  Result :=
+    'Valor da Base = ' + FloatToStrF(BasePrecoVenda, ffFixed, 12, 2) + sLineBreak +
+    'Valor do Colorante = (Quantidade ) * (Preço / Embalagem) ' + sLineBreak +
+    'Valor da Tinta = Valor da Base + (Soma do Valor do Colorante de todos os Colorantes)';
+end;
+
+function TFormulaImobiliariaAnjoImobiliaria.GetUnidade(const dtsCadTin: IDataSet): String;
+begin
+  Result := dtsCadTin.FieldByName('ANJ_UNIDAD').AsString;
+end;
+
+procedure TFormulaImobiliariaAnjoImobiliaria.PreencheAcrescimoMaoObra(
+  const dtsCadTin: IDataSet);
+begin
+  Self.AcrMob := dtsCadTin.FieldByName('ANJ_ACRMOB').AsFloat;
+end;
+
+end.

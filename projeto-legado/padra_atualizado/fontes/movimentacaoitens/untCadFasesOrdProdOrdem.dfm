@@ -1,0 +1,202 @@
+inherited frmCadFasesOrdProdOrdem: TfrmCadFasesOrdProdOrdem
+  Width = 682
+  Height = 452
+  Caption = 'Sequ'#234'ncia das Fases no Processo'
+  OnKeyPress = FormKeyPress
+  ExplicitWidth = 682
+  ExplicitHeight = 452
+  PixelsPerInch = 96
+  TextHeight = 14
+  inherited pnlBotoes: TPanel
+    Top = 379
+    Width = 676
+    ExplicitTop = 379
+    ExplicitWidth = 676
+    object spbDown: TSpeedButton [0]
+      AlignWithMargins = True
+      Left = 339
+      Top = 2
+      Width = 122
+      Height = 24
+      Margins.Left = 0
+      Margins.Top = 0
+      Margins.Right = 0
+      Margins.Bottom = 0
+      Align = alLeft
+      Caption = 'Move para &baixo'
+      Glyph.Data = {
+        76010000424D7601000000000000760000002800000020000000100000000100
+        04000000000000010000120B0000120B00001000000000000000000000000000
+        800000800000008080008000000080008000808000007F7F7F00BFBFBF000000
+        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00333333303333
+        333333333337F33333333333333033333333333333373F333333333333090333
+        33333333337F7F33333333333309033333333333337373F33333333330999033
+        3333333337F337F33333333330999033333333333733373F3333333309999903
+        333333337F33337F33333333099999033333333373333373F333333099999990
+        33333337FFFF3FF7F33333300009000033333337777F77773333333333090333
+        33333333337F7F33333333333309033333333333337F7F333333333333090333
+        33333333337F7F33333333333309033333333333337F7F333333333333090333
+        33333333337F7F33333333333300033333333333337773333333}
+      NumGlyphs = 2
+      OnClick = spbDownClick
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitHeight = 22
+    end
+    object spbUp: TSpeedButton [1]
+      AlignWithMargins = True
+      Left = 217
+      Top = 2
+      Width = 122
+      Height = 24
+      Margins.Left = 100
+      Margins.Top = 0
+      Margins.Right = 0
+      Margins.Bottom = 0
+      Align = alLeft
+      Caption = 'Move para &cima'
+      Glyph.Data = {
+        76010000424D7601000000000000760000002800000020000000100000000100
+        04000000000000010000120B0000120B00001000000000000000000000000000
+        800000800000008080008000000080008000808000007F7F7F00BFBFBF000000
+        FF0000FF000000FFFF00FF000000FF00FF00FFFF0000FFFFFF00333333000333
+        3333333333777F33333333333309033333333333337F7F333333333333090333
+        33333333337F7F33333333333309033333333333337F7F333333333333090333
+        33333333337F7F33333333333309033333333333FF7F7FFFF333333000090000
+        3333333777737777F333333099999990333333373F3333373333333309999903
+        333333337F33337F33333333099999033333333373F333733333333330999033
+        3333333337F337F3333333333099903333333333373F37333333333333090333
+        33333333337F7F33333333333309033333333333337373333333333333303333
+        333333333337F333333333333330333333333333333733333333}
+      NumGlyphs = 2
+      OnClick = spbUpClick
+      ExplicitLeft = 0
+      ExplicitTop = 0
+      ExplicitHeight = 22
+    end
+    inherited FlwBotoes: TFlowPanel
+      Left = 461
+      Width = 136
+      Visible = False
+      ExplicitLeft = 461
+      ExplicitWidth = 136
+    end
+    object btnGravar: TBitBtnLocked [3]
+      Left = 2
+      Top = 2
+      Width = 115
+      Height = 24
+      Align = alLeft
+      Caption = '[ F10 ] Gravar'
+      Glyph.Data = {
+        36030000424D3603000000000000360000002800000010000000100000000100
+        18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
+        FF00FFFF00FFFF00FF313131313131313131313131FF00FFFF00FFFF00FFFF00
+        FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF313131746B6D7A767674
+        7575828282313131313131313131FF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+        FF00FF313131726E726A66697D797A2929293838384242422828286868683131
+        31313131313131FF00FFFF00FFFF00FF3131316F6C6F7470746D6A6D7D797B6C
+        6D6D4C4C4C1F1F1F000000000000090909757274777277424141FF00FF313131
+        CCCACEC9C4C9999398696669E5E2E5D8D9D9ACACAC8E8E8E525252232323201F
+        203D483D3C563C424141313131929193D7D5D9D7D5D8F2F4F68082846D6C6DA4
+        A3A4D8D8D8E9EBEBE3EAEAD4D9D9ADACAF6F836F388239424141313131EFEEF2
+        E5E5E9F7F6F6CFACACC4A6A99296986A6B6C5152536D6364A78384C4ADAFD3D0
+        D1E6E3E5D8D8D8424141313131FCFCFCFEFFFFCA9895B43837934041826263BF
+        ACABD0D0D1B588887D12119C3C3D766D6E6E6869626060FF00FF313131FFFFFF
+        FFFFFF9F3536BC4242A355557F2A28AC6C6BFFFFFFD1A4A47B14149F35362D2C
+        2C2D2C2CFF00FFFF00FF3F3F3F313131CACECF9F3536BD4241AB53539A545389
+        5354CAC5C2CC92928217179F3536FF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+        3131319F3536B84442B64F4FC16968BC6363B85959BD5E5DBF58589F3536FF00
+        FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF9F3536B5635FE9D5D4EEDEDDEF
+        DDDCEEDAD9F2E6E5C47B799F3536FF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+        FF00FF9F3536C47E7AF3FBF8C5C2C1C5C2C1C5C2C1E7EBEBC47B799F3536FF00
+        FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF9F3536C17A78F3F3F3DDD8D7DD
+        D8D7DDD8D7E3E6E5C47B799F3536FF00FFFF00FFFF00FFFF00FFFF00FFFF00FF
+        FF00FF9F3536C47B79F3F3F3C5C2C1C5C2C1C5C2C1E3E6E5C47B799F3536FF00
+        FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFB1706ECCC6C6CCC6C6CC
+        C6C6CCC6C6CCC6C6B1706EFF00FFFF00FFFF00FFFF00FFFF00FF}
+      TabOrder = 1
+      OnClick = btnGravarClick
+    end
+    inherited btnSair: TBitBtnLocked
+      Left = 597
+      Top = 2
+      Height = 24
+      Align = alRight
+      Caption = 'C&ancela'
+      TabOrder = 2
+      ExplicitLeft = 597
+      ExplicitTop = 2
+      ExplicitHeight = 24
+    end
+  end
+  inherited pnlStatus: TPanel
+    Top = 407
+    Width = 676
+    ExplicitTop = 407
+    ExplicitWidth = 676
+    inherited pnlNomeForm: TPanel
+      Left = 505
+      ExplicitLeft = 505
+    end
+    inherited pnlInfo: TPanel
+      Width = 505
+      ExplicitWidth = 505
+    end
+  end
+  object cxgCadFas: TcxGrid [2]
+    Left = 0
+    Top = 0
+    Width = 676
+    Height = 379
+    Align = alClient
+    TabOrder = 2
+    LookAndFeel.ScrollbarMode = sbmClassic
+    object cxgCadFasView: TcxGridDBTableView
+      Navigator.Buttons.CustomButtons = <>
+      DataController.Summary.DefaultGroupSummaryItems = <>
+      DataController.Summary.FooterSummaryItems = <>
+      DataController.Summary.SummaryGroups = <>
+      OptionsCustomize.ColumnFiltering = False
+      OptionsCustomize.ColumnSorting = False
+      OptionsData.Deleting = False
+      OptionsData.Editing = False
+      OptionsData.Inserting = False
+      OptionsView.NoDataToDisplayInfoText = '< Sem fases para ordenar>'
+      OptionsView.ColumnAutoWidth = True
+      OptionsView.GroupByBox = False
+      Styles.ContentOdd = cxStyle1
+      object cxgCadFasCODIGO: TcxGridDBColumn
+        Caption = 'C'#243'digo'
+        DataBinding.FieldName = 'FAS_CODIGO'
+        Options.Editing = False
+        Width = 65
+      end
+      object cxgCadFasDESFAS: TcxGridDBColumn
+        Caption = 'Descri'#231#227'o da Fase'
+        DataBinding.FieldName = 'FAS_DESFAS'
+        Options.Editing = False
+        Width = 516
+      end
+      object cxgCadFasSEQUEN: TcxGridDBColumn
+        Caption = 'Sequ'#234'ncia'
+        DataBinding.FieldName = 'FAS_SEQUEN'
+        SortIndex = 0
+        SortOrder = soAscending
+        Width = 93
+      end
+    end
+    object cxgCadFasLevel1: TcxGridLevel
+      GridView = cxgCadFasView
+    end
+  end
+  object cxStyleRepository1: TcxStyleRepository
+    Left = 88
+    Top = 40
+    PixelsPerInch = 96
+    object cxStyle1: TcxStyle
+      AssignedValues = [svColor]
+      Color = clMoneyGreen
+    end
+  end
+end

@@ -1,0 +1,226 @@
+inherited frmFatItensSerie: TfrmFatItensSerie
+  Width = 1233
+  Height = 420
+  Caption = 'Numeros de S'#233'rie dos Itens'
+  Position = poMainFormCenter
+  ExplicitWidth = 1233
+  ExplicitHeight = 420
+  PixelsPerInch = 96
+  TextHeight = 14
+  inherited pnlBotoes: TPanel
+    Top = 347
+    Width = 1227
+    ExplicitTop = 347
+    ExplicitWidth = 1227
+    inherited FlwBotoes: TFlowPanel
+      Width = 1223
+      ExplicitWidth = 1223
+      object btnConfirmar: TBitBtnLocked
+        Left = 0
+        Top = 0
+        Width = 110
+        Height = 22
+        Align = alLeft
+        Caption = '[F10] Confirmar'
+        Glyph.Data = {
+          36030000424D3603000000000000360000002800000010000000100000000100
+          18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
+          96675E9F6F609F6F609F6F609F6F609F6F609F6F609F6F609F6F609F6F609F6F
+          609F6F609F6F60FF00FFFF00FFFF00FF99695FF6E0BFF4DDB8F3DAB4F3D7ADF2
+          D5A7F0D3A3F0D09EEECC99EECA93EDC990EDC68C9F6F60FF00FFFF00FFFF00FF
+          9D6C60F6E3C6F6E1C1F4DDBBF3DCB4008100F2D5AAF0D3A4F0CF9FEFCC99EFCB
+          95EEC9909F6F60FF00FFFF00FFFF00FFA16E60F7E6CEF6E5C7F4E1C100810000
+          8100008100F3D5ABF0D3A5EFD19FEFCE9AEFCB969F6F60FF00FFFF00FFFF00FF
+          A67262F8EAD4F7E7CE008100307A2A5F924B00810050883CF2D5ABF0D3A5F0D0
+          A0EFCF9C9F6F60FF00FFFF00FFFF00FFAB7663FAEEDAFAEBD5008100EFE2C2F6
+          E2C2A7B883008100008100EDD4A9F0D4A6F0D1A19F6F60FF00FFFF00FFFF00FF
+          B07864FAF0E2FAEEDCF8EBD5F8E9D0F7E6CAF6E3C5E6D8B4008100008100F2D7
+          ADF2D4A79F6F60FF00FFFF00FFFF00FFB57D64FCF3E7FBF0E3FAEFDDFAEDD8F7
+          E9D1F8E6CBF6E3C5F6E1C0F4DEBAF4DAB5F3D7AD9F6F60FF00FFFF00FFFF00FF
+          BB8065FCF7EDD58127D58127D58127D58127D58127D58127D58127D58127D581
+          27F3DAB69F6F60FF00FFFF00FFFF00FFC08366FCF8F3FCF7EFFCF4EAFBF2E5FB
+          EFDEF8EDD9F8EBD4F8E7CEF7E3C7F6E1C2F4DEBB9F6F60FF00FFFF00FFFF00FF
+          C48767FEFBF8FEFAF3FEF7EFFCF4EAFBF2E6FAEFE0F8EDDAF8EAD4F7E9CFF7E5
+          C9F6E2C49F6F60FF00FFFF00FFFF00FFC98967FEFCFBD58127D58127D58127D5
+          8127D58127D58127D58127D58127D58127F7E5CA9F6F60FF00FFFF00FFFF00FF
+          CC8B68FFFFFFFFFEFCFEFCFAFEFBF4FEF8F0FCF6EDFCF4E7FAF2E2FAEFDCF8ED
+          D7F8EAD19F6F60FF00FFFF00FFFF00FFCF8E68FFFFFFFFFFFFFFFFFCFFFCFAFE
+          FBF6FEF8F0FCF7EEFBF4E9FBF2E3FBEFDDF8EDD89F6F60FF00FFFF00FFFF00FF
+          CF8E68CF8E68CF8E68CF8E68CF8E68CF8E68CF8E68CF8E68CF8E68CF8E68CF8E
+          68CF8E68CF8E68FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF}
+        TabOrder = 0
+        OnClick = btnConfirmarClick
+      end
+      object btnNumeroSerie: TBitBtnLocked
+        Left = 110
+        Top = 0
+        Width = 147
+        Height = 22
+        Align = alLeft
+        Caption = '[F11] N'#250'mero de S'#233'rie'
+        Glyph.Data = {
+          36030000424D3603000000000000360000002800000010000000100000000100
+          18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
+          96675E9F6F609F6F609F6F609F6F609F6F609F6F609F6F609F6F609F6F609F6F
+          609F6F609F6F60FF00FFFF00FFFF00FF99695FF6E0BFF4DDB8F3DAB4F3D7ADF2
+          D5A7F0D3A3F0D09EEECC99EECA93EDC990EDC68C9F6F60FF00FFFF00FFFF00FF
+          9D6C60F6E3C6F6E1C1F4DDBBF3DCB4008100F2D5AAF0D3A4F0CF9FEFCC99EFCB
+          95EEC9909F6F60FF00FFFF00FFFF00FFA16E60F7E6CEF6E5C7F4E1C100810000
+          8100008100F3D5ABF0D3A5EFD19FEFCE9AEFCB969F6F60FF00FFFF00FFFF00FF
+          A67262F8EAD4F7E7CE008100307A2A5F924B00810050883CF2D5ABF0D3A5F0D0
+          A0EFCF9C9F6F60FF00FFFF00FFFF00FFAB7663FAEEDAFAEBD5008100EFE2C2F6
+          E2C2A7B883008100008100EDD4A9F0D4A6F0D1A19F6F60FF00FFFF00FFFF00FF
+          B07864FAF0E2FAEEDCF8EBD5F8E9D0F7E6CAF6E3C5E6D8B4008100008100F2D7
+          ADF2D4A79F6F60FF00FFFF00FFFF00FFB57D64FCF3E7FBF0E3FAEFDDFAEDD8F7
+          E9D1F8E6CBF6E3C5F6E1C0F4DEBAF4DAB5F3D7AD9F6F60FF00FFFF00FFFF00FF
+          BB8065FCF7EDD58127D58127D58127D58127D58127D58127D58127D58127D581
+          27F3DAB69F6F60FF00FFFF00FFFF00FFC08366FCF8F3FCF7EFFCF4EAFBF2E5FB
+          EFDEF8EDD9F8EBD4F8E7CEF7E3C7F6E1C2F4DEBB9F6F60FF00FFFF00FFFF00FF
+          C48767FEFBF8FEFAF3FEF7EFFCF4EAFBF2E6FAEFE0F8EDDAF8EAD4F7E9CFF7E5
+          C9F6E2C49F6F60FF00FFFF00FFFF00FFC98967FEFCFBD58127D58127D58127D5
+          8127D58127D58127D58127D58127D58127F7E5CA9F6F60FF00FFFF00FFFF00FF
+          CC8B68FFFFFFFFFEFCFEFCFAFEFBF4FEF8F0FCF6EDFCF4E7FAF2E2FAEFDCF8ED
+          D7F8EAD19F6F60FF00FFFF00FFFF00FFCF8E68FFFFFFFFFFFFFFFFFCFFFCFAFE
+          FBF6FEF8F0FCF7EEFBF4E9FBF2E3FBEFDDF8EDD89F6F60FF00FFFF00FFFF00FF
+          CF8E68CF8E68CF8E68CF8E68CF8E68CF8E68CF8E68CF8E68CF8E68CF8E68CF8E
+          68CF8E68CF8E68FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+          00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF}
+        TabOrder = 1
+        OnClick = btnNumeroSerieClick
+      end
+    end
+    inherited btnSair: TBitBtnLocked
+      Left = 1147
+      ExplicitLeft = 1147
+    end
+  end
+  inherited pnlStatus: TPanel
+    Top = 375
+    Width = 1227
+    ExplicitTop = 375
+    ExplicitWidth = 1227
+    inherited pnlNomeForm: TPanel
+      Left = 1056
+      ExplicitLeft = 1056
+    end
+    inherited pnlInfo: TPanel
+      Width = 1056
+      ExplicitWidth = 1056
+    end
+  end
+  object cxgNumeroSerie: TcxGridCitel [2]
+    Left = 0
+    Top = 0
+    Width = 1227
+    Height = 347
+    Align = alClient
+    TabOrder = 2
+    LookAndFeel.ScrollbarMode = sbmClassic
+    object cxgNumeroSerieTV: TcxGridDBTableViewCitel
+      Navigator.Buttons.CustomButtons = <>
+      DataController.DataSource = dtsSeries
+      DataController.Filter.Options = [fcoCaseInsensitive]
+      DataController.Options = [dcoAssignGroupingValues, dcoAssignMasterDetailKeys, dcoSaveExpanding, dcoImmediatePost]
+      DataController.Summary.DefaultGroupSummaryItems = <>
+      DataController.Summary.FooterSummaryItems = <
+        item
+          Kind = skSum
+        end>
+      DataController.Summary.SummaryGroups = <>
+      FilterRow.InfoText = 'Clique aqui para definir um filtro'
+      FilterRow.ApplyChanges = fracDelayed
+      OptionsBehavior.GoToNextCellOnEnter = True
+      OptionsBehavior.FocusCellOnCycle = True
+      OptionsCustomize.ColumnFiltering = False
+      OptionsCustomize.ColumnGrouping = False
+      OptionsCustomize.ColumnHidingOnGrouping = False
+      OptionsData.CancelOnExit = False
+      OptionsData.Deleting = False
+      OptionsData.DeletingConfirmation = False
+      OptionsData.Inserting = False
+      OptionsView.NoDataToDisplayInfoText = 'Sem dados para exibir'
+      OptionsView.Footer = True
+      OptionsView.GroupByBox = False
+      Zebra = False
+      Destaque = False
+      CorZebra = clMoneyGreen
+      object cxgNumeroSerieTVCODITE: TcxGridDBColumn
+        DataBinding.FieldName = 'CODITE'
+        Options.Editing = False
+      end
+      object cxgNumeroSerieTVDESITE: TcxGridDBColumn
+        DataBinding.FieldName = 'DESITE'
+        Options.Editing = False
+      end
+      object cxgNumeroSerieTVCODUNI: TcxGridDBColumn
+        DataBinding.FieldName = 'CODUNI'
+        Options.Editing = False
+      end
+      object cxgNumeroSerieTVCODFAB: TcxGridDBColumn
+        DataBinding.FieldName = 'CODFAB'
+        Options.Editing = False
+      end
+      object cxgNumeroSerieTVQUANT: TcxGridDBColumn
+        DataBinding.FieldName = 'QUANT'
+        Options.Editing = False
+      end
+      object cxgNumeroSerieTVNUMSER: TcxGridDBColumn
+        DataBinding.FieldName = 'NUMSER'
+        Options.Editing = False
+      end
+    end
+    object cxgNumeroSerieLevel: TcxGridLevel
+      GridView = cxgNumeroSerieTV
+    end
+  end
+  object cdsSeries: TUniClientDataSet
+    Aggregates = <>
+    AggregatesActive = True
+    Params = <>
+    Left = 288
+    Top = 160
+    object cdsSeriesCODITE: TStringField
+      DisplayLabel = 'C'#243'digo'
+      FieldName = 'CODITE'
+      Size = 7
+    end
+    object cdsSeriesDESITE: TStringField
+      DisplayLabel = 'Descri'#231#227'o'
+      FieldName = 'DESITE'
+      Size = 100
+    end
+    object cdsSeriesCODUNI: TStringField
+      DisplayLabel = 'Un'
+      FieldName = 'CODUNI'
+      Size = 2
+    end
+    object cdsSeriesCODFAB: TStringField
+      DisplayLabel = 'C'#243'd. F'#225'brica'
+      FieldName = 'CODFAB'
+      Size = 50
+    end
+    object cdsSeriesQUANT: TFloatField
+      DisplayLabel = 'Quantidade'
+      FieldName = 'QUANT'
+    end
+    object cdsSeriesNUMSER: TStringField
+      DisplayLabel = 'N'#250'mero S'#233'rie'
+      FieldName = 'NUMSER'
+      Size = 30
+    end
+    object cdsSeriesAUTOINCREM: TStringField
+      FieldName = 'AUTOINCREM'
+    end
+    object cdsSeriesCODEMP: TStringField
+      DisplayLabel = 'Empresa'
+      FieldName = 'CODEMP'
+      Size = 3
+    end
+  end
+  object dtsSeries: TDataSource
+    DataSet = cdsSeries
+    Left = 288
+    Top = 216
+  end
+end

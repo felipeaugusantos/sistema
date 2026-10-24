@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<TfrxReport Version="5.6.11" DotMatrixReport="False" IniFile="\Software\Fast Reports" PreviewOptions.Buttons="4095" PreviewOptions.Zoom="1" PrintOptions.Printer="Default" PrintOptions.PrintOnSheet="0" ReportOptions.CreateDate="43006,4110902546" ReportOptions.Description.Text="" ReportOptions.LastChange="44742,3491297685" ScriptLanguage="PascalScript" ScriptText.Text="&#13;&#10;procedure ReportTitle1OnBeforePrint(Sender: TfrxComponent);&#13;&#10;begin&#13;&#10; lblBoxLot.Visible := (&#60;frxDBConferencia.&#34;BOXLOT&#34;&#62; &#60;&#62; '');&#13;&#10; edtBoxLot.Visible := (&#60;frxDBConferencia.&#34;BOXLOT&#34;&#62; &#60;&#62; '');&#13;&#10;end;&#13;&#10;&#13;&#10;begin&#13;&#10;&#13;&#10;end.">
+  <Datasets>
+    <item DataSet="frxDBConferencia" DataSetName="frxDBConferencia"/>
+    <item DataSet="frxDBConferenciaVolumes" DataSetName="frxDBConferenciaVolumes"/>
+  </Datasets>
+  <TfrxDataPage Name="Data" Height="1000" Left="0" Top="0" Width="1000"/>
+  <TfrxReportPage Name="Page1" PaperWidth="210" PaperHeight="297" PaperSize="9" LeftMargin="10" RightMargin="10" TopMargin="10" BottomMargin="10" ColumnWidth="0" ColumnPositions.Text="" HGuides.Text="" VGuides.Text="">
+    <TfrxReportTitle Name="ReportTitle1" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Height="164,03152291" Left="0" Top="18,89765" Width="718,1107" OnBeforePrint="ReportTitle1OnBeforePrint">
+      <TfrxMemoView Name="Memo2" Left="7,55906" Top="1,77953" Width="105,82684" Height="18,89765" Text="Lote Separação: "/>
+      <TfrxMemoView Name="frxDBSeparacaoNUMLOT" Left="116,94496" Top="1,77953" Width="75,59055118" Height="18,89765" DataSet="frxDBSeparacao" DataSetName="frxDBSeparacao" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="1" ParentFont="False" Text="[frxDBConferencia.&#34;NUMLOT&#34;]"/>
+      <TfrxMemoView Name="Memo3" Left="601,14997" Top="1,77953" Width="37,7953" Height="18,89765" Text="Data: "/>
+      <TfrxMemoView Name="frxDBSeparacaoDTACAD" Left="642,07916" Top="1,77953" Width="71,81107" Height="18,89765" DataSet="frxDBSeparacao" DataSetName="frxDBSeparacao" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="1" ParentFont="False" Text="[frxDBConferencia.&#34;DTACAD&#34;]"/>
+      <TfrxMemoView Name="Memo4" Left="199,33086" Top="1,77953" Width="71,81107" Height="18,89765" Text="Descrição:"/>
+      <TfrxMemoView Name="frxDBSeparacaoDESCRI" Left="274,92146" Top="1,77953" Width="321,26005" Height="18,89765" DataSet="frxDBSeparacao" DataSetName="frxDBSeparacao" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="1" ParentFont="False" WordWrap="False" Text="[frxDBConferencia.&#34;DESLOT&#34;]"/>
+      <TfrxMemoView Name="frxDBSeparacaoNOMTRA" Left="116,94496" Top="23,23624" Width="597,16574" Height="18,89765" DataSet="frxDBSeparacao" DataSetName="frxDBSeparacao" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="1" ParentFont="False" Text="[frxDBConferencia.&#34;NOMTRA&#34;]"/>
+      <TfrxMemoView Name="Memo5" Left="7,55906" Top="23,23624" Width="105,82684" Height="18,89765" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="0" ParentFont="False" Text="Transportadora:"/>
+      <TfrxMemoView Name="frxDBSeparacaoNOMMOT" Left="116,94496" Top="43,91342" Width="597,16574" Height="18,89765" DataSet="frxDBSeparacao" DataSetName="frxDBSeparacao" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="1" ParentFont="False" Text="[frxDBConferencia.&#34;NOMMOT&#34;]"/>
+      <TfrxMemoView Name="Memo6" Left="7,55906" Top="43,91342" Width="105,82684" Height="18,89765" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="0" ParentFont="False" Text="Motorista:"/>
+      <TfrxLineView Name="Line1" Left="1,55906" Top="152,92919" Width="714,33117" Height="0" Color="0" Frame.Style="fsDot" Frame.Typ="4"/>
+      <TfrxMemoView Name="Memo11" Left="8,55906" Top="110,37013" Width="90,70872" Height="18,89765" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="1" HAlign="haRight" ParentFont="False" WordWrap="False" VAlign="vaBottom" Text="Qtd.Vol. Emb."/>
+      <TfrxMemoView Name="Memo12" Left="103,06308" Top="110,37013" Width="41,57483" Height="18,89765" Font.Charset="1" Font.Color="0" Font.Height="-12" Font.Name="Arial" Font.Style="1" HAlign="haRight" ParentFont="False" VAlign="vaBottom" Text="Qtde"/>
+      <TfrxMemoView Name="Memo13" Left="150,21274" Top="110,37013" Width="34,01577" Height="18,89765" Font.Charset="1" Font.Color="0" Font.Height="-12" Font.Name="Arial" Font.Style="1" ParentFont="False" VAlign="vaBottom" Text="Unid."/>
+      <TfrxMemoView Name="Memo14" Left="188,34663" Top="110,37013" Width="60,47248" Height="18,89765" Font.Charset="1" Font.Color="0" Font.Height="-12" Font.Name="Arial" Font.Style="1" HAlign="haRight" ParentFont="False" VAlign="vaBottom" Text="Produto"/>
+      <TfrxMemoView Name="Memo15" Left="423,01608" Top="110,37013" Width="291,02381" Height="18,89765" Font.Charset="1" Font.Color="0" Font.Height="-12" Font.Name="Arial" Font.Style="1" ParentFont="False" VAlign="vaBottom" Text="Descrição"/>
+      <TfrxMemoView Name="Memo16" Left="116,78740157" Top="65,43568333" Width="597,16574" Height="18,89765" DataSet="frxDBSeparacao" DataSetName="frxDBSeparacao" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="1" ParentFont="False" Text="[frxDBConferencia.&#34;PLAVEI&#34;] - [frxDBConferencia.&#34;DESVEI&#34;]">
+        <Formats>
+          <item/>
+          <item/>
+        </Formats>
+      </TfrxMemoView>
+      <TfrxMemoView Name="Memo17" Left="7,55905512" Top="65,43568333" Width="105,82684" Height="18,89765" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="0" ParentFont="False" Text="Veículo:"/>
+      <TfrxMemoView Name="Memo26" Left="7,55906" Top="132,28355" Width="124,72449" Height="18,89765" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="1" ParentFont="False" VAlign="vaBottom" Text="Código de Barras"/>
+      <TfrxMemoView Name="Memo28" Left="136,06308" Top="132,28355" Width="230,55133" Height="18,89765" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="1" ParentFont="False" VAlign="vaBottom" Text="Marca"/>
+      <TfrxMemoView Name="edtBoxLot" Left="116,78740645" Top="86,92919" Width="597,16574" Height="18,89765" DataSet="frxDBSeparacao" DataSetName="frxDBSeparacao" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="1" ParentFont="False" Text="[frxDBConferencia.&#34;BOXLOT&#34;]"/>
+      <TfrxMemoView Name="lblBoxLot" Left="7,55906" Top="86,92919" Width="105,82684" Height="18,89765" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="0" ParentFont="False" Text="Box:"/>
+      <TfrxMemoView Name="Memo23" Left="253,22851" Top="110,36220472" Width="75,5906" Height="18,89765" Font.Charset="1" Font.Color="0" Font.Height="-12" Font.Name="Arial" Font.Style="1" HAlign="haRight" ParentFont="False" VAlign="vaBottom" Text="Loc.Física"/>
+      <TfrxMemoView Name="Memo24" Left="332,59864" Top="110,36220472" Width="83,14966" Height="18,89765" Font.Charset="1" Font.Color="0" Font.Height="-12" Font.Name="Arial" Font.Style="1" HAlign="haRight" ParentFont="False" VAlign="vaBottom" Text="Sup.Estoque"/>
+    </TfrxReportTitle>
+    <TfrxMasterData Name="MasterData1" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Height="35,90551181" Left="0" Top="241,88992" Width="718,1107" ColumnWidth="0" ColumnGap="0" DataSet="frxDBConferencia" DataSetName="frxDBConferencia" RowCount="0">
+      <TfrxMemoView Name="frxDBSeparacaoQTDEMB" Left="12,33859" Top="1,13385827" Width="86,92919" Height="15,11811024" DataSet="frxDBSeparacao" DataSetName="frxDBSeparacao" Font.Charset="1" Font.Color="0" Font.Height="-12" Font.Name="Arial" Font.Style="0" HAlign="haRight" ParentFont="False" WordWrap="False" Text="[frxDBConferencia.&#34;QTDEMB&#34;] - [frxDBConferencia.&#34;UNDCOP&#34;]">
+        <Formats>
+          <item/>
+          <item/>
+        </Formats>
+      </TfrxMemoView>
+      <TfrxMemoView Name="frxDBSeparacaoQTDUNI" Left="103,06308" Top="1,13385827" Width="41,57483" Height="15,11811024" DataSet="frxDBSeparacao" DataSetName="frxDBSeparacao" Font.Charset="1" Font.Color="0" Font.Height="-12" Font.Name="Arial" Font.Style="0" HAlign="haRight" ParentFont="False" Text="[frxDBConferencia.&#34;QTDUNI&#34;]"/>
+      <TfrxMemoView Name="frxDBSeparacaoUNDVEN" Left="150,21274" Top="1,13385827" Width="34,01577" Height="15,11811024" DataSet="frxDBSeparacao" DataSetName="frxDBSeparacao" Font.Charset="1" Font.Color="0" Font.Height="-12" Font.Name="Arial" Font.Style="0" ParentFont="False" Text="[frxDBConferencia.&#34;UNDVEN&#34;]"/>
+      <TfrxMemoView Name="frxDBSeparacaoCODITE" Left="188,34663" Top="1,13385827" Width="60,47248" Height="15,11811024" DataSet="frxDBSeparacao" DataSetName="frxDBSeparacao" Font.Charset="1" Font.Color="0" Font.Height="-12" Font.Name="Arial" Font.Style="0" HAlign="haRight" ParentFont="False" Text="[frxDBConferencia.&#34;CODITE&#34;]"/>
+      <TfrxMemoView Name="frxDBSeparacaoDESCRI1" Left="422,92913386" Top="1,13385827" Width="291,02362205" Height="15,11811024" DataSet="frxDBSeparacao" DataSetName="frxDBSeparacao" Font.Charset="1" Font.Color="0" Font.Height="-12" Font.Name="Arial" Font.Style="0" ParentFont="False" WordWrap="False" Text="[frxDBConferencia.&#34;DESCRI&#34;]"/>
+      <TfrxMemoView Name="Memo18" Left="11,33859" Top="18,89765" Width="120,94496" Height="15,11811024" DataSet="frxDBSeparacao" DataSetName="frxDBSeparacao" Font.Charset="1" Font.Color="0" Font.Height="-12" Font.Name="Arial" Font.Style="0" ParentFont="False" WordWrap="False" Text="[frxDBConferencia.&#34;CODBAR&#34;]">
+        <Formats>
+          <item/>
+          <item/>
+        </Formats>
+      </TfrxMemoView>
+      <TfrxMemoView Name="Memo21" Left="136,06308" Top="18,89765" Width="230,55133" Height="15,11811024" DataSet="frxDBSeparacao" DataSetName="frxDBSeparacao" Font.Charset="1" Font.Color="0" Font.Height="-12" Font.Name="Arial" Font.Style="0" ParentFont="False" WordWrap="False" Text="[frxDBConferencia.&#34;DESMAR&#34;]"/>
+      <TfrxMemoView Name="frxDBSeparacaoLOCFIS" Left="253,22834646" Top="1,13385827" Width="75,59055118" Height="15,11811024" DataSet="frxDBSeparacao" DataSetName="frxDBSeparacao" Font.Charset="1" Font.Color="0" Font.Height="-12" Font.Name="Arial" Font.Style="0" HAlign="haRight" ParentFont="False" Text="[frxDBConferencia.&#34;LOCFIS&#34;]"/>
+      <TfrxMemoView Name="frxDBSeparacaoLOCSUP" Left="332,5984252" Top="1,13385827" Width="83,1496063" Height="15,11811024" DataSet="frxDBSeparacao" DataSetName="frxDBSeparacao" Font.Charset="1" Font.Color="0" Font.Height="-12" Font.Name="Arial" Font.Style="0" HAlign="haRight" ParentFont="False" Text="[frxDBConferencia.&#34;LOCSUP&#34;]"/>
+    </TfrxMasterData>
+    <TfrxPageFooter Name="PageFooter1" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Height="17" Left="0" Top="430,86642" Width="718,1107">
+      <TfrxMemoView Name="Memo19" Left="7,55906" Top="0" Width="411,96877" Height="15,11812" Font.Charset="1" Font.Color="0" Font.Height="-12" Font.Name="Arial" Font.Style="0" ParentFont="False" Text="Página: [Page#] de [TotalPages#]       Impressão: [Date] [Time]">
+        <Formats>
+          <item/>
+          <item/>
+        </Formats>
+      </TfrxMemoView>
+      <TfrxMemoView Name="Memo20" Left="532,91373" Top="0" Width="181,41744" Height="15,11812" Font.Charset="1" Font.Color="0" Font.Height="-12" Font.Name="Arial" Font.Style="0" HAlign="haRight" ParentFont="False" Text="frmQckRomLoteSeparacao">
+        <Formats>
+          <item/>
+          <item/>
+        </Formats>
+      </TfrxMemoView>
+    </TfrxPageFooter>
+    <TfrxReportSummary Name="ReportSummary1" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Height="22,67718" Left="0" Top="385,51206" Width="718,1107">
+      <TfrxSubreport Name="Subreport1" Left="7,55906" Top="0" Width="94,48825" Height="18,89765" Page="Page2"/>
+    </TfrxReportSummary>
+    <TfrxFooter Name="Footer2" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Height="22,67718" Left="0" Top="302,3624" Width="718,1107">
+      <TfrxSysMemoView Name="SysMemo1" Left="88,06298236" Top="1,88976378" Width="56,69292315" Height="18,89765" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="1" HAlign="haRight" ParentFont="False" Text="[SUM(&#60;frxDBConferencia.&#34;QTDUNI&#34;&#62;,MasterData1)]"/>
+      <TfrxMemoView Name="Memo22" Left="8,69291339" Top="1,77953" Width="79,37013" Height="18,89765" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="1" ParentFont="False" Text="Qtde. total:"/>
+    </TfrxFooter>
+  </TfrxReportPage>
+  <TfrxReportPage Name="Page2" PaperWidth="210" PaperHeight="297" PaperSize="9" LeftMargin="10" RightMargin="10" TopMargin="10" BottomMargin="10" ColumnWidth="0" ColumnPositions.Text="" HGuides.Text="" VGuides.Text="">
+    <TfrxMasterData Name="MasterData2" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Height="16,6299212598425" Left="0" Top="113,3859" Width="718,1107" ColumnWidth="0" ColumnGap="0" DataSet="frxDBConferenciaVolumes" DataSetName="frxDBConferenciaVolumes" RowCount="0">
+      <TfrxMemoView Name="frxDBConferenciaVolumesUNDCOP" Left="11,33859" Top="0,77953" Width="90,70872" Height="15,11812" DataSet="frxDBConferenciaVolumes" DataSetName="frxDBConferenciaVolumes" Font.Charset="1" Font.Color="0" Font.Height="-12" Font.Name="Arial" Font.Style="0" HAlign="haRight" ParentFont="False" Text="[frxDBConferenciaVolumes.&#34;QTDEMB&#34;] - [frxDBConferenciaVolumes.&#34;UNDCOP&#34;]"/>
+      <TfrxMemoView Name="frxDBConferenciaVolumesTOTPES" Left="113,28355" Top="0,77953" Width="68,03154" Height="15,11812" DataField="TOTPES" DataSet="frxDBConferenciaVolumes" DataSetName="frxDBConferenciaVolumes" Font.Charset="1" Font.Color="0" Font.Height="-12" Font.Name="Arial" Font.Style="0" HAlign="haRight" ParentFont="False" Text="[frxDBConferenciaVolumes.&#34;TOTPES&#34;]"/>
+    </TfrxMasterData>
+    <TfrxFooter Name="Footer1" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Height="18,89765" Left="0" Top="151,1812" Width="718,1107">
+      <TfrxMemoView Name="Memo9" Left="113,3859" Top="2" Width="68,03154" Height="15,11812" DataSet="frxDBConferenciaVolumes" DataSetName="frxDBConferenciaVolumes" Font.Charset="1" Font.Color="0" Font.Height="-12" Font.Name="Arial" Font.Style="1" HAlign="haRight" ParentFont="False" Text="[SUM(&#60;frxDBConferenciaVolumes.&#34;TOTPES&#34;&#62;,MasterData2)]"/>
+      <TfrxLineView Name="Line3" Left="3,77953" Top="0" Width="188,9765" Height="0" Color="0" Frame.Style="fsDot" Frame.Typ="4"/>
+      <TfrxMemoView Name="Memo10" Left="11,33859" Top="2" Width="90,70872" Height="15,11812" DataSet="frxDBConferenciaVolumes" DataSetName="frxDBConferenciaVolumes" Font.Charset="1" Font.Color="0" Font.Height="-12" Font.Name="Arial" Font.Style="1" HAlign="haRight" ParentFont="False" Text="[SUM(&#60;frxDBConferenciaVolumes.&#34;QTDEMB&#34;&#62;,MasterData2)]"/>
+    </TfrxFooter>
+    <TfrxHeader Name="Header1" FillType="ftBrush" FillGap.Top="0" FillGap.Left="0" FillGap.Bottom="0" FillGap.Right="0" Height="71,81107" Left="0" Top="18,89765" Width="718,1107">
+      <TfrxMemoView Name="Memo1" Left="11,33859" Top="51,33859" Width="90,70872" Height="18,89765" Font.Charset="1" Font.Color="0" Font.Height="-12" Font.Name="Arial" Font.Style="1" HAlign="haRight" ParentFont="False" Text="Qtd.Vol. Emb."/>
+      <TfrxMemoView Name="Memo7" Left="0" Top="28,10235" Width="192,75603" Height="18,89765" Font.Charset="1" Font.Color="0" Font.Height="-13" Font.Name="Arial" Font.Style="1" HAlign="haCenter" ParentFont="False" Text="RESUMO"/>
+      <TfrxMemoView Name="Memo8" Left="113,28355" Top="51,33859" Width="68,03154" Height="18,89765" Font.Charset="1" Font.Color="0" Font.Height="-12" Font.Name="Arial" Font.Style="1" HAlign="haRight" ParentFont="False" Text="Peso"/>
+      <TfrxLineView Name="Line2" Left="3,77953" Top="70,23624" Width="188,9765" Height="0" Color="0" Frame.Style="fsDot" Frame.Typ="4"/>
+    </TfrxHeader>
+  </TfrxReportPage>
+</TfrxReport>

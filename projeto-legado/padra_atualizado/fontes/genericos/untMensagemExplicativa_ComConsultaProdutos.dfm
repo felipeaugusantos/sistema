@@ -1,0 +1,116 @@
+inherited frmMensagemExplicativa_ComConsultaProdutos: TfrmMensagemExplicativa_ComConsultaProdutos
+  Width = 706
+  Height = 333
+  BorderStyle = bsDialog
+  Caption = 'Instru'#231#227'o'
+  Position = poMainFormCenter
+  ExplicitWidth = 706
+  ExplicitHeight = 333
+  PixelsPerInch = 96
+  TextHeight = 14
+  object RitchObservacao: TRichEdit [0]
+    Left = 0
+    Top = 0
+    Width = 700
+    Height = 260
+    Align = alClient
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -15
+    Font.Name = 'Consolas'
+    Font.Pitch = fpVariable
+    Font.Style = []
+    ParentFont = False
+    ReadOnly = True
+    TabOrder = 2
+    Visible = False
+    Zoom = 100
+  end
+  inherited pnlBotoes: TPanel
+    Top = 260
+    Width = 700
+    ExplicitTop = 260
+    ExplicitWidth = 700
+    inherited FlwBotoes: TFlowPanel
+      Width = 696
+      ExplicitWidth = 696
+      object btnConsultaProdutos: TBitBtnLocked
+        Left = 0
+        Top = 0
+        Width = 161
+        Height = 22
+        Caption = '&Consulta de Produtos'
+        Glyph.Data = {
+          36030000424D3603000000000000360000002800000010000000100000000100
+          18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
+          A46769A46769A46769A46769A46769A46769A46769A46769A46769A46769A467
+          69A46769A46769FF00FFFF00FFFF00FF485360FEE9C7F4DAB5F3D5AAF2D0A0EF
+          CB96EFC68BEDC182EBC17FEBC180EBC180F2C782A46769FF00FFFF00FF4380B7
+          1F6FC2656B86F3DABCF2D5B1F0D0A7EECB9EEDC793EDC28BE9BD81E9BD7FE9BD
+          7FEFC481A46769FF00FFFF00FFFF00FF32A3FF1672D76B6A80F2DABCF2D5B2EF
+          D0A9EECB9EEDC796EBC28CE9BD82E9BD7FEFC481A46769FF00FFFF00FFFF00FF
+          A0675B34A1FF1572D45E6782F3DABBF2D5B1F0D0A6EECB9EEDC795EBC28AEABF
+          81EFC480A46769FF00FFFF00FFFF00FFA7756BFFFBF033A6FF4078AD8E675EAC
+          7F7597645EAC7D6FCAA083EDC695EBC28AEFC583A46769FF00FFFF00FFFF00FF
+          A7756BFFFFFCFAF0E6AD8A88B78F84D8BAA5EED5B6D7B298B58877CBA083EBC7
+          93F2C98CA46769FF00FFFF00FFFF00FFBC8268FFFFFFFEF7F2AF847FDAC0B4F7
+          E3CFF6E0C5FFFFF4D7B198AC7D6FEECC9EF3CE97A46769FF00FFFF00FFFF00FF
+          BC8268FFFFFFFFFEFC976560F6E9E0F7EADAF6E3CFFFFFEBEFD4B797645EF0D0
+          A6F6D3A0A46769FF00FFFF00FFFF00FFD1926DFFFFFFFFFFFFB08884DECAC4FA
+          EFE5F8EAD9FFFFD4D9B8A5AC7F74F4D8B1EBCFA4A46769FF00FFFF00FFFF00FF
+          D1926DFFFFFFFFFFFFD5BFBCBA9793DECAC4F6E9DEDAC0B4B78F84B28C7BDECE
+          B4B6AA93A46769FF00FFFF00FFFF00FFDA9D75FFFFFFFFFFFFFFFFFFD5BFBCB0
+          8884976560AF867FCAA79DA56B5FA56B5FA56B5FA46769FF00FFFF00FFFF00FF
+          DA9D75FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFBFFFEF7DAC1BAA56B5FE19E
+          55E68F31B56D4DFF00FFFF00FFFF00FFE7AB79FFFFFFFFFFFFFFFFFFFFFFFFFF
+          FFFFFFFFFFFFFFFFDCC7C5A56B5FF8B55CBF7A5CFF00FFFF00FFFF00FFFF00FF
+          E7AB79FBF4F0FBF4EFFAF3EFFAF3EFF8F2EFF7F2EFF7F2EFD8C2C0A56B5FC183
+          6CFF00FFFF00FFFF00FFFF00FFFF00FFE7AB79D1926DD1926DD1926DD1926DD1
+          926DD1926DD1926DD1926DA56B5FFF00FFFF00FFFF00FFFF00FF}
+        TabOrder = 0
+        Visible = False
+        OnClick = btnConsultaProdutosClick
+      end
+    end
+    inherited btnSair: TBitBtnLocked
+      Left = 568
+      Width = 126
+      ExplicitLeft = 568
+      ExplicitWidth = 126
+    end
+  end
+  inherited pnlStatus: TPanel
+    Top = 288
+    Width = 700
+    ExplicitTop = 288
+    ExplicitWidth = 700
+    inherited pnlNomeForm: TPanel
+      Left = 400
+      Width = 300
+      ExplicitLeft = 400
+      ExplicitWidth = 300
+    end
+    inherited pnlInfo: TPanel
+      Width = 400
+      ExplicitWidth = 400
+    end
+  end
+  object mmoInstru: TMemo [3]
+    Left = 0
+    Top = 0
+    Width = 700
+    Height = 260
+    Align = alClient
+    Color = clCream
+    Font.Charset = ANSI_CHARSET
+    Font.Color = clBlack
+    Font.Height = -15
+    Font.Name = 'Courier New'
+    Font.Pitch = fpVariable
+    Font.Style = [fsBold]
+    ParentFont = False
+    ReadOnly = True
+    ScrollBars = ssVertical
+    TabOrder = 3
+  end
+end

@@ -1,0 +1,317 @@
+inherited frmBaseFechamento: TfrmBaseFechamento
+  Left = 247
+  Top = 150
+  Width = 384
+  Height = 308
+  BorderIcons = [biSystemMenu]
+  Caption = ''
+  Position = poMainFormCenter
+  ExplicitWidth = 384
+  ExplicitHeight = 308
+  PixelsPerInch = 96
+  TextHeight = 14
+  inherited pnlBotoes: TPanel
+    Top = 218
+    Width = 378
+    ExplicitTop = 218
+    ExplicitWidth = 378
+    DesignSize = (
+      378
+      0)
+    inherited btnSair: TBitBtnLocked
+      Left = 307
+      ExplicitLeft = 307
+    end
+  end
+  inherited pnlStatus: TPanel
+    Top = 267
+    Width = 378
+    ExplicitTop = 267
+    ExplicitWidth = 378
+    inherited pnlNomeForm: TPanel
+      Left = 194
+      Width = 184
+      ExplicitLeft = 194
+      ExplicitWidth = 184
+    end
+    inherited pnlInfo: TPanel
+      Width = 194
+      ExplicitWidth = 194
+    end
+  end
+  inherited pgcDados: TPageControl
+    Width = 378
+    Height = 218
+    Visible = False
+    ExplicitWidth = 378
+    ExplicitHeight = 218
+  end
+  object pnlBotoesConf: TPanel [3]
+    Left = 0
+    Top = 233
+    Width = 378
+    Height = 34
+    Align = alBottom
+    Color = 16770261
+    TabOrder = 3
+    DesignSize = (
+      378
+      34)
+    object btnConfirma: TBitBtnLocked
+      Left = 7
+      Top = 6
+      Width = 172
+      Height = 22
+      Caption = '[ F10 ] Confirma &Fechamento'
+      Glyph.Data = {
+        36030000424D3603000000000000360000002800000010000000100000000100
+        18000000000000030000120B0000120B00000000000000000000FF00FFFF00FF
+        FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+        FFFF00FFFF00FFFF00FF8936157D32137B31137B31137B31137B31137B31137B
+        31137B31137B31137B31137B31137B31137B31137E33138A3715692A11FFF3E7
+        FFEFE06E6C6AFBE7CFFCE5C96E6C6AFFDEBBFFDEBB6E6C6AFED4A7FBCE9C6E6C
+        6AFCCB97FCCB97783012652810EFE7DD6E6C6A6E6C6A6E6C6A6E6C6A6E6C6A6E
+        6C6A6E6C6A6E6C6A6E6C6A6E6C6A6E6C6A6E6C6A6E6C6A762F126628106E6C6A
+        6E6C6A3C5AF70D8B0C6CB75CFEE9D3FEE6CAFEE2C4FEDEBBFEDAB4FCD7ADFCD3
+        A7E9CC95FCCF9D762F12662810FEF3E76E6C6A2243FB326E9F0F8C0D73BA60FF
+        E7CFFEE3C9FEE1C0FEDDB8FED9B147A0300F8A0A168E0E50420C65280F6E6C6A
+        6E6C6AC6CCF20F31FCFEF2E22E9E28FFEAD4FEE6CCFEE2C5FEDEBC81B65D0D8A
+        09FED1A3FED1A35F3A0F65280FFFF7EE6E6C6AFEFAF24D69F71652A6148F14EE
+        E5D3BFBBDAD5C9CFBCCC900A890783AC720525FB485BDC762F126628106E6C6A
+        6E6C6AFFFBF4FEF7F02849FA046539056E2A1335F80C2DFA0C841141A1311635
+        F3546ACB1131F35E2D2D65280FFFFCFA6E6C6AFEFCF7FFFAF3FFF6EEE1DDEA11
+        8818FEEED9FEE9D101760F0A3BC1405ADEFCDAB59191C2642D246B2D126E6C6A
+        6E6C6AFFFCFAFFFAF6FFF8F2FFF4EBDCE5C51D95190B8A09419553465EE9EED5
+        C1FEDCB7FED9B17B34169E5123CB9346C68C42C68C41C68C41C68C41C68C41C6
+        8C41C68C41C78E42CC9952CB9347CE9951C1914EBB955CA15222994115CC6414
+        D06514CF6514CF6514CF6514CF6514CF6514CF6514D16818F3A966E07011F3A9
+        669F63393553C7A6420CFF00FF93401A95401B95401B95401B95401B95401B95
+        401B95401B95411B99441D953E159A451C8C3C1A843D24FF00FFFF00FFFF00FF
+        FF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00
+        FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF
+        00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FFFF00FF}
+      TabOrder = 0
+    end
+    object btnSairFechamento: TBitBtnLocked
+      Left = 202
+      Top = 6
+      Width = 167
+      Height = 22
+      Anchors = [akRight, akBottom]
+      Caption = '&Sair'
+      Glyph.Data = {
+        36050000424D3605000000000000360400002800000010000000100000000100
+        08000000000000010000120B0000120B0000000100000001000000520000006B
+        0000006B0800106B0800008C080000940800007B100000731800087B180008A5
+        1800089C21001094290010A529001084310010A5310018A5310010A539001884
+        4200DE844200218C42002194420018AD420018B5420021B5420021944A00299C
+        4A0029BD4A00DE8C52003194520018B5520031C6520031945A00299C5A0031AD
+        5A00BD5A6300AD73630029AD630039D66300DEA5840042B59400FFD69C0073A5
+        AD00DEBDAD006BA5B5009CBDB500B5C6B500DED6B500FFDEB500D6C6BD00FFE7
+        BD00088CC600DECEC60073D6C600E7D6C600EFD6C600F7E7C600FFE7C600088C
+        CE000894CE00E7D6CE00109CD600189CD600219CD600299CD60018A5D60021A5
+        D60029A5D60031A5D60042ADD600F7E7D600FFE7D600FFEFD60021A5DE0031AD
+        DE00E7D6DE00FFEFE700FFF7E7004ACEEF005ADEEF0052CEF7005ADEF70094E7
+        F700A5E7F7006BEFF7007BEFF70084F7F7008CF7F7009CF7F700FFFFF700FF00
+        FF0063DEFF006BDEFF005AEFFF0073F7FF007BF7FF0084F7FF0094F7FF009CF7
+        FF00A5F7FF0073FFFF007BFFFF0084FFFF008CFFFF0094FFFF009CFFFF00A5FF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFF
+        FF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00FFFFFF00593232595959
+        5959595959595959595932514E32323232325959595959595959325266655F5F
+        5E5A32320203595959593A44685D5E27141819130604085959594144575D651F
+        1A1A17150E0905015959424E4465651F1E251A17170E09040059425444696327
+        21242432101D0A0D325942562B44606067665D5D0F0B1154415942552A444444
+        44446153081F4F5F4D594255305846312E2C445134605B605F3D4255306A4B45
+        372F2D444444444444434355336A584B45372F28295C3D5959593F57356A6A58
+        4B452323233E3E595959593F366A6A6A6A3B23122259595959595959356A6A6A
+        6A4A231B59595959595959592626262626262359595959595959}
+      TabOrder = 1
+      OnClick = btnSairClick
+    end
+  end
+  object pnlBarra: TPanel [4]
+    Left = 0
+    Top = 218
+    Width = 378
+    Height = 15
+    Align = alBottom
+    BorderWidth = 2
+    Color = 16770261
+    TabOrder = 4
+    object pgbProgresso: TProgressBar
+      Left = 3
+      Top = 3
+      Width = 372
+      Height = 9
+      Align = alClient
+      Smooth = True
+      TabOrder = 0
+    end
+  end
+  object pnlMeses: TPanel [5]
+    Left = 0
+    Top = 0
+    Width = 378
+    Height = 218
+    Align = alClient
+    Color = 16770261
+    TabOrder = 5
+    object Label1: TLabel
+      Left = 18
+      Top = 17
+      Width = 23
+      Height = 14
+      Alignment = taRightJustify
+      Caption = 'Ano:'
+    end
+    object edtAno: TEditFocus
+      Left = 44
+      Top = 10
+      Width = 50
+      Height = 22
+      Alignment = taLeftJustify
+      MaxLength = 4
+      TabOrder = 0
+      NormalColor = clWindow
+      FocusColor = clInfoBk
+      RequeridoColor = clRed
+      Requerido = False
+      CompZeros = False
+      TamCampo = 0
+      TipoTexto = ttNumerico
+    end
+    object gpbMeses: TGroupBox
+      Left = 6
+      Top = 38
+      Width = 361
+      Height = 167
+      Caption = 'Meses'
+      TabOrder = 1
+      object chkMes01: TCheckBox
+        Left = 19
+        Top = 18
+        Width = 88
+        Height = 26
+        Caption = 'Janeiro'
+        TabOrder = 0
+        OnKeyDown = chkMes01KeyDown
+      end
+      object chkMes02: TCheckBox
+        Left = 131
+        Top = 18
+        Width = 88
+        Height = 26
+        Caption = 'Fevereiro'
+        TabOrder = 1
+        OnKeyDown = chkMes01KeyDown
+      end
+      object chkMes03: TCheckBox
+        Left = 257
+        Top = 18
+        Width = 88
+        Height = 26
+        Caption = 'Mar'#231'o'
+        TabOrder = 2
+        OnKeyDown = chkMes01KeyDown
+      end
+      object chkMes04: TCheckBox
+        Left = 19
+        Top = 53
+        Width = 88
+        Height = 26
+        Caption = 'Abril'
+        TabOrder = 3
+        OnKeyDown = chkMes01KeyDown
+      end
+      object chkMes05: TCheckBox
+        Left = 131
+        Top = 53
+        Width = 88
+        Height = 26
+        Caption = 'Maio'
+        TabOrder = 4
+        OnKeyDown = chkMes01KeyDown
+      end
+      object chkMes06: TCheckBox
+        Left = 257
+        Top = 53
+        Width = 88
+        Height = 26
+        Caption = 'Junho'
+        TabOrder = 5
+        OnKeyDown = chkMes01KeyDown
+      end
+      object chkMes07: TCheckBox
+        Left = 19
+        Top = 88
+        Width = 88
+        Height = 26
+        Caption = 'Julho'
+        TabOrder = 6
+        OnKeyDown = chkMes01KeyDown
+      end
+      object chkMes08: TCheckBox
+        Left = 131
+        Top = 88
+        Width = 88
+        Height = 26
+        Caption = 'Agosto'
+        TabOrder = 7
+        OnKeyDown = chkMes01KeyDown
+      end
+      object chkMes09: TCheckBox
+        Left = 257
+        Top = 88
+        Width = 88
+        Height = 26
+        Caption = 'Setembro'
+        TabOrder = 8
+        OnKeyDown = chkMes01KeyDown
+      end
+      object chkMes10: TCheckBox
+        Left = 19
+        Top = 123
+        Width = 88
+        Height = 26
+        Caption = 'Outubro'
+        TabOrder = 9
+        OnKeyDown = chkMes01KeyDown
+      end
+      object chkMes11: TCheckBox
+        Left = 131
+        Top = 123
+        Width = 88
+        Height = 26
+        Caption = 'Novembro'
+        TabOrder = 10
+        OnKeyDown = chkMes01KeyDown
+      end
+      object chkMes12: TCheckBox
+        Left = 257
+        Top = 123
+        Width = 88
+        Height = 26
+        Caption = 'Dezembro'
+        TabOrder = 11
+        OnKeyDown = chkMes01KeyDown
+      end
+    end
+  end
+end

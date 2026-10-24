@@ -1,0 +1,617 @@
+date/time          : 2014-12-11, 16:34:37, 754ms
+computer name      : TSPRG3
+wts client name    : TSPRG2
+user name          : Guilherme.Borges
+registered owner   : Usuário do Windows
+operating system   : Windows 2008 R2 x64 Service Pack 1 build 7601
+system language    : Portuguese
+system up time     : 6 days 23 hours
+program up time    : 47 seconds
+processors         : 10x Intel(R) Xeon(R) CPU E5-2670 0 @ 2.60GHz
+physical memory    : 12571/27000 MB (free/total)
+free disk space    : (C:) 9,36 GB
+display mode       : 1440x900, 16 bit
+process id         : $46a0
+allocated memory   : 65,50 MB
+largest free block : 1,05 GB
+executable         : AutBan.exe
+exec. date/time    : 2014-12-11 16:33
+version            : 379.48.2.6
+compiled with      : Delphi XE6
+Empresa            : 013 - NOVA ERA COMERCIAL DE TINTAS LTDA
+Usuario            : 999 -
+Conexao            : 192.168.10.24/AUTCOM_379_48_02
+Tipo Erro          : AutBan.exe
+madExcept version  : 4.0.11
+callstack crc      : $0aa39e2a, $6439b67d, $e19c4fc7
+exception number   : 2
+exception class    : EInOutError
+exception message  : File access denied.
+
+main thread ($1458):
+00a99fd1 +0205 AutBan.exe   Vcl.FileCtrl    522    +0 ProcessPath
+00a9c74a +006e AutBan.exe   Vcl.FileCtrl    522    +0 TFileListBox.ApplyFilePath
+010cbcd1 +004d AutBan.exe   untRetBco       167    +4 TfrmRetBco.edtPathRetornoBcoChange
+0066aa88 +001c AutBan.exe   Vcl.StdCtrls              TCustomEdit.Change
+00dca23c +0000 AutBan.exe   JvToolEdit                TJvCustomComboEdit.DoChange
+00dc9e2d +001d AutBan.exe   JvToolEdit                TJvCustomComboEdit.Change
+00dcd3cb +008b AutBan.exe   JvToolEdit                TJvFileDirEdit.Change
+00dcc9c8 +0018 AutBan.exe   JvToolEdit                TJvDirectoryEdit.Change
+0066adbb +0037 AutBan.exe   Vcl.StdCtrls              TCustomEdit.CMTextChanged
+00a23ba2 +001e AutBan.exe   Vcl.Mask                  TCustomMaskEdit.CMTextChanged
+0064acb9 +02bd AutBan.exe   Vcl.Controls              TControl.WndProc
+0064f7d1 +05c9 AutBan.exe   Vcl.Controls              TWinControl.WndProc
+00dbfeee +001a AutBan.exe   JvExMask                  TJvExCustomMaskEdit.BaseWndProc
+00dbff4d +0009 AutBan.exe   JvExMask                  TJvExCustomMaskEdit.TextChanged
+00dc042e +025e AutBan.exe   JvExMask                  TJvExCustomMaskEdit.WndProc
+00dcc143 +00e7 AutBan.exe   JvToolEdit                TJvCustomComboEdit.WndProc
+00dcc969 +001d AutBan.exe   JvToolEdit                TJvDirectoryEdit.WndProc
+0064a8f4 +0024 AutBan.exe   Vcl.Controls              TControl.Perform
+00dcc15f +0103 AutBan.exe   JvToolEdit                TJvCustomComboEdit.WndProc
+00dcc969 +001d AutBan.exe   JvToolEdit                TJvDirectoryEdit.WndProc
+0064a8f4 +0024 AutBan.exe   Vcl.Controls              TControl.Perform
+0064a90c +0008 AutBan.exe   Vcl.Controls              TControl.Perform
+0064874d +000d AutBan.exe   Vcl.Controls              TControl.SetTextBuf
+006493f6 +003a AutBan.exe   Vcl.Controls              TControl.SetText
+00a22ce4 +002c AutBan.exe   Vcl.Mask                  TCustomMaskEdit.SetText
+01173870 +7340 AutBan.exe   untPrincipal   3164 +2392 TfrmPrincipal.trvMenuDblClick
+0064b22d +0015 AutBan.exe   Vcl.Controls              TControl.DblClick
+0064b3a8 +0034 AutBan.exe   Vcl.Controls              TControl.WMLButtonDblClk
+0064acb9 +02bd AutBan.exe   Vcl.Controls              TControl.WndProc
+0064f7d1 +05c9 AutBan.exe   Vcl.Controls              TWinControl.WndProc
+006a1ef6 +0082 AutBan.exe   Vcl.ComCtrls              TCustomTreeView.WndProc
+0064ee18 +002c AutBan.exe   Vcl.Controls              TWinControl.MainWndProc
+00546b44 +0014 AutBan.exe   System.Classes            StdWndProc
+76057885 +000a USER32.dll                             DispatchMessageW
+007619a7 +00f3 AutBan.exe   Vcl.Forms                 TApplication.ProcessMessage
+007619ea +000a AutBan.exe   Vcl.Forms                 TApplication.HandleMessage
+00761d1d +00c9 AutBan.exe   Vcl.Forms                 TApplication.Run
+011cf1c7 +004f AutBan.exe   AutBan          144    +4 initialization
+76f13388 +0010 kernel32.dll                           BaseThreadInitThunk
+
+thread $1390:
+77430156 +0e ntdll.dll     NtWaitForMultipleObjects
+76f13388 +10 kernel32.dll  BaseThreadInitThunk
+
+thread $428c:
+77431f3f +0b ntdll.dll     NtWaitForWorkViaWorkerFactory
+76f13388 +10 kernel32.dll  BaseThreadInitThunk
+
+thread $2308: <priority:2>
+76057c18 +45 USER32.dll             GetMessageA
+004ae3b5 +0d AutBan.exe   madExcept CallThreadProcSafe
+004ae41a +32 AutBan.exe   madExcept ThreadExceptFrame
+76f13388 +10 kernel32.dll           BaseThreadInitThunk
+>> created by main thread ($1458) at:
+6e6f6c8b +00 winmm.dll
+
+thread $41e0:
+77431f3f +0b ntdll.dll     NtWaitForWorkViaWorkerFactory
+76f13388 +10 kernel32.dll  BaseThreadInitThunk
+
+thread $11c8:
+77431f3f +0b ntdll.dll     NtWaitForWorkViaWorkerFactory
+76f13388 +10 kernel32.dll  BaseThreadInitThunk
+
+thread $2234:
+77431f3f +0b ntdll.dll     NtWaitForWorkViaWorkerFactory
+76f13388 +10 kernel32.dll  BaseThreadInitThunk
+
+thread $4398:
+7742fd8a +0e ntdll.dll                NtDelayExecution
+74e83bcf +5f KERNELBASE.dll           SleepEx
+74e844a0 +0a KERNELBASE.dll           Sleep
+004ae3b5 +0d AutBan.exe     madExcept CallThreadProcSafe
+004ae41a +32 AutBan.exe     madExcept ThreadExceptFrame
+76f13388 +10 kernel32.dll             BaseThreadInitThunk
+>> created by main thread ($1458) at:
+7616da8e +00 ole32.dll
+
+thread $2508 (TEventSendThread):
+77430156 +0e ntdll.dll                             NtWaitForMultipleObjects
+74e815f1 +fa KERNELBASE.dll                        WaitForMultipleObjectsEx
+76f119f3 +89 kernel32.dll                          WaitForMultipleObjectsEx
+004b8d5a +56 AutBan.exe     System.SyncObjs        THandleObject.WaitFor
+009ea9b3 +33 AutBan.exe     DBMonitorClient 427 +7 TEventSendThread.Execute
+004ae4cf +2b AutBan.exe     madExcept              HookedTThreadExecute
+00542f71 +49 AutBan.exe     System.Classes         ThreadProc
+0040b428 +28 AutBan.exe     System           88 +0 ThreadWrapper
+004ae3b5 +0d AutBan.exe     madExcept              CallThreadProcSafe
+004ae41a +32 AutBan.exe     madExcept              ThreadExceptFrame
+76f13388 +10 kernel32.dll                          BaseThreadInitThunk
+>> created by main thread ($1458) at:
+009ea8ab +1b AutBan.exe     DBMonitorClient 385 +1 TEventSendThread.Create
+
+thread $12cc:
+77431f3f +0b ntdll.dll     NtWaitForWorkViaWorkerFactory
+76f13388 +10 kernel32.dll  BaseThreadInitThunk
+
+thread $33dc:
+77431f3f +0b ntdll.dll     NtWaitForWorkViaWorkerFactory
+76f13388 +10 kernel32.dll  BaseThreadInitThunk
+
+thread $2870:
+77431f3f +0b ntdll.dll     NtWaitForWorkViaWorkerFactory
+76f13388 +10 kernel32.dll  BaseThreadInitThunk
+
+modules:
+00400000 AutBan.exe                               379.48.2.6         C:\Users\Guilherme.Borges\Documents\Autpas\AutBan_Unico\AutBan
+083f0000 libFuncoes.dll                           379.48.2.6         C:\Users\Guilherme.Borges\Documents\Autpas\AutBan_Unico\AutBan
+50030000 borlndmm.dll                             21.0.17707.5020    C:\Program Files (x86)\Embarcadero\Studio\15.0\bin
+65ef0000 NetworkExplorer.dll                      6.1.7601.17514     C:\Windows\system32
+68ad0000 DUI70.dll                                6.1.7600.16385     C:\Windows\system32
+68b90000 explorerframe.dll                        6.1.7601.17514     C:\Windows\system32
+68d00000 msimg32.dll                              6.1.7600.16385     C:\Windows\system32
+68d10000 shdocvw.dll                              6.1.7601.18222     C:\Windows\System32
+68d40000 api-ms-win-downlevel-shell32-l1-1-0.dll  6.2.9200.16492     C:\Windows\SysWOW64
+68d50000 ieframe.dll                              11.0.9600.17239    C:\Windows\SysWOW64
+698e0000 DUser.dll                                6.1.7600.16385     C:\Windows\system32
+69a40000 FaultRep.dll                             6.1.7601.17514     C:\Windows\system32
+69c00000 Msftedit.DLL                             5.41.21.2510       C:\Windows\system32
+69ca0000 HHCtrl.OCX                               6.1.7600.16385     C:\Windows\system32
+6a780000 BROWCLI.DLL                              6.1.7601.17887     C:\Windows\system32
+6ddf0000 ntshrui.dll                              6.1.7601.17755     C:\Windows\system32
+6de60000 PROPSYS.dll                              7.0.7601.17514     C:\Windows\system32
+6df60000 EhStorShell.dll                          6.1.7600.16385     C:\Windows\system32
+6dfa0000 MSVCP110.dll                             11.0.51106.1       C:\Windows\system32
+6e030000 libsasl32.dll                            2.1.24.0           C:\Program Files\TortoiseSVN\bin
+6e050000 libaprutil_tsvn32.dll                    1.5.3.0            C:\Program Files\TortoiseSVN\bin
+6e090000 MSVCR110.dll                             11.0.51106.1       C:\Windows\system32
+6e170000 libapr_tsvn32.dll                        1.5.0.0            C:\Program Files\TortoiseSVN\bin
+6e1a0000 libsvn_tsvn32.dll                        1.8.8.60743        C:\Program Files\TortoiseSVN\bin
+6e510000 TortoiseSVN32.dll                        1.8.5.25224        C:\Program Files\TortoiseSVN\bin
+6e580000 TortoiseStub32.dll                       1.8.5.25224        C:\Program Files\TortoiseSVN\bin
+6e5a0000 TortoiseOverlays.dll                     1.1.3.21564        C:\Program Files (x86)\Common Files\TortoiseOverlays
+6e5c0000 WindowsCodecs.dll                        6.2.9200.16492     C:\Windows\system32
+6e6f0000 winmm.dll                                6.1.7601.17514     C:\Windows\system32
+6e730000 winspool.drv                             6.1.7601.17514     C:\Windows\system32
+6fb30000 slc.dll                                  6.1.7600.16385     C:\Windows\system32
+6fe80000 Secur32.dll                              6.1.7601.18496     C:\Windows\system32
+701c0000 wkscli.dll                               6.1.7601.17514     C:\Windows\system32
+701d0000 srvcli.dll                               6.1.7601.17514     C:\Windows\system32
+701f0000 netutils.dll                             6.1.7601.17514     C:\Windows\system32
+70200000 netapi32.dll                             6.1.7601.17887     C:\Windows\system32
+70840000 mpr.dll                                  6.1.7600.16385     C:\Windows\system32
+70e20000 WINSTA.dll                               6.1.7601.17514     C:\Windows\system32
+71de0000 fwpuclnt.dll                             6.1.7601.18283     C:\Windows\System32
+71e20000 rasadhlp.dll                             6.1.7600.16385     C:\Windows\system32
+71e40000 WINNSI.DLL                               6.1.7600.16385     C:\Windows\system32
+71e50000 IPHLPAPI.DLL                             6.1.7601.17514     C:\Windows\system32
+71ee0000 DNSAPI.dll                               6.1.7601.17570     C:\Windows\system32
+71fc0000 mswsock.dll                              6.1.7601.18254     C:\Windows\system32
+72220000 wship6.dll                               6.1.7600.16385     C:\Windows\System32
+722e0000 wshtcpip.dll                             6.1.7600.16385     C:\Windows\System32
+72300000 version.dll                              6.1.7600.16385     C:\Windows\system32
+72750000 RpcRtRemote.dll                          6.1.7601.17514     C:\Windows\system32
+72760000 rsaenh.dll                               6.1.7600.16385     C:\Windows\system32
+727a0000 wtsapi32.dll                             6.1.7601.17514     C:\Windows\system32
+72800000 CRYPTSP.dll                              6.1.7600.16385     C:\Windows\system32
+72ed0000 dwmapi.dll                               6.1.7600.16385     C:\Windows\system32
+72ef0000 gdiplus.dll                              6.1.7601.18455     C:\Windows\WinSxS\x86_microsoft.windows.gdiplus_6595b64144ccf1df_1.1.7601.18455_none_72d576ad8665e853
+73ba0000 tsappcmp.dll                             6.1.7601.17514     C:\Windows\system32
+74470000 oleacc.dll                               7.0.0.0            C:\Windows\system32
+744b0000 apphelp.dll                              6.1.7601.17514     C:\Windows\system32
+74690000 ntmarta.dll                              6.1.7600.16385     C:\Windows\system32
+746c0000 cscapi.dll                               6.1.7601.17514     C:\Windows\system32
+746d0000 uxtheme.dll                              6.1.7600.16385     C:\Windows\system32
+74750000 intl3_tsvn32.dll                         0.14.6.0           C:\Program Files\TortoiseSVN\bin
+749b0000 comctl32.dll                             6.10.7601.17514    C:\Windows\WinSxS\x86_microsoft.windows.common-controls_6595b64144ccf1df_6.0.7601.17514_none_41e6975e2bd6f2b2
+74b90000 wsock32.dll                              6.1.7600.16385     C:\Windows\system32
+74e00000 CRYPTBASE.dll                            6.1.7600.16385     C:\Windows\syswow64
+74e10000 SspiCli.dll                              6.1.7601.18496     C:\Windows\syswow64
+74e70000 KERNELBASE.dll                           6.1.7601.18409     C:\Windows\syswow64
+74ec0000 SHLWAPI.dll                              6.1.7601.17514     C:\Windows\syswow64
+74f20000 api-ms-win-downlevel-user32-l1-1-0.dll   6.2.9200.16492     C:\Windows\syswow64
+74f30000 comdlg32.dll                             6.1.7601.17514     C:\Windows\syswow64
+750e0000 USP10.dll                                1.626.7601.18454   C:\Windows\syswow64
+75180000 api-ms-win-downlevel-version-l1-1-0.dll  6.2.9200.16492     C:\Windows\syswow64
+75190000 msvcrt.dll                               7.0.7601.17744     C:\Windows\syswow64
+75240000 sechost.dll                              6.1.7600.16385     C:\Windows\SysWOW64
+75260000 ADVAPI32.dll                             6.1.7601.18247     C:\Windows\syswow64
+75300000 IMM32.DLL                                6.1.7601.17514     C:\Windows\system32
+75360000 USERENV.dll                              6.1.7601.17514     C:\Windows\syswow64
+75380000 shell32.dll                              6.1.7601.18429     C:\Windows\syswow64
+75fd0000 api-ms-win-downlevel-normaliz-l1-1-0.dll 6.2.9200.16492     C:\Windows\syswow64
+75fe0000 WS2_32.dll                               6.1.7601.17514     C:\Windows\syswow64
+76020000 DEVOBJ.dll                               6.1.7601.17621     C:\Windows\syswow64
+76040000 USER32.dll                               6.1.7601.17514     C:\Windows\syswow64
+76140000 ole32.dll                                6.1.7601.17514     C:\Windows\syswow64
+762b0000 api-ms-win-downlevel-shlwapi-l1-1-0.dll  6.2.9200.16492     C:\Windows\syswow64
+762c0000 IMAGEHLP.DLL                             6.1.7601.18288     C:\Windows\syswow64
+762f0000 GDI32.dll                                6.1.7601.18275     C:\Windows\syswow64
+76380000 WININET.dll                              11.0.9600.17239    C:\Windows\syswow64
+76540000 iertutil.dll                             11.0.9600.17239    C:\Windows\syswow64
+76760000 api-ms-win-downlevel-advapi32-l1-1-0.dll 6.2.9200.16492     C:\Windows\syswow64
+76770000 CLBCatQ.DLL                              2001.12.8530.16385 C:\Windows\syswow64
+76800000 MSASN1.dll                               6.1.7601.17514     C:\Windows\syswow64
+76810000 MSCTF.dll                                6.1.7600.16385     C:\Windows\syswow64
+76910000 SETUPAPI.dll                             6.1.7601.17514     C:\Windows\syswow64
+76ab0000 RPCRT4.dll                               6.1.7601.18532     C:\Windows\syswow64
+76ba0000 NSI.dll                                  6.1.7600.16385     C:\Windows\syswow64
+76cb0000 CFGMGR32.dll                             6.1.7601.17621     C:\Windows\syswow64
+76ce0000 profapi.dll                              6.1.7600.16385     C:\Windows\syswow64
+76cf0000 LPK.dll                                  6.1.7601.18177     C:\Windows\syswow64
+76d00000 oleaut32.dll                             6.1.7601.17676     C:\Windows\syswow64
+76d90000 CRYPT32.dll                              6.1.7601.18277     C:\Windows\syswow64
+76eb0000 WLDAP32.dll                              6.1.7601.17514     C:\Windows\syswow64
+76f00000 kernel32.dll                             6.1.7601.18409     C:\Windows\syswow64
+773e0000 normaliz.DLL                             6.1.7600.16385     C:\Windows\syswow64
+77410000 ntdll.dll                                6.1.7601.18247     C:\Windows\SysWOW64
+
+processes:
+0000 Idle                  0  0    0
+0004 System                0  0    0
+00c8 smss.exe              0  0    0
+0278 csrss.exe             0  0    0
+02ac wininit.exe           0  0    0
+02b4 csrss.exe             1  0    0
+02d0 winlogon.exe          1  0    0
+0364 services.exe          0  0    0
+036c lsass.exe             0  0    0
+0374 lsm.exe               0  0    0
+0224 svchost.exe           0  0    0
+0258 svchost.exe           0  0    0
+043c LogonUI.exe           1  0    0
+0448 svchost.exe           0  0    0
+0478 svchost.exe           0  0    0
+0498 svchost.exe           0  0    0
+04d4 svchost.exe           0  0    0
+0508 svchost.exe           0  0    0
+05b8 svchost.exe           0  0    0
+0640 spoolsv.exe           0  0    0
+0664 svchost.exe           0  0    0
+06dc svchost.exe           0  0    0
+0764 ReceiveFaxUtility.exe 0  0    0
+0784 HPSIsvc.exe           0  0    0
+079c ibguard.exe           0  0    0
+07bc PSANHost.exe          0  0    0
+07e0 SMSvcHost.exe         0  0    0
+0818 PSUAService.exe       0  0    0
+0830 svchost.exe           0  0    0
+084c svchost.exe           0  0    0
+0870 WAHost.exe            0  0    0
+0898 svchost.exe           0  0    0
+0658 ibserver.exe          0  0    0
+0c74 svchost.exe           0  0    0
+0cd4 svchost.exe           0  0    0
+0d28 svchost.exe           0  0    0
+10d4 svchost.exe           0  0    0
+0f1c csrss.exe             4  0    0
+0b20 winlogon.exe          4  0    0
+11e0 taskhost.exe          4  0    0
+032c rdpclip.exe           4  0    0
+051c dwm.exe               4  0    0
+1218 explorer.exe          4  0    0
+0e98 PSUAMain.exe          4  0    0
+0ae8 jusched.exe           4  0    0
+1594 msdtc.exe             0  0    0
+22bc csrss.exe             11 0    0
+22f0 winlogon.exe          11 0    0
+18a8 taskhost.exe          11 0    0
+17dc rdpclip.exe           11 0    0
+1a1c dwm.exe               11 0    0
+1c34 explorer.exe          11 0    0
+1bbc PSUAMain.exe          11 0    0
+091c jusched.exe           11 0    0
+338c svchost.exe           0  0    0
+1d8c csrss.exe             19 0    0
+3548 winlogon.exe          19 0    0
+1b78 taskhost.exe          19 0    0
+3ab8 rdpclip.exe           19 0    0
+0504 dwm.exe               19 0    0
+3b7c explorer.exe          19 0    0
+3ec0 PSUAMain.exe          19 0    0
+37b8 jusched.exe           19 0    0
+3b54 SQLyog.exe            4  0    0
+19ac csrss.exe             8  0    0
+29e4 winlogon.exe          8  0    0
+122c taskhost.exe          8  0    0
+1754 rdpclip.exe           8  0    0
+2fb4 dwm.exe               8  0    0
+1e68 explorer.exe          8  0    0
+13b0 PSUAMain.exe          8  0    0
+1de0 jusched.exe           8  0    0
+328c csrss.exe             12 0    0
+1e40 winlogon.exe          12 0    0
+16d4 taskhost.exe          12 0    0
+2cbc rdpclip.exe           12 0    0
+1e04 dwm.exe               12 0    0
+2428 explorer.exe          12 0    0
+1258 PSUAMain.exe          12 0    0
+18d0 jusched.exe           12 0    0
+1e54 SQLyog.exe            12 0    0
+259c HPLaserJetService.exe 0  0    0
+309c csrss.exe             15 0    0
+1034 winlogon.exe          15 0    0
+167c taskhost.exe          15 0    0
+20d8 rdpclip.exe           15 0    0
+1b98 dwm.exe               15 0    0
+1bcc explorer.exe          15 0    0
+22e0 PSUAMain.exe          15 0    0
+3fac jusched.exe           15 0    0
+27cc VSSVC.exe             0  0    0
+0da0 csrss.exe             3  0    0
+1ec8 winlogon.exe          3  0    0
+360c taskhost.exe          3  0    0
+3fe4 rdpclip.exe           3  0    0
+35a4 dwm.exe               3  0    0
+2c60 explorer.exe          3  0    0
+1a3c PSUAMain.exe          3  0    0
+3eb4 jusched.exe           3  0    0
+29ec csrss.exe             2  0    0
+3e5c winlogon.exe          2  0    0
+1f88 taskhost.exe          2  24   12  normal
+1e28 rdpclip.exe           2  12   11  normal
+20f0 dwm.exe               2  15   2   normal
+3304 explorer.exe          2  616  363 normal
+3604 PSUAMain.exe          2  11   7   normal C:\Program Files (x86)\Panda Security\WAC
+270c jusched.exe           2  9    2   normal C:\Program Files (x86)\Common Files\Java\Java Update
+3aec SQLyog.exe            2  384  236 normal
+23b0 csrss.exe             5  0    0
+30a0 winlogon.exe          5  0    0
+1a84 taskhost.exe          5  0    0
+1768 rdpclip.exe           5  0    0
+14bc dwm.exe               5  0    0
+0c10 explorer.exe          5  0    0
+24f0 PSUAMain.exe          5  0    0
+14dc jusched.exe           5  0    0
+1f3c dexplore.exe          2  179  170 normal C:\Program Files (x86)\Common Files\Microsoft Shared\Help 9
+3704 iexplore.exe          2  45   35  normal
+3bd4 IEXPLORE.EXE          2  10   10  normal C:\Program Files (x86)\Internet Explorer
+0548 csrss.exe             9  0    0
+3e4c winlogon.exe          9  0    0
+1abc taskhost.exe          9  0    0
+3b00 rdpclip.exe           9  0    0
+1a8c dwm.exe               9  0    0
+1bb0 explorer.exe          9  0    0
+36dc PSUAMain.exe          9  0    0
+25e4 jusched.exe           9  0    0
+216c Diario.exe            9  0    0
+205c csrss.exe             10 0    0
+1598 winlogon.exe          10 0    0
+383c taskhost.exe          10 0    0
+0fe0 rdpclip.exe           10 0    0
+1bb8 dwm.exe               10 0    0
+30bc explorer.exe          10 0    0
+3da8 PSUAMain.exe          10 0    0
+16f8 jusched.exe           10 0    0
+31b8 Spark.exe             3  0    0
+388c SQLyog.exe            10 0    0
+22b4 SQLyog.exe            9  0    0
+3194 dexplore.exe          2  167  175 normal C:\Program Files (x86)\Common Files\Microsoft Shared\Help 9
+2aec csrss.exe             13 0    0
+2008 winlogon.exe          13 0    0
+1ac8 taskhost.exe          13 0    0
+17c0 rdpclip.exe           13 0    0
+11ac dwm.exe               13 0    0
+2fb0 explorer.exe          13 0    0
+1560 PSUAMain.exe          13 0    0
+2f2c jusched.exe           13 0    0
+3380 bds.exe               13 0    0
+2a2c bds.exe               13 0    0
+1cbc csrss.exe             17 0    0
+23d8 winlogon.exe          17 0    0
+2d6c taskhost.exe          17 0    0
+073c rdpclip.exe           17 0    0
+3e34 dwm.exe               17 0    0
+3d8c explorer.exe          17 0    0
+0594 PSUAMain.exe          17 0    0
+1fd4 jusched.exe           17 0    0
+2b74 SQLyog.exe            3  0    0
+39dc Spark.exe             9  0    0
+272c bds.exe               12 0    0
+22d0 csrss.exe             18 0    0
+2f54 winlogon.exe          18 0    0
+0db0 taskhost.exe          18 0    0
+2470 rdpclip.exe           18 0    0
+3660 dwm.exe               18 0    0
+26d8 explorer.exe          18 0    0
+1784 PSUAMain.exe          18 0    0
+37e8 jusched.exe           18 0    0
+1998 SQLyog.exe            18 0    0
+204c Diario.exe            13 0    0
+3c80 dexplore.exe          3  0    0
+2f74 TortoiseProc.exe      18 0    0
+2c24 Diario.exe            18 0    0
+1cd8 SQLyog.exe            8  0    0
+2520 TortoiseProc.exe      18 0    0
+1be4 notepad++.exe         13 0    0
+0af8 bds.exe               9  0    0
+27b8 AcroRd32.exe          9  0    0
+1a74 Diario.exe            8  0    0
+23a0 dllhost.exe           9  0    0
+2f60 csrss.exe             21 0    0
+3038 winlogon.exe          21 0    0
+1fd0 taskhost.exe          21 0    0
+2b70 rdpclip.exe           21 0    0
+2b28 dwm.exe               21 0    0
+366c explorer.exe          21 0    0
+3ebc PSUAMain.exe          21 0    0
+0bf0 jusched.exe           21 0    0
+2d98 taskmgr.exe           18 0    0
+1780 bds.exe               10 0    0
+4674 SQLyog.exe            21 0    0
+1758 bds.exe               19 0    0
+4030 splwow64.exe          12 0    0
+457c Diario.exe            2  387  173 normal I:\DIARIO
+268c PortalConexoes.exe    3  0    0
+4260 Diario.exe            15 0    0
+1ab4 EXCEL.EXE             12 0    0
+41ac bds.exe               5  0    0
+4498 Diario.exe            3  0    0
+32b4 TortoiseProc.exe      8  0    0
+2130 Diario.exe            11 0    0
+1e0c bds.exe               3  0    0
+3834 SQLyog.exe            5  0    0
+368c chrome.exe            3  0    0
+2500 chrome.exe            3  0    0
+0dc4 chrome.exe            3  0    0
+142c notepad.exe           13 0    0
+44b8 bds.exe               3  0    0
+0c7c bds.exe               8  0    0
+24c4 dexplore.exe          2  171  154 normal C:\Program Files (x86)\Common Files\Microsoft Shared\Help 9
+166c splwow64.exe          9  0    0
+399c explorer.exe          12 0    0
+1730 SQLyog.exe            11 0    0
+0d6c PortalConexoes.exe    8  0    0
+2c74 bds.exe               15 0    0
+1494 bds.exe               21 0    0
+185c bds.exe               2  3186 971 normal C:\Program Files (x86)\Embarcadero\Studio\14.0\bin
+3398 autcom.exe            21 0    0
+11f4 Diario.exe            5  0    0
+2290 splwow64.exe          2  4    3   normal
+44e4 PainelNFe.exe         21 0    0
+14d4 autcom.exe            21 0    0
+44f4 TortoiseProc.exe      15 0    0
+3904 notepad++.exe         8  0    0
+3f80 autcomhenri.exe       5  0    0
+15a0 splwow64.exe          8  0    0
+3614 TortoiseProc.exe      19 0    0
+1fb4 bds.exe               4  0    0
+4404 TortoiseMerge.exe     19 0    0
+31fc autcom.exe            8  0    0
+2730 TortoiseProc.exe      11 0    0
+15e8 svchost.exe           0  0    0
+46a0 AutBan.exe            2  527  151 normal C:\Users\Guilherme.Borges\Documents\Autpas\AutBan_Unico\AutBan
+15e0 TortoiseMerge.exe     11 0    0
+
+hardware:
++ Computer
+  - ACPI x64-based PC
++ Disk drives
+  - Virtual HD ATA Device
++ Display adapters
+  - Vídeo do Microsoft Hyper-V
++ DVD/CD-ROM drives
+  - Msft Virtual CD/ROM ATA Device
++ Floppy disk drives
+  - Unidade de disquete
++ Floppy drive controllers
+  - Controlador padrão de disquete
++ Human Interface Devices
+  - Entrada do Microsoft Hyper-V
++ IDE ATA/ATAPI controllers
+  - ATA Channel 0
+  - ATA Channel 1
+  - Intel(R) 82371AB/EB PCI Bus Master IDE Controller
++ Imaging devices
+  - HP LaserJet Professional M1210 MFP Series (driver 1.0.1.58769)
++ Keyboards
+  - Teclado Padrão PS/2
+  - Teclado Virtual do Microsoft Hyper-V
++ Mice and other pointing devices
+  - Microsoft PS/2 Mouse
+  - Mouse compatível com HID
++ Network adapters
+  - Adaptador de Rede Microsoft Hyper-V
+  - Adaptador de Túnel Teredo da Microsoft
+  - Adaptador do Microsoft ISATAP
+  - Miniporta de rede remota (IP)
+  - Miniporta de Rede Remota (IPv6)
+  - Miniporta de rede remota (L2TP)
+  - Miniporta de rede remota (Monitor de rede)
+  - Miniporta de rede remota (PPTP)
+  - Miniporta WAN (PPPOE)
+  - Miniporta WAN (SSTP)
+  - WAN Miniport (IKEv2)
++ Ports (COM & LPT)
+  - Porta de comunicação (COM1)
+  - Porta de comunicação (COM2)
++ Processors
+  - Intel(R) Xeon(R) CPU E5-2670 0 @ 2.60GHz
+  - Intel(R) Xeon(R) CPU E5-2670 0 @ 2.60GHz
+  - Intel(R) Xeon(R) CPU E5-2670 0 @ 2.60GHz
+  - Intel(R) Xeon(R) CPU E5-2670 0 @ 2.60GHz
+  - Intel(R) Xeon(R) CPU E5-2670 0 @ 2.60GHz
+  - Intel(R) Xeon(R) CPU E5-2670 0 @ 2.60GHz
+  - Intel(R) Xeon(R) CPU E5-2670 0 @ 2.60GHz
+  - Intel(R) Xeon(R) CPU E5-2670 0 @ 2.60GHz
+  - Intel(R) Xeon(R) CPU E5-2670 0 @ 2.60GHz
+  - Intel(R) Xeon(R) CPU E5-2670 0 @ 2.60GHz
++ Storage controllers
+  - Controlador SCSI do Microsoft Hyper-V
++ System devices
+  - Acelerador de Armazenamento Microsoft Hyper-V
+  - Alto-falante do sistema
+  - Arquivo como Driver de Volume
+  - Barramento de Máquina Virtual Microsoft Hyper-V
+  - Botão de recurso fixo ACPI
+  - Cap S3 do Microsoft Hyper-V
+  - CMOS do sistema/relógio em tempo real
+  - Contador de Geração do Microsoft Hyper-V
+  - Controlador de acesso direto à memória
+  - Controlador de interrupção programável
+  - Cópia de Sombra de Volume do Microsoft Hyper-V
+  - Desligamento de Convidado do Microsoft Hyper-V
+  - Driver de BIOS de Gerenciamento de Sistema Microsoft
+  - Driver de enumerador da unidade virtual Microsoft
+  - Enumerador de Barramento de Composição
+  - Enumerador de Barramento de Raiz UMBus
+  - Enumerador de dispositivos de software Plug and Play
+  - Enumerador UMBus
+  - Gerenciador de volumes
+  - Intel 82371AB/EB PCI to ISA bridge (ISA mode)
+  - Intel 82443BX Pentium(R) II Processor to PCI Bridge
+  - Microsoft ACPI-Compliant System
+  - PCI bus
+  - Placa de sistema
+  - Processador de dados numéricos
+  - Pulsação do Microsoft Hyper-V
+  - Recursos da placa-mãe
+  - Recursos da placa-mãe
+  - Remote Desktop Device Redirector Bus
+  - Sincronização de Hora do Microsoft Hyper-V
+  - Terminal Server Keyboard Driver
+  - Terminal Server Mouse Driver
+  - Timer do sistema
+  - Troca de Dados do Microsoft Hyper-V
+  - Virtualização de Área de Trabalho Remota do Microsoft Hyper-V
+
+cpu registers:
+eax = 0c8a55e0
+ebx = 00a99fd1
+ecx = 00000000
+edx = 02895e38
+esi = 00a99fd1
+edi = 0c90953c
+eip = 00a99fd1
+esp = 0018f08c
+ebp = 0018f0d4
+
+stack dump:
+0018f08c  d1 9f a9 00 de fa ed 0e - 01 00 00 00 07 00 00 00  ................
+0018f09c  a0 f0 18 00 d1 9f a9 00 - e0 55 8a 0c d1 9f a9 00  .........U......
+0018f0ac  d1 9f a9 00 3c 95 90 0c - d4 f0 18 00 bc f0 18 00  ....<...........
+0018f0bc  00 00 00 00 6c 69 40 00 - 60 f1 18 00 64 f1 18 00  ....li@.`...d...
+0018f0cc  af 69 40 00 00 d0 fd 00 - 14 f1 18 00 d1 9f a9 00  .i@.............
+0018f0dc  e8 f0 18 00 dc aa 40 00 - 14 f1 18 00 20 f1 18 00  ......@..... ...
+0018f0ec  dc aa 40 00 14 f1 18 00 - 12 b0 00 00 bc 94 90 0c  ..@.............
+0018f0fc  50 0a 21 04 00 00 00 00 - 00 00 00 00 5e f1 18 00  P.!.........^...
+0018f10c  00 00 00 00 00 00 00 00 - 68 f1 18 00 4f c7 a9 00  ........h...O...
+0018f11c  60 f1 18 00 70 f1 18 00 - dc aa 40 00 68 f1 18 00  `...p.....@.h...
+0018f12c  00 00 00 00 80 45 01 06 - 00 00 00 00 9a 93 64 00  .....E........d.
+0018f13c  12 b0 00 00 00 00 00 00 - 90 85 26 04 80 f1 18 00  ..........&.....
+0018f14c  90 85 26 04 a7 2c a2 00 - 00 00 00 00 00 00 00 00  ..&..,..........
+0018f15c  80 45 43 00 00 00 00 00 - 00 00 00 00 88 f1 18 00  .EC.............
+0018f16c  d7 bc 0c 01 a4 f1 18 00 - dc aa 40 00 88 f1 18 00  ..........@.....
+0018f17c  90 85 26 04 00 00 00 00 - 00 00 00 00 c8 f1 18 00  ..&.............
+0018f18c  8e aa 66 00 90 85 26 04 - 41 a2 dc 00 33 9e dc 00  ..f...&.A...3...
+0018f19c  90 85 26 04 d0 d3 dc 00 - d0 f1 18 00 dc aa 40 00  ..&...........@.
+0018f1ac  c8 f1 18 00 b0 c9 dc 00 - 90 85 26 04 00 00 00 00  ..........&.....
+0018f1bc  00 00 00 00 00 00 00 00 - 00 00 00 00 e4 f1 18 00  ................
+
+disassembling:
+[...]
+00a99fc1       test    eax, eax
+00a99fc3       jle     loc_a99fd1
+00a99fc5       mov     eax, [ebx]
+00a99fc7       call    -$6935dc ($4069f0)     ; System.ChDir
+00a99fcc       call    -$69361d ($4069b4)     ; System.@_IOTest
+00a99fd1     > mov     eax, [esi]
+00a99fd3       test    eax, eax
+00a99fd5       jz      loc_a99fdc
+00a99fd7       sub     eax, 4
+00a99fda       mov     eax, [eax]
+00a99fdc       test    eax, eax
+[...]
+

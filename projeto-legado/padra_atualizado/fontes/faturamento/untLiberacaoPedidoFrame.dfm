@@ -1,0 +1,100 @@
+object fraLiberacaoPedidoFrame: TfraLiberacaoPedidoFrame
+  Left = 0
+  Top = 0
+  Width = 497
+  Height = 60
+  VertScrollBar.Range = 45
+  Color = 16770261
+  ParentBackground = False
+  ParentColor = False
+  TabOrder = 0
+  object pnlFundo: TPanel
+    Left = 0
+    Top = 0
+    Width = 497
+    Height = 60
+    Align = alClient
+    BevelOuter = bvNone
+    Color = 16770261
+    ParentBackground = False
+    TabOrder = 0
+    object pnlLiberacaoPedido: TGroupBox
+      AlignWithMargins = True
+      Left = 2
+      Top = 0
+      Width = 493
+      Height = 57
+      Margins.Left = 2
+      Margins.Top = 0
+      Margins.Right = 2
+      Margins.Bottom = 0
+      Align = alTop
+      Caption = 'Libera'#231#227'o Pedido:'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = [fsBold]
+      ParentFont = False
+      TabOrder = 0
+      Visible = False
+      object lblMotLib: TLabel
+        Left = 71
+        Top = 37
+        Width = 36
+        Height = 13
+        Alignment = taRightJustify
+        Caption = 'Motivo:'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentFont = False
+      end
+      object edtMotLib: TEditFocus
+        Tag = 99
+        Left = 110
+        Top = 32
+        Width = 377
+        Height = 21
+        Alignment = taLeftJustify
+        CharCase = ecUpperCase
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ImeName = 'Portugu'#234's (Brasil ABNT)'
+        MaxLength = 50
+        ParentFont = False
+        ReadOnly = True
+        TabOrder = 1
+        OnEnter = edtMotLibEnter
+        NormalColor = clWindow
+        FocusColor = clInfoBk
+        RequeridoColor = clRed
+        Requerido = False
+        CompZeros = False
+        TamCampo = 50
+        TipoTexto = ttAlfanumerico
+      end
+      object chkAgdLib: TCheckBox
+        Tag = 99
+        Left = 110
+        Top = 15
+        Width = 180
+        Height = 17
+        Caption = 'Aguardar libera'#231#227'o da Ger'#234'ncia'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -11
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentFont = False
+        TabOrder = 0
+        OnClick = chkAgdLibClick
+      end
+    end
+  end
+end

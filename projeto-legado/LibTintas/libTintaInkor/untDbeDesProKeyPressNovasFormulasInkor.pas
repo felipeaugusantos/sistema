@@ -1,0 +1,162 @@
+unit untDbeDesProKeyPressNovasFormulasInkor;
+
+interface
+
+uses
+  untAbstractLibTintaControleVisualEvento, Classes, SysUtils, untStrUtils;
+
+type
+  TDbeDesProKeyPressNovasFormulasInkor = class(TAbstractLibTintaControleVisualEvento)
+  private
+    function fRetMenorConteudo(strBase__: String; strProduto: String; strUnidade: String): Double;
+    function fRetMenorUnidade(strProdut, strCodBas: String): String;
+    function fRetDescUnidade(strCodUni: String): String;
+  published
+    procedure OnKeyPress(Sender: TObject; var Key: Char);
+  end;
+
+implementation
+
+uses
+  untIDataSet, untAutcomTintaFactory;
+
+{ TDeDesProKeyPress }
+
+function TDbeDesProKeyPressNovasFormulasInkor.fRetDescUnidade(
+  strCodUni: String): String;
+begin
+  Result := 'Litros';
+  If Pos(strCodUni, 'LT_QT_') > 0 Then
+    Result := 'Litros'
+  Else If strCodUni = 'GL' Then
+    Result := 'Galão'
+  Else If strCodUni = 'LA' Then
+    Result := 'Lata';
+end;
+
+function TDbeDesProKeyPressNovasFormulasInkor.fRetMenorConteudo(strBase__,
+  strProduto, strUnidade: String): Double;
+Var
+  qryGen: IDataSet;
+begin
+  Try
+    qryGen := TAutcomTintaFactory.Get.fGetDataSet;
+    qryGen.SQL := '';
+    qryGen.SQL := qryGen.SQL + '  SELECT            ';
+    qryGen.SQL := qryGen.SQL + '    BAS_CONTEU      ';
+    qryGen.SQL := qryGen.SQL + '  FROM              ';
+    qryGen.SQL := qryGen.SQL + '    INK_CADBAS      ';
+    qryGen.SQL := qryGen.SQL + '  INNER JOIN CADITE ON        ';
+    qryGen.SQL := qryGen.SQL + '    BAS_CODITE = ITE_CODITE           ';
+    qryGen.SQL := qryGen.SQL + '  WHERE             ';
+    qryGen.SQL := qryGen.SQL + '    BAS_BASE__ = :BASE__ AND          ';
+    qryGen.SQL := qryGen.SQL + '    BAS_PRODUT = :PRODUT AND          ';
+    qryGen.SQL := qryGen.SQL + '    BAS_UNIDAD = :UNIDAD              ';
+
+    qryGen.ParamByName('BASE__').AsString := strBase__;
+    qryGen.ParamByName('PRODUT').AsString := strProduto;
+    qryGen.ParamByName('UNIDAD').AsString := strUnidade;
+    qryGen.Open;
+
+    Result := qryGen.FieldByName('BAS_CONTEU').AsFloat;
+  Except
+    Raise;
+  End;
+end;
+
+function TDbeDesProKeyPressNovasFormulasInkor.fRetMenorUnidade(
+  strProdut, strCodBas: String): String;
+var
+  qryGen: IDataSet;
+  strLitro,
+  strGalao,
+  strLata: String;
+begin
+  Result := '';
+
+  strLitro := '';
+  strGalao := '';
+  strLata  := '';
+
+  qryGen := TAutcomTintaFactory.Get.fGetDataSet;
+  qryGen.SQL := ' SELECT BAS_UNIDAD              ' +
+                '   FROM INK_CADBAS           ' +
+                '  INNER JOIN CADITE             ' +
+                '     ON ITE_CODITE = BAS_CODITE ' +
+                '  WHERE BAS_DESCRI = :PRODUT    ' +
+                '    AND BAS_BASE__ = :CODBAS    ' +
+                '  ORDER BY BAS_UNIDAD           ';
+  qryGen.ParamByName('PRODUT').AsString := strProdut;
+  qryGen.ParamByName('CODBAS').AsString := strCodBas;
+  qryGen.Open;
+
+  qryGen.First;
+  While Not qryGen.Eof Do
+  Begin
+    If Pos(qryGen.FieldByName('BAS_UNIDAD').AsString, 'LT_QT_') > 0 Then
+      strLitro := qryGen.FieldByName('BAS_UNIDAD').AsString
+    Else If qryGen.FieldByName('BAS_UNIDAD').AsString = 'GL' Then
+      strGalao := qryGen.FieldByName('BAS_UNIDAD').AsString
+    Else If qryGen.FieldByName('BAS_UNIDAD').AsString = 'LA' Then
+      strLata := qryGen.FieldByName('BAS_UNIDAD').AsString;
+
+    qryGen.Next;
+  End;
+
+  If (Not TStrUtils.fEmptyStr(strLitro)) Then
+    Result := strLitro
+  Else If (Not TStrUtils.fEmptyStr(strGalao)) Then
+    Result := strGalao
+  Else If (Not TStrUtils.fEmptyStr(strLata)) Then
+    Result := strLata;
+end;
+
+procedure TDbeDesProKeyPressNovasFormulasInkor.OnKeyPress(Sender: TObject; var Key: Char);
+var
+  qryAux: IDataSet;
+  strFiltro: String;
+begin
+  Try
+    Try
+      If TAutcomTintaFactory.Get.fEntraCons(Key) Then
+      Begin
+        Key := #0;
+
+        qryAux       := TAutcomTintaFactory.Get.fGetDataSet;
+
+        strFiltro := ''; //' AND BAS_UNIDAD = "LT" ';
+
+        If (Not TStrUtils.fEmptyStr(tela['dbeBase']['Text'].Value)) Then
+        Begin
+          strFiltro := strFiltro + ' AND BAS_BASE__ = ' + QuotedStr(tela['dbeBase']['Text'].Value);
+        End;
+
+        If TAutcomTintaFactory.Get.fPesqGenericaTinta(qryAux, 'INK_CADBAS', 'untDbeDesProKeyPressNovasFormulasInkor',
+           'Cadastro de Base - Inkor Industrial', 'BAS_CODITE', strFiltro) Then
+        Begin
+          GetFieldByControle('dbeBase').AsString   := qryAux.FieldByName('BAS_BASE__').AsString;
+          GetFieldByControle('dbeProdut').AsString := qryAux.FieldByName('BAS_DESCRI').AsString;
+          GetFieldByControle('dbeCodUni').AsString := qryAux.FieldByName('BAS_UNIDAD').AsString;
+
+          GetFieldByControle('dbeCodUni').AsString := fRetMenorUnidade(qryAux.FieldByName('BAS_DESCRI').AsString, qryAux.FieldByName('BAS_BASE__').AsString);
+          GetFieldByControle('dbeConteudo').AsFloat := fRetMenorConteudo(GetFieldByControle('dbeBase').AsString,
+                                                                         GetFieldByControle('dbeProdut').AsString,
+                                                                         GetFieldByControle('dbeCodUni').AsString);
+
+
+          Tela['Label5']['Caption'].Value := 'Informar a quantidade sempre em ' + fRetDescUnidade(GetFieldByControle('dbeCodUni').AsString);
+
+          tela.SelectNext;
+        End;
+      End;
+    Except
+      on E: Exception do
+      begin
+        raise;
+      end;
+    End;
+  Finally
+  End;
+end;
+
+end.

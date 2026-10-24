@@ -1,0 +1,19 @@
+DELIMITER $$
+
+DROP PROCEDURE IF EXISTS `Insert_Contabilidade_ENT_Outras_Entradas`$$
+
+CREATE PROCEDURE `Insert_Contabilidade_ENT_Outras_Entradas`()
+BEGIN
+	INSERT CONLOG (LOG_TIPLAN, LOG_EMPLAN, LOG_TABELA, LOG_PROCES, LOG_INCDOC, LOG_MODLAN, LOG_STATUS)
+		SELECT DISTINCT "ENT", FIS_CODEMP, "CADFIS", 0, F.AUTOINCREM, IF(FIS_HISTOR LIKE '%CANCELADO%', 2, 1) AS MODO, NULL
+		  FROM CADFIS F
+		  WHERE FIS_TIP_FC = "F" 
+            AND (   (RIGHT(FIS_CLFSC1, 3) = "253") 
+                 OR (RIGHT(FIS_CLFSC1, 3) = "303") 
+                 OR (RIGHT(FIS_CLFSC1, 3) = "602") 
+                 OR (RIGHT(FIS_CLFSC1, 3) = "605") 
+                ) 
+		    AND FIS_DTAENT = CURRENT_DATE  ;
+    END$$
+
+DELIMITER ;

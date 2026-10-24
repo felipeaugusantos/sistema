@@ -1,0 +1,10 @@
+Services.Core.Cache, 
+Services.Core.Connection.Interfaces, 
+Services.Core.Connection.Manager,
+Services.Core.Connection.UniDac,
+Services.Core.Rest,
+Services.Core.Settings,
+Services.Core.Task.Lock,
+Services.Core.Task.Monitor,
+Services.Core.Types,
+Services.Core.Utils

@@ -1,0 +1,170 @@
+{***************************************************************************************}
+{* Classe abstrata que representa a tinta ao todo, contendo todos os metodos que serão *}
+{* acessados pelos outros modulos (Autcom/Auttin)                                      *}
+{************************************************************************************PH*}
+unit untAbstractLibTinta;
+
+interface
+
+uses
+  untILibTinta, untTipoTinta, untIAutcomTintaWrapper, SysUtils, untIDataSet,
+  untITintadeMaquinaWrapper, untGTinForTipos, untIDicionario, untIDigDadosTintometricos,
+  untIAuttinMenuItem, untISaldosColorantes, Classes;
+
+type
+  TAbstractLibTinta = class abstract (TInterfacedObject, ILibTinta)
+  protected
+    function GetInstrucaoRetComponentes(const strCodEmp: String): String; virtual;
+    function GetWhereRetComponente(const strCodEmp: String): String; virtual; abstract;
+    function GetCampoComponenteCodIte(): String; virtual; abstract;
+    function GetCampoComponenteCodComp(): String; virtual; abstract;
+    function GetCampoComponenteDesComp(): String; virtual; abstract;
+    procedure SetaParametrosRetComponentes(const dataSet: IDataSet; const strCodComp: String); virtual; abstract;
+    function GetFatorEstoque(): Double; virtual;
+  public
+    constructor Create();
+    destructor Destroy; override;
+    function GetIdePro: String; virtual; abstract;
+    function fTipoTinta: TTipoTinta; virtual; abstract;
+    function fTintaBaixaProduto(): Boolean; virtual; abstract;
+    function fTintaBaixaEmbalagem(const strTipEmb: String; Var strCodIte: String): Boolean; virtual; abstract;
+    function fUsaChapinhaTinta(strIdePro, strIteTin: String): Boolean; Virtual; Abstract;
+    function fRetornaCodigoChapinha(strIdePro: String): String; Virtual; Abstract;
+    function fTravaQuantidadeTinta(const strTipEmb: String; fltQtdEmb, fltQtdDig: Double): Boolean; virtual; abstract;
+    function fTintaGeraFormulacao(): Boolean; virtual;
+    function fRetornaTabelaColoranteTinta(): String; virtual; abstract;
+    procedure pRetItemColorante(const strColTinDet: String; Var strCodIte, strCodBas, strDesBas: String; const strCodEmp: String); virtual;
+    function fFormulacaoAcumulada(): Boolean; virtual; abstract;
+    procedure pTintaRetornaTabelaPreco(dicRetorno: IDicionario; fltFatorAcerto: Double); virtual; abstract;
+    function fGetFatorML(): Double;
+    function GetITintadeMaquina: ITintadeMaquinaWrapper; virtual; abstract;
+    function GetNomeTinta: String; virtual; abstract;
+    function RetornaDescricaoTinta(const strDesCri: String; const dtsTinta: IDataSet; const strTipPre: String): String; virtual;
+    function RetornaReferenciaTinta(const dtsTinta: IDataSet): String; virtual; abstract;
+    function RetornaPreco(const Sender: TObject; const dtsTinta: IDataSet; const dicRetorno: IDicionario;
+      var saldos: ISaldosColorantes; blnFaturamento, blnPermiteTab: Boolean; strTab: String = 'N'; strAutoTab: String = ''; sltItems: TStringList = Nil;
+       strMD5Key: String = ''; blnSemTela: Boolean = False; strEmbPro: String = ''; strModoVenda: String = ''; strCodDil: String = ''): Boolean; virtual; abstract;
+    function RetornaUniTraProTinta(const dtsTinta: IDataSet; const dicDados: IDicionario): Double; virtual; abstract;
+    function fGTinForGeral(var arrFormul: TForMulTinDetArray; var arrBaixaPigmentos: TBaixaPigmentosArray;
+      const dicDados: IDicionario): Boolean; virtual; abstract;
+    procedure RetornaDadosTinta(const strIteTin: String; const dicRetorno: IDicionario); virtual; abstract;
+    function GetDigDadosTintometricos(strTabPre: string): IDigDadosTintometricos; virtual; abstract;
+    function GetMenu: IAuttinMenuItem; virtual; abstract;
+    function GetQuantidadeOncaPulsoMl(const fltPulsos: Double; var intParteInteira: Integer; var fltParteFracao: Double; strFormul: String = ''): String ; virtual; abstract;
+    function GetQuantidadeMlPulso(const fltValor: Double; intDecFor: Integer; strFormul: String): String; Virtual;
+    function OncaParaMl(intParteInteira: Integer; fltParteFracao: Double): Double; virtual;
+    function MlParaOnca(fltValor : Double ) : String; virtual;
+    function GetQuantidadeGramaMl(const fltValor: Double; const Fator: Double; strFormula: String): Double; Virtual;
+    function GetNomeTabelaFormulacao: String; virtual; abstract;
+  end;
+
+implementation
+
+uses
+  untAutcomTintaFactory;
+
+{ TAbstractLibTinta }
+
+constructor TAbstractLibTinta.Create();
+begin
+  inherited Create();
+end;
+
+destructor TAbstractLibTinta.Destroy;
+begin
+
+  inherited Destroy;
+end;
+
+function TAbstractLibTinta.fGetFatorML: Double;
+begin
+  Result := GetFatorEstoque;
+end;
+
+function TAbstractLibTinta.fTintaGeraFormulacao: Boolean;
+begin
+  Result := TAutcomTintaFactory.Get().fGetConfTinta(GetIdePro).fGetBoolean('USAFOR');
+end;
+
+function TAbstractLibTinta.GetFatorEstoque: Double;
+begin
+  Result := 1;
+end;
+
+function TAbstractLibTinta.GetInstrucaoRetComponentes(const strCodEmp: String): String;
+begin
+  Result :=
+    ' SELECT ' +
+    '   ' + Self.GetCampoComponenteCodIte +
+    '   ,' + Self.GetCampoComponenteCodComp +
+    '   ,' + Self.GetCampoComponenteDesComp + ' AS DESBAS ' +
+    ' FROM ' +
+    '   ' + Self.fRetornaTabelaColoranteTinta +
+    ' WHERE ' + GetWhereRetComponente(strCodEmp);
+end;
+
+function TAbstractLibTinta.GetQuantidadeGramaMl(const fltValor, Fator: Double;
+  strFormula: String): Double;
+begin
+  Result := fltValor * Fator;
+end;
+
+function TAbstractLibTinta.GetQuantidadeMlPulso(const fltValor: Double;
+  intDecFor: Integer; strFormul: String): String;
+begin
+  Result := FloatToStrF(fltValor, ffNumber, 12, intDecFor);
+end;
+
+function TAbstractLibTinta.MlParaOnca(fltValor: Double): String;
+Var
+  intInteiro : Integer;
+  fltInteiro : Double;
+  fltFracao  : Double;
+begin
+  fltInteiro := fltValor / 29.5735295625;
+  intInteiro := Trunc(fltInteiro);
+  fltFracao  := fltInteiro - intInteiro;
+ fltFracao  := fltFracao * 48;
+  Result     := FormatFloat('0', intInteiro) + 'Y' + FormatFloat('0.0', fltFracao);
+End;
+
+function TAbstractLibTinta.OncaParaMl(intParteInteira: Integer;
+  fltParteFracao: Double): Double;
+begin
+  Result := TAutcomTintaFactory.Get.fStrToFloat(FormatFloat('0.000', (intParteInteira * 29.5735295625) + (fltParteFracao * 0.61611520)));
+end;
+
+procedure TAbstractLibTinta.pRetItemColorante(const strColTinDet: String; var strCodIte, strCodBas, strDesBas: String; const strCodEmp: String);
+var
+  dataSet: IDataSet;
+begin
+  dataSet := nil;
+  Try
+    Try
+      dataSet := TAutcomTintaFactory.Get().fGetDataSet;
+      dataSet.SQL:= GetInstrucaoRetComponentes(strCodEmp);
+      SetaParametrosRetComponentes(dataSet, strColTinDet);
+      dataSet.Open;
+
+      strCodIte := dataSet.FieldByName(GetCampoComponenteCodIte).AsString;
+      strCodBas := dataSet.FieldByName(GetCampoComponenteCodComp).AsString;
+      strDesBas := dataSet.FieldByName('DESBAS').AsString;
+
+    Except
+      on E: Exception do
+      begin
+        raise;
+      end;
+    End;
+  Finally
+    dataSet := nil;
+  End;
+end;
+
+function TAbstractLibTinta.RetornaDescricaoTinta(const strDesCri: String; const dtsTinta: IDataSet; const strTipPre: String): String;
+begin
+  Result := strDesCri;
+end;
+
+end.
+

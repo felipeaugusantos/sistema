@@ -1,0 +1,291 @@
+inherited frmCadEpi: TfrmCadEpi
+  Height = 310
+  Caption = 'Cadastro de Equipamento de Prote'#231#227'o Individual (EPI)'
+  ExplicitHeight = 310
+  PixelsPerInch = 96
+  TextHeight = 14
+  inherited pnlBotoes: TPanel
+    Top = 238
+    Height = 27
+    ExplicitTop = 238
+    ExplicitHeight = 27
+    inherited FlwBotoes: TFlowPanel
+      Width = 499
+      Height = 23
+      ExplicitTop = 2
+      ExplicitWidth = 502
+      ExplicitHeight = 23
+      inherited btnIncluir: TBitBtnLocked
+        Width = 82
+        Height = 23
+        Align = alLeft
+        ExplicitWidth = 82
+        ExplicitHeight = 23
+      end
+      inherited btnGravar: TBitBtnLocked
+        Left = 82
+        Width = 82
+        Height = 23
+        Align = alLeft
+        ExplicitLeft = 82
+        ExplicitWidth = 82
+        ExplicitHeight = 23
+      end
+      inherited btnAlterar: TBitBtnLocked
+        Left = 164
+        Width = 82
+        Height = 23
+        Align = alLeft
+        ExplicitLeft = 164
+        ExplicitWidth = 82
+        ExplicitHeight = 23
+      end
+      inherited btnExcluir: TBitBtnLocked
+        Left = 246
+        Width = 82
+        Height = 23
+        Align = alLeft
+        ExplicitLeft = 246
+        ExplicitWidth = 82
+        ExplicitHeight = 23
+      end
+      inherited btnCancela: TBitBtnLocked
+        Left = 328
+        Width = 82
+        Height = 23
+        Align = alLeft
+        ExplicitLeft = 328
+        ExplicitWidth = 82
+        ExplicitHeight = 23
+      end
+      inherited btnPesquisa: TBitBtnLocked
+        Left = 410
+        Width = 82
+        Height = 23
+        Align = alLeft
+        ExplicitLeft = 410
+        ExplicitWidth = 82
+        ExplicitHeight = 23
+      end
+    end
+    inherited btnSair: TBitBtnLocked
+      Left = 503
+      Width = 80
+      Height = 23
+      Align = alRight
+      ExplicitLeft = 501
+      ExplicitWidth = 80
+      ExplicitHeight = 23
+    end
+  end
+  inherited pgcDados: TPageControl
+    Left = 790
+    Top = 56
+    Width = 107
+    Height = 49
+    Align = alNone
+    Visible = False
+    ExplicitLeft = 790
+    ExplicitTop = 56
+    ExplicitWidth = 107
+    ExplicitHeight = 49
+    inherited tbsGeral: TTabSheet
+      ExplicitLeft = 4
+      ExplicitTop = 28
+      ExplicitWidth = 99
+      ExplicitHeight = 17
+    end
+  end
+  inherited pnlStatus: TPanel
+    Top = 265
+    ExplicitTop = 265
+    inherited pnlNomeForm: TPanel
+      Left = 397
+      Width = 188
+      ExplicitLeft = 397
+      ExplicitWidth = 188
+    end
+    inherited pnlInfo: TPanel
+      Width = 397
+    end
+  end
+  object pnlCentral: TPanel [4]
+    Left = 0
+    Top = 0
+    Width = 585
+    Height = 238
+    Align = alClient
+    Color = 16770261
+    ParentBackground = False
+    TabOrder = 4
+    object Label2: TLabel
+      Left = 11
+      Top = 40
+      Width = 52
+      Height = 14
+      Caption = 'Descri'#231#227'o:'
+    end
+    object Label1: TLabel
+      Left = 26
+      Top = 18
+      Width = 36
+      Height = 14
+      Alignment = taRightJustify
+      Caption = 'C'#243'digo:'
+    end
+    object pnlImagem: TPanel
+      Left = 65
+      Top = 61
+      Width = 185
+      Height = 171
+      BevelInner = bvLowered
+      BevelWidth = 2
+      TabOrder = 4
+      object imgEpi: TImage
+        Left = 4
+        Top = 4
+        Width = 177
+        Height = 163
+        Align = alClient
+        Stretch = True
+        ExplicitLeft = 14
+        ExplicitTop = 0
+        ExplicitWidth = 171
+        ExplicitHeight = 171
+      end
+    end
+    object dbeDescri: TDBEditFocus
+      Tag = 99
+      Left = 65
+      Top = 33
+      Width = 424
+      Height = 22
+      CharCase = ecUpperCase
+      DataField = 'EPI_DESCRI'
+      DataSource = dtsCadEpi
+      ImeName = 'Portugu'#234's (Brasil ABNT)'
+      TabOrder = 1
+      NormalColor = clWindow
+      FocusColor = clInfoBk
+      RequeridoColor = clRed
+      Requerido = False
+      CompZeros = False
+      TipoTexto = ttAlfanumerico
+    end
+    object dbeCodEpi: TDBEditFocus
+      Tag = 99
+      Left = 65
+      Top = 11
+      Width = 64
+      Height = 22
+      CharCase = ecUpperCase
+      DataField = 'EPI_CODEPI'
+      DataSource = dtsCadEpi
+      ImeName = 'Portugu'#234's (Brasil ABNT)'
+      TabOrder = 0
+      NormalColor = clWindow
+      FocusColor = clInfoBk
+      RequeridoColor = clRed
+      Requerido = False
+      CompZeros = True
+      TipoTexto = ttNumerico
+    end
+    object btnCarregaImagem: TBitBtnLocked
+      Left = 256
+      Top = 61
+      Width = 126
+      Height = 25
+      Caption = 'Carregar &Imagem'
+      Glyph.Data = {
+        36040000424D3604000000000000360000002800000010000000100000000100
+        2000000000000004000000000000000000000000000000000000000000080000
+        000C0000000E0000000E0000000E0000000E0000000F0000000F0000000F0000
+        0010000000100000000F0000000A000000020000000000000000815A4DBFB57D
+        6BFFB57C6BFFB47D6BFFB47C6BFFB47C6AFFB37B69FFB37B6AFFB37B6AFFB47B
+        69FFB37A69FFB37A68FF81584CC10000000A0000000000000000B6806EFFF9F0
+        EBFFF8F0EAFFF8F0EAFFF8EFE9FFF8EFE9FFF7EFE9FFF8EEE8FFF7EEE9FFF7EE
+        E8FFF7EEE9FFFAF4F1FFB47C6BFF0000000E0000000000000000B98271FFF9F1
+        ECFF39B78FFF36AE86FF2A8B67FF257F5DFF309F79FF32A17AFF298361FF3198
+        74FF257F5CFFFBF6F3FFB67F6DFF0000000E0000000000000000BB8574FFFAF3
+        EEFF41C097FF35A07DFF6AC6B1FF37AA85FF246B73FF2B5EB6FF287378FF2D8E
+        6AFF298764FFFCF8F5FFB88270FF0000000D0000000000000000C08E7EFFFBF5
+        F1FF53CCA6FF43AC8AFF3978B1FF366BB8FF3469B3FF71C2EEFF336BB4FF3367
+        B1FF306DA7FFFCF9F7FFBA8573FF0000000C0000000000000000C49585FFFAF7
+        F3FF5DD3ADFF53C09EFF467BBCFF8ED5F4FF66A5E1FF76D6F9FF599EDEFF69C6
+        F2FF3E75BBFFFDFAF9FFBD8776FF0000000B0000000000000000C89A8AFFFBF7
+        F5FF62D4B1FF55ACADFF558ECAFF71B1E5FF5E9DD0FF335EA8FF5295CCFF60A7
+        E2FF4882C4FFFEFBFAFFBE8B79FF0000000A0000000000000000CA9F90FFFCF9
+        F7FFEAD5ABFF6590CEFF96D5F4FFAAECFEFF3E77BBFF90BCE0FF87A7CFFFB0E6
+        F7FF89CFF2FFFEFCFBFFC08E7EFF000000090000000000000000CEA394FFFDFA
+        F8FFF2E3C3FFBABEBDFF7EA8D6FF8FC8EFFF6FB6E2FF96B7D9FFA28775FFA8B6
+        BAFFA9C1DCFFFAF9F9FFD6BFB7FF000000130000000400000001D1A899FFFFFE
+        FEFFF9EDD3FFECE0C8FF89B2DAFFACE7FBFF9ED5F4FFCEEBF3FFAC744CFF9867
+        41FFA39F9FFFE5E4E2FF975D32FF613A1CBC0C07032700000007C99C8BFFFFFE
+        FEFFFFFEFEFFFFFEFEFFFFFEFEFFFFFEFEFFFFFEFEFFF8F7F7FFBD9171FFDBB8
+        91FFB07F53FF9B643AFF9F663DFFDBB67EFF8F5C32EE311D0F679B7C70BFD1A7
+        96FFD0A796FFD0A696FFD0A695FFD0A695FFCFA594FFE1C8BEFFD3B7A6FFC498
+        70FFEAD2B1FFFCF0D0FFFEF2D3FFFEE9BBFFF7E6C5FFA36C43FF000000010000
+        000200000002000000020000000200000003000000030000000300000006382C
+        2150987758CABF946DFAC3966DFFEAD3B4FFB7906CEE3D2E215B000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        00010000000200000005CAA27AFF846A50AC110D0A1B00000002000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000001000000010000000000000000}
+      TabOrder = 2
+      OnClick = btnCarregaImagemClick
+    end
+    object btnRemoveImagem: TBitBtnLocked
+      Left = 256
+      Top = 86
+      Width = 126
+      Height = 25
+      Caption = '&Remover Imagem'
+      Glyph.Data = {
+        36040000424D3604000000000000360000002800000010000000100000000100
+        2000000000000004000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        00020000000900000012000000180000001A0000001A00000018000000100000
+        0005000000010000000000000000000000000000000000000000000000020000
+        000D3524146A936338E5A56B3AFFA36938FFA16736FF9D6233FB633E20B70805
+        022800000006000000010000000000000000000000000000000000000008442F
+        1D78C18B59FEE1AC76FFE4C296FFB5793BFFB5793CFFB5793CFFAD7239FF7E50
+        2AD80302042A00000006000000010000000000000000000000000000000DB07D
+        4EF3E6B17AFFE9B47DFFE9B47DFFE7C79DFFB67A3DFFB57A3DFFB57A3DFF6953
+        7BFF090E5ED50001052800000006000000010000000000000000000000086A4E
+        329DEFD7B3FFE9B47DFFE9B47DFFE9B47DFFEACDA4FFB57B3EFF735C86FF313F
+        CCFF2935B8FF0B1161D501010627000000050000000100000000000000010000
+        000C745538A5F2DDBBFFE9B47DFFE9B47DFFE9B47DFFD1CEE1FF3443CEFF3443
+        CDFF3443CEFF2C39BAFF0D1463D4010106260000000500000001000000000000
+        00020000000B76583BA4F5E2C1FFE9B47DFFB5A9B8FF829FF1FFB1C9F5FF3949
+        D1FF3A4AD1FF3A49D1FF303FBDFF111767D30101062500000005000000000000
+        0000000000010000000B785B3DA3E9E1D2FF87A3F2FF87A4F1FF87A3F2FFB9D0
+        F7FF3E50D5FF3E50D5FF3F50D5FF3545C2FF141B6AD201010622000000000000
+        000000000000000000010000000A2C386FA2C9E2F9FF8CA8F3FF8DA8F3FF8CA8
+        F3FFC0D8F9FF4457D9FF4356D9FF4456D9FF3949C2FF141A61C2000000000000
+        000000000000000000000000000100000009303D74A1CFE7FBFF92ADF3FF91AD
+        F4FF92ADF4FFC6DEFAFF495EDBFF495DDCFF475AD7FF232F8BF0000000000000
+        00000000000000000000000000000000000100000008334177A0D4ECFCFF97B2
+        F5FF97B2F4FF97B3F5FFCCE4FBFF4A5FDAFF3141A4F6090C214A000000000000
+        000000000000000000000000000000000000000000010000000736457A9FD8F0
+        FDFF9DB7F5FF9CB7F5FFD9F1FEFF6B81CAF50B0E234700000006000000000000
+        0000000000000000000000000000000000000000000000000001000000063947
+        7D9EDBF3FEFFDBF3FFFF677FCFF513192C440000000500000001000000000000
+        0000000000000000000000000000000000000000000000000000000000010000
+        00053543728E4F63AACD151A2D40000000040000000000000000000000000000
+        0000000000000000000000000000000000000000000000000000000000000000
+        0001000000030000000400000002000000000000000000000000}
+      TabOrder = 3
+      OnClick = btnRemoveImagemClick
+    end
+  end
+  object dtsCadEpi: TDataSource
+    Left = 336
+    Top = 112
+  end
+  object OpenDialogJpeg: TOpenDialog
+    Filter = 'Arquivos JPEG|*.jpg'
+    Left = 424
+    Top = 112
+  end
+end
